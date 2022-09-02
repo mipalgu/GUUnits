@@ -12,7 +12,7 @@ let package = Package(
         .library(
             name: "guunits",
             type: .dynamic,
-            targets: ["CGUUnits", "GUUnits"]
+            targets: ["CGUUnits"]
         ),
         .library(name: "GUUnits", targets: ["CGUUnits", "GUUnits"])
     ],
