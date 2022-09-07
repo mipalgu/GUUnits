@@ -27,7 +27,10 @@ let package = Package(
         // this package depends on.
         .target(
             name: "CGUUnits",
-            dependencies: []
+            dependencies: [],
+            linkerSettings: [
+                .linkedLibrary("m", .when(platforms: [.linux]))
+            ]
         ),
         .target(
             name: "GUUnits",
