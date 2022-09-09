@@ -1,8 +1,8 @@
 # Getting started with GUUnits
 
-Create a function that takes an angle.
+Create a function that takes works with angles in a type-safe manner.
 
-## The Problem that GUUnits solves.
+## The Problem that GUUnits Solves
 
 Let us suppose that we wish to create a function that takes an angle (in degrees or radians for example) and then does some computation with it. Ordinarily, we would have to write a function like the one as follows:
 
@@ -77,4 +77,27 @@ let radians: Radians_d = 0.7906342
 doSomething(with: .radians(radians)) // Works just fine...
 
 doSomething(with: .degrees(radians)) // Error - we still have type safety here.
+```
+
+## Performing Conversions
+
+Whilst GUUnits allows us to opt into type-safety, GUUnits also allows us to perform conversions from one unit to another. That is, GUUnits allows us to convert between units that exist within the same category. Generally, this is accomplished by calling the initialiser of the type you want to convert to:
+
+```swift
+let degrees: Degrees_t = 123
+let radians = Radians_d(degrees) // 2.14675
+```
+
+## General Design Guidelines
+
+Since GUUnits provides the ability to convert from one unit to another, it is generally a good idea to define the public interface for a module or library using category types, and use unit types internally. This is to save unwarranted conversions. For example:
+
+```swift
+/// A public function that is exposed to users of your library.
+public func doSomething(with angle: Angle) {
+    doSomethingElse(with: angle.radians_d) // Convert to radians if necessary...
+}
+
+/// An internal function that does some work that is not exposed to users of your library.
+func doSomethingElse(with radians: Radians_d) { ... }
 ```
