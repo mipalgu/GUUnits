@@ -1,6 +1,6 @@
 # Getting started with GUUnits
 
-Create a function that takes works with angles in a type-safe manner.
+Create a function that works with angles in a type-safe manner.
 
 ## The Problem that GUUnits Solves
 
