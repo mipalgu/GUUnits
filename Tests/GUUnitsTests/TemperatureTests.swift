@@ -57,8 +57,11060 @@
 */
 
 import CGUUnits
-import GUUnits
+@testable import GUUnits
 import XCTest
+
+final class CelsiusTypeTests: XCTestCase {
+
+    func testCelsius_tEquality() {
+        XCTAssertEqual(Celsius_t(5), Celsius_t(5))
+    }
+
+    func testCelsius_tCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Celsius_t(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Celsius_t.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testCelsius_tSelfInit() {
+        let expected = Celsius_t(15)
+        XCTAssertEqual(expected, Celsius_t(expected))
+    }
+
+    func testCelsius_tSelfExactlyInit() {
+        let expected = Celsius_t(15)
+        XCTAssertEqual(expected, Celsius_t(exactly: expected))
+    }
+
+    func testCelsius_tComparable() {
+        let lhs = Celsius_t(1)
+        let rhs = Celsius_t(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testCelsius_tMagnitude() {
+        let expected = CInt(5).magnitude
+        XCTAssertEqual(Celsius_t(5).magnitude, expected)
+    }
+
+    func testCelsius_tTruncatingInit() {
+        let expected = Celsius_t(CInt(truncatingIfNeeded: UInt64.max))
+        XCTAssertEqual(Celsius_t(truncatingIfNeeded: expected), expected)
+    }
+
+    func testCelsius_tClampingInit() {
+        let expected = Celsius_t(CInt(clamping: UInt64.max))
+        XCTAssertEqual(Celsius_t(clamping: expected), expected)
+    }
+
+    func testCelsius_tBitWidth() {
+        let expected = CInt(5).bitWidth
+        XCTAssertEqual(Celsius_t(5).bitWidth, expected)
+    }
+
+    func testCelsius_tLeadingZeroBitCount() {
+        let expected = CInt(5).leadingZeroBitCount
+        XCTAssertEqual(Celsius_t(5).leadingZeroBitCount, expected)
+    }
+
+    func testCelsius_tNonzeroBitCount() {
+        let expected = CInt(5).nonzeroBitCount
+        XCTAssertEqual(Celsius_t(5).nonzeroBitCount, expected)
+    }
+
+    func testCelsius_tIntegerLiteralInit() {
+        let expected = CInt(integerLiteral: CInt.max)
+        XCTAssertEqual(Celsius_t(expected), Celsius_t(integerLiteral: CInt.max))
+    }
+
+    func testCelsius_tTruncatingBits() {
+        let expected = Celsius_t(CInt(_truncatingBits: UInt.max))
+        XCTAssertEqual(expected, Celsius_t(_truncatingBits: UInt.max))
+    }
+
+    func testCelsius_tAddition() {
+        let expected = Celsius_t(CInt(5) + CInt(3))
+        XCTAssertEqual(Celsius_t(5) + Celsius_t(3), expected)
+    }
+
+    func testCelsius_tSubtraction() {
+        let expected = Celsius_t(CInt(5) - CInt(3))
+        XCTAssertEqual(Celsius_t(5) - Celsius_t(3), expected)
+    }
+
+    func testCelsius_tMultiplication() {
+        let expected = Celsius_t(CInt(5) * CInt(3))
+        XCTAssertEqual(Celsius_t(5) * Celsius_t(3), expected)
+    }
+
+    func testCelsius_tDivision() {
+        let expected = Celsius_t(CInt(6) / CInt(3))
+        XCTAssertEqual(Celsius_t(6) / Celsius_t(3), expected)
+    }
+
+    func testCelsius_tAddOverflow() {
+        let rawOriginal = CInt.max
+        let rawResult = rawOriginal.addingReportingOverflow(CInt(1))
+        let original = Celsius_t(rawOriginal)
+        let result = original.addingReportingOverflow(Celsius_t(1))
+        XCTAssertEqual(result.0, Celsius_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testCelsius_tMultiplyOverflow() {
+        let rawOriginal = CInt.max
+        let rawResult = rawOriginal.multipliedReportingOverflow(by: CInt(2))
+        let original = Celsius_t(rawOriginal)
+        let result = original.multipliedReportingOverflow(by: Celsius_t(2))
+        XCTAssertEqual(result.0, Celsius_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testCelsius_tSubtractOverflow() {
+        let rawOriginal = CInt.min
+        let rawResult = rawOriginal.subtractingReportingOverflow(CInt(1))
+        let original = Celsius_t(rawOriginal)
+        let result = original.subtractingReportingOverflow(Celsius_t(1))
+        XCTAssertEqual(result.0, Celsius_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testCelsius_tDivideOverflow() {
+        let rawOriginal = CInt(1)
+        let rawResult = rawOriginal.dividedReportingOverflow(by: CInt.max)
+        let original = Celsius_t(rawOriginal)
+        let result = original.dividedReportingOverflow(by: Celsius_t(CInt.max))
+        XCTAssertEqual(result.0, Celsius_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testCelsius_tRemainderOverflow() {
+        let rawOriginal = CInt(1)
+        let rawResult = rawOriginal.remainderReportingOverflow(dividingBy: CInt.max)
+        let original = Celsius_t(rawOriginal)
+        let result = original.remainderReportingOverflow(dividingBy: Celsius_t(CInt.max))
+        XCTAssertEqual(result.0, Celsius_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testCelsius_tTrailingZeroBitCount() {
+        let original = CInt(1)
+        XCTAssertEqual(Celsius_t(original).trailingZeroBitCount, original.trailingZeroBitCount)
+    }
+
+    func testCelsius_tTimesEquals() {
+        var original = CInt(2)
+        original *= 4
+        var result = Celsius_t(CInt(2))
+        result *= 4
+        XCTAssertEqual(result, Celsius_t(original))
+    }
+
+    func testCelsius_tDivideEquals() {
+        var original = CInt(4)
+        original /= 2
+        var result = Celsius_t(CInt(4))
+        result /= 2
+        XCTAssertEqual(result, Celsius_t(original))
+    }
+
+    func testCelsius_tModEquals() {
+        var original = CInt(4)
+        original %= 2
+        var result = Celsius_t(CInt(4))
+        result %= 2
+        XCTAssertEqual(result, Celsius_t(original))
+    }
+
+    func testCelsius_tAndEquals() {
+        var original = CInt(2)
+        original &= 6
+        var result = Celsius_t(CInt(2))
+        result &= 6
+        XCTAssertEqual(result, Celsius_t(original))
+    }
+
+    func testCelsius_tOrEquals() {
+        var original = CInt(2)
+        original |= 4
+        var result = Celsius_t(CInt(2))
+        result |= 4
+        XCTAssertEqual(result, Celsius_t(original))
+    }
+
+    func testCelsius_tHatEquals() {
+        var original = CInt(2)
+        original ^= 4
+        var result = Celsius_t(CInt(2))
+        result ^= 4
+        XCTAssertEqual(result, Celsius_t(original))
+    }
+
+    func testCelsius_tMod() {
+        let original = CInt(4)
+        let expected = Celsius_t(original % 2)
+        XCTAssertEqual(Celsius_t(original) % 2, expected)
+    }
+
+    func testCelsius_uEquality() {
+        XCTAssertEqual(Celsius_u(5), Celsius_u(5))
+    }
+
+    func testCelsius_uCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Celsius_u(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Celsius_u.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testCelsius_uSelfInit() {
+        let expected = Celsius_u(15)
+        XCTAssertEqual(expected, Celsius_u(expected))
+    }
+
+    func testCelsius_uSelfExactlyInit() {
+        let expected = Celsius_u(15)
+        XCTAssertEqual(expected, Celsius_u(exactly: expected))
+    }
+
+    func testCelsius_uComparable() {
+        let lhs = Celsius_u(1)
+        let rhs = Celsius_u(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testCelsius_uMagnitude() {
+        let expected = CUnsignedInt(5).magnitude
+        XCTAssertEqual(Celsius_u(5).magnitude, expected)
+    }
+
+    func testCelsius_uTruncatingInit() {
+        let expected = Celsius_u(CUnsignedInt(truncatingIfNeeded: UInt64.max))
+        XCTAssertEqual(Celsius_u(truncatingIfNeeded: expected), expected)
+    }
+
+    func testCelsius_uClampingInit() {
+        let expected = Celsius_u(CUnsignedInt(clamping: UInt64.max))
+        XCTAssertEqual(Celsius_u(clamping: expected), expected)
+    }
+
+    func testCelsius_uBitWidth() {
+        let expected = CUnsignedInt(5).bitWidth
+        XCTAssertEqual(Celsius_u(5).bitWidth, expected)
+    }
+
+    func testCelsius_uLeadingZeroBitCount() {
+        let expected = CUnsignedInt(5).leadingZeroBitCount
+        XCTAssertEqual(Celsius_u(5).leadingZeroBitCount, expected)
+    }
+
+    func testCelsius_uNonzeroBitCount() {
+        let expected = CUnsignedInt(5).nonzeroBitCount
+        XCTAssertEqual(Celsius_u(5).nonzeroBitCount, expected)
+    }
+
+    func testCelsius_uIntegerLiteralInit() {
+        let expected = CUnsignedInt(integerLiteral: CUnsignedInt.max)
+        XCTAssertEqual(Celsius_u(expected), Celsius_u(integerLiteral: CUnsignedInt.max))
+    }
+
+    func testCelsius_uTruncatingBits() {
+        let expected = Celsius_u(CUnsignedInt(_truncatingBits: UInt.max))
+        XCTAssertEqual(expected, Celsius_u(_truncatingBits: UInt.max))
+    }
+
+    func testCelsius_uAddition() {
+        let expected = Celsius_u(CUnsignedInt(5) + CUnsignedInt(3))
+        XCTAssertEqual(Celsius_u(5) + Celsius_u(3), expected)
+    }
+
+    func testCelsius_uSubtraction() {
+        let expected = Celsius_u(CUnsignedInt(5) - CUnsignedInt(3))
+        XCTAssertEqual(Celsius_u(5) - Celsius_u(3), expected)
+    }
+
+    func testCelsius_uMultiplication() {
+        let expected = Celsius_u(CUnsignedInt(5) * CUnsignedInt(3))
+        XCTAssertEqual(Celsius_u(5) * Celsius_u(3), expected)
+    }
+
+    func testCelsius_uDivision() {
+        let expected = Celsius_u(CUnsignedInt(6) / CUnsignedInt(3))
+        XCTAssertEqual(Celsius_u(6) / Celsius_u(3), expected)
+    }
+
+    func testCelsius_uAddOverflow() {
+        let rawOriginal = CUnsignedInt.max
+        let rawResult = rawOriginal.addingReportingOverflow(CUnsignedInt(1))
+        let original = Celsius_u(rawOriginal)
+        let result = original.addingReportingOverflow(Celsius_u(1))
+        XCTAssertEqual(result.0, Celsius_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testCelsius_uMultiplyOverflow() {
+        let rawOriginal = CUnsignedInt.max
+        let rawResult = rawOriginal.multipliedReportingOverflow(by: CUnsignedInt(2))
+        let original = Celsius_u(rawOriginal)
+        let result = original.multipliedReportingOverflow(by: Celsius_u(2))
+        XCTAssertEqual(result.0, Celsius_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testCelsius_uSubtractOverflow() {
+        let rawOriginal = CUnsignedInt.min
+        let rawResult = rawOriginal.subtractingReportingOverflow(CUnsignedInt(1))
+        let original = Celsius_u(rawOriginal)
+        let result = original.subtractingReportingOverflow(Celsius_u(1))
+        XCTAssertEqual(result.0, Celsius_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testCelsius_uDivideOverflow() {
+        let rawOriginal = CUnsignedInt(1)
+        let rawResult = rawOriginal.dividedReportingOverflow(by: CUnsignedInt.max)
+        let original = Celsius_u(rawOriginal)
+        let result = original.dividedReportingOverflow(by: Celsius_u(CUnsignedInt.max))
+        XCTAssertEqual(result.0, Celsius_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testCelsius_uRemainderOverflow() {
+        let rawOriginal = CUnsignedInt(1)
+        let rawResult = rawOriginal.remainderReportingOverflow(dividingBy: CUnsignedInt.max)
+        let original = Celsius_u(rawOriginal)
+        let result = original.remainderReportingOverflow(dividingBy: Celsius_u(CUnsignedInt.max))
+        XCTAssertEqual(result.0, Celsius_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testCelsius_uTrailingZeroBitCount() {
+        let original = CUnsignedInt(1)
+        XCTAssertEqual(Celsius_u(original).trailingZeroBitCount, original.trailingZeroBitCount)
+    }
+
+    func testCelsius_uTimesEquals() {
+        var original = CUnsignedInt(2)
+        original *= 4
+        var result = Celsius_u(CUnsignedInt(2))
+        result *= 4
+        XCTAssertEqual(result, Celsius_u(original))
+    }
+
+    func testCelsius_uDivideEquals() {
+        var original = CUnsignedInt(4)
+        original /= 2
+        var result = Celsius_u(CUnsignedInt(4))
+        result /= 2
+        XCTAssertEqual(result, Celsius_u(original))
+    }
+
+    func testCelsius_uModEquals() {
+        var original = CUnsignedInt(4)
+        original %= 2
+        var result = Celsius_u(CUnsignedInt(4))
+        result %= 2
+        XCTAssertEqual(result, Celsius_u(original))
+    }
+
+    func testCelsius_uAndEquals() {
+        var original = CUnsignedInt(2)
+        original &= 6
+        var result = Celsius_u(CUnsignedInt(2))
+        result &= 6
+        XCTAssertEqual(result, Celsius_u(original))
+    }
+
+    func testCelsius_uOrEquals() {
+        var original = CUnsignedInt(2)
+        original |= 4
+        var result = Celsius_u(CUnsignedInt(2))
+        result |= 4
+        XCTAssertEqual(result, Celsius_u(original))
+    }
+
+    func testCelsius_uHatEquals() {
+        var original = CUnsignedInt(2)
+        original ^= 4
+        var result = Celsius_u(CUnsignedInt(2))
+        result ^= 4
+        XCTAssertEqual(result, Celsius_u(original))
+    }
+
+    func testCelsius_uMod() {
+        let original = CUnsignedInt(4)
+        let expected = Celsius_u(original % 2)
+        XCTAssertEqual(Celsius_u(original) % 2, expected)
+    }
+
+    func testCelsius_fEquality() {
+        XCTAssertEqual(Celsius_f(5), Celsius_f(5))
+    }
+
+    func testCelsius_fCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Celsius_f(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Celsius_f.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testCelsius_fSelfInit() {
+        let expected = Celsius_f(15)
+        XCTAssertEqual(expected, Celsius_f(expected))
+    }
+
+    func testCelsius_fSelfExactlyInit() {
+        let expected = Celsius_f(15)
+        XCTAssertEqual(expected, Celsius_f(exactly: expected))
+    }
+
+    func testCelsius_fComparable() {
+        let lhs = Celsius_f(1)
+        let rhs = Celsius_f(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testCelsius_fRadix() {
+        XCTAssertEqual(Celsius_f.radix, Float.radix)
+    }
+
+    func testCelsius_fExponentBitCount() {
+        XCTAssertEqual(Celsius_f.exponentBitCount, Float.exponentBitCount)
+    }
+
+    func testCelsius_fSignificandBitCount() {
+        XCTAssertEqual(Celsius_f.significandBitCount, Float.significandBitCount)
+    }
+
+    func testCelsius_fMagnitude() {
+        let expected = Celsius_f(Float(5).magnitude)
+        XCTAssertEqual(Celsius_f(5).magnitude, expected)
+    }
+
+    func testCelsius_fExactlyInit() {
+        let expected = Celsius_f(Float(exactly: Int(5)) ?? Float.infinity)
+        XCTAssertEqual(Celsius_f(exactly: Int(5)), expected)
+    }
+
+    func testCelsius_fIsTotallyOrdered() {
+        let param = Float(100)
+        let other = Float(5)
+        XCTAssertEqual(
+            Celsius_f(param).isTotallyOrdered(belowOrEqualTo: Celsius_f(other)),
+            param.isTotallyOrdered(belowOrEqualTo: other)
+        )
+    }
+
+    func testCelsius_fBinade() {
+        let raw = Float(5)
+        let expected = Celsius_f(raw.binade)
+        XCTAssertEqual(Celsius_f(raw).binade, expected)
+    }
+
+    func testCelsius_fSignificandWidth() {
+        let raw = Float(5)
+        XCTAssertEqual(Celsius_f(raw).significandWidth, raw.significandWidth)
+    }
+
+    func testCelsius_fDebugDescription() {
+        let raw = Float(5)
+        XCTAssertEqual(Celsius_f(raw).debugDescription, raw.debugDescription)
+    }
+
+    func testCelsius_fDescriptionInit() {
+        let raw = Float("5.0") ?? Float.nan
+        XCTAssertEqual(Celsius_f("5.0"), Celsius_f(raw))
+    }
+
+    func testCelsius_fStaticVars() {
+        XCTAssertEqual(Celsius_f.nan.isNaN, Celsius_f(Float.nan).isNaN)
+        XCTAssertEqual(
+            Celsius_f.signalingNaN.isSignalingNaN,
+            Celsius_f(Float.signalingNaN).isSignalingNaN
+        )
+        XCTAssertEqual(Celsius_f.infinity, Celsius_f(Float.infinity))
+        XCTAssertEqual(Celsius_f.greatestFiniteMagnitude, Celsius_f(Float.greatestFiniteMagnitude))
+        XCTAssertEqual(Celsius_f.pi, Celsius_f(Float.pi))
+        XCTAssertEqual(Celsius_f.leastNormalMagnitude, Celsius_f(Float.leastNormalMagnitude))
+        XCTAssertEqual(Celsius_f.leastNonzeroMagnitude, Celsius_f(Float.leastNonzeroMagnitude))
+    }
+
+    func testCelsius_fUlp() {
+        let raw = Float(5)
+        XCTAssertEqual(Celsius_f(raw).ulp, Celsius_f(raw.ulp))
+    }
+
+    func testCelsius_fSign() {
+        let raw = Float(5)
+        XCTAssertEqual(Celsius_f(raw).sign, raw.sign)
+    }
+
+    func testCelsius_fSignificand() {
+        let raw = Float(5)
+        XCTAssertEqual(Celsius_f(raw).significand, Celsius_f(raw.significand))
+    }
+
+    func testCelsius_fNextUp() {
+        let raw = Float(5)
+        XCTAssertEqual(Celsius_f(raw).nextUp, Celsius_f(raw.nextUp))
+    }
+
+    func testCelsius_fVars() {
+        XCTAssertEqual(Celsius_f(5).isNormal, Float(5).isNormal)
+        XCTAssertEqual(Celsius_f(5).isFinite, Float(5).isFinite)
+        XCTAssertEqual(Celsius_f(5).isZero, Float(5).isZero)
+        XCTAssertEqual(Celsius_f(0).isZero, Float(0).isZero)
+        XCTAssertEqual(Celsius_f(5).isSubnormal, Float(5).isSubnormal)
+        XCTAssertEqual(Celsius_f(5).isInfinite, Float(5).isInfinite)
+        XCTAssertEqual(Celsius_f.infinity.isInfinite, Float.infinity.isInfinite)
+        XCTAssertEqual(Celsius_f(5).isNaN, Float(5).isNaN)
+        XCTAssertEqual(Celsius_f.nan.isNaN, Float.nan.isNaN)
+        XCTAssertEqual(Celsius_f(5).isSignalingNaN, Float(5).isSignalingNaN)
+        XCTAssertEqual(Celsius_f.nan.isSignalingNaN, Float.nan.isSignalingNaN)
+        XCTAssertEqual(Celsius_f(5).isCanonical, Float(5).isCanonical)
+        XCTAssertEqual(Celsius_f(5).description, Float(5).description)
+        XCTAssertEqual(Celsius_f(5).exponentBitPattern, Float(5).exponentBitPattern)
+        XCTAssertEqual(Celsius_f(5).significandBitPattern, Float(5).significandBitPattern)
+        XCTAssertEqual(Celsius_f(5).exponent, Float(5).exponent)
+    }
+
+    func testCelsius_fFormRemainder() {
+        var original = Float(4)
+        let denominator = Float(3)
+        original.formRemainder(dividingBy: denominator)
+        var result = Celsius_f(Float(4))
+        result.formRemainder(dividingBy: Celsius_f(denominator))
+        XCTAssertEqual(result, Celsius_f(original))
+    }
+
+    func testCelsius_fFormTruncatingRemainder() {
+        var original = Float(4)
+        let denominator = Float(3)
+        original.formTruncatingRemainder(dividingBy: denominator)
+        var result = Celsius_f(Float(4))
+        result.formTruncatingRemainder(dividingBy: Celsius_f(denominator))
+        XCTAssertEqual(result, Celsius_f(original))
+    }
+
+    func testCelsius_fFormSquareRoot() {
+        var original = Float(4)
+        original.formSquareRoot()
+        var result = Celsius_f(Float(4))
+        result.formSquareRoot()
+        XCTAssertEqual(result, Celsius_f(original))
+    }
+
+    func testCelsius_fAddProduct() {
+        var original = Float(4)
+        let lhs = Float(3)
+        let rhs = Float(5)
+        original.addProduct(lhs, rhs)
+        var result = Celsius_f(Float(4))
+        result.addProduct(Celsius_f(lhs), Celsius_f(rhs))
+        XCTAssertEqual(result, Celsius_f(original))
+    }
+
+    func testCelsius_fIsEqual() {
+        let this = Celsius_f(5)
+        let other = Celsius_f(6)
+        XCTAssertTrue(this.isEqual(to: this))
+        XCTAssertFalse(this.isEqual(to: other))
+    }
+
+    func testCelsius_fIsLess() {
+        let this = Celsius_f(5)
+        let other = Celsius_f(6)
+        XCTAssertFalse(this.isLess(than: this))
+        XCTAssertTrue(this.isLess(than: other))
+    }
+
+    func testCelsius_fIsLessThanOrEqual() {
+        let this = Celsius_f(5)
+        let other = Celsius_f(6)
+        let other2 = Celsius_f(4)
+        XCTAssertTrue(this.isLessThanOrEqualTo(this))
+        XCTAssertTrue(this.isLessThanOrEqualTo(other))
+        XCTAssertFalse(this.isLessThanOrEqualTo(other2))
+    }
+
+    func testCelsius_fOperations() {
+        let lhs = Celsius_f(6)
+        let rhs = Celsius_f(3)
+        XCTAssertEqual(lhs + rhs, Celsius_f(9))
+        XCTAssertEqual(lhs - rhs, Celsius_f(3))
+        XCTAssertEqual(lhs * rhs, Celsius_f(18))
+        XCTAssertEqual(lhs / rhs, Celsius_f(2))
+    }
+
+    func testCelsius_fTimesEqual() {
+        var this = Celsius_f(3)
+        this *= Celsius_f(4)
+        XCTAssertEqual(this, Celsius_f(12))
+    }
+
+    func testCelsius_fDivideEqual() {
+        var this = Celsius_f(6)
+        this /= Celsius_f(3)
+        XCTAssertEqual(this, Celsius_f(2))
+    }
+
+    func testCelsius_fRound() {
+        var expected = Float(5.6)
+        expected.round(.up)
+        var result = Celsius_f(5.6)
+        result.round(.up)
+        XCTAssertEqual(result, Celsius_f(expected))
+    }
+
+    func testCelsius_fDistanceTo() {
+        let original = Float(5.0)
+        let other = Float(23)
+        let expected = original.distance(to: other)
+        XCTAssertEqual(Celsius_f(original).distance(to: Celsius_f(other)), expected)
+    }
+
+    func testCelsius_fAdvancedBy() {
+        let original = Float(5)
+        let expected = original.advanced(by: 3)
+        XCTAssertEqual(Celsius_f(original).advanced(by: 3), Celsius_f(expected))
+    }
+
+    func testCelsius_dEquality() {
+        XCTAssertEqual(Celsius_d(5), Celsius_d(5))
+    }
+
+    func testCelsius_dCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Celsius_d(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Celsius_d.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testCelsius_dSelfInit() {
+        let expected = Celsius_d(15)
+        XCTAssertEqual(expected, Celsius_d(expected))
+    }
+
+    func testCelsius_dSelfExactlyInit() {
+        let expected = Celsius_d(15)
+        XCTAssertEqual(expected, Celsius_d(exactly: expected))
+    }
+
+    func testCelsius_dComparable() {
+        let lhs = Celsius_d(1)
+        let rhs = Celsius_d(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testCelsius_dRadix() {
+        XCTAssertEqual(Celsius_d.radix, Double.radix)
+    }
+
+    func testCelsius_dExponentBitCount() {
+        XCTAssertEqual(Celsius_d.exponentBitCount, Double.exponentBitCount)
+    }
+
+    func testCelsius_dSignificandBitCount() {
+        XCTAssertEqual(Celsius_d.significandBitCount, Double.significandBitCount)
+    }
+
+    func testCelsius_dMagnitude() {
+        let expected = Celsius_d(Double(5).magnitude)
+        XCTAssertEqual(Celsius_d(5).magnitude, expected)
+    }
+
+    func testCelsius_dExactlyInit() {
+        let expected = Celsius_d(Double(exactly: Int(5)) ?? Double.infinity)
+        XCTAssertEqual(Celsius_d(exactly: Int(5)), expected)
+    }
+
+    func testCelsius_dIsTotallyOrdered() {
+        let param = Double(100)
+        let other = Double(5)
+        XCTAssertEqual(
+            Celsius_d(param).isTotallyOrdered(belowOrEqualTo: Celsius_d(other)),
+            param.isTotallyOrdered(belowOrEqualTo: other)
+        )
+    }
+
+    func testCelsius_dBinade() {
+        let raw = Double(5)
+        let expected = Celsius_d(raw.binade)
+        XCTAssertEqual(Celsius_d(raw).binade, expected)
+    }
+
+    func testCelsius_dSignificandWidth() {
+        let raw = Double(5)
+        XCTAssertEqual(Celsius_d(raw).significandWidth, raw.significandWidth)
+    }
+
+    func testCelsius_dDebugDescription() {
+        let raw = Double(5)
+        XCTAssertEqual(Celsius_d(raw).debugDescription, raw.debugDescription)
+    }
+
+    func testCelsius_dDescriptionInit() {
+        let raw = Double("5.0") ?? Double.nan
+        XCTAssertEqual(Celsius_d("5.0"), Celsius_d(raw))
+    }
+
+    func testCelsius_dStaticVars() {
+        XCTAssertEqual(Celsius_d.nan.isNaN, Celsius_d(Double.nan).isNaN)
+        XCTAssertEqual(
+            Celsius_d.signalingNaN.isSignalingNaN,
+            Celsius_d(Double.signalingNaN).isSignalingNaN
+        )
+        XCTAssertEqual(Celsius_d.infinity, Celsius_d(Double.infinity))
+        XCTAssertEqual(Celsius_d.greatestFiniteMagnitude, Celsius_d(Double.greatestFiniteMagnitude))
+        XCTAssertEqual(Celsius_d.pi, Celsius_d(Double.pi))
+        XCTAssertEqual(Celsius_d.leastNormalMagnitude, Celsius_d(Double.leastNormalMagnitude))
+        XCTAssertEqual(Celsius_d.leastNonzeroMagnitude, Celsius_d(Double.leastNonzeroMagnitude))
+    }
+
+    func testCelsius_dUlp() {
+        let raw = Double(5)
+        XCTAssertEqual(Celsius_d(raw).ulp, Celsius_d(raw.ulp))
+    }
+
+    func testCelsius_dSign() {
+        let raw = Double(5)
+        XCTAssertEqual(Celsius_d(raw).sign, raw.sign)
+    }
+
+    func testCelsius_dSignificand() {
+        let raw = Double(5)
+        XCTAssertEqual(Celsius_d(raw).significand, Celsius_d(raw.significand))
+    }
+
+    func testCelsius_dNextUp() {
+        let raw = Double(5)
+        XCTAssertEqual(Celsius_d(raw).nextUp, Celsius_d(raw.nextUp))
+    }
+
+    func testCelsius_dVars() {
+        XCTAssertEqual(Celsius_d(5).isNormal, Double(5).isNormal)
+        XCTAssertEqual(Celsius_d(5).isFinite, Double(5).isFinite)
+        XCTAssertEqual(Celsius_d(5).isZero, Double(5).isZero)
+        XCTAssertEqual(Celsius_d(0).isZero, Double(0).isZero)
+        XCTAssertEqual(Celsius_d(5).isSubnormal, Double(5).isSubnormal)
+        XCTAssertEqual(Celsius_d(5).isInfinite, Double(5).isInfinite)
+        XCTAssertEqual(Celsius_d.infinity.isInfinite, Double.infinity.isInfinite)
+        XCTAssertEqual(Celsius_d(5).isNaN, Double(5).isNaN)
+        XCTAssertEqual(Celsius_d.nan.isNaN, Double.nan.isNaN)
+        XCTAssertEqual(Celsius_d(5).isSignalingNaN, Double(5).isSignalingNaN)
+        XCTAssertEqual(Celsius_d.nan.isSignalingNaN, Double.nan.isSignalingNaN)
+        XCTAssertEqual(Celsius_d(5).isCanonical, Double(5).isCanonical)
+        XCTAssertEqual(Celsius_d(5).description, Double(5).description)
+        XCTAssertEqual(Celsius_d(5).exponentBitPattern, Double(5).exponentBitPattern)
+        XCTAssertEqual(Celsius_d(5).significandBitPattern, Double(5).significandBitPattern)
+        XCTAssertEqual(Celsius_d(5).exponent, Double(5).exponent)
+    }
+
+    func testCelsius_dFormRemainder() {
+        var original = Double(4)
+        let denominator = Double(3)
+        original.formRemainder(dividingBy: denominator)
+        var result = Celsius_d(Double(4))
+        result.formRemainder(dividingBy: Celsius_d(denominator))
+        XCTAssertEqual(result, Celsius_d(original))
+    }
+
+    func testCelsius_dFormTruncatingRemainder() {
+        var original = Double(4)
+        let denominator = Double(3)
+        original.formTruncatingRemainder(dividingBy: denominator)
+        var result = Celsius_d(Double(4))
+        result.formTruncatingRemainder(dividingBy: Celsius_d(denominator))
+        XCTAssertEqual(result, Celsius_d(original))
+    }
+
+    func testCelsius_dFormSquareRoot() {
+        var original = Double(4)
+        original.formSquareRoot()
+        var result = Celsius_d(Double(4))
+        result.formSquareRoot()
+        XCTAssertEqual(result, Celsius_d(original))
+    }
+
+    func testCelsius_dAddProduct() {
+        var original = Double(4)
+        let lhs = Double(3)
+        let rhs = Double(5)
+        original.addProduct(lhs, rhs)
+        var result = Celsius_d(Double(4))
+        result.addProduct(Celsius_d(lhs), Celsius_d(rhs))
+        XCTAssertEqual(result, Celsius_d(original))
+    }
+
+    func testCelsius_dIsEqual() {
+        let this = Celsius_d(5)
+        let other = Celsius_d(6)
+        XCTAssertTrue(this.isEqual(to: this))
+        XCTAssertFalse(this.isEqual(to: other))
+    }
+
+    func testCelsius_dIsLess() {
+        let this = Celsius_d(5)
+        let other = Celsius_d(6)
+        XCTAssertFalse(this.isLess(than: this))
+        XCTAssertTrue(this.isLess(than: other))
+    }
+
+    func testCelsius_dIsLessThanOrEqual() {
+        let this = Celsius_d(5)
+        let other = Celsius_d(6)
+        let other2 = Celsius_d(4)
+        XCTAssertTrue(this.isLessThanOrEqualTo(this))
+        XCTAssertTrue(this.isLessThanOrEqualTo(other))
+        XCTAssertFalse(this.isLessThanOrEqualTo(other2))
+    }
+
+    func testCelsius_dOperations() {
+        let lhs = Celsius_d(6)
+        let rhs = Celsius_d(3)
+        XCTAssertEqual(lhs + rhs, Celsius_d(9))
+        XCTAssertEqual(lhs - rhs, Celsius_d(3))
+        XCTAssertEqual(lhs * rhs, Celsius_d(18))
+        XCTAssertEqual(lhs / rhs, Celsius_d(2))
+    }
+
+    func testCelsius_dTimesEqual() {
+        var this = Celsius_d(3)
+        this *= Celsius_d(4)
+        XCTAssertEqual(this, Celsius_d(12))
+    }
+
+    func testCelsius_dDivideEqual() {
+        var this = Celsius_d(6)
+        this /= Celsius_d(3)
+        XCTAssertEqual(this, Celsius_d(2))
+    }
+
+    func testCelsius_dRound() {
+        var expected = Double(5.6)
+        expected.round(.up)
+        var result = Celsius_d(5.6)
+        result.round(.up)
+        XCTAssertEqual(result, Celsius_d(expected))
+    }
+
+    func testCelsius_dDistanceTo() {
+        let original = Double(5.0)
+        let other = Double(23)
+        let expected = original.distance(to: other)
+        XCTAssertEqual(Celsius_d(original).distance(to: Celsius_d(other)), expected)
+    }
+
+    func testCelsius_dAdvancedBy() {
+        let original = Double(5)
+        let expected = original.advanced(by: 3)
+        XCTAssertEqual(Celsius_d(original).advanced(by: 3), Celsius_d(expected))
+    }
+
+}
+
+final class FahrenheitTypeTests: XCTestCase {
+
+    func testFahrenheit_tEquality() {
+        XCTAssertEqual(Fahrenheit_t(5), Fahrenheit_t(5))
+    }
+
+    func testFahrenheit_tCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Fahrenheit_t(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Fahrenheit_t.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testFahrenheit_tSelfInit() {
+        let expected = Fahrenheit_t(15)
+        XCTAssertEqual(expected, Fahrenheit_t(expected))
+    }
+
+    func testFahrenheit_tSelfExactlyInit() {
+        let expected = Fahrenheit_t(15)
+        XCTAssertEqual(expected, Fahrenheit_t(exactly: expected))
+    }
+
+    func testFahrenheit_tComparable() {
+        let lhs = Fahrenheit_t(1)
+        let rhs = Fahrenheit_t(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testFahrenheit_tMagnitude() {
+        let expected = CInt(5).magnitude
+        XCTAssertEqual(Fahrenheit_t(5).magnitude, expected)
+    }
+
+    func testFahrenheit_tTruncatingInit() {
+        let expected = Fahrenheit_t(CInt(truncatingIfNeeded: UInt64.max))
+        XCTAssertEqual(Fahrenheit_t(truncatingIfNeeded: expected), expected)
+    }
+
+    func testFahrenheit_tClampingInit() {
+        let expected = Fahrenheit_t(CInt(clamping: UInt64.max))
+        XCTAssertEqual(Fahrenheit_t(clamping: expected), expected)
+    }
+
+    func testFahrenheit_tBitWidth() {
+        let expected = CInt(5).bitWidth
+        XCTAssertEqual(Fahrenheit_t(5).bitWidth, expected)
+    }
+
+    func testFahrenheit_tLeadingZeroBitCount() {
+        let expected = CInt(5).leadingZeroBitCount
+        XCTAssertEqual(Fahrenheit_t(5).leadingZeroBitCount, expected)
+    }
+
+    func testFahrenheit_tNonzeroBitCount() {
+        let expected = CInt(5).nonzeroBitCount
+        XCTAssertEqual(Fahrenheit_t(5).nonzeroBitCount, expected)
+    }
+
+    func testFahrenheit_tIntegerLiteralInit() {
+        let expected = CInt(integerLiteral: CInt.max)
+        XCTAssertEqual(Fahrenheit_t(expected), Fahrenheit_t(integerLiteral: CInt.max))
+    }
+
+    func testFahrenheit_tTruncatingBits() {
+        let expected = Fahrenheit_t(CInt(_truncatingBits: UInt.max))
+        XCTAssertEqual(expected, Fahrenheit_t(_truncatingBits: UInt.max))
+    }
+
+    func testFahrenheit_tAddition() {
+        let expected = Fahrenheit_t(CInt(5) + CInt(3))
+        XCTAssertEqual(Fahrenheit_t(5) + Fahrenheit_t(3), expected)
+    }
+
+    func testFahrenheit_tSubtraction() {
+        let expected = Fahrenheit_t(CInt(5) - CInt(3))
+        XCTAssertEqual(Fahrenheit_t(5) - Fahrenheit_t(3), expected)
+    }
+
+    func testFahrenheit_tMultiplication() {
+        let expected = Fahrenheit_t(CInt(5) * CInt(3))
+        XCTAssertEqual(Fahrenheit_t(5) * Fahrenheit_t(3), expected)
+    }
+
+    func testFahrenheit_tDivision() {
+        let expected = Fahrenheit_t(CInt(6) / CInt(3))
+        XCTAssertEqual(Fahrenheit_t(6) / Fahrenheit_t(3), expected)
+    }
+
+    func testFahrenheit_tAddOverflow() {
+        let rawOriginal = CInt.max
+        let rawResult = rawOriginal.addingReportingOverflow(CInt(1))
+        let original = Fahrenheit_t(rawOriginal)
+        let result = original.addingReportingOverflow(Fahrenheit_t(1))
+        XCTAssertEqual(result.0, Fahrenheit_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testFahrenheit_tMultiplyOverflow() {
+        let rawOriginal = CInt.max
+        let rawResult = rawOriginal.multipliedReportingOverflow(by: CInt(2))
+        let original = Fahrenheit_t(rawOriginal)
+        let result = original.multipliedReportingOverflow(by: Fahrenheit_t(2))
+        XCTAssertEqual(result.0, Fahrenheit_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testFahrenheit_tSubtractOverflow() {
+        let rawOriginal = CInt.min
+        let rawResult = rawOriginal.subtractingReportingOverflow(CInt(1))
+        let original = Fahrenheit_t(rawOriginal)
+        let result = original.subtractingReportingOverflow(Fahrenheit_t(1))
+        XCTAssertEqual(result.0, Fahrenheit_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testFahrenheit_tDivideOverflow() {
+        let rawOriginal = CInt(1)
+        let rawResult = rawOriginal.dividedReportingOverflow(by: CInt.max)
+        let original = Fahrenheit_t(rawOriginal)
+        let result = original.dividedReportingOverflow(by: Fahrenheit_t(CInt.max))
+        XCTAssertEqual(result.0, Fahrenheit_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testFahrenheit_tRemainderOverflow() {
+        let rawOriginal = CInt(1)
+        let rawResult = rawOriginal.remainderReportingOverflow(dividingBy: CInt.max)
+        let original = Fahrenheit_t(rawOriginal)
+        let result = original.remainderReportingOverflow(dividingBy: Fahrenheit_t(CInt.max))
+        XCTAssertEqual(result.0, Fahrenheit_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testFahrenheit_tTrailingZeroBitCount() {
+        let original = CInt(1)
+        XCTAssertEqual(Fahrenheit_t(original).trailingZeroBitCount, original.trailingZeroBitCount)
+    }
+
+    func testFahrenheit_tTimesEquals() {
+        var original = CInt(2)
+        original *= 4
+        var result = Fahrenheit_t(CInt(2))
+        result *= 4
+        XCTAssertEqual(result, Fahrenheit_t(original))
+    }
+
+    func testFahrenheit_tDivideEquals() {
+        var original = CInt(4)
+        original /= 2
+        var result = Fahrenheit_t(CInt(4))
+        result /= 2
+        XCTAssertEqual(result, Fahrenheit_t(original))
+    }
+
+    func testFahrenheit_tModEquals() {
+        var original = CInt(4)
+        original %= 2
+        var result = Fahrenheit_t(CInt(4))
+        result %= 2
+        XCTAssertEqual(result, Fahrenheit_t(original))
+    }
+
+    func testFahrenheit_tAndEquals() {
+        var original = CInt(2)
+        original &= 6
+        var result = Fahrenheit_t(CInt(2))
+        result &= 6
+        XCTAssertEqual(result, Fahrenheit_t(original))
+    }
+
+    func testFahrenheit_tOrEquals() {
+        var original = CInt(2)
+        original |= 4
+        var result = Fahrenheit_t(CInt(2))
+        result |= 4
+        XCTAssertEqual(result, Fahrenheit_t(original))
+    }
+
+    func testFahrenheit_tHatEquals() {
+        var original = CInt(2)
+        original ^= 4
+        var result = Fahrenheit_t(CInt(2))
+        result ^= 4
+        XCTAssertEqual(result, Fahrenheit_t(original))
+    }
+
+    func testFahrenheit_tMod() {
+        let original = CInt(4)
+        let expected = Fahrenheit_t(original % 2)
+        XCTAssertEqual(Fahrenheit_t(original) % 2, expected)
+    }
+
+    func testFahrenheit_uEquality() {
+        XCTAssertEqual(Fahrenheit_u(5), Fahrenheit_u(5))
+    }
+
+    func testFahrenheit_uCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Fahrenheit_u(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Fahrenheit_u.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testFahrenheit_uSelfInit() {
+        let expected = Fahrenheit_u(15)
+        XCTAssertEqual(expected, Fahrenheit_u(expected))
+    }
+
+    func testFahrenheit_uSelfExactlyInit() {
+        let expected = Fahrenheit_u(15)
+        XCTAssertEqual(expected, Fahrenheit_u(exactly: expected))
+    }
+
+    func testFahrenheit_uComparable() {
+        let lhs = Fahrenheit_u(1)
+        let rhs = Fahrenheit_u(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testFahrenheit_uMagnitude() {
+        let expected = CUnsignedInt(5).magnitude
+        XCTAssertEqual(Fahrenheit_u(5).magnitude, expected)
+    }
+
+    func testFahrenheit_uTruncatingInit() {
+        let expected = Fahrenheit_u(CUnsignedInt(truncatingIfNeeded: UInt64.max))
+        XCTAssertEqual(Fahrenheit_u(truncatingIfNeeded: expected), expected)
+    }
+
+    func testFahrenheit_uClampingInit() {
+        let expected = Fahrenheit_u(CUnsignedInt(clamping: UInt64.max))
+        XCTAssertEqual(Fahrenheit_u(clamping: expected), expected)
+    }
+
+    func testFahrenheit_uBitWidth() {
+        let expected = CUnsignedInt(5).bitWidth
+        XCTAssertEqual(Fahrenheit_u(5).bitWidth, expected)
+    }
+
+    func testFahrenheit_uLeadingZeroBitCount() {
+        let expected = CUnsignedInt(5).leadingZeroBitCount
+        XCTAssertEqual(Fahrenheit_u(5).leadingZeroBitCount, expected)
+    }
+
+    func testFahrenheit_uNonzeroBitCount() {
+        let expected = CUnsignedInt(5).nonzeroBitCount
+        XCTAssertEqual(Fahrenheit_u(5).nonzeroBitCount, expected)
+    }
+
+    func testFahrenheit_uIntegerLiteralInit() {
+        let expected = CUnsignedInt(integerLiteral: CUnsignedInt.max)
+        XCTAssertEqual(Fahrenheit_u(expected), Fahrenheit_u(integerLiteral: CUnsignedInt.max))
+    }
+
+    func testFahrenheit_uTruncatingBits() {
+        let expected = Fahrenheit_u(CUnsignedInt(_truncatingBits: UInt.max))
+        XCTAssertEqual(expected, Fahrenheit_u(_truncatingBits: UInt.max))
+    }
+
+    func testFahrenheit_uAddition() {
+        let expected = Fahrenheit_u(CUnsignedInt(5) + CUnsignedInt(3))
+        XCTAssertEqual(Fahrenheit_u(5) + Fahrenheit_u(3), expected)
+    }
+
+    func testFahrenheit_uSubtraction() {
+        let expected = Fahrenheit_u(CUnsignedInt(5) - CUnsignedInt(3))
+        XCTAssertEqual(Fahrenheit_u(5) - Fahrenheit_u(3), expected)
+    }
+
+    func testFahrenheit_uMultiplication() {
+        let expected = Fahrenheit_u(CUnsignedInt(5) * CUnsignedInt(3))
+        XCTAssertEqual(Fahrenheit_u(5) * Fahrenheit_u(3), expected)
+    }
+
+    func testFahrenheit_uDivision() {
+        let expected = Fahrenheit_u(CUnsignedInt(6) / CUnsignedInt(3))
+        XCTAssertEqual(Fahrenheit_u(6) / Fahrenheit_u(3), expected)
+    }
+
+    func testFahrenheit_uAddOverflow() {
+        let rawOriginal = CUnsignedInt.max
+        let rawResult = rawOriginal.addingReportingOverflow(CUnsignedInt(1))
+        let original = Fahrenheit_u(rawOriginal)
+        let result = original.addingReportingOverflow(Fahrenheit_u(1))
+        XCTAssertEqual(result.0, Fahrenheit_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testFahrenheit_uMultiplyOverflow() {
+        let rawOriginal = CUnsignedInt.max
+        let rawResult = rawOriginal.multipliedReportingOverflow(by: CUnsignedInt(2))
+        let original = Fahrenheit_u(rawOriginal)
+        let result = original.multipliedReportingOverflow(by: Fahrenheit_u(2))
+        XCTAssertEqual(result.0, Fahrenheit_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testFahrenheit_uSubtractOverflow() {
+        let rawOriginal = CUnsignedInt.min
+        let rawResult = rawOriginal.subtractingReportingOverflow(CUnsignedInt(1))
+        let original = Fahrenheit_u(rawOriginal)
+        let result = original.subtractingReportingOverflow(Fahrenheit_u(1))
+        XCTAssertEqual(result.0, Fahrenheit_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testFahrenheit_uDivideOverflow() {
+        let rawOriginal = CUnsignedInt(1)
+        let rawResult = rawOriginal.dividedReportingOverflow(by: CUnsignedInt.max)
+        let original = Fahrenheit_u(rawOriginal)
+        let result = original.dividedReportingOverflow(by: Fahrenheit_u(CUnsignedInt.max))
+        XCTAssertEqual(result.0, Fahrenheit_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testFahrenheit_uRemainderOverflow() {
+        let rawOriginal = CUnsignedInt(1)
+        let rawResult = rawOriginal.remainderReportingOverflow(dividingBy: CUnsignedInt.max)
+        let original = Fahrenheit_u(rawOriginal)
+        let result = original.remainderReportingOverflow(dividingBy: Fahrenheit_u(CUnsignedInt.max))
+        XCTAssertEqual(result.0, Fahrenheit_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testFahrenheit_uTrailingZeroBitCount() {
+        let original = CUnsignedInt(1)
+        XCTAssertEqual(Fahrenheit_u(original).trailingZeroBitCount, original.trailingZeroBitCount)
+    }
+
+    func testFahrenheit_uTimesEquals() {
+        var original = CUnsignedInt(2)
+        original *= 4
+        var result = Fahrenheit_u(CUnsignedInt(2))
+        result *= 4
+        XCTAssertEqual(result, Fahrenheit_u(original))
+    }
+
+    func testFahrenheit_uDivideEquals() {
+        var original = CUnsignedInt(4)
+        original /= 2
+        var result = Fahrenheit_u(CUnsignedInt(4))
+        result /= 2
+        XCTAssertEqual(result, Fahrenheit_u(original))
+    }
+
+    func testFahrenheit_uModEquals() {
+        var original = CUnsignedInt(4)
+        original %= 2
+        var result = Fahrenheit_u(CUnsignedInt(4))
+        result %= 2
+        XCTAssertEqual(result, Fahrenheit_u(original))
+    }
+
+    func testFahrenheit_uAndEquals() {
+        var original = CUnsignedInt(2)
+        original &= 6
+        var result = Fahrenheit_u(CUnsignedInt(2))
+        result &= 6
+        XCTAssertEqual(result, Fahrenheit_u(original))
+    }
+
+    func testFahrenheit_uOrEquals() {
+        var original = CUnsignedInt(2)
+        original |= 4
+        var result = Fahrenheit_u(CUnsignedInt(2))
+        result |= 4
+        XCTAssertEqual(result, Fahrenheit_u(original))
+    }
+
+    func testFahrenheit_uHatEquals() {
+        var original = CUnsignedInt(2)
+        original ^= 4
+        var result = Fahrenheit_u(CUnsignedInt(2))
+        result ^= 4
+        XCTAssertEqual(result, Fahrenheit_u(original))
+    }
+
+    func testFahrenheit_uMod() {
+        let original = CUnsignedInt(4)
+        let expected = Fahrenheit_u(original % 2)
+        XCTAssertEqual(Fahrenheit_u(original) % 2, expected)
+    }
+
+    func testFahrenheit_fEquality() {
+        XCTAssertEqual(Fahrenheit_f(5), Fahrenheit_f(5))
+    }
+
+    func testFahrenheit_fCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Fahrenheit_f(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Fahrenheit_f.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testFahrenheit_fSelfInit() {
+        let expected = Fahrenheit_f(15)
+        XCTAssertEqual(expected, Fahrenheit_f(expected))
+    }
+
+    func testFahrenheit_fSelfExactlyInit() {
+        let expected = Fahrenheit_f(15)
+        XCTAssertEqual(expected, Fahrenheit_f(exactly: expected))
+    }
+
+    func testFahrenheit_fComparable() {
+        let lhs = Fahrenheit_f(1)
+        let rhs = Fahrenheit_f(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testFahrenheit_fRadix() {
+        XCTAssertEqual(Fahrenheit_f.radix, Float.radix)
+    }
+
+    func testFahrenheit_fExponentBitCount() {
+        XCTAssertEqual(Fahrenheit_f.exponentBitCount, Float.exponentBitCount)
+    }
+
+    func testFahrenheit_fSignificandBitCount() {
+        XCTAssertEqual(Fahrenheit_f.significandBitCount, Float.significandBitCount)
+    }
+
+    func testFahrenheit_fMagnitude() {
+        let expected = Fahrenheit_f(Float(5).magnitude)
+        XCTAssertEqual(Fahrenheit_f(5).magnitude, expected)
+    }
+
+    func testFahrenheit_fExactlyInit() {
+        let expected = Fahrenheit_f(Float(exactly: Int(5)) ?? Float.infinity)
+        XCTAssertEqual(Fahrenheit_f(exactly: Int(5)), expected)
+    }
+
+    func testFahrenheit_fIsTotallyOrdered() {
+        let param = Float(100)
+        let other = Float(5)
+        XCTAssertEqual(
+            Fahrenheit_f(param).isTotallyOrdered(belowOrEqualTo: Fahrenheit_f(other)),
+            param.isTotallyOrdered(belowOrEqualTo: other)
+        )
+    }
+
+    func testFahrenheit_fBinade() {
+        let raw = Float(5)
+        let expected = Fahrenheit_f(raw.binade)
+        XCTAssertEqual(Fahrenheit_f(raw).binade, expected)
+    }
+
+    func testFahrenheit_fSignificandWidth() {
+        let raw = Float(5)
+        XCTAssertEqual(Fahrenheit_f(raw).significandWidth, raw.significandWidth)
+    }
+
+    func testFahrenheit_fDebugDescription() {
+        let raw = Float(5)
+        XCTAssertEqual(Fahrenheit_f(raw).debugDescription, raw.debugDescription)
+    }
+
+    func testFahrenheit_fDescriptionInit() {
+        let raw = Float("5.0") ?? Float.nan
+        XCTAssertEqual(Fahrenheit_f("5.0"), Fahrenheit_f(raw))
+    }
+
+    func testFahrenheit_fStaticVars() {
+        XCTAssertEqual(Fahrenheit_f.nan.isNaN, Fahrenheit_f(Float.nan).isNaN)
+        XCTAssertEqual(
+            Fahrenheit_f.signalingNaN.isSignalingNaN,
+            Fahrenheit_f(Float.signalingNaN).isSignalingNaN
+        )
+        XCTAssertEqual(Fahrenheit_f.infinity, Fahrenheit_f(Float.infinity))
+        XCTAssertEqual(Fahrenheit_f.greatestFiniteMagnitude, Fahrenheit_f(Float.greatestFiniteMagnitude))
+        XCTAssertEqual(Fahrenheit_f.pi, Fahrenheit_f(Float.pi))
+        XCTAssertEqual(Fahrenheit_f.leastNormalMagnitude, Fahrenheit_f(Float.leastNormalMagnitude))
+        XCTAssertEqual(Fahrenheit_f.leastNonzeroMagnitude, Fahrenheit_f(Float.leastNonzeroMagnitude))
+    }
+
+    func testFahrenheit_fUlp() {
+        let raw = Float(5)
+        XCTAssertEqual(Fahrenheit_f(raw).ulp, Fahrenheit_f(raw.ulp))
+    }
+
+    func testFahrenheit_fSign() {
+        let raw = Float(5)
+        XCTAssertEqual(Fahrenheit_f(raw).sign, raw.sign)
+    }
+
+    func testFahrenheit_fSignificand() {
+        let raw = Float(5)
+        XCTAssertEqual(Fahrenheit_f(raw).significand, Fahrenheit_f(raw.significand))
+    }
+
+    func testFahrenheit_fNextUp() {
+        let raw = Float(5)
+        XCTAssertEqual(Fahrenheit_f(raw).nextUp, Fahrenheit_f(raw.nextUp))
+    }
+
+    func testFahrenheit_fVars() {
+        XCTAssertEqual(Fahrenheit_f(5).isNormal, Float(5).isNormal)
+        XCTAssertEqual(Fahrenheit_f(5).isFinite, Float(5).isFinite)
+        XCTAssertEqual(Fahrenheit_f(5).isZero, Float(5).isZero)
+        XCTAssertEqual(Fahrenheit_f(0).isZero, Float(0).isZero)
+        XCTAssertEqual(Fahrenheit_f(5).isSubnormal, Float(5).isSubnormal)
+        XCTAssertEqual(Fahrenheit_f(5).isInfinite, Float(5).isInfinite)
+        XCTAssertEqual(Fahrenheit_f.infinity.isInfinite, Float.infinity.isInfinite)
+        XCTAssertEqual(Fahrenheit_f(5).isNaN, Float(5).isNaN)
+        XCTAssertEqual(Fahrenheit_f.nan.isNaN, Float.nan.isNaN)
+        XCTAssertEqual(Fahrenheit_f(5).isSignalingNaN, Float(5).isSignalingNaN)
+        XCTAssertEqual(Fahrenheit_f.nan.isSignalingNaN, Float.nan.isSignalingNaN)
+        XCTAssertEqual(Fahrenheit_f(5).isCanonical, Float(5).isCanonical)
+        XCTAssertEqual(Fahrenheit_f(5).description, Float(5).description)
+        XCTAssertEqual(Fahrenheit_f(5).exponentBitPattern, Float(5).exponentBitPattern)
+        XCTAssertEqual(Fahrenheit_f(5).significandBitPattern, Float(5).significandBitPattern)
+        XCTAssertEqual(Fahrenheit_f(5).exponent, Float(5).exponent)
+    }
+
+    func testFahrenheit_fFormRemainder() {
+        var original = Float(4)
+        let denominator = Float(3)
+        original.formRemainder(dividingBy: denominator)
+        var result = Fahrenheit_f(Float(4))
+        result.formRemainder(dividingBy: Fahrenheit_f(denominator))
+        XCTAssertEqual(result, Fahrenheit_f(original))
+    }
+
+    func testFahrenheit_fFormTruncatingRemainder() {
+        var original = Float(4)
+        let denominator = Float(3)
+        original.formTruncatingRemainder(dividingBy: denominator)
+        var result = Fahrenheit_f(Float(4))
+        result.formTruncatingRemainder(dividingBy: Fahrenheit_f(denominator))
+        XCTAssertEqual(result, Fahrenheit_f(original))
+    }
+
+    func testFahrenheit_fFormSquareRoot() {
+        var original = Float(4)
+        original.formSquareRoot()
+        var result = Fahrenheit_f(Float(4))
+        result.formSquareRoot()
+        XCTAssertEqual(result, Fahrenheit_f(original))
+    }
+
+    func testFahrenheit_fAddProduct() {
+        var original = Float(4)
+        let lhs = Float(3)
+        let rhs = Float(5)
+        original.addProduct(lhs, rhs)
+        var result = Fahrenheit_f(Float(4))
+        result.addProduct(Fahrenheit_f(lhs), Fahrenheit_f(rhs))
+        XCTAssertEqual(result, Fahrenheit_f(original))
+    }
+
+    func testFahrenheit_fIsEqual() {
+        let this = Fahrenheit_f(5)
+        let other = Fahrenheit_f(6)
+        XCTAssertTrue(this.isEqual(to: this))
+        XCTAssertFalse(this.isEqual(to: other))
+    }
+
+    func testFahrenheit_fIsLess() {
+        let this = Fahrenheit_f(5)
+        let other = Fahrenheit_f(6)
+        XCTAssertFalse(this.isLess(than: this))
+        XCTAssertTrue(this.isLess(than: other))
+    }
+
+    func testFahrenheit_fIsLessThanOrEqual() {
+        let this = Fahrenheit_f(5)
+        let other = Fahrenheit_f(6)
+        let other2 = Fahrenheit_f(4)
+        XCTAssertTrue(this.isLessThanOrEqualTo(this))
+        XCTAssertTrue(this.isLessThanOrEqualTo(other))
+        XCTAssertFalse(this.isLessThanOrEqualTo(other2))
+    }
+
+    func testFahrenheit_fOperations() {
+        let lhs = Fahrenheit_f(6)
+        let rhs = Fahrenheit_f(3)
+        XCTAssertEqual(lhs + rhs, Fahrenheit_f(9))
+        XCTAssertEqual(lhs - rhs, Fahrenheit_f(3))
+        XCTAssertEqual(lhs * rhs, Fahrenheit_f(18))
+        XCTAssertEqual(lhs / rhs, Fahrenheit_f(2))
+    }
+
+    func testFahrenheit_fTimesEqual() {
+        var this = Fahrenheit_f(3)
+        this *= Fahrenheit_f(4)
+        XCTAssertEqual(this, Fahrenheit_f(12))
+    }
+
+    func testFahrenheit_fDivideEqual() {
+        var this = Fahrenheit_f(6)
+        this /= Fahrenheit_f(3)
+        XCTAssertEqual(this, Fahrenheit_f(2))
+    }
+
+    func testFahrenheit_fRound() {
+        var expected = Float(5.6)
+        expected.round(.up)
+        var result = Fahrenheit_f(5.6)
+        result.round(.up)
+        XCTAssertEqual(result, Fahrenheit_f(expected))
+    }
+
+    func testFahrenheit_fDistanceTo() {
+        let original = Float(5.0)
+        let other = Float(23)
+        let expected = original.distance(to: other)
+        XCTAssertEqual(Fahrenheit_f(original).distance(to: Fahrenheit_f(other)), expected)
+    }
+
+    func testFahrenheit_fAdvancedBy() {
+        let original = Float(5)
+        let expected = original.advanced(by: 3)
+        XCTAssertEqual(Fahrenheit_f(original).advanced(by: 3), Fahrenheit_f(expected))
+    }
+
+    func testFahrenheit_dEquality() {
+        XCTAssertEqual(Fahrenheit_d(5), Fahrenheit_d(5))
+    }
+
+    func testFahrenheit_dCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Fahrenheit_d(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Fahrenheit_d.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testFahrenheit_dSelfInit() {
+        let expected = Fahrenheit_d(15)
+        XCTAssertEqual(expected, Fahrenheit_d(expected))
+    }
+
+    func testFahrenheit_dSelfExactlyInit() {
+        let expected = Fahrenheit_d(15)
+        XCTAssertEqual(expected, Fahrenheit_d(exactly: expected))
+    }
+
+    func testFahrenheit_dComparable() {
+        let lhs = Fahrenheit_d(1)
+        let rhs = Fahrenheit_d(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testFahrenheit_dRadix() {
+        XCTAssertEqual(Fahrenheit_d.radix, Double.radix)
+    }
+
+    func testFahrenheit_dExponentBitCount() {
+        XCTAssertEqual(Fahrenheit_d.exponentBitCount, Double.exponentBitCount)
+    }
+
+    func testFahrenheit_dSignificandBitCount() {
+        XCTAssertEqual(Fahrenheit_d.significandBitCount, Double.significandBitCount)
+    }
+
+    func testFahrenheit_dMagnitude() {
+        let expected = Fahrenheit_d(Double(5).magnitude)
+        XCTAssertEqual(Fahrenheit_d(5).magnitude, expected)
+    }
+
+    func testFahrenheit_dExactlyInit() {
+        let expected = Fahrenheit_d(Double(exactly: Int(5)) ?? Double.infinity)
+        XCTAssertEqual(Fahrenheit_d(exactly: Int(5)), expected)
+    }
+
+    func testFahrenheit_dIsTotallyOrdered() {
+        let param = Double(100)
+        let other = Double(5)
+        XCTAssertEqual(
+            Fahrenheit_d(param).isTotallyOrdered(belowOrEqualTo: Fahrenheit_d(other)),
+            param.isTotallyOrdered(belowOrEqualTo: other)
+        )
+    }
+
+    func testFahrenheit_dBinade() {
+        let raw = Double(5)
+        let expected = Fahrenheit_d(raw.binade)
+        XCTAssertEqual(Fahrenheit_d(raw).binade, expected)
+    }
+
+    func testFahrenheit_dSignificandWidth() {
+        let raw = Double(5)
+        XCTAssertEqual(Fahrenheit_d(raw).significandWidth, raw.significandWidth)
+    }
+
+    func testFahrenheit_dDebugDescription() {
+        let raw = Double(5)
+        XCTAssertEqual(Fahrenheit_d(raw).debugDescription, raw.debugDescription)
+    }
+
+    func testFahrenheit_dDescriptionInit() {
+        let raw = Double("5.0") ?? Double.nan
+        XCTAssertEqual(Fahrenheit_d("5.0"), Fahrenheit_d(raw))
+    }
+
+    func testFahrenheit_dStaticVars() {
+        XCTAssertEqual(Fahrenheit_d.nan.isNaN, Fahrenheit_d(Double.nan).isNaN)
+        XCTAssertEqual(
+            Fahrenheit_d.signalingNaN.isSignalingNaN,
+            Fahrenheit_d(Double.signalingNaN).isSignalingNaN
+        )
+        XCTAssertEqual(Fahrenheit_d.infinity, Fahrenheit_d(Double.infinity))
+        XCTAssertEqual(Fahrenheit_d.greatestFiniteMagnitude, Fahrenheit_d(Double.greatestFiniteMagnitude))
+        XCTAssertEqual(Fahrenheit_d.pi, Fahrenheit_d(Double.pi))
+        XCTAssertEqual(Fahrenheit_d.leastNormalMagnitude, Fahrenheit_d(Double.leastNormalMagnitude))
+        XCTAssertEqual(Fahrenheit_d.leastNonzeroMagnitude, Fahrenheit_d(Double.leastNonzeroMagnitude))
+    }
+
+    func testFahrenheit_dUlp() {
+        let raw = Double(5)
+        XCTAssertEqual(Fahrenheit_d(raw).ulp, Fahrenheit_d(raw.ulp))
+    }
+
+    func testFahrenheit_dSign() {
+        let raw = Double(5)
+        XCTAssertEqual(Fahrenheit_d(raw).sign, raw.sign)
+    }
+
+    func testFahrenheit_dSignificand() {
+        let raw = Double(5)
+        XCTAssertEqual(Fahrenheit_d(raw).significand, Fahrenheit_d(raw.significand))
+    }
+
+    func testFahrenheit_dNextUp() {
+        let raw = Double(5)
+        XCTAssertEqual(Fahrenheit_d(raw).nextUp, Fahrenheit_d(raw.nextUp))
+    }
+
+    func testFahrenheit_dVars() {
+        XCTAssertEqual(Fahrenheit_d(5).isNormal, Double(5).isNormal)
+        XCTAssertEqual(Fahrenheit_d(5).isFinite, Double(5).isFinite)
+        XCTAssertEqual(Fahrenheit_d(5).isZero, Double(5).isZero)
+        XCTAssertEqual(Fahrenheit_d(0).isZero, Double(0).isZero)
+        XCTAssertEqual(Fahrenheit_d(5).isSubnormal, Double(5).isSubnormal)
+        XCTAssertEqual(Fahrenheit_d(5).isInfinite, Double(5).isInfinite)
+        XCTAssertEqual(Fahrenheit_d.infinity.isInfinite, Double.infinity.isInfinite)
+        XCTAssertEqual(Fahrenheit_d(5).isNaN, Double(5).isNaN)
+        XCTAssertEqual(Fahrenheit_d.nan.isNaN, Double.nan.isNaN)
+        XCTAssertEqual(Fahrenheit_d(5).isSignalingNaN, Double(5).isSignalingNaN)
+        XCTAssertEqual(Fahrenheit_d.nan.isSignalingNaN, Double.nan.isSignalingNaN)
+        XCTAssertEqual(Fahrenheit_d(5).isCanonical, Double(5).isCanonical)
+        XCTAssertEqual(Fahrenheit_d(5).description, Double(5).description)
+        XCTAssertEqual(Fahrenheit_d(5).exponentBitPattern, Double(5).exponentBitPattern)
+        XCTAssertEqual(Fahrenheit_d(5).significandBitPattern, Double(5).significandBitPattern)
+        XCTAssertEqual(Fahrenheit_d(5).exponent, Double(5).exponent)
+    }
+
+    func testFahrenheit_dFormRemainder() {
+        var original = Double(4)
+        let denominator = Double(3)
+        original.formRemainder(dividingBy: denominator)
+        var result = Fahrenheit_d(Double(4))
+        result.formRemainder(dividingBy: Fahrenheit_d(denominator))
+        XCTAssertEqual(result, Fahrenheit_d(original))
+    }
+
+    func testFahrenheit_dFormTruncatingRemainder() {
+        var original = Double(4)
+        let denominator = Double(3)
+        original.formTruncatingRemainder(dividingBy: denominator)
+        var result = Fahrenheit_d(Double(4))
+        result.formTruncatingRemainder(dividingBy: Fahrenheit_d(denominator))
+        XCTAssertEqual(result, Fahrenheit_d(original))
+    }
+
+    func testFahrenheit_dFormSquareRoot() {
+        var original = Double(4)
+        original.formSquareRoot()
+        var result = Fahrenheit_d(Double(4))
+        result.formSquareRoot()
+        XCTAssertEqual(result, Fahrenheit_d(original))
+    }
+
+    func testFahrenheit_dAddProduct() {
+        var original = Double(4)
+        let lhs = Double(3)
+        let rhs = Double(5)
+        original.addProduct(lhs, rhs)
+        var result = Fahrenheit_d(Double(4))
+        result.addProduct(Fahrenheit_d(lhs), Fahrenheit_d(rhs))
+        XCTAssertEqual(result, Fahrenheit_d(original))
+    }
+
+    func testFahrenheit_dIsEqual() {
+        let this = Fahrenheit_d(5)
+        let other = Fahrenheit_d(6)
+        XCTAssertTrue(this.isEqual(to: this))
+        XCTAssertFalse(this.isEqual(to: other))
+    }
+
+    func testFahrenheit_dIsLess() {
+        let this = Fahrenheit_d(5)
+        let other = Fahrenheit_d(6)
+        XCTAssertFalse(this.isLess(than: this))
+        XCTAssertTrue(this.isLess(than: other))
+    }
+
+    func testFahrenheit_dIsLessThanOrEqual() {
+        let this = Fahrenheit_d(5)
+        let other = Fahrenheit_d(6)
+        let other2 = Fahrenheit_d(4)
+        XCTAssertTrue(this.isLessThanOrEqualTo(this))
+        XCTAssertTrue(this.isLessThanOrEqualTo(other))
+        XCTAssertFalse(this.isLessThanOrEqualTo(other2))
+    }
+
+    func testFahrenheit_dOperations() {
+        let lhs = Fahrenheit_d(6)
+        let rhs = Fahrenheit_d(3)
+        XCTAssertEqual(lhs + rhs, Fahrenheit_d(9))
+        XCTAssertEqual(lhs - rhs, Fahrenheit_d(3))
+        XCTAssertEqual(lhs * rhs, Fahrenheit_d(18))
+        XCTAssertEqual(lhs / rhs, Fahrenheit_d(2))
+    }
+
+    func testFahrenheit_dTimesEqual() {
+        var this = Fahrenheit_d(3)
+        this *= Fahrenheit_d(4)
+        XCTAssertEqual(this, Fahrenheit_d(12))
+    }
+
+    func testFahrenheit_dDivideEqual() {
+        var this = Fahrenheit_d(6)
+        this /= Fahrenheit_d(3)
+        XCTAssertEqual(this, Fahrenheit_d(2))
+    }
+
+    func testFahrenheit_dRound() {
+        var expected = Double(5.6)
+        expected.round(.up)
+        var result = Fahrenheit_d(5.6)
+        result.round(.up)
+        XCTAssertEqual(result, Fahrenheit_d(expected))
+    }
+
+    func testFahrenheit_dDistanceTo() {
+        let original = Double(5.0)
+        let other = Double(23)
+        let expected = original.distance(to: other)
+        XCTAssertEqual(Fahrenheit_d(original).distance(to: Fahrenheit_d(other)), expected)
+    }
+
+    func testFahrenheit_dAdvancedBy() {
+        let original = Double(5)
+        let expected = original.advanced(by: 3)
+        XCTAssertEqual(Fahrenheit_d(original).advanced(by: 3), Fahrenheit_d(expected))
+    }
+
+}
+
+final class KelvinTypeTests: XCTestCase {
+
+    func testKelvin_tEquality() {
+        XCTAssertEqual(Kelvin_t(5), Kelvin_t(5))
+    }
+
+    func testKelvin_tCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Kelvin_t(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Kelvin_t.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testKelvin_tSelfInit() {
+        let expected = Kelvin_t(15)
+        XCTAssertEqual(expected, Kelvin_t(expected))
+    }
+
+    func testKelvin_tSelfExactlyInit() {
+        let expected = Kelvin_t(15)
+        XCTAssertEqual(expected, Kelvin_t(exactly: expected))
+    }
+
+    func testKelvin_tComparable() {
+        let lhs = Kelvin_t(1)
+        let rhs = Kelvin_t(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testKelvin_tMagnitude() {
+        let expected = CInt(5).magnitude
+        XCTAssertEqual(Kelvin_t(5).magnitude, expected)
+    }
+
+    func testKelvin_tTruncatingInit() {
+        let expected = Kelvin_t(CInt(truncatingIfNeeded: UInt64.max))
+        XCTAssertEqual(Kelvin_t(truncatingIfNeeded: expected), expected)
+    }
+
+    func testKelvin_tClampingInit() {
+        let expected = Kelvin_t(CInt(clamping: UInt64.max))
+        XCTAssertEqual(Kelvin_t(clamping: expected), expected)
+    }
+
+    func testKelvin_tBitWidth() {
+        let expected = CInt(5).bitWidth
+        XCTAssertEqual(Kelvin_t(5).bitWidth, expected)
+    }
+
+    func testKelvin_tLeadingZeroBitCount() {
+        let expected = CInt(5).leadingZeroBitCount
+        XCTAssertEqual(Kelvin_t(5).leadingZeroBitCount, expected)
+    }
+
+    func testKelvin_tNonzeroBitCount() {
+        let expected = CInt(5).nonzeroBitCount
+        XCTAssertEqual(Kelvin_t(5).nonzeroBitCount, expected)
+    }
+
+    func testKelvin_tIntegerLiteralInit() {
+        let expected = CInt(integerLiteral: CInt.max)
+        XCTAssertEqual(Kelvin_t(expected), Kelvin_t(integerLiteral: CInt.max))
+    }
+
+    func testKelvin_tTruncatingBits() {
+        let expected = Kelvin_t(CInt(_truncatingBits: UInt.max))
+        XCTAssertEqual(expected, Kelvin_t(_truncatingBits: UInt.max))
+    }
+
+    func testKelvin_tAddition() {
+        let expected = Kelvin_t(CInt(5) + CInt(3))
+        XCTAssertEqual(Kelvin_t(5) + Kelvin_t(3), expected)
+    }
+
+    func testKelvin_tSubtraction() {
+        let expected = Kelvin_t(CInt(5) - CInt(3))
+        XCTAssertEqual(Kelvin_t(5) - Kelvin_t(3), expected)
+    }
+
+    func testKelvin_tMultiplication() {
+        let expected = Kelvin_t(CInt(5) * CInt(3))
+        XCTAssertEqual(Kelvin_t(5) * Kelvin_t(3), expected)
+    }
+
+    func testKelvin_tDivision() {
+        let expected = Kelvin_t(CInt(6) / CInt(3))
+        XCTAssertEqual(Kelvin_t(6) / Kelvin_t(3), expected)
+    }
+
+    func testKelvin_tAddOverflow() {
+        let rawOriginal = CInt.max
+        let rawResult = rawOriginal.addingReportingOverflow(CInt(1))
+        let original = Kelvin_t(rawOriginal)
+        let result = original.addingReportingOverflow(Kelvin_t(1))
+        XCTAssertEqual(result.0, Kelvin_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testKelvin_tMultiplyOverflow() {
+        let rawOriginal = CInt.max
+        let rawResult = rawOriginal.multipliedReportingOverflow(by: CInt(2))
+        let original = Kelvin_t(rawOriginal)
+        let result = original.multipliedReportingOverflow(by: Kelvin_t(2))
+        XCTAssertEqual(result.0, Kelvin_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testKelvin_tSubtractOverflow() {
+        let rawOriginal = CInt.min
+        let rawResult = rawOriginal.subtractingReportingOverflow(CInt(1))
+        let original = Kelvin_t(rawOriginal)
+        let result = original.subtractingReportingOverflow(Kelvin_t(1))
+        XCTAssertEqual(result.0, Kelvin_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testKelvin_tDivideOverflow() {
+        let rawOriginal = CInt(1)
+        let rawResult = rawOriginal.dividedReportingOverflow(by: CInt.max)
+        let original = Kelvin_t(rawOriginal)
+        let result = original.dividedReportingOverflow(by: Kelvin_t(CInt.max))
+        XCTAssertEqual(result.0, Kelvin_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testKelvin_tRemainderOverflow() {
+        let rawOriginal = CInt(1)
+        let rawResult = rawOriginal.remainderReportingOverflow(dividingBy: CInt.max)
+        let original = Kelvin_t(rawOriginal)
+        let result = original.remainderReportingOverflow(dividingBy: Kelvin_t(CInt.max))
+        XCTAssertEqual(result.0, Kelvin_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testKelvin_tTrailingZeroBitCount() {
+        let original = CInt(1)
+        XCTAssertEqual(Kelvin_t(original).trailingZeroBitCount, original.trailingZeroBitCount)
+    }
+
+    func testKelvin_tTimesEquals() {
+        var original = CInt(2)
+        original *= 4
+        var result = Kelvin_t(CInt(2))
+        result *= 4
+        XCTAssertEqual(result, Kelvin_t(original))
+    }
+
+    func testKelvin_tDivideEquals() {
+        var original = CInt(4)
+        original /= 2
+        var result = Kelvin_t(CInt(4))
+        result /= 2
+        XCTAssertEqual(result, Kelvin_t(original))
+    }
+
+    func testKelvin_tModEquals() {
+        var original = CInt(4)
+        original %= 2
+        var result = Kelvin_t(CInt(4))
+        result %= 2
+        XCTAssertEqual(result, Kelvin_t(original))
+    }
+
+    func testKelvin_tAndEquals() {
+        var original = CInt(2)
+        original &= 6
+        var result = Kelvin_t(CInt(2))
+        result &= 6
+        XCTAssertEqual(result, Kelvin_t(original))
+    }
+
+    func testKelvin_tOrEquals() {
+        var original = CInt(2)
+        original |= 4
+        var result = Kelvin_t(CInt(2))
+        result |= 4
+        XCTAssertEqual(result, Kelvin_t(original))
+    }
+
+    func testKelvin_tHatEquals() {
+        var original = CInt(2)
+        original ^= 4
+        var result = Kelvin_t(CInt(2))
+        result ^= 4
+        XCTAssertEqual(result, Kelvin_t(original))
+    }
+
+    func testKelvin_tMod() {
+        let original = CInt(4)
+        let expected = Kelvin_t(original % 2)
+        XCTAssertEqual(Kelvin_t(original) % 2, expected)
+    }
+
+    func testKelvin_uEquality() {
+        XCTAssertEqual(Kelvin_u(5), Kelvin_u(5))
+    }
+
+    func testKelvin_uCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Kelvin_u(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Kelvin_u.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testKelvin_uSelfInit() {
+        let expected = Kelvin_u(15)
+        XCTAssertEqual(expected, Kelvin_u(expected))
+    }
+
+    func testKelvin_uSelfExactlyInit() {
+        let expected = Kelvin_u(15)
+        XCTAssertEqual(expected, Kelvin_u(exactly: expected))
+    }
+
+    func testKelvin_uComparable() {
+        let lhs = Kelvin_u(1)
+        let rhs = Kelvin_u(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testKelvin_uMagnitude() {
+        let expected = CUnsignedInt(5).magnitude
+        XCTAssertEqual(Kelvin_u(5).magnitude, expected)
+    }
+
+    func testKelvin_uTruncatingInit() {
+        let expected = Kelvin_u(CUnsignedInt(truncatingIfNeeded: UInt64.max))
+        XCTAssertEqual(Kelvin_u(truncatingIfNeeded: expected), expected)
+    }
+
+    func testKelvin_uClampingInit() {
+        let expected = Kelvin_u(CUnsignedInt(clamping: UInt64.max))
+        XCTAssertEqual(Kelvin_u(clamping: expected), expected)
+    }
+
+    func testKelvin_uBitWidth() {
+        let expected = CUnsignedInt(5).bitWidth
+        XCTAssertEqual(Kelvin_u(5).bitWidth, expected)
+    }
+
+    func testKelvin_uLeadingZeroBitCount() {
+        let expected = CUnsignedInt(5).leadingZeroBitCount
+        XCTAssertEqual(Kelvin_u(5).leadingZeroBitCount, expected)
+    }
+
+    func testKelvin_uNonzeroBitCount() {
+        let expected = CUnsignedInt(5).nonzeroBitCount
+        XCTAssertEqual(Kelvin_u(5).nonzeroBitCount, expected)
+    }
+
+    func testKelvin_uIntegerLiteralInit() {
+        let expected = CUnsignedInt(integerLiteral: CUnsignedInt.max)
+        XCTAssertEqual(Kelvin_u(expected), Kelvin_u(integerLiteral: CUnsignedInt.max))
+    }
+
+    func testKelvin_uTruncatingBits() {
+        let expected = Kelvin_u(CUnsignedInt(_truncatingBits: UInt.max))
+        XCTAssertEqual(expected, Kelvin_u(_truncatingBits: UInt.max))
+    }
+
+    func testKelvin_uAddition() {
+        let expected = Kelvin_u(CUnsignedInt(5) + CUnsignedInt(3))
+        XCTAssertEqual(Kelvin_u(5) + Kelvin_u(3), expected)
+    }
+
+    func testKelvin_uSubtraction() {
+        let expected = Kelvin_u(CUnsignedInt(5) - CUnsignedInt(3))
+        XCTAssertEqual(Kelvin_u(5) - Kelvin_u(3), expected)
+    }
+
+    func testKelvin_uMultiplication() {
+        let expected = Kelvin_u(CUnsignedInt(5) * CUnsignedInt(3))
+        XCTAssertEqual(Kelvin_u(5) * Kelvin_u(3), expected)
+    }
+
+    func testKelvin_uDivision() {
+        let expected = Kelvin_u(CUnsignedInt(6) / CUnsignedInt(3))
+        XCTAssertEqual(Kelvin_u(6) / Kelvin_u(3), expected)
+    }
+
+    func testKelvin_uAddOverflow() {
+        let rawOriginal = CUnsignedInt.max
+        let rawResult = rawOriginal.addingReportingOverflow(CUnsignedInt(1))
+        let original = Kelvin_u(rawOriginal)
+        let result = original.addingReportingOverflow(Kelvin_u(1))
+        XCTAssertEqual(result.0, Kelvin_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testKelvin_uMultiplyOverflow() {
+        let rawOriginal = CUnsignedInt.max
+        let rawResult = rawOriginal.multipliedReportingOverflow(by: CUnsignedInt(2))
+        let original = Kelvin_u(rawOriginal)
+        let result = original.multipliedReportingOverflow(by: Kelvin_u(2))
+        XCTAssertEqual(result.0, Kelvin_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testKelvin_uSubtractOverflow() {
+        let rawOriginal = CUnsignedInt.min
+        let rawResult = rawOriginal.subtractingReportingOverflow(CUnsignedInt(1))
+        let original = Kelvin_u(rawOriginal)
+        let result = original.subtractingReportingOverflow(Kelvin_u(1))
+        XCTAssertEqual(result.0, Kelvin_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testKelvin_uDivideOverflow() {
+        let rawOriginal = CUnsignedInt(1)
+        let rawResult = rawOriginal.dividedReportingOverflow(by: CUnsignedInt.max)
+        let original = Kelvin_u(rawOriginal)
+        let result = original.dividedReportingOverflow(by: Kelvin_u(CUnsignedInt.max))
+        XCTAssertEqual(result.0, Kelvin_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testKelvin_uRemainderOverflow() {
+        let rawOriginal = CUnsignedInt(1)
+        let rawResult = rawOriginal.remainderReportingOverflow(dividingBy: CUnsignedInt.max)
+        let original = Kelvin_u(rawOriginal)
+        let result = original.remainderReportingOverflow(dividingBy: Kelvin_u(CUnsignedInt.max))
+        XCTAssertEqual(result.0, Kelvin_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testKelvin_uTrailingZeroBitCount() {
+        let original = CUnsignedInt(1)
+        XCTAssertEqual(Kelvin_u(original).trailingZeroBitCount, original.trailingZeroBitCount)
+    }
+
+    func testKelvin_uTimesEquals() {
+        var original = CUnsignedInt(2)
+        original *= 4
+        var result = Kelvin_u(CUnsignedInt(2))
+        result *= 4
+        XCTAssertEqual(result, Kelvin_u(original))
+    }
+
+    func testKelvin_uDivideEquals() {
+        var original = CUnsignedInt(4)
+        original /= 2
+        var result = Kelvin_u(CUnsignedInt(4))
+        result /= 2
+        XCTAssertEqual(result, Kelvin_u(original))
+    }
+
+    func testKelvin_uModEquals() {
+        var original = CUnsignedInt(4)
+        original %= 2
+        var result = Kelvin_u(CUnsignedInt(4))
+        result %= 2
+        XCTAssertEqual(result, Kelvin_u(original))
+    }
+
+    func testKelvin_uAndEquals() {
+        var original = CUnsignedInt(2)
+        original &= 6
+        var result = Kelvin_u(CUnsignedInt(2))
+        result &= 6
+        XCTAssertEqual(result, Kelvin_u(original))
+    }
+
+    func testKelvin_uOrEquals() {
+        var original = CUnsignedInt(2)
+        original |= 4
+        var result = Kelvin_u(CUnsignedInt(2))
+        result |= 4
+        XCTAssertEqual(result, Kelvin_u(original))
+    }
+
+    func testKelvin_uHatEquals() {
+        var original = CUnsignedInt(2)
+        original ^= 4
+        var result = Kelvin_u(CUnsignedInt(2))
+        result ^= 4
+        XCTAssertEqual(result, Kelvin_u(original))
+    }
+
+    func testKelvin_uMod() {
+        let original = CUnsignedInt(4)
+        let expected = Kelvin_u(original % 2)
+        XCTAssertEqual(Kelvin_u(original) % 2, expected)
+    }
+
+    func testKelvin_fEquality() {
+        XCTAssertEqual(Kelvin_f(5), Kelvin_f(5))
+    }
+
+    func testKelvin_fCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Kelvin_f(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Kelvin_f.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testKelvin_fSelfInit() {
+        let expected = Kelvin_f(15)
+        XCTAssertEqual(expected, Kelvin_f(expected))
+    }
+
+    func testKelvin_fSelfExactlyInit() {
+        let expected = Kelvin_f(15)
+        XCTAssertEqual(expected, Kelvin_f(exactly: expected))
+    }
+
+    func testKelvin_fComparable() {
+        let lhs = Kelvin_f(1)
+        let rhs = Kelvin_f(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testKelvin_fRadix() {
+        XCTAssertEqual(Kelvin_f.radix, Float.radix)
+    }
+
+    func testKelvin_fExponentBitCount() {
+        XCTAssertEqual(Kelvin_f.exponentBitCount, Float.exponentBitCount)
+    }
+
+    func testKelvin_fSignificandBitCount() {
+        XCTAssertEqual(Kelvin_f.significandBitCount, Float.significandBitCount)
+    }
+
+    func testKelvin_fMagnitude() {
+        let expected = Kelvin_f(Float(5).magnitude)
+        XCTAssertEqual(Kelvin_f(5).magnitude, expected)
+    }
+
+    func testKelvin_fExactlyInit() {
+        let expected = Kelvin_f(Float(exactly: Int(5)) ?? Float.infinity)
+        XCTAssertEqual(Kelvin_f(exactly: Int(5)), expected)
+    }
+
+    func testKelvin_fIsTotallyOrdered() {
+        let param = Float(100)
+        let other = Float(5)
+        XCTAssertEqual(
+            Kelvin_f(param).isTotallyOrdered(belowOrEqualTo: Kelvin_f(other)),
+            param.isTotallyOrdered(belowOrEqualTo: other)
+        )
+    }
+
+    func testKelvin_fBinade() {
+        let raw = Float(5)
+        let expected = Kelvin_f(raw.binade)
+        XCTAssertEqual(Kelvin_f(raw).binade, expected)
+    }
+
+    func testKelvin_fSignificandWidth() {
+        let raw = Float(5)
+        XCTAssertEqual(Kelvin_f(raw).significandWidth, raw.significandWidth)
+    }
+
+    func testKelvin_fDebugDescription() {
+        let raw = Float(5)
+        XCTAssertEqual(Kelvin_f(raw).debugDescription, raw.debugDescription)
+    }
+
+    func testKelvin_fDescriptionInit() {
+        let raw = Float("5.0") ?? Float.nan
+        XCTAssertEqual(Kelvin_f("5.0"), Kelvin_f(raw))
+    }
+
+    func testKelvin_fStaticVars() {
+        XCTAssertEqual(Kelvin_f.nan.isNaN, Kelvin_f(Float.nan).isNaN)
+        XCTAssertEqual(
+            Kelvin_f.signalingNaN.isSignalingNaN,
+            Kelvin_f(Float.signalingNaN).isSignalingNaN
+        )
+        XCTAssertEqual(Kelvin_f.infinity, Kelvin_f(Float.infinity))
+        XCTAssertEqual(Kelvin_f.greatestFiniteMagnitude, Kelvin_f(Float.greatestFiniteMagnitude))
+        XCTAssertEqual(Kelvin_f.pi, Kelvin_f(Float.pi))
+        XCTAssertEqual(Kelvin_f.leastNormalMagnitude, Kelvin_f(Float.leastNormalMagnitude))
+        XCTAssertEqual(Kelvin_f.leastNonzeroMagnitude, Kelvin_f(Float.leastNonzeroMagnitude))
+    }
+
+    func testKelvin_fUlp() {
+        let raw = Float(5)
+        XCTAssertEqual(Kelvin_f(raw).ulp, Kelvin_f(raw.ulp))
+    }
+
+    func testKelvin_fSign() {
+        let raw = Float(5)
+        XCTAssertEqual(Kelvin_f(raw).sign, raw.sign)
+    }
+
+    func testKelvin_fSignificand() {
+        let raw = Float(5)
+        XCTAssertEqual(Kelvin_f(raw).significand, Kelvin_f(raw.significand))
+    }
+
+    func testKelvin_fNextUp() {
+        let raw = Float(5)
+        XCTAssertEqual(Kelvin_f(raw).nextUp, Kelvin_f(raw.nextUp))
+    }
+
+    func testKelvin_fVars() {
+        XCTAssertEqual(Kelvin_f(5).isNormal, Float(5).isNormal)
+        XCTAssertEqual(Kelvin_f(5).isFinite, Float(5).isFinite)
+        XCTAssertEqual(Kelvin_f(5).isZero, Float(5).isZero)
+        XCTAssertEqual(Kelvin_f(0).isZero, Float(0).isZero)
+        XCTAssertEqual(Kelvin_f(5).isSubnormal, Float(5).isSubnormal)
+        XCTAssertEqual(Kelvin_f(5).isInfinite, Float(5).isInfinite)
+        XCTAssertEqual(Kelvin_f.infinity.isInfinite, Float.infinity.isInfinite)
+        XCTAssertEqual(Kelvin_f(5).isNaN, Float(5).isNaN)
+        XCTAssertEqual(Kelvin_f.nan.isNaN, Float.nan.isNaN)
+        XCTAssertEqual(Kelvin_f(5).isSignalingNaN, Float(5).isSignalingNaN)
+        XCTAssertEqual(Kelvin_f.nan.isSignalingNaN, Float.nan.isSignalingNaN)
+        XCTAssertEqual(Kelvin_f(5).isCanonical, Float(5).isCanonical)
+        XCTAssertEqual(Kelvin_f(5).description, Float(5).description)
+        XCTAssertEqual(Kelvin_f(5).exponentBitPattern, Float(5).exponentBitPattern)
+        XCTAssertEqual(Kelvin_f(5).significandBitPattern, Float(5).significandBitPattern)
+        XCTAssertEqual(Kelvin_f(5).exponent, Float(5).exponent)
+    }
+
+    func testKelvin_fFormRemainder() {
+        var original = Float(4)
+        let denominator = Float(3)
+        original.formRemainder(dividingBy: denominator)
+        var result = Kelvin_f(Float(4))
+        result.formRemainder(dividingBy: Kelvin_f(denominator))
+        XCTAssertEqual(result, Kelvin_f(original))
+    }
+
+    func testKelvin_fFormTruncatingRemainder() {
+        var original = Float(4)
+        let denominator = Float(3)
+        original.formTruncatingRemainder(dividingBy: denominator)
+        var result = Kelvin_f(Float(4))
+        result.formTruncatingRemainder(dividingBy: Kelvin_f(denominator))
+        XCTAssertEqual(result, Kelvin_f(original))
+    }
+
+    func testKelvin_fFormSquareRoot() {
+        var original = Float(4)
+        original.formSquareRoot()
+        var result = Kelvin_f(Float(4))
+        result.formSquareRoot()
+        XCTAssertEqual(result, Kelvin_f(original))
+    }
+
+    func testKelvin_fAddProduct() {
+        var original = Float(4)
+        let lhs = Float(3)
+        let rhs = Float(5)
+        original.addProduct(lhs, rhs)
+        var result = Kelvin_f(Float(4))
+        result.addProduct(Kelvin_f(lhs), Kelvin_f(rhs))
+        XCTAssertEqual(result, Kelvin_f(original))
+    }
+
+    func testKelvin_fIsEqual() {
+        let this = Kelvin_f(5)
+        let other = Kelvin_f(6)
+        XCTAssertTrue(this.isEqual(to: this))
+        XCTAssertFalse(this.isEqual(to: other))
+    }
+
+    func testKelvin_fIsLess() {
+        let this = Kelvin_f(5)
+        let other = Kelvin_f(6)
+        XCTAssertFalse(this.isLess(than: this))
+        XCTAssertTrue(this.isLess(than: other))
+    }
+
+    func testKelvin_fIsLessThanOrEqual() {
+        let this = Kelvin_f(5)
+        let other = Kelvin_f(6)
+        let other2 = Kelvin_f(4)
+        XCTAssertTrue(this.isLessThanOrEqualTo(this))
+        XCTAssertTrue(this.isLessThanOrEqualTo(other))
+        XCTAssertFalse(this.isLessThanOrEqualTo(other2))
+    }
+
+    func testKelvin_fOperations() {
+        let lhs = Kelvin_f(6)
+        let rhs = Kelvin_f(3)
+        XCTAssertEqual(lhs + rhs, Kelvin_f(9))
+        XCTAssertEqual(lhs - rhs, Kelvin_f(3))
+        XCTAssertEqual(lhs * rhs, Kelvin_f(18))
+        XCTAssertEqual(lhs / rhs, Kelvin_f(2))
+    }
+
+    func testKelvin_fTimesEqual() {
+        var this = Kelvin_f(3)
+        this *= Kelvin_f(4)
+        XCTAssertEqual(this, Kelvin_f(12))
+    }
+
+    func testKelvin_fDivideEqual() {
+        var this = Kelvin_f(6)
+        this /= Kelvin_f(3)
+        XCTAssertEqual(this, Kelvin_f(2))
+    }
+
+    func testKelvin_fRound() {
+        var expected = Float(5.6)
+        expected.round(.up)
+        var result = Kelvin_f(5.6)
+        result.round(.up)
+        XCTAssertEqual(result, Kelvin_f(expected))
+    }
+
+    func testKelvin_fDistanceTo() {
+        let original = Float(5.0)
+        let other = Float(23)
+        let expected = original.distance(to: other)
+        XCTAssertEqual(Kelvin_f(original).distance(to: Kelvin_f(other)), expected)
+    }
+
+    func testKelvin_fAdvancedBy() {
+        let original = Float(5)
+        let expected = original.advanced(by: 3)
+        XCTAssertEqual(Kelvin_f(original).advanced(by: 3), Kelvin_f(expected))
+    }
+
+    func testKelvin_dEquality() {
+        XCTAssertEqual(Kelvin_d(5), Kelvin_d(5))
+    }
+
+    func testKelvin_dCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Kelvin_d(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Kelvin_d.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testKelvin_dSelfInit() {
+        let expected = Kelvin_d(15)
+        XCTAssertEqual(expected, Kelvin_d(expected))
+    }
+
+    func testKelvin_dSelfExactlyInit() {
+        let expected = Kelvin_d(15)
+        XCTAssertEqual(expected, Kelvin_d(exactly: expected))
+    }
+
+    func testKelvin_dComparable() {
+        let lhs = Kelvin_d(1)
+        let rhs = Kelvin_d(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testKelvin_dRadix() {
+        XCTAssertEqual(Kelvin_d.radix, Double.radix)
+    }
+
+    func testKelvin_dExponentBitCount() {
+        XCTAssertEqual(Kelvin_d.exponentBitCount, Double.exponentBitCount)
+    }
+
+    func testKelvin_dSignificandBitCount() {
+        XCTAssertEqual(Kelvin_d.significandBitCount, Double.significandBitCount)
+    }
+
+    func testKelvin_dMagnitude() {
+        let expected = Kelvin_d(Double(5).magnitude)
+        XCTAssertEqual(Kelvin_d(5).magnitude, expected)
+    }
+
+    func testKelvin_dExactlyInit() {
+        let expected = Kelvin_d(Double(exactly: Int(5)) ?? Double.infinity)
+        XCTAssertEqual(Kelvin_d(exactly: Int(5)), expected)
+    }
+
+    func testKelvin_dIsTotallyOrdered() {
+        let param = Double(100)
+        let other = Double(5)
+        XCTAssertEqual(
+            Kelvin_d(param).isTotallyOrdered(belowOrEqualTo: Kelvin_d(other)),
+            param.isTotallyOrdered(belowOrEqualTo: other)
+        )
+    }
+
+    func testKelvin_dBinade() {
+        let raw = Double(5)
+        let expected = Kelvin_d(raw.binade)
+        XCTAssertEqual(Kelvin_d(raw).binade, expected)
+    }
+
+    func testKelvin_dSignificandWidth() {
+        let raw = Double(5)
+        XCTAssertEqual(Kelvin_d(raw).significandWidth, raw.significandWidth)
+    }
+
+    func testKelvin_dDebugDescription() {
+        let raw = Double(5)
+        XCTAssertEqual(Kelvin_d(raw).debugDescription, raw.debugDescription)
+    }
+
+    func testKelvin_dDescriptionInit() {
+        let raw = Double("5.0") ?? Double.nan
+        XCTAssertEqual(Kelvin_d("5.0"), Kelvin_d(raw))
+    }
+
+    func testKelvin_dStaticVars() {
+        XCTAssertEqual(Kelvin_d.nan.isNaN, Kelvin_d(Double.nan).isNaN)
+        XCTAssertEqual(
+            Kelvin_d.signalingNaN.isSignalingNaN,
+            Kelvin_d(Double.signalingNaN).isSignalingNaN
+        )
+        XCTAssertEqual(Kelvin_d.infinity, Kelvin_d(Double.infinity))
+        XCTAssertEqual(Kelvin_d.greatestFiniteMagnitude, Kelvin_d(Double.greatestFiniteMagnitude))
+        XCTAssertEqual(Kelvin_d.pi, Kelvin_d(Double.pi))
+        XCTAssertEqual(Kelvin_d.leastNormalMagnitude, Kelvin_d(Double.leastNormalMagnitude))
+        XCTAssertEqual(Kelvin_d.leastNonzeroMagnitude, Kelvin_d(Double.leastNonzeroMagnitude))
+    }
+
+    func testKelvin_dUlp() {
+        let raw = Double(5)
+        XCTAssertEqual(Kelvin_d(raw).ulp, Kelvin_d(raw.ulp))
+    }
+
+    func testKelvin_dSign() {
+        let raw = Double(5)
+        XCTAssertEqual(Kelvin_d(raw).sign, raw.sign)
+    }
+
+    func testKelvin_dSignificand() {
+        let raw = Double(5)
+        XCTAssertEqual(Kelvin_d(raw).significand, Kelvin_d(raw.significand))
+    }
+
+    func testKelvin_dNextUp() {
+        let raw = Double(5)
+        XCTAssertEqual(Kelvin_d(raw).nextUp, Kelvin_d(raw.nextUp))
+    }
+
+    func testKelvin_dVars() {
+        XCTAssertEqual(Kelvin_d(5).isNormal, Double(5).isNormal)
+        XCTAssertEqual(Kelvin_d(5).isFinite, Double(5).isFinite)
+        XCTAssertEqual(Kelvin_d(5).isZero, Double(5).isZero)
+        XCTAssertEqual(Kelvin_d(0).isZero, Double(0).isZero)
+        XCTAssertEqual(Kelvin_d(5).isSubnormal, Double(5).isSubnormal)
+        XCTAssertEqual(Kelvin_d(5).isInfinite, Double(5).isInfinite)
+        XCTAssertEqual(Kelvin_d.infinity.isInfinite, Double.infinity.isInfinite)
+        XCTAssertEqual(Kelvin_d(5).isNaN, Double(5).isNaN)
+        XCTAssertEqual(Kelvin_d.nan.isNaN, Double.nan.isNaN)
+        XCTAssertEqual(Kelvin_d(5).isSignalingNaN, Double(5).isSignalingNaN)
+        XCTAssertEqual(Kelvin_d.nan.isSignalingNaN, Double.nan.isSignalingNaN)
+        XCTAssertEqual(Kelvin_d(5).isCanonical, Double(5).isCanonical)
+        XCTAssertEqual(Kelvin_d(5).description, Double(5).description)
+        XCTAssertEqual(Kelvin_d(5).exponentBitPattern, Double(5).exponentBitPattern)
+        XCTAssertEqual(Kelvin_d(5).significandBitPattern, Double(5).significandBitPattern)
+        XCTAssertEqual(Kelvin_d(5).exponent, Double(5).exponent)
+    }
+
+    func testKelvin_dFormRemainder() {
+        var original = Double(4)
+        let denominator = Double(3)
+        original.formRemainder(dividingBy: denominator)
+        var result = Kelvin_d(Double(4))
+        result.formRemainder(dividingBy: Kelvin_d(denominator))
+        XCTAssertEqual(result, Kelvin_d(original))
+    }
+
+    func testKelvin_dFormTruncatingRemainder() {
+        var original = Double(4)
+        let denominator = Double(3)
+        original.formTruncatingRemainder(dividingBy: denominator)
+        var result = Kelvin_d(Double(4))
+        result.formTruncatingRemainder(dividingBy: Kelvin_d(denominator))
+        XCTAssertEqual(result, Kelvin_d(original))
+    }
+
+    func testKelvin_dFormSquareRoot() {
+        var original = Double(4)
+        original.formSquareRoot()
+        var result = Kelvin_d(Double(4))
+        result.formSquareRoot()
+        XCTAssertEqual(result, Kelvin_d(original))
+    }
+
+    func testKelvin_dAddProduct() {
+        var original = Double(4)
+        let lhs = Double(3)
+        let rhs = Double(5)
+        original.addProduct(lhs, rhs)
+        var result = Kelvin_d(Double(4))
+        result.addProduct(Kelvin_d(lhs), Kelvin_d(rhs))
+        XCTAssertEqual(result, Kelvin_d(original))
+    }
+
+    func testKelvin_dIsEqual() {
+        let this = Kelvin_d(5)
+        let other = Kelvin_d(6)
+        XCTAssertTrue(this.isEqual(to: this))
+        XCTAssertFalse(this.isEqual(to: other))
+    }
+
+    func testKelvin_dIsLess() {
+        let this = Kelvin_d(5)
+        let other = Kelvin_d(6)
+        XCTAssertFalse(this.isLess(than: this))
+        XCTAssertTrue(this.isLess(than: other))
+    }
+
+    func testKelvin_dIsLessThanOrEqual() {
+        let this = Kelvin_d(5)
+        let other = Kelvin_d(6)
+        let other2 = Kelvin_d(4)
+        XCTAssertTrue(this.isLessThanOrEqualTo(this))
+        XCTAssertTrue(this.isLessThanOrEqualTo(other))
+        XCTAssertFalse(this.isLessThanOrEqualTo(other2))
+    }
+
+    func testKelvin_dOperations() {
+        let lhs = Kelvin_d(6)
+        let rhs = Kelvin_d(3)
+        XCTAssertEqual(lhs + rhs, Kelvin_d(9))
+        XCTAssertEqual(lhs - rhs, Kelvin_d(3))
+        XCTAssertEqual(lhs * rhs, Kelvin_d(18))
+        XCTAssertEqual(lhs / rhs, Kelvin_d(2))
+    }
+
+    func testKelvin_dTimesEqual() {
+        var this = Kelvin_d(3)
+        this *= Kelvin_d(4)
+        XCTAssertEqual(this, Kelvin_d(12))
+    }
+
+    func testKelvin_dDivideEqual() {
+        var this = Kelvin_d(6)
+        this /= Kelvin_d(3)
+        XCTAssertEqual(this, Kelvin_d(2))
+    }
+
+    func testKelvin_dRound() {
+        var expected = Double(5.6)
+        expected.round(.up)
+        var result = Kelvin_d(5.6)
+        result.round(.up)
+        XCTAssertEqual(result, Kelvin_d(expected))
+    }
+
+    func testKelvin_dDistanceTo() {
+        let original = Double(5.0)
+        let other = Double(23)
+        let expected = original.distance(to: other)
+        XCTAssertEqual(Kelvin_d(original).distance(to: Kelvin_d(other)), expected)
+    }
+
+    func testKelvin_dAdvancedBy() {
+        let original = Double(5)
+        let expected = original.advanced(by: 3)
+        XCTAssertEqual(Kelvin_d(original).advanced(by: 3), Kelvin_d(expected))
+    }
+
+}
+
+final class CelsiusConversionTests: XCTestCase {
+
+    func testCelsius_tToCelsius_uTemperatureConversions() {
+        let original = Celsius_t(5)
+        let category = Temperature(original)
+        let other = category.celsius_u
+        XCTAssertEqual(other, Celsius_u(original))
+    }
+
+    func testCelsius_uToCelsius_tConversions() {
+        let ctype1 = celsius_t(5)
+        let swiftType1 = Celsius_t(rawValue: ctype1)
+        let ctype2 = degC_t_to_degC_u(ctype1)
+        let swiftType2 = Celsius_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_u(swiftType1))
+    }
+
+    func testCelsius_tToCelsius_fTemperatureConversions() {
+        let original = Celsius_t(5)
+        let category = Temperature(original)
+        let other = category.celsius_f
+        XCTAssertEqual(other, Celsius_f(original))
+    }
+
+    func testCelsius_fToCelsius_tConversions() {
+        let ctype1 = celsius_t(5)
+        let swiftType1 = Celsius_t(rawValue: ctype1)
+        let ctype2 = degC_t_to_degC_f(ctype1)
+        let swiftType2 = Celsius_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_f(swiftType1))
+    }
+
+    func testCelsius_tToCelsius_dTemperatureConversions() {
+        let original = Celsius_t(5)
+        let category = Temperature(original)
+        let other = category.celsius_d
+        XCTAssertEqual(other, Celsius_d(original))
+    }
+
+    func testCelsius_dToCelsius_tConversions() {
+        let ctype1 = celsius_t(5)
+        let swiftType1 = Celsius_t(rawValue: ctype1)
+        let ctype2 = degC_t_to_degC_d(ctype1)
+        let swiftType2 = Celsius_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_d(swiftType1))
+    }
+
+    func testCelsius_tToFahrenheit_tTemperatureConversions() {
+        let original = Celsius_t(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_t
+        XCTAssertEqual(other, Fahrenheit_t(original))
+    }
+
+    func testFahrenheit_tToCelsius_tConversions() {
+        let ctype1 = celsius_t(5)
+        let swiftType1 = Celsius_t(rawValue: ctype1)
+        let ctype2 = degC_t_to_degF_t(ctype1)
+        let swiftType2 = Fahrenheit_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_t(swiftType1))
+    }
+
+    func testCelsius_tToFahrenheit_uTemperatureConversions() {
+        let original = Celsius_t(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_u
+        XCTAssertEqual(other, Fahrenheit_u(original))
+    }
+
+    func testFahrenheit_uToCelsius_tConversions() {
+        let ctype1 = celsius_t(5)
+        let swiftType1 = Celsius_t(rawValue: ctype1)
+        let ctype2 = degC_t_to_degF_u(ctype1)
+        let swiftType2 = Fahrenheit_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_u(swiftType1))
+    }
+
+    func testCelsius_tToFahrenheit_fTemperatureConversions() {
+        let original = Celsius_t(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_f
+        XCTAssertEqual(other, Fahrenheit_f(original))
+    }
+
+    func testFahrenheit_fToCelsius_tConversions() {
+        let ctype1 = celsius_t(5)
+        let swiftType1 = Celsius_t(rawValue: ctype1)
+        let ctype2 = degC_t_to_degF_f(ctype1)
+        let swiftType2 = Fahrenheit_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_f(swiftType1))
+    }
+
+    func testCelsius_tToFahrenheit_dTemperatureConversions() {
+        let original = Celsius_t(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_d
+        XCTAssertEqual(other, Fahrenheit_d(original))
+    }
+
+    func testFahrenheit_dToCelsius_tConversions() {
+        let ctype1 = celsius_t(5)
+        let swiftType1 = Celsius_t(rawValue: ctype1)
+        let ctype2 = degC_t_to_degF_d(ctype1)
+        let swiftType2 = Fahrenheit_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_d(swiftType1))
+    }
+
+    func testCelsius_tToKelvin_tTemperatureConversions() {
+        let original = Celsius_t(5)
+        let category = Temperature(original)
+        let other = category.kelvin_t
+        XCTAssertEqual(other, Kelvin_t(original))
+    }
+
+    func testKelvin_tToCelsius_tConversions() {
+        let ctype1 = celsius_t(5)
+        let swiftType1 = Celsius_t(rawValue: ctype1)
+        let ctype2 = degC_t_to_K_t(ctype1)
+        let swiftType2 = Kelvin_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_t(swiftType1))
+    }
+
+    func testCelsius_tToKelvin_uTemperatureConversions() {
+        let original = Celsius_t(5)
+        let category = Temperature(original)
+        let other = category.kelvin_u
+        XCTAssertEqual(other, Kelvin_u(original))
+    }
+
+    func testKelvin_uToCelsius_tConversions() {
+        let ctype1 = celsius_t(5)
+        let swiftType1 = Celsius_t(rawValue: ctype1)
+        let ctype2 = degC_t_to_K_u(ctype1)
+        let swiftType2 = Kelvin_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_u(swiftType1))
+    }
+
+    func testCelsius_tToKelvin_fTemperatureConversions() {
+        let original = Celsius_t(5)
+        let category = Temperature(original)
+        let other = category.kelvin_f
+        XCTAssertEqual(other, Kelvin_f(original))
+    }
+
+    func testKelvin_fToCelsius_tConversions() {
+        let ctype1 = celsius_t(5)
+        let swiftType1 = Celsius_t(rawValue: ctype1)
+        let ctype2 = degC_t_to_K_f(ctype1)
+        let swiftType2 = Kelvin_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_f(swiftType1))
+    }
+
+    func testCelsius_tToKelvin_dTemperatureConversions() {
+        let original = Celsius_t(5)
+        let category = Temperature(original)
+        let other = category.kelvin_d
+        XCTAssertEqual(other, Kelvin_d(original))
+    }
+
+    func testKelvin_dToCelsius_tConversions() {
+        let ctype1 = celsius_t(5)
+        let swiftType1 = Celsius_t(rawValue: ctype1)
+        let ctype2 = degC_t_to_K_d(ctype1)
+        let swiftType2 = Kelvin_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_d(swiftType1))
+    }
+
+    func testCelsius_tInitFromTypeEnum() {
+        let underlyingType = Temperature.TemperatureTypes.celsius_t(5)
+        let category = Temperature(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testTemperatureCelsius_tInt8Inits() {
+        let raw = Int8(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_degC_t(5)
+        let expected2 = Int8(
+            degC_t_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_tInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_degC_t(5)
+        let expected = Celsius_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(degC_t_to_i8(ctype))
+        )
+    }
+
+    func testCelsius_tInt8RawValueInit() {
+        let raw = celsius_t(5)
+        let ctype = degC_t_to_i8(raw)
+        let expected = Celsius_t(Int8(ctype))
+        XCTAssertEqual(Celsius_t(rawValue: raw), expected)
+    }
+
+    func testCelsius_tTemperatureInt8Init() {
+        let raw = Celsius_t(Int8(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_tInt16Inits() {
+        let raw = Int16(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_degC_t(5)
+        let expected2 = Int16(
+            degC_t_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_tInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_degC_t(5)
+        let expected = Celsius_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(degC_t_to_i16(ctype))
+        )
+    }
+
+    func testCelsius_tInt16RawValueInit() {
+        let raw = celsius_t(5)
+        let ctype = degC_t_to_i16(raw)
+        let expected = Celsius_t(Int16(ctype))
+        XCTAssertEqual(Celsius_t(rawValue: raw), expected)
+    }
+
+    func testCelsius_tTemperatureInt16Init() {
+        let raw = Celsius_t(Int16(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_tInt32Inits() {
+        let raw = Int32(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_degC_t(5)
+        let expected2 = Int32(
+            degC_t_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_tInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_degC_t(5)
+        let expected = Celsius_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(degC_t_to_i32(ctype))
+        )
+    }
+
+    func testCelsius_tInt32RawValueInit() {
+        let raw = celsius_t(5)
+        let ctype = degC_t_to_i32(raw)
+        let expected = Celsius_t(Int32(ctype))
+        XCTAssertEqual(Celsius_t(rawValue: raw), expected)
+    }
+
+    func testCelsius_tTemperatureInt32Init() {
+        let raw = Celsius_t(Int32(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_tInt64Inits() {
+        let raw = Int64(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_degC_t(5)
+        let expected2 = Int64(
+            degC_t_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_tInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_degC_t(5)
+        let expected = Celsius_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(degC_t_to_i64(ctype))
+        )
+    }
+
+    func testCelsius_tInt64RawValueInit() {
+        let raw = celsius_t(5)
+        let ctype = degC_t_to_i64(raw)
+        let expected = Celsius_t(Int64(ctype))
+        XCTAssertEqual(Celsius_t(rawValue: raw), expected)
+    }
+
+    func testCelsius_tTemperatureInt64Init() {
+        let raw = Celsius_t(Int64(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_tIntInits() {
+        let raw = Int(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_degC_t(5)
+        let expected2 = Int(
+            degC_t_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_tIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_degC_t(5)
+        let expected = Celsius_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(degC_t_to_i64(ctype))
+        )
+    }
+
+    func testCelsius_tIntRawValueInit() {
+        let raw = celsius_t(5)
+        let ctype = degC_t_to_i64(raw)
+        let expected = Celsius_t(Int(ctype))
+        XCTAssertEqual(Celsius_t(rawValue: raw), expected)
+    }
+
+    func testCelsius_tTemperatureIntInit() {
+        let raw = Celsius_t(Int(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_tCIntInits() {
+        let raw = CInt(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_degC_t(5)
+        let expected2 = CInt(
+            degC_t_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_tCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_degC_t(5)
+        let expected = Celsius_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(degC_t_to_i32(ctype))
+        )
+    }
+
+    func testCelsius_tCIntRawValueInit() {
+        let raw = celsius_t(5)
+        let ctype = degC_t_to_i32(raw)
+        let expected = Celsius_t(CInt(ctype))
+        XCTAssertEqual(Celsius_t(rawValue: raw), expected)
+    }
+
+    func testCelsius_tTemperatureCIntInit() {
+        let raw = Celsius_t(CInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_tUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_degC_t(5)
+        let expected2 = UInt8(
+            degC_t_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_tUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_degC_t(5)
+        let expected = Celsius_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(degC_t_to_u8(ctype))
+        )
+    }
+
+    func testCelsius_tUInt8RawValueInit() {
+        let raw = celsius_t(5)
+        let ctype = degC_t_to_u8(raw)
+        let expected = Celsius_t(UInt8(ctype))
+        XCTAssertEqual(Celsius_t(rawValue: raw), expected)
+    }
+
+    func testCelsius_tTemperatureUInt8Init() {
+        let raw = Celsius_t(UInt8(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_tUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_degC_t(5)
+        let expected2 = UInt16(
+            degC_t_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_tUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_degC_t(5)
+        let expected = Celsius_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(degC_t_to_u16(ctype))
+        )
+    }
+
+    func testCelsius_tUInt16RawValueInit() {
+        let raw = celsius_t(5)
+        let ctype = degC_t_to_u16(raw)
+        let expected = Celsius_t(UInt16(ctype))
+        XCTAssertEqual(Celsius_t(rawValue: raw), expected)
+    }
+
+    func testCelsius_tTemperatureUInt16Init() {
+        let raw = Celsius_t(UInt16(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_tUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_degC_t(5)
+        let expected2 = UInt32(
+            degC_t_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_tUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_degC_t(5)
+        let expected = Celsius_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(degC_t_to_u32(ctype))
+        )
+    }
+
+    func testCelsius_tUInt32RawValueInit() {
+        let raw = celsius_t(5)
+        let ctype = degC_t_to_u32(raw)
+        let expected = Celsius_t(UInt32(ctype))
+        XCTAssertEqual(Celsius_t(rawValue: raw), expected)
+    }
+
+    func testCelsius_tTemperatureUInt32Init() {
+        let raw = Celsius_t(UInt32(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_tUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_degC_t(5)
+        let expected2 = UInt64(
+            degC_t_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_tUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_degC_t(5)
+        let expected = Celsius_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(degC_t_to_u64(ctype))
+        )
+    }
+
+    func testCelsius_tUInt64RawValueInit() {
+        let raw = celsius_t(5)
+        let ctype = degC_t_to_u64(raw)
+        let expected = Celsius_t(UInt64(ctype))
+        XCTAssertEqual(Celsius_t(rawValue: raw), expected)
+    }
+
+    func testCelsius_tTemperatureUInt64Init() {
+        let raw = Celsius_t(UInt64(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_tUIntInits() {
+        let raw = UInt(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_degC_t(5)
+        let expected2 = UInt(
+            degC_t_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_tUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_degC_t(5)
+        let expected = Celsius_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(degC_t_to_u64(ctype))
+        )
+    }
+
+    func testCelsius_tUIntRawValueInit() {
+        let raw = celsius_t(5)
+        let ctype = degC_t_to_u64(raw)
+        let expected = Celsius_t(UInt(ctype))
+        XCTAssertEqual(Celsius_t(rawValue: raw), expected)
+    }
+
+    func testCelsius_tTemperatureUIntInit() {
+        let raw = Celsius_t(UInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_tCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_degC_t(5)
+        let expected2 = CUnsignedInt(
+            degC_t_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_tCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_degC_t(5)
+        let expected = Celsius_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(degC_t_to_u32(ctype))
+        )
+    }
+
+    func testCelsius_tCUnsignedIntRawValueInit() {
+        let raw = celsius_t(5)
+        let ctype = degC_t_to_u32(raw)
+        let expected = Celsius_t(CUnsignedInt(ctype))
+        XCTAssertEqual(Celsius_t(rawValue: raw), expected)
+    }
+
+    func testCelsius_tTemperatureCUnsignedIntInit() {
+        let raw = Celsius_t(CUnsignedInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_tFloatInits() {
+        let raw = Float(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_degC_t(5)
+        let expected2 = Float(
+            degC_t_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_tFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_degC_t(5)
+        let expected = Celsius_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(degC_t_to_f(ctype))
+        )
+    }
+
+    func testCelsius_tFloatRawValueInit() {
+        let raw = celsius_t(5)
+        let ctype = degC_t_to_f(raw)
+        let expected = Celsius_t(Float(ctype))
+        XCTAssertEqual(Celsius_t(rawValue: raw), expected)
+    }
+
+    func testCelsius_tTemperatureFloatInit() {
+        let raw = Celsius_t(Float(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_tDoubleInits() {
+        let raw = Double(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_degC_t(5)
+        let expected2 = Double(
+            degC_t_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_tDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_degC_t(5)
+        let expected = Celsius_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(degC_t_to_d(ctype))
+        )
+    }
+
+    func testCelsius_tDoubleRawValueInit() {
+        let raw = celsius_t(5)
+        let ctype = degC_t_to_d(raw)
+        let expected = Celsius_t(Double(ctype))
+        XCTAssertEqual(Celsius_t(rawValue: raw), expected)
+    }
+
+    func testCelsius_tTemperatureDoubleInit() {
+        let raw = Celsius_t(Double(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testCelsius_uToCelsius_tTemperatureConversions() {
+        let original = Celsius_u(5)
+        let category = Temperature(original)
+        let other = category.celsius_t
+        XCTAssertEqual(other, Celsius_t(original))
+    }
+
+    func testCelsius_tToCelsius_uConversions() {
+        let ctype1 = celsius_u(5)
+        let swiftType1 = Celsius_u(rawValue: ctype1)
+        let ctype2 = degC_u_to_degC_t(ctype1)
+        let swiftType2 = Celsius_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_t(swiftType1))
+    }
+
+    func testCelsius_uToCelsius_fTemperatureConversions() {
+        let original = Celsius_u(5)
+        let category = Temperature(original)
+        let other = category.celsius_f
+        XCTAssertEqual(other, Celsius_f(original))
+    }
+
+    func testCelsius_fToCelsius_uConversions() {
+        let ctype1 = celsius_u(5)
+        let swiftType1 = Celsius_u(rawValue: ctype1)
+        let ctype2 = degC_u_to_degC_f(ctype1)
+        let swiftType2 = Celsius_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_f(swiftType1))
+    }
+
+    func testCelsius_uToCelsius_dTemperatureConversions() {
+        let original = Celsius_u(5)
+        let category = Temperature(original)
+        let other = category.celsius_d
+        XCTAssertEqual(other, Celsius_d(original))
+    }
+
+    func testCelsius_dToCelsius_uConversions() {
+        let ctype1 = celsius_u(5)
+        let swiftType1 = Celsius_u(rawValue: ctype1)
+        let ctype2 = degC_u_to_degC_d(ctype1)
+        let swiftType2 = Celsius_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_d(swiftType1))
+    }
+
+    func testCelsius_uToFahrenheit_tTemperatureConversions() {
+        let original = Celsius_u(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_t
+        XCTAssertEqual(other, Fahrenheit_t(original))
+    }
+
+    func testFahrenheit_tToCelsius_uConversions() {
+        let ctype1 = celsius_u(5)
+        let swiftType1 = Celsius_u(rawValue: ctype1)
+        let ctype2 = degC_u_to_degF_t(ctype1)
+        let swiftType2 = Fahrenheit_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_t(swiftType1))
+    }
+
+    func testCelsius_uToFahrenheit_uTemperatureConversions() {
+        let original = Celsius_u(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_u
+        XCTAssertEqual(other, Fahrenheit_u(original))
+    }
+
+    func testFahrenheit_uToCelsius_uConversions() {
+        let ctype1 = celsius_u(5)
+        let swiftType1 = Celsius_u(rawValue: ctype1)
+        let ctype2 = degC_u_to_degF_u(ctype1)
+        let swiftType2 = Fahrenheit_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_u(swiftType1))
+    }
+
+    func testCelsius_uToFahrenheit_fTemperatureConversions() {
+        let original = Celsius_u(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_f
+        XCTAssertEqual(other, Fahrenheit_f(original))
+    }
+
+    func testFahrenheit_fToCelsius_uConversions() {
+        let ctype1 = celsius_u(5)
+        let swiftType1 = Celsius_u(rawValue: ctype1)
+        let ctype2 = degC_u_to_degF_f(ctype1)
+        let swiftType2 = Fahrenheit_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_f(swiftType1))
+    }
+
+    func testCelsius_uToFahrenheit_dTemperatureConversions() {
+        let original = Celsius_u(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_d
+        XCTAssertEqual(other, Fahrenheit_d(original))
+    }
+
+    func testFahrenheit_dToCelsius_uConversions() {
+        let ctype1 = celsius_u(5)
+        let swiftType1 = Celsius_u(rawValue: ctype1)
+        let ctype2 = degC_u_to_degF_d(ctype1)
+        let swiftType2 = Fahrenheit_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_d(swiftType1))
+    }
+
+    func testCelsius_uToKelvin_tTemperatureConversions() {
+        let original = Celsius_u(5)
+        let category = Temperature(original)
+        let other = category.kelvin_t
+        XCTAssertEqual(other, Kelvin_t(original))
+    }
+
+    func testKelvin_tToCelsius_uConversions() {
+        let ctype1 = celsius_u(5)
+        let swiftType1 = Celsius_u(rawValue: ctype1)
+        let ctype2 = degC_u_to_K_t(ctype1)
+        let swiftType2 = Kelvin_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_t(swiftType1))
+    }
+
+    func testCelsius_uToKelvin_uTemperatureConversions() {
+        let original = Celsius_u(5)
+        let category = Temperature(original)
+        let other = category.kelvin_u
+        XCTAssertEqual(other, Kelvin_u(original))
+    }
+
+    func testKelvin_uToCelsius_uConversions() {
+        let ctype1 = celsius_u(5)
+        let swiftType1 = Celsius_u(rawValue: ctype1)
+        let ctype2 = degC_u_to_K_u(ctype1)
+        let swiftType2 = Kelvin_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_u(swiftType1))
+    }
+
+    func testCelsius_uToKelvin_fTemperatureConversions() {
+        let original = Celsius_u(5)
+        let category = Temperature(original)
+        let other = category.kelvin_f
+        XCTAssertEqual(other, Kelvin_f(original))
+    }
+
+    func testKelvin_fToCelsius_uConversions() {
+        let ctype1 = celsius_u(5)
+        let swiftType1 = Celsius_u(rawValue: ctype1)
+        let ctype2 = degC_u_to_K_f(ctype1)
+        let swiftType2 = Kelvin_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_f(swiftType1))
+    }
+
+    func testCelsius_uToKelvin_dTemperatureConversions() {
+        let original = Celsius_u(5)
+        let category = Temperature(original)
+        let other = category.kelvin_d
+        XCTAssertEqual(other, Kelvin_d(original))
+    }
+
+    func testKelvin_dToCelsius_uConversions() {
+        let ctype1 = celsius_u(5)
+        let swiftType1 = Celsius_u(rawValue: ctype1)
+        let ctype2 = degC_u_to_K_d(ctype1)
+        let swiftType2 = Kelvin_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_d(swiftType1))
+    }
+
+    func testCelsius_uInitFromTypeEnum() {
+        let underlyingType = Temperature.TemperatureTypes.celsius_u(5)
+        let category = Temperature(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testTemperatureCelsius_uInt8Inits() {
+        let raw = Int8(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_degC_u(5)
+        let expected2 = Int8(
+            degC_u_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_uInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_degC_u(5)
+        let expected = Celsius_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(degC_u_to_i8(ctype))
+        )
+    }
+
+    func testCelsius_uInt8RawValueInit() {
+        let raw = celsius_u(5)
+        let ctype = degC_u_to_i8(raw)
+        let expected = Celsius_u(Int8(ctype))
+        XCTAssertEqual(Celsius_u(rawValue: raw), expected)
+    }
+
+    func testCelsius_uTemperatureInt8Init() {
+        let raw = Celsius_u(Int8(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_uInt16Inits() {
+        let raw = Int16(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_degC_u(5)
+        let expected2 = Int16(
+            degC_u_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_uInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_degC_u(5)
+        let expected = Celsius_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(degC_u_to_i16(ctype))
+        )
+    }
+
+    func testCelsius_uInt16RawValueInit() {
+        let raw = celsius_u(5)
+        let ctype = degC_u_to_i16(raw)
+        let expected = Celsius_u(Int16(ctype))
+        XCTAssertEqual(Celsius_u(rawValue: raw), expected)
+    }
+
+    func testCelsius_uTemperatureInt16Init() {
+        let raw = Celsius_u(Int16(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_uInt32Inits() {
+        let raw = Int32(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_degC_u(5)
+        let expected2 = Int32(
+            degC_u_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_uInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_degC_u(5)
+        let expected = Celsius_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(degC_u_to_i32(ctype))
+        )
+    }
+
+    func testCelsius_uInt32RawValueInit() {
+        let raw = celsius_u(5)
+        let ctype = degC_u_to_i32(raw)
+        let expected = Celsius_u(Int32(ctype))
+        XCTAssertEqual(Celsius_u(rawValue: raw), expected)
+    }
+
+    func testCelsius_uTemperatureInt32Init() {
+        let raw = Celsius_u(Int32(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_uInt64Inits() {
+        let raw = Int64(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_degC_u(5)
+        let expected2 = Int64(
+            degC_u_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_uInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_degC_u(5)
+        let expected = Celsius_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(degC_u_to_i64(ctype))
+        )
+    }
+
+    func testCelsius_uInt64RawValueInit() {
+        let raw = celsius_u(5)
+        let ctype = degC_u_to_i64(raw)
+        let expected = Celsius_u(Int64(ctype))
+        XCTAssertEqual(Celsius_u(rawValue: raw), expected)
+    }
+
+    func testCelsius_uTemperatureInt64Init() {
+        let raw = Celsius_u(Int64(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_uIntInits() {
+        let raw = Int(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_degC_u(5)
+        let expected2 = Int(
+            degC_u_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_uIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_degC_u(5)
+        let expected = Celsius_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(degC_u_to_i64(ctype))
+        )
+    }
+
+    func testCelsius_uIntRawValueInit() {
+        let raw = celsius_u(5)
+        let ctype = degC_u_to_i64(raw)
+        let expected = Celsius_u(Int(ctype))
+        XCTAssertEqual(Celsius_u(rawValue: raw), expected)
+    }
+
+    func testCelsius_uTemperatureIntInit() {
+        let raw = Celsius_u(Int(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_uCIntInits() {
+        let raw = CInt(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_degC_u(5)
+        let expected2 = CInt(
+            degC_u_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_uCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_degC_u(5)
+        let expected = Celsius_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(degC_u_to_i32(ctype))
+        )
+    }
+
+    func testCelsius_uCIntRawValueInit() {
+        let raw = celsius_u(5)
+        let ctype = degC_u_to_i32(raw)
+        let expected = Celsius_u(CInt(ctype))
+        XCTAssertEqual(Celsius_u(rawValue: raw), expected)
+    }
+
+    func testCelsius_uTemperatureCIntInit() {
+        let raw = Celsius_u(CInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_uUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_degC_u(5)
+        let expected2 = UInt8(
+            degC_u_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_uUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_degC_u(5)
+        let expected = Celsius_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(degC_u_to_u8(ctype))
+        )
+    }
+
+    func testCelsius_uUInt8RawValueInit() {
+        let raw = celsius_u(5)
+        let ctype = degC_u_to_u8(raw)
+        let expected = Celsius_u(UInt8(ctype))
+        XCTAssertEqual(Celsius_u(rawValue: raw), expected)
+    }
+
+    func testCelsius_uTemperatureUInt8Init() {
+        let raw = Celsius_u(UInt8(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_uUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_degC_u(5)
+        let expected2 = UInt16(
+            degC_u_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_uUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_degC_u(5)
+        let expected = Celsius_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(degC_u_to_u16(ctype))
+        )
+    }
+
+    func testCelsius_uUInt16RawValueInit() {
+        let raw = celsius_u(5)
+        let ctype = degC_u_to_u16(raw)
+        let expected = Celsius_u(UInt16(ctype))
+        XCTAssertEqual(Celsius_u(rawValue: raw), expected)
+    }
+
+    func testCelsius_uTemperatureUInt16Init() {
+        let raw = Celsius_u(UInt16(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_uUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_degC_u(5)
+        let expected2 = UInt32(
+            degC_u_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_uUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_degC_u(5)
+        let expected = Celsius_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(degC_u_to_u32(ctype))
+        )
+    }
+
+    func testCelsius_uUInt32RawValueInit() {
+        let raw = celsius_u(5)
+        let ctype = degC_u_to_u32(raw)
+        let expected = Celsius_u(UInt32(ctype))
+        XCTAssertEqual(Celsius_u(rawValue: raw), expected)
+    }
+
+    func testCelsius_uTemperatureUInt32Init() {
+        let raw = Celsius_u(UInt32(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_uUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_degC_u(5)
+        let expected2 = UInt64(
+            degC_u_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_uUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_degC_u(5)
+        let expected = Celsius_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(degC_u_to_u64(ctype))
+        )
+    }
+
+    func testCelsius_uUInt64RawValueInit() {
+        let raw = celsius_u(5)
+        let ctype = degC_u_to_u64(raw)
+        let expected = Celsius_u(UInt64(ctype))
+        XCTAssertEqual(Celsius_u(rawValue: raw), expected)
+    }
+
+    func testCelsius_uTemperatureUInt64Init() {
+        let raw = Celsius_u(UInt64(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_uUIntInits() {
+        let raw = UInt(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_degC_u(5)
+        let expected2 = UInt(
+            degC_u_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_uUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_degC_u(5)
+        let expected = Celsius_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(degC_u_to_u64(ctype))
+        )
+    }
+
+    func testCelsius_uUIntRawValueInit() {
+        let raw = celsius_u(5)
+        let ctype = degC_u_to_u64(raw)
+        let expected = Celsius_u(UInt(ctype))
+        XCTAssertEqual(Celsius_u(rawValue: raw), expected)
+    }
+
+    func testCelsius_uTemperatureUIntInit() {
+        let raw = Celsius_u(UInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_uCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_degC_u(5)
+        let expected2 = CUnsignedInt(
+            degC_u_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_uCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_degC_u(5)
+        let expected = Celsius_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(degC_u_to_u32(ctype))
+        )
+    }
+
+    func testCelsius_uCUnsignedIntRawValueInit() {
+        let raw = celsius_u(5)
+        let ctype = degC_u_to_u32(raw)
+        let expected = Celsius_u(CUnsignedInt(ctype))
+        XCTAssertEqual(Celsius_u(rawValue: raw), expected)
+    }
+
+    func testCelsius_uTemperatureCUnsignedIntInit() {
+        let raw = Celsius_u(CUnsignedInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_uFloatInits() {
+        let raw = Float(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_degC_u(5)
+        let expected2 = Float(
+            degC_u_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_uFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_degC_u(5)
+        let expected = Celsius_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(degC_u_to_f(ctype))
+        )
+    }
+
+    func testCelsius_uFloatRawValueInit() {
+        let raw = celsius_u(5)
+        let ctype = degC_u_to_f(raw)
+        let expected = Celsius_u(Float(ctype))
+        XCTAssertEqual(Celsius_u(rawValue: raw), expected)
+    }
+
+    func testCelsius_uTemperatureFloatInit() {
+        let raw = Celsius_u(Float(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_uDoubleInits() {
+        let raw = Double(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_degC_u(5)
+        let expected2 = Double(
+            degC_u_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_uDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_degC_u(5)
+        let expected = Celsius_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(degC_u_to_d(ctype))
+        )
+    }
+
+    func testCelsius_uDoubleRawValueInit() {
+        let raw = celsius_u(5)
+        let ctype = degC_u_to_d(raw)
+        let expected = Celsius_u(Double(ctype))
+        XCTAssertEqual(Celsius_u(rawValue: raw), expected)
+    }
+
+    func testCelsius_uTemperatureDoubleInit() {
+        let raw = Celsius_u(Double(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testCelsius_fToCelsius_tTemperatureConversions() {
+        let original = Celsius_f(5)
+        let category = Temperature(original)
+        let other = category.celsius_t
+        XCTAssertEqual(other, Celsius_t(original))
+    }
+
+    func testCelsius_tToCelsius_fConversions() {
+        let ctype1 = celsius_f(5)
+        let swiftType1 = Celsius_f(rawValue: ctype1)
+        let ctype2 = degC_f_to_degC_t(ctype1)
+        let swiftType2 = Celsius_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_t(swiftType1))
+    }
+
+    func testCelsius_fToCelsius_uTemperatureConversions() {
+        let original = Celsius_f(5)
+        let category = Temperature(original)
+        let other = category.celsius_u
+        XCTAssertEqual(other, Celsius_u(original))
+    }
+
+    func testCelsius_uToCelsius_fConversions() {
+        let ctype1 = celsius_f(5)
+        let swiftType1 = Celsius_f(rawValue: ctype1)
+        let ctype2 = degC_f_to_degC_u(ctype1)
+        let swiftType2 = Celsius_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_u(swiftType1))
+    }
+
+    func testCelsius_fToCelsius_dTemperatureConversions() {
+        let original = Celsius_f(5)
+        let category = Temperature(original)
+        let other = category.celsius_d
+        XCTAssertEqual(other, Celsius_d(original))
+    }
+
+    func testCelsius_dToCelsius_fConversions() {
+        let ctype1 = celsius_f(5)
+        let swiftType1 = Celsius_f(rawValue: ctype1)
+        let ctype2 = degC_f_to_degC_d(ctype1)
+        let swiftType2 = Celsius_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_d(swiftType1))
+    }
+
+    func testCelsius_fToFahrenheit_tTemperatureConversions() {
+        let original = Celsius_f(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_t
+        XCTAssertEqual(other, Fahrenheit_t(original))
+    }
+
+    func testFahrenheit_tToCelsius_fConversions() {
+        let ctype1 = celsius_f(5)
+        let swiftType1 = Celsius_f(rawValue: ctype1)
+        let ctype2 = degC_f_to_degF_t(ctype1)
+        let swiftType2 = Fahrenheit_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_t(swiftType1))
+    }
+
+    func testCelsius_fToFahrenheit_uTemperatureConversions() {
+        let original = Celsius_f(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_u
+        XCTAssertEqual(other, Fahrenheit_u(original))
+    }
+
+    func testFahrenheit_uToCelsius_fConversions() {
+        let ctype1 = celsius_f(5)
+        let swiftType1 = Celsius_f(rawValue: ctype1)
+        let ctype2 = degC_f_to_degF_u(ctype1)
+        let swiftType2 = Fahrenheit_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_u(swiftType1))
+    }
+
+    func testCelsius_fToFahrenheit_fTemperatureConversions() {
+        let original = Celsius_f(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_f
+        XCTAssertEqual(other, Fahrenheit_f(original))
+    }
+
+    func testFahrenheit_fToCelsius_fConversions() {
+        let ctype1 = celsius_f(5)
+        let swiftType1 = Celsius_f(rawValue: ctype1)
+        let ctype2 = degC_f_to_degF_f(ctype1)
+        let swiftType2 = Fahrenheit_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_f(swiftType1))
+    }
+
+    func testCelsius_fToFahrenheit_dTemperatureConversions() {
+        let original = Celsius_f(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_d
+        XCTAssertEqual(other, Fahrenheit_d(original))
+    }
+
+    func testFahrenheit_dToCelsius_fConversions() {
+        let ctype1 = celsius_f(5)
+        let swiftType1 = Celsius_f(rawValue: ctype1)
+        let ctype2 = degC_f_to_degF_d(ctype1)
+        let swiftType2 = Fahrenheit_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_d(swiftType1))
+    }
+
+    func testCelsius_fToKelvin_tTemperatureConversions() {
+        let original = Celsius_f(5)
+        let category = Temperature(original)
+        let other = category.kelvin_t
+        XCTAssertEqual(other, Kelvin_t(original))
+    }
+
+    func testKelvin_tToCelsius_fConversions() {
+        let ctype1 = celsius_f(5)
+        let swiftType1 = Celsius_f(rawValue: ctype1)
+        let ctype2 = degC_f_to_K_t(ctype1)
+        let swiftType2 = Kelvin_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_t(swiftType1))
+    }
+
+    func testCelsius_fToKelvin_uTemperatureConversions() {
+        let original = Celsius_f(5)
+        let category = Temperature(original)
+        let other = category.kelvin_u
+        XCTAssertEqual(other, Kelvin_u(original))
+    }
+
+    func testKelvin_uToCelsius_fConversions() {
+        let ctype1 = celsius_f(5)
+        let swiftType1 = Celsius_f(rawValue: ctype1)
+        let ctype2 = degC_f_to_K_u(ctype1)
+        let swiftType2 = Kelvin_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_u(swiftType1))
+    }
+
+    func testCelsius_fToKelvin_fTemperatureConversions() {
+        let original = Celsius_f(5)
+        let category = Temperature(original)
+        let other = category.kelvin_f
+        XCTAssertEqual(other, Kelvin_f(original))
+    }
+
+    func testKelvin_fToCelsius_fConversions() {
+        let ctype1 = celsius_f(5)
+        let swiftType1 = Celsius_f(rawValue: ctype1)
+        let ctype2 = degC_f_to_K_f(ctype1)
+        let swiftType2 = Kelvin_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_f(swiftType1))
+    }
+
+    func testCelsius_fToKelvin_dTemperatureConversions() {
+        let original = Celsius_f(5)
+        let category = Temperature(original)
+        let other = category.kelvin_d
+        XCTAssertEqual(other, Kelvin_d(original))
+    }
+
+    func testKelvin_dToCelsius_fConversions() {
+        let ctype1 = celsius_f(5)
+        let swiftType1 = Celsius_f(rawValue: ctype1)
+        let ctype2 = degC_f_to_K_d(ctype1)
+        let swiftType2 = Kelvin_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_d(swiftType1))
+    }
+
+    func testCelsius_fInitFromTypeEnum() {
+        let underlyingType = Temperature.TemperatureTypes.celsius_f(5)
+        let category = Temperature(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testTemperatureCelsius_fInt8Inits() {
+        let raw = Int8(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_degC_f(5)
+        let expected2 = Int8(
+            degC_f_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_fInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_degC_f(5)
+        let expected = Celsius_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(degC_f_to_i8(ctype))
+        )
+    }
+
+    func testCelsius_fInt8RawValueInit() {
+        let raw = celsius_f(5)
+        let ctype = degC_f_to_i8(raw)
+        let expected = Celsius_f(Int8(ctype))
+        XCTAssertEqual(Celsius_f(rawValue: raw), expected)
+    }
+
+    func testCelsius_fTemperatureInt8Init() {
+        let raw = Celsius_f(Int8(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_fInt16Inits() {
+        let raw = Int16(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_degC_f(5)
+        let expected2 = Int16(
+            degC_f_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_fInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_degC_f(5)
+        let expected = Celsius_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(degC_f_to_i16(ctype))
+        )
+    }
+
+    func testCelsius_fInt16RawValueInit() {
+        let raw = celsius_f(5)
+        let ctype = degC_f_to_i16(raw)
+        let expected = Celsius_f(Int16(ctype))
+        XCTAssertEqual(Celsius_f(rawValue: raw), expected)
+    }
+
+    func testCelsius_fTemperatureInt16Init() {
+        let raw = Celsius_f(Int16(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_fInt32Inits() {
+        let raw = Int32(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_degC_f(5)
+        let expected2 = Int32(
+            degC_f_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_fInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_degC_f(5)
+        let expected = Celsius_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(degC_f_to_i32(ctype))
+        )
+    }
+
+    func testCelsius_fInt32RawValueInit() {
+        let raw = celsius_f(5)
+        let ctype = degC_f_to_i32(raw)
+        let expected = Celsius_f(Int32(ctype))
+        XCTAssertEqual(Celsius_f(rawValue: raw), expected)
+    }
+
+    func testCelsius_fTemperatureInt32Init() {
+        let raw = Celsius_f(Int32(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_fInt64Inits() {
+        let raw = Int64(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_degC_f(5)
+        let expected2 = Int64(
+            degC_f_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_fInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_degC_f(5)
+        let expected = Celsius_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(degC_f_to_i64(ctype))
+        )
+    }
+
+    func testCelsius_fInt64RawValueInit() {
+        let raw = celsius_f(5)
+        let ctype = degC_f_to_i64(raw)
+        let expected = Celsius_f(Int64(ctype))
+        XCTAssertEqual(Celsius_f(rawValue: raw), expected)
+    }
+
+    func testCelsius_fTemperatureInt64Init() {
+        let raw = Celsius_f(Int64(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_fIntInits() {
+        let raw = Int(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_degC_f(5)
+        let expected2 = Int(
+            degC_f_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_fIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_degC_f(5)
+        let expected = Celsius_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(degC_f_to_i64(ctype))
+        )
+    }
+
+    func testCelsius_fIntRawValueInit() {
+        let raw = celsius_f(5)
+        let ctype = degC_f_to_i64(raw)
+        let expected = Celsius_f(Int(ctype))
+        XCTAssertEqual(Celsius_f(rawValue: raw), expected)
+    }
+
+    func testCelsius_fTemperatureIntInit() {
+        let raw = Celsius_f(Int(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_fCIntInits() {
+        let raw = CInt(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_degC_f(5)
+        let expected2 = CInt(
+            degC_f_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_fCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_degC_f(5)
+        let expected = Celsius_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(degC_f_to_i32(ctype))
+        )
+    }
+
+    func testCelsius_fCIntRawValueInit() {
+        let raw = celsius_f(5)
+        let ctype = degC_f_to_i32(raw)
+        let expected = Celsius_f(CInt(ctype))
+        XCTAssertEqual(Celsius_f(rawValue: raw), expected)
+    }
+
+    func testCelsius_fTemperatureCIntInit() {
+        let raw = Celsius_f(CInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_fUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_degC_f(5)
+        let expected2 = UInt8(
+            degC_f_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_fUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_degC_f(5)
+        let expected = Celsius_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(degC_f_to_u8(ctype))
+        )
+    }
+
+    func testCelsius_fUInt8RawValueInit() {
+        let raw = celsius_f(5)
+        let ctype = degC_f_to_u8(raw)
+        let expected = Celsius_f(UInt8(ctype))
+        XCTAssertEqual(Celsius_f(rawValue: raw), expected)
+    }
+
+    func testCelsius_fTemperatureUInt8Init() {
+        let raw = Celsius_f(UInt8(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_fUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_degC_f(5)
+        let expected2 = UInt16(
+            degC_f_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_fUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_degC_f(5)
+        let expected = Celsius_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(degC_f_to_u16(ctype))
+        )
+    }
+
+    func testCelsius_fUInt16RawValueInit() {
+        let raw = celsius_f(5)
+        let ctype = degC_f_to_u16(raw)
+        let expected = Celsius_f(UInt16(ctype))
+        XCTAssertEqual(Celsius_f(rawValue: raw), expected)
+    }
+
+    func testCelsius_fTemperatureUInt16Init() {
+        let raw = Celsius_f(UInt16(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_fUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_degC_f(5)
+        let expected2 = UInt32(
+            degC_f_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_fUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_degC_f(5)
+        let expected = Celsius_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(degC_f_to_u32(ctype))
+        )
+    }
+
+    func testCelsius_fUInt32RawValueInit() {
+        let raw = celsius_f(5)
+        let ctype = degC_f_to_u32(raw)
+        let expected = Celsius_f(UInt32(ctype))
+        XCTAssertEqual(Celsius_f(rawValue: raw), expected)
+    }
+
+    func testCelsius_fTemperatureUInt32Init() {
+        let raw = Celsius_f(UInt32(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_fUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_degC_f(5)
+        let expected2 = UInt64(
+            degC_f_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_fUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_degC_f(5)
+        let expected = Celsius_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(degC_f_to_u64(ctype))
+        )
+    }
+
+    func testCelsius_fUInt64RawValueInit() {
+        let raw = celsius_f(5)
+        let ctype = degC_f_to_u64(raw)
+        let expected = Celsius_f(UInt64(ctype))
+        XCTAssertEqual(Celsius_f(rawValue: raw), expected)
+    }
+
+    func testCelsius_fTemperatureUInt64Init() {
+        let raw = Celsius_f(UInt64(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_fUIntInits() {
+        let raw = UInt(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_degC_f(5)
+        let expected2 = UInt(
+            degC_f_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_fUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_degC_f(5)
+        let expected = Celsius_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(degC_f_to_u64(ctype))
+        )
+    }
+
+    func testCelsius_fUIntRawValueInit() {
+        let raw = celsius_f(5)
+        let ctype = degC_f_to_u64(raw)
+        let expected = Celsius_f(UInt(ctype))
+        XCTAssertEqual(Celsius_f(rawValue: raw), expected)
+    }
+
+    func testCelsius_fTemperatureUIntInit() {
+        let raw = Celsius_f(UInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_fCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_degC_f(5)
+        let expected2 = CUnsignedInt(
+            degC_f_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_fCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_degC_f(5)
+        let expected = Celsius_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(degC_f_to_u32(ctype))
+        )
+    }
+
+    func testCelsius_fCUnsignedIntRawValueInit() {
+        let raw = celsius_f(5)
+        let ctype = degC_f_to_u32(raw)
+        let expected = Celsius_f(CUnsignedInt(ctype))
+        XCTAssertEqual(Celsius_f(rawValue: raw), expected)
+    }
+
+    func testCelsius_fTemperatureCUnsignedIntInit() {
+        let raw = Celsius_f(CUnsignedInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_fFloatInits() {
+        let raw = Float(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_degC_f(5)
+        let expected2 = Float(
+            degC_f_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_fFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_degC_f(5)
+        let expected = Celsius_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(degC_f_to_f(ctype))
+        )
+    }
+
+    func testCelsius_fFloatRawValueInit() {
+        let raw = celsius_f(5)
+        let ctype = degC_f_to_f(raw)
+        let expected = Celsius_f(Float(ctype))
+        XCTAssertEqual(Celsius_f(rawValue: raw), expected)
+    }
+
+    func testCelsius_fTemperatureFloatInit() {
+        let raw = Celsius_f(Float(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_fDoubleInits() {
+        let raw = Double(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_degC_f(5)
+        let expected2 = Double(
+            degC_f_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_fDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_degC_f(5)
+        let expected = Celsius_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(degC_f_to_d(ctype))
+        )
+    }
+
+    func testCelsius_fDoubleRawValueInit() {
+        let raw = celsius_f(5)
+        let ctype = degC_f_to_d(raw)
+        let expected = Celsius_f(Double(ctype))
+        XCTAssertEqual(Celsius_f(rawValue: raw), expected)
+    }
+
+    func testCelsius_fTemperatureDoubleInit() {
+        let raw = Celsius_f(Double(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testCelsius_dToCelsius_tTemperatureConversions() {
+        let original = Celsius_d(5)
+        let category = Temperature(original)
+        let other = category.celsius_t
+        XCTAssertEqual(other, Celsius_t(original))
+    }
+
+    func testCelsius_tToCelsius_dConversions() {
+        let ctype1 = celsius_d(5)
+        let swiftType1 = Celsius_d(rawValue: ctype1)
+        let ctype2 = degC_d_to_degC_t(ctype1)
+        let swiftType2 = Celsius_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_t(swiftType1))
+    }
+
+    func testCelsius_dToCelsius_uTemperatureConversions() {
+        let original = Celsius_d(5)
+        let category = Temperature(original)
+        let other = category.celsius_u
+        XCTAssertEqual(other, Celsius_u(original))
+    }
+
+    func testCelsius_uToCelsius_dConversions() {
+        let ctype1 = celsius_d(5)
+        let swiftType1 = Celsius_d(rawValue: ctype1)
+        let ctype2 = degC_d_to_degC_u(ctype1)
+        let swiftType2 = Celsius_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_u(swiftType1))
+    }
+
+    func testCelsius_dToCelsius_fTemperatureConversions() {
+        let original = Celsius_d(5)
+        let category = Temperature(original)
+        let other = category.celsius_f
+        XCTAssertEqual(other, Celsius_f(original))
+    }
+
+    func testCelsius_fToCelsius_dConversions() {
+        let ctype1 = celsius_d(5)
+        let swiftType1 = Celsius_d(rawValue: ctype1)
+        let ctype2 = degC_d_to_degC_f(ctype1)
+        let swiftType2 = Celsius_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_f(swiftType1))
+    }
+
+    func testCelsius_dToFahrenheit_tTemperatureConversions() {
+        let original = Celsius_d(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_t
+        XCTAssertEqual(other, Fahrenheit_t(original))
+    }
+
+    func testFahrenheit_tToCelsius_dConversions() {
+        let ctype1 = celsius_d(5)
+        let swiftType1 = Celsius_d(rawValue: ctype1)
+        let ctype2 = degC_d_to_degF_t(ctype1)
+        let swiftType2 = Fahrenheit_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_t(swiftType1))
+    }
+
+    func testCelsius_dToFahrenheit_uTemperatureConversions() {
+        let original = Celsius_d(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_u
+        XCTAssertEqual(other, Fahrenheit_u(original))
+    }
+
+    func testFahrenheit_uToCelsius_dConversions() {
+        let ctype1 = celsius_d(5)
+        let swiftType1 = Celsius_d(rawValue: ctype1)
+        let ctype2 = degC_d_to_degF_u(ctype1)
+        let swiftType2 = Fahrenheit_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_u(swiftType1))
+    }
+
+    func testCelsius_dToFahrenheit_fTemperatureConversions() {
+        let original = Celsius_d(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_f
+        XCTAssertEqual(other, Fahrenheit_f(original))
+    }
+
+    func testFahrenheit_fToCelsius_dConversions() {
+        let ctype1 = celsius_d(5)
+        let swiftType1 = Celsius_d(rawValue: ctype1)
+        let ctype2 = degC_d_to_degF_f(ctype1)
+        let swiftType2 = Fahrenheit_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_f(swiftType1))
+    }
+
+    func testCelsius_dToFahrenheit_dTemperatureConversions() {
+        let original = Celsius_d(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_d
+        XCTAssertEqual(other, Fahrenheit_d(original))
+    }
+
+    func testFahrenheit_dToCelsius_dConversions() {
+        let ctype1 = celsius_d(5)
+        let swiftType1 = Celsius_d(rawValue: ctype1)
+        let ctype2 = degC_d_to_degF_d(ctype1)
+        let swiftType2 = Fahrenheit_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_d(swiftType1))
+    }
+
+    func testCelsius_dToKelvin_tTemperatureConversions() {
+        let original = Celsius_d(5)
+        let category = Temperature(original)
+        let other = category.kelvin_t
+        XCTAssertEqual(other, Kelvin_t(original))
+    }
+
+    func testKelvin_tToCelsius_dConversions() {
+        let ctype1 = celsius_d(5)
+        let swiftType1 = Celsius_d(rawValue: ctype1)
+        let ctype2 = degC_d_to_K_t(ctype1)
+        let swiftType2 = Kelvin_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_t(swiftType1))
+    }
+
+    func testCelsius_dToKelvin_uTemperatureConversions() {
+        let original = Celsius_d(5)
+        let category = Temperature(original)
+        let other = category.kelvin_u
+        XCTAssertEqual(other, Kelvin_u(original))
+    }
+
+    func testKelvin_uToCelsius_dConversions() {
+        let ctype1 = celsius_d(5)
+        let swiftType1 = Celsius_d(rawValue: ctype1)
+        let ctype2 = degC_d_to_K_u(ctype1)
+        let swiftType2 = Kelvin_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_u(swiftType1))
+    }
+
+    func testCelsius_dToKelvin_fTemperatureConversions() {
+        let original = Celsius_d(5)
+        let category = Temperature(original)
+        let other = category.kelvin_f
+        XCTAssertEqual(other, Kelvin_f(original))
+    }
+
+    func testKelvin_fToCelsius_dConversions() {
+        let ctype1 = celsius_d(5)
+        let swiftType1 = Celsius_d(rawValue: ctype1)
+        let ctype2 = degC_d_to_K_f(ctype1)
+        let swiftType2 = Kelvin_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_f(swiftType1))
+    }
+
+    func testCelsius_dToKelvin_dTemperatureConversions() {
+        let original = Celsius_d(5)
+        let category = Temperature(original)
+        let other = category.kelvin_d
+        XCTAssertEqual(other, Kelvin_d(original))
+    }
+
+    func testKelvin_dToCelsius_dConversions() {
+        let ctype1 = celsius_d(5)
+        let swiftType1 = Celsius_d(rawValue: ctype1)
+        let ctype2 = degC_d_to_K_d(ctype1)
+        let swiftType2 = Kelvin_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_d(swiftType1))
+    }
+
+    func testCelsius_dInitFromTypeEnum() {
+        let underlyingType = Temperature.TemperatureTypes.celsius_d(5)
+        let category = Temperature(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testTemperatureCelsius_dInt8Inits() {
+        let raw = Int8(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_degC_d(5)
+        let expected2 = Int8(
+            degC_d_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_dInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_degC_d(5)
+        let expected = Celsius_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(degC_d_to_i8(ctype))
+        )
+    }
+
+    func testCelsius_dInt8RawValueInit() {
+        let raw = celsius_d(5)
+        let ctype = degC_d_to_i8(raw)
+        let expected = Celsius_d(Int8(ctype))
+        XCTAssertEqual(Celsius_d(rawValue: raw), expected)
+    }
+
+    func testCelsius_dTemperatureInt8Init() {
+        let raw = Celsius_d(Int8(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_dInt16Inits() {
+        let raw = Int16(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_degC_d(5)
+        let expected2 = Int16(
+            degC_d_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_dInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_degC_d(5)
+        let expected = Celsius_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(degC_d_to_i16(ctype))
+        )
+    }
+
+    func testCelsius_dInt16RawValueInit() {
+        let raw = celsius_d(5)
+        let ctype = degC_d_to_i16(raw)
+        let expected = Celsius_d(Int16(ctype))
+        XCTAssertEqual(Celsius_d(rawValue: raw), expected)
+    }
+
+    func testCelsius_dTemperatureInt16Init() {
+        let raw = Celsius_d(Int16(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_dInt32Inits() {
+        let raw = Int32(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_degC_d(5)
+        let expected2 = Int32(
+            degC_d_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_dInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_degC_d(5)
+        let expected = Celsius_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(degC_d_to_i32(ctype))
+        )
+    }
+
+    func testCelsius_dInt32RawValueInit() {
+        let raw = celsius_d(5)
+        let ctype = degC_d_to_i32(raw)
+        let expected = Celsius_d(Int32(ctype))
+        XCTAssertEqual(Celsius_d(rawValue: raw), expected)
+    }
+
+    func testCelsius_dTemperatureInt32Init() {
+        let raw = Celsius_d(Int32(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_dInt64Inits() {
+        let raw = Int64(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_degC_d(5)
+        let expected2 = Int64(
+            degC_d_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_dInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_degC_d(5)
+        let expected = Celsius_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(degC_d_to_i64(ctype))
+        )
+    }
+
+    func testCelsius_dInt64RawValueInit() {
+        let raw = celsius_d(5)
+        let ctype = degC_d_to_i64(raw)
+        let expected = Celsius_d(Int64(ctype))
+        XCTAssertEqual(Celsius_d(rawValue: raw), expected)
+    }
+
+    func testCelsius_dTemperatureInt64Init() {
+        let raw = Celsius_d(Int64(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_dIntInits() {
+        let raw = Int(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_degC_d(5)
+        let expected2 = Int(
+            degC_d_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_dIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_degC_d(5)
+        let expected = Celsius_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(degC_d_to_i64(ctype))
+        )
+    }
+
+    func testCelsius_dIntRawValueInit() {
+        let raw = celsius_d(5)
+        let ctype = degC_d_to_i64(raw)
+        let expected = Celsius_d(Int(ctype))
+        XCTAssertEqual(Celsius_d(rawValue: raw), expected)
+    }
+
+    func testCelsius_dTemperatureIntInit() {
+        let raw = Celsius_d(Int(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_dCIntInits() {
+        let raw = CInt(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_degC_d(5)
+        let expected2 = CInt(
+            degC_d_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_dCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_degC_d(5)
+        let expected = Celsius_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(degC_d_to_i32(ctype))
+        )
+    }
+
+    func testCelsius_dCIntRawValueInit() {
+        let raw = celsius_d(5)
+        let ctype = degC_d_to_i32(raw)
+        let expected = Celsius_d(CInt(ctype))
+        XCTAssertEqual(Celsius_d(rawValue: raw), expected)
+    }
+
+    func testCelsius_dTemperatureCIntInit() {
+        let raw = Celsius_d(CInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_dUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_degC_d(5)
+        let expected2 = UInt8(
+            degC_d_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_dUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_degC_d(5)
+        let expected = Celsius_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(degC_d_to_u8(ctype))
+        )
+    }
+
+    func testCelsius_dUInt8RawValueInit() {
+        let raw = celsius_d(5)
+        let ctype = degC_d_to_u8(raw)
+        let expected = Celsius_d(UInt8(ctype))
+        XCTAssertEqual(Celsius_d(rawValue: raw), expected)
+    }
+
+    func testCelsius_dTemperatureUInt8Init() {
+        let raw = Celsius_d(UInt8(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_dUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_degC_d(5)
+        let expected2 = UInt16(
+            degC_d_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_dUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_degC_d(5)
+        let expected = Celsius_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(degC_d_to_u16(ctype))
+        )
+    }
+
+    func testCelsius_dUInt16RawValueInit() {
+        let raw = celsius_d(5)
+        let ctype = degC_d_to_u16(raw)
+        let expected = Celsius_d(UInt16(ctype))
+        XCTAssertEqual(Celsius_d(rawValue: raw), expected)
+    }
+
+    func testCelsius_dTemperatureUInt16Init() {
+        let raw = Celsius_d(UInt16(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_dUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_degC_d(5)
+        let expected2 = UInt32(
+            degC_d_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_dUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_degC_d(5)
+        let expected = Celsius_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(degC_d_to_u32(ctype))
+        )
+    }
+
+    func testCelsius_dUInt32RawValueInit() {
+        let raw = celsius_d(5)
+        let ctype = degC_d_to_u32(raw)
+        let expected = Celsius_d(UInt32(ctype))
+        XCTAssertEqual(Celsius_d(rawValue: raw), expected)
+    }
+
+    func testCelsius_dTemperatureUInt32Init() {
+        let raw = Celsius_d(UInt32(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_dUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_degC_d(5)
+        let expected2 = UInt64(
+            degC_d_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_dUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_degC_d(5)
+        let expected = Celsius_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(degC_d_to_u64(ctype))
+        )
+    }
+
+    func testCelsius_dUInt64RawValueInit() {
+        let raw = celsius_d(5)
+        let ctype = degC_d_to_u64(raw)
+        let expected = Celsius_d(UInt64(ctype))
+        XCTAssertEqual(Celsius_d(rawValue: raw), expected)
+    }
+
+    func testCelsius_dTemperatureUInt64Init() {
+        let raw = Celsius_d(UInt64(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_dUIntInits() {
+        let raw = UInt(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_degC_d(5)
+        let expected2 = UInt(
+            degC_d_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_dUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_degC_d(5)
+        let expected = Celsius_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(degC_d_to_u64(ctype))
+        )
+    }
+
+    func testCelsius_dUIntRawValueInit() {
+        let raw = celsius_d(5)
+        let ctype = degC_d_to_u64(raw)
+        let expected = Celsius_d(UInt(ctype))
+        XCTAssertEqual(Celsius_d(rawValue: raw), expected)
+    }
+
+    func testCelsius_dTemperatureUIntInit() {
+        let raw = Celsius_d(UInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_dCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_degC_d(5)
+        let expected2 = CUnsignedInt(
+            degC_d_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_dCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_degC_d(5)
+        let expected = Celsius_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(degC_d_to_u32(ctype))
+        )
+    }
+
+    func testCelsius_dCUnsignedIntRawValueInit() {
+        let raw = celsius_d(5)
+        let ctype = degC_d_to_u32(raw)
+        let expected = Celsius_d(CUnsignedInt(ctype))
+        XCTAssertEqual(Celsius_d(rawValue: raw), expected)
+    }
+
+    func testCelsius_dTemperatureCUnsignedIntInit() {
+        let raw = Celsius_d(CUnsignedInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_dFloatInits() {
+        let raw = Float(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_degC_d(5)
+        let expected2 = Float(
+            degC_d_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_dFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_degC_d(5)
+        let expected = Celsius_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(degC_d_to_f(ctype))
+        )
+    }
+
+    func testCelsius_dFloatRawValueInit() {
+        let raw = celsius_d(5)
+        let ctype = degC_d_to_f(raw)
+        let expected = Celsius_d(Float(ctype))
+        XCTAssertEqual(Celsius_d(rawValue: raw), expected)
+    }
+
+    func testCelsius_dTemperatureFloatInit() {
+        let raw = Celsius_d(Float(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureCelsius_dDoubleInits() {
+        let raw = Double(5)
+        let expected = Temperature(celsius: raw)
+        let result = Temperature.celsius(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_degC_d(5)
+        let expected2 = Double(
+            degC_d_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCelsius_dDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_degC_d(5)
+        let expected = Celsius_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(degC_d_to_d(ctype))
+        )
+    }
+
+    func testCelsius_dDoubleRawValueInit() {
+        let raw = celsius_d(5)
+        let ctype = degC_d_to_d(raw)
+        let expected = Celsius_d(Double(ctype))
+        XCTAssertEqual(Celsius_d(rawValue: raw), expected)
+    }
+
+    func testCelsius_dTemperatureDoubleInit() {
+        let raw = Celsius_d(Double(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .celsius_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+}
+
+final class FahrenheitConversionTests: XCTestCase {
+
+    func testFahrenheit_tToCelsius_tTemperatureConversions() {
+        let original = Fahrenheit_t(5)
+        let category = Temperature(original)
+        let other = category.celsius_t
+        XCTAssertEqual(other, Celsius_t(original))
+    }
+
+    func testCelsius_tToFahrenheit_tConversions() {
+        let ctype1 = fahrenheit_t(5)
+        let swiftType1 = Fahrenheit_t(rawValue: ctype1)
+        let ctype2 = degF_t_to_degC_t(ctype1)
+        let swiftType2 = Celsius_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_t(swiftType1))
+    }
+
+    func testFahrenheit_tToCelsius_uTemperatureConversions() {
+        let original = Fahrenheit_t(5)
+        let category = Temperature(original)
+        let other = category.celsius_u
+        XCTAssertEqual(other, Celsius_u(original))
+    }
+
+    func testCelsius_uToFahrenheit_tConversions() {
+        let ctype1 = fahrenheit_t(5)
+        let swiftType1 = Fahrenheit_t(rawValue: ctype1)
+        let ctype2 = degF_t_to_degC_u(ctype1)
+        let swiftType2 = Celsius_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_u(swiftType1))
+    }
+
+    func testFahrenheit_tToCelsius_fTemperatureConversions() {
+        let original = Fahrenheit_t(5)
+        let category = Temperature(original)
+        let other = category.celsius_f
+        XCTAssertEqual(other, Celsius_f(original))
+    }
+
+    func testCelsius_fToFahrenheit_tConversions() {
+        let ctype1 = fahrenheit_t(5)
+        let swiftType1 = Fahrenheit_t(rawValue: ctype1)
+        let ctype2 = degF_t_to_degC_f(ctype1)
+        let swiftType2 = Celsius_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_f(swiftType1))
+    }
+
+    func testFahrenheit_tToCelsius_dTemperatureConversions() {
+        let original = Fahrenheit_t(5)
+        let category = Temperature(original)
+        let other = category.celsius_d
+        XCTAssertEqual(other, Celsius_d(original))
+    }
+
+    func testCelsius_dToFahrenheit_tConversions() {
+        let ctype1 = fahrenheit_t(5)
+        let swiftType1 = Fahrenheit_t(rawValue: ctype1)
+        let ctype2 = degF_t_to_degC_d(ctype1)
+        let swiftType2 = Celsius_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_d(swiftType1))
+    }
+
+    func testFahrenheit_tToFahrenheit_uTemperatureConversions() {
+        let original = Fahrenheit_t(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_u
+        XCTAssertEqual(other, Fahrenheit_u(original))
+    }
+
+    func testFahrenheit_uToFahrenheit_tConversions() {
+        let ctype1 = fahrenheit_t(5)
+        let swiftType1 = Fahrenheit_t(rawValue: ctype1)
+        let ctype2 = degF_t_to_degF_u(ctype1)
+        let swiftType2 = Fahrenheit_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_u(swiftType1))
+    }
+
+    func testFahrenheit_tToFahrenheit_fTemperatureConversions() {
+        let original = Fahrenheit_t(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_f
+        XCTAssertEqual(other, Fahrenheit_f(original))
+    }
+
+    func testFahrenheit_fToFahrenheit_tConversions() {
+        let ctype1 = fahrenheit_t(5)
+        let swiftType1 = Fahrenheit_t(rawValue: ctype1)
+        let ctype2 = degF_t_to_degF_f(ctype1)
+        let swiftType2 = Fahrenheit_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_f(swiftType1))
+    }
+
+    func testFahrenheit_tToFahrenheit_dTemperatureConversions() {
+        let original = Fahrenheit_t(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_d
+        XCTAssertEqual(other, Fahrenheit_d(original))
+    }
+
+    func testFahrenheit_dToFahrenheit_tConversions() {
+        let ctype1 = fahrenheit_t(5)
+        let swiftType1 = Fahrenheit_t(rawValue: ctype1)
+        let ctype2 = degF_t_to_degF_d(ctype1)
+        let swiftType2 = Fahrenheit_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_d(swiftType1))
+    }
+
+    func testFahrenheit_tToKelvin_tTemperatureConversions() {
+        let original = Fahrenheit_t(5)
+        let category = Temperature(original)
+        let other = category.kelvin_t
+        XCTAssertEqual(other, Kelvin_t(original))
+    }
+
+    func testKelvin_tToFahrenheit_tConversions() {
+        let ctype1 = fahrenheit_t(5)
+        let swiftType1 = Fahrenheit_t(rawValue: ctype1)
+        let ctype2 = degF_t_to_K_t(ctype1)
+        let swiftType2 = Kelvin_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_t(swiftType1))
+    }
+
+    func testFahrenheit_tToKelvin_uTemperatureConversions() {
+        let original = Fahrenheit_t(5)
+        let category = Temperature(original)
+        let other = category.kelvin_u
+        XCTAssertEqual(other, Kelvin_u(original))
+    }
+
+    func testKelvin_uToFahrenheit_tConversions() {
+        let ctype1 = fahrenheit_t(5)
+        let swiftType1 = Fahrenheit_t(rawValue: ctype1)
+        let ctype2 = degF_t_to_K_u(ctype1)
+        let swiftType2 = Kelvin_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_u(swiftType1))
+    }
+
+    func testFahrenheit_tToKelvin_fTemperatureConversions() {
+        let original = Fahrenheit_t(5)
+        let category = Temperature(original)
+        let other = category.kelvin_f
+        XCTAssertEqual(other, Kelvin_f(original))
+    }
+
+    func testKelvin_fToFahrenheit_tConversions() {
+        let ctype1 = fahrenheit_t(5)
+        let swiftType1 = Fahrenheit_t(rawValue: ctype1)
+        let ctype2 = degF_t_to_K_f(ctype1)
+        let swiftType2 = Kelvin_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_f(swiftType1))
+    }
+
+    func testFahrenheit_tToKelvin_dTemperatureConversions() {
+        let original = Fahrenheit_t(5)
+        let category = Temperature(original)
+        let other = category.kelvin_d
+        XCTAssertEqual(other, Kelvin_d(original))
+    }
+
+    func testKelvin_dToFahrenheit_tConversions() {
+        let ctype1 = fahrenheit_t(5)
+        let swiftType1 = Fahrenheit_t(rawValue: ctype1)
+        let ctype2 = degF_t_to_K_d(ctype1)
+        let swiftType2 = Kelvin_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_d(swiftType1))
+    }
+
+    func testFahrenheit_tInitFromTypeEnum() {
+        let underlyingType = Temperature.TemperatureTypes.fahrenheit_t(5)
+        let category = Temperature(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testTemperatureFahrenheit_tInt8Inits() {
+        let raw = Int8(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_degF_t(5)
+        let expected2 = Int8(
+            degF_t_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_tInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_degF_t(5)
+        let expected = Fahrenheit_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(degF_t_to_i8(ctype))
+        )
+    }
+
+    func testFahrenheit_tInt8RawValueInit() {
+        let raw = fahrenheit_t(5)
+        let ctype = degF_t_to_i8(raw)
+        let expected = Fahrenheit_t(Int8(ctype))
+        XCTAssertEqual(Fahrenheit_t(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_tTemperatureInt8Init() {
+        let raw = Fahrenheit_t(Int8(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_tInt16Inits() {
+        let raw = Int16(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_degF_t(5)
+        let expected2 = Int16(
+            degF_t_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_tInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_degF_t(5)
+        let expected = Fahrenheit_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(degF_t_to_i16(ctype))
+        )
+    }
+
+    func testFahrenheit_tInt16RawValueInit() {
+        let raw = fahrenheit_t(5)
+        let ctype = degF_t_to_i16(raw)
+        let expected = Fahrenheit_t(Int16(ctype))
+        XCTAssertEqual(Fahrenheit_t(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_tTemperatureInt16Init() {
+        let raw = Fahrenheit_t(Int16(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_tInt32Inits() {
+        let raw = Int32(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_degF_t(5)
+        let expected2 = Int32(
+            degF_t_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_tInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_degF_t(5)
+        let expected = Fahrenheit_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(degF_t_to_i32(ctype))
+        )
+    }
+
+    func testFahrenheit_tInt32RawValueInit() {
+        let raw = fahrenheit_t(5)
+        let ctype = degF_t_to_i32(raw)
+        let expected = Fahrenheit_t(Int32(ctype))
+        XCTAssertEqual(Fahrenheit_t(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_tTemperatureInt32Init() {
+        let raw = Fahrenheit_t(Int32(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_tInt64Inits() {
+        let raw = Int64(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_degF_t(5)
+        let expected2 = Int64(
+            degF_t_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_tInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_degF_t(5)
+        let expected = Fahrenheit_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(degF_t_to_i64(ctype))
+        )
+    }
+
+    func testFahrenheit_tInt64RawValueInit() {
+        let raw = fahrenheit_t(5)
+        let ctype = degF_t_to_i64(raw)
+        let expected = Fahrenheit_t(Int64(ctype))
+        XCTAssertEqual(Fahrenheit_t(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_tTemperatureInt64Init() {
+        let raw = Fahrenheit_t(Int64(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_tIntInits() {
+        let raw = Int(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_degF_t(5)
+        let expected2 = Int(
+            degF_t_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_tIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_degF_t(5)
+        let expected = Fahrenheit_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(degF_t_to_i64(ctype))
+        )
+    }
+
+    func testFahrenheit_tIntRawValueInit() {
+        let raw = fahrenheit_t(5)
+        let ctype = degF_t_to_i64(raw)
+        let expected = Fahrenheit_t(Int(ctype))
+        XCTAssertEqual(Fahrenheit_t(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_tTemperatureIntInit() {
+        let raw = Fahrenheit_t(Int(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_tCIntInits() {
+        let raw = CInt(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_degF_t(5)
+        let expected2 = CInt(
+            degF_t_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_tCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_degF_t(5)
+        let expected = Fahrenheit_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(degF_t_to_i32(ctype))
+        )
+    }
+
+    func testFahrenheit_tCIntRawValueInit() {
+        let raw = fahrenheit_t(5)
+        let ctype = degF_t_to_i32(raw)
+        let expected = Fahrenheit_t(CInt(ctype))
+        XCTAssertEqual(Fahrenheit_t(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_tTemperatureCIntInit() {
+        let raw = Fahrenheit_t(CInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_tUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_degF_t(5)
+        let expected2 = UInt8(
+            degF_t_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_tUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_degF_t(5)
+        let expected = Fahrenheit_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(degF_t_to_u8(ctype))
+        )
+    }
+
+    func testFahrenheit_tUInt8RawValueInit() {
+        let raw = fahrenheit_t(5)
+        let ctype = degF_t_to_u8(raw)
+        let expected = Fahrenheit_t(UInt8(ctype))
+        XCTAssertEqual(Fahrenheit_t(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_tTemperatureUInt8Init() {
+        let raw = Fahrenheit_t(UInt8(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_tUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_degF_t(5)
+        let expected2 = UInt16(
+            degF_t_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_tUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_degF_t(5)
+        let expected = Fahrenheit_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(degF_t_to_u16(ctype))
+        )
+    }
+
+    func testFahrenheit_tUInt16RawValueInit() {
+        let raw = fahrenheit_t(5)
+        let ctype = degF_t_to_u16(raw)
+        let expected = Fahrenheit_t(UInt16(ctype))
+        XCTAssertEqual(Fahrenheit_t(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_tTemperatureUInt16Init() {
+        let raw = Fahrenheit_t(UInt16(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_tUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_degF_t(5)
+        let expected2 = UInt32(
+            degF_t_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_tUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_degF_t(5)
+        let expected = Fahrenheit_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(degF_t_to_u32(ctype))
+        )
+    }
+
+    func testFahrenheit_tUInt32RawValueInit() {
+        let raw = fahrenheit_t(5)
+        let ctype = degF_t_to_u32(raw)
+        let expected = Fahrenheit_t(UInt32(ctype))
+        XCTAssertEqual(Fahrenheit_t(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_tTemperatureUInt32Init() {
+        let raw = Fahrenheit_t(UInt32(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_tUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_degF_t(5)
+        let expected2 = UInt64(
+            degF_t_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_tUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_degF_t(5)
+        let expected = Fahrenheit_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(degF_t_to_u64(ctype))
+        )
+    }
+
+    func testFahrenheit_tUInt64RawValueInit() {
+        let raw = fahrenheit_t(5)
+        let ctype = degF_t_to_u64(raw)
+        let expected = Fahrenheit_t(UInt64(ctype))
+        XCTAssertEqual(Fahrenheit_t(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_tTemperatureUInt64Init() {
+        let raw = Fahrenheit_t(UInt64(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_tUIntInits() {
+        let raw = UInt(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_degF_t(5)
+        let expected2 = UInt(
+            degF_t_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_tUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_degF_t(5)
+        let expected = Fahrenheit_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(degF_t_to_u64(ctype))
+        )
+    }
+
+    func testFahrenheit_tUIntRawValueInit() {
+        let raw = fahrenheit_t(5)
+        let ctype = degF_t_to_u64(raw)
+        let expected = Fahrenheit_t(UInt(ctype))
+        XCTAssertEqual(Fahrenheit_t(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_tTemperatureUIntInit() {
+        let raw = Fahrenheit_t(UInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_tCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_degF_t(5)
+        let expected2 = CUnsignedInt(
+            degF_t_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_tCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_degF_t(5)
+        let expected = Fahrenheit_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(degF_t_to_u32(ctype))
+        )
+    }
+
+    func testFahrenheit_tCUnsignedIntRawValueInit() {
+        let raw = fahrenheit_t(5)
+        let ctype = degF_t_to_u32(raw)
+        let expected = Fahrenheit_t(CUnsignedInt(ctype))
+        XCTAssertEqual(Fahrenheit_t(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_tTemperatureCUnsignedIntInit() {
+        let raw = Fahrenheit_t(CUnsignedInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_tFloatInits() {
+        let raw = Float(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_degF_t(5)
+        let expected2 = Float(
+            degF_t_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_tFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_degF_t(5)
+        let expected = Fahrenheit_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(degF_t_to_f(ctype))
+        )
+    }
+
+    func testFahrenheit_tFloatRawValueInit() {
+        let raw = fahrenheit_t(5)
+        let ctype = degF_t_to_f(raw)
+        let expected = Fahrenheit_t(Float(ctype))
+        XCTAssertEqual(Fahrenheit_t(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_tTemperatureFloatInit() {
+        let raw = Fahrenheit_t(Float(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_tDoubleInits() {
+        let raw = Double(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_degF_t(5)
+        let expected2 = Double(
+            degF_t_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_tDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_degF_t(5)
+        let expected = Fahrenheit_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(degF_t_to_d(ctype))
+        )
+    }
+
+    func testFahrenheit_tDoubleRawValueInit() {
+        let raw = fahrenheit_t(5)
+        let ctype = degF_t_to_d(raw)
+        let expected = Fahrenheit_t(Double(ctype))
+        XCTAssertEqual(Fahrenheit_t(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_tTemperatureDoubleInit() {
+        let raw = Fahrenheit_t(Double(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testFahrenheit_uToCelsius_tTemperatureConversions() {
+        let original = Fahrenheit_u(5)
+        let category = Temperature(original)
+        let other = category.celsius_t
+        XCTAssertEqual(other, Celsius_t(original))
+    }
+
+    func testCelsius_tToFahrenheit_uConversions() {
+        let ctype1 = fahrenheit_u(5)
+        let swiftType1 = Fahrenheit_u(rawValue: ctype1)
+        let ctype2 = degF_u_to_degC_t(ctype1)
+        let swiftType2 = Celsius_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_t(swiftType1))
+    }
+
+    func testFahrenheit_uToCelsius_uTemperatureConversions() {
+        let original = Fahrenheit_u(5)
+        let category = Temperature(original)
+        let other = category.celsius_u
+        XCTAssertEqual(other, Celsius_u(original))
+    }
+
+    func testCelsius_uToFahrenheit_uConversions() {
+        let ctype1 = fahrenheit_u(5)
+        let swiftType1 = Fahrenheit_u(rawValue: ctype1)
+        let ctype2 = degF_u_to_degC_u(ctype1)
+        let swiftType2 = Celsius_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_u(swiftType1))
+    }
+
+    func testFahrenheit_uToCelsius_fTemperatureConversions() {
+        let original = Fahrenheit_u(5)
+        let category = Temperature(original)
+        let other = category.celsius_f
+        XCTAssertEqual(other, Celsius_f(original))
+    }
+
+    func testCelsius_fToFahrenheit_uConversions() {
+        let ctype1 = fahrenheit_u(5)
+        let swiftType1 = Fahrenheit_u(rawValue: ctype1)
+        let ctype2 = degF_u_to_degC_f(ctype1)
+        let swiftType2 = Celsius_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_f(swiftType1))
+    }
+
+    func testFahrenheit_uToCelsius_dTemperatureConversions() {
+        let original = Fahrenheit_u(5)
+        let category = Temperature(original)
+        let other = category.celsius_d
+        XCTAssertEqual(other, Celsius_d(original))
+    }
+
+    func testCelsius_dToFahrenheit_uConversions() {
+        let ctype1 = fahrenheit_u(5)
+        let swiftType1 = Fahrenheit_u(rawValue: ctype1)
+        let ctype2 = degF_u_to_degC_d(ctype1)
+        let swiftType2 = Celsius_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_d(swiftType1))
+    }
+
+    func testFahrenheit_uToFahrenheit_tTemperatureConversions() {
+        let original = Fahrenheit_u(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_t
+        XCTAssertEqual(other, Fahrenheit_t(original))
+    }
+
+    func testFahrenheit_tToFahrenheit_uConversions() {
+        let ctype1 = fahrenheit_u(5)
+        let swiftType1 = Fahrenheit_u(rawValue: ctype1)
+        let ctype2 = degF_u_to_degF_t(ctype1)
+        let swiftType2 = Fahrenheit_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_t(swiftType1))
+    }
+
+    func testFahrenheit_uToFahrenheit_fTemperatureConversions() {
+        let original = Fahrenheit_u(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_f
+        XCTAssertEqual(other, Fahrenheit_f(original))
+    }
+
+    func testFahrenheit_fToFahrenheit_uConversions() {
+        let ctype1 = fahrenheit_u(5)
+        let swiftType1 = Fahrenheit_u(rawValue: ctype1)
+        let ctype2 = degF_u_to_degF_f(ctype1)
+        let swiftType2 = Fahrenheit_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_f(swiftType1))
+    }
+
+    func testFahrenheit_uToFahrenheit_dTemperatureConversions() {
+        let original = Fahrenheit_u(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_d
+        XCTAssertEqual(other, Fahrenheit_d(original))
+    }
+
+    func testFahrenheit_dToFahrenheit_uConversions() {
+        let ctype1 = fahrenheit_u(5)
+        let swiftType1 = Fahrenheit_u(rawValue: ctype1)
+        let ctype2 = degF_u_to_degF_d(ctype1)
+        let swiftType2 = Fahrenheit_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_d(swiftType1))
+    }
+
+    func testFahrenheit_uToKelvin_tTemperatureConversions() {
+        let original = Fahrenheit_u(5)
+        let category = Temperature(original)
+        let other = category.kelvin_t
+        XCTAssertEqual(other, Kelvin_t(original))
+    }
+
+    func testKelvin_tToFahrenheit_uConversions() {
+        let ctype1 = fahrenheit_u(5)
+        let swiftType1 = Fahrenheit_u(rawValue: ctype1)
+        let ctype2 = degF_u_to_K_t(ctype1)
+        let swiftType2 = Kelvin_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_t(swiftType1))
+    }
+
+    func testFahrenheit_uToKelvin_uTemperatureConversions() {
+        let original = Fahrenheit_u(5)
+        let category = Temperature(original)
+        let other = category.kelvin_u
+        XCTAssertEqual(other, Kelvin_u(original))
+    }
+
+    func testKelvin_uToFahrenheit_uConversions() {
+        let ctype1 = fahrenheit_u(5)
+        let swiftType1 = Fahrenheit_u(rawValue: ctype1)
+        let ctype2 = degF_u_to_K_u(ctype1)
+        let swiftType2 = Kelvin_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_u(swiftType1))
+    }
+
+    func testFahrenheit_uToKelvin_fTemperatureConversions() {
+        let original = Fahrenheit_u(5)
+        let category = Temperature(original)
+        let other = category.kelvin_f
+        XCTAssertEqual(other, Kelvin_f(original))
+    }
+
+    func testKelvin_fToFahrenheit_uConversions() {
+        let ctype1 = fahrenheit_u(5)
+        let swiftType1 = Fahrenheit_u(rawValue: ctype1)
+        let ctype2 = degF_u_to_K_f(ctype1)
+        let swiftType2 = Kelvin_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_f(swiftType1))
+    }
+
+    func testFahrenheit_uToKelvin_dTemperatureConversions() {
+        let original = Fahrenheit_u(5)
+        let category = Temperature(original)
+        let other = category.kelvin_d
+        XCTAssertEqual(other, Kelvin_d(original))
+    }
+
+    func testKelvin_dToFahrenheit_uConversions() {
+        let ctype1 = fahrenheit_u(5)
+        let swiftType1 = Fahrenheit_u(rawValue: ctype1)
+        let ctype2 = degF_u_to_K_d(ctype1)
+        let swiftType2 = Kelvin_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_d(swiftType1))
+    }
+
+    func testFahrenheit_uInitFromTypeEnum() {
+        let underlyingType = Temperature.TemperatureTypes.fahrenheit_u(5)
+        let category = Temperature(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testTemperatureFahrenheit_uInt8Inits() {
+        let raw = Int8(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_degF_u(5)
+        let expected2 = Int8(
+            degF_u_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_uInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_degF_u(5)
+        let expected = Fahrenheit_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(degF_u_to_i8(ctype))
+        )
+    }
+
+    func testFahrenheit_uInt8RawValueInit() {
+        let raw = fahrenheit_u(5)
+        let ctype = degF_u_to_i8(raw)
+        let expected = Fahrenheit_u(Int8(ctype))
+        XCTAssertEqual(Fahrenheit_u(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_uTemperatureInt8Init() {
+        let raw = Fahrenheit_u(Int8(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_uInt16Inits() {
+        let raw = Int16(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_degF_u(5)
+        let expected2 = Int16(
+            degF_u_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_uInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_degF_u(5)
+        let expected = Fahrenheit_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(degF_u_to_i16(ctype))
+        )
+    }
+
+    func testFahrenheit_uInt16RawValueInit() {
+        let raw = fahrenheit_u(5)
+        let ctype = degF_u_to_i16(raw)
+        let expected = Fahrenheit_u(Int16(ctype))
+        XCTAssertEqual(Fahrenheit_u(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_uTemperatureInt16Init() {
+        let raw = Fahrenheit_u(Int16(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_uInt32Inits() {
+        let raw = Int32(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_degF_u(5)
+        let expected2 = Int32(
+            degF_u_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_uInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_degF_u(5)
+        let expected = Fahrenheit_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(degF_u_to_i32(ctype))
+        )
+    }
+
+    func testFahrenheit_uInt32RawValueInit() {
+        let raw = fahrenheit_u(5)
+        let ctype = degF_u_to_i32(raw)
+        let expected = Fahrenheit_u(Int32(ctype))
+        XCTAssertEqual(Fahrenheit_u(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_uTemperatureInt32Init() {
+        let raw = Fahrenheit_u(Int32(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_uInt64Inits() {
+        let raw = Int64(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_degF_u(5)
+        let expected2 = Int64(
+            degF_u_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_uInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_degF_u(5)
+        let expected = Fahrenheit_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(degF_u_to_i64(ctype))
+        )
+    }
+
+    func testFahrenheit_uInt64RawValueInit() {
+        let raw = fahrenheit_u(5)
+        let ctype = degF_u_to_i64(raw)
+        let expected = Fahrenheit_u(Int64(ctype))
+        XCTAssertEqual(Fahrenheit_u(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_uTemperatureInt64Init() {
+        let raw = Fahrenheit_u(Int64(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_uIntInits() {
+        let raw = Int(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_degF_u(5)
+        let expected2 = Int(
+            degF_u_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_uIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_degF_u(5)
+        let expected = Fahrenheit_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(degF_u_to_i64(ctype))
+        )
+    }
+
+    func testFahrenheit_uIntRawValueInit() {
+        let raw = fahrenheit_u(5)
+        let ctype = degF_u_to_i64(raw)
+        let expected = Fahrenheit_u(Int(ctype))
+        XCTAssertEqual(Fahrenheit_u(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_uTemperatureIntInit() {
+        let raw = Fahrenheit_u(Int(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_uCIntInits() {
+        let raw = CInt(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_degF_u(5)
+        let expected2 = CInt(
+            degF_u_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_uCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_degF_u(5)
+        let expected = Fahrenheit_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(degF_u_to_i32(ctype))
+        )
+    }
+
+    func testFahrenheit_uCIntRawValueInit() {
+        let raw = fahrenheit_u(5)
+        let ctype = degF_u_to_i32(raw)
+        let expected = Fahrenheit_u(CInt(ctype))
+        XCTAssertEqual(Fahrenheit_u(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_uTemperatureCIntInit() {
+        let raw = Fahrenheit_u(CInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_uUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_degF_u(5)
+        let expected2 = UInt8(
+            degF_u_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_uUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_degF_u(5)
+        let expected = Fahrenheit_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(degF_u_to_u8(ctype))
+        )
+    }
+
+    func testFahrenheit_uUInt8RawValueInit() {
+        let raw = fahrenheit_u(5)
+        let ctype = degF_u_to_u8(raw)
+        let expected = Fahrenheit_u(UInt8(ctype))
+        XCTAssertEqual(Fahrenheit_u(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_uTemperatureUInt8Init() {
+        let raw = Fahrenheit_u(UInt8(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_uUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_degF_u(5)
+        let expected2 = UInt16(
+            degF_u_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_uUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_degF_u(5)
+        let expected = Fahrenheit_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(degF_u_to_u16(ctype))
+        )
+    }
+
+    func testFahrenheit_uUInt16RawValueInit() {
+        let raw = fahrenheit_u(5)
+        let ctype = degF_u_to_u16(raw)
+        let expected = Fahrenheit_u(UInt16(ctype))
+        XCTAssertEqual(Fahrenheit_u(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_uTemperatureUInt16Init() {
+        let raw = Fahrenheit_u(UInt16(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_uUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_degF_u(5)
+        let expected2 = UInt32(
+            degF_u_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_uUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_degF_u(5)
+        let expected = Fahrenheit_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(degF_u_to_u32(ctype))
+        )
+    }
+
+    func testFahrenheit_uUInt32RawValueInit() {
+        let raw = fahrenheit_u(5)
+        let ctype = degF_u_to_u32(raw)
+        let expected = Fahrenheit_u(UInt32(ctype))
+        XCTAssertEqual(Fahrenheit_u(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_uTemperatureUInt32Init() {
+        let raw = Fahrenheit_u(UInt32(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_uUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_degF_u(5)
+        let expected2 = UInt64(
+            degF_u_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_uUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_degF_u(5)
+        let expected = Fahrenheit_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(degF_u_to_u64(ctype))
+        )
+    }
+
+    func testFahrenheit_uUInt64RawValueInit() {
+        let raw = fahrenheit_u(5)
+        let ctype = degF_u_to_u64(raw)
+        let expected = Fahrenheit_u(UInt64(ctype))
+        XCTAssertEqual(Fahrenheit_u(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_uTemperatureUInt64Init() {
+        let raw = Fahrenheit_u(UInt64(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_uUIntInits() {
+        let raw = UInt(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_degF_u(5)
+        let expected2 = UInt(
+            degF_u_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_uUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_degF_u(5)
+        let expected = Fahrenheit_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(degF_u_to_u64(ctype))
+        )
+    }
+
+    func testFahrenheit_uUIntRawValueInit() {
+        let raw = fahrenheit_u(5)
+        let ctype = degF_u_to_u64(raw)
+        let expected = Fahrenheit_u(UInt(ctype))
+        XCTAssertEqual(Fahrenheit_u(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_uTemperatureUIntInit() {
+        let raw = Fahrenheit_u(UInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_uCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_degF_u(5)
+        let expected2 = CUnsignedInt(
+            degF_u_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_uCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_degF_u(5)
+        let expected = Fahrenheit_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(degF_u_to_u32(ctype))
+        )
+    }
+
+    func testFahrenheit_uCUnsignedIntRawValueInit() {
+        let raw = fahrenheit_u(5)
+        let ctype = degF_u_to_u32(raw)
+        let expected = Fahrenheit_u(CUnsignedInt(ctype))
+        XCTAssertEqual(Fahrenheit_u(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_uTemperatureCUnsignedIntInit() {
+        let raw = Fahrenheit_u(CUnsignedInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_uFloatInits() {
+        let raw = Float(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_degF_u(5)
+        let expected2 = Float(
+            degF_u_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_uFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_degF_u(5)
+        let expected = Fahrenheit_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(degF_u_to_f(ctype))
+        )
+    }
+
+    func testFahrenheit_uFloatRawValueInit() {
+        let raw = fahrenheit_u(5)
+        let ctype = degF_u_to_f(raw)
+        let expected = Fahrenheit_u(Float(ctype))
+        XCTAssertEqual(Fahrenheit_u(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_uTemperatureFloatInit() {
+        let raw = Fahrenheit_u(Float(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_uDoubleInits() {
+        let raw = Double(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_degF_u(5)
+        let expected2 = Double(
+            degF_u_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_uDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_degF_u(5)
+        let expected = Fahrenheit_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(degF_u_to_d(ctype))
+        )
+    }
+
+    func testFahrenheit_uDoubleRawValueInit() {
+        let raw = fahrenheit_u(5)
+        let ctype = degF_u_to_d(raw)
+        let expected = Fahrenheit_u(Double(ctype))
+        XCTAssertEqual(Fahrenheit_u(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_uTemperatureDoubleInit() {
+        let raw = Fahrenheit_u(Double(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testFahrenheit_fToCelsius_tTemperatureConversions() {
+        let original = Fahrenheit_f(5)
+        let category = Temperature(original)
+        let other = category.celsius_t
+        XCTAssertEqual(other, Celsius_t(original))
+    }
+
+    func testCelsius_tToFahrenheit_fConversions() {
+        let ctype1 = fahrenheit_f(5)
+        let swiftType1 = Fahrenheit_f(rawValue: ctype1)
+        let ctype2 = degF_f_to_degC_t(ctype1)
+        let swiftType2 = Celsius_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_t(swiftType1))
+    }
+
+    func testFahrenheit_fToCelsius_uTemperatureConversions() {
+        let original = Fahrenheit_f(5)
+        let category = Temperature(original)
+        let other = category.celsius_u
+        XCTAssertEqual(other, Celsius_u(original))
+    }
+
+    func testCelsius_uToFahrenheit_fConversions() {
+        let ctype1 = fahrenheit_f(5)
+        let swiftType1 = Fahrenheit_f(rawValue: ctype1)
+        let ctype2 = degF_f_to_degC_u(ctype1)
+        let swiftType2 = Celsius_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_u(swiftType1))
+    }
+
+    func testFahrenheit_fToCelsius_fTemperatureConversions() {
+        let original = Fahrenheit_f(5)
+        let category = Temperature(original)
+        let other = category.celsius_f
+        XCTAssertEqual(other, Celsius_f(original))
+    }
+
+    func testCelsius_fToFahrenheit_fConversions() {
+        let ctype1 = fahrenheit_f(5)
+        let swiftType1 = Fahrenheit_f(rawValue: ctype1)
+        let ctype2 = degF_f_to_degC_f(ctype1)
+        let swiftType2 = Celsius_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_f(swiftType1))
+    }
+
+    func testFahrenheit_fToCelsius_dTemperatureConversions() {
+        let original = Fahrenheit_f(5)
+        let category = Temperature(original)
+        let other = category.celsius_d
+        XCTAssertEqual(other, Celsius_d(original))
+    }
+
+    func testCelsius_dToFahrenheit_fConversions() {
+        let ctype1 = fahrenheit_f(5)
+        let swiftType1 = Fahrenheit_f(rawValue: ctype1)
+        let ctype2 = degF_f_to_degC_d(ctype1)
+        let swiftType2 = Celsius_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_d(swiftType1))
+    }
+
+    func testFahrenheit_fToFahrenheit_tTemperatureConversions() {
+        let original = Fahrenheit_f(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_t
+        XCTAssertEqual(other, Fahrenheit_t(original))
+    }
+
+    func testFahrenheit_tToFahrenheit_fConversions() {
+        let ctype1 = fahrenheit_f(5)
+        let swiftType1 = Fahrenheit_f(rawValue: ctype1)
+        let ctype2 = degF_f_to_degF_t(ctype1)
+        let swiftType2 = Fahrenheit_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_t(swiftType1))
+    }
+
+    func testFahrenheit_fToFahrenheit_uTemperatureConversions() {
+        let original = Fahrenheit_f(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_u
+        XCTAssertEqual(other, Fahrenheit_u(original))
+    }
+
+    func testFahrenheit_uToFahrenheit_fConversions() {
+        let ctype1 = fahrenheit_f(5)
+        let swiftType1 = Fahrenheit_f(rawValue: ctype1)
+        let ctype2 = degF_f_to_degF_u(ctype1)
+        let swiftType2 = Fahrenheit_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_u(swiftType1))
+    }
+
+    func testFahrenheit_fToFahrenheit_dTemperatureConversions() {
+        let original = Fahrenheit_f(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_d
+        XCTAssertEqual(other, Fahrenheit_d(original))
+    }
+
+    func testFahrenheit_dToFahrenheit_fConversions() {
+        let ctype1 = fahrenheit_f(5)
+        let swiftType1 = Fahrenheit_f(rawValue: ctype1)
+        let ctype2 = degF_f_to_degF_d(ctype1)
+        let swiftType2 = Fahrenheit_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_d(swiftType1))
+    }
+
+    func testFahrenheit_fToKelvin_tTemperatureConversions() {
+        let original = Fahrenheit_f(5)
+        let category = Temperature(original)
+        let other = category.kelvin_t
+        XCTAssertEqual(other, Kelvin_t(original))
+    }
+
+    func testKelvin_tToFahrenheit_fConversions() {
+        let ctype1 = fahrenheit_f(5)
+        let swiftType1 = Fahrenheit_f(rawValue: ctype1)
+        let ctype2 = degF_f_to_K_t(ctype1)
+        let swiftType2 = Kelvin_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_t(swiftType1))
+    }
+
+    func testFahrenheit_fToKelvin_uTemperatureConversions() {
+        let original = Fahrenheit_f(5)
+        let category = Temperature(original)
+        let other = category.kelvin_u
+        XCTAssertEqual(other, Kelvin_u(original))
+    }
+
+    func testKelvin_uToFahrenheit_fConversions() {
+        let ctype1 = fahrenheit_f(5)
+        let swiftType1 = Fahrenheit_f(rawValue: ctype1)
+        let ctype2 = degF_f_to_K_u(ctype1)
+        let swiftType2 = Kelvin_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_u(swiftType1))
+    }
+
+    func testFahrenheit_fToKelvin_fTemperatureConversions() {
+        let original = Fahrenheit_f(5)
+        let category = Temperature(original)
+        let other = category.kelvin_f
+        XCTAssertEqual(other, Kelvin_f(original))
+    }
+
+    func testKelvin_fToFahrenheit_fConversions() {
+        let ctype1 = fahrenheit_f(5)
+        let swiftType1 = Fahrenheit_f(rawValue: ctype1)
+        let ctype2 = degF_f_to_K_f(ctype1)
+        let swiftType2 = Kelvin_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_f(swiftType1))
+    }
+
+    func testFahrenheit_fToKelvin_dTemperatureConversions() {
+        let original = Fahrenheit_f(5)
+        let category = Temperature(original)
+        let other = category.kelvin_d
+        XCTAssertEqual(other, Kelvin_d(original))
+    }
+
+    func testKelvin_dToFahrenheit_fConversions() {
+        let ctype1 = fahrenheit_f(5)
+        let swiftType1 = Fahrenheit_f(rawValue: ctype1)
+        let ctype2 = degF_f_to_K_d(ctype1)
+        let swiftType2 = Kelvin_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_d(swiftType1))
+    }
+
+    func testFahrenheit_fInitFromTypeEnum() {
+        let underlyingType = Temperature.TemperatureTypes.fahrenheit_f(5)
+        let category = Temperature(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testTemperatureFahrenheit_fInt8Inits() {
+        let raw = Int8(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_degF_f(5)
+        let expected2 = Int8(
+            degF_f_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_fInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_degF_f(5)
+        let expected = Fahrenheit_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(degF_f_to_i8(ctype))
+        )
+    }
+
+    func testFahrenheit_fInt8RawValueInit() {
+        let raw = fahrenheit_f(5)
+        let ctype = degF_f_to_i8(raw)
+        let expected = Fahrenheit_f(Int8(ctype))
+        XCTAssertEqual(Fahrenheit_f(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_fTemperatureInt8Init() {
+        let raw = Fahrenheit_f(Int8(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_fInt16Inits() {
+        let raw = Int16(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_degF_f(5)
+        let expected2 = Int16(
+            degF_f_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_fInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_degF_f(5)
+        let expected = Fahrenheit_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(degF_f_to_i16(ctype))
+        )
+    }
+
+    func testFahrenheit_fInt16RawValueInit() {
+        let raw = fahrenheit_f(5)
+        let ctype = degF_f_to_i16(raw)
+        let expected = Fahrenheit_f(Int16(ctype))
+        XCTAssertEqual(Fahrenheit_f(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_fTemperatureInt16Init() {
+        let raw = Fahrenheit_f(Int16(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_fInt32Inits() {
+        let raw = Int32(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_degF_f(5)
+        let expected2 = Int32(
+            degF_f_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_fInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_degF_f(5)
+        let expected = Fahrenheit_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(degF_f_to_i32(ctype))
+        )
+    }
+
+    func testFahrenheit_fInt32RawValueInit() {
+        let raw = fahrenheit_f(5)
+        let ctype = degF_f_to_i32(raw)
+        let expected = Fahrenheit_f(Int32(ctype))
+        XCTAssertEqual(Fahrenheit_f(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_fTemperatureInt32Init() {
+        let raw = Fahrenheit_f(Int32(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_fInt64Inits() {
+        let raw = Int64(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_degF_f(5)
+        let expected2 = Int64(
+            degF_f_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_fInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_degF_f(5)
+        let expected = Fahrenheit_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(degF_f_to_i64(ctype))
+        )
+    }
+
+    func testFahrenheit_fInt64RawValueInit() {
+        let raw = fahrenheit_f(5)
+        let ctype = degF_f_to_i64(raw)
+        let expected = Fahrenheit_f(Int64(ctype))
+        XCTAssertEqual(Fahrenheit_f(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_fTemperatureInt64Init() {
+        let raw = Fahrenheit_f(Int64(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_fIntInits() {
+        let raw = Int(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_degF_f(5)
+        let expected2 = Int(
+            degF_f_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_fIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_degF_f(5)
+        let expected = Fahrenheit_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(degF_f_to_i64(ctype))
+        )
+    }
+
+    func testFahrenheit_fIntRawValueInit() {
+        let raw = fahrenheit_f(5)
+        let ctype = degF_f_to_i64(raw)
+        let expected = Fahrenheit_f(Int(ctype))
+        XCTAssertEqual(Fahrenheit_f(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_fTemperatureIntInit() {
+        let raw = Fahrenheit_f(Int(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_fCIntInits() {
+        let raw = CInt(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_degF_f(5)
+        let expected2 = CInt(
+            degF_f_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_fCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_degF_f(5)
+        let expected = Fahrenheit_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(degF_f_to_i32(ctype))
+        )
+    }
+
+    func testFahrenheit_fCIntRawValueInit() {
+        let raw = fahrenheit_f(5)
+        let ctype = degF_f_to_i32(raw)
+        let expected = Fahrenheit_f(CInt(ctype))
+        XCTAssertEqual(Fahrenheit_f(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_fTemperatureCIntInit() {
+        let raw = Fahrenheit_f(CInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_fUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_degF_f(5)
+        let expected2 = UInt8(
+            degF_f_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_fUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_degF_f(5)
+        let expected = Fahrenheit_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(degF_f_to_u8(ctype))
+        )
+    }
+
+    func testFahrenheit_fUInt8RawValueInit() {
+        let raw = fahrenheit_f(5)
+        let ctype = degF_f_to_u8(raw)
+        let expected = Fahrenheit_f(UInt8(ctype))
+        XCTAssertEqual(Fahrenheit_f(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_fTemperatureUInt8Init() {
+        let raw = Fahrenheit_f(UInt8(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_fUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_degF_f(5)
+        let expected2 = UInt16(
+            degF_f_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_fUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_degF_f(5)
+        let expected = Fahrenheit_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(degF_f_to_u16(ctype))
+        )
+    }
+
+    func testFahrenheit_fUInt16RawValueInit() {
+        let raw = fahrenheit_f(5)
+        let ctype = degF_f_to_u16(raw)
+        let expected = Fahrenheit_f(UInt16(ctype))
+        XCTAssertEqual(Fahrenheit_f(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_fTemperatureUInt16Init() {
+        let raw = Fahrenheit_f(UInt16(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_fUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_degF_f(5)
+        let expected2 = UInt32(
+            degF_f_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_fUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_degF_f(5)
+        let expected = Fahrenheit_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(degF_f_to_u32(ctype))
+        )
+    }
+
+    func testFahrenheit_fUInt32RawValueInit() {
+        let raw = fahrenheit_f(5)
+        let ctype = degF_f_to_u32(raw)
+        let expected = Fahrenheit_f(UInt32(ctype))
+        XCTAssertEqual(Fahrenheit_f(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_fTemperatureUInt32Init() {
+        let raw = Fahrenheit_f(UInt32(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_fUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_degF_f(5)
+        let expected2 = UInt64(
+            degF_f_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_fUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_degF_f(5)
+        let expected = Fahrenheit_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(degF_f_to_u64(ctype))
+        )
+    }
+
+    func testFahrenheit_fUInt64RawValueInit() {
+        let raw = fahrenheit_f(5)
+        let ctype = degF_f_to_u64(raw)
+        let expected = Fahrenheit_f(UInt64(ctype))
+        XCTAssertEqual(Fahrenheit_f(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_fTemperatureUInt64Init() {
+        let raw = Fahrenheit_f(UInt64(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_fUIntInits() {
+        let raw = UInt(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_degF_f(5)
+        let expected2 = UInt(
+            degF_f_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_fUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_degF_f(5)
+        let expected = Fahrenheit_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(degF_f_to_u64(ctype))
+        )
+    }
+
+    func testFahrenheit_fUIntRawValueInit() {
+        let raw = fahrenheit_f(5)
+        let ctype = degF_f_to_u64(raw)
+        let expected = Fahrenheit_f(UInt(ctype))
+        XCTAssertEqual(Fahrenheit_f(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_fTemperatureUIntInit() {
+        let raw = Fahrenheit_f(UInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_fCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_degF_f(5)
+        let expected2 = CUnsignedInt(
+            degF_f_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_fCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_degF_f(5)
+        let expected = Fahrenheit_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(degF_f_to_u32(ctype))
+        )
+    }
+
+    func testFahrenheit_fCUnsignedIntRawValueInit() {
+        let raw = fahrenheit_f(5)
+        let ctype = degF_f_to_u32(raw)
+        let expected = Fahrenheit_f(CUnsignedInt(ctype))
+        XCTAssertEqual(Fahrenheit_f(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_fTemperatureCUnsignedIntInit() {
+        let raw = Fahrenheit_f(CUnsignedInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_fFloatInits() {
+        let raw = Float(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_degF_f(5)
+        let expected2 = Float(
+            degF_f_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_fFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_degF_f(5)
+        let expected = Fahrenheit_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(degF_f_to_f(ctype))
+        )
+    }
+
+    func testFahrenheit_fFloatRawValueInit() {
+        let raw = fahrenheit_f(5)
+        let ctype = degF_f_to_f(raw)
+        let expected = Fahrenheit_f(Float(ctype))
+        XCTAssertEqual(Fahrenheit_f(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_fTemperatureFloatInit() {
+        let raw = Fahrenheit_f(Float(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_fDoubleInits() {
+        let raw = Double(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_degF_f(5)
+        let expected2 = Double(
+            degF_f_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_fDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_degF_f(5)
+        let expected = Fahrenheit_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(degF_f_to_d(ctype))
+        )
+    }
+
+    func testFahrenheit_fDoubleRawValueInit() {
+        let raw = fahrenheit_f(5)
+        let ctype = degF_f_to_d(raw)
+        let expected = Fahrenheit_f(Double(ctype))
+        XCTAssertEqual(Fahrenheit_f(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_fTemperatureDoubleInit() {
+        let raw = Fahrenheit_f(Double(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testFahrenheit_dToCelsius_tTemperatureConversions() {
+        let original = Fahrenheit_d(5)
+        let category = Temperature(original)
+        let other = category.celsius_t
+        XCTAssertEqual(other, Celsius_t(original))
+    }
+
+    func testCelsius_tToFahrenheit_dConversions() {
+        let ctype1 = fahrenheit_d(5)
+        let swiftType1 = Fahrenheit_d(rawValue: ctype1)
+        let ctype2 = degF_d_to_degC_t(ctype1)
+        let swiftType2 = Celsius_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_t(swiftType1))
+    }
+
+    func testFahrenheit_dToCelsius_uTemperatureConversions() {
+        let original = Fahrenheit_d(5)
+        let category = Temperature(original)
+        let other = category.celsius_u
+        XCTAssertEqual(other, Celsius_u(original))
+    }
+
+    func testCelsius_uToFahrenheit_dConversions() {
+        let ctype1 = fahrenheit_d(5)
+        let swiftType1 = Fahrenheit_d(rawValue: ctype1)
+        let ctype2 = degF_d_to_degC_u(ctype1)
+        let swiftType2 = Celsius_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_u(swiftType1))
+    }
+
+    func testFahrenheit_dToCelsius_fTemperatureConversions() {
+        let original = Fahrenheit_d(5)
+        let category = Temperature(original)
+        let other = category.celsius_f
+        XCTAssertEqual(other, Celsius_f(original))
+    }
+
+    func testCelsius_fToFahrenheit_dConversions() {
+        let ctype1 = fahrenheit_d(5)
+        let swiftType1 = Fahrenheit_d(rawValue: ctype1)
+        let ctype2 = degF_d_to_degC_f(ctype1)
+        let swiftType2 = Celsius_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_f(swiftType1))
+    }
+
+    func testFahrenheit_dToCelsius_dTemperatureConversions() {
+        let original = Fahrenheit_d(5)
+        let category = Temperature(original)
+        let other = category.celsius_d
+        XCTAssertEqual(other, Celsius_d(original))
+    }
+
+    func testCelsius_dToFahrenheit_dConversions() {
+        let ctype1 = fahrenheit_d(5)
+        let swiftType1 = Fahrenheit_d(rawValue: ctype1)
+        let ctype2 = degF_d_to_degC_d(ctype1)
+        let swiftType2 = Celsius_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_d(swiftType1))
+    }
+
+    func testFahrenheit_dToFahrenheit_tTemperatureConversions() {
+        let original = Fahrenheit_d(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_t
+        XCTAssertEqual(other, Fahrenheit_t(original))
+    }
+
+    func testFahrenheit_tToFahrenheit_dConversions() {
+        let ctype1 = fahrenheit_d(5)
+        let swiftType1 = Fahrenheit_d(rawValue: ctype1)
+        let ctype2 = degF_d_to_degF_t(ctype1)
+        let swiftType2 = Fahrenheit_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_t(swiftType1))
+    }
+
+    func testFahrenheit_dToFahrenheit_uTemperatureConversions() {
+        let original = Fahrenheit_d(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_u
+        XCTAssertEqual(other, Fahrenheit_u(original))
+    }
+
+    func testFahrenheit_uToFahrenheit_dConversions() {
+        let ctype1 = fahrenheit_d(5)
+        let swiftType1 = Fahrenheit_d(rawValue: ctype1)
+        let ctype2 = degF_d_to_degF_u(ctype1)
+        let swiftType2 = Fahrenheit_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_u(swiftType1))
+    }
+
+    func testFahrenheit_dToFahrenheit_fTemperatureConversions() {
+        let original = Fahrenheit_d(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_f
+        XCTAssertEqual(other, Fahrenheit_f(original))
+    }
+
+    func testFahrenheit_fToFahrenheit_dConversions() {
+        let ctype1 = fahrenheit_d(5)
+        let swiftType1 = Fahrenheit_d(rawValue: ctype1)
+        let ctype2 = degF_d_to_degF_f(ctype1)
+        let swiftType2 = Fahrenheit_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_f(swiftType1))
+    }
+
+    func testFahrenheit_dToKelvin_tTemperatureConversions() {
+        let original = Fahrenheit_d(5)
+        let category = Temperature(original)
+        let other = category.kelvin_t
+        XCTAssertEqual(other, Kelvin_t(original))
+    }
+
+    func testKelvin_tToFahrenheit_dConversions() {
+        let ctype1 = fahrenheit_d(5)
+        let swiftType1 = Fahrenheit_d(rawValue: ctype1)
+        let ctype2 = degF_d_to_K_t(ctype1)
+        let swiftType2 = Kelvin_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_t(swiftType1))
+    }
+
+    func testFahrenheit_dToKelvin_uTemperatureConversions() {
+        let original = Fahrenheit_d(5)
+        let category = Temperature(original)
+        let other = category.kelvin_u
+        XCTAssertEqual(other, Kelvin_u(original))
+    }
+
+    func testKelvin_uToFahrenheit_dConversions() {
+        let ctype1 = fahrenheit_d(5)
+        let swiftType1 = Fahrenheit_d(rawValue: ctype1)
+        let ctype2 = degF_d_to_K_u(ctype1)
+        let swiftType2 = Kelvin_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_u(swiftType1))
+    }
+
+    func testFahrenheit_dToKelvin_fTemperatureConversions() {
+        let original = Fahrenheit_d(5)
+        let category = Temperature(original)
+        let other = category.kelvin_f
+        XCTAssertEqual(other, Kelvin_f(original))
+    }
+
+    func testKelvin_fToFahrenheit_dConversions() {
+        let ctype1 = fahrenheit_d(5)
+        let swiftType1 = Fahrenheit_d(rawValue: ctype1)
+        let ctype2 = degF_d_to_K_f(ctype1)
+        let swiftType2 = Kelvin_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_f(swiftType1))
+    }
+
+    func testFahrenheit_dToKelvin_dTemperatureConversions() {
+        let original = Fahrenheit_d(5)
+        let category = Temperature(original)
+        let other = category.kelvin_d
+        XCTAssertEqual(other, Kelvin_d(original))
+    }
+
+    func testKelvin_dToFahrenheit_dConversions() {
+        let ctype1 = fahrenheit_d(5)
+        let swiftType1 = Fahrenheit_d(rawValue: ctype1)
+        let ctype2 = degF_d_to_K_d(ctype1)
+        let swiftType2 = Kelvin_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_d(swiftType1))
+    }
+
+    func testFahrenheit_dInitFromTypeEnum() {
+        let underlyingType = Temperature.TemperatureTypes.fahrenheit_d(5)
+        let category = Temperature(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testTemperatureFahrenheit_dInt8Inits() {
+        let raw = Int8(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_degF_d(5)
+        let expected2 = Int8(
+            degF_d_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_dInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_degF_d(5)
+        let expected = Fahrenheit_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(degF_d_to_i8(ctype))
+        )
+    }
+
+    func testFahrenheit_dInt8RawValueInit() {
+        let raw = fahrenheit_d(5)
+        let ctype = degF_d_to_i8(raw)
+        let expected = Fahrenheit_d(Int8(ctype))
+        XCTAssertEqual(Fahrenheit_d(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_dTemperatureInt8Init() {
+        let raw = Fahrenheit_d(Int8(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_dInt16Inits() {
+        let raw = Int16(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_degF_d(5)
+        let expected2 = Int16(
+            degF_d_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_dInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_degF_d(5)
+        let expected = Fahrenheit_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(degF_d_to_i16(ctype))
+        )
+    }
+
+    func testFahrenheit_dInt16RawValueInit() {
+        let raw = fahrenheit_d(5)
+        let ctype = degF_d_to_i16(raw)
+        let expected = Fahrenheit_d(Int16(ctype))
+        XCTAssertEqual(Fahrenheit_d(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_dTemperatureInt16Init() {
+        let raw = Fahrenheit_d(Int16(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_dInt32Inits() {
+        let raw = Int32(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_degF_d(5)
+        let expected2 = Int32(
+            degF_d_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_dInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_degF_d(5)
+        let expected = Fahrenheit_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(degF_d_to_i32(ctype))
+        )
+    }
+
+    func testFahrenheit_dInt32RawValueInit() {
+        let raw = fahrenheit_d(5)
+        let ctype = degF_d_to_i32(raw)
+        let expected = Fahrenheit_d(Int32(ctype))
+        XCTAssertEqual(Fahrenheit_d(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_dTemperatureInt32Init() {
+        let raw = Fahrenheit_d(Int32(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_dInt64Inits() {
+        let raw = Int64(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_degF_d(5)
+        let expected2 = Int64(
+            degF_d_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_dInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_degF_d(5)
+        let expected = Fahrenheit_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(degF_d_to_i64(ctype))
+        )
+    }
+
+    func testFahrenheit_dInt64RawValueInit() {
+        let raw = fahrenheit_d(5)
+        let ctype = degF_d_to_i64(raw)
+        let expected = Fahrenheit_d(Int64(ctype))
+        XCTAssertEqual(Fahrenheit_d(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_dTemperatureInt64Init() {
+        let raw = Fahrenheit_d(Int64(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_dIntInits() {
+        let raw = Int(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_degF_d(5)
+        let expected2 = Int(
+            degF_d_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_dIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_degF_d(5)
+        let expected = Fahrenheit_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(degF_d_to_i64(ctype))
+        )
+    }
+
+    func testFahrenheit_dIntRawValueInit() {
+        let raw = fahrenheit_d(5)
+        let ctype = degF_d_to_i64(raw)
+        let expected = Fahrenheit_d(Int(ctype))
+        XCTAssertEqual(Fahrenheit_d(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_dTemperatureIntInit() {
+        let raw = Fahrenheit_d(Int(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_dCIntInits() {
+        let raw = CInt(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_degF_d(5)
+        let expected2 = CInt(
+            degF_d_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_dCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_degF_d(5)
+        let expected = Fahrenheit_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(degF_d_to_i32(ctype))
+        )
+    }
+
+    func testFahrenheit_dCIntRawValueInit() {
+        let raw = fahrenheit_d(5)
+        let ctype = degF_d_to_i32(raw)
+        let expected = Fahrenheit_d(CInt(ctype))
+        XCTAssertEqual(Fahrenheit_d(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_dTemperatureCIntInit() {
+        let raw = Fahrenheit_d(CInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_dUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_degF_d(5)
+        let expected2 = UInt8(
+            degF_d_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_dUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_degF_d(5)
+        let expected = Fahrenheit_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(degF_d_to_u8(ctype))
+        )
+    }
+
+    func testFahrenheit_dUInt8RawValueInit() {
+        let raw = fahrenheit_d(5)
+        let ctype = degF_d_to_u8(raw)
+        let expected = Fahrenheit_d(UInt8(ctype))
+        XCTAssertEqual(Fahrenheit_d(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_dTemperatureUInt8Init() {
+        let raw = Fahrenheit_d(UInt8(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_dUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_degF_d(5)
+        let expected2 = UInt16(
+            degF_d_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_dUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_degF_d(5)
+        let expected = Fahrenheit_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(degF_d_to_u16(ctype))
+        )
+    }
+
+    func testFahrenheit_dUInt16RawValueInit() {
+        let raw = fahrenheit_d(5)
+        let ctype = degF_d_to_u16(raw)
+        let expected = Fahrenheit_d(UInt16(ctype))
+        XCTAssertEqual(Fahrenheit_d(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_dTemperatureUInt16Init() {
+        let raw = Fahrenheit_d(UInt16(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_dUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_degF_d(5)
+        let expected2 = UInt32(
+            degF_d_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_dUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_degF_d(5)
+        let expected = Fahrenheit_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(degF_d_to_u32(ctype))
+        )
+    }
+
+    func testFahrenheit_dUInt32RawValueInit() {
+        let raw = fahrenheit_d(5)
+        let ctype = degF_d_to_u32(raw)
+        let expected = Fahrenheit_d(UInt32(ctype))
+        XCTAssertEqual(Fahrenheit_d(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_dTemperatureUInt32Init() {
+        let raw = Fahrenheit_d(UInt32(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_dUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_degF_d(5)
+        let expected2 = UInt64(
+            degF_d_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_dUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_degF_d(5)
+        let expected = Fahrenheit_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(degF_d_to_u64(ctype))
+        )
+    }
+
+    func testFahrenheit_dUInt64RawValueInit() {
+        let raw = fahrenheit_d(5)
+        let ctype = degF_d_to_u64(raw)
+        let expected = Fahrenheit_d(UInt64(ctype))
+        XCTAssertEqual(Fahrenheit_d(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_dTemperatureUInt64Init() {
+        let raw = Fahrenheit_d(UInt64(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_dUIntInits() {
+        let raw = UInt(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_degF_d(5)
+        let expected2 = UInt(
+            degF_d_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_dUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_degF_d(5)
+        let expected = Fahrenheit_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(degF_d_to_u64(ctype))
+        )
+    }
+
+    func testFahrenheit_dUIntRawValueInit() {
+        let raw = fahrenheit_d(5)
+        let ctype = degF_d_to_u64(raw)
+        let expected = Fahrenheit_d(UInt(ctype))
+        XCTAssertEqual(Fahrenheit_d(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_dTemperatureUIntInit() {
+        let raw = Fahrenheit_d(UInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_dCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_degF_d(5)
+        let expected2 = CUnsignedInt(
+            degF_d_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_dCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_degF_d(5)
+        let expected = Fahrenheit_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(degF_d_to_u32(ctype))
+        )
+    }
+
+    func testFahrenheit_dCUnsignedIntRawValueInit() {
+        let raw = fahrenheit_d(5)
+        let ctype = degF_d_to_u32(raw)
+        let expected = Fahrenheit_d(CUnsignedInt(ctype))
+        XCTAssertEqual(Fahrenheit_d(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_dTemperatureCUnsignedIntInit() {
+        let raw = Fahrenheit_d(CUnsignedInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_dFloatInits() {
+        let raw = Float(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_degF_d(5)
+        let expected2 = Float(
+            degF_d_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_dFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_degF_d(5)
+        let expected = Fahrenheit_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(degF_d_to_f(ctype))
+        )
+    }
+
+    func testFahrenheit_dFloatRawValueInit() {
+        let raw = fahrenheit_d(5)
+        let ctype = degF_d_to_f(raw)
+        let expected = Fahrenheit_d(Float(ctype))
+        XCTAssertEqual(Fahrenheit_d(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_dTemperatureFloatInit() {
+        let raw = Fahrenheit_d(Float(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureFahrenheit_dDoubleInits() {
+        let raw = Double(5)
+        let expected = Temperature(fahrenheit: raw)
+        let result = Temperature.fahrenheit(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_degF_d(5)
+        let expected2 = Double(
+            degF_d_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testFahrenheit_dDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_degF_d(5)
+        let expected = Fahrenheit_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(degF_d_to_d(ctype))
+        )
+    }
+
+    func testFahrenheit_dDoubleRawValueInit() {
+        let raw = fahrenheit_d(5)
+        let ctype = degF_d_to_d(raw)
+        let expected = Fahrenheit_d(Double(ctype))
+        XCTAssertEqual(Fahrenheit_d(rawValue: raw), expected)
+    }
+
+    func testFahrenheit_dTemperatureDoubleInit() {
+        let raw = Fahrenheit_d(Double(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .fahrenheit_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+}
+
+final class KelvinConversionTests: XCTestCase {
+
+    func testKelvin_tToCelsius_tTemperatureConversions() {
+        let original = Kelvin_t(5)
+        let category = Temperature(original)
+        let other = category.celsius_t
+        XCTAssertEqual(other, Celsius_t(original))
+    }
+
+    func testCelsius_tToKelvin_tConversions() {
+        let ctype1 = kelvin_t(5)
+        let swiftType1 = Kelvin_t(rawValue: ctype1)
+        let ctype2 = K_t_to_degC_t(ctype1)
+        let swiftType2 = Celsius_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_t(swiftType1))
+    }
+
+    func testKelvin_tToCelsius_uTemperatureConversions() {
+        let original = Kelvin_t(5)
+        let category = Temperature(original)
+        let other = category.celsius_u
+        XCTAssertEqual(other, Celsius_u(original))
+    }
+
+    func testCelsius_uToKelvin_tConversions() {
+        let ctype1 = kelvin_t(5)
+        let swiftType1 = Kelvin_t(rawValue: ctype1)
+        let ctype2 = K_t_to_degC_u(ctype1)
+        let swiftType2 = Celsius_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_u(swiftType1))
+    }
+
+    func testKelvin_tToCelsius_fTemperatureConversions() {
+        let original = Kelvin_t(5)
+        let category = Temperature(original)
+        let other = category.celsius_f
+        XCTAssertEqual(other, Celsius_f(original))
+    }
+
+    func testCelsius_fToKelvin_tConversions() {
+        let ctype1 = kelvin_t(5)
+        let swiftType1 = Kelvin_t(rawValue: ctype1)
+        let ctype2 = K_t_to_degC_f(ctype1)
+        let swiftType2 = Celsius_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_f(swiftType1))
+    }
+
+    func testKelvin_tToCelsius_dTemperatureConversions() {
+        let original = Kelvin_t(5)
+        let category = Temperature(original)
+        let other = category.celsius_d
+        XCTAssertEqual(other, Celsius_d(original))
+    }
+
+    func testCelsius_dToKelvin_tConversions() {
+        let ctype1 = kelvin_t(5)
+        let swiftType1 = Kelvin_t(rawValue: ctype1)
+        let ctype2 = K_t_to_degC_d(ctype1)
+        let swiftType2 = Celsius_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_d(swiftType1))
+    }
+
+    func testKelvin_tToFahrenheit_tTemperatureConversions() {
+        let original = Kelvin_t(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_t
+        XCTAssertEqual(other, Fahrenheit_t(original))
+    }
+
+    func testFahrenheit_tToKelvin_tConversions() {
+        let ctype1 = kelvin_t(5)
+        let swiftType1 = Kelvin_t(rawValue: ctype1)
+        let ctype2 = K_t_to_degF_t(ctype1)
+        let swiftType2 = Fahrenheit_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_t(swiftType1))
+    }
+
+    func testKelvin_tToFahrenheit_uTemperatureConversions() {
+        let original = Kelvin_t(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_u
+        XCTAssertEqual(other, Fahrenheit_u(original))
+    }
+
+    func testFahrenheit_uToKelvin_tConversions() {
+        let ctype1 = kelvin_t(5)
+        let swiftType1 = Kelvin_t(rawValue: ctype1)
+        let ctype2 = K_t_to_degF_u(ctype1)
+        let swiftType2 = Fahrenheit_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_u(swiftType1))
+    }
+
+    func testKelvin_tToFahrenheit_fTemperatureConversions() {
+        let original = Kelvin_t(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_f
+        XCTAssertEqual(other, Fahrenheit_f(original))
+    }
+
+    func testFahrenheit_fToKelvin_tConversions() {
+        let ctype1 = kelvin_t(5)
+        let swiftType1 = Kelvin_t(rawValue: ctype1)
+        let ctype2 = K_t_to_degF_f(ctype1)
+        let swiftType2 = Fahrenheit_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_f(swiftType1))
+    }
+
+    func testKelvin_tToFahrenheit_dTemperatureConversions() {
+        let original = Kelvin_t(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_d
+        XCTAssertEqual(other, Fahrenheit_d(original))
+    }
+
+    func testFahrenheit_dToKelvin_tConversions() {
+        let ctype1 = kelvin_t(5)
+        let swiftType1 = Kelvin_t(rawValue: ctype1)
+        let ctype2 = K_t_to_degF_d(ctype1)
+        let swiftType2 = Fahrenheit_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_d(swiftType1))
+    }
+
+    func testKelvin_tToKelvin_uTemperatureConversions() {
+        let original = Kelvin_t(5)
+        let category = Temperature(original)
+        let other = category.kelvin_u
+        XCTAssertEqual(other, Kelvin_u(original))
+    }
+
+    func testKelvin_uToKelvin_tConversions() {
+        let ctype1 = kelvin_t(5)
+        let swiftType1 = Kelvin_t(rawValue: ctype1)
+        let ctype2 = K_t_to_K_u(ctype1)
+        let swiftType2 = Kelvin_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_u(swiftType1))
+    }
+
+    func testKelvin_tToKelvin_fTemperatureConversions() {
+        let original = Kelvin_t(5)
+        let category = Temperature(original)
+        let other = category.kelvin_f
+        XCTAssertEqual(other, Kelvin_f(original))
+    }
+
+    func testKelvin_fToKelvin_tConversions() {
+        let ctype1 = kelvin_t(5)
+        let swiftType1 = Kelvin_t(rawValue: ctype1)
+        let ctype2 = K_t_to_K_f(ctype1)
+        let swiftType2 = Kelvin_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_f(swiftType1))
+    }
+
+    func testKelvin_tToKelvin_dTemperatureConversions() {
+        let original = Kelvin_t(5)
+        let category = Temperature(original)
+        let other = category.kelvin_d
+        XCTAssertEqual(other, Kelvin_d(original))
+    }
+
+    func testKelvin_dToKelvin_tConversions() {
+        let ctype1 = kelvin_t(5)
+        let swiftType1 = Kelvin_t(rawValue: ctype1)
+        let ctype2 = K_t_to_K_d(ctype1)
+        let swiftType2 = Kelvin_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_d(swiftType1))
+    }
+
+    func testKelvin_tInitFromTypeEnum() {
+        let underlyingType = Temperature.TemperatureTypes.kelvin_t(5)
+        let category = Temperature(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testTemperatureKelvin_tInt8Inits() {
+        let raw = Int8(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_K_t(5)
+        let expected2 = Int8(
+            K_t_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_tInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_K_t(5)
+        let expected = Kelvin_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(K_t_to_i8(ctype))
+        )
+    }
+
+    func testKelvin_tInt8RawValueInit() {
+        let raw = kelvin_t(5)
+        let ctype = K_t_to_i8(raw)
+        let expected = Kelvin_t(Int8(ctype))
+        XCTAssertEqual(Kelvin_t(rawValue: raw), expected)
+    }
+
+    func testKelvin_tTemperatureInt8Init() {
+        let raw = Kelvin_t(Int8(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_tInt16Inits() {
+        let raw = Int16(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_K_t(5)
+        let expected2 = Int16(
+            K_t_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_tInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_K_t(5)
+        let expected = Kelvin_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(K_t_to_i16(ctype))
+        )
+    }
+
+    func testKelvin_tInt16RawValueInit() {
+        let raw = kelvin_t(5)
+        let ctype = K_t_to_i16(raw)
+        let expected = Kelvin_t(Int16(ctype))
+        XCTAssertEqual(Kelvin_t(rawValue: raw), expected)
+    }
+
+    func testKelvin_tTemperatureInt16Init() {
+        let raw = Kelvin_t(Int16(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_tInt32Inits() {
+        let raw = Int32(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_K_t(5)
+        let expected2 = Int32(
+            K_t_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_tInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_K_t(5)
+        let expected = Kelvin_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(K_t_to_i32(ctype))
+        )
+    }
+
+    func testKelvin_tInt32RawValueInit() {
+        let raw = kelvin_t(5)
+        let ctype = K_t_to_i32(raw)
+        let expected = Kelvin_t(Int32(ctype))
+        XCTAssertEqual(Kelvin_t(rawValue: raw), expected)
+    }
+
+    func testKelvin_tTemperatureInt32Init() {
+        let raw = Kelvin_t(Int32(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_tInt64Inits() {
+        let raw = Int64(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_K_t(5)
+        let expected2 = Int64(
+            K_t_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_tInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_K_t(5)
+        let expected = Kelvin_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(K_t_to_i64(ctype))
+        )
+    }
+
+    func testKelvin_tInt64RawValueInit() {
+        let raw = kelvin_t(5)
+        let ctype = K_t_to_i64(raw)
+        let expected = Kelvin_t(Int64(ctype))
+        XCTAssertEqual(Kelvin_t(rawValue: raw), expected)
+    }
+
+    func testKelvin_tTemperatureInt64Init() {
+        let raw = Kelvin_t(Int64(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_tIntInits() {
+        let raw = Int(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_K_t(5)
+        let expected2 = Int(
+            K_t_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_tIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_K_t(5)
+        let expected = Kelvin_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(K_t_to_i64(ctype))
+        )
+    }
+
+    func testKelvin_tIntRawValueInit() {
+        let raw = kelvin_t(5)
+        let ctype = K_t_to_i64(raw)
+        let expected = Kelvin_t(Int(ctype))
+        XCTAssertEqual(Kelvin_t(rawValue: raw), expected)
+    }
+
+    func testKelvin_tTemperatureIntInit() {
+        let raw = Kelvin_t(Int(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_tCIntInits() {
+        let raw = CInt(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_K_t(5)
+        let expected2 = CInt(
+            K_t_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_tCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_K_t(5)
+        let expected = Kelvin_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(K_t_to_i32(ctype))
+        )
+    }
+
+    func testKelvin_tCIntRawValueInit() {
+        let raw = kelvin_t(5)
+        let ctype = K_t_to_i32(raw)
+        let expected = Kelvin_t(CInt(ctype))
+        XCTAssertEqual(Kelvin_t(rawValue: raw), expected)
+    }
+
+    func testKelvin_tTemperatureCIntInit() {
+        let raw = Kelvin_t(CInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_tUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_K_t(5)
+        let expected2 = UInt8(
+            K_t_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_tUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_K_t(5)
+        let expected = Kelvin_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(K_t_to_u8(ctype))
+        )
+    }
+
+    func testKelvin_tUInt8RawValueInit() {
+        let raw = kelvin_t(5)
+        let ctype = K_t_to_u8(raw)
+        let expected = Kelvin_t(UInt8(ctype))
+        XCTAssertEqual(Kelvin_t(rawValue: raw), expected)
+    }
+
+    func testKelvin_tTemperatureUInt8Init() {
+        let raw = Kelvin_t(UInt8(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_tUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_K_t(5)
+        let expected2 = UInt16(
+            K_t_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_tUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_K_t(5)
+        let expected = Kelvin_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(K_t_to_u16(ctype))
+        )
+    }
+
+    func testKelvin_tUInt16RawValueInit() {
+        let raw = kelvin_t(5)
+        let ctype = K_t_to_u16(raw)
+        let expected = Kelvin_t(UInt16(ctype))
+        XCTAssertEqual(Kelvin_t(rawValue: raw), expected)
+    }
+
+    func testKelvin_tTemperatureUInt16Init() {
+        let raw = Kelvin_t(UInt16(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_tUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_K_t(5)
+        let expected2 = UInt32(
+            K_t_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_tUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_K_t(5)
+        let expected = Kelvin_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(K_t_to_u32(ctype))
+        )
+    }
+
+    func testKelvin_tUInt32RawValueInit() {
+        let raw = kelvin_t(5)
+        let ctype = K_t_to_u32(raw)
+        let expected = Kelvin_t(UInt32(ctype))
+        XCTAssertEqual(Kelvin_t(rawValue: raw), expected)
+    }
+
+    func testKelvin_tTemperatureUInt32Init() {
+        let raw = Kelvin_t(UInt32(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_tUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_K_t(5)
+        let expected2 = UInt64(
+            K_t_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_tUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_K_t(5)
+        let expected = Kelvin_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(K_t_to_u64(ctype))
+        )
+    }
+
+    func testKelvin_tUInt64RawValueInit() {
+        let raw = kelvin_t(5)
+        let ctype = K_t_to_u64(raw)
+        let expected = Kelvin_t(UInt64(ctype))
+        XCTAssertEqual(Kelvin_t(rawValue: raw), expected)
+    }
+
+    func testKelvin_tTemperatureUInt64Init() {
+        let raw = Kelvin_t(UInt64(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_tUIntInits() {
+        let raw = UInt(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_K_t(5)
+        let expected2 = UInt(
+            K_t_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_tUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_K_t(5)
+        let expected = Kelvin_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(K_t_to_u64(ctype))
+        )
+    }
+
+    func testKelvin_tUIntRawValueInit() {
+        let raw = kelvin_t(5)
+        let ctype = K_t_to_u64(raw)
+        let expected = Kelvin_t(UInt(ctype))
+        XCTAssertEqual(Kelvin_t(rawValue: raw), expected)
+    }
+
+    func testKelvin_tTemperatureUIntInit() {
+        let raw = Kelvin_t(UInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_tCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_K_t(5)
+        let expected2 = CUnsignedInt(
+            K_t_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_tCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_K_t(5)
+        let expected = Kelvin_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(K_t_to_u32(ctype))
+        )
+    }
+
+    func testKelvin_tCUnsignedIntRawValueInit() {
+        let raw = kelvin_t(5)
+        let ctype = K_t_to_u32(raw)
+        let expected = Kelvin_t(CUnsignedInt(ctype))
+        XCTAssertEqual(Kelvin_t(rawValue: raw), expected)
+    }
+
+    func testKelvin_tTemperatureCUnsignedIntInit() {
+        let raw = Kelvin_t(CUnsignedInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_tFloatInits() {
+        let raw = Float(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_K_t(5)
+        let expected2 = Float(
+            K_t_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_tFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_K_t(5)
+        let expected = Kelvin_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(K_t_to_f(ctype))
+        )
+    }
+
+    func testKelvin_tFloatRawValueInit() {
+        let raw = kelvin_t(5)
+        let ctype = K_t_to_f(raw)
+        let expected = Kelvin_t(Float(ctype))
+        XCTAssertEqual(Kelvin_t(rawValue: raw), expected)
+    }
+
+    func testKelvin_tTemperatureFloatInit() {
+        let raw = Kelvin_t(Float(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_tDoubleInits() {
+        let raw = Double(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_K_t(5)
+        let expected2 = Double(
+            K_t_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_tDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_K_t(5)
+        let expected = Kelvin_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(K_t_to_d(ctype))
+        )
+    }
+
+    func testKelvin_tDoubleRawValueInit() {
+        let raw = kelvin_t(5)
+        let ctype = K_t_to_d(raw)
+        let expected = Kelvin_t(Double(ctype))
+        XCTAssertEqual(Kelvin_t(rawValue: raw), expected)
+    }
+
+    func testKelvin_tTemperatureDoubleInit() {
+        let raw = Kelvin_t(Double(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testKelvin_uToCelsius_tTemperatureConversions() {
+        let original = Kelvin_u(5)
+        let category = Temperature(original)
+        let other = category.celsius_t
+        XCTAssertEqual(other, Celsius_t(original))
+    }
+
+    func testCelsius_tToKelvin_uConversions() {
+        let ctype1 = kelvin_u(5)
+        let swiftType1 = Kelvin_u(rawValue: ctype1)
+        let ctype2 = K_u_to_degC_t(ctype1)
+        let swiftType2 = Celsius_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_t(swiftType1))
+    }
+
+    func testKelvin_uToCelsius_uTemperatureConversions() {
+        let original = Kelvin_u(5)
+        let category = Temperature(original)
+        let other = category.celsius_u
+        XCTAssertEqual(other, Celsius_u(original))
+    }
+
+    func testCelsius_uToKelvin_uConversions() {
+        let ctype1 = kelvin_u(5)
+        let swiftType1 = Kelvin_u(rawValue: ctype1)
+        let ctype2 = K_u_to_degC_u(ctype1)
+        let swiftType2 = Celsius_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_u(swiftType1))
+    }
+
+    func testKelvin_uToCelsius_fTemperatureConversions() {
+        let original = Kelvin_u(5)
+        let category = Temperature(original)
+        let other = category.celsius_f
+        XCTAssertEqual(other, Celsius_f(original))
+    }
+
+    func testCelsius_fToKelvin_uConversions() {
+        let ctype1 = kelvin_u(5)
+        let swiftType1 = Kelvin_u(rawValue: ctype1)
+        let ctype2 = K_u_to_degC_f(ctype1)
+        let swiftType2 = Celsius_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_f(swiftType1))
+    }
+
+    func testKelvin_uToCelsius_dTemperatureConversions() {
+        let original = Kelvin_u(5)
+        let category = Temperature(original)
+        let other = category.celsius_d
+        XCTAssertEqual(other, Celsius_d(original))
+    }
+
+    func testCelsius_dToKelvin_uConversions() {
+        let ctype1 = kelvin_u(5)
+        let swiftType1 = Kelvin_u(rawValue: ctype1)
+        let ctype2 = K_u_to_degC_d(ctype1)
+        let swiftType2 = Celsius_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_d(swiftType1))
+    }
+
+    func testKelvin_uToFahrenheit_tTemperatureConversions() {
+        let original = Kelvin_u(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_t
+        XCTAssertEqual(other, Fahrenheit_t(original))
+    }
+
+    func testFahrenheit_tToKelvin_uConversions() {
+        let ctype1 = kelvin_u(5)
+        let swiftType1 = Kelvin_u(rawValue: ctype1)
+        let ctype2 = K_u_to_degF_t(ctype1)
+        let swiftType2 = Fahrenheit_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_t(swiftType1))
+    }
+
+    func testKelvin_uToFahrenheit_uTemperatureConversions() {
+        let original = Kelvin_u(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_u
+        XCTAssertEqual(other, Fahrenheit_u(original))
+    }
+
+    func testFahrenheit_uToKelvin_uConversions() {
+        let ctype1 = kelvin_u(5)
+        let swiftType1 = Kelvin_u(rawValue: ctype1)
+        let ctype2 = K_u_to_degF_u(ctype1)
+        let swiftType2 = Fahrenheit_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_u(swiftType1))
+    }
+
+    func testKelvin_uToFahrenheit_fTemperatureConversions() {
+        let original = Kelvin_u(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_f
+        XCTAssertEqual(other, Fahrenheit_f(original))
+    }
+
+    func testFahrenheit_fToKelvin_uConversions() {
+        let ctype1 = kelvin_u(5)
+        let swiftType1 = Kelvin_u(rawValue: ctype1)
+        let ctype2 = K_u_to_degF_f(ctype1)
+        let swiftType2 = Fahrenheit_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_f(swiftType1))
+    }
+
+    func testKelvin_uToFahrenheit_dTemperatureConversions() {
+        let original = Kelvin_u(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_d
+        XCTAssertEqual(other, Fahrenheit_d(original))
+    }
+
+    func testFahrenheit_dToKelvin_uConversions() {
+        let ctype1 = kelvin_u(5)
+        let swiftType1 = Kelvin_u(rawValue: ctype1)
+        let ctype2 = K_u_to_degF_d(ctype1)
+        let swiftType2 = Fahrenheit_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_d(swiftType1))
+    }
+
+    func testKelvin_uToKelvin_tTemperatureConversions() {
+        let original = Kelvin_u(5)
+        let category = Temperature(original)
+        let other = category.kelvin_t
+        XCTAssertEqual(other, Kelvin_t(original))
+    }
+
+    func testKelvin_tToKelvin_uConversions() {
+        let ctype1 = kelvin_u(5)
+        let swiftType1 = Kelvin_u(rawValue: ctype1)
+        let ctype2 = K_u_to_K_t(ctype1)
+        let swiftType2 = Kelvin_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_t(swiftType1))
+    }
+
+    func testKelvin_uToKelvin_fTemperatureConversions() {
+        let original = Kelvin_u(5)
+        let category = Temperature(original)
+        let other = category.kelvin_f
+        XCTAssertEqual(other, Kelvin_f(original))
+    }
+
+    func testKelvin_fToKelvin_uConversions() {
+        let ctype1 = kelvin_u(5)
+        let swiftType1 = Kelvin_u(rawValue: ctype1)
+        let ctype2 = K_u_to_K_f(ctype1)
+        let swiftType2 = Kelvin_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_f(swiftType1))
+    }
+
+    func testKelvin_uToKelvin_dTemperatureConversions() {
+        let original = Kelvin_u(5)
+        let category = Temperature(original)
+        let other = category.kelvin_d
+        XCTAssertEqual(other, Kelvin_d(original))
+    }
+
+    func testKelvin_dToKelvin_uConversions() {
+        let ctype1 = kelvin_u(5)
+        let swiftType1 = Kelvin_u(rawValue: ctype1)
+        let ctype2 = K_u_to_K_d(ctype1)
+        let swiftType2 = Kelvin_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_d(swiftType1))
+    }
+
+    func testKelvin_uInitFromTypeEnum() {
+        let underlyingType = Temperature.TemperatureTypes.kelvin_u(5)
+        let category = Temperature(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testTemperatureKelvin_uInt8Inits() {
+        let raw = Int8(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_K_u(5)
+        let expected2 = Int8(
+            K_u_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_uInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_K_u(5)
+        let expected = Kelvin_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(K_u_to_i8(ctype))
+        )
+    }
+
+    func testKelvin_uInt8RawValueInit() {
+        let raw = kelvin_u(5)
+        let ctype = K_u_to_i8(raw)
+        let expected = Kelvin_u(Int8(ctype))
+        XCTAssertEqual(Kelvin_u(rawValue: raw), expected)
+    }
+
+    func testKelvin_uTemperatureInt8Init() {
+        let raw = Kelvin_u(Int8(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_uInt16Inits() {
+        let raw = Int16(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_K_u(5)
+        let expected2 = Int16(
+            K_u_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_uInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_K_u(5)
+        let expected = Kelvin_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(K_u_to_i16(ctype))
+        )
+    }
+
+    func testKelvin_uInt16RawValueInit() {
+        let raw = kelvin_u(5)
+        let ctype = K_u_to_i16(raw)
+        let expected = Kelvin_u(Int16(ctype))
+        XCTAssertEqual(Kelvin_u(rawValue: raw), expected)
+    }
+
+    func testKelvin_uTemperatureInt16Init() {
+        let raw = Kelvin_u(Int16(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_uInt32Inits() {
+        let raw = Int32(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_K_u(5)
+        let expected2 = Int32(
+            K_u_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_uInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_K_u(5)
+        let expected = Kelvin_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(K_u_to_i32(ctype))
+        )
+    }
+
+    func testKelvin_uInt32RawValueInit() {
+        let raw = kelvin_u(5)
+        let ctype = K_u_to_i32(raw)
+        let expected = Kelvin_u(Int32(ctype))
+        XCTAssertEqual(Kelvin_u(rawValue: raw), expected)
+    }
+
+    func testKelvin_uTemperatureInt32Init() {
+        let raw = Kelvin_u(Int32(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_uInt64Inits() {
+        let raw = Int64(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_K_u(5)
+        let expected2 = Int64(
+            K_u_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_uInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_K_u(5)
+        let expected = Kelvin_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(K_u_to_i64(ctype))
+        )
+    }
+
+    func testKelvin_uInt64RawValueInit() {
+        let raw = kelvin_u(5)
+        let ctype = K_u_to_i64(raw)
+        let expected = Kelvin_u(Int64(ctype))
+        XCTAssertEqual(Kelvin_u(rawValue: raw), expected)
+    }
+
+    func testKelvin_uTemperatureInt64Init() {
+        let raw = Kelvin_u(Int64(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_uIntInits() {
+        let raw = Int(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_K_u(5)
+        let expected2 = Int(
+            K_u_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_uIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_K_u(5)
+        let expected = Kelvin_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(K_u_to_i64(ctype))
+        )
+    }
+
+    func testKelvin_uIntRawValueInit() {
+        let raw = kelvin_u(5)
+        let ctype = K_u_to_i64(raw)
+        let expected = Kelvin_u(Int(ctype))
+        XCTAssertEqual(Kelvin_u(rawValue: raw), expected)
+    }
+
+    func testKelvin_uTemperatureIntInit() {
+        let raw = Kelvin_u(Int(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_uCIntInits() {
+        let raw = CInt(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_K_u(5)
+        let expected2 = CInt(
+            K_u_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_uCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_K_u(5)
+        let expected = Kelvin_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(K_u_to_i32(ctype))
+        )
+    }
+
+    func testKelvin_uCIntRawValueInit() {
+        let raw = kelvin_u(5)
+        let ctype = K_u_to_i32(raw)
+        let expected = Kelvin_u(CInt(ctype))
+        XCTAssertEqual(Kelvin_u(rawValue: raw), expected)
+    }
+
+    func testKelvin_uTemperatureCIntInit() {
+        let raw = Kelvin_u(CInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_uUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_K_u(5)
+        let expected2 = UInt8(
+            K_u_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_uUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_K_u(5)
+        let expected = Kelvin_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(K_u_to_u8(ctype))
+        )
+    }
+
+    func testKelvin_uUInt8RawValueInit() {
+        let raw = kelvin_u(5)
+        let ctype = K_u_to_u8(raw)
+        let expected = Kelvin_u(UInt8(ctype))
+        XCTAssertEqual(Kelvin_u(rawValue: raw), expected)
+    }
+
+    func testKelvin_uTemperatureUInt8Init() {
+        let raw = Kelvin_u(UInt8(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_uUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_K_u(5)
+        let expected2 = UInt16(
+            K_u_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_uUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_K_u(5)
+        let expected = Kelvin_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(K_u_to_u16(ctype))
+        )
+    }
+
+    func testKelvin_uUInt16RawValueInit() {
+        let raw = kelvin_u(5)
+        let ctype = K_u_to_u16(raw)
+        let expected = Kelvin_u(UInt16(ctype))
+        XCTAssertEqual(Kelvin_u(rawValue: raw), expected)
+    }
+
+    func testKelvin_uTemperatureUInt16Init() {
+        let raw = Kelvin_u(UInt16(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_uUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_K_u(5)
+        let expected2 = UInt32(
+            K_u_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_uUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_K_u(5)
+        let expected = Kelvin_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(K_u_to_u32(ctype))
+        )
+    }
+
+    func testKelvin_uUInt32RawValueInit() {
+        let raw = kelvin_u(5)
+        let ctype = K_u_to_u32(raw)
+        let expected = Kelvin_u(UInt32(ctype))
+        XCTAssertEqual(Kelvin_u(rawValue: raw), expected)
+    }
+
+    func testKelvin_uTemperatureUInt32Init() {
+        let raw = Kelvin_u(UInt32(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_uUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_K_u(5)
+        let expected2 = UInt64(
+            K_u_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_uUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_K_u(5)
+        let expected = Kelvin_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(K_u_to_u64(ctype))
+        )
+    }
+
+    func testKelvin_uUInt64RawValueInit() {
+        let raw = kelvin_u(5)
+        let ctype = K_u_to_u64(raw)
+        let expected = Kelvin_u(UInt64(ctype))
+        XCTAssertEqual(Kelvin_u(rawValue: raw), expected)
+    }
+
+    func testKelvin_uTemperatureUInt64Init() {
+        let raw = Kelvin_u(UInt64(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_uUIntInits() {
+        let raw = UInt(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_K_u(5)
+        let expected2 = UInt(
+            K_u_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_uUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_K_u(5)
+        let expected = Kelvin_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(K_u_to_u64(ctype))
+        )
+    }
+
+    func testKelvin_uUIntRawValueInit() {
+        let raw = kelvin_u(5)
+        let ctype = K_u_to_u64(raw)
+        let expected = Kelvin_u(UInt(ctype))
+        XCTAssertEqual(Kelvin_u(rawValue: raw), expected)
+    }
+
+    func testKelvin_uTemperatureUIntInit() {
+        let raw = Kelvin_u(UInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_uCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_K_u(5)
+        let expected2 = CUnsignedInt(
+            K_u_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_uCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_K_u(5)
+        let expected = Kelvin_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(K_u_to_u32(ctype))
+        )
+    }
+
+    func testKelvin_uCUnsignedIntRawValueInit() {
+        let raw = kelvin_u(5)
+        let ctype = K_u_to_u32(raw)
+        let expected = Kelvin_u(CUnsignedInt(ctype))
+        XCTAssertEqual(Kelvin_u(rawValue: raw), expected)
+    }
+
+    func testKelvin_uTemperatureCUnsignedIntInit() {
+        let raw = Kelvin_u(CUnsignedInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_uFloatInits() {
+        let raw = Float(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_K_u(5)
+        let expected2 = Float(
+            K_u_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_uFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_K_u(5)
+        let expected = Kelvin_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(K_u_to_f(ctype))
+        )
+    }
+
+    func testKelvin_uFloatRawValueInit() {
+        let raw = kelvin_u(5)
+        let ctype = K_u_to_f(raw)
+        let expected = Kelvin_u(Float(ctype))
+        XCTAssertEqual(Kelvin_u(rawValue: raw), expected)
+    }
+
+    func testKelvin_uTemperatureFloatInit() {
+        let raw = Kelvin_u(Float(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_uDoubleInits() {
+        let raw = Double(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_K_u(5)
+        let expected2 = Double(
+            K_u_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_uDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_K_u(5)
+        let expected = Kelvin_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(K_u_to_d(ctype))
+        )
+    }
+
+    func testKelvin_uDoubleRawValueInit() {
+        let raw = kelvin_u(5)
+        let ctype = K_u_to_d(raw)
+        let expected = Kelvin_u(Double(ctype))
+        XCTAssertEqual(Kelvin_u(rawValue: raw), expected)
+    }
+
+    func testKelvin_uTemperatureDoubleInit() {
+        let raw = Kelvin_u(Double(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testKelvin_fToCelsius_tTemperatureConversions() {
+        let original = Kelvin_f(5)
+        let category = Temperature(original)
+        let other = category.celsius_t
+        XCTAssertEqual(other, Celsius_t(original))
+    }
+
+    func testCelsius_tToKelvin_fConversions() {
+        let ctype1 = kelvin_f(5)
+        let swiftType1 = Kelvin_f(rawValue: ctype1)
+        let ctype2 = K_f_to_degC_t(ctype1)
+        let swiftType2 = Celsius_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_t(swiftType1))
+    }
+
+    func testKelvin_fToCelsius_uTemperatureConversions() {
+        let original = Kelvin_f(5)
+        let category = Temperature(original)
+        let other = category.celsius_u
+        XCTAssertEqual(other, Celsius_u(original))
+    }
+
+    func testCelsius_uToKelvin_fConversions() {
+        let ctype1 = kelvin_f(5)
+        let swiftType1 = Kelvin_f(rawValue: ctype1)
+        let ctype2 = K_f_to_degC_u(ctype1)
+        let swiftType2 = Celsius_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_u(swiftType1))
+    }
+
+    func testKelvin_fToCelsius_fTemperatureConversions() {
+        let original = Kelvin_f(5)
+        let category = Temperature(original)
+        let other = category.celsius_f
+        XCTAssertEqual(other, Celsius_f(original))
+    }
+
+    func testCelsius_fToKelvin_fConversions() {
+        let ctype1 = kelvin_f(5)
+        let swiftType1 = Kelvin_f(rawValue: ctype1)
+        let ctype2 = K_f_to_degC_f(ctype1)
+        let swiftType2 = Celsius_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_f(swiftType1))
+    }
+
+    func testKelvin_fToCelsius_dTemperatureConversions() {
+        let original = Kelvin_f(5)
+        let category = Temperature(original)
+        let other = category.celsius_d
+        XCTAssertEqual(other, Celsius_d(original))
+    }
+
+    func testCelsius_dToKelvin_fConversions() {
+        let ctype1 = kelvin_f(5)
+        let swiftType1 = Kelvin_f(rawValue: ctype1)
+        let ctype2 = K_f_to_degC_d(ctype1)
+        let swiftType2 = Celsius_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_d(swiftType1))
+    }
+
+    func testKelvin_fToFahrenheit_tTemperatureConversions() {
+        let original = Kelvin_f(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_t
+        XCTAssertEqual(other, Fahrenheit_t(original))
+    }
+
+    func testFahrenheit_tToKelvin_fConversions() {
+        let ctype1 = kelvin_f(5)
+        let swiftType1 = Kelvin_f(rawValue: ctype1)
+        let ctype2 = K_f_to_degF_t(ctype1)
+        let swiftType2 = Fahrenheit_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_t(swiftType1))
+    }
+
+    func testKelvin_fToFahrenheit_uTemperatureConversions() {
+        let original = Kelvin_f(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_u
+        XCTAssertEqual(other, Fahrenheit_u(original))
+    }
+
+    func testFahrenheit_uToKelvin_fConversions() {
+        let ctype1 = kelvin_f(5)
+        let swiftType1 = Kelvin_f(rawValue: ctype1)
+        let ctype2 = K_f_to_degF_u(ctype1)
+        let swiftType2 = Fahrenheit_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_u(swiftType1))
+    }
+
+    func testKelvin_fToFahrenheit_fTemperatureConversions() {
+        let original = Kelvin_f(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_f
+        XCTAssertEqual(other, Fahrenheit_f(original))
+    }
+
+    func testFahrenheit_fToKelvin_fConversions() {
+        let ctype1 = kelvin_f(5)
+        let swiftType1 = Kelvin_f(rawValue: ctype1)
+        let ctype2 = K_f_to_degF_f(ctype1)
+        let swiftType2 = Fahrenheit_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_f(swiftType1))
+    }
+
+    func testKelvin_fToFahrenheit_dTemperatureConversions() {
+        let original = Kelvin_f(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_d
+        XCTAssertEqual(other, Fahrenheit_d(original))
+    }
+
+    func testFahrenheit_dToKelvin_fConversions() {
+        let ctype1 = kelvin_f(5)
+        let swiftType1 = Kelvin_f(rawValue: ctype1)
+        let ctype2 = K_f_to_degF_d(ctype1)
+        let swiftType2 = Fahrenheit_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_d(swiftType1))
+    }
+
+    func testKelvin_fToKelvin_tTemperatureConversions() {
+        let original = Kelvin_f(5)
+        let category = Temperature(original)
+        let other = category.kelvin_t
+        XCTAssertEqual(other, Kelvin_t(original))
+    }
+
+    func testKelvin_tToKelvin_fConversions() {
+        let ctype1 = kelvin_f(5)
+        let swiftType1 = Kelvin_f(rawValue: ctype1)
+        let ctype2 = K_f_to_K_t(ctype1)
+        let swiftType2 = Kelvin_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_t(swiftType1))
+    }
+
+    func testKelvin_fToKelvin_uTemperatureConversions() {
+        let original = Kelvin_f(5)
+        let category = Temperature(original)
+        let other = category.kelvin_u
+        XCTAssertEqual(other, Kelvin_u(original))
+    }
+
+    func testKelvin_uToKelvin_fConversions() {
+        let ctype1 = kelvin_f(5)
+        let swiftType1 = Kelvin_f(rawValue: ctype1)
+        let ctype2 = K_f_to_K_u(ctype1)
+        let swiftType2 = Kelvin_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_u(swiftType1))
+    }
+
+    func testKelvin_fToKelvin_dTemperatureConversions() {
+        let original = Kelvin_f(5)
+        let category = Temperature(original)
+        let other = category.kelvin_d
+        XCTAssertEqual(other, Kelvin_d(original))
+    }
+
+    func testKelvin_dToKelvin_fConversions() {
+        let ctype1 = kelvin_f(5)
+        let swiftType1 = Kelvin_f(rawValue: ctype1)
+        let ctype2 = K_f_to_K_d(ctype1)
+        let swiftType2 = Kelvin_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_d(swiftType1))
+    }
+
+    func testKelvin_fInitFromTypeEnum() {
+        let underlyingType = Temperature.TemperatureTypes.kelvin_f(5)
+        let category = Temperature(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testTemperatureKelvin_fInt8Inits() {
+        let raw = Int8(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_K_f(5)
+        let expected2 = Int8(
+            K_f_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_fInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_K_f(5)
+        let expected = Kelvin_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(K_f_to_i8(ctype))
+        )
+    }
+
+    func testKelvin_fInt8RawValueInit() {
+        let raw = kelvin_f(5)
+        let ctype = K_f_to_i8(raw)
+        let expected = Kelvin_f(Int8(ctype))
+        XCTAssertEqual(Kelvin_f(rawValue: raw), expected)
+    }
+
+    func testKelvin_fTemperatureInt8Init() {
+        let raw = Kelvin_f(Int8(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_fInt16Inits() {
+        let raw = Int16(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_K_f(5)
+        let expected2 = Int16(
+            K_f_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_fInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_K_f(5)
+        let expected = Kelvin_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(K_f_to_i16(ctype))
+        )
+    }
+
+    func testKelvin_fInt16RawValueInit() {
+        let raw = kelvin_f(5)
+        let ctype = K_f_to_i16(raw)
+        let expected = Kelvin_f(Int16(ctype))
+        XCTAssertEqual(Kelvin_f(rawValue: raw), expected)
+    }
+
+    func testKelvin_fTemperatureInt16Init() {
+        let raw = Kelvin_f(Int16(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_fInt32Inits() {
+        let raw = Int32(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_K_f(5)
+        let expected2 = Int32(
+            K_f_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_fInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_K_f(5)
+        let expected = Kelvin_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(K_f_to_i32(ctype))
+        )
+    }
+
+    func testKelvin_fInt32RawValueInit() {
+        let raw = kelvin_f(5)
+        let ctype = K_f_to_i32(raw)
+        let expected = Kelvin_f(Int32(ctype))
+        XCTAssertEqual(Kelvin_f(rawValue: raw), expected)
+    }
+
+    func testKelvin_fTemperatureInt32Init() {
+        let raw = Kelvin_f(Int32(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_fInt64Inits() {
+        let raw = Int64(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_K_f(5)
+        let expected2 = Int64(
+            K_f_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_fInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_K_f(5)
+        let expected = Kelvin_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(K_f_to_i64(ctype))
+        )
+    }
+
+    func testKelvin_fInt64RawValueInit() {
+        let raw = kelvin_f(5)
+        let ctype = K_f_to_i64(raw)
+        let expected = Kelvin_f(Int64(ctype))
+        XCTAssertEqual(Kelvin_f(rawValue: raw), expected)
+    }
+
+    func testKelvin_fTemperatureInt64Init() {
+        let raw = Kelvin_f(Int64(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_fIntInits() {
+        let raw = Int(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_K_f(5)
+        let expected2 = Int(
+            K_f_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_fIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_K_f(5)
+        let expected = Kelvin_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(K_f_to_i64(ctype))
+        )
+    }
+
+    func testKelvin_fIntRawValueInit() {
+        let raw = kelvin_f(5)
+        let ctype = K_f_to_i64(raw)
+        let expected = Kelvin_f(Int(ctype))
+        XCTAssertEqual(Kelvin_f(rawValue: raw), expected)
+    }
+
+    func testKelvin_fTemperatureIntInit() {
+        let raw = Kelvin_f(Int(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_fCIntInits() {
+        let raw = CInt(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_K_f(5)
+        let expected2 = CInt(
+            K_f_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_fCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_K_f(5)
+        let expected = Kelvin_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(K_f_to_i32(ctype))
+        )
+    }
+
+    func testKelvin_fCIntRawValueInit() {
+        let raw = kelvin_f(5)
+        let ctype = K_f_to_i32(raw)
+        let expected = Kelvin_f(CInt(ctype))
+        XCTAssertEqual(Kelvin_f(rawValue: raw), expected)
+    }
+
+    func testKelvin_fTemperatureCIntInit() {
+        let raw = Kelvin_f(CInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_fUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_K_f(5)
+        let expected2 = UInt8(
+            K_f_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_fUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_K_f(5)
+        let expected = Kelvin_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(K_f_to_u8(ctype))
+        )
+    }
+
+    func testKelvin_fUInt8RawValueInit() {
+        let raw = kelvin_f(5)
+        let ctype = K_f_to_u8(raw)
+        let expected = Kelvin_f(UInt8(ctype))
+        XCTAssertEqual(Kelvin_f(rawValue: raw), expected)
+    }
+
+    func testKelvin_fTemperatureUInt8Init() {
+        let raw = Kelvin_f(UInt8(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_fUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_K_f(5)
+        let expected2 = UInt16(
+            K_f_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_fUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_K_f(5)
+        let expected = Kelvin_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(K_f_to_u16(ctype))
+        )
+    }
+
+    func testKelvin_fUInt16RawValueInit() {
+        let raw = kelvin_f(5)
+        let ctype = K_f_to_u16(raw)
+        let expected = Kelvin_f(UInt16(ctype))
+        XCTAssertEqual(Kelvin_f(rawValue: raw), expected)
+    }
+
+    func testKelvin_fTemperatureUInt16Init() {
+        let raw = Kelvin_f(UInt16(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_fUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_K_f(5)
+        let expected2 = UInt32(
+            K_f_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_fUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_K_f(5)
+        let expected = Kelvin_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(K_f_to_u32(ctype))
+        )
+    }
+
+    func testKelvin_fUInt32RawValueInit() {
+        let raw = kelvin_f(5)
+        let ctype = K_f_to_u32(raw)
+        let expected = Kelvin_f(UInt32(ctype))
+        XCTAssertEqual(Kelvin_f(rawValue: raw), expected)
+    }
+
+    func testKelvin_fTemperatureUInt32Init() {
+        let raw = Kelvin_f(UInt32(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_fUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_K_f(5)
+        let expected2 = UInt64(
+            K_f_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_fUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_K_f(5)
+        let expected = Kelvin_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(K_f_to_u64(ctype))
+        )
+    }
+
+    func testKelvin_fUInt64RawValueInit() {
+        let raw = kelvin_f(5)
+        let ctype = K_f_to_u64(raw)
+        let expected = Kelvin_f(UInt64(ctype))
+        XCTAssertEqual(Kelvin_f(rawValue: raw), expected)
+    }
+
+    func testKelvin_fTemperatureUInt64Init() {
+        let raw = Kelvin_f(UInt64(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_fUIntInits() {
+        let raw = UInt(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_K_f(5)
+        let expected2 = UInt(
+            K_f_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_fUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_K_f(5)
+        let expected = Kelvin_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(K_f_to_u64(ctype))
+        )
+    }
+
+    func testKelvin_fUIntRawValueInit() {
+        let raw = kelvin_f(5)
+        let ctype = K_f_to_u64(raw)
+        let expected = Kelvin_f(UInt(ctype))
+        XCTAssertEqual(Kelvin_f(rawValue: raw), expected)
+    }
+
+    func testKelvin_fTemperatureUIntInit() {
+        let raw = Kelvin_f(UInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_fCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_K_f(5)
+        let expected2 = CUnsignedInt(
+            K_f_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_fCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_K_f(5)
+        let expected = Kelvin_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(K_f_to_u32(ctype))
+        )
+    }
+
+    func testKelvin_fCUnsignedIntRawValueInit() {
+        let raw = kelvin_f(5)
+        let ctype = K_f_to_u32(raw)
+        let expected = Kelvin_f(CUnsignedInt(ctype))
+        XCTAssertEqual(Kelvin_f(rawValue: raw), expected)
+    }
+
+    func testKelvin_fTemperatureCUnsignedIntInit() {
+        let raw = Kelvin_f(CUnsignedInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_fFloatInits() {
+        let raw = Float(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_K_f(5)
+        let expected2 = Float(
+            K_f_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_fFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_K_f(5)
+        let expected = Kelvin_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(K_f_to_f(ctype))
+        )
+    }
+
+    func testKelvin_fFloatRawValueInit() {
+        let raw = kelvin_f(5)
+        let ctype = K_f_to_f(raw)
+        let expected = Kelvin_f(Float(ctype))
+        XCTAssertEqual(Kelvin_f(rawValue: raw), expected)
+    }
+
+    func testKelvin_fTemperatureFloatInit() {
+        let raw = Kelvin_f(Float(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_fDoubleInits() {
+        let raw = Double(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_K_f(5)
+        let expected2 = Double(
+            K_f_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_fDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_K_f(5)
+        let expected = Kelvin_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(K_f_to_d(ctype))
+        )
+    }
+
+    func testKelvin_fDoubleRawValueInit() {
+        let raw = kelvin_f(5)
+        let ctype = K_f_to_d(raw)
+        let expected = Kelvin_f(Double(ctype))
+        XCTAssertEqual(Kelvin_f(rawValue: raw), expected)
+    }
+
+    func testKelvin_fTemperatureDoubleInit() {
+        let raw = Kelvin_f(Double(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testKelvin_dToCelsius_tTemperatureConversions() {
+        let original = Kelvin_d(5)
+        let category = Temperature(original)
+        let other = category.celsius_t
+        XCTAssertEqual(other, Celsius_t(original))
+    }
+
+    func testCelsius_tToKelvin_dConversions() {
+        let ctype1 = kelvin_d(5)
+        let swiftType1 = Kelvin_d(rawValue: ctype1)
+        let ctype2 = K_d_to_degC_t(ctype1)
+        let swiftType2 = Celsius_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_t(swiftType1))
+    }
+
+    func testKelvin_dToCelsius_uTemperatureConversions() {
+        let original = Kelvin_d(5)
+        let category = Temperature(original)
+        let other = category.celsius_u
+        XCTAssertEqual(other, Celsius_u(original))
+    }
+
+    func testCelsius_uToKelvin_dConversions() {
+        let ctype1 = kelvin_d(5)
+        let swiftType1 = Kelvin_d(rawValue: ctype1)
+        let ctype2 = K_d_to_degC_u(ctype1)
+        let swiftType2 = Celsius_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_u(swiftType1))
+    }
+
+    func testKelvin_dToCelsius_fTemperatureConversions() {
+        let original = Kelvin_d(5)
+        let category = Temperature(original)
+        let other = category.celsius_f
+        XCTAssertEqual(other, Celsius_f(original))
+    }
+
+    func testCelsius_fToKelvin_dConversions() {
+        let ctype1 = kelvin_d(5)
+        let swiftType1 = Kelvin_d(rawValue: ctype1)
+        let ctype2 = K_d_to_degC_f(ctype1)
+        let swiftType2 = Celsius_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_f(swiftType1))
+    }
+
+    func testKelvin_dToCelsius_dTemperatureConversions() {
+        let original = Kelvin_d(5)
+        let category = Temperature(original)
+        let other = category.celsius_d
+        XCTAssertEqual(other, Celsius_d(original))
+    }
+
+    func testCelsius_dToKelvin_dConversions() {
+        let ctype1 = kelvin_d(5)
+        let swiftType1 = Kelvin_d(rawValue: ctype1)
+        let ctype2 = K_d_to_degC_d(ctype1)
+        let swiftType2 = Celsius_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Celsius_d(swiftType1))
+    }
+
+    func testKelvin_dToFahrenheit_tTemperatureConversions() {
+        let original = Kelvin_d(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_t
+        XCTAssertEqual(other, Fahrenheit_t(original))
+    }
+
+    func testFahrenheit_tToKelvin_dConversions() {
+        let ctype1 = kelvin_d(5)
+        let swiftType1 = Kelvin_d(rawValue: ctype1)
+        let ctype2 = K_d_to_degF_t(ctype1)
+        let swiftType2 = Fahrenheit_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_t(swiftType1))
+    }
+
+    func testKelvin_dToFahrenheit_uTemperatureConversions() {
+        let original = Kelvin_d(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_u
+        XCTAssertEqual(other, Fahrenheit_u(original))
+    }
+
+    func testFahrenheit_uToKelvin_dConversions() {
+        let ctype1 = kelvin_d(5)
+        let swiftType1 = Kelvin_d(rawValue: ctype1)
+        let ctype2 = K_d_to_degF_u(ctype1)
+        let swiftType2 = Fahrenheit_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_u(swiftType1))
+    }
+
+    func testKelvin_dToFahrenheit_fTemperatureConversions() {
+        let original = Kelvin_d(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_f
+        XCTAssertEqual(other, Fahrenheit_f(original))
+    }
+
+    func testFahrenheit_fToKelvin_dConversions() {
+        let ctype1 = kelvin_d(5)
+        let swiftType1 = Kelvin_d(rawValue: ctype1)
+        let ctype2 = K_d_to_degF_f(ctype1)
+        let swiftType2 = Fahrenheit_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_f(swiftType1))
+    }
+
+    func testKelvin_dToFahrenheit_dTemperatureConversions() {
+        let original = Kelvin_d(5)
+        let category = Temperature(original)
+        let other = category.fahrenheit_d
+        XCTAssertEqual(other, Fahrenheit_d(original))
+    }
+
+    func testFahrenheit_dToKelvin_dConversions() {
+        let ctype1 = kelvin_d(5)
+        let swiftType1 = Kelvin_d(rawValue: ctype1)
+        let ctype2 = K_d_to_degF_d(ctype1)
+        let swiftType2 = Fahrenheit_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Fahrenheit_d(swiftType1))
+    }
+
+    func testKelvin_dToKelvin_tTemperatureConversions() {
+        let original = Kelvin_d(5)
+        let category = Temperature(original)
+        let other = category.kelvin_t
+        XCTAssertEqual(other, Kelvin_t(original))
+    }
+
+    func testKelvin_tToKelvin_dConversions() {
+        let ctype1 = kelvin_d(5)
+        let swiftType1 = Kelvin_d(rawValue: ctype1)
+        let ctype2 = K_d_to_K_t(ctype1)
+        let swiftType2 = Kelvin_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_t(swiftType1))
+    }
+
+    func testKelvin_dToKelvin_uTemperatureConversions() {
+        let original = Kelvin_d(5)
+        let category = Temperature(original)
+        let other = category.kelvin_u
+        XCTAssertEqual(other, Kelvin_u(original))
+    }
+
+    func testKelvin_uToKelvin_dConversions() {
+        let ctype1 = kelvin_d(5)
+        let swiftType1 = Kelvin_d(rawValue: ctype1)
+        let ctype2 = K_d_to_K_u(ctype1)
+        let swiftType2 = Kelvin_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_u(swiftType1))
+    }
+
+    func testKelvin_dToKelvin_fTemperatureConversions() {
+        let original = Kelvin_d(5)
+        let category = Temperature(original)
+        let other = category.kelvin_f
+        XCTAssertEqual(other, Kelvin_f(original))
+    }
+
+    func testKelvin_fToKelvin_dConversions() {
+        let ctype1 = kelvin_d(5)
+        let swiftType1 = Kelvin_d(rawValue: ctype1)
+        let ctype2 = K_d_to_K_f(ctype1)
+        let swiftType2 = Kelvin_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Kelvin_f(swiftType1))
+    }
+
+    func testKelvin_dInitFromTypeEnum() {
+        let underlyingType = Temperature.TemperatureTypes.kelvin_d(5)
+        let category = Temperature(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testTemperatureKelvin_dInt8Inits() {
+        let raw = Int8(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_K_d(5)
+        let expected2 = Int8(
+            K_d_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_dInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_K_d(5)
+        let expected = Kelvin_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(K_d_to_i8(ctype))
+        )
+    }
+
+    func testKelvin_dInt8RawValueInit() {
+        let raw = kelvin_d(5)
+        let ctype = K_d_to_i8(raw)
+        let expected = Kelvin_d(Int8(ctype))
+        XCTAssertEqual(Kelvin_d(rawValue: raw), expected)
+    }
+
+    func testKelvin_dTemperatureInt8Init() {
+        let raw = Kelvin_d(Int8(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_dInt16Inits() {
+        let raw = Int16(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_K_d(5)
+        let expected2 = Int16(
+            K_d_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_dInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_K_d(5)
+        let expected = Kelvin_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(K_d_to_i16(ctype))
+        )
+    }
+
+    func testKelvin_dInt16RawValueInit() {
+        let raw = kelvin_d(5)
+        let ctype = K_d_to_i16(raw)
+        let expected = Kelvin_d(Int16(ctype))
+        XCTAssertEqual(Kelvin_d(rawValue: raw), expected)
+    }
+
+    func testKelvin_dTemperatureInt16Init() {
+        let raw = Kelvin_d(Int16(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_dInt32Inits() {
+        let raw = Int32(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_K_d(5)
+        let expected2 = Int32(
+            K_d_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_dInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_K_d(5)
+        let expected = Kelvin_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(K_d_to_i32(ctype))
+        )
+    }
+
+    func testKelvin_dInt32RawValueInit() {
+        let raw = kelvin_d(5)
+        let ctype = K_d_to_i32(raw)
+        let expected = Kelvin_d(Int32(ctype))
+        XCTAssertEqual(Kelvin_d(rawValue: raw), expected)
+    }
+
+    func testKelvin_dTemperatureInt32Init() {
+        let raw = Kelvin_d(Int32(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_dInt64Inits() {
+        let raw = Int64(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_K_d(5)
+        let expected2 = Int64(
+            K_d_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_dInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_K_d(5)
+        let expected = Kelvin_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(K_d_to_i64(ctype))
+        )
+    }
+
+    func testKelvin_dInt64RawValueInit() {
+        let raw = kelvin_d(5)
+        let ctype = K_d_to_i64(raw)
+        let expected = Kelvin_d(Int64(ctype))
+        XCTAssertEqual(Kelvin_d(rawValue: raw), expected)
+    }
+
+    func testKelvin_dTemperatureInt64Init() {
+        let raw = Kelvin_d(Int64(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_dIntInits() {
+        let raw = Int(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_K_d(5)
+        let expected2 = Int(
+            K_d_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_dIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_K_d(5)
+        let expected = Kelvin_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(K_d_to_i64(ctype))
+        )
+    }
+
+    func testKelvin_dIntRawValueInit() {
+        let raw = kelvin_d(5)
+        let ctype = K_d_to_i64(raw)
+        let expected = Kelvin_d(Int(ctype))
+        XCTAssertEqual(Kelvin_d(rawValue: raw), expected)
+    }
+
+    func testKelvin_dTemperatureIntInit() {
+        let raw = Kelvin_d(Int(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_dCIntInits() {
+        let raw = CInt(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_K_d(5)
+        let expected2 = CInt(
+            K_d_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_dCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_K_d(5)
+        let expected = Kelvin_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(K_d_to_i32(ctype))
+        )
+    }
+
+    func testKelvin_dCIntRawValueInit() {
+        let raw = kelvin_d(5)
+        let ctype = K_d_to_i32(raw)
+        let expected = Kelvin_d(CInt(ctype))
+        XCTAssertEqual(Kelvin_d(rawValue: raw), expected)
+    }
+
+    func testKelvin_dTemperatureCIntInit() {
+        let raw = Kelvin_d(CInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_dUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_K_d(5)
+        let expected2 = UInt8(
+            K_d_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_dUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_K_d(5)
+        let expected = Kelvin_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(K_d_to_u8(ctype))
+        )
+    }
+
+    func testKelvin_dUInt8RawValueInit() {
+        let raw = kelvin_d(5)
+        let ctype = K_d_to_u8(raw)
+        let expected = Kelvin_d(UInt8(ctype))
+        XCTAssertEqual(Kelvin_d(rawValue: raw), expected)
+    }
+
+    func testKelvin_dTemperatureUInt8Init() {
+        let raw = Kelvin_d(UInt8(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_dUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_K_d(5)
+        let expected2 = UInt16(
+            K_d_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_dUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_K_d(5)
+        let expected = Kelvin_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(K_d_to_u16(ctype))
+        )
+    }
+
+    func testKelvin_dUInt16RawValueInit() {
+        let raw = kelvin_d(5)
+        let ctype = K_d_to_u16(raw)
+        let expected = Kelvin_d(UInt16(ctype))
+        XCTAssertEqual(Kelvin_d(rawValue: raw), expected)
+    }
+
+    func testKelvin_dTemperatureUInt16Init() {
+        let raw = Kelvin_d(UInt16(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_dUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_K_d(5)
+        let expected2 = UInt32(
+            K_d_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_dUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_K_d(5)
+        let expected = Kelvin_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(K_d_to_u32(ctype))
+        )
+    }
+
+    func testKelvin_dUInt32RawValueInit() {
+        let raw = kelvin_d(5)
+        let ctype = K_d_to_u32(raw)
+        let expected = Kelvin_d(UInt32(ctype))
+        XCTAssertEqual(Kelvin_d(rawValue: raw), expected)
+    }
+
+    func testKelvin_dTemperatureUInt32Init() {
+        let raw = Kelvin_d(UInt32(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_dUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_K_d(5)
+        let expected2 = UInt64(
+            K_d_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_dUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_K_d(5)
+        let expected = Kelvin_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(K_d_to_u64(ctype))
+        )
+    }
+
+    func testKelvin_dUInt64RawValueInit() {
+        let raw = kelvin_d(5)
+        let ctype = K_d_to_u64(raw)
+        let expected = Kelvin_d(UInt64(ctype))
+        XCTAssertEqual(Kelvin_d(rawValue: raw), expected)
+    }
+
+    func testKelvin_dTemperatureUInt64Init() {
+        let raw = Kelvin_d(UInt64(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_dUIntInits() {
+        let raw = UInt(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_K_d(5)
+        let expected2 = UInt(
+            K_d_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_dUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_K_d(5)
+        let expected = Kelvin_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(K_d_to_u64(ctype))
+        )
+    }
+
+    func testKelvin_dUIntRawValueInit() {
+        let raw = kelvin_d(5)
+        let ctype = K_d_to_u64(raw)
+        let expected = Kelvin_d(UInt(ctype))
+        XCTAssertEqual(Kelvin_d(rawValue: raw), expected)
+    }
+
+    func testKelvin_dTemperatureUIntInit() {
+        let raw = Kelvin_d(UInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_dCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_K_d(5)
+        let expected2 = CUnsignedInt(
+            K_d_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_dCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_K_d(5)
+        let expected = Kelvin_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(K_d_to_u32(ctype))
+        )
+    }
+
+    func testKelvin_dCUnsignedIntRawValueInit() {
+        let raw = kelvin_d(5)
+        let ctype = K_d_to_u32(raw)
+        let expected = Kelvin_d(CUnsignedInt(ctype))
+        XCTAssertEqual(Kelvin_d(rawValue: raw), expected)
+    }
+
+    func testKelvin_dTemperatureCUnsignedIntInit() {
+        let raw = Kelvin_d(CUnsignedInt(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_dFloatInits() {
+        let raw = Float(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_K_d(5)
+        let expected2 = Float(
+            K_d_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_dFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_K_d(5)
+        let expected = Kelvin_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(K_d_to_f(ctype))
+        )
+    }
+
+    func testKelvin_dFloatRawValueInit() {
+        let raw = kelvin_d(5)
+        let ctype = K_d_to_f(raw)
+        let expected = Kelvin_d(Float(ctype))
+        XCTAssertEqual(Kelvin_d(rawValue: raw), expected)
+    }
+
+    func testKelvin_dTemperatureFloatInit() {
+        let raw = Kelvin_d(Float(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testTemperatureKelvin_dDoubleInits() {
+        let raw = Double(5)
+        let expected = Temperature(kelvin: raw)
+        let result = Temperature.kelvin(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_K_d(5)
+        let expected2 = Double(
+            K_d_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testKelvin_dDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_K_d(5)
+        let expected = Kelvin_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(K_d_to_d(ctype))
+        )
+    }
+
+    func testKelvin_dDoubleRawValueInit() {
+        let raw = kelvin_d(5)
+        let ctype = K_d_to_d(raw)
+        let expected = Kelvin_d(Double(ctype))
+        XCTAssertEqual(Kelvin_d(rawValue: raw), expected)
+    }
+
+    func testKelvin_dTemperatureDoubleInit() {
+        let raw = Kelvin_d(Double(5))
+        let category = Temperature(raw)
+        let expected = Temperature(rawValue: .kelvin_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+}
 
 /// Provides celsius_t unit tests.
 final class Celsius_tTests: XCTestCase {

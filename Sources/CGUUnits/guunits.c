@@ -3644,6 +3644,3576 @@ millimetres_u u_to_mm_u(unsigned int millimetres)
 }
 
 /**
+ * Convert amperes_d to amperes_f.
+ */
+amperes_f A_d_to_A_f(amperes_d amperes)
+{
+    return ((amperes_f) (amperes < ((double) (FLT_MAX)) ? (amperes > ((double) (-FLT_MAX)) ? amperes : -FLT_MAX) : FLT_MAX));
+}
+
+/**
+ * Convert amperes_d to amperes_t.
+ */
+amperes_t A_d_to_A_t(amperes_d amperes)
+{
+    return ((amperes_t) (round(((double) (amperes))) < ((double) (INT_MAX)) ? (round(((double) (amperes))) > ((double) (INT_MIN)) ? round(((double) (amperes))) : INT_MIN) : INT_MAX));
+}
+
+/**
+ * Convert amperes_d to amperes_u.
+ */
+amperes_u A_d_to_A_u(amperes_d amperes)
+{
+    return ((amperes_u) (round(((double) (amperes))) < ((double) (UINT_MAX)) ? (round(((double) (amperes))) > ((double) (0)) ? round(((double) (amperes))) : 0) : UINT_MAX));
+}
+
+/**
+ * Convert amperes_d to double.
+ */
+double A_d_to_d(amperes_d amperes)
+{
+    return ((double) (amperes));
+}
+
+/**
+ * Convert amperes_d to float.
+ */
+float A_d_to_f(amperes_d amperes)
+{
+    return d_to_f(((double) (amperes)));
+}
+
+/**
+ * Convert amperes_d to int.
+ */
+int A_d_to_i(amperes_d amperes)
+{
+    return d_to_i(((double) (amperes)));
+}
+
+/**
+ * Convert amperes_d to int16_t.
+ */
+int16_t A_d_to_i16(amperes_d amperes)
+{
+    return d_to_i16(((double) (amperes)));
+}
+
+/**
+ * Convert amperes_d to int32_t.
+ */
+int32_t A_d_to_i32(amperes_d amperes)
+{
+    return d_to_i32(((double) (amperes)));
+}
+
+/**
+ * Convert amperes_d to int64_t.
+ */
+int64_t A_d_to_i64(amperes_d amperes)
+{
+    return d_to_i64(((double) (amperes)));
+}
+
+/**
+ * Convert amperes_d to int8_t.
+ */
+int8_t A_d_to_i8(amperes_d amperes)
+{
+    return d_to_i8(((double) (amperes)));
+}
+
+/**
+ * Convert amperes_d to microamperes_d.
+ */
+microamperes_d A_d_to_uA_d(amperes_d amperes)
+{
+    if (amperes < -DBL_MAX / 1000000.0) {
+        return -DBL_MAX;
+    }
+    if (amperes > DBL_MAX / 1000000.0) {
+        return DBL_MAX;
+    }
+    return ((microamperes_d) (amperes)) * 1000000.0;
+}
+
+/**
+ * Convert amperes_d to microamperes_f.
+ */
+microamperes_f A_d_to_uA_f(amperes_d amperes)
+{
+    if (amperes > ((amperes_d) (FLT_MAX)) / 1000000.0) {
+        return FLT_MAX;
+    }
+    if (amperes < ((amperes_d) (-FLT_MAX)) / 1000000.0) {
+        return -FLT_MAX;
+    }
+    return ((microamperes_f) (amperes * 1000000.0));
+}
+
+/**
+ * Convert amperes_d to microamperes_t.
+ */
+microamperes_t A_d_to_uA_t(amperes_d amperes)
+{
+    if (amperes > ((amperes_d) (INT_MAX)) / 1000000.0) {
+        return INT_MAX;
+    }
+    if (amperes < ((amperes_d) (INT_MIN)) / 1000000.0) {
+        return INT_MIN;
+    }
+    return ((microamperes_t) (amperes * 1000000.0));
+}
+
+/**
+ * Convert amperes_d to microamperes_u.
+ */
+microamperes_u A_d_to_uA_u(amperes_d amperes)
+{
+    if (amperes > ((amperes_d) (UINT_MAX)) / 1000000.0) {
+        return UINT_MAX;
+    }
+    if (amperes < ((amperes_d) (0)) / 1000000.0) {
+        return 0;
+    }
+    return ((microamperes_u) (amperes * 1000000.0));
+}
+
+/**
+ * Convert amperes_d to milliamperes_d.
+ */
+milliamperes_d A_d_to_mA_d(amperes_d amperes)
+{
+    if (amperes < -DBL_MAX / 1000.0) {
+        return -DBL_MAX;
+    }
+    if (amperes > DBL_MAX / 1000.0) {
+        return DBL_MAX;
+    }
+    return ((milliamperes_d) (amperes)) * 1000.0;
+}
+
+/**
+ * Convert amperes_d to milliamperes_f.
+ */
+milliamperes_f A_d_to_mA_f(amperes_d amperes)
+{
+    if (amperes > ((amperes_d) (FLT_MAX)) / 1000.0) {
+        return FLT_MAX;
+    }
+    if (amperes < ((amperes_d) (-FLT_MAX)) / 1000.0) {
+        return -FLT_MAX;
+    }
+    return ((milliamperes_f) (amperes * 1000.0));
+}
+
+/**
+ * Convert amperes_d to milliamperes_t.
+ */
+milliamperes_t A_d_to_mA_t(amperes_d amperes)
+{
+    if (amperes > ((amperes_d) (INT_MAX)) / 1000.0) {
+        return INT_MAX;
+    }
+    if (amperes < ((amperes_d) (INT_MIN)) / 1000.0) {
+        return INT_MIN;
+    }
+    return ((milliamperes_t) (amperes * 1000.0));
+}
+
+/**
+ * Convert amperes_d to milliamperes_u.
+ */
+milliamperes_u A_d_to_mA_u(amperes_d amperes)
+{
+    if (amperes > ((amperes_d) (UINT_MAX)) / 1000.0) {
+        return UINT_MAX;
+    }
+    if (amperes < ((amperes_d) (0)) / 1000.0) {
+        return 0;
+    }
+    return ((milliamperes_u) (amperes * 1000.0));
+}
+
+/**
+ * Convert amperes_d to uint16_t.
+ */
+uint16_t A_d_to_u16(amperes_d amperes)
+{
+    return d_to_u16(((double) (amperes)));
+}
+
+/**
+ * Convert amperes_d to uint32_t.
+ */
+uint32_t A_d_to_u32(amperes_d amperes)
+{
+    return d_to_u32(((double) (amperes)));
+}
+
+/**
+ * Convert amperes_d to uint64_t.
+ */
+uint64_t A_d_to_u64(amperes_d amperes)
+{
+    return d_to_u64(((double) (amperes)));
+}
+
+/**
+ * Convert amperes_d to uint8_t.
+ */
+uint8_t A_d_to_u8(amperes_d amperes)
+{
+    return d_to_u8(((double) (amperes)));
+}
+
+/**
+ * Convert amperes_d to unsigned int.
+ */
+unsigned int A_d_to_u(amperes_d amperes)
+{
+    return d_to_u(((double) (amperes)));
+}
+
+/**
+ * Convert amperes_f to amperes_d.
+ */
+amperes_d A_f_to_A_d(amperes_f amperes)
+{
+    return ((amperes_d) (amperes));
+}
+
+/**
+ * Convert amperes_f to amperes_t.
+ */
+amperes_t A_f_to_A_t(amperes_f amperes)
+{
+    return ((amperes_t) (round(((double) (amperes))) < ((double) (INT_MAX)) ? (round(((double) (amperes))) > ((double) (INT_MIN)) ? round(((double) (amperes))) : INT_MIN) : INT_MAX));
+}
+
+/**
+ * Convert amperes_f to amperes_u.
+ */
+amperes_u A_f_to_A_u(amperes_f amperes)
+{
+    return ((amperes_u) (round(((double) (amperes))) < ((double) (UINT_MAX)) ? (round(((double) (amperes))) > ((double) (0)) ? round(((double) (amperes))) : 0) : UINT_MAX));
+}
+
+/**
+ * Convert amperes_f to double.
+ */
+double A_f_to_d(amperes_f amperes)
+{
+    return ((double) (amperes));
+}
+
+/**
+ * Convert amperes_f to float.
+ */
+float A_f_to_f(amperes_f amperes)
+{
+    return ((float) (amperes));
+}
+
+/**
+ * Convert amperes_f to int.
+ */
+int A_f_to_i(amperes_f amperes)
+{
+    return f_to_i(((float) (amperes)));
+}
+
+/**
+ * Convert amperes_f to int16_t.
+ */
+int16_t A_f_to_i16(amperes_f amperes)
+{
+    return f_to_i16(((float) (amperes)));
+}
+
+/**
+ * Convert amperes_f to int32_t.
+ */
+int32_t A_f_to_i32(amperes_f amperes)
+{
+    return f_to_i32(((float) (amperes)));
+}
+
+/**
+ * Convert amperes_f to int64_t.
+ */
+int64_t A_f_to_i64(amperes_f amperes)
+{
+    return f_to_i64(((float) (amperes)));
+}
+
+/**
+ * Convert amperes_f to int8_t.
+ */
+int8_t A_f_to_i8(amperes_f amperes)
+{
+    return f_to_i8(((float) (amperes)));
+}
+
+/**
+ * Convert amperes_f to microamperes_d.
+ */
+microamperes_d A_f_to_uA_d(amperes_f amperes)
+{
+    return ((microamperes_d) (amperes)) * 1000000.0;
+}
+
+/**
+ * Convert amperes_f to microamperes_f.
+ */
+microamperes_f A_f_to_uA_f(amperes_f amperes)
+{
+    if (amperes < -FLT_MAX / 1000000.0f) {
+        return -FLT_MAX;
+    }
+    if (amperes > FLT_MAX / 1000000.0f) {
+        return FLT_MAX;
+    }
+    return ((microamperes_f) (amperes)) * 1000000.0f;
+}
+
+/**
+ * Convert amperes_f to microamperes_t.
+ */
+microamperes_t A_f_to_uA_t(amperes_f amperes)
+{
+    if (amperes > ((amperes_f) (INT_MAX)) / 1000000.0f) {
+        return INT_MAX;
+    }
+    if (amperes < ((amperes_f) (INT_MIN)) / 1000000.0f) {
+        return INT_MIN;
+    }
+    return ((microamperes_t) (amperes * 1000000.0f));
+}
+
+/**
+ * Convert amperes_f to microamperes_u.
+ */
+microamperes_u A_f_to_uA_u(amperes_f amperes)
+{
+    if (amperes > ((amperes_f) (UINT_MAX)) / 1000000.0f) {
+        return UINT_MAX;
+    }
+    if (amperes < ((amperes_f) (0)) / 1000000.0f) {
+        return 0;
+    }
+    return ((microamperes_u) (amperes * 1000000.0f));
+}
+
+/**
+ * Convert amperes_f to milliamperes_d.
+ */
+milliamperes_d A_f_to_mA_d(amperes_f amperes)
+{
+    return ((milliamperes_d) (amperes)) * 1000.0;
+}
+
+/**
+ * Convert amperes_f to milliamperes_f.
+ */
+milliamperes_f A_f_to_mA_f(amperes_f amperes)
+{
+    if (amperes < -FLT_MAX / 1000.0f) {
+        return -FLT_MAX;
+    }
+    if (amperes > FLT_MAX / 1000.0f) {
+        return FLT_MAX;
+    }
+    return ((milliamperes_f) (amperes)) * 1000.0f;
+}
+
+/**
+ * Convert amperes_f to milliamperes_t.
+ */
+milliamperes_t A_f_to_mA_t(amperes_f amperes)
+{
+    if (amperes > ((amperes_f) (INT_MAX)) / 1000.0f) {
+        return INT_MAX;
+    }
+    if (amperes < ((amperes_f) (INT_MIN)) / 1000.0f) {
+        return INT_MIN;
+    }
+    return ((milliamperes_t) (amperes * 1000.0f));
+}
+
+/**
+ * Convert amperes_f to milliamperes_u.
+ */
+milliamperes_u A_f_to_mA_u(amperes_f amperes)
+{
+    if (amperes > ((amperes_f) (UINT_MAX)) / 1000.0f) {
+        return UINT_MAX;
+    }
+    if (amperes < ((amperes_f) (0)) / 1000.0f) {
+        return 0;
+    }
+    return ((milliamperes_u) (amperes * 1000.0f));
+}
+
+/**
+ * Convert amperes_f to uint16_t.
+ */
+uint16_t A_f_to_u16(amperes_f amperes)
+{
+    return f_to_u16(((float) (amperes)));
+}
+
+/**
+ * Convert amperes_f to uint32_t.
+ */
+uint32_t A_f_to_u32(amperes_f amperes)
+{
+    return f_to_u32(((float) (amperes)));
+}
+
+/**
+ * Convert amperes_f to uint64_t.
+ */
+uint64_t A_f_to_u64(amperes_f amperes)
+{
+    return f_to_u64(((float) (amperes)));
+}
+
+/**
+ * Convert amperes_f to uint8_t.
+ */
+uint8_t A_f_to_u8(amperes_f amperes)
+{
+    return f_to_u8(((float) (amperes)));
+}
+
+/**
+ * Convert amperes_f to unsigned int.
+ */
+unsigned int A_f_to_u(amperes_f amperes)
+{
+    return f_to_u(((float) (amperes)));
+}
+
+/**
+ * Convert amperes_t to amperes_d.
+ */
+amperes_d A_t_to_A_d(amperes_t amperes)
+{
+    return ((amperes_d) (amperes));
+}
+
+/**
+ * Convert amperes_t to amperes_f.
+ */
+amperes_f A_t_to_A_f(amperes_t amperes)
+{
+    return ((amperes_f) (amperes));
+}
+
+/**
+ * Convert amperes_t to amperes_u.
+ */
+amperes_u A_t_to_A_u(amperes_t amperes)
+{
+    return ((amperes_u) ((amperes) < 0 ? 0 : amperes));
+}
+
+/**
+ * Convert amperes_t to double.
+ */
+double A_t_to_d(amperes_t amperes)
+{
+    return ((double) (amperes));
+}
+
+/**
+ * Convert amperes_t to float.
+ */
+float A_t_to_f(amperes_t amperes)
+{
+    return ((float) (amperes));
+}
+
+/**
+ * Convert amperes_t to int.
+ */
+int A_t_to_i(amperes_t amperes)
+{
+    return ((int) (amperes));
+}
+
+/**
+ * Convert amperes_t to int16_t.
+ */
+int16_t A_t_to_i16(amperes_t amperes)
+{
+    return ((int16_t) (MIN(((amperes_t) (32767)), MAX(((amperes_t) (-32768)), amperes))));
+}
+
+/**
+ * Convert amperes_t to int32_t.
+ */
+int32_t A_t_to_i32(amperes_t amperes)
+{
+    return ((int32_t) (MIN(((amperes_t) (2147483647)), MAX(((amperes_t) (-2147483648)), amperes))));
+}
+
+/**
+ * Convert amperes_t to int64_t.
+ */
+int64_t A_t_to_i64(amperes_t amperes)
+{
+    return ((int64_t) (amperes));
+}
+
+/**
+ * Convert amperes_t to int8_t.
+ */
+int8_t A_t_to_i8(amperes_t amperes)
+{
+    return ((int8_t) (MIN(((amperes_t) (127)), MAX(((amperes_t) (-128)), amperes))));
+}
+
+/**
+ * Convert amperes_t to microamperes_d.
+ */
+microamperes_d A_t_to_uA_d(amperes_t amperes)
+{
+    return ((microamperes_d) (amperes)) * 1000000.0;
+}
+
+/**
+ * Convert amperes_t to microamperes_f.
+ */
+microamperes_f A_t_to_uA_f(amperes_t amperes)
+{
+    return ((microamperes_f) (amperes)) * 1000000.0f;
+}
+
+/**
+ * Convert amperes_t to microamperes_t.
+ */
+microamperes_t A_t_to_uA_t(amperes_t amperes)
+{
+    if (amperes < INT_MIN / 1000000) {
+        return INT_MIN;
+    }
+    if (amperes > INT_MAX / 1000000) {
+        return INT_MAX;
+    }
+    return ((microamperes_t) (amperes)) * 1000000;
+}
+
+/**
+ * Convert amperes_t to microamperes_u.
+ */
+microamperes_u A_t_to_uA_u(amperes_t amperes)
+{
+    if (amperes < 0) {
+        return 0;
+    }
+    const microamperes_u otherAmperes = ((microamperes_u) (amperes));
+    if (otherAmperes > UINT_MAX / 1000000) {
+        return UINT_MAX;
+    }
+    return otherAmperes * 1000000;
+}
+
+/**
+ * Convert amperes_t to milliamperes_d.
+ */
+milliamperes_d A_t_to_mA_d(amperes_t amperes)
+{
+    return ((milliamperes_d) (amperes)) * 1000.0;
+}
+
+/**
+ * Convert amperes_t to milliamperes_f.
+ */
+milliamperes_f A_t_to_mA_f(amperes_t amperes)
+{
+    return ((milliamperes_f) (amperes)) * 1000.0f;
+}
+
+/**
+ * Convert amperes_t to milliamperes_t.
+ */
+milliamperes_t A_t_to_mA_t(amperes_t amperes)
+{
+    if (amperes < INT_MIN / 1000) {
+        return INT_MIN;
+    }
+    if (amperes > INT_MAX / 1000) {
+        return INT_MAX;
+    }
+    return ((milliamperes_t) (amperes)) * 1000;
+}
+
+/**
+ * Convert amperes_t to milliamperes_u.
+ */
+milliamperes_u A_t_to_mA_u(amperes_t amperes)
+{
+    if (amperes < 0) {
+        return 0;
+    }
+    const milliamperes_u otherAmperes = ((milliamperes_u) (amperes));
+    if (otherAmperes > UINT_MAX / 1000) {
+        return UINT_MAX;
+    }
+    return otherAmperes * 1000;
+}
+
+/**
+ * Convert amperes_t to uint16_t.
+ */
+uint16_t A_t_to_u16(amperes_t amperes)
+{
+    return ((uint16_t) (MAX(((amperes_t) (0)), amperes)));
+}
+
+/**
+ * Convert amperes_t to uint32_t.
+ */
+uint32_t A_t_to_u32(amperes_t amperes)
+{
+    return ((uint32_t) (MAX(((amperes_t) (0)), amperes)));
+}
+
+/**
+ * Convert amperes_t to uint64_t.
+ */
+uint64_t A_t_to_u64(amperes_t amperes)
+{
+    return ((uint64_t) (MAX(((amperes_t) (0)), amperes)));
+}
+
+/**
+ * Convert amperes_t to uint8_t.
+ */
+uint8_t A_t_to_u8(amperes_t amperes)
+{
+    return ((uint8_t) (MAX(((amperes_t) (0)), amperes)));
+}
+
+/**
+ * Convert amperes_t to unsigned int.
+ */
+unsigned int A_t_to_u(amperes_t amperes)
+{
+    return ((unsigned int) (MAX(((amperes_t) (0)), amperes)));
+}
+
+/**
+ * Convert amperes_u to amperes_d.
+ */
+amperes_d A_u_to_A_d(amperes_u amperes)
+{
+    return ((amperes_d) (amperes));
+}
+
+/**
+ * Convert amperes_u to amperes_f.
+ */
+amperes_f A_u_to_A_f(amperes_u amperes)
+{
+    return ((amperes_f) (amperes));
+}
+
+/**
+ * Convert amperes_u to amperes_t.
+ */
+amperes_t A_u_to_A_t(amperes_u amperes)
+{
+    return ((amperes_t) ((amperes) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : amperes));
+}
+
+/**
+ * Convert amperes_u to double.
+ */
+double A_u_to_d(amperes_u amperes)
+{
+    return ((double) (amperes));
+}
+
+/**
+ * Convert amperes_u to float.
+ */
+float A_u_to_f(amperes_u amperes)
+{
+    return ((float) (amperes));
+}
+
+/**
+ * Convert amperes_u to int.
+ */
+int A_u_to_i(amperes_u amperes)
+{
+    return ((int) (MIN(((amperes_u) (INT_MAX)), amperes)));
+}
+
+/**
+ * Convert amperes_u to int16_t.
+ */
+int16_t A_u_to_i16(amperes_u amperes)
+{
+    return ((int16_t) (MIN(((amperes_u) (32767)), amperes)));
+}
+
+/**
+ * Convert amperes_u to int32_t.
+ */
+int32_t A_u_to_i32(amperes_u amperes)
+{
+    return ((int32_t) (MIN(((amperes_u) (2147483647)), amperes)));
+}
+
+/**
+ * Convert amperes_u to int64_t.
+ */
+int64_t A_u_to_i64(amperes_u amperes)
+{
+    return ((int64_t) (amperes));
+}
+
+/**
+ * Convert amperes_u to int8_t.
+ */
+int8_t A_u_to_i8(amperes_u amperes)
+{
+    return ((int8_t) (MIN(((amperes_u) (127)), amperes)));
+}
+
+/**
+ * Convert amperes_u to microamperes_d.
+ */
+microamperes_d A_u_to_uA_d(amperes_u amperes)
+{
+    return ((microamperes_d) (amperes)) * 1000000.0;
+}
+
+/**
+ * Convert amperes_u to microamperes_f.
+ */
+microamperes_f A_u_to_uA_f(amperes_u amperes)
+{
+    return ((microamperes_f) (amperes)) * 1000000.0f;
+}
+
+/**
+ * Convert amperes_u to microamperes_t.
+ */
+microamperes_t A_u_to_uA_t(amperes_u amperes)
+{
+    if (amperes > ((amperes_u) (INT_MAX / 1000000))) {
+        return INT_MAX;
+    }
+    return ((microamperes_t) (amperes * 1000000));
+}
+
+/**
+ * Convert amperes_u to microamperes_u.
+ */
+microamperes_u A_u_to_uA_u(amperes_u amperes)
+{
+    if (amperes > UINT_MAX / 1000000) {
+        return UINT_MAX;
+    }
+    return ((microamperes_u) (amperes)) * 1000000;
+}
+
+/**
+ * Convert amperes_u to milliamperes_d.
+ */
+milliamperes_d A_u_to_mA_d(amperes_u amperes)
+{
+    return ((milliamperes_d) (amperes)) * 1000.0;
+}
+
+/**
+ * Convert amperes_u to milliamperes_f.
+ */
+milliamperes_f A_u_to_mA_f(amperes_u amperes)
+{
+    return ((milliamperes_f) (amperes)) * 1000.0f;
+}
+
+/**
+ * Convert amperes_u to milliamperes_t.
+ */
+milliamperes_t A_u_to_mA_t(amperes_u amperes)
+{
+    if (amperes > ((amperes_u) (INT_MAX / 1000))) {
+        return INT_MAX;
+    }
+    return ((milliamperes_t) (amperes * 1000));
+}
+
+/**
+ * Convert amperes_u to milliamperes_u.
+ */
+milliamperes_u A_u_to_mA_u(amperes_u amperes)
+{
+    if (amperes > UINT_MAX / 1000) {
+        return UINT_MAX;
+    }
+    return ((milliamperes_u) (amperes)) * 1000;
+}
+
+/**
+ * Convert amperes_u to uint16_t.
+ */
+uint16_t A_u_to_u16(amperes_u amperes)
+{
+    return ((uint16_t) (MIN(((amperes_u) (65535)), MAX(((amperes_u) (0)), amperes))));
+}
+
+/**
+ * Convert amperes_u to uint32_t.
+ */
+uint32_t A_u_to_u32(amperes_u amperes)
+{
+    return ((uint32_t) (MIN(((amperes_u) (4294967295U)), MAX(((amperes_u) (0)), amperes))));
+}
+
+/**
+ * Convert amperes_u to uint64_t.
+ */
+uint64_t A_u_to_u64(amperes_u amperes)
+{
+    return ((uint64_t) (amperes));
+}
+
+/**
+ * Convert amperes_u to uint8_t.
+ */
+uint8_t A_u_to_u8(amperes_u amperes)
+{
+    return ((uint8_t) (MIN(((amperes_u) (255)), MAX(((amperes_u) (0)), amperes))));
+}
+
+/**
+ * Convert amperes_u to unsigned int.
+ */
+unsigned int A_u_to_u(amperes_u amperes)
+{
+    return ((unsigned int) (amperes));
+}
+
+/**
+ * Convert double to amperes_d.
+ */
+amperes_d d_to_A_d(double amperes)
+{
+    return ((amperes_d) (amperes));
+}
+
+/**
+ * Convert double to amperes_f.
+ */
+amperes_f d_to_A_f(double amperes)
+{
+    return ((amperes_f) (d_to_f(amperes)));
+}
+
+/**
+ * Convert double to amperes_t.
+ */
+amperes_t d_to_A_t(double amperes)
+{
+    return d_to_i(amperes);
+}
+
+/**
+ * Convert double to amperes_u.
+ */
+amperes_u d_to_A_u(double amperes)
+{
+    return d_to_u(amperes);
+}
+
+/**
+ * Convert double to microamperes_d.
+ */
+microamperes_d d_to_uA_d(double microamperes)
+{
+    return ((microamperes_d) (microamperes));
+}
+
+/**
+ * Convert double to microamperes_f.
+ */
+microamperes_f d_to_uA_f(double microamperes)
+{
+    return ((microamperes_f) (d_to_f(microamperes)));
+}
+
+/**
+ * Convert double to microamperes_t.
+ */
+microamperes_t d_to_uA_t(double microamperes)
+{
+    return d_to_i(microamperes);
+}
+
+/**
+ * Convert double to microamperes_u.
+ */
+microamperes_u d_to_uA_u(double microamperes)
+{
+    return d_to_u(microamperes);
+}
+
+/**
+ * Convert double to milliamperes_d.
+ */
+milliamperes_d d_to_mA_d(double milliamperes)
+{
+    return ((milliamperes_d) (milliamperes));
+}
+
+/**
+ * Convert double to milliamperes_f.
+ */
+milliamperes_f d_to_mA_f(double milliamperes)
+{
+    return ((milliamperes_f) (d_to_f(milliamperes)));
+}
+
+/**
+ * Convert double to milliamperes_t.
+ */
+milliamperes_t d_to_mA_t(double milliamperes)
+{
+    return d_to_i(milliamperes);
+}
+
+/**
+ * Convert double to milliamperes_u.
+ */
+milliamperes_u d_to_mA_u(double milliamperes)
+{
+    return d_to_u(milliamperes);
+}
+
+/**
+ * Convert float to amperes_d.
+ */
+amperes_d f_to_A_d(float amperes)
+{
+    return ((amperes_d) (amperes));
+}
+
+/**
+ * Convert float to amperes_f.
+ */
+amperes_f f_to_A_f(float amperes)
+{
+    return ((amperes_f) (amperes));
+}
+
+/**
+ * Convert float to amperes_t.
+ */
+amperes_t f_to_A_t(float amperes)
+{
+    return f_to_i(amperes);
+}
+
+/**
+ * Convert float to amperes_u.
+ */
+amperes_u f_to_A_u(float amperes)
+{
+    return f_to_u(amperes);
+}
+
+/**
+ * Convert float to microamperes_d.
+ */
+microamperes_d f_to_uA_d(float microamperes)
+{
+    return ((microamperes_d) (microamperes));
+}
+
+/**
+ * Convert float to microamperes_f.
+ */
+microamperes_f f_to_uA_f(float microamperes)
+{
+    return ((microamperes_f) (microamperes));
+}
+
+/**
+ * Convert float to microamperes_t.
+ */
+microamperes_t f_to_uA_t(float microamperes)
+{
+    return f_to_i(microamperes);
+}
+
+/**
+ * Convert float to microamperes_u.
+ */
+microamperes_u f_to_uA_u(float microamperes)
+{
+    return f_to_u(microamperes);
+}
+
+/**
+ * Convert float to milliamperes_d.
+ */
+milliamperes_d f_to_mA_d(float milliamperes)
+{
+    return ((milliamperes_d) (milliamperes));
+}
+
+/**
+ * Convert float to milliamperes_f.
+ */
+milliamperes_f f_to_mA_f(float milliamperes)
+{
+    return ((milliamperes_f) (milliamperes));
+}
+
+/**
+ * Convert float to milliamperes_t.
+ */
+milliamperes_t f_to_mA_t(float milliamperes)
+{
+    return f_to_i(milliamperes);
+}
+
+/**
+ * Convert float to milliamperes_u.
+ */
+milliamperes_u f_to_mA_u(float milliamperes)
+{
+    return f_to_u(milliamperes);
+}
+
+/**
+ * Convert int16_t to amperes_d.
+ */
+amperes_d i16_to_A_d(int16_t amperes)
+{
+    return ((amperes_d) (amperes));
+}
+
+/**
+ * Convert int16_t to amperes_f.
+ */
+amperes_f i16_to_A_f(int16_t amperes)
+{
+    return ((amperes_f) (amperes));
+}
+
+/**
+ * Convert int16_t to amperes_t.
+ */
+amperes_t i16_to_A_t(int16_t amperes)
+{
+    return ((amperes_t) (amperes));
+}
+
+/**
+ * Convert int16_t to amperes_u.
+ */
+amperes_u i16_to_A_u(int16_t amperes)
+{
+    return ((amperes_u) (MAX(((int16_t) (0)), amperes)));
+}
+
+/**
+ * Convert int16_t to microamperes_d.
+ */
+microamperes_d i16_to_uA_d(int16_t microamperes)
+{
+    return ((microamperes_d) (microamperes));
+}
+
+/**
+ * Convert int16_t to microamperes_f.
+ */
+microamperes_f i16_to_uA_f(int16_t microamperes)
+{
+    return ((microamperes_f) (microamperes));
+}
+
+/**
+ * Convert int16_t to microamperes_t.
+ */
+microamperes_t i16_to_uA_t(int16_t microamperes)
+{
+    return ((microamperes_t) (microamperes));
+}
+
+/**
+ * Convert int16_t to microamperes_u.
+ */
+microamperes_u i16_to_uA_u(int16_t microamperes)
+{
+    return ((microamperes_u) (MAX(((int16_t) (0)), microamperes)));
+}
+
+/**
+ * Convert int16_t to milliamperes_d.
+ */
+milliamperes_d i16_to_mA_d(int16_t milliamperes)
+{
+    return ((milliamperes_d) (milliamperes));
+}
+
+/**
+ * Convert int16_t to milliamperes_f.
+ */
+milliamperes_f i16_to_mA_f(int16_t milliamperes)
+{
+    return ((milliamperes_f) (milliamperes));
+}
+
+/**
+ * Convert int16_t to milliamperes_t.
+ */
+milliamperes_t i16_to_mA_t(int16_t milliamperes)
+{
+    return ((milliamperes_t) (milliamperes));
+}
+
+/**
+ * Convert int16_t to milliamperes_u.
+ */
+milliamperes_u i16_to_mA_u(int16_t milliamperes)
+{
+    return ((milliamperes_u) (MAX(((int16_t) (0)), milliamperes)));
+}
+
+/**
+ * Convert int32_t to amperes_d.
+ */
+amperes_d i32_to_A_d(int32_t amperes)
+{
+    return ((amperes_d) (amperes));
+}
+
+/**
+ * Convert int32_t to amperes_f.
+ */
+amperes_f i32_to_A_f(int32_t amperes)
+{
+    return ((amperes_f) (amperes));
+}
+
+/**
+ * Convert int32_t to amperes_t.
+ */
+amperes_t i32_to_A_t(int32_t amperes)
+{
+    return ((amperes_t) (MIN(((int32_t) (INT_MAX)), MAX(((int32_t) (INT_MIN)), amperes))));
+}
+
+/**
+ * Convert int32_t to amperes_u.
+ */
+amperes_u i32_to_A_u(int32_t amperes)
+{
+    return ((amperes_u) (MAX(((int32_t) (0)), amperes)));
+}
+
+/**
+ * Convert int32_t to microamperes_d.
+ */
+microamperes_d i32_to_uA_d(int32_t microamperes)
+{
+    return ((microamperes_d) (microamperes));
+}
+
+/**
+ * Convert int32_t to microamperes_f.
+ */
+microamperes_f i32_to_uA_f(int32_t microamperes)
+{
+    return ((microamperes_f) (microamperes));
+}
+
+/**
+ * Convert int32_t to microamperes_t.
+ */
+microamperes_t i32_to_uA_t(int32_t microamperes)
+{
+    return ((microamperes_t) (MIN(((int32_t) (INT_MAX)), MAX(((int32_t) (INT_MIN)), microamperes))));
+}
+
+/**
+ * Convert int32_t to microamperes_u.
+ */
+microamperes_u i32_to_uA_u(int32_t microamperes)
+{
+    return ((microamperes_u) (MAX(((int32_t) (0)), microamperes)));
+}
+
+/**
+ * Convert int32_t to milliamperes_d.
+ */
+milliamperes_d i32_to_mA_d(int32_t milliamperes)
+{
+    return ((milliamperes_d) (milliamperes));
+}
+
+/**
+ * Convert int32_t to milliamperes_f.
+ */
+milliamperes_f i32_to_mA_f(int32_t milliamperes)
+{
+    return ((milliamperes_f) (milliamperes));
+}
+
+/**
+ * Convert int32_t to milliamperes_t.
+ */
+milliamperes_t i32_to_mA_t(int32_t milliamperes)
+{
+    return ((milliamperes_t) (MIN(((int32_t) (INT_MAX)), MAX(((int32_t) (INT_MIN)), milliamperes))));
+}
+
+/**
+ * Convert int32_t to milliamperes_u.
+ */
+milliamperes_u i32_to_mA_u(int32_t milliamperes)
+{
+    return ((milliamperes_u) (MAX(((int32_t) (0)), milliamperes)));
+}
+
+/**
+ * Convert int64_t to amperes_d.
+ */
+amperes_d i64_to_A_d(int64_t amperes)
+{
+    return ((amperes_d) (amperes));
+}
+
+/**
+ * Convert int64_t to amperes_f.
+ */
+amperes_f i64_to_A_f(int64_t amperes)
+{
+    return ((amperes_f) (amperes));
+}
+
+/**
+ * Convert int64_t to amperes_t.
+ */
+amperes_t i64_to_A_t(int64_t amperes)
+{
+    return ((amperes_t) (MIN(((int64_t) (INT_MAX)), MAX(((int64_t) (INT_MIN)), amperes))));
+}
+
+/**
+ * Convert int64_t to amperes_u.
+ */
+amperes_u i64_to_A_u(int64_t amperes)
+{
+    return ((amperes_u) (MAX(((int64_t) (0)), amperes)));
+}
+
+/**
+ * Convert int64_t to microamperes_d.
+ */
+microamperes_d i64_to_uA_d(int64_t microamperes)
+{
+    return ((microamperes_d) (microamperes));
+}
+
+/**
+ * Convert int64_t to microamperes_f.
+ */
+microamperes_f i64_to_uA_f(int64_t microamperes)
+{
+    return ((microamperes_f) (microamperes));
+}
+
+/**
+ * Convert int64_t to microamperes_t.
+ */
+microamperes_t i64_to_uA_t(int64_t microamperes)
+{
+    return ((microamperes_t) (MIN(((int64_t) (INT_MAX)), MAX(((int64_t) (INT_MIN)), microamperes))));
+}
+
+/**
+ * Convert int64_t to microamperes_u.
+ */
+microamperes_u i64_to_uA_u(int64_t microamperes)
+{
+    return ((microamperes_u) (MAX(((int64_t) (0)), microamperes)));
+}
+
+/**
+ * Convert int64_t to milliamperes_d.
+ */
+milliamperes_d i64_to_mA_d(int64_t milliamperes)
+{
+    return ((milliamperes_d) (milliamperes));
+}
+
+/**
+ * Convert int64_t to milliamperes_f.
+ */
+milliamperes_f i64_to_mA_f(int64_t milliamperes)
+{
+    return ((milliamperes_f) (milliamperes));
+}
+
+/**
+ * Convert int64_t to milliamperes_t.
+ */
+milliamperes_t i64_to_mA_t(int64_t milliamperes)
+{
+    return ((milliamperes_t) (MIN(((int64_t) (INT_MAX)), MAX(((int64_t) (INT_MIN)), milliamperes))));
+}
+
+/**
+ * Convert int64_t to milliamperes_u.
+ */
+milliamperes_u i64_to_mA_u(int64_t milliamperes)
+{
+    return ((milliamperes_u) (MAX(((int64_t) (0)), milliamperes)));
+}
+
+/**
+ * Convert int8_t to amperes_d.
+ */
+amperes_d i8_to_A_d(int8_t amperes)
+{
+    return ((amperes_d) (amperes));
+}
+
+/**
+ * Convert int8_t to amperes_f.
+ */
+amperes_f i8_to_A_f(int8_t amperes)
+{
+    return ((amperes_f) (amperes));
+}
+
+/**
+ * Convert int8_t to amperes_t.
+ */
+amperes_t i8_to_A_t(int8_t amperes)
+{
+    return ((amperes_t) (amperes));
+}
+
+/**
+ * Convert int8_t to amperes_u.
+ */
+amperes_u i8_to_A_u(int8_t amperes)
+{
+    return ((amperes_u) (MAX(((int8_t) (0)), amperes)));
+}
+
+/**
+ * Convert int8_t to microamperes_d.
+ */
+microamperes_d i8_to_uA_d(int8_t microamperes)
+{
+    return ((microamperes_d) (microamperes));
+}
+
+/**
+ * Convert int8_t to microamperes_f.
+ */
+microamperes_f i8_to_uA_f(int8_t microamperes)
+{
+    return ((microamperes_f) (microamperes));
+}
+
+/**
+ * Convert int8_t to microamperes_t.
+ */
+microamperes_t i8_to_uA_t(int8_t microamperes)
+{
+    return ((microamperes_t) (microamperes));
+}
+
+/**
+ * Convert int8_t to microamperes_u.
+ */
+microamperes_u i8_to_uA_u(int8_t microamperes)
+{
+    return ((microamperes_u) (MAX(((int8_t) (0)), microamperes)));
+}
+
+/**
+ * Convert int8_t to milliamperes_d.
+ */
+milliamperes_d i8_to_mA_d(int8_t milliamperes)
+{
+    return ((milliamperes_d) (milliamperes));
+}
+
+/**
+ * Convert int8_t to milliamperes_f.
+ */
+milliamperes_f i8_to_mA_f(int8_t milliamperes)
+{
+    return ((milliamperes_f) (milliamperes));
+}
+
+/**
+ * Convert int8_t to milliamperes_t.
+ */
+milliamperes_t i8_to_mA_t(int8_t milliamperes)
+{
+    return ((milliamperes_t) (milliamperes));
+}
+
+/**
+ * Convert int8_t to milliamperes_u.
+ */
+milliamperes_u i8_to_mA_u(int8_t milliamperes)
+{
+    return ((milliamperes_u) (MAX(((int8_t) (0)), milliamperes)));
+}
+
+/**
+ * Convert int to amperes_d.
+ */
+amperes_d i_to_A_d(int amperes)
+{
+    return ((amperes_d) (amperes));
+}
+
+/**
+ * Convert int to amperes_f.
+ */
+amperes_f i_to_A_f(int amperes)
+{
+    return ((amperes_f) (amperes));
+}
+
+/**
+ * Convert int to amperes_t.
+ */
+amperes_t i_to_A_t(int amperes)
+{
+    return ((amperes_t) (amperes));
+}
+
+/**
+ * Convert int to amperes_u.
+ */
+amperes_u i_to_A_u(int amperes)
+{
+    return ((amperes_u) (MAX(((int) (0)), amperes)));
+}
+
+/**
+ * Convert int to microamperes_d.
+ */
+microamperes_d i_to_uA_d(int microamperes)
+{
+    return ((microamperes_d) (microamperes));
+}
+
+/**
+ * Convert int to microamperes_f.
+ */
+microamperes_f i_to_uA_f(int microamperes)
+{
+    return ((microamperes_f) (microamperes));
+}
+
+/**
+ * Convert int to microamperes_t.
+ */
+microamperes_t i_to_uA_t(int microamperes)
+{
+    return ((microamperes_t) (microamperes));
+}
+
+/**
+ * Convert int to microamperes_u.
+ */
+microamperes_u i_to_uA_u(int microamperes)
+{
+    return ((microamperes_u) (MAX(((int) (0)), microamperes)));
+}
+
+/**
+ * Convert int to milliamperes_d.
+ */
+milliamperes_d i_to_mA_d(int milliamperes)
+{
+    return ((milliamperes_d) (milliamperes));
+}
+
+/**
+ * Convert int to milliamperes_f.
+ */
+milliamperes_f i_to_mA_f(int milliamperes)
+{
+    return ((milliamperes_f) (milliamperes));
+}
+
+/**
+ * Convert int to milliamperes_t.
+ */
+milliamperes_t i_to_mA_t(int milliamperes)
+{
+    return ((milliamperes_t) (milliamperes));
+}
+
+/**
+ * Convert int to milliamperes_u.
+ */
+milliamperes_u i_to_mA_u(int milliamperes)
+{
+    return ((milliamperes_u) (MAX(((int) (0)), milliamperes)));
+}
+
+/**
+ * Convert microamperes_d to amperes_d.
+ */
+amperes_d uA_d_to_A_d(microamperes_d microamperes)
+{
+    return ((amperes_d) (microamperes / 1000000.0));
+}
+
+/**
+ * Convert microamperes_d to amperes_f.
+ */
+amperes_f uA_d_to_A_f(microamperes_d microamperes)
+{
+    const microamperes_d conversion = microamperes / 1000000.0;
+    return ((amperes_f) (conversion < ((double) (FLT_MAX)) ? (conversion > ((double) (-FLT_MAX)) ? conversion : -FLT_MAX) : FLT_MAX));
+}
+
+/**
+ * Convert microamperes_d to amperes_t.
+ */
+amperes_t uA_d_to_A_t(microamperes_d microamperes)
+{
+    const microamperes_d conversion = microamperes / 1000000.0;
+    return ((amperes_t) (round(((double) (conversion))) < ((double) (INT_MAX)) ? (round(((double) (conversion))) > ((double) (INT_MIN)) ? round(((double) (conversion))) : INT_MIN) : INT_MAX));
+}
+
+/**
+ * Convert microamperes_d to amperes_u.
+ */
+amperes_u uA_d_to_A_u(microamperes_d microamperes)
+{
+    const microamperes_d conversion = microamperes / 1000000.0;
+    return ((amperes_u) (round(((double) (conversion))) < ((double) (UINT_MAX)) ? (round(((double) (conversion))) > ((double) (0)) ? round(((double) (conversion))) : 0) : UINT_MAX));
+}
+
+/**
+ * Convert microamperes_d to double.
+ */
+double uA_d_to_d(microamperes_d microamperes)
+{
+    return ((double) (microamperes));
+}
+
+/**
+ * Convert microamperes_d to float.
+ */
+float uA_d_to_f(microamperes_d microamperes)
+{
+    return d_to_f(((double) (microamperes)));
+}
+
+/**
+ * Convert microamperes_d to int.
+ */
+int uA_d_to_i(microamperes_d microamperes)
+{
+    return d_to_i(((double) (microamperes)));
+}
+
+/**
+ * Convert microamperes_d to int16_t.
+ */
+int16_t uA_d_to_i16(microamperes_d microamperes)
+{
+    return d_to_i16(((double) (microamperes)));
+}
+
+/**
+ * Convert microamperes_d to int32_t.
+ */
+int32_t uA_d_to_i32(microamperes_d microamperes)
+{
+    return d_to_i32(((double) (microamperes)));
+}
+
+/**
+ * Convert microamperes_d to int64_t.
+ */
+int64_t uA_d_to_i64(microamperes_d microamperes)
+{
+    return d_to_i64(((double) (microamperes)));
+}
+
+/**
+ * Convert microamperes_d to int8_t.
+ */
+int8_t uA_d_to_i8(microamperes_d microamperes)
+{
+    return d_to_i8(((double) (microamperes)));
+}
+
+/**
+ * Convert microamperes_d to microamperes_f.
+ */
+microamperes_f uA_d_to_uA_f(microamperes_d microamperes)
+{
+    return ((microamperes_f) (microamperes < ((double) (FLT_MAX)) ? (microamperes > ((double) (-FLT_MAX)) ? microamperes : -FLT_MAX) : FLT_MAX));
+}
+
+/**
+ * Convert microamperes_d to microamperes_t.
+ */
+microamperes_t uA_d_to_uA_t(microamperes_d microamperes)
+{
+    return ((microamperes_t) (round(((double) (microamperes))) < ((double) (INT_MAX)) ? (round(((double) (microamperes))) > ((double) (INT_MIN)) ? round(((double) (microamperes))) : INT_MIN) : INT_MAX));
+}
+
+/**
+ * Convert microamperes_d to microamperes_u.
+ */
+microamperes_u uA_d_to_uA_u(microamperes_d microamperes)
+{
+    return ((microamperes_u) (round(((double) (microamperes))) < ((double) (UINT_MAX)) ? (round(((double) (microamperes))) > ((double) (0)) ? round(((double) (microamperes))) : 0) : UINT_MAX));
+}
+
+/**
+ * Convert microamperes_d to milliamperes_d.
+ */
+milliamperes_d uA_d_to_mA_d(microamperes_d microamperes)
+{
+    return ((milliamperes_d) (microamperes / 1000.0));
+}
+
+/**
+ * Convert microamperes_d to milliamperes_f.
+ */
+milliamperes_f uA_d_to_mA_f(microamperes_d microamperes)
+{
+    const microamperes_d conversion = microamperes / 1000.0;
+    return ((milliamperes_f) (conversion < ((double) (FLT_MAX)) ? (conversion > ((double) (-FLT_MAX)) ? conversion : -FLT_MAX) : FLT_MAX));
+}
+
+/**
+ * Convert microamperes_d to milliamperes_t.
+ */
+milliamperes_t uA_d_to_mA_t(microamperes_d microamperes)
+{
+    const microamperes_d conversion = microamperes / 1000.0;
+    return ((milliamperes_t) (round(((double) (conversion))) < ((double) (INT_MAX)) ? (round(((double) (conversion))) > ((double) (INT_MIN)) ? round(((double) (conversion))) : INT_MIN) : INT_MAX));
+}
+
+/**
+ * Convert microamperes_d to milliamperes_u.
+ */
+milliamperes_u uA_d_to_mA_u(microamperes_d microamperes)
+{
+    const microamperes_d conversion = microamperes / 1000.0;
+    return ((milliamperes_u) (round(((double) (conversion))) < ((double) (UINT_MAX)) ? (round(((double) (conversion))) > ((double) (0)) ? round(((double) (conversion))) : 0) : UINT_MAX));
+}
+
+/**
+ * Convert microamperes_d to uint16_t.
+ */
+uint16_t uA_d_to_u16(microamperes_d microamperes)
+{
+    return d_to_u16(((double) (microamperes)));
+}
+
+/**
+ * Convert microamperes_d to uint32_t.
+ */
+uint32_t uA_d_to_u32(microamperes_d microamperes)
+{
+    return d_to_u32(((double) (microamperes)));
+}
+
+/**
+ * Convert microamperes_d to uint64_t.
+ */
+uint64_t uA_d_to_u64(microamperes_d microamperes)
+{
+    return d_to_u64(((double) (microamperes)));
+}
+
+/**
+ * Convert microamperes_d to uint8_t.
+ */
+uint8_t uA_d_to_u8(microamperes_d microamperes)
+{
+    return d_to_u8(((double) (microamperes)));
+}
+
+/**
+ * Convert microamperes_d to unsigned int.
+ */
+unsigned int uA_d_to_u(microamperes_d microamperes)
+{
+    return d_to_u(((double) (microamperes)));
+}
+
+/**
+ * Convert microamperes_f to amperes_d.
+ */
+amperes_d uA_f_to_A_d(microamperes_f microamperes)
+{
+    return (((amperes_d) (microamperes)) / 1000000.0);
+}
+
+/**
+ * Convert microamperes_f to amperes_f.
+ */
+amperes_f uA_f_to_A_f(microamperes_f microamperes)
+{
+    return ((amperes_f) (microamperes / 1000000.0f));
+}
+
+/**
+ * Convert microamperes_f to amperes_t.
+ */
+amperes_t uA_f_to_A_t(microamperes_f microamperes)
+{
+    const microamperes_f conversion = microamperes / 1000000.0f;
+    return ((amperes_t) (round(((double) (conversion))) < ((double) (INT_MAX)) ? (round(((double) (conversion))) > ((double) (INT_MIN)) ? round(((double) (conversion))) : INT_MIN) : INT_MAX));
+}
+
+/**
+ * Convert microamperes_f to amperes_u.
+ */
+amperes_u uA_f_to_A_u(microamperes_f microamperes)
+{
+    const microamperes_f conversion = microamperes / 1000000.0f;
+    return ((amperes_u) (round(((double) (conversion))) < ((double) (UINT_MAX)) ? (round(((double) (conversion))) > ((double) (0)) ? round(((double) (conversion))) : 0) : UINT_MAX));
+}
+
+/**
+ * Convert microamperes_f to double.
+ */
+double uA_f_to_d(microamperes_f microamperes)
+{
+    return ((double) (microamperes));
+}
+
+/**
+ * Convert microamperes_f to float.
+ */
+float uA_f_to_f(microamperes_f microamperes)
+{
+    return ((float) (microamperes));
+}
+
+/**
+ * Convert microamperes_f to int.
+ */
+int uA_f_to_i(microamperes_f microamperes)
+{
+    return f_to_i(((float) (microamperes)));
+}
+
+/**
+ * Convert microamperes_f to int16_t.
+ */
+int16_t uA_f_to_i16(microamperes_f microamperes)
+{
+    return f_to_i16(((float) (microamperes)));
+}
+
+/**
+ * Convert microamperes_f to int32_t.
+ */
+int32_t uA_f_to_i32(microamperes_f microamperes)
+{
+    return f_to_i32(((float) (microamperes)));
+}
+
+/**
+ * Convert microamperes_f to int64_t.
+ */
+int64_t uA_f_to_i64(microamperes_f microamperes)
+{
+    return f_to_i64(((float) (microamperes)));
+}
+
+/**
+ * Convert microamperes_f to int8_t.
+ */
+int8_t uA_f_to_i8(microamperes_f microamperes)
+{
+    return f_to_i8(((float) (microamperes)));
+}
+
+/**
+ * Convert microamperes_f to microamperes_d.
+ */
+microamperes_d uA_f_to_uA_d(microamperes_f microamperes)
+{
+    return ((microamperes_d) (microamperes));
+}
+
+/**
+ * Convert microamperes_f to microamperes_t.
+ */
+microamperes_t uA_f_to_uA_t(microamperes_f microamperes)
+{
+    return ((microamperes_t) (round(((double) (microamperes))) < ((double) (INT_MAX)) ? (round(((double) (microamperes))) > ((double) (INT_MIN)) ? round(((double) (microamperes))) : INT_MIN) : INT_MAX));
+}
+
+/**
+ * Convert microamperes_f to microamperes_u.
+ */
+microamperes_u uA_f_to_uA_u(microamperes_f microamperes)
+{
+    return ((microamperes_u) (round(((double) (microamperes))) < ((double) (UINT_MAX)) ? (round(((double) (microamperes))) > ((double) (0)) ? round(((double) (microamperes))) : 0) : UINT_MAX));
+}
+
+/**
+ * Convert microamperes_f to milliamperes_d.
+ */
+milliamperes_d uA_f_to_mA_d(microamperes_f microamperes)
+{
+    return (((milliamperes_d) (microamperes)) / 1000.0);
+}
+
+/**
+ * Convert microamperes_f to milliamperes_f.
+ */
+milliamperes_f uA_f_to_mA_f(microamperes_f microamperes)
+{
+    return ((milliamperes_f) (microamperes / 1000.0f));
+}
+
+/**
+ * Convert microamperes_f to milliamperes_t.
+ */
+milliamperes_t uA_f_to_mA_t(microamperes_f microamperes)
+{
+    const microamperes_f conversion = microamperes / 1000.0f;
+    return ((milliamperes_t) (round(((double) (conversion))) < ((double) (INT_MAX)) ? (round(((double) (conversion))) > ((double) (INT_MIN)) ? round(((double) (conversion))) : INT_MIN) : INT_MAX));
+}
+
+/**
+ * Convert microamperes_f to milliamperes_u.
+ */
+milliamperes_u uA_f_to_mA_u(microamperes_f microamperes)
+{
+    const microamperes_f conversion = microamperes / 1000.0f;
+    return ((milliamperes_u) (round(((double) (conversion))) < ((double) (UINT_MAX)) ? (round(((double) (conversion))) > ((double) (0)) ? round(((double) (conversion))) : 0) : UINT_MAX));
+}
+
+/**
+ * Convert microamperes_f to uint16_t.
+ */
+uint16_t uA_f_to_u16(microamperes_f microamperes)
+{
+    return f_to_u16(((float) (microamperes)));
+}
+
+/**
+ * Convert microamperes_f to uint32_t.
+ */
+uint32_t uA_f_to_u32(microamperes_f microamperes)
+{
+    return f_to_u32(((float) (microamperes)));
+}
+
+/**
+ * Convert microamperes_f to uint64_t.
+ */
+uint64_t uA_f_to_u64(microamperes_f microamperes)
+{
+    return f_to_u64(((float) (microamperes)));
+}
+
+/**
+ * Convert microamperes_f to uint8_t.
+ */
+uint8_t uA_f_to_u8(microamperes_f microamperes)
+{
+    return f_to_u8(((float) (microamperes)));
+}
+
+/**
+ * Convert microamperes_f to unsigned int.
+ */
+unsigned int uA_f_to_u(microamperes_f microamperes)
+{
+    return f_to_u(((float) (microamperes)));
+}
+
+/**
+ * Convert microamperes_t to amperes_d.
+ */
+amperes_d uA_t_to_A_d(microamperes_t microamperes)
+{
+    return ((amperes_d) (microamperes / 1000000));
+}
+
+/**
+ * Convert microamperes_t to amperes_f.
+ */
+amperes_f uA_t_to_A_f(microamperes_t microamperes)
+{
+    return ((amperes_f) (microamperes / 1000000));
+}
+
+/**
+ * Convert microamperes_t to amperes_t.
+ */
+amperes_t uA_t_to_A_t(microamperes_t microamperes)
+{
+    return ((amperes_t) (microamperes / 1000000));
+}
+
+/**
+ * Convert microamperes_t to amperes_u.
+ */
+amperes_u uA_t_to_A_u(microamperes_t microamperes)
+{
+    if (microamperes < 0) {
+        return 0;
+    }
+    return ((amperes_u) (microamperes / 1000000));
+}
+
+/**
+ * Convert microamperes_t to double.
+ */
+double uA_t_to_d(microamperes_t microamperes)
+{
+    return ((double) (microamperes));
+}
+
+/**
+ * Convert microamperes_t to float.
+ */
+float uA_t_to_f(microamperes_t microamperes)
+{
+    return ((float) (microamperes));
+}
+
+/**
+ * Convert microamperes_t to int.
+ */
+int uA_t_to_i(microamperes_t microamperes)
+{
+    return ((int) (microamperes));
+}
+
+/**
+ * Convert microamperes_t to int16_t.
+ */
+int16_t uA_t_to_i16(microamperes_t microamperes)
+{
+    return ((int16_t) (MIN(((microamperes_t) (32767)), MAX(((microamperes_t) (-32768)), microamperes))));
+}
+
+/**
+ * Convert microamperes_t to int32_t.
+ */
+int32_t uA_t_to_i32(microamperes_t microamperes)
+{
+    return ((int32_t) (MIN(((microamperes_t) (2147483647)), MAX(((microamperes_t) (-2147483648)), microamperes))));
+}
+
+/**
+ * Convert microamperes_t to int64_t.
+ */
+int64_t uA_t_to_i64(microamperes_t microamperes)
+{
+    return ((int64_t) (microamperes));
+}
+
+/**
+ * Convert microamperes_t to int8_t.
+ */
+int8_t uA_t_to_i8(microamperes_t microamperes)
+{
+    return ((int8_t) (MIN(((microamperes_t) (127)), MAX(((microamperes_t) (-128)), microamperes))));
+}
+
+/**
+ * Convert microamperes_t to microamperes_d.
+ */
+microamperes_d uA_t_to_uA_d(microamperes_t microamperes)
+{
+    return ((microamperes_d) (microamperes));
+}
+
+/**
+ * Convert microamperes_t to microamperes_f.
+ */
+microamperes_f uA_t_to_uA_f(microamperes_t microamperes)
+{
+    return ((microamperes_f) (microamperes));
+}
+
+/**
+ * Convert microamperes_t to microamperes_u.
+ */
+microamperes_u uA_t_to_uA_u(microamperes_t microamperes)
+{
+    return ((microamperes_u) ((microamperes) < 0 ? 0 : microamperes));
+}
+
+/**
+ * Convert microamperes_t to milliamperes_d.
+ */
+milliamperes_d uA_t_to_mA_d(microamperes_t microamperes)
+{
+    return ((milliamperes_d) (microamperes / 1000));
+}
+
+/**
+ * Convert microamperes_t to milliamperes_f.
+ */
+milliamperes_f uA_t_to_mA_f(microamperes_t microamperes)
+{
+    return ((milliamperes_f) (microamperes / 1000));
+}
+
+/**
+ * Convert microamperes_t to milliamperes_t.
+ */
+milliamperes_t uA_t_to_mA_t(microamperes_t microamperes)
+{
+    return ((milliamperes_t) (microamperes / 1000));
+}
+
+/**
+ * Convert microamperes_t to milliamperes_u.
+ */
+milliamperes_u uA_t_to_mA_u(microamperes_t microamperes)
+{
+    if (microamperes < 0) {
+        return 0;
+    }
+    return ((milliamperes_u) (microamperes / 1000));
+}
+
+/**
+ * Convert microamperes_t to uint16_t.
+ */
+uint16_t uA_t_to_u16(microamperes_t microamperes)
+{
+    return ((uint16_t) (MAX(((microamperes_t) (0)), microamperes)));
+}
+
+/**
+ * Convert microamperes_t to uint32_t.
+ */
+uint32_t uA_t_to_u32(microamperes_t microamperes)
+{
+    return ((uint32_t) (MAX(((microamperes_t) (0)), microamperes)));
+}
+
+/**
+ * Convert microamperes_t to uint64_t.
+ */
+uint64_t uA_t_to_u64(microamperes_t microamperes)
+{
+    return ((uint64_t) (MAX(((microamperes_t) (0)), microamperes)));
+}
+
+/**
+ * Convert microamperes_t to uint8_t.
+ */
+uint8_t uA_t_to_u8(microamperes_t microamperes)
+{
+    return ((uint8_t) (MAX(((microamperes_t) (0)), microamperes)));
+}
+
+/**
+ * Convert microamperes_t to unsigned int.
+ */
+unsigned int uA_t_to_u(microamperes_t microamperes)
+{
+    return ((unsigned int) (MAX(((microamperes_t) (0)), microamperes)));
+}
+
+/**
+ * Convert microamperes_u to amperes_d.
+ */
+amperes_d uA_u_to_A_d(microamperes_u microamperes)
+{
+    return ((amperes_d) (microamperes / 1000000));
+}
+
+/**
+ * Convert microamperes_u to amperes_f.
+ */
+amperes_f uA_u_to_A_f(microamperes_u microamperes)
+{
+    return ((amperes_f) (microamperes / 1000000));
+}
+
+/**
+ * Convert microamperes_u to amperes_t.
+ */
+amperes_t uA_u_to_A_t(microamperes_u microamperes)
+{
+    const microamperes_u conversion = microamperes / 1000000;
+    return ((amperes_t) ((conversion) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : conversion));
+}
+
+/**
+ * Convert microamperes_u to amperes_u.
+ */
+amperes_u uA_u_to_A_u(microamperes_u microamperes)
+{
+    return ((amperes_u) (microamperes / 1000000));
+}
+
+/**
+ * Convert microamperes_u to double.
+ */
+double uA_u_to_d(microamperes_u microamperes)
+{
+    return ((double) (microamperes));
+}
+
+/**
+ * Convert microamperes_u to float.
+ */
+float uA_u_to_f(microamperes_u microamperes)
+{
+    return ((float) (microamperes));
+}
+
+/**
+ * Convert microamperes_u to int.
+ */
+int uA_u_to_i(microamperes_u microamperes)
+{
+    return ((int) (MIN(((microamperes_u) (INT_MAX)), microamperes)));
+}
+
+/**
+ * Convert microamperes_u to int16_t.
+ */
+int16_t uA_u_to_i16(microamperes_u microamperes)
+{
+    return ((int16_t) (MIN(((microamperes_u) (32767)), microamperes)));
+}
+
+/**
+ * Convert microamperes_u to int32_t.
+ */
+int32_t uA_u_to_i32(microamperes_u microamperes)
+{
+    return ((int32_t) (MIN(((microamperes_u) (2147483647)), microamperes)));
+}
+
+/**
+ * Convert microamperes_u to int64_t.
+ */
+int64_t uA_u_to_i64(microamperes_u microamperes)
+{
+    return ((int64_t) (microamperes));
+}
+
+/**
+ * Convert microamperes_u to int8_t.
+ */
+int8_t uA_u_to_i8(microamperes_u microamperes)
+{
+    return ((int8_t) (MIN(((microamperes_u) (127)), microamperes)));
+}
+
+/**
+ * Convert microamperes_u to microamperes_d.
+ */
+microamperes_d uA_u_to_uA_d(microamperes_u microamperes)
+{
+    return ((microamperes_d) (microamperes));
+}
+
+/**
+ * Convert microamperes_u to microamperes_f.
+ */
+microamperes_f uA_u_to_uA_f(microamperes_u microamperes)
+{
+    return ((microamperes_f) (microamperes));
+}
+
+/**
+ * Convert microamperes_u to microamperes_t.
+ */
+microamperes_t uA_u_to_uA_t(microamperes_u microamperes)
+{
+    return ((microamperes_t) ((microamperes) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : microamperes));
+}
+
+/**
+ * Convert microamperes_u to milliamperes_d.
+ */
+milliamperes_d uA_u_to_mA_d(microamperes_u microamperes)
+{
+    return ((milliamperes_d) (microamperes / 1000));
+}
+
+/**
+ * Convert microamperes_u to milliamperes_f.
+ */
+milliamperes_f uA_u_to_mA_f(microamperes_u microamperes)
+{
+    return ((milliamperes_f) (microamperes / 1000));
+}
+
+/**
+ * Convert microamperes_u to milliamperes_t.
+ */
+milliamperes_t uA_u_to_mA_t(microamperes_u microamperes)
+{
+    const microamperes_u conversion = microamperes / 1000;
+    return ((milliamperes_t) ((conversion) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : conversion));
+}
+
+/**
+ * Convert microamperes_u to milliamperes_u.
+ */
+milliamperes_u uA_u_to_mA_u(microamperes_u microamperes)
+{
+    return ((milliamperes_u) (microamperes / 1000));
+}
+
+/**
+ * Convert microamperes_u to uint16_t.
+ */
+uint16_t uA_u_to_u16(microamperes_u microamperes)
+{
+    return ((uint16_t) (MIN(((microamperes_u) (65535)), MAX(((microamperes_u) (0)), microamperes))));
+}
+
+/**
+ * Convert microamperes_u to uint32_t.
+ */
+uint32_t uA_u_to_u32(microamperes_u microamperes)
+{
+    return ((uint32_t) (MIN(((microamperes_u) (4294967295U)), MAX(((microamperes_u) (0)), microamperes))));
+}
+
+/**
+ * Convert microamperes_u to uint64_t.
+ */
+uint64_t uA_u_to_u64(microamperes_u microamperes)
+{
+    return ((uint64_t) (microamperes));
+}
+
+/**
+ * Convert microamperes_u to uint8_t.
+ */
+uint8_t uA_u_to_u8(microamperes_u microamperes)
+{
+    return ((uint8_t) (MIN(((microamperes_u) (255)), MAX(((microamperes_u) (0)), microamperes))));
+}
+
+/**
+ * Convert microamperes_u to unsigned int.
+ */
+unsigned int uA_u_to_u(microamperes_u microamperes)
+{
+    return ((unsigned int) (microamperes));
+}
+
+/**
+ * Convert milliamperes_d to amperes_d.
+ */
+amperes_d mA_d_to_A_d(milliamperes_d milliamperes)
+{
+    return ((amperes_d) (milliamperes / 1000.0));
+}
+
+/**
+ * Convert milliamperes_d to amperes_f.
+ */
+amperes_f mA_d_to_A_f(milliamperes_d milliamperes)
+{
+    const milliamperes_d conversion = milliamperes / 1000.0;
+    return ((amperes_f) (conversion < ((double) (FLT_MAX)) ? (conversion > ((double) (-FLT_MAX)) ? conversion : -FLT_MAX) : FLT_MAX));
+}
+
+/**
+ * Convert milliamperes_d to amperes_t.
+ */
+amperes_t mA_d_to_A_t(milliamperes_d milliamperes)
+{
+    const milliamperes_d conversion = milliamperes / 1000.0;
+    return ((amperes_t) (round(((double) (conversion))) < ((double) (INT_MAX)) ? (round(((double) (conversion))) > ((double) (INT_MIN)) ? round(((double) (conversion))) : INT_MIN) : INT_MAX));
+}
+
+/**
+ * Convert milliamperes_d to amperes_u.
+ */
+amperes_u mA_d_to_A_u(milliamperes_d milliamperes)
+{
+    const milliamperes_d conversion = milliamperes / 1000.0;
+    return ((amperes_u) (round(((double) (conversion))) < ((double) (UINT_MAX)) ? (round(((double) (conversion))) > ((double) (0)) ? round(((double) (conversion))) : 0) : UINT_MAX));
+}
+
+/**
+ * Convert milliamperes_d to double.
+ */
+double mA_d_to_d(milliamperes_d milliamperes)
+{
+    return ((double) (milliamperes));
+}
+
+/**
+ * Convert milliamperes_d to float.
+ */
+float mA_d_to_f(milliamperes_d milliamperes)
+{
+    return d_to_f(((double) (milliamperes)));
+}
+
+/**
+ * Convert milliamperes_d to int.
+ */
+int mA_d_to_i(milliamperes_d milliamperes)
+{
+    return d_to_i(((double) (milliamperes)));
+}
+
+/**
+ * Convert milliamperes_d to int16_t.
+ */
+int16_t mA_d_to_i16(milliamperes_d milliamperes)
+{
+    return d_to_i16(((double) (milliamperes)));
+}
+
+/**
+ * Convert milliamperes_d to int32_t.
+ */
+int32_t mA_d_to_i32(milliamperes_d milliamperes)
+{
+    return d_to_i32(((double) (milliamperes)));
+}
+
+/**
+ * Convert milliamperes_d to int64_t.
+ */
+int64_t mA_d_to_i64(milliamperes_d milliamperes)
+{
+    return d_to_i64(((double) (milliamperes)));
+}
+
+/**
+ * Convert milliamperes_d to int8_t.
+ */
+int8_t mA_d_to_i8(milliamperes_d milliamperes)
+{
+    return d_to_i8(((double) (milliamperes)));
+}
+
+/**
+ * Convert milliamperes_d to microamperes_d.
+ */
+microamperes_d mA_d_to_uA_d(milliamperes_d milliamperes)
+{
+    if (milliamperes < -DBL_MAX / 1000.0) {
+        return -DBL_MAX;
+    }
+    if (milliamperes > DBL_MAX / 1000.0) {
+        return DBL_MAX;
+    }
+    return ((microamperes_d) (milliamperes)) * 1000.0;
+}
+
+/**
+ * Convert milliamperes_d to microamperes_f.
+ */
+microamperes_f mA_d_to_uA_f(milliamperes_d milliamperes)
+{
+    if (milliamperes > ((milliamperes_d) (FLT_MAX)) / 1000.0) {
+        return FLT_MAX;
+    }
+    if (milliamperes < ((milliamperes_d) (-FLT_MAX)) / 1000.0) {
+        return -FLT_MAX;
+    }
+    return ((microamperes_f) (milliamperes * 1000.0));
+}
+
+/**
+ * Convert milliamperes_d to microamperes_t.
+ */
+microamperes_t mA_d_to_uA_t(milliamperes_d milliamperes)
+{
+    if (milliamperes > ((milliamperes_d) (INT_MAX)) / 1000.0) {
+        return INT_MAX;
+    }
+    if (milliamperes < ((milliamperes_d) (INT_MIN)) / 1000.0) {
+        return INT_MIN;
+    }
+    return ((microamperes_t) (milliamperes * 1000.0));
+}
+
+/**
+ * Convert milliamperes_d to microamperes_u.
+ */
+microamperes_u mA_d_to_uA_u(milliamperes_d milliamperes)
+{
+    if (milliamperes > ((milliamperes_d) (UINT_MAX)) / 1000.0) {
+        return UINT_MAX;
+    }
+    if (milliamperes < ((milliamperes_d) (0)) / 1000.0) {
+        return 0;
+    }
+    return ((microamperes_u) (milliamperes * 1000.0));
+}
+
+/**
+ * Convert milliamperes_d to milliamperes_f.
+ */
+milliamperes_f mA_d_to_mA_f(milliamperes_d milliamperes)
+{
+    return ((milliamperes_f) (milliamperes < ((double) (FLT_MAX)) ? (milliamperes > ((double) (-FLT_MAX)) ? milliamperes : -FLT_MAX) : FLT_MAX));
+}
+
+/**
+ * Convert milliamperes_d to milliamperes_t.
+ */
+milliamperes_t mA_d_to_mA_t(milliamperes_d milliamperes)
+{
+    return ((milliamperes_t) (round(((double) (milliamperes))) < ((double) (INT_MAX)) ? (round(((double) (milliamperes))) > ((double) (INT_MIN)) ? round(((double) (milliamperes))) : INT_MIN) : INT_MAX));
+}
+
+/**
+ * Convert milliamperes_d to milliamperes_u.
+ */
+milliamperes_u mA_d_to_mA_u(milliamperes_d milliamperes)
+{
+    return ((milliamperes_u) (round(((double) (milliamperes))) < ((double) (UINT_MAX)) ? (round(((double) (milliamperes))) > ((double) (0)) ? round(((double) (milliamperes))) : 0) : UINT_MAX));
+}
+
+/**
+ * Convert milliamperes_d to uint16_t.
+ */
+uint16_t mA_d_to_u16(milliamperes_d milliamperes)
+{
+    return d_to_u16(((double) (milliamperes)));
+}
+
+/**
+ * Convert milliamperes_d to uint32_t.
+ */
+uint32_t mA_d_to_u32(milliamperes_d milliamperes)
+{
+    return d_to_u32(((double) (milliamperes)));
+}
+
+/**
+ * Convert milliamperes_d to uint64_t.
+ */
+uint64_t mA_d_to_u64(milliamperes_d milliamperes)
+{
+    return d_to_u64(((double) (milliamperes)));
+}
+
+/**
+ * Convert milliamperes_d to uint8_t.
+ */
+uint8_t mA_d_to_u8(milliamperes_d milliamperes)
+{
+    return d_to_u8(((double) (milliamperes)));
+}
+
+/**
+ * Convert milliamperes_d to unsigned int.
+ */
+unsigned int mA_d_to_u(milliamperes_d milliamperes)
+{
+    return d_to_u(((double) (milliamperes)));
+}
+
+/**
+ * Convert milliamperes_f to amperes_d.
+ */
+amperes_d mA_f_to_A_d(milliamperes_f milliamperes)
+{
+    return (((amperes_d) (milliamperes)) / 1000.0);
+}
+
+/**
+ * Convert milliamperes_f to amperes_f.
+ */
+amperes_f mA_f_to_A_f(milliamperes_f milliamperes)
+{
+    return ((amperes_f) (milliamperes / 1000.0f));
+}
+
+/**
+ * Convert milliamperes_f to amperes_t.
+ */
+amperes_t mA_f_to_A_t(milliamperes_f milliamperes)
+{
+    const milliamperes_f conversion = milliamperes / 1000.0f;
+    return ((amperes_t) (round(((double) (conversion))) < ((double) (INT_MAX)) ? (round(((double) (conversion))) > ((double) (INT_MIN)) ? round(((double) (conversion))) : INT_MIN) : INT_MAX));
+}
+
+/**
+ * Convert milliamperes_f to amperes_u.
+ */
+amperes_u mA_f_to_A_u(milliamperes_f milliamperes)
+{
+    const milliamperes_f conversion = milliamperes / 1000.0f;
+    return ((amperes_u) (round(((double) (conversion))) < ((double) (UINT_MAX)) ? (round(((double) (conversion))) > ((double) (0)) ? round(((double) (conversion))) : 0) : UINT_MAX));
+}
+
+/**
+ * Convert milliamperes_f to double.
+ */
+double mA_f_to_d(milliamperes_f milliamperes)
+{
+    return ((double) (milliamperes));
+}
+
+/**
+ * Convert milliamperes_f to float.
+ */
+float mA_f_to_f(milliamperes_f milliamperes)
+{
+    return ((float) (milliamperes));
+}
+
+/**
+ * Convert milliamperes_f to int.
+ */
+int mA_f_to_i(milliamperes_f milliamperes)
+{
+    return f_to_i(((float) (milliamperes)));
+}
+
+/**
+ * Convert milliamperes_f to int16_t.
+ */
+int16_t mA_f_to_i16(milliamperes_f milliamperes)
+{
+    return f_to_i16(((float) (milliamperes)));
+}
+
+/**
+ * Convert milliamperes_f to int32_t.
+ */
+int32_t mA_f_to_i32(milliamperes_f milliamperes)
+{
+    return f_to_i32(((float) (milliamperes)));
+}
+
+/**
+ * Convert milliamperes_f to int64_t.
+ */
+int64_t mA_f_to_i64(milliamperes_f milliamperes)
+{
+    return f_to_i64(((float) (milliamperes)));
+}
+
+/**
+ * Convert milliamperes_f to int8_t.
+ */
+int8_t mA_f_to_i8(milliamperes_f milliamperes)
+{
+    return f_to_i8(((float) (milliamperes)));
+}
+
+/**
+ * Convert milliamperes_f to microamperes_d.
+ */
+microamperes_d mA_f_to_uA_d(milliamperes_f milliamperes)
+{
+    return ((microamperes_d) (milliamperes)) * 1000.0;
+}
+
+/**
+ * Convert milliamperes_f to microamperes_f.
+ */
+microamperes_f mA_f_to_uA_f(milliamperes_f milliamperes)
+{
+    if (milliamperes < -FLT_MAX / 1000.0f) {
+        return -FLT_MAX;
+    }
+    if (milliamperes > FLT_MAX / 1000.0f) {
+        return FLT_MAX;
+    }
+    return ((microamperes_f) (milliamperes)) * 1000.0f;
+}
+
+/**
+ * Convert milliamperes_f to microamperes_t.
+ */
+microamperes_t mA_f_to_uA_t(milliamperes_f milliamperes)
+{
+    if (milliamperes > ((milliamperes_f) (INT_MAX)) / 1000.0f) {
+        return INT_MAX;
+    }
+    if (milliamperes < ((milliamperes_f) (INT_MIN)) / 1000.0f) {
+        return INT_MIN;
+    }
+    return ((microamperes_t) (milliamperes * 1000.0f));
+}
+
+/**
+ * Convert milliamperes_f to microamperes_u.
+ */
+microamperes_u mA_f_to_uA_u(milliamperes_f milliamperes)
+{
+    if (milliamperes > ((milliamperes_f) (UINT_MAX)) / 1000.0f) {
+        return UINT_MAX;
+    }
+    if (milliamperes < ((milliamperes_f) (0)) / 1000.0f) {
+        return 0;
+    }
+    return ((microamperes_u) (milliamperes * 1000.0f));
+}
+
+/**
+ * Convert milliamperes_f to milliamperes_d.
+ */
+milliamperes_d mA_f_to_mA_d(milliamperes_f milliamperes)
+{
+    return ((milliamperes_d) (milliamperes));
+}
+
+/**
+ * Convert milliamperes_f to milliamperes_t.
+ */
+milliamperes_t mA_f_to_mA_t(milliamperes_f milliamperes)
+{
+    return ((milliamperes_t) (round(((double) (milliamperes))) < ((double) (INT_MAX)) ? (round(((double) (milliamperes))) > ((double) (INT_MIN)) ? round(((double) (milliamperes))) : INT_MIN) : INT_MAX));
+}
+
+/**
+ * Convert milliamperes_f to milliamperes_u.
+ */
+milliamperes_u mA_f_to_mA_u(milliamperes_f milliamperes)
+{
+    return ((milliamperes_u) (round(((double) (milliamperes))) < ((double) (UINT_MAX)) ? (round(((double) (milliamperes))) > ((double) (0)) ? round(((double) (milliamperes))) : 0) : UINT_MAX));
+}
+
+/**
+ * Convert milliamperes_f to uint16_t.
+ */
+uint16_t mA_f_to_u16(milliamperes_f milliamperes)
+{
+    return f_to_u16(((float) (milliamperes)));
+}
+
+/**
+ * Convert milliamperes_f to uint32_t.
+ */
+uint32_t mA_f_to_u32(milliamperes_f milliamperes)
+{
+    return f_to_u32(((float) (milliamperes)));
+}
+
+/**
+ * Convert milliamperes_f to uint64_t.
+ */
+uint64_t mA_f_to_u64(milliamperes_f milliamperes)
+{
+    return f_to_u64(((float) (milliamperes)));
+}
+
+/**
+ * Convert milliamperes_f to uint8_t.
+ */
+uint8_t mA_f_to_u8(milliamperes_f milliamperes)
+{
+    return f_to_u8(((float) (milliamperes)));
+}
+
+/**
+ * Convert milliamperes_f to unsigned int.
+ */
+unsigned int mA_f_to_u(milliamperes_f milliamperes)
+{
+    return f_to_u(((float) (milliamperes)));
+}
+
+/**
+ * Convert milliamperes_t to amperes_d.
+ */
+amperes_d mA_t_to_A_d(milliamperes_t milliamperes)
+{
+    return ((amperes_d) (milliamperes / 1000));
+}
+
+/**
+ * Convert milliamperes_t to amperes_f.
+ */
+amperes_f mA_t_to_A_f(milliamperes_t milliamperes)
+{
+    return ((amperes_f) (milliamperes / 1000));
+}
+
+/**
+ * Convert milliamperes_t to amperes_t.
+ */
+amperes_t mA_t_to_A_t(milliamperes_t milliamperes)
+{
+    return ((amperes_t) (milliamperes / 1000));
+}
+
+/**
+ * Convert milliamperes_t to amperes_u.
+ */
+amperes_u mA_t_to_A_u(milliamperes_t milliamperes)
+{
+    if (milliamperes < 0) {
+        return 0;
+    }
+    return ((amperes_u) (milliamperes / 1000));
+}
+
+/**
+ * Convert milliamperes_t to double.
+ */
+double mA_t_to_d(milliamperes_t milliamperes)
+{
+    return ((double) (milliamperes));
+}
+
+/**
+ * Convert milliamperes_t to float.
+ */
+float mA_t_to_f(milliamperes_t milliamperes)
+{
+    return ((float) (milliamperes));
+}
+
+/**
+ * Convert milliamperes_t to int.
+ */
+int mA_t_to_i(milliamperes_t milliamperes)
+{
+    return ((int) (milliamperes));
+}
+
+/**
+ * Convert milliamperes_t to int16_t.
+ */
+int16_t mA_t_to_i16(milliamperes_t milliamperes)
+{
+    return ((int16_t) (MIN(((milliamperes_t) (32767)), MAX(((milliamperes_t) (-32768)), milliamperes))));
+}
+
+/**
+ * Convert milliamperes_t to int32_t.
+ */
+int32_t mA_t_to_i32(milliamperes_t milliamperes)
+{
+    return ((int32_t) (MIN(((milliamperes_t) (2147483647)), MAX(((milliamperes_t) (-2147483648)), milliamperes))));
+}
+
+/**
+ * Convert milliamperes_t to int64_t.
+ */
+int64_t mA_t_to_i64(milliamperes_t milliamperes)
+{
+    return ((int64_t) (milliamperes));
+}
+
+/**
+ * Convert milliamperes_t to int8_t.
+ */
+int8_t mA_t_to_i8(milliamperes_t milliamperes)
+{
+    return ((int8_t) (MIN(((milliamperes_t) (127)), MAX(((milliamperes_t) (-128)), milliamperes))));
+}
+
+/**
+ * Convert milliamperes_t to microamperes_d.
+ */
+microamperes_d mA_t_to_uA_d(milliamperes_t milliamperes)
+{
+    return ((microamperes_d) (milliamperes)) * 1000.0;
+}
+
+/**
+ * Convert milliamperes_t to microamperes_f.
+ */
+microamperes_f mA_t_to_uA_f(milliamperes_t milliamperes)
+{
+    return ((microamperes_f) (milliamperes)) * 1000.0f;
+}
+
+/**
+ * Convert milliamperes_t to microamperes_t.
+ */
+microamperes_t mA_t_to_uA_t(milliamperes_t milliamperes)
+{
+    if (milliamperes < INT_MIN / 1000) {
+        return INT_MIN;
+    }
+    if (milliamperes > INT_MAX / 1000) {
+        return INT_MAX;
+    }
+    return ((microamperes_t) (milliamperes)) * 1000;
+}
+
+/**
+ * Convert milliamperes_t to microamperes_u.
+ */
+microamperes_u mA_t_to_uA_u(milliamperes_t milliamperes)
+{
+    if (milliamperes < 0) {
+        return 0;
+    }
+    const microamperes_u otherMilliamperes = ((microamperes_u) (milliamperes));
+    if (otherMilliamperes > UINT_MAX / 1000) {
+        return UINT_MAX;
+    }
+    return otherMilliamperes * 1000;
+}
+
+/**
+ * Convert milliamperes_t to milliamperes_d.
+ */
+milliamperes_d mA_t_to_mA_d(milliamperes_t milliamperes)
+{
+    return ((milliamperes_d) (milliamperes));
+}
+
+/**
+ * Convert milliamperes_t to milliamperes_f.
+ */
+milliamperes_f mA_t_to_mA_f(milliamperes_t milliamperes)
+{
+    return ((milliamperes_f) (milliamperes));
+}
+
+/**
+ * Convert milliamperes_t to milliamperes_u.
+ */
+milliamperes_u mA_t_to_mA_u(milliamperes_t milliamperes)
+{
+    return ((milliamperes_u) ((milliamperes) < 0 ? 0 : milliamperes));
+}
+
+/**
+ * Convert milliamperes_t to uint16_t.
+ */
+uint16_t mA_t_to_u16(milliamperes_t milliamperes)
+{
+    return ((uint16_t) (MAX(((milliamperes_t) (0)), milliamperes)));
+}
+
+/**
+ * Convert milliamperes_t to uint32_t.
+ */
+uint32_t mA_t_to_u32(milliamperes_t milliamperes)
+{
+    return ((uint32_t) (MAX(((milliamperes_t) (0)), milliamperes)));
+}
+
+/**
+ * Convert milliamperes_t to uint64_t.
+ */
+uint64_t mA_t_to_u64(milliamperes_t milliamperes)
+{
+    return ((uint64_t) (MAX(((milliamperes_t) (0)), milliamperes)));
+}
+
+/**
+ * Convert milliamperes_t to uint8_t.
+ */
+uint8_t mA_t_to_u8(milliamperes_t milliamperes)
+{
+    return ((uint8_t) (MAX(((milliamperes_t) (0)), milliamperes)));
+}
+
+/**
+ * Convert milliamperes_t to unsigned int.
+ */
+unsigned int mA_t_to_u(milliamperes_t milliamperes)
+{
+    return ((unsigned int) (MAX(((milliamperes_t) (0)), milliamperes)));
+}
+
+/**
+ * Convert milliamperes_u to amperes_d.
+ */
+amperes_d mA_u_to_A_d(milliamperes_u milliamperes)
+{
+    return ((amperes_d) (milliamperes / 1000));
+}
+
+/**
+ * Convert milliamperes_u to amperes_f.
+ */
+amperes_f mA_u_to_A_f(milliamperes_u milliamperes)
+{
+    return ((amperes_f) (milliamperes / 1000));
+}
+
+/**
+ * Convert milliamperes_u to amperes_t.
+ */
+amperes_t mA_u_to_A_t(milliamperes_u milliamperes)
+{
+    const milliamperes_u conversion = milliamperes / 1000;
+    return ((amperes_t) ((conversion) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : conversion));
+}
+
+/**
+ * Convert milliamperes_u to amperes_u.
+ */
+amperes_u mA_u_to_A_u(milliamperes_u milliamperes)
+{
+    return ((amperes_u) (milliamperes / 1000));
+}
+
+/**
+ * Convert milliamperes_u to double.
+ */
+double mA_u_to_d(milliamperes_u milliamperes)
+{
+    return ((double) (milliamperes));
+}
+
+/**
+ * Convert milliamperes_u to float.
+ */
+float mA_u_to_f(milliamperes_u milliamperes)
+{
+    return ((float) (milliamperes));
+}
+
+/**
+ * Convert milliamperes_u to int.
+ */
+int mA_u_to_i(milliamperes_u milliamperes)
+{
+    return ((int) (MIN(((milliamperes_u) (INT_MAX)), milliamperes)));
+}
+
+/**
+ * Convert milliamperes_u to int16_t.
+ */
+int16_t mA_u_to_i16(milliamperes_u milliamperes)
+{
+    return ((int16_t) (MIN(((milliamperes_u) (32767)), milliamperes)));
+}
+
+/**
+ * Convert milliamperes_u to int32_t.
+ */
+int32_t mA_u_to_i32(milliamperes_u milliamperes)
+{
+    return ((int32_t) (MIN(((milliamperes_u) (2147483647)), milliamperes)));
+}
+
+/**
+ * Convert milliamperes_u to int64_t.
+ */
+int64_t mA_u_to_i64(milliamperes_u milliamperes)
+{
+    return ((int64_t) (milliamperes));
+}
+
+/**
+ * Convert milliamperes_u to int8_t.
+ */
+int8_t mA_u_to_i8(milliamperes_u milliamperes)
+{
+    return ((int8_t) (MIN(((milliamperes_u) (127)), milliamperes)));
+}
+
+/**
+ * Convert milliamperes_u to microamperes_d.
+ */
+microamperes_d mA_u_to_uA_d(milliamperes_u milliamperes)
+{
+    return ((microamperes_d) (milliamperes)) * 1000.0;
+}
+
+/**
+ * Convert milliamperes_u to microamperes_f.
+ */
+microamperes_f mA_u_to_uA_f(milliamperes_u milliamperes)
+{
+    return ((microamperes_f) (milliamperes)) * 1000.0f;
+}
+
+/**
+ * Convert milliamperes_u to microamperes_t.
+ */
+microamperes_t mA_u_to_uA_t(milliamperes_u milliamperes)
+{
+    if (milliamperes > ((milliamperes_u) (INT_MAX / 1000))) {
+        return INT_MAX;
+    }
+    return ((microamperes_t) (milliamperes * 1000));
+}
+
+/**
+ * Convert milliamperes_u to microamperes_u.
+ */
+microamperes_u mA_u_to_uA_u(milliamperes_u milliamperes)
+{
+    if (milliamperes > UINT_MAX / 1000) {
+        return UINT_MAX;
+    }
+    return ((microamperes_u) (milliamperes)) * 1000;
+}
+
+/**
+ * Convert milliamperes_u to milliamperes_d.
+ */
+milliamperes_d mA_u_to_mA_d(milliamperes_u milliamperes)
+{
+    return ((milliamperes_d) (milliamperes));
+}
+
+/**
+ * Convert milliamperes_u to milliamperes_f.
+ */
+milliamperes_f mA_u_to_mA_f(milliamperes_u milliamperes)
+{
+    return ((milliamperes_f) (milliamperes));
+}
+
+/**
+ * Convert milliamperes_u to milliamperes_t.
+ */
+milliamperes_t mA_u_to_mA_t(milliamperes_u milliamperes)
+{
+    return ((milliamperes_t) ((milliamperes) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : milliamperes));
+}
+
+/**
+ * Convert milliamperes_u to uint16_t.
+ */
+uint16_t mA_u_to_u16(milliamperes_u milliamperes)
+{
+    return ((uint16_t) (MIN(((milliamperes_u) (65535)), MAX(((milliamperes_u) (0)), milliamperes))));
+}
+
+/**
+ * Convert milliamperes_u to uint32_t.
+ */
+uint32_t mA_u_to_u32(milliamperes_u milliamperes)
+{
+    return ((uint32_t) (MIN(((milliamperes_u) (4294967295U)), MAX(((milliamperes_u) (0)), milliamperes))));
+}
+
+/**
+ * Convert milliamperes_u to uint64_t.
+ */
+uint64_t mA_u_to_u64(milliamperes_u milliamperes)
+{
+    return ((uint64_t) (milliamperes));
+}
+
+/**
+ * Convert milliamperes_u to uint8_t.
+ */
+uint8_t mA_u_to_u8(milliamperes_u milliamperes)
+{
+    return ((uint8_t) (MIN(((milliamperes_u) (255)), MAX(((milliamperes_u) (0)), milliamperes))));
+}
+
+/**
+ * Convert milliamperes_u to unsigned int.
+ */
+unsigned int mA_u_to_u(milliamperes_u milliamperes)
+{
+    return ((unsigned int) (milliamperes));
+}
+
+/**
+ * Convert uint16_t to amperes_d.
+ */
+amperes_d u16_to_A_d(uint16_t amperes)
+{
+    return ((amperes_d) (amperes));
+}
+
+/**
+ * Convert uint16_t to amperes_f.
+ */
+amperes_f u16_to_A_f(uint16_t amperes)
+{
+    return ((amperes_f) (amperes));
+}
+
+/**
+ * Convert uint16_t to amperes_t.
+ */
+amperes_t u16_to_A_t(uint16_t amperes)
+{
+    return ((amperes_t) (amperes));
+}
+
+/**
+ * Convert uint16_t to amperes_u.
+ */
+amperes_u u16_to_A_u(uint16_t amperes)
+{
+    return ((amperes_u) (amperes));
+}
+
+/**
+ * Convert uint16_t to microamperes_d.
+ */
+microamperes_d u16_to_uA_d(uint16_t microamperes)
+{
+    return ((microamperes_d) (microamperes));
+}
+
+/**
+ * Convert uint16_t to microamperes_f.
+ */
+microamperes_f u16_to_uA_f(uint16_t microamperes)
+{
+    return ((microamperes_f) (microamperes));
+}
+
+/**
+ * Convert uint16_t to microamperes_t.
+ */
+microamperes_t u16_to_uA_t(uint16_t microamperes)
+{
+    return ((microamperes_t) (microamperes));
+}
+
+/**
+ * Convert uint16_t to microamperes_u.
+ */
+microamperes_u u16_to_uA_u(uint16_t microamperes)
+{
+    return ((microamperes_u) (microamperes));
+}
+
+/**
+ * Convert uint16_t to milliamperes_d.
+ */
+milliamperes_d u16_to_mA_d(uint16_t milliamperes)
+{
+    return ((milliamperes_d) (milliamperes));
+}
+
+/**
+ * Convert uint16_t to milliamperes_f.
+ */
+milliamperes_f u16_to_mA_f(uint16_t milliamperes)
+{
+    return ((milliamperes_f) (milliamperes));
+}
+
+/**
+ * Convert uint16_t to milliamperes_t.
+ */
+milliamperes_t u16_to_mA_t(uint16_t milliamperes)
+{
+    return ((milliamperes_t) (milliamperes));
+}
+
+/**
+ * Convert uint16_t to milliamperes_u.
+ */
+milliamperes_u u16_to_mA_u(uint16_t milliamperes)
+{
+    return ((milliamperes_u) (milliamperes));
+}
+
+/**
+ * Convert uint32_t to amperes_d.
+ */
+amperes_d u32_to_A_d(uint32_t amperes)
+{
+    return ((amperes_d) (amperes));
+}
+
+/**
+ * Convert uint32_t to amperes_f.
+ */
+amperes_f u32_to_A_f(uint32_t amperes)
+{
+    return ((amperes_f) (amperes));
+}
+
+/**
+ * Convert uint32_t to amperes_t.
+ */
+amperes_t u32_to_A_t(uint32_t amperes)
+{
+    return ((amperes_t) (MIN(((uint32_t) (INT_MAX)), amperes)));
+}
+
+/**
+ * Convert uint32_t to amperes_u.
+ */
+amperes_u u32_to_A_u(uint32_t amperes)
+{
+    return ((amperes_u) (MIN(((uint32_t) (UINT_MAX)), MAX(((uint32_t) (0)), amperes))));
+}
+
+/**
+ * Convert uint32_t to microamperes_d.
+ */
+microamperes_d u32_to_uA_d(uint32_t microamperes)
+{
+    return ((microamperes_d) (microamperes));
+}
+
+/**
+ * Convert uint32_t to microamperes_f.
+ */
+microamperes_f u32_to_uA_f(uint32_t microamperes)
+{
+    return ((microamperes_f) (microamperes));
+}
+
+/**
+ * Convert uint32_t to microamperes_t.
+ */
+microamperes_t u32_to_uA_t(uint32_t microamperes)
+{
+    return ((microamperes_t) (MIN(((uint32_t) (INT_MAX)), microamperes)));
+}
+
+/**
+ * Convert uint32_t to microamperes_u.
+ */
+microamperes_u u32_to_uA_u(uint32_t microamperes)
+{
+    return ((microamperes_u) (MIN(((uint32_t) (UINT_MAX)), MAX(((uint32_t) (0)), microamperes))));
+}
+
+/**
+ * Convert uint32_t to milliamperes_d.
+ */
+milliamperes_d u32_to_mA_d(uint32_t milliamperes)
+{
+    return ((milliamperes_d) (milliamperes));
+}
+
+/**
+ * Convert uint32_t to milliamperes_f.
+ */
+milliamperes_f u32_to_mA_f(uint32_t milliamperes)
+{
+    return ((milliamperes_f) (milliamperes));
+}
+
+/**
+ * Convert uint32_t to milliamperes_t.
+ */
+milliamperes_t u32_to_mA_t(uint32_t milliamperes)
+{
+    return ((milliamperes_t) (MIN(((uint32_t) (INT_MAX)), milliamperes)));
+}
+
+/**
+ * Convert uint32_t to milliamperes_u.
+ */
+milliamperes_u u32_to_mA_u(uint32_t milliamperes)
+{
+    return ((milliamperes_u) (MIN(((uint32_t) (UINT_MAX)), MAX(((uint32_t) (0)), milliamperes))));
+}
+
+/**
+ * Convert uint64_t to amperes_d.
+ */
+amperes_d u64_to_A_d(uint64_t amperes)
+{
+    return ((amperes_d) (amperes));
+}
+
+/**
+ * Convert uint64_t to amperes_f.
+ */
+amperes_f u64_to_A_f(uint64_t amperes)
+{
+    return ((amperes_f) (amperes));
+}
+
+/**
+ * Convert uint64_t to amperes_t.
+ */
+amperes_t u64_to_A_t(uint64_t amperes)
+{
+    return ((amperes_t) (MIN(((uint64_t) (INT_MAX)), amperes)));
+}
+
+/**
+ * Convert uint64_t to amperes_u.
+ */
+amperes_u u64_to_A_u(uint64_t amperes)
+{
+    return ((amperes_u) (MIN(((uint64_t) (UINT_MAX)), MAX(((uint64_t) (0)), amperes))));
+}
+
+/**
+ * Convert uint64_t to microamperes_d.
+ */
+microamperes_d u64_to_uA_d(uint64_t microamperes)
+{
+    return ((microamperes_d) (microamperes));
+}
+
+/**
+ * Convert uint64_t to microamperes_f.
+ */
+microamperes_f u64_to_uA_f(uint64_t microamperes)
+{
+    return ((microamperes_f) (microamperes));
+}
+
+/**
+ * Convert uint64_t to microamperes_t.
+ */
+microamperes_t u64_to_uA_t(uint64_t microamperes)
+{
+    return ((microamperes_t) (MIN(((uint64_t) (INT_MAX)), microamperes)));
+}
+
+/**
+ * Convert uint64_t to microamperes_u.
+ */
+microamperes_u u64_to_uA_u(uint64_t microamperes)
+{
+    return ((microamperes_u) (MIN(((uint64_t) (UINT_MAX)), MAX(((uint64_t) (0)), microamperes))));
+}
+
+/**
+ * Convert uint64_t to milliamperes_d.
+ */
+milliamperes_d u64_to_mA_d(uint64_t milliamperes)
+{
+    return ((milliamperes_d) (milliamperes));
+}
+
+/**
+ * Convert uint64_t to milliamperes_f.
+ */
+milliamperes_f u64_to_mA_f(uint64_t milliamperes)
+{
+    return ((milliamperes_f) (milliamperes));
+}
+
+/**
+ * Convert uint64_t to milliamperes_t.
+ */
+milliamperes_t u64_to_mA_t(uint64_t milliamperes)
+{
+    return ((milliamperes_t) (MIN(((uint64_t) (INT_MAX)), milliamperes)));
+}
+
+/**
+ * Convert uint64_t to milliamperes_u.
+ */
+milliamperes_u u64_to_mA_u(uint64_t milliamperes)
+{
+    return ((milliamperes_u) (MIN(((uint64_t) (UINT_MAX)), MAX(((uint64_t) (0)), milliamperes))));
+}
+
+/**
+ * Convert uint8_t to amperes_d.
+ */
+amperes_d u8_to_A_d(uint8_t amperes)
+{
+    return ((amperes_d) (amperes));
+}
+
+/**
+ * Convert uint8_t to amperes_f.
+ */
+amperes_f u8_to_A_f(uint8_t amperes)
+{
+    return ((amperes_f) (amperes));
+}
+
+/**
+ * Convert uint8_t to amperes_t.
+ */
+amperes_t u8_to_A_t(uint8_t amperes)
+{
+    return ((amperes_t) (amperes));
+}
+
+/**
+ * Convert uint8_t to amperes_u.
+ */
+amperes_u u8_to_A_u(uint8_t amperes)
+{
+    return ((amperes_u) (amperes));
+}
+
+/**
+ * Convert uint8_t to microamperes_d.
+ */
+microamperes_d u8_to_uA_d(uint8_t microamperes)
+{
+    return ((microamperes_d) (microamperes));
+}
+
+/**
+ * Convert uint8_t to microamperes_f.
+ */
+microamperes_f u8_to_uA_f(uint8_t microamperes)
+{
+    return ((microamperes_f) (microamperes));
+}
+
+/**
+ * Convert uint8_t to microamperes_t.
+ */
+microamperes_t u8_to_uA_t(uint8_t microamperes)
+{
+    return ((microamperes_t) (microamperes));
+}
+
+/**
+ * Convert uint8_t to microamperes_u.
+ */
+microamperes_u u8_to_uA_u(uint8_t microamperes)
+{
+    return ((microamperes_u) (microamperes));
+}
+
+/**
+ * Convert uint8_t to milliamperes_d.
+ */
+milliamperes_d u8_to_mA_d(uint8_t milliamperes)
+{
+    return ((milliamperes_d) (milliamperes));
+}
+
+/**
+ * Convert uint8_t to milliamperes_f.
+ */
+milliamperes_f u8_to_mA_f(uint8_t milliamperes)
+{
+    return ((milliamperes_f) (milliamperes));
+}
+
+/**
+ * Convert uint8_t to milliamperes_t.
+ */
+milliamperes_t u8_to_mA_t(uint8_t milliamperes)
+{
+    return ((milliamperes_t) (milliamperes));
+}
+
+/**
+ * Convert uint8_t to milliamperes_u.
+ */
+milliamperes_u u8_to_mA_u(uint8_t milliamperes)
+{
+    return ((milliamperes_u) (milliamperes));
+}
+
+/**
+ * Convert unsigned int to amperes_d.
+ */
+amperes_d u_to_A_d(unsigned int amperes)
+{
+    return ((amperes_d) (amperes));
+}
+
+/**
+ * Convert unsigned int to amperes_f.
+ */
+amperes_f u_to_A_f(unsigned int amperes)
+{
+    return ((amperes_f) (amperes));
+}
+
+/**
+ * Convert unsigned int to amperes_t.
+ */
+amperes_t u_to_A_t(unsigned int amperes)
+{
+    return ((amperes_t) (MIN(((unsigned int) (INT_MAX)), amperes)));
+}
+
+/**
+ * Convert unsigned int to amperes_u.
+ */
+amperes_u u_to_A_u(unsigned int amperes)
+{
+    return ((amperes_u) (amperes));
+}
+
+/**
+ * Convert unsigned int to microamperes_d.
+ */
+microamperes_d u_to_uA_d(unsigned int microamperes)
+{
+    return ((microamperes_d) (microamperes));
+}
+
+/**
+ * Convert unsigned int to microamperes_f.
+ */
+microamperes_f u_to_uA_f(unsigned int microamperes)
+{
+    return ((microamperes_f) (microamperes));
+}
+
+/**
+ * Convert unsigned int to microamperes_t.
+ */
+microamperes_t u_to_uA_t(unsigned int microamperes)
+{
+    return ((microamperes_t) (MIN(((unsigned int) (INT_MAX)), microamperes)));
+}
+
+/**
+ * Convert unsigned int to microamperes_u.
+ */
+microamperes_u u_to_uA_u(unsigned int microamperes)
+{
+    return ((microamperes_u) (microamperes));
+}
+
+/**
+ * Convert unsigned int to milliamperes_d.
+ */
+milliamperes_d u_to_mA_d(unsigned int milliamperes)
+{
+    return ((milliamperes_d) (milliamperes));
+}
+
+/**
+ * Convert unsigned int to milliamperes_f.
+ */
+milliamperes_f u_to_mA_f(unsigned int milliamperes)
+{
+    return ((milliamperes_f) (milliamperes));
+}
+
+/**
+ * Convert unsigned int to milliamperes_t.
+ */
+milliamperes_t u_to_mA_t(unsigned int milliamperes)
+{
+    return ((milliamperes_t) (MIN(((unsigned int) (INT_MAX)), milliamperes)));
+}
+
+/**
+ * Convert unsigned int to milliamperes_u.
+ */
+milliamperes_u u_to_mA_u(unsigned int milliamperes)
+{
+    return ((milliamperes_u) (milliamperes));
+}
+
+/**
  * Convert double to microseconds_d.
  */
 microseconds_d d_to_us_d(double microseconds)

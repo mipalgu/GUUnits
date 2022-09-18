@@ -57,8 +57,6896 @@
 */
 
 import CGUUnits
-import GUUnits
+@testable import GUUnits
 import XCTest
+
+final class Metrespersecond2TypeTests: XCTestCase {
+
+    func testMetrespersecond2_tEquality() {
+        XCTAssertEqual(Metrespersecond2_t(5), Metrespersecond2_t(5))
+    }
+
+    func testMetrespersecond2_tCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Metrespersecond2_t(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Metrespersecond2_t.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testMetrespersecond2_tSelfInit() {
+        let expected = Metrespersecond2_t(15)
+        XCTAssertEqual(expected, Metrespersecond2_t(expected))
+    }
+
+    func testMetrespersecond2_tSelfExactlyInit() {
+        let expected = Metrespersecond2_t(15)
+        XCTAssertEqual(expected, Metrespersecond2_t(exactly: expected))
+    }
+
+    func testMetrespersecond2_tComparable() {
+        let lhs = Metrespersecond2_t(1)
+        let rhs = Metrespersecond2_t(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testMetrespersecond2_tMagnitude() {
+        let expected = CInt(5).magnitude
+        XCTAssertEqual(Metrespersecond2_t(5).magnitude, expected)
+    }
+
+    func testMetrespersecond2_tTruncatingInit() {
+        let expected = Metrespersecond2_t(CInt(truncatingIfNeeded: UInt64.max))
+        XCTAssertEqual(Metrespersecond2_t(truncatingIfNeeded: expected), expected)
+    }
+
+    func testMetrespersecond2_tClampingInit() {
+        let expected = Metrespersecond2_t(CInt(clamping: UInt64.max))
+        XCTAssertEqual(Metrespersecond2_t(clamping: expected), expected)
+    }
+
+    func testMetrespersecond2_tBitWidth() {
+        let expected = CInt(5).bitWidth
+        XCTAssertEqual(Metrespersecond2_t(5).bitWidth, expected)
+    }
+
+    func testMetrespersecond2_tLeadingZeroBitCount() {
+        let expected = CInt(5).leadingZeroBitCount
+        XCTAssertEqual(Metrespersecond2_t(5).leadingZeroBitCount, expected)
+    }
+
+    func testMetrespersecond2_tNonzeroBitCount() {
+        let expected = CInt(5).nonzeroBitCount
+        XCTAssertEqual(Metrespersecond2_t(5).nonzeroBitCount, expected)
+    }
+
+    func testMetrespersecond2_tIntegerLiteralInit() {
+        let expected = CInt(integerLiteral: CInt.max)
+        XCTAssertEqual(Metrespersecond2_t(expected), Metrespersecond2_t(integerLiteral: CInt.max))
+    }
+
+    func testMetrespersecond2_tTruncatingBits() {
+        let expected = Metrespersecond2_t(CInt(_truncatingBits: UInt.max))
+        XCTAssertEqual(expected, Metrespersecond2_t(_truncatingBits: UInt.max))
+    }
+
+    func testMetrespersecond2_tAddition() {
+        let expected = Metrespersecond2_t(CInt(5) + CInt(3))
+        XCTAssertEqual(Metrespersecond2_t(5) + Metrespersecond2_t(3), expected)
+    }
+
+    func testMetrespersecond2_tSubtraction() {
+        let expected = Metrespersecond2_t(CInt(5) - CInt(3))
+        XCTAssertEqual(Metrespersecond2_t(5) - Metrespersecond2_t(3), expected)
+    }
+
+    func testMetrespersecond2_tMultiplication() {
+        let expected = Metrespersecond2_t(CInt(5) * CInt(3))
+        XCTAssertEqual(Metrespersecond2_t(5) * Metrespersecond2_t(3), expected)
+    }
+
+    func testMetrespersecond2_tDivision() {
+        let expected = Metrespersecond2_t(CInt(6) / CInt(3))
+        XCTAssertEqual(Metrespersecond2_t(6) / Metrespersecond2_t(3), expected)
+    }
+
+    func testMetrespersecond2_tAddOverflow() {
+        let rawOriginal = CInt.max
+        let rawResult = rawOriginal.addingReportingOverflow(CInt(1))
+        let original = Metrespersecond2_t(rawOriginal)
+        let result = original.addingReportingOverflow(Metrespersecond2_t(1))
+        XCTAssertEqual(result.0, Metrespersecond2_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testMetrespersecond2_tMultiplyOverflow() {
+        let rawOriginal = CInt.max
+        let rawResult = rawOriginal.multipliedReportingOverflow(by: CInt(2))
+        let original = Metrespersecond2_t(rawOriginal)
+        let result = original.multipliedReportingOverflow(by: Metrespersecond2_t(2))
+        XCTAssertEqual(result.0, Metrespersecond2_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testMetrespersecond2_tSubtractOverflow() {
+        let rawOriginal = CInt.min
+        let rawResult = rawOriginal.subtractingReportingOverflow(CInt(1))
+        let original = Metrespersecond2_t(rawOriginal)
+        let result = original.subtractingReportingOverflow(Metrespersecond2_t(1))
+        XCTAssertEqual(result.0, Metrespersecond2_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testMetrespersecond2_tDivideOverflow() {
+        let rawOriginal = CInt(1)
+        let rawResult = rawOriginal.dividedReportingOverflow(by: CInt.max)
+        let original = Metrespersecond2_t(rawOriginal)
+        let result = original.dividedReportingOverflow(by: Metrespersecond2_t(CInt.max))
+        XCTAssertEqual(result.0, Metrespersecond2_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testMetrespersecond2_tRemainderOverflow() {
+        let rawOriginal = CInt(1)
+        let rawResult = rawOriginal.remainderReportingOverflow(dividingBy: CInt.max)
+        let original = Metrespersecond2_t(rawOriginal)
+        let result = original.remainderReportingOverflow(dividingBy: Metrespersecond2_t(CInt.max))
+        XCTAssertEqual(result.0, Metrespersecond2_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testMetrespersecond2_tTrailingZeroBitCount() {
+        let original = CInt(1)
+        XCTAssertEqual(Metrespersecond2_t(original).trailingZeroBitCount, original.trailingZeroBitCount)
+    }
+
+    func testMetrespersecond2_tTimesEquals() {
+        var original = CInt(2)
+        original *= 4
+        var result = Metrespersecond2_t(CInt(2))
+        result *= 4
+        XCTAssertEqual(result, Metrespersecond2_t(original))
+    }
+
+    func testMetrespersecond2_tDivideEquals() {
+        var original = CInt(4)
+        original /= 2
+        var result = Metrespersecond2_t(CInt(4))
+        result /= 2
+        XCTAssertEqual(result, Metrespersecond2_t(original))
+    }
+
+    func testMetrespersecond2_tModEquals() {
+        var original = CInt(4)
+        original %= 2
+        var result = Metrespersecond2_t(CInt(4))
+        result %= 2
+        XCTAssertEqual(result, Metrespersecond2_t(original))
+    }
+
+    func testMetrespersecond2_tAndEquals() {
+        var original = CInt(2)
+        original &= 6
+        var result = Metrespersecond2_t(CInt(2))
+        result &= 6
+        XCTAssertEqual(result, Metrespersecond2_t(original))
+    }
+
+    func testMetrespersecond2_tOrEquals() {
+        var original = CInt(2)
+        original |= 4
+        var result = Metrespersecond2_t(CInt(2))
+        result |= 4
+        XCTAssertEqual(result, Metrespersecond2_t(original))
+    }
+
+    func testMetrespersecond2_tHatEquals() {
+        var original = CInt(2)
+        original ^= 4
+        var result = Metrespersecond2_t(CInt(2))
+        result ^= 4
+        XCTAssertEqual(result, Metrespersecond2_t(original))
+    }
+
+    func testMetrespersecond2_tMod() {
+        let original = CInt(4)
+        let expected = Metrespersecond2_t(original % 2)
+        XCTAssertEqual(Metrespersecond2_t(original) % 2, expected)
+    }
+
+    func testMetrespersecond2_uEquality() {
+        XCTAssertEqual(Metrespersecond2_u(5), Metrespersecond2_u(5))
+    }
+
+    func testMetrespersecond2_uCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Metrespersecond2_u(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Metrespersecond2_u.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testMetrespersecond2_uSelfInit() {
+        let expected = Metrespersecond2_u(15)
+        XCTAssertEqual(expected, Metrespersecond2_u(expected))
+    }
+
+    func testMetrespersecond2_uSelfExactlyInit() {
+        let expected = Metrespersecond2_u(15)
+        XCTAssertEqual(expected, Metrespersecond2_u(exactly: expected))
+    }
+
+    func testMetrespersecond2_uComparable() {
+        let lhs = Metrespersecond2_u(1)
+        let rhs = Metrespersecond2_u(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testMetrespersecond2_uMagnitude() {
+        let expected = CUnsignedInt(5).magnitude
+        XCTAssertEqual(Metrespersecond2_u(5).magnitude, expected)
+    }
+
+    func testMetrespersecond2_uTruncatingInit() {
+        let expected = Metrespersecond2_u(CUnsignedInt(truncatingIfNeeded: UInt64.max))
+        XCTAssertEqual(Metrespersecond2_u(truncatingIfNeeded: expected), expected)
+    }
+
+    func testMetrespersecond2_uClampingInit() {
+        let expected = Metrespersecond2_u(CUnsignedInt(clamping: UInt64.max))
+        XCTAssertEqual(Metrespersecond2_u(clamping: expected), expected)
+    }
+
+    func testMetrespersecond2_uBitWidth() {
+        let expected = CUnsignedInt(5).bitWidth
+        XCTAssertEqual(Metrespersecond2_u(5).bitWidth, expected)
+    }
+
+    func testMetrespersecond2_uLeadingZeroBitCount() {
+        let expected = CUnsignedInt(5).leadingZeroBitCount
+        XCTAssertEqual(Metrespersecond2_u(5).leadingZeroBitCount, expected)
+    }
+
+    func testMetrespersecond2_uNonzeroBitCount() {
+        let expected = CUnsignedInt(5).nonzeroBitCount
+        XCTAssertEqual(Metrespersecond2_u(5).nonzeroBitCount, expected)
+    }
+
+    func testMetrespersecond2_uIntegerLiteralInit() {
+        let expected = CUnsignedInt(integerLiteral: CUnsignedInt.max)
+        XCTAssertEqual(Metrespersecond2_u(expected), Metrespersecond2_u(integerLiteral: CUnsignedInt.max))
+    }
+
+    func testMetrespersecond2_uTruncatingBits() {
+        let expected = Metrespersecond2_u(CUnsignedInt(_truncatingBits: UInt.max))
+        XCTAssertEqual(expected, Metrespersecond2_u(_truncatingBits: UInt.max))
+    }
+
+    func testMetrespersecond2_uAddition() {
+        let expected = Metrespersecond2_u(CUnsignedInt(5) + CUnsignedInt(3))
+        XCTAssertEqual(Metrespersecond2_u(5) + Metrespersecond2_u(3), expected)
+    }
+
+    func testMetrespersecond2_uSubtraction() {
+        let expected = Metrespersecond2_u(CUnsignedInt(5) - CUnsignedInt(3))
+        XCTAssertEqual(Metrespersecond2_u(5) - Metrespersecond2_u(3), expected)
+    }
+
+    func testMetrespersecond2_uMultiplication() {
+        let expected = Metrespersecond2_u(CUnsignedInt(5) * CUnsignedInt(3))
+        XCTAssertEqual(Metrespersecond2_u(5) * Metrespersecond2_u(3), expected)
+    }
+
+    func testMetrespersecond2_uDivision() {
+        let expected = Metrespersecond2_u(CUnsignedInt(6) / CUnsignedInt(3))
+        XCTAssertEqual(Metrespersecond2_u(6) / Metrespersecond2_u(3), expected)
+    }
+
+    func testMetrespersecond2_uAddOverflow() {
+        let rawOriginal = CUnsignedInt.max
+        let rawResult = rawOriginal.addingReportingOverflow(CUnsignedInt(1))
+        let original = Metrespersecond2_u(rawOriginal)
+        let result = original.addingReportingOverflow(Metrespersecond2_u(1))
+        XCTAssertEqual(result.0, Metrespersecond2_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testMetrespersecond2_uMultiplyOverflow() {
+        let rawOriginal = CUnsignedInt.max
+        let rawResult = rawOriginal.multipliedReportingOverflow(by: CUnsignedInt(2))
+        let original = Metrespersecond2_u(rawOriginal)
+        let result = original.multipliedReportingOverflow(by: Metrespersecond2_u(2))
+        XCTAssertEqual(result.0, Metrespersecond2_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testMetrespersecond2_uSubtractOverflow() {
+        let rawOriginal = CUnsignedInt.min
+        let rawResult = rawOriginal.subtractingReportingOverflow(CUnsignedInt(1))
+        let original = Metrespersecond2_u(rawOriginal)
+        let result = original.subtractingReportingOverflow(Metrespersecond2_u(1))
+        XCTAssertEqual(result.0, Metrespersecond2_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testMetrespersecond2_uDivideOverflow() {
+        let rawOriginal = CUnsignedInt(1)
+        let rawResult = rawOriginal.dividedReportingOverflow(by: CUnsignedInt.max)
+        let original = Metrespersecond2_u(rawOriginal)
+        let result = original.dividedReportingOverflow(by: Metrespersecond2_u(CUnsignedInt.max))
+        XCTAssertEqual(result.0, Metrespersecond2_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testMetrespersecond2_uRemainderOverflow() {
+        let rawOriginal = CUnsignedInt(1)
+        let rawResult = rawOriginal.remainderReportingOverflow(dividingBy: CUnsignedInt.max)
+        let original = Metrespersecond2_u(rawOriginal)
+        let result = original.remainderReportingOverflow(dividingBy: Metrespersecond2_u(CUnsignedInt.max))
+        XCTAssertEqual(result.0, Metrespersecond2_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testMetrespersecond2_uTrailingZeroBitCount() {
+        let original = CUnsignedInt(1)
+        XCTAssertEqual(Metrespersecond2_u(original).trailingZeroBitCount, original.trailingZeroBitCount)
+    }
+
+    func testMetrespersecond2_uTimesEquals() {
+        var original = CUnsignedInt(2)
+        original *= 4
+        var result = Metrespersecond2_u(CUnsignedInt(2))
+        result *= 4
+        XCTAssertEqual(result, Metrespersecond2_u(original))
+    }
+
+    func testMetrespersecond2_uDivideEquals() {
+        var original = CUnsignedInt(4)
+        original /= 2
+        var result = Metrespersecond2_u(CUnsignedInt(4))
+        result /= 2
+        XCTAssertEqual(result, Metrespersecond2_u(original))
+    }
+
+    func testMetrespersecond2_uModEquals() {
+        var original = CUnsignedInt(4)
+        original %= 2
+        var result = Metrespersecond2_u(CUnsignedInt(4))
+        result %= 2
+        XCTAssertEqual(result, Metrespersecond2_u(original))
+    }
+
+    func testMetrespersecond2_uAndEquals() {
+        var original = CUnsignedInt(2)
+        original &= 6
+        var result = Metrespersecond2_u(CUnsignedInt(2))
+        result &= 6
+        XCTAssertEqual(result, Metrespersecond2_u(original))
+    }
+
+    func testMetrespersecond2_uOrEquals() {
+        var original = CUnsignedInt(2)
+        original |= 4
+        var result = Metrespersecond2_u(CUnsignedInt(2))
+        result |= 4
+        XCTAssertEqual(result, Metrespersecond2_u(original))
+    }
+
+    func testMetrespersecond2_uHatEquals() {
+        var original = CUnsignedInt(2)
+        original ^= 4
+        var result = Metrespersecond2_u(CUnsignedInt(2))
+        result ^= 4
+        XCTAssertEqual(result, Metrespersecond2_u(original))
+    }
+
+    func testMetrespersecond2_uMod() {
+        let original = CUnsignedInt(4)
+        let expected = Metrespersecond2_u(original % 2)
+        XCTAssertEqual(Metrespersecond2_u(original) % 2, expected)
+    }
+
+    func testMetrespersecond2_fEquality() {
+        XCTAssertEqual(Metrespersecond2_f(5), Metrespersecond2_f(5))
+    }
+
+    func testMetrespersecond2_fCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Metrespersecond2_f(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Metrespersecond2_f.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testMetrespersecond2_fSelfInit() {
+        let expected = Metrespersecond2_f(15)
+        XCTAssertEqual(expected, Metrespersecond2_f(expected))
+    }
+
+    func testMetrespersecond2_fSelfExactlyInit() {
+        let expected = Metrespersecond2_f(15)
+        XCTAssertEqual(expected, Metrespersecond2_f(exactly: expected))
+    }
+
+    func testMetrespersecond2_fComparable() {
+        let lhs = Metrespersecond2_f(1)
+        let rhs = Metrespersecond2_f(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testMetrespersecond2_fRadix() {
+        XCTAssertEqual(Metrespersecond2_f.radix, Float.radix)
+    }
+
+    func testMetrespersecond2_fExponentBitCount() {
+        XCTAssertEqual(Metrespersecond2_f.exponentBitCount, Float.exponentBitCount)
+    }
+
+    func testMetrespersecond2_fSignificandBitCount() {
+        XCTAssertEqual(Metrespersecond2_f.significandBitCount, Float.significandBitCount)
+    }
+
+    func testMetrespersecond2_fMagnitude() {
+        let expected = Metrespersecond2_f(Float(5).magnitude)
+        XCTAssertEqual(Metrespersecond2_f(5).magnitude, expected)
+    }
+
+    func testMetrespersecond2_fExactlyInit() {
+        let expected = Metrespersecond2_f(Float(exactly: Int(5)) ?? Float.infinity)
+        XCTAssertEqual(Metrespersecond2_f(exactly: Int(5)), expected)
+    }
+
+    func testMetrespersecond2_fIsTotallyOrdered() {
+        let param = Float(100)
+        let other = Float(5)
+        XCTAssertEqual(
+            Metrespersecond2_f(param).isTotallyOrdered(belowOrEqualTo: Metrespersecond2_f(other)),
+            param.isTotallyOrdered(belowOrEqualTo: other)
+        )
+    }
+
+    func testMetrespersecond2_fBinade() {
+        let raw = Float(5)
+        let expected = Metrespersecond2_f(raw.binade)
+        XCTAssertEqual(Metrespersecond2_f(raw).binade, expected)
+    }
+
+    func testMetrespersecond2_fSignificandWidth() {
+        let raw = Float(5)
+        XCTAssertEqual(Metrespersecond2_f(raw).significandWidth, raw.significandWidth)
+    }
+
+    func testMetrespersecond2_fDebugDescription() {
+        let raw = Float(5)
+        XCTAssertEqual(Metrespersecond2_f(raw).debugDescription, raw.debugDescription)
+    }
+
+    func testMetrespersecond2_fDescriptionInit() {
+        let raw = Float("5.0") ?? Float.nan
+        XCTAssertEqual(Metrespersecond2_f("5.0"), Metrespersecond2_f(raw))
+    }
+
+    func testMetrespersecond2_fStaticVars() {
+        XCTAssertEqual(Metrespersecond2_f.nan.isNaN, Metrespersecond2_f(Float.nan).isNaN)
+        XCTAssertEqual(
+            Metrespersecond2_f.signalingNaN.isSignalingNaN,
+            Metrespersecond2_f(Float.signalingNaN).isSignalingNaN
+        )
+        XCTAssertEqual(Metrespersecond2_f.infinity, Metrespersecond2_f(Float.infinity))
+        XCTAssertEqual(Metrespersecond2_f.greatestFiniteMagnitude, Metrespersecond2_f(Float.greatestFiniteMagnitude))
+        XCTAssertEqual(Metrespersecond2_f.pi, Metrespersecond2_f(Float.pi))
+        XCTAssertEqual(Metrespersecond2_f.leastNormalMagnitude, Metrespersecond2_f(Float.leastNormalMagnitude))
+        XCTAssertEqual(Metrespersecond2_f.leastNonzeroMagnitude, Metrespersecond2_f(Float.leastNonzeroMagnitude))
+    }
+
+    func testMetrespersecond2_fUlp() {
+        let raw = Float(5)
+        XCTAssertEqual(Metrespersecond2_f(raw).ulp, Metrespersecond2_f(raw.ulp))
+    }
+
+    func testMetrespersecond2_fSign() {
+        let raw = Float(5)
+        XCTAssertEqual(Metrespersecond2_f(raw).sign, raw.sign)
+    }
+
+    func testMetrespersecond2_fSignificand() {
+        let raw = Float(5)
+        XCTAssertEqual(Metrespersecond2_f(raw).significand, Metrespersecond2_f(raw.significand))
+    }
+
+    func testMetrespersecond2_fNextUp() {
+        let raw = Float(5)
+        XCTAssertEqual(Metrespersecond2_f(raw).nextUp, Metrespersecond2_f(raw.nextUp))
+    }
+
+    func testMetrespersecond2_fVars() {
+        XCTAssertEqual(Metrespersecond2_f(5).isNormal, Float(5).isNormal)
+        XCTAssertEqual(Metrespersecond2_f(5).isFinite, Float(5).isFinite)
+        XCTAssertEqual(Metrespersecond2_f(5).isZero, Float(5).isZero)
+        XCTAssertEqual(Metrespersecond2_f(0).isZero, Float(0).isZero)
+        XCTAssertEqual(Metrespersecond2_f(5).isSubnormal, Float(5).isSubnormal)
+        XCTAssertEqual(Metrespersecond2_f(5).isInfinite, Float(5).isInfinite)
+        XCTAssertEqual(Metrespersecond2_f.infinity.isInfinite, Float.infinity.isInfinite)
+        XCTAssertEqual(Metrespersecond2_f(5).isNaN, Float(5).isNaN)
+        XCTAssertEqual(Metrespersecond2_f.nan.isNaN, Float.nan.isNaN)
+        XCTAssertEqual(Metrespersecond2_f(5).isSignalingNaN, Float(5).isSignalingNaN)
+        XCTAssertEqual(Metrespersecond2_f.nan.isSignalingNaN, Float.nan.isSignalingNaN)
+        XCTAssertEqual(Metrespersecond2_f(5).isCanonical, Float(5).isCanonical)
+        XCTAssertEqual(Metrespersecond2_f(5).description, Float(5).description)
+        XCTAssertEqual(Metrespersecond2_f(5).exponentBitPattern, Float(5).exponentBitPattern)
+        XCTAssertEqual(Metrespersecond2_f(5).significandBitPattern, Float(5).significandBitPattern)
+        XCTAssertEqual(Metrespersecond2_f(5).exponent, Float(5).exponent)
+    }
+
+    func testMetrespersecond2_fFormRemainder() {
+        var original = Float(4)
+        let denominator = Float(3)
+        original.formRemainder(dividingBy: denominator)
+        var result = Metrespersecond2_f(Float(4))
+        result.formRemainder(dividingBy: Metrespersecond2_f(denominator))
+        XCTAssertEqual(result, Metrespersecond2_f(original))
+    }
+
+    func testMetrespersecond2_fFormTruncatingRemainder() {
+        var original = Float(4)
+        let denominator = Float(3)
+        original.formTruncatingRemainder(dividingBy: denominator)
+        var result = Metrespersecond2_f(Float(4))
+        result.formTruncatingRemainder(dividingBy: Metrespersecond2_f(denominator))
+        XCTAssertEqual(result, Metrespersecond2_f(original))
+    }
+
+    func testMetrespersecond2_fFormSquareRoot() {
+        var original = Float(4)
+        original.formSquareRoot()
+        var result = Metrespersecond2_f(Float(4))
+        result.formSquareRoot()
+        XCTAssertEqual(result, Metrespersecond2_f(original))
+    }
+
+    func testMetrespersecond2_fAddProduct() {
+        var original = Float(4)
+        let lhs = Float(3)
+        let rhs = Float(5)
+        original.addProduct(lhs, rhs)
+        var result = Metrespersecond2_f(Float(4))
+        result.addProduct(Metrespersecond2_f(lhs), Metrespersecond2_f(rhs))
+        XCTAssertEqual(result, Metrespersecond2_f(original))
+    }
+
+    func testMetrespersecond2_fIsEqual() {
+        let this = Metrespersecond2_f(5)
+        let other = Metrespersecond2_f(6)
+        XCTAssertTrue(this.isEqual(to: this))
+        XCTAssertFalse(this.isEqual(to: other))
+    }
+
+    func testMetrespersecond2_fIsLess() {
+        let this = Metrespersecond2_f(5)
+        let other = Metrespersecond2_f(6)
+        XCTAssertFalse(this.isLess(than: this))
+        XCTAssertTrue(this.isLess(than: other))
+    }
+
+    func testMetrespersecond2_fIsLessThanOrEqual() {
+        let this = Metrespersecond2_f(5)
+        let other = Metrespersecond2_f(6)
+        let other2 = Metrespersecond2_f(4)
+        XCTAssertTrue(this.isLessThanOrEqualTo(this))
+        XCTAssertTrue(this.isLessThanOrEqualTo(other))
+        XCTAssertFalse(this.isLessThanOrEqualTo(other2))
+    }
+
+    func testMetrespersecond2_fOperations() {
+        let lhs = Metrespersecond2_f(6)
+        let rhs = Metrespersecond2_f(3)
+        XCTAssertEqual(lhs + rhs, Metrespersecond2_f(9))
+        XCTAssertEqual(lhs - rhs, Metrespersecond2_f(3))
+        XCTAssertEqual(lhs * rhs, Metrespersecond2_f(18))
+        XCTAssertEqual(lhs / rhs, Metrespersecond2_f(2))
+    }
+
+    func testMetrespersecond2_fTimesEqual() {
+        var this = Metrespersecond2_f(3)
+        this *= Metrespersecond2_f(4)
+        XCTAssertEqual(this, Metrespersecond2_f(12))
+    }
+
+    func testMetrespersecond2_fDivideEqual() {
+        var this = Metrespersecond2_f(6)
+        this /= Metrespersecond2_f(3)
+        XCTAssertEqual(this, Metrespersecond2_f(2))
+    }
+
+    func testMetrespersecond2_fRound() {
+        var expected = Float(5.6)
+        expected.round(.up)
+        var result = Metrespersecond2_f(5.6)
+        result.round(.up)
+        XCTAssertEqual(result, Metrespersecond2_f(expected))
+    }
+
+    func testMetrespersecond2_fDistanceTo() {
+        let original = Float(5.0)
+        let other = Float(23)
+        let expected = original.distance(to: other)
+        XCTAssertEqual(Metrespersecond2_f(original).distance(to: Metrespersecond2_f(other)), expected)
+    }
+
+    func testMetrespersecond2_fAdvancedBy() {
+        let original = Float(5)
+        let expected = original.advanced(by: 3)
+        XCTAssertEqual(Metrespersecond2_f(original).advanced(by: 3), Metrespersecond2_f(expected))
+    }
+
+    func testMetrespersecond2_dEquality() {
+        XCTAssertEqual(Metrespersecond2_d(5), Metrespersecond2_d(5))
+    }
+
+    func testMetrespersecond2_dCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Metrespersecond2_d(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Metrespersecond2_d.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testMetrespersecond2_dSelfInit() {
+        let expected = Metrespersecond2_d(15)
+        XCTAssertEqual(expected, Metrespersecond2_d(expected))
+    }
+
+    func testMetrespersecond2_dSelfExactlyInit() {
+        let expected = Metrespersecond2_d(15)
+        XCTAssertEqual(expected, Metrespersecond2_d(exactly: expected))
+    }
+
+    func testMetrespersecond2_dComparable() {
+        let lhs = Metrespersecond2_d(1)
+        let rhs = Metrespersecond2_d(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testMetrespersecond2_dRadix() {
+        XCTAssertEqual(Metrespersecond2_d.radix, Double.radix)
+    }
+
+    func testMetrespersecond2_dExponentBitCount() {
+        XCTAssertEqual(Metrespersecond2_d.exponentBitCount, Double.exponentBitCount)
+    }
+
+    func testMetrespersecond2_dSignificandBitCount() {
+        XCTAssertEqual(Metrespersecond2_d.significandBitCount, Double.significandBitCount)
+    }
+
+    func testMetrespersecond2_dMagnitude() {
+        let expected = Metrespersecond2_d(Double(5).magnitude)
+        XCTAssertEqual(Metrespersecond2_d(5).magnitude, expected)
+    }
+
+    func testMetrespersecond2_dExactlyInit() {
+        let expected = Metrespersecond2_d(Double(exactly: Int(5)) ?? Double.infinity)
+        XCTAssertEqual(Metrespersecond2_d(exactly: Int(5)), expected)
+    }
+
+    func testMetrespersecond2_dIsTotallyOrdered() {
+        let param = Double(100)
+        let other = Double(5)
+        XCTAssertEqual(
+            Metrespersecond2_d(param).isTotallyOrdered(belowOrEqualTo: Metrespersecond2_d(other)),
+            param.isTotallyOrdered(belowOrEqualTo: other)
+        )
+    }
+
+    func testMetrespersecond2_dBinade() {
+        let raw = Double(5)
+        let expected = Metrespersecond2_d(raw.binade)
+        XCTAssertEqual(Metrespersecond2_d(raw).binade, expected)
+    }
+
+    func testMetrespersecond2_dSignificandWidth() {
+        let raw = Double(5)
+        XCTAssertEqual(Metrespersecond2_d(raw).significandWidth, raw.significandWidth)
+    }
+
+    func testMetrespersecond2_dDebugDescription() {
+        let raw = Double(5)
+        XCTAssertEqual(Metrespersecond2_d(raw).debugDescription, raw.debugDescription)
+    }
+
+    func testMetrespersecond2_dDescriptionInit() {
+        let raw = Double("5.0") ?? Double.nan
+        XCTAssertEqual(Metrespersecond2_d("5.0"), Metrespersecond2_d(raw))
+    }
+
+    func testMetrespersecond2_dStaticVars() {
+        XCTAssertEqual(Metrespersecond2_d.nan.isNaN, Metrespersecond2_d(Double.nan).isNaN)
+        XCTAssertEqual(
+            Metrespersecond2_d.signalingNaN.isSignalingNaN,
+            Metrespersecond2_d(Double.signalingNaN).isSignalingNaN
+        )
+        XCTAssertEqual(Metrespersecond2_d.infinity, Metrespersecond2_d(Double.infinity))
+        XCTAssertEqual(Metrespersecond2_d.greatestFiniteMagnitude, Metrespersecond2_d(Double.greatestFiniteMagnitude))
+        XCTAssertEqual(Metrespersecond2_d.pi, Metrespersecond2_d(Double.pi))
+        XCTAssertEqual(Metrespersecond2_d.leastNormalMagnitude, Metrespersecond2_d(Double.leastNormalMagnitude))
+        XCTAssertEqual(Metrespersecond2_d.leastNonzeroMagnitude, Metrespersecond2_d(Double.leastNonzeroMagnitude))
+    }
+
+    func testMetrespersecond2_dUlp() {
+        let raw = Double(5)
+        XCTAssertEqual(Metrespersecond2_d(raw).ulp, Metrespersecond2_d(raw.ulp))
+    }
+
+    func testMetrespersecond2_dSign() {
+        let raw = Double(5)
+        XCTAssertEqual(Metrespersecond2_d(raw).sign, raw.sign)
+    }
+
+    func testMetrespersecond2_dSignificand() {
+        let raw = Double(5)
+        XCTAssertEqual(Metrespersecond2_d(raw).significand, Metrespersecond2_d(raw.significand))
+    }
+
+    func testMetrespersecond2_dNextUp() {
+        let raw = Double(5)
+        XCTAssertEqual(Metrespersecond2_d(raw).nextUp, Metrespersecond2_d(raw.nextUp))
+    }
+
+    func testMetrespersecond2_dVars() {
+        XCTAssertEqual(Metrespersecond2_d(5).isNormal, Double(5).isNormal)
+        XCTAssertEqual(Metrespersecond2_d(5).isFinite, Double(5).isFinite)
+        XCTAssertEqual(Metrespersecond2_d(5).isZero, Double(5).isZero)
+        XCTAssertEqual(Metrespersecond2_d(0).isZero, Double(0).isZero)
+        XCTAssertEqual(Metrespersecond2_d(5).isSubnormal, Double(5).isSubnormal)
+        XCTAssertEqual(Metrespersecond2_d(5).isInfinite, Double(5).isInfinite)
+        XCTAssertEqual(Metrespersecond2_d.infinity.isInfinite, Double.infinity.isInfinite)
+        XCTAssertEqual(Metrespersecond2_d(5).isNaN, Double(5).isNaN)
+        XCTAssertEqual(Metrespersecond2_d.nan.isNaN, Double.nan.isNaN)
+        XCTAssertEqual(Metrespersecond2_d(5).isSignalingNaN, Double(5).isSignalingNaN)
+        XCTAssertEqual(Metrespersecond2_d.nan.isSignalingNaN, Double.nan.isSignalingNaN)
+        XCTAssertEqual(Metrespersecond2_d(5).isCanonical, Double(5).isCanonical)
+        XCTAssertEqual(Metrespersecond2_d(5).description, Double(5).description)
+        XCTAssertEqual(Metrespersecond2_d(5).exponentBitPattern, Double(5).exponentBitPattern)
+        XCTAssertEqual(Metrespersecond2_d(5).significandBitPattern, Double(5).significandBitPattern)
+        XCTAssertEqual(Metrespersecond2_d(5).exponent, Double(5).exponent)
+    }
+
+    func testMetrespersecond2_dFormRemainder() {
+        var original = Double(4)
+        let denominator = Double(3)
+        original.formRemainder(dividingBy: denominator)
+        var result = Metrespersecond2_d(Double(4))
+        result.formRemainder(dividingBy: Metrespersecond2_d(denominator))
+        XCTAssertEqual(result, Metrespersecond2_d(original))
+    }
+
+    func testMetrespersecond2_dFormTruncatingRemainder() {
+        var original = Double(4)
+        let denominator = Double(3)
+        original.formTruncatingRemainder(dividingBy: denominator)
+        var result = Metrespersecond2_d(Double(4))
+        result.formTruncatingRemainder(dividingBy: Metrespersecond2_d(denominator))
+        XCTAssertEqual(result, Metrespersecond2_d(original))
+    }
+
+    func testMetrespersecond2_dFormSquareRoot() {
+        var original = Double(4)
+        original.formSquareRoot()
+        var result = Metrespersecond2_d(Double(4))
+        result.formSquareRoot()
+        XCTAssertEqual(result, Metrespersecond2_d(original))
+    }
+
+    func testMetrespersecond2_dAddProduct() {
+        var original = Double(4)
+        let lhs = Double(3)
+        let rhs = Double(5)
+        original.addProduct(lhs, rhs)
+        var result = Metrespersecond2_d(Double(4))
+        result.addProduct(Metrespersecond2_d(lhs), Metrespersecond2_d(rhs))
+        XCTAssertEqual(result, Metrespersecond2_d(original))
+    }
+
+    func testMetrespersecond2_dIsEqual() {
+        let this = Metrespersecond2_d(5)
+        let other = Metrespersecond2_d(6)
+        XCTAssertTrue(this.isEqual(to: this))
+        XCTAssertFalse(this.isEqual(to: other))
+    }
+
+    func testMetrespersecond2_dIsLess() {
+        let this = Metrespersecond2_d(5)
+        let other = Metrespersecond2_d(6)
+        XCTAssertFalse(this.isLess(than: this))
+        XCTAssertTrue(this.isLess(than: other))
+    }
+
+    func testMetrespersecond2_dIsLessThanOrEqual() {
+        let this = Metrespersecond2_d(5)
+        let other = Metrespersecond2_d(6)
+        let other2 = Metrespersecond2_d(4)
+        XCTAssertTrue(this.isLessThanOrEqualTo(this))
+        XCTAssertTrue(this.isLessThanOrEqualTo(other))
+        XCTAssertFalse(this.isLessThanOrEqualTo(other2))
+    }
+
+    func testMetrespersecond2_dOperations() {
+        let lhs = Metrespersecond2_d(6)
+        let rhs = Metrespersecond2_d(3)
+        XCTAssertEqual(lhs + rhs, Metrespersecond2_d(9))
+        XCTAssertEqual(lhs - rhs, Metrespersecond2_d(3))
+        XCTAssertEqual(lhs * rhs, Metrespersecond2_d(18))
+        XCTAssertEqual(lhs / rhs, Metrespersecond2_d(2))
+    }
+
+    func testMetrespersecond2_dTimesEqual() {
+        var this = Metrespersecond2_d(3)
+        this *= Metrespersecond2_d(4)
+        XCTAssertEqual(this, Metrespersecond2_d(12))
+    }
+
+    func testMetrespersecond2_dDivideEqual() {
+        var this = Metrespersecond2_d(6)
+        this /= Metrespersecond2_d(3)
+        XCTAssertEqual(this, Metrespersecond2_d(2))
+    }
+
+    func testMetrespersecond2_dRound() {
+        var expected = Double(5.6)
+        expected.round(.up)
+        var result = Metrespersecond2_d(5.6)
+        result.round(.up)
+        XCTAssertEqual(result, Metrespersecond2_d(expected))
+    }
+
+    func testMetrespersecond2_dDistanceTo() {
+        let original = Double(5.0)
+        let other = Double(23)
+        let expected = original.distance(to: other)
+        XCTAssertEqual(Metrespersecond2_d(original).distance(to: Metrespersecond2_d(other)), expected)
+    }
+
+    func testMetrespersecond2_dAdvancedBy() {
+        let original = Double(5)
+        let expected = original.advanced(by: 3)
+        XCTAssertEqual(Metrespersecond2_d(original).advanced(by: 3), Metrespersecond2_d(expected))
+    }
+
+}
+
+final class GTypeTests: XCTestCase {
+
+    func testG_tEquality() {
+        XCTAssertEqual(G_t(5), G_t(5))
+    }
+
+    func testG_tCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = G_t(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(G_t.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testG_tSelfInit() {
+        let expected = G_t(15)
+        XCTAssertEqual(expected, G_t(expected))
+    }
+
+    func testG_tSelfExactlyInit() {
+        let expected = G_t(15)
+        XCTAssertEqual(expected, G_t(exactly: expected))
+    }
+
+    func testG_tComparable() {
+        let lhs = G_t(1)
+        let rhs = G_t(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testG_tMagnitude() {
+        let expected = CInt(5).magnitude
+        XCTAssertEqual(G_t(5).magnitude, expected)
+    }
+
+    func testG_tTruncatingInit() {
+        let expected = G_t(CInt(truncatingIfNeeded: UInt64.max))
+        XCTAssertEqual(G_t(truncatingIfNeeded: expected), expected)
+    }
+
+    func testG_tClampingInit() {
+        let expected = G_t(CInt(clamping: UInt64.max))
+        XCTAssertEqual(G_t(clamping: expected), expected)
+    }
+
+    func testG_tBitWidth() {
+        let expected = CInt(5).bitWidth
+        XCTAssertEqual(G_t(5).bitWidth, expected)
+    }
+
+    func testG_tLeadingZeroBitCount() {
+        let expected = CInt(5).leadingZeroBitCount
+        XCTAssertEqual(G_t(5).leadingZeroBitCount, expected)
+    }
+
+    func testG_tNonzeroBitCount() {
+        let expected = CInt(5).nonzeroBitCount
+        XCTAssertEqual(G_t(5).nonzeroBitCount, expected)
+    }
+
+    func testG_tIntegerLiteralInit() {
+        let expected = CInt(integerLiteral: CInt.max)
+        XCTAssertEqual(G_t(expected), G_t(integerLiteral: CInt.max))
+    }
+
+    func testG_tTruncatingBits() {
+        let expected = G_t(CInt(_truncatingBits: UInt.max))
+        XCTAssertEqual(expected, G_t(_truncatingBits: UInt.max))
+    }
+
+    func testG_tAddition() {
+        let expected = G_t(CInt(5) + CInt(3))
+        XCTAssertEqual(G_t(5) + G_t(3), expected)
+    }
+
+    func testG_tSubtraction() {
+        let expected = G_t(CInt(5) - CInt(3))
+        XCTAssertEqual(G_t(5) - G_t(3), expected)
+    }
+
+    func testG_tMultiplication() {
+        let expected = G_t(CInt(5) * CInt(3))
+        XCTAssertEqual(G_t(5) * G_t(3), expected)
+    }
+
+    func testG_tDivision() {
+        let expected = G_t(CInt(6) / CInt(3))
+        XCTAssertEqual(G_t(6) / G_t(3), expected)
+    }
+
+    func testG_tAddOverflow() {
+        let rawOriginal = CInt.max
+        let rawResult = rawOriginal.addingReportingOverflow(CInt(1))
+        let original = G_t(rawOriginal)
+        let result = original.addingReportingOverflow(G_t(1))
+        XCTAssertEqual(result.0, G_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testG_tMultiplyOverflow() {
+        let rawOriginal = CInt.max
+        let rawResult = rawOriginal.multipliedReportingOverflow(by: CInt(2))
+        let original = G_t(rawOriginal)
+        let result = original.multipliedReportingOverflow(by: G_t(2))
+        XCTAssertEqual(result.0, G_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testG_tSubtractOverflow() {
+        let rawOriginal = CInt.min
+        let rawResult = rawOriginal.subtractingReportingOverflow(CInt(1))
+        let original = G_t(rawOriginal)
+        let result = original.subtractingReportingOverflow(G_t(1))
+        XCTAssertEqual(result.0, G_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testG_tDivideOverflow() {
+        let rawOriginal = CInt(1)
+        let rawResult = rawOriginal.dividedReportingOverflow(by: CInt.max)
+        let original = G_t(rawOriginal)
+        let result = original.dividedReportingOverflow(by: G_t(CInt.max))
+        XCTAssertEqual(result.0, G_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testG_tRemainderOverflow() {
+        let rawOriginal = CInt(1)
+        let rawResult = rawOriginal.remainderReportingOverflow(dividingBy: CInt.max)
+        let original = G_t(rawOriginal)
+        let result = original.remainderReportingOverflow(dividingBy: G_t(CInt.max))
+        XCTAssertEqual(result.0, G_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testG_tTrailingZeroBitCount() {
+        let original = CInt(1)
+        XCTAssertEqual(G_t(original).trailingZeroBitCount, original.trailingZeroBitCount)
+    }
+
+    func testG_tTimesEquals() {
+        var original = CInt(2)
+        original *= 4
+        var result = G_t(CInt(2))
+        result *= 4
+        XCTAssertEqual(result, G_t(original))
+    }
+
+    func testG_tDivideEquals() {
+        var original = CInt(4)
+        original /= 2
+        var result = G_t(CInt(4))
+        result /= 2
+        XCTAssertEqual(result, G_t(original))
+    }
+
+    func testG_tModEquals() {
+        var original = CInt(4)
+        original %= 2
+        var result = G_t(CInt(4))
+        result %= 2
+        XCTAssertEqual(result, G_t(original))
+    }
+
+    func testG_tAndEquals() {
+        var original = CInt(2)
+        original &= 6
+        var result = G_t(CInt(2))
+        result &= 6
+        XCTAssertEqual(result, G_t(original))
+    }
+
+    func testG_tOrEquals() {
+        var original = CInt(2)
+        original |= 4
+        var result = G_t(CInt(2))
+        result |= 4
+        XCTAssertEqual(result, G_t(original))
+    }
+
+    func testG_tHatEquals() {
+        var original = CInt(2)
+        original ^= 4
+        var result = G_t(CInt(2))
+        result ^= 4
+        XCTAssertEqual(result, G_t(original))
+    }
+
+    func testG_tMod() {
+        let original = CInt(4)
+        let expected = G_t(original % 2)
+        XCTAssertEqual(G_t(original) % 2, expected)
+    }
+
+    func testG_uEquality() {
+        XCTAssertEqual(G_u(5), G_u(5))
+    }
+
+    func testG_uCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = G_u(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(G_u.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testG_uSelfInit() {
+        let expected = G_u(15)
+        XCTAssertEqual(expected, G_u(expected))
+    }
+
+    func testG_uSelfExactlyInit() {
+        let expected = G_u(15)
+        XCTAssertEqual(expected, G_u(exactly: expected))
+    }
+
+    func testG_uComparable() {
+        let lhs = G_u(1)
+        let rhs = G_u(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testG_uMagnitude() {
+        let expected = CUnsignedInt(5).magnitude
+        XCTAssertEqual(G_u(5).magnitude, expected)
+    }
+
+    func testG_uTruncatingInit() {
+        let expected = G_u(CUnsignedInt(truncatingIfNeeded: UInt64.max))
+        XCTAssertEqual(G_u(truncatingIfNeeded: expected), expected)
+    }
+
+    func testG_uClampingInit() {
+        let expected = G_u(CUnsignedInt(clamping: UInt64.max))
+        XCTAssertEqual(G_u(clamping: expected), expected)
+    }
+
+    func testG_uBitWidth() {
+        let expected = CUnsignedInt(5).bitWidth
+        XCTAssertEqual(G_u(5).bitWidth, expected)
+    }
+
+    func testG_uLeadingZeroBitCount() {
+        let expected = CUnsignedInt(5).leadingZeroBitCount
+        XCTAssertEqual(G_u(5).leadingZeroBitCount, expected)
+    }
+
+    func testG_uNonzeroBitCount() {
+        let expected = CUnsignedInt(5).nonzeroBitCount
+        XCTAssertEqual(G_u(5).nonzeroBitCount, expected)
+    }
+
+    func testG_uIntegerLiteralInit() {
+        let expected = CUnsignedInt(integerLiteral: CUnsignedInt.max)
+        XCTAssertEqual(G_u(expected), G_u(integerLiteral: CUnsignedInt.max))
+    }
+
+    func testG_uTruncatingBits() {
+        let expected = G_u(CUnsignedInt(_truncatingBits: UInt.max))
+        XCTAssertEqual(expected, G_u(_truncatingBits: UInt.max))
+    }
+
+    func testG_uAddition() {
+        let expected = G_u(CUnsignedInt(5) + CUnsignedInt(3))
+        XCTAssertEqual(G_u(5) + G_u(3), expected)
+    }
+
+    func testG_uSubtraction() {
+        let expected = G_u(CUnsignedInt(5) - CUnsignedInt(3))
+        XCTAssertEqual(G_u(5) - G_u(3), expected)
+    }
+
+    func testG_uMultiplication() {
+        let expected = G_u(CUnsignedInt(5) * CUnsignedInt(3))
+        XCTAssertEqual(G_u(5) * G_u(3), expected)
+    }
+
+    func testG_uDivision() {
+        let expected = G_u(CUnsignedInt(6) / CUnsignedInt(3))
+        XCTAssertEqual(G_u(6) / G_u(3), expected)
+    }
+
+    func testG_uAddOverflow() {
+        let rawOriginal = CUnsignedInt.max
+        let rawResult = rawOriginal.addingReportingOverflow(CUnsignedInt(1))
+        let original = G_u(rawOriginal)
+        let result = original.addingReportingOverflow(G_u(1))
+        XCTAssertEqual(result.0, G_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testG_uMultiplyOverflow() {
+        let rawOriginal = CUnsignedInt.max
+        let rawResult = rawOriginal.multipliedReportingOverflow(by: CUnsignedInt(2))
+        let original = G_u(rawOriginal)
+        let result = original.multipliedReportingOverflow(by: G_u(2))
+        XCTAssertEqual(result.0, G_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testG_uSubtractOverflow() {
+        let rawOriginal = CUnsignedInt.min
+        let rawResult = rawOriginal.subtractingReportingOverflow(CUnsignedInt(1))
+        let original = G_u(rawOriginal)
+        let result = original.subtractingReportingOverflow(G_u(1))
+        XCTAssertEqual(result.0, G_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testG_uDivideOverflow() {
+        let rawOriginal = CUnsignedInt(1)
+        let rawResult = rawOriginal.dividedReportingOverflow(by: CUnsignedInt.max)
+        let original = G_u(rawOriginal)
+        let result = original.dividedReportingOverflow(by: G_u(CUnsignedInt.max))
+        XCTAssertEqual(result.0, G_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testG_uRemainderOverflow() {
+        let rawOriginal = CUnsignedInt(1)
+        let rawResult = rawOriginal.remainderReportingOverflow(dividingBy: CUnsignedInt.max)
+        let original = G_u(rawOriginal)
+        let result = original.remainderReportingOverflow(dividingBy: G_u(CUnsignedInt.max))
+        XCTAssertEqual(result.0, G_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testG_uTrailingZeroBitCount() {
+        let original = CUnsignedInt(1)
+        XCTAssertEqual(G_u(original).trailingZeroBitCount, original.trailingZeroBitCount)
+    }
+
+    func testG_uTimesEquals() {
+        var original = CUnsignedInt(2)
+        original *= 4
+        var result = G_u(CUnsignedInt(2))
+        result *= 4
+        XCTAssertEqual(result, G_u(original))
+    }
+
+    func testG_uDivideEquals() {
+        var original = CUnsignedInt(4)
+        original /= 2
+        var result = G_u(CUnsignedInt(4))
+        result /= 2
+        XCTAssertEqual(result, G_u(original))
+    }
+
+    func testG_uModEquals() {
+        var original = CUnsignedInt(4)
+        original %= 2
+        var result = G_u(CUnsignedInt(4))
+        result %= 2
+        XCTAssertEqual(result, G_u(original))
+    }
+
+    func testG_uAndEquals() {
+        var original = CUnsignedInt(2)
+        original &= 6
+        var result = G_u(CUnsignedInt(2))
+        result &= 6
+        XCTAssertEqual(result, G_u(original))
+    }
+
+    func testG_uOrEquals() {
+        var original = CUnsignedInt(2)
+        original |= 4
+        var result = G_u(CUnsignedInt(2))
+        result |= 4
+        XCTAssertEqual(result, G_u(original))
+    }
+
+    func testG_uHatEquals() {
+        var original = CUnsignedInt(2)
+        original ^= 4
+        var result = G_u(CUnsignedInt(2))
+        result ^= 4
+        XCTAssertEqual(result, G_u(original))
+    }
+
+    func testG_uMod() {
+        let original = CUnsignedInt(4)
+        let expected = G_u(original % 2)
+        XCTAssertEqual(G_u(original) % 2, expected)
+    }
+
+    func testG_fEquality() {
+        XCTAssertEqual(G_f(5), G_f(5))
+    }
+
+    func testG_fCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = G_f(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(G_f.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testG_fSelfInit() {
+        let expected = G_f(15)
+        XCTAssertEqual(expected, G_f(expected))
+    }
+
+    func testG_fSelfExactlyInit() {
+        let expected = G_f(15)
+        XCTAssertEqual(expected, G_f(exactly: expected))
+    }
+
+    func testG_fComparable() {
+        let lhs = G_f(1)
+        let rhs = G_f(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testG_fRadix() {
+        XCTAssertEqual(G_f.radix, Float.radix)
+    }
+
+    func testG_fExponentBitCount() {
+        XCTAssertEqual(G_f.exponentBitCount, Float.exponentBitCount)
+    }
+
+    func testG_fSignificandBitCount() {
+        XCTAssertEqual(G_f.significandBitCount, Float.significandBitCount)
+    }
+
+    func testG_fMagnitude() {
+        let expected = G_f(Float(5).magnitude)
+        XCTAssertEqual(G_f(5).magnitude, expected)
+    }
+
+    func testG_fExactlyInit() {
+        let expected = G_f(Float(exactly: Int(5)) ?? Float.infinity)
+        XCTAssertEqual(G_f(exactly: Int(5)), expected)
+    }
+
+    func testG_fIsTotallyOrdered() {
+        let param = Float(100)
+        let other = Float(5)
+        XCTAssertEqual(
+            G_f(param).isTotallyOrdered(belowOrEqualTo: G_f(other)),
+            param.isTotallyOrdered(belowOrEqualTo: other)
+        )
+    }
+
+    func testG_fBinade() {
+        let raw = Float(5)
+        let expected = G_f(raw.binade)
+        XCTAssertEqual(G_f(raw).binade, expected)
+    }
+
+    func testG_fSignificandWidth() {
+        let raw = Float(5)
+        XCTAssertEqual(G_f(raw).significandWidth, raw.significandWidth)
+    }
+
+    func testG_fDebugDescription() {
+        let raw = Float(5)
+        XCTAssertEqual(G_f(raw).debugDescription, raw.debugDescription)
+    }
+
+    func testG_fDescriptionInit() {
+        let raw = Float("5.0") ?? Float.nan
+        XCTAssertEqual(G_f("5.0"), G_f(raw))
+    }
+
+    func testG_fStaticVars() {
+        XCTAssertEqual(G_f.nan.isNaN, G_f(Float.nan).isNaN)
+        XCTAssertEqual(
+            G_f.signalingNaN.isSignalingNaN,
+            G_f(Float.signalingNaN).isSignalingNaN
+        )
+        XCTAssertEqual(G_f.infinity, G_f(Float.infinity))
+        XCTAssertEqual(G_f.greatestFiniteMagnitude, G_f(Float.greatestFiniteMagnitude))
+        XCTAssertEqual(G_f.pi, G_f(Float.pi))
+        XCTAssertEqual(G_f.leastNormalMagnitude, G_f(Float.leastNormalMagnitude))
+        XCTAssertEqual(G_f.leastNonzeroMagnitude, G_f(Float.leastNonzeroMagnitude))
+    }
+
+    func testG_fUlp() {
+        let raw = Float(5)
+        XCTAssertEqual(G_f(raw).ulp, G_f(raw.ulp))
+    }
+
+    func testG_fSign() {
+        let raw = Float(5)
+        XCTAssertEqual(G_f(raw).sign, raw.sign)
+    }
+
+    func testG_fSignificand() {
+        let raw = Float(5)
+        XCTAssertEqual(G_f(raw).significand, G_f(raw.significand))
+    }
+
+    func testG_fNextUp() {
+        let raw = Float(5)
+        XCTAssertEqual(G_f(raw).nextUp, G_f(raw.nextUp))
+    }
+
+    func testG_fVars() {
+        XCTAssertEqual(G_f(5).isNormal, Float(5).isNormal)
+        XCTAssertEqual(G_f(5).isFinite, Float(5).isFinite)
+        XCTAssertEqual(G_f(5).isZero, Float(5).isZero)
+        XCTAssertEqual(G_f(0).isZero, Float(0).isZero)
+        XCTAssertEqual(G_f(5).isSubnormal, Float(5).isSubnormal)
+        XCTAssertEqual(G_f(5).isInfinite, Float(5).isInfinite)
+        XCTAssertEqual(G_f.infinity.isInfinite, Float.infinity.isInfinite)
+        XCTAssertEqual(G_f(5).isNaN, Float(5).isNaN)
+        XCTAssertEqual(G_f.nan.isNaN, Float.nan.isNaN)
+        XCTAssertEqual(G_f(5).isSignalingNaN, Float(5).isSignalingNaN)
+        XCTAssertEqual(G_f.nan.isSignalingNaN, Float.nan.isSignalingNaN)
+        XCTAssertEqual(G_f(5).isCanonical, Float(5).isCanonical)
+        XCTAssertEqual(G_f(5).description, Float(5).description)
+        XCTAssertEqual(G_f(5).exponentBitPattern, Float(5).exponentBitPattern)
+        XCTAssertEqual(G_f(5).significandBitPattern, Float(5).significandBitPattern)
+        XCTAssertEqual(G_f(5).exponent, Float(5).exponent)
+    }
+
+    func testG_fFormRemainder() {
+        var original = Float(4)
+        let denominator = Float(3)
+        original.formRemainder(dividingBy: denominator)
+        var result = G_f(Float(4))
+        result.formRemainder(dividingBy: G_f(denominator))
+        XCTAssertEqual(result, G_f(original))
+    }
+
+    func testG_fFormTruncatingRemainder() {
+        var original = Float(4)
+        let denominator = Float(3)
+        original.formTruncatingRemainder(dividingBy: denominator)
+        var result = G_f(Float(4))
+        result.formTruncatingRemainder(dividingBy: G_f(denominator))
+        XCTAssertEqual(result, G_f(original))
+    }
+
+    func testG_fFormSquareRoot() {
+        var original = Float(4)
+        original.formSquareRoot()
+        var result = G_f(Float(4))
+        result.formSquareRoot()
+        XCTAssertEqual(result, G_f(original))
+    }
+
+    func testG_fAddProduct() {
+        var original = Float(4)
+        let lhs = Float(3)
+        let rhs = Float(5)
+        original.addProduct(lhs, rhs)
+        var result = G_f(Float(4))
+        result.addProduct(G_f(lhs), G_f(rhs))
+        XCTAssertEqual(result, G_f(original))
+    }
+
+    func testG_fIsEqual() {
+        let this = G_f(5)
+        let other = G_f(6)
+        XCTAssertTrue(this.isEqual(to: this))
+        XCTAssertFalse(this.isEqual(to: other))
+    }
+
+    func testG_fIsLess() {
+        let this = G_f(5)
+        let other = G_f(6)
+        XCTAssertFalse(this.isLess(than: this))
+        XCTAssertTrue(this.isLess(than: other))
+    }
+
+    func testG_fIsLessThanOrEqual() {
+        let this = G_f(5)
+        let other = G_f(6)
+        let other2 = G_f(4)
+        XCTAssertTrue(this.isLessThanOrEqualTo(this))
+        XCTAssertTrue(this.isLessThanOrEqualTo(other))
+        XCTAssertFalse(this.isLessThanOrEqualTo(other2))
+    }
+
+    func testG_fOperations() {
+        let lhs = G_f(6)
+        let rhs = G_f(3)
+        XCTAssertEqual(lhs + rhs, G_f(9))
+        XCTAssertEqual(lhs - rhs, G_f(3))
+        XCTAssertEqual(lhs * rhs, G_f(18))
+        XCTAssertEqual(lhs / rhs, G_f(2))
+    }
+
+    func testG_fTimesEqual() {
+        var this = G_f(3)
+        this *= G_f(4)
+        XCTAssertEqual(this, G_f(12))
+    }
+
+    func testG_fDivideEqual() {
+        var this = G_f(6)
+        this /= G_f(3)
+        XCTAssertEqual(this, G_f(2))
+    }
+
+    func testG_fRound() {
+        var expected = Float(5.6)
+        expected.round(.up)
+        var result = G_f(5.6)
+        result.round(.up)
+        XCTAssertEqual(result, G_f(expected))
+    }
+
+    func testG_fDistanceTo() {
+        let original = Float(5.0)
+        let other = Float(23)
+        let expected = original.distance(to: other)
+        XCTAssertEqual(G_f(original).distance(to: G_f(other)), expected)
+    }
+
+    func testG_fAdvancedBy() {
+        let original = Float(5)
+        let expected = original.advanced(by: 3)
+        XCTAssertEqual(G_f(original).advanced(by: 3), G_f(expected))
+    }
+
+    func testG_dEquality() {
+        XCTAssertEqual(G_d(5), G_d(5))
+    }
+
+    func testG_dCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = G_d(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(G_d.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testG_dSelfInit() {
+        let expected = G_d(15)
+        XCTAssertEqual(expected, G_d(expected))
+    }
+
+    func testG_dSelfExactlyInit() {
+        let expected = G_d(15)
+        XCTAssertEqual(expected, G_d(exactly: expected))
+    }
+
+    func testG_dComparable() {
+        let lhs = G_d(1)
+        let rhs = G_d(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testG_dRadix() {
+        XCTAssertEqual(G_d.radix, Double.radix)
+    }
+
+    func testG_dExponentBitCount() {
+        XCTAssertEqual(G_d.exponentBitCount, Double.exponentBitCount)
+    }
+
+    func testG_dSignificandBitCount() {
+        XCTAssertEqual(G_d.significandBitCount, Double.significandBitCount)
+    }
+
+    func testG_dMagnitude() {
+        let expected = G_d(Double(5).magnitude)
+        XCTAssertEqual(G_d(5).magnitude, expected)
+    }
+
+    func testG_dExactlyInit() {
+        let expected = G_d(Double(exactly: Int(5)) ?? Double.infinity)
+        XCTAssertEqual(G_d(exactly: Int(5)), expected)
+    }
+
+    func testG_dIsTotallyOrdered() {
+        let param = Double(100)
+        let other = Double(5)
+        XCTAssertEqual(
+            G_d(param).isTotallyOrdered(belowOrEqualTo: G_d(other)),
+            param.isTotallyOrdered(belowOrEqualTo: other)
+        )
+    }
+
+    func testG_dBinade() {
+        let raw = Double(5)
+        let expected = G_d(raw.binade)
+        XCTAssertEqual(G_d(raw).binade, expected)
+    }
+
+    func testG_dSignificandWidth() {
+        let raw = Double(5)
+        XCTAssertEqual(G_d(raw).significandWidth, raw.significandWidth)
+    }
+
+    func testG_dDebugDescription() {
+        let raw = Double(5)
+        XCTAssertEqual(G_d(raw).debugDescription, raw.debugDescription)
+    }
+
+    func testG_dDescriptionInit() {
+        let raw = Double("5.0") ?? Double.nan
+        XCTAssertEqual(G_d("5.0"), G_d(raw))
+    }
+
+    func testG_dStaticVars() {
+        XCTAssertEqual(G_d.nan.isNaN, G_d(Double.nan).isNaN)
+        XCTAssertEqual(
+            G_d.signalingNaN.isSignalingNaN,
+            G_d(Double.signalingNaN).isSignalingNaN
+        )
+        XCTAssertEqual(G_d.infinity, G_d(Double.infinity))
+        XCTAssertEqual(G_d.greatestFiniteMagnitude, G_d(Double.greatestFiniteMagnitude))
+        XCTAssertEqual(G_d.pi, G_d(Double.pi))
+        XCTAssertEqual(G_d.leastNormalMagnitude, G_d(Double.leastNormalMagnitude))
+        XCTAssertEqual(G_d.leastNonzeroMagnitude, G_d(Double.leastNonzeroMagnitude))
+    }
+
+    func testG_dUlp() {
+        let raw = Double(5)
+        XCTAssertEqual(G_d(raw).ulp, G_d(raw.ulp))
+    }
+
+    func testG_dSign() {
+        let raw = Double(5)
+        XCTAssertEqual(G_d(raw).sign, raw.sign)
+    }
+
+    func testG_dSignificand() {
+        let raw = Double(5)
+        XCTAssertEqual(G_d(raw).significand, G_d(raw.significand))
+    }
+
+    func testG_dNextUp() {
+        let raw = Double(5)
+        XCTAssertEqual(G_d(raw).nextUp, G_d(raw.nextUp))
+    }
+
+    func testG_dVars() {
+        XCTAssertEqual(G_d(5).isNormal, Double(5).isNormal)
+        XCTAssertEqual(G_d(5).isFinite, Double(5).isFinite)
+        XCTAssertEqual(G_d(5).isZero, Double(5).isZero)
+        XCTAssertEqual(G_d(0).isZero, Double(0).isZero)
+        XCTAssertEqual(G_d(5).isSubnormal, Double(5).isSubnormal)
+        XCTAssertEqual(G_d(5).isInfinite, Double(5).isInfinite)
+        XCTAssertEqual(G_d.infinity.isInfinite, Double.infinity.isInfinite)
+        XCTAssertEqual(G_d(5).isNaN, Double(5).isNaN)
+        XCTAssertEqual(G_d.nan.isNaN, Double.nan.isNaN)
+        XCTAssertEqual(G_d(5).isSignalingNaN, Double(5).isSignalingNaN)
+        XCTAssertEqual(G_d.nan.isSignalingNaN, Double.nan.isSignalingNaN)
+        XCTAssertEqual(G_d(5).isCanonical, Double(5).isCanonical)
+        XCTAssertEqual(G_d(5).description, Double(5).description)
+        XCTAssertEqual(G_d(5).exponentBitPattern, Double(5).exponentBitPattern)
+        XCTAssertEqual(G_d(5).significandBitPattern, Double(5).significandBitPattern)
+        XCTAssertEqual(G_d(5).exponent, Double(5).exponent)
+    }
+
+    func testG_dFormRemainder() {
+        var original = Double(4)
+        let denominator = Double(3)
+        original.formRemainder(dividingBy: denominator)
+        var result = G_d(Double(4))
+        result.formRemainder(dividingBy: G_d(denominator))
+        XCTAssertEqual(result, G_d(original))
+    }
+
+    func testG_dFormTruncatingRemainder() {
+        var original = Double(4)
+        let denominator = Double(3)
+        original.formTruncatingRemainder(dividingBy: denominator)
+        var result = G_d(Double(4))
+        result.formTruncatingRemainder(dividingBy: G_d(denominator))
+        XCTAssertEqual(result, G_d(original))
+    }
+
+    func testG_dFormSquareRoot() {
+        var original = Double(4)
+        original.formSquareRoot()
+        var result = G_d(Double(4))
+        result.formSquareRoot()
+        XCTAssertEqual(result, G_d(original))
+    }
+
+    func testG_dAddProduct() {
+        var original = Double(4)
+        let lhs = Double(3)
+        let rhs = Double(5)
+        original.addProduct(lhs, rhs)
+        var result = G_d(Double(4))
+        result.addProduct(G_d(lhs), G_d(rhs))
+        XCTAssertEqual(result, G_d(original))
+    }
+
+    func testG_dIsEqual() {
+        let this = G_d(5)
+        let other = G_d(6)
+        XCTAssertTrue(this.isEqual(to: this))
+        XCTAssertFalse(this.isEqual(to: other))
+    }
+
+    func testG_dIsLess() {
+        let this = G_d(5)
+        let other = G_d(6)
+        XCTAssertFalse(this.isLess(than: this))
+        XCTAssertTrue(this.isLess(than: other))
+    }
+
+    func testG_dIsLessThanOrEqual() {
+        let this = G_d(5)
+        let other = G_d(6)
+        let other2 = G_d(4)
+        XCTAssertTrue(this.isLessThanOrEqualTo(this))
+        XCTAssertTrue(this.isLessThanOrEqualTo(other))
+        XCTAssertFalse(this.isLessThanOrEqualTo(other2))
+    }
+
+    func testG_dOperations() {
+        let lhs = G_d(6)
+        let rhs = G_d(3)
+        XCTAssertEqual(lhs + rhs, G_d(9))
+        XCTAssertEqual(lhs - rhs, G_d(3))
+        XCTAssertEqual(lhs * rhs, G_d(18))
+        XCTAssertEqual(lhs / rhs, G_d(2))
+    }
+
+    func testG_dTimesEqual() {
+        var this = G_d(3)
+        this *= G_d(4)
+        XCTAssertEqual(this, G_d(12))
+    }
+
+    func testG_dDivideEqual() {
+        var this = G_d(6)
+        this /= G_d(3)
+        XCTAssertEqual(this, G_d(2))
+    }
+
+    func testG_dRound() {
+        var expected = Double(5.6)
+        expected.round(.up)
+        var result = G_d(5.6)
+        result.round(.up)
+        XCTAssertEqual(result, G_d(expected))
+    }
+
+    func testG_dDistanceTo() {
+        let original = Double(5.0)
+        let other = Double(23)
+        let expected = original.distance(to: other)
+        XCTAssertEqual(G_d(original).distance(to: G_d(other)), expected)
+    }
+
+    func testG_dAdvancedBy() {
+        let original = Double(5)
+        let expected = original.advanced(by: 3)
+        XCTAssertEqual(G_d(original).advanced(by: 3), G_d(expected))
+    }
+
+}
+
+final class Metrespersecond2ConversionTests: XCTestCase {
+
+    func testMetrespersecond2_tToMetrespersecond2_uAccelerationConversions() {
+        let original = Metrespersecond2_t(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_u
+        XCTAssertEqual(other, Metrespersecond2_u(original))
+    }
+
+    func testMetrespersecond2_uToMetrespersecond2_tConversions() {
+        let ctype1 = metresPerSecond2_t(5)
+        let swiftType1 = Metrespersecond2_t(rawValue: ctype1)
+        let ctype2 = mps2_t_to_mps2_u(ctype1)
+        let swiftType2 = Metrespersecond2_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_u(swiftType1))
+    }
+
+    func testMetrespersecond2_tToMetrespersecond2_fAccelerationConversions() {
+        let original = Metrespersecond2_t(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_f
+        XCTAssertEqual(other, Metrespersecond2_f(original))
+    }
+
+    func testMetrespersecond2_fToMetrespersecond2_tConversions() {
+        let ctype1 = metresPerSecond2_t(5)
+        let swiftType1 = Metrespersecond2_t(rawValue: ctype1)
+        let ctype2 = mps2_t_to_mps2_f(ctype1)
+        let swiftType2 = Metrespersecond2_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_f(swiftType1))
+    }
+
+    func testMetrespersecond2_tToMetrespersecond2_dAccelerationConversions() {
+        let original = Metrespersecond2_t(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_d
+        XCTAssertEqual(other, Metrespersecond2_d(original))
+    }
+
+    func testMetrespersecond2_dToMetrespersecond2_tConversions() {
+        let ctype1 = metresPerSecond2_t(5)
+        let swiftType1 = Metrespersecond2_t(rawValue: ctype1)
+        let ctype2 = mps2_t_to_mps2_d(ctype1)
+        let swiftType2 = Metrespersecond2_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_d(swiftType1))
+    }
+
+    func testMetrespersecond2_tToG_tAccelerationConversions() {
+        let original = Metrespersecond2_t(5)
+        let category = Acceleration(original)
+        let other = category.g_t
+        XCTAssertEqual(other, G_t(original))
+    }
+
+    func testG_tToMetrespersecond2_tConversions() {
+        let ctype1 = metresPerSecond2_t(5)
+        let swiftType1 = Metrespersecond2_t(rawValue: ctype1)
+        let ctype2 = mps2_t_to_g_t(ctype1)
+        let swiftType2 = G_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_t(swiftType1))
+    }
+
+    func testMetrespersecond2_tToG_uAccelerationConversions() {
+        let original = Metrespersecond2_t(5)
+        let category = Acceleration(original)
+        let other = category.g_u
+        XCTAssertEqual(other, G_u(original))
+    }
+
+    func testG_uToMetrespersecond2_tConversions() {
+        let ctype1 = metresPerSecond2_t(5)
+        let swiftType1 = Metrespersecond2_t(rawValue: ctype1)
+        let ctype2 = mps2_t_to_g_u(ctype1)
+        let swiftType2 = G_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_u(swiftType1))
+    }
+
+    func testMetrespersecond2_tToG_fAccelerationConversions() {
+        let original = Metrespersecond2_t(5)
+        let category = Acceleration(original)
+        let other = category.g_f
+        XCTAssertEqual(other, G_f(original))
+    }
+
+    func testG_fToMetrespersecond2_tConversions() {
+        let ctype1 = metresPerSecond2_t(5)
+        let swiftType1 = Metrespersecond2_t(rawValue: ctype1)
+        let ctype2 = mps2_t_to_g_f(ctype1)
+        let swiftType2 = G_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_f(swiftType1))
+    }
+
+    func testMetrespersecond2_tToG_dAccelerationConversions() {
+        let original = Metrespersecond2_t(5)
+        let category = Acceleration(original)
+        let other = category.g_d
+        XCTAssertEqual(other, G_d(original))
+    }
+
+    func testG_dToMetrespersecond2_tConversions() {
+        let ctype1 = metresPerSecond2_t(5)
+        let swiftType1 = Metrespersecond2_t(rawValue: ctype1)
+        let ctype2 = mps2_t_to_g_d(ctype1)
+        let swiftType2 = G_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_d(swiftType1))
+    }
+
+    func testMetrespersecond2_tInitFromTypeEnum() {
+        let underlyingType = Acceleration.AccelerationTypes.metrespersecond2_t(5)
+        let category = Acceleration(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testAccelerationMetrespersecond2_tInt8Inits() {
+        let raw = Int8(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_mps2_t(5)
+        let expected2 = Int8(
+            mps2_t_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_tInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_mps2_t(5)
+        let expected = Metrespersecond2_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(mps2_t_to_i8(ctype))
+        )
+    }
+
+    func testMetrespersecond2_tInt8RawValueInit() {
+        let raw = metresPerSecond2_t(5)
+        let ctype = mps2_t_to_i8(raw)
+        let expected = Metrespersecond2_t(Int8(ctype))
+        XCTAssertEqual(Metrespersecond2_t(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_tAccelerationInt8Init() {
+        let raw = Metrespersecond2_t(Int8(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_tInt16Inits() {
+        let raw = Int16(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_mps2_t(5)
+        let expected2 = Int16(
+            mps2_t_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_tInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_mps2_t(5)
+        let expected = Metrespersecond2_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(mps2_t_to_i16(ctype))
+        )
+    }
+
+    func testMetrespersecond2_tInt16RawValueInit() {
+        let raw = metresPerSecond2_t(5)
+        let ctype = mps2_t_to_i16(raw)
+        let expected = Metrespersecond2_t(Int16(ctype))
+        XCTAssertEqual(Metrespersecond2_t(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_tAccelerationInt16Init() {
+        let raw = Metrespersecond2_t(Int16(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_tInt32Inits() {
+        let raw = Int32(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_mps2_t(5)
+        let expected2 = Int32(
+            mps2_t_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_tInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_mps2_t(5)
+        let expected = Metrespersecond2_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(mps2_t_to_i32(ctype))
+        )
+    }
+
+    func testMetrespersecond2_tInt32RawValueInit() {
+        let raw = metresPerSecond2_t(5)
+        let ctype = mps2_t_to_i32(raw)
+        let expected = Metrespersecond2_t(Int32(ctype))
+        XCTAssertEqual(Metrespersecond2_t(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_tAccelerationInt32Init() {
+        let raw = Metrespersecond2_t(Int32(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_tInt64Inits() {
+        let raw = Int64(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_mps2_t(5)
+        let expected2 = Int64(
+            mps2_t_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_tInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_mps2_t(5)
+        let expected = Metrespersecond2_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(mps2_t_to_i64(ctype))
+        )
+    }
+
+    func testMetrespersecond2_tInt64RawValueInit() {
+        let raw = metresPerSecond2_t(5)
+        let ctype = mps2_t_to_i64(raw)
+        let expected = Metrespersecond2_t(Int64(ctype))
+        XCTAssertEqual(Metrespersecond2_t(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_tAccelerationInt64Init() {
+        let raw = Metrespersecond2_t(Int64(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_tIntInits() {
+        let raw = Int(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_mps2_t(5)
+        let expected2 = Int(
+            mps2_t_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_tIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_mps2_t(5)
+        let expected = Metrespersecond2_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(mps2_t_to_i64(ctype))
+        )
+    }
+
+    func testMetrespersecond2_tIntRawValueInit() {
+        let raw = metresPerSecond2_t(5)
+        let ctype = mps2_t_to_i64(raw)
+        let expected = Metrespersecond2_t(Int(ctype))
+        XCTAssertEqual(Metrespersecond2_t(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_tAccelerationIntInit() {
+        let raw = Metrespersecond2_t(Int(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_tCIntInits() {
+        let raw = CInt(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_mps2_t(5)
+        let expected2 = CInt(
+            mps2_t_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_tCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_mps2_t(5)
+        let expected = Metrespersecond2_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(mps2_t_to_i32(ctype))
+        )
+    }
+
+    func testMetrespersecond2_tCIntRawValueInit() {
+        let raw = metresPerSecond2_t(5)
+        let ctype = mps2_t_to_i32(raw)
+        let expected = Metrespersecond2_t(CInt(ctype))
+        XCTAssertEqual(Metrespersecond2_t(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_tAccelerationCIntInit() {
+        let raw = Metrespersecond2_t(CInt(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_tUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_mps2_t(5)
+        let expected2 = UInt8(
+            mps2_t_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_tUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_mps2_t(5)
+        let expected = Metrespersecond2_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(mps2_t_to_u8(ctype))
+        )
+    }
+
+    func testMetrespersecond2_tUInt8RawValueInit() {
+        let raw = metresPerSecond2_t(5)
+        let ctype = mps2_t_to_u8(raw)
+        let expected = Metrespersecond2_t(UInt8(ctype))
+        XCTAssertEqual(Metrespersecond2_t(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_tAccelerationUInt8Init() {
+        let raw = Metrespersecond2_t(UInt8(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_tUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_mps2_t(5)
+        let expected2 = UInt16(
+            mps2_t_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_tUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_mps2_t(5)
+        let expected = Metrespersecond2_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(mps2_t_to_u16(ctype))
+        )
+    }
+
+    func testMetrespersecond2_tUInt16RawValueInit() {
+        let raw = metresPerSecond2_t(5)
+        let ctype = mps2_t_to_u16(raw)
+        let expected = Metrespersecond2_t(UInt16(ctype))
+        XCTAssertEqual(Metrespersecond2_t(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_tAccelerationUInt16Init() {
+        let raw = Metrespersecond2_t(UInt16(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_tUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_mps2_t(5)
+        let expected2 = UInt32(
+            mps2_t_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_tUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_mps2_t(5)
+        let expected = Metrespersecond2_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(mps2_t_to_u32(ctype))
+        )
+    }
+
+    func testMetrespersecond2_tUInt32RawValueInit() {
+        let raw = metresPerSecond2_t(5)
+        let ctype = mps2_t_to_u32(raw)
+        let expected = Metrespersecond2_t(UInt32(ctype))
+        XCTAssertEqual(Metrespersecond2_t(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_tAccelerationUInt32Init() {
+        let raw = Metrespersecond2_t(UInt32(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_tUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_mps2_t(5)
+        let expected2 = UInt64(
+            mps2_t_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_tUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_mps2_t(5)
+        let expected = Metrespersecond2_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(mps2_t_to_u64(ctype))
+        )
+    }
+
+    func testMetrespersecond2_tUInt64RawValueInit() {
+        let raw = metresPerSecond2_t(5)
+        let ctype = mps2_t_to_u64(raw)
+        let expected = Metrespersecond2_t(UInt64(ctype))
+        XCTAssertEqual(Metrespersecond2_t(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_tAccelerationUInt64Init() {
+        let raw = Metrespersecond2_t(UInt64(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_tUIntInits() {
+        let raw = UInt(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_mps2_t(5)
+        let expected2 = UInt(
+            mps2_t_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_tUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_mps2_t(5)
+        let expected = Metrespersecond2_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(mps2_t_to_u64(ctype))
+        )
+    }
+
+    func testMetrespersecond2_tUIntRawValueInit() {
+        let raw = metresPerSecond2_t(5)
+        let ctype = mps2_t_to_u64(raw)
+        let expected = Metrespersecond2_t(UInt(ctype))
+        XCTAssertEqual(Metrespersecond2_t(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_tAccelerationUIntInit() {
+        let raw = Metrespersecond2_t(UInt(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_tCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_mps2_t(5)
+        let expected2 = CUnsignedInt(
+            mps2_t_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_tCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_mps2_t(5)
+        let expected = Metrespersecond2_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(mps2_t_to_u32(ctype))
+        )
+    }
+
+    func testMetrespersecond2_tCUnsignedIntRawValueInit() {
+        let raw = metresPerSecond2_t(5)
+        let ctype = mps2_t_to_u32(raw)
+        let expected = Metrespersecond2_t(CUnsignedInt(ctype))
+        XCTAssertEqual(Metrespersecond2_t(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_tAccelerationCUnsignedIntInit() {
+        let raw = Metrespersecond2_t(CUnsignedInt(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_tFloatInits() {
+        let raw = Float(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_mps2_t(5)
+        let expected2 = Float(
+            mps2_t_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_tFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_mps2_t(5)
+        let expected = Metrespersecond2_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(mps2_t_to_f(ctype))
+        )
+    }
+
+    func testMetrespersecond2_tFloatRawValueInit() {
+        let raw = metresPerSecond2_t(5)
+        let ctype = mps2_t_to_f(raw)
+        let expected = Metrespersecond2_t(Float(ctype))
+        XCTAssertEqual(Metrespersecond2_t(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_tAccelerationFloatInit() {
+        let raw = Metrespersecond2_t(Float(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_tDoubleInits() {
+        let raw = Double(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_mps2_t(5)
+        let expected2 = Double(
+            mps2_t_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_tDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_mps2_t(5)
+        let expected = Metrespersecond2_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(mps2_t_to_d(ctype))
+        )
+    }
+
+    func testMetrespersecond2_tDoubleRawValueInit() {
+        let raw = metresPerSecond2_t(5)
+        let ctype = mps2_t_to_d(raw)
+        let expected = Metrespersecond2_t(Double(ctype))
+        XCTAssertEqual(Metrespersecond2_t(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_tAccelerationDoubleInit() {
+        let raw = Metrespersecond2_t(Double(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testMetrespersecond2_uToMetrespersecond2_tAccelerationConversions() {
+        let original = Metrespersecond2_u(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_t
+        XCTAssertEqual(other, Metrespersecond2_t(original))
+    }
+
+    func testMetrespersecond2_tToMetrespersecond2_uConversions() {
+        let ctype1 = metresPerSecond2_u(5)
+        let swiftType1 = Metrespersecond2_u(rawValue: ctype1)
+        let ctype2 = mps2_u_to_mps2_t(ctype1)
+        let swiftType2 = Metrespersecond2_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_t(swiftType1))
+    }
+
+    func testMetrespersecond2_uToMetrespersecond2_fAccelerationConversions() {
+        let original = Metrespersecond2_u(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_f
+        XCTAssertEqual(other, Metrespersecond2_f(original))
+    }
+
+    func testMetrespersecond2_fToMetrespersecond2_uConversions() {
+        let ctype1 = metresPerSecond2_u(5)
+        let swiftType1 = Metrespersecond2_u(rawValue: ctype1)
+        let ctype2 = mps2_u_to_mps2_f(ctype1)
+        let swiftType2 = Metrespersecond2_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_f(swiftType1))
+    }
+
+    func testMetrespersecond2_uToMetrespersecond2_dAccelerationConversions() {
+        let original = Metrespersecond2_u(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_d
+        XCTAssertEqual(other, Metrespersecond2_d(original))
+    }
+
+    func testMetrespersecond2_dToMetrespersecond2_uConversions() {
+        let ctype1 = metresPerSecond2_u(5)
+        let swiftType1 = Metrespersecond2_u(rawValue: ctype1)
+        let ctype2 = mps2_u_to_mps2_d(ctype1)
+        let swiftType2 = Metrespersecond2_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_d(swiftType1))
+    }
+
+    func testMetrespersecond2_uToG_tAccelerationConversions() {
+        let original = Metrespersecond2_u(5)
+        let category = Acceleration(original)
+        let other = category.g_t
+        XCTAssertEqual(other, G_t(original))
+    }
+
+    func testG_tToMetrespersecond2_uConversions() {
+        let ctype1 = metresPerSecond2_u(5)
+        let swiftType1 = Metrespersecond2_u(rawValue: ctype1)
+        let ctype2 = mps2_u_to_g_t(ctype1)
+        let swiftType2 = G_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_t(swiftType1))
+    }
+
+    func testMetrespersecond2_uToG_uAccelerationConversions() {
+        let original = Metrespersecond2_u(5)
+        let category = Acceleration(original)
+        let other = category.g_u
+        XCTAssertEqual(other, G_u(original))
+    }
+
+    func testG_uToMetrespersecond2_uConversions() {
+        let ctype1 = metresPerSecond2_u(5)
+        let swiftType1 = Metrespersecond2_u(rawValue: ctype1)
+        let ctype2 = mps2_u_to_g_u(ctype1)
+        let swiftType2 = G_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_u(swiftType1))
+    }
+
+    func testMetrespersecond2_uToG_fAccelerationConversions() {
+        let original = Metrespersecond2_u(5)
+        let category = Acceleration(original)
+        let other = category.g_f
+        XCTAssertEqual(other, G_f(original))
+    }
+
+    func testG_fToMetrespersecond2_uConversions() {
+        let ctype1 = metresPerSecond2_u(5)
+        let swiftType1 = Metrespersecond2_u(rawValue: ctype1)
+        let ctype2 = mps2_u_to_g_f(ctype1)
+        let swiftType2 = G_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_f(swiftType1))
+    }
+
+    func testMetrespersecond2_uToG_dAccelerationConversions() {
+        let original = Metrespersecond2_u(5)
+        let category = Acceleration(original)
+        let other = category.g_d
+        XCTAssertEqual(other, G_d(original))
+    }
+
+    func testG_dToMetrespersecond2_uConversions() {
+        let ctype1 = metresPerSecond2_u(5)
+        let swiftType1 = Metrespersecond2_u(rawValue: ctype1)
+        let ctype2 = mps2_u_to_g_d(ctype1)
+        let swiftType2 = G_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_d(swiftType1))
+    }
+
+    func testMetrespersecond2_uInitFromTypeEnum() {
+        let underlyingType = Acceleration.AccelerationTypes.metrespersecond2_u(5)
+        let category = Acceleration(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testAccelerationMetrespersecond2_uInt8Inits() {
+        let raw = Int8(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_mps2_u(5)
+        let expected2 = Int8(
+            mps2_u_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_uInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_mps2_u(5)
+        let expected = Metrespersecond2_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(mps2_u_to_i8(ctype))
+        )
+    }
+
+    func testMetrespersecond2_uInt8RawValueInit() {
+        let raw = metresPerSecond2_u(5)
+        let ctype = mps2_u_to_i8(raw)
+        let expected = Metrespersecond2_u(Int8(ctype))
+        XCTAssertEqual(Metrespersecond2_u(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_uAccelerationInt8Init() {
+        let raw = Metrespersecond2_u(Int8(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_uInt16Inits() {
+        let raw = Int16(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_mps2_u(5)
+        let expected2 = Int16(
+            mps2_u_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_uInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_mps2_u(5)
+        let expected = Metrespersecond2_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(mps2_u_to_i16(ctype))
+        )
+    }
+
+    func testMetrespersecond2_uInt16RawValueInit() {
+        let raw = metresPerSecond2_u(5)
+        let ctype = mps2_u_to_i16(raw)
+        let expected = Metrespersecond2_u(Int16(ctype))
+        XCTAssertEqual(Metrespersecond2_u(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_uAccelerationInt16Init() {
+        let raw = Metrespersecond2_u(Int16(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_uInt32Inits() {
+        let raw = Int32(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_mps2_u(5)
+        let expected2 = Int32(
+            mps2_u_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_uInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_mps2_u(5)
+        let expected = Metrespersecond2_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(mps2_u_to_i32(ctype))
+        )
+    }
+
+    func testMetrespersecond2_uInt32RawValueInit() {
+        let raw = metresPerSecond2_u(5)
+        let ctype = mps2_u_to_i32(raw)
+        let expected = Metrespersecond2_u(Int32(ctype))
+        XCTAssertEqual(Metrespersecond2_u(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_uAccelerationInt32Init() {
+        let raw = Metrespersecond2_u(Int32(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_uInt64Inits() {
+        let raw = Int64(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_mps2_u(5)
+        let expected2 = Int64(
+            mps2_u_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_uInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_mps2_u(5)
+        let expected = Metrespersecond2_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(mps2_u_to_i64(ctype))
+        )
+    }
+
+    func testMetrespersecond2_uInt64RawValueInit() {
+        let raw = metresPerSecond2_u(5)
+        let ctype = mps2_u_to_i64(raw)
+        let expected = Metrespersecond2_u(Int64(ctype))
+        XCTAssertEqual(Metrespersecond2_u(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_uAccelerationInt64Init() {
+        let raw = Metrespersecond2_u(Int64(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_uIntInits() {
+        let raw = Int(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_mps2_u(5)
+        let expected2 = Int(
+            mps2_u_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_uIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_mps2_u(5)
+        let expected = Metrespersecond2_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(mps2_u_to_i64(ctype))
+        )
+    }
+
+    func testMetrespersecond2_uIntRawValueInit() {
+        let raw = metresPerSecond2_u(5)
+        let ctype = mps2_u_to_i64(raw)
+        let expected = Metrespersecond2_u(Int(ctype))
+        XCTAssertEqual(Metrespersecond2_u(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_uAccelerationIntInit() {
+        let raw = Metrespersecond2_u(Int(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_uCIntInits() {
+        let raw = CInt(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_mps2_u(5)
+        let expected2 = CInt(
+            mps2_u_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_uCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_mps2_u(5)
+        let expected = Metrespersecond2_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(mps2_u_to_i32(ctype))
+        )
+    }
+
+    func testMetrespersecond2_uCIntRawValueInit() {
+        let raw = metresPerSecond2_u(5)
+        let ctype = mps2_u_to_i32(raw)
+        let expected = Metrespersecond2_u(CInt(ctype))
+        XCTAssertEqual(Metrespersecond2_u(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_uAccelerationCIntInit() {
+        let raw = Metrespersecond2_u(CInt(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_uUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_mps2_u(5)
+        let expected2 = UInt8(
+            mps2_u_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_uUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_mps2_u(5)
+        let expected = Metrespersecond2_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(mps2_u_to_u8(ctype))
+        )
+    }
+
+    func testMetrespersecond2_uUInt8RawValueInit() {
+        let raw = metresPerSecond2_u(5)
+        let ctype = mps2_u_to_u8(raw)
+        let expected = Metrespersecond2_u(UInt8(ctype))
+        XCTAssertEqual(Metrespersecond2_u(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_uAccelerationUInt8Init() {
+        let raw = Metrespersecond2_u(UInt8(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_uUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_mps2_u(5)
+        let expected2 = UInt16(
+            mps2_u_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_uUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_mps2_u(5)
+        let expected = Metrespersecond2_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(mps2_u_to_u16(ctype))
+        )
+    }
+
+    func testMetrespersecond2_uUInt16RawValueInit() {
+        let raw = metresPerSecond2_u(5)
+        let ctype = mps2_u_to_u16(raw)
+        let expected = Metrespersecond2_u(UInt16(ctype))
+        XCTAssertEqual(Metrespersecond2_u(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_uAccelerationUInt16Init() {
+        let raw = Metrespersecond2_u(UInt16(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_uUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_mps2_u(5)
+        let expected2 = UInt32(
+            mps2_u_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_uUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_mps2_u(5)
+        let expected = Metrespersecond2_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(mps2_u_to_u32(ctype))
+        )
+    }
+
+    func testMetrespersecond2_uUInt32RawValueInit() {
+        let raw = metresPerSecond2_u(5)
+        let ctype = mps2_u_to_u32(raw)
+        let expected = Metrespersecond2_u(UInt32(ctype))
+        XCTAssertEqual(Metrespersecond2_u(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_uAccelerationUInt32Init() {
+        let raw = Metrespersecond2_u(UInt32(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_uUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_mps2_u(5)
+        let expected2 = UInt64(
+            mps2_u_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_uUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_mps2_u(5)
+        let expected = Metrespersecond2_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(mps2_u_to_u64(ctype))
+        )
+    }
+
+    func testMetrespersecond2_uUInt64RawValueInit() {
+        let raw = metresPerSecond2_u(5)
+        let ctype = mps2_u_to_u64(raw)
+        let expected = Metrespersecond2_u(UInt64(ctype))
+        XCTAssertEqual(Metrespersecond2_u(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_uAccelerationUInt64Init() {
+        let raw = Metrespersecond2_u(UInt64(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_uUIntInits() {
+        let raw = UInt(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_mps2_u(5)
+        let expected2 = UInt(
+            mps2_u_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_uUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_mps2_u(5)
+        let expected = Metrespersecond2_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(mps2_u_to_u64(ctype))
+        )
+    }
+
+    func testMetrespersecond2_uUIntRawValueInit() {
+        let raw = metresPerSecond2_u(5)
+        let ctype = mps2_u_to_u64(raw)
+        let expected = Metrespersecond2_u(UInt(ctype))
+        XCTAssertEqual(Metrespersecond2_u(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_uAccelerationUIntInit() {
+        let raw = Metrespersecond2_u(UInt(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_uCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_mps2_u(5)
+        let expected2 = CUnsignedInt(
+            mps2_u_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_uCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_mps2_u(5)
+        let expected = Metrespersecond2_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(mps2_u_to_u32(ctype))
+        )
+    }
+
+    func testMetrespersecond2_uCUnsignedIntRawValueInit() {
+        let raw = metresPerSecond2_u(5)
+        let ctype = mps2_u_to_u32(raw)
+        let expected = Metrespersecond2_u(CUnsignedInt(ctype))
+        XCTAssertEqual(Metrespersecond2_u(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_uAccelerationCUnsignedIntInit() {
+        let raw = Metrespersecond2_u(CUnsignedInt(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_uFloatInits() {
+        let raw = Float(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_mps2_u(5)
+        let expected2 = Float(
+            mps2_u_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_uFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_mps2_u(5)
+        let expected = Metrespersecond2_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(mps2_u_to_f(ctype))
+        )
+    }
+
+    func testMetrespersecond2_uFloatRawValueInit() {
+        let raw = metresPerSecond2_u(5)
+        let ctype = mps2_u_to_f(raw)
+        let expected = Metrespersecond2_u(Float(ctype))
+        XCTAssertEqual(Metrespersecond2_u(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_uAccelerationFloatInit() {
+        let raw = Metrespersecond2_u(Float(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_uDoubleInits() {
+        let raw = Double(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_mps2_u(5)
+        let expected2 = Double(
+            mps2_u_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_uDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_mps2_u(5)
+        let expected = Metrespersecond2_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(mps2_u_to_d(ctype))
+        )
+    }
+
+    func testMetrespersecond2_uDoubleRawValueInit() {
+        let raw = metresPerSecond2_u(5)
+        let ctype = mps2_u_to_d(raw)
+        let expected = Metrespersecond2_u(Double(ctype))
+        XCTAssertEqual(Metrespersecond2_u(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_uAccelerationDoubleInit() {
+        let raw = Metrespersecond2_u(Double(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testMetrespersecond2_fToMetrespersecond2_tAccelerationConversions() {
+        let original = Metrespersecond2_f(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_t
+        XCTAssertEqual(other, Metrespersecond2_t(original))
+    }
+
+    func testMetrespersecond2_tToMetrespersecond2_fConversions() {
+        let ctype1 = metresPerSecond2_f(5)
+        let swiftType1 = Metrespersecond2_f(rawValue: ctype1)
+        let ctype2 = mps2_f_to_mps2_t(ctype1)
+        let swiftType2 = Metrespersecond2_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_t(swiftType1))
+    }
+
+    func testMetrespersecond2_fToMetrespersecond2_uAccelerationConversions() {
+        let original = Metrespersecond2_f(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_u
+        XCTAssertEqual(other, Metrespersecond2_u(original))
+    }
+
+    func testMetrespersecond2_uToMetrespersecond2_fConversions() {
+        let ctype1 = metresPerSecond2_f(5)
+        let swiftType1 = Metrespersecond2_f(rawValue: ctype1)
+        let ctype2 = mps2_f_to_mps2_u(ctype1)
+        let swiftType2 = Metrespersecond2_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_u(swiftType1))
+    }
+
+    func testMetrespersecond2_fToMetrespersecond2_dAccelerationConversions() {
+        let original = Metrespersecond2_f(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_d
+        XCTAssertEqual(other, Metrespersecond2_d(original))
+    }
+
+    func testMetrespersecond2_dToMetrespersecond2_fConversions() {
+        let ctype1 = metresPerSecond2_f(5)
+        let swiftType1 = Metrespersecond2_f(rawValue: ctype1)
+        let ctype2 = mps2_f_to_mps2_d(ctype1)
+        let swiftType2 = Metrespersecond2_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_d(swiftType1))
+    }
+
+    func testMetrespersecond2_fToG_tAccelerationConversions() {
+        let original = Metrespersecond2_f(5)
+        let category = Acceleration(original)
+        let other = category.g_t
+        XCTAssertEqual(other, G_t(original))
+    }
+
+    func testG_tToMetrespersecond2_fConversions() {
+        let ctype1 = metresPerSecond2_f(5)
+        let swiftType1 = Metrespersecond2_f(rawValue: ctype1)
+        let ctype2 = mps2_f_to_g_t(ctype1)
+        let swiftType2 = G_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_t(swiftType1))
+    }
+
+    func testMetrespersecond2_fToG_uAccelerationConversions() {
+        let original = Metrespersecond2_f(5)
+        let category = Acceleration(original)
+        let other = category.g_u
+        XCTAssertEqual(other, G_u(original))
+    }
+
+    func testG_uToMetrespersecond2_fConversions() {
+        let ctype1 = metresPerSecond2_f(5)
+        let swiftType1 = Metrespersecond2_f(rawValue: ctype1)
+        let ctype2 = mps2_f_to_g_u(ctype1)
+        let swiftType2 = G_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_u(swiftType1))
+    }
+
+    func testMetrespersecond2_fToG_fAccelerationConversions() {
+        let original = Metrespersecond2_f(5)
+        let category = Acceleration(original)
+        let other = category.g_f
+        XCTAssertEqual(other, G_f(original))
+    }
+
+    func testG_fToMetrespersecond2_fConversions() {
+        let ctype1 = metresPerSecond2_f(5)
+        let swiftType1 = Metrespersecond2_f(rawValue: ctype1)
+        let ctype2 = mps2_f_to_g_f(ctype1)
+        let swiftType2 = G_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_f(swiftType1))
+    }
+
+    func testMetrespersecond2_fToG_dAccelerationConversions() {
+        let original = Metrespersecond2_f(5)
+        let category = Acceleration(original)
+        let other = category.g_d
+        XCTAssertEqual(other, G_d(original))
+    }
+
+    func testG_dToMetrespersecond2_fConversions() {
+        let ctype1 = metresPerSecond2_f(5)
+        let swiftType1 = Metrespersecond2_f(rawValue: ctype1)
+        let ctype2 = mps2_f_to_g_d(ctype1)
+        let swiftType2 = G_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_d(swiftType1))
+    }
+
+    func testMetrespersecond2_fInitFromTypeEnum() {
+        let underlyingType = Acceleration.AccelerationTypes.metrespersecond2_f(5)
+        let category = Acceleration(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testAccelerationMetrespersecond2_fInt8Inits() {
+        let raw = Int8(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_mps2_f(5)
+        let expected2 = Int8(
+            mps2_f_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_fInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_mps2_f(5)
+        let expected = Metrespersecond2_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(mps2_f_to_i8(ctype))
+        )
+    }
+
+    func testMetrespersecond2_fInt8RawValueInit() {
+        let raw = metresPerSecond2_f(5)
+        let ctype = mps2_f_to_i8(raw)
+        let expected = Metrespersecond2_f(Int8(ctype))
+        XCTAssertEqual(Metrespersecond2_f(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_fAccelerationInt8Init() {
+        let raw = Metrespersecond2_f(Int8(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_fInt16Inits() {
+        let raw = Int16(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_mps2_f(5)
+        let expected2 = Int16(
+            mps2_f_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_fInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_mps2_f(5)
+        let expected = Metrespersecond2_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(mps2_f_to_i16(ctype))
+        )
+    }
+
+    func testMetrespersecond2_fInt16RawValueInit() {
+        let raw = metresPerSecond2_f(5)
+        let ctype = mps2_f_to_i16(raw)
+        let expected = Metrespersecond2_f(Int16(ctype))
+        XCTAssertEqual(Metrespersecond2_f(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_fAccelerationInt16Init() {
+        let raw = Metrespersecond2_f(Int16(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_fInt32Inits() {
+        let raw = Int32(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_mps2_f(5)
+        let expected2 = Int32(
+            mps2_f_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_fInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_mps2_f(5)
+        let expected = Metrespersecond2_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(mps2_f_to_i32(ctype))
+        )
+    }
+
+    func testMetrespersecond2_fInt32RawValueInit() {
+        let raw = metresPerSecond2_f(5)
+        let ctype = mps2_f_to_i32(raw)
+        let expected = Metrespersecond2_f(Int32(ctype))
+        XCTAssertEqual(Metrespersecond2_f(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_fAccelerationInt32Init() {
+        let raw = Metrespersecond2_f(Int32(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_fInt64Inits() {
+        let raw = Int64(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_mps2_f(5)
+        let expected2 = Int64(
+            mps2_f_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_fInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_mps2_f(5)
+        let expected = Metrespersecond2_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(mps2_f_to_i64(ctype))
+        )
+    }
+
+    func testMetrespersecond2_fInt64RawValueInit() {
+        let raw = metresPerSecond2_f(5)
+        let ctype = mps2_f_to_i64(raw)
+        let expected = Metrespersecond2_f(Int64(ctype))
+        XCTAssertEqual(Metrespersecond2_f(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_fAccelerationInt64Init() {
+        let raw = Metrespersecond2_f(Int64(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_fIntInits() {
+        let raw = Int(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_mps2_f(5)
+        let expected2 = Int(
+            mps2_f_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_fIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_mps2_f(5)
+        let expected = Metrespersecond2_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(mps2_f_to_i64(ctype))
+        )
+    }
+
+    func testMetrespersecond2_fIntRawValueInit() {
+        let raw = metresPerSecond2_f(5)
+        let ctype = mps2_f_to_i64(raw)
+        let expected = Metrespersecond2_f(Int(ctype))
+        XCTAssertEqual(Metrespersecond2_f(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_fAccelerationIntInit() {
+        let raw = Metrespersecond2_f(Int(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_fCIntInits() {
+        let raw = CInt(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_mps2_f(5)
+        let expected2 = CInt(
+            mps2_f_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_fCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_mps2_f(5)
+        let expected = Metrespersecond2_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(mps2_f_to_i32(ctype))
+        )
+    }
+
+    func testMetrespersecond2_fCIntRawValueInit() {
+        let raw = metresPerSecond2_f(5)
+        let ctype = mps2_f_to_i32(raw)
+        let expected = Metrespersecond2_f(CInt(ctype))
+        XCTAssertEqual(Metrespersecond2_f(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_fAccelerationCIntInit() {
+        let raw = Metrespersecond2_f(CInt(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_fUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_mps2_f(5)
+        let expected2 = UInt8(
+            mps2_f_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_fUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_mps2_f(5)
+        let expected = Metrespersecond2_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(mps2_f_to_u8(ctype))
+        )
+    }
+
+    func testMetrespersecond2_fUInt8RawValueInit() {
+        let raw = metresPerSecond2_f(5)
+        let ctype = mps2_f_to_u8(raw)
+        let expected = Metrespersecond2_f(UInt8(ctype))
+        XCTAssertEqual(Metrespersecond2_f(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_fAccelerationUInt8Init() {
+        let raw = Metrespersecond2_f(UInt8(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_fUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_mps2_f(5)
+        let expected2 = UInt16(
+            mps2_f_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_fUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_mps2_f(5)
+        let expected = Metrespersecond2_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(mps2_f_to_u16(ctype))
+        )
+    }
+
+    func testMetrespersecond2_fUInt16RawValueInit() {
+        let raw = metresPerSecond2_f(5)
+        let ctype = mps2_f_to_u16(raw)
+        let expected = Metrespersecond2_f(UInt16(ctype))
+        XCTAssertEqual(Metrespersecond2_f(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_fAccelerationUInt16Init() {
+        let raw = Metrespersecond2_f(UInt16(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_fUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_mps2_f(5)
+        let expected2 = UInt32(
+            mps2_f_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_fUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_mps2_f(5)
+        let expected = Metrespersecond2_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(mps2_f_to_u32(ctype))
+        )
+    }
+
+    func testMetrespersecond2_fUInt32RawValueInit() {
+        let raw = metresPerSecond2_f(5)
+        let ctype = mps2_f_to_u32(raw)
+        let expected = Metrespersecond2_f(UInt32(ctype))
+        XCTAssertEqual(Metrespersecond2_f(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_fAccelerationUInt32Init() {
+        let raw = Metrespersecond2_f(UInt32(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_fUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_mps2_f(5)
+        let expected2 = UInt64(
+            mps2_f_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_fUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_mps2_f(5)
+        let expected = Metrespersecond2_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(mps2_f_to_u64(ctype))
+        )
+    }
+
+    func testMetrespersecond2_fUInt64RawValueInit() {
+        let raw = metresPerSecond2_f(5)
+        let ctype = mps2_f_to_u64(raw)
+        let expected = Metrespersecond2_f(UInt64(ctype))
+        XCTAssertEqual(Metrespersecond2_f(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_fAccelerationUInt64Init() {
+        let raw = Metrespersecond2_f(UInt64(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_fUIntInits() {
+        let raw = UInt(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_mps2_f(5)
+        let expected2 = UInt(
+            mps2_f_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_fUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_mps2_f(5)
+        let expected = Metrespersecond2_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(mps2_f_to_u64(ctype))
+        )
+    }
+
+    func testMetrespersecond2_fUIntRawValueInit() {
+        let raw = metresPerSecond2_f(5)
+        let ctype = mps2_f_to_u64(raw)
+        let expected = Metrespersecond2_f(UInt(ctype))
+        XCTAssertEqual(Metrespersecond2_f(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_fAccelerationUIntInit() {
+        let raw = Metrespersecond2_f(UInt(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_fCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_mps2_f(5)
+        let expected2 = CUnsignedInt(
+            mps2_f_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_fCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_mps2_f(5)
+        let expected = Metrespersecond2_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(mps2_f_to_u32(ctype))
+        )
+    }
+
+    func testMetrespersecond2_fCUnsignedIntRawValueInit() {
+        let raw = metresPerSecond2_f(5)
+        let ctype = mps2_f_to_u32(raw)
+        let expected = Metrespersecond2_f(CUnsignedInt(ctype))
+        XCTAssertEqual(Metrespersecond2_f(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_fAccelerationCUnsignedIntInit() {
+        let raw = Metrespersecond2_f(CUnsignedInt(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_fFloatInits() {
+        let raw = Float(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_mps2_f(5)
+        let expected2 = Float(
+            mps2_f_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_fFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_mps2_f(5)
+        let expected = Metrespersecond2_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(mps2_f_to_f(ctype))
+        )
+    }
+
+    func testMetrespersecond2_fFloatRawValueInit() {
+        let raw = metresPerSecond2_f(5)
+        let ctype = mps2_f_to_f(raw)
+        let expected = Metrespersecond2_f(Float(ctype))
+        XCTAssertEqual(Metrespersecond2_f(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_fAccelerationFloatInit() {
+        let raw = Metrespersecond2_f(Float(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_fDoubleInits() {
+        let raw = Double(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_mps2_f(5)
+        let expected2 = Double(
+            mps2_f_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_fDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_mps2_f(5)
+        let expected = Metrespersecond2_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(mps2_f_to_d(ctype))
+        )
+    }
+
+    func testMetrespersecond2_fDoubleRawValueInit() {
+        let raw = metresPerSecond2_f(5)
+        let ctype = mps2_f_to_d(raw)
+        let expected = Metrespersecond2_f(Double(ctype))
+        XCTAssertEqual(Metrespersecond2_f(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_fAccelerationDoubleInit() {
+        let raw = Metrespersecond2_f(Double(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testMetrespersecond2_dToMetrespersecond2_tAccelerationConversions() {
+        let original = Metrespersecond2_d(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_t
+        XCTAssertEqual(other, Metrespersecond2_t(original))
+    }
+
+    func testMetrespersecond2_tToMetrespersecond2_dConversions() {
+        let ctype1 = metresPerSecond2_d(5)
+        let swiftType1 = Metrespersecond2_d(rawValue: ctype1)
+        let ctype2 = mps2_d_to_mps2_t(ctype1)
+        let swiftType2 = Metrespersecond2_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_t(swiftType1))
+    }
+
+    func testMetrespersecond2_dToMetrespersecond2_uAccelerationConversions() {
+        let original = Metrespersecond2_d(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_u
+        XCTAssertEqual(other, Metrespersecond2_u(original))
+    }
+
+    func testMetrespersecond2_uToMetrespersecond2_dConversions() {
+        let ctype1 = metresPerSecond2_d(5)
+        let swiftType1 = Metrespersecond2_d(rawValue: ctype1)
+        let ctype2 = mps2_d_to_mps2_u(ctype1)
+        let swiftType2 = Metrespersecond2_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_u(swiftType1))
+    }
+
+    func testMetrespersecond2_dToMetrespersecond2_fAccelerationConversions() {
+        let original = Metrespersecond2_d(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_f
+        XCTAssertEqual(other, Metrespersecond2_f(original))
+    }
+
+    func testMetrespersecond2_fToMetrespersecond2_dConversions() {
+        let ctype1 = metresPerSecond2_d(5)
+        let swiftType1 = Metrespersecond2_d(rawValue: ctype1)
+        let ctype2 = mps2_d_to_mps2_f(ctype1)
+        let swiftType2 = Metrespersecond2_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_f(swiftType1))
+    }
+
+    func testMetrespersecond2_dToG_tAccelerationConversions() {
+        let original = Metrespersecond2_d(5)
+        let category = Acceleration(original)
+        let other = category.g_t
+        XCTAssertEqual(other, G_t(original))
+    }
+
+    func testG_tToMetrespersecond2_dConversions() {
+        let ctype1 = metresPerSecond2_d(5)
+        let swiftType1 = Metrespersecond2_d(rawValue: ctype1)
+        let ctype2 = mps2_d_to_g_t(ctype1)
+        let swiftType2 = G_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_t(swiftType1))
+    }
+
+    func testMetrespersecond2_dToG_uAccelerationConversions() {
+        let original = Metrespersecond2_d(5)
+        let category = Acceleration(original)
+        let other = category.g_u
+        XCTAssertEqual(other, G_u(original))
+    }
+
+    func testG_uToMetrespersecond2_dConversions() {
+        let ctype1 = metresPerSecond2_d(5)
+        let swiftType1 = Metrespersecond2_d(rawValue: ctype1)
+        let ctype2 = mps2_d_to_g_u(ctype1)
+        let swiftType2 = G_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_u(swiftType1))
+    }
+
+    func testMetrespersecond2_dToG_fAccelerationConversions() {
+        let original = Metrespersecond2_d(5)
+        let category = Acceleration(original)
+        let other = category.g_f
+        XCTAssertEqual(other, G_f(original))
+    }
+
+    func testG_fToMetrespersecond2_dConversions() {
+        let ctype1 = metresPerSecond2_d(5)
+        let swiftType1 = Metrespersecond2_d(rawValue: ctype1)
+        let ctype2 = mps2_d_to_g_f(ctype1)
+        let swiftType2 = G_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_f(swiftType1))
+    }
+
+    func testMetrespersecond2_dToG_dAccelerationConversions() {
+        let original = Metrespersecond2_d(5)
+        let category = Acceleration(original)
+        let other = category.g_d
+        XCTAssertEqual(other, G_d(original))
+    }
+
+    func testG_dToMetrespersecond2_dConversions() {
+        let ctype1 = metresPerSecond2_d(5)
+        let swiftType1 = Metrespersecond2_d(rawValue: ctype1)
+        let ctype2 = mps2_d_to_g_d(ctype1)
+        let swiftType2 = G_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_d(swiftType1))
+    }
+
+    func testMetrespersecond2_dInitFromTypeEnum() {
+        let underlyingType = Acceleration.AccelerationTypes.metrespersecond2_d(5)
+        let category = Acceleration(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testAccelerationMetrespersecond2_dInt8Inits() {
+        let raw = Int8(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_mps2_d(5)
+        let expected2 = Int8(
+            mps2_d_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_dInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_mps2_d(5)
+        let expected = Metrespersecond2_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(mps2_d_to_i8(ctype))
+        )
+    }
+
+    func testMetrespersecond2_dInt8RawValueInit() {
+        let raw = metresPerSecond2_d(5)
+        let ctype = mps2_d_to_i8(raw)
+        let expected = Metrespersecond2_d(Int8(ctype))
+        XCTAssertEqual(Metrespersecond2_d(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_dAccelerationInt8Init() {
+        let raw = Metrespersecond2_d(Int8(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_dInt16Inits() {
+        let raw = Int16(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_mps2_d(5)
+        let expected2 = Int16(
+            mps2_d_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_dInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_mps2_d(5)
+        let expected = Metrespersecond2_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(mps2_d_to_i16(ctype))
+        )
+    }
+
+    func testMetrespersecond2_dInt16RawValueInit() {
+        let raw = metresPerSecond2_d(5)
+        let ctype = mps2_d_to_i16(raw)
+        let expected = Metrespersecond2_d(Int16(ctype))
+        XCTAssertEqual(Metrespersecond2_d(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_dAccelerationInt16Init() {
+        let raw = Metrespersecond2_d(Int16(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_dInt32Inits() {
+        let raw = Int32(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_mps2_d(5)
+        let expected2 = Int32(
+            mps2_d_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_dInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_mps2_d(5)
+        let expected = Metrespersecond2_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(mps2_d_to_i32(ctype))
+        )
+    }
+
+    func testMetrespersecond2_dInt32RawValueInit() {
+        let raw = metresPerSecond2_d(5)
+        let ctype = mps2_d_to_i32(raw)
+        let expected = Metrespersecond2_d(Int32(ctype))
+        XCTAssertEqual(Metrespersecond2_d(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_dAccelerationInt32Init() {
+        let raw = Metrespersecond2_d(Int32(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_dInt64Inits() {
+        let raw = Int64(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_mps2_d(5)
+        let expected2 = Int64(
+            mps2_d_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_dInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_mps2_d(5)
+        let expected = Metrespersecond2_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(mps2_d_to_i64(ctype))
+        )
+    }
+
+    func testMetrespersecond2_dInt64RawValueInit() {
+        let raw = metresPerSecond2_d(5)
+        let ctype = mps2_d_to_i64(raw)
+        let expected = Metrespersecond2_d(Int64(ctype))
+        XCTAssertEqual(Metrespersecond2_d(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_dAccelerationInt64Init() {
+        let raw = Metrespersecond2_d(Int64(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_dIntInits() {
+        let raw = Int(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_mps2_d(5)
+        let expected2 = Int(
+            mps2_d_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_dIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_mps2_d(5)
+        let expected = Metrespersecond2_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(mps2_d_to_i64(ctype))
+        )
+    }
+
+    func testMetrespersecond2_dIntRawValueInit() {
+        let raw = metresPerSecond2_d(5)
+        let ctype = mps2_d_to_i64(raw)
+        let expected = Metrespersecond2_d(Int(ctype))
+        XCTAssertEqual(Metrespersecond2_d(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_dAccelerationIntInit() {
+        let raw = Metrespersecond2_d(Int(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_dCIntInits() {
+        let raw = CInt(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_mps2_d(5)
+        let expected2 = CInt(
+            mps2_d_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_dCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_mps2_d(5)
+        let expected = Metrespersecond2_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(mps2_d_to_i32(ctype))
+        )
+    }
+
+    func testMetrespersecond2_dCIntRawValueInit() {
+        let raw = metresPerSecond2_d(5)
+        let ctype = mps2_d_to_i32(raw)
+        let expected = Metrespersecond2_d(CInt(ctype))
+        XCTAssertEqual(Metrespersecond2_d(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_dAccelerationCIntInit() {
+        let raw = Metrespersecond2_d(CInt(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_dUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_mps2_d(5)
+        let expected2 = UInt8(
+            mps2_d_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_dUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_mps2_d(5)
+        let expected = Metrespersecond2_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(mps2_d_to_u8(ctype))
+        )
+    }
+
+    func testMetrespersecond2_dUInt8RawValueInit() {
+        let raw = metresPerSecond2_d(5)
+        let ctype = mps2_d_to_u8(raw)
+        let expected = Metrespersecond2_d(UInt8(ctype))
+        XCTAssertEqual(Metrespersecond2_d(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_dAccelerationUInt8Init() {
+        let raw = Metrespersecond2_d(UInt8(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_dUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_mps2_d(5)
+        let expected2 = UInt16(
+            mps2_d_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_dUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_mps2_d(5)
+        let expected = Metrespersecond2_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(mps2_d_to_u16(ctype))
+        )
+    }
+
+    func testMetrespersecond2_dUInt16RawValueInit() {
+        let raw = metresPerSecond2_d(5)
+        let ctype = mps2_d_to_u16(raw)
+        let expected = Metrespersecond2_d(UInt16(ctype))
+        XCTAssertEqual(Metrespersecond2_d(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_dAccelerationUInt16Init() {
+        let raw = Metrespersecond2_d(UInt16(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_dUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_mps2_d(5)
+        let expected2 = UInt32(
+            mps2_d_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_dUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_mps2_d(5)
+        let expected = Metrespersecond2_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(mps2_d_to_u32(ctype))
+        )
+    }
+
+    func testMetrespersecond2_dUInt32RawValueInit() {
+        let raw = metresPerSecond2_d(5)
+        let ctype = mps2_d_to_u32(raw)
+        let expected = Metrespersecond2_d(UInt32(ctype))
+        XCTAssertEqual(Metrespersecond2_d(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_dAccelerationUInt32Init() {
+        let raw = Metrespersecond2_d(UInt32(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_dUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_mps2_d(5)
+        let expected2 = UInt64(
+            mps2_d_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_dUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_mps2_d(5)
+        let expected = Metrespersecond2_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(mps2_d_to_u64(ctype))
+        )
+    }
+
+    func testMetrespersecond2_dUInt64RawValueInit() {
+        let raw = metresPerSecond2_d(5)
+        let ctype = mps2_d_to_u64(raw)
+        let expected = Metrespersecond2_d(UInt64(ctype))
+        XCTAssertEqual(Metrespersecond2_d(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_dAccelerationUInt64Init() {
+        let raw = Metrespersecond2_d(UInt64(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_dUIntInits() {
+        let raw = UInt(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_mps2_d(5)
+        let expected2 = UInt(
+            mps2_d_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_dUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_mps2_d(5)
+        let expected = Metrespersecond2_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(mps2_d_to_u64(ctype))
+        )
+    }
+
+    func testMetrespersecond2_dUIntRawValueInit() {
+        let raw = metresPerSecond2_d(5)
+        let ctype = mps2_d_to_u64(raw)
+        let expected = Metrespersecond2_d(UInt(ctype))
+        XCTAssertEqual(Metrespersecond2_d(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_dAccelerationUIntInit() {
+        let raw = Metrespersecond2_d(UInt(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_dCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_mps2_d(5)
+        let expected2 = CUnsignedInt(
+            mps2_d_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_dCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_mps2_d(5)
+        let expected = Metrespersecond2_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(mps2_d_to_u32(ctype))
+        )
+    }
+
+    func testMetrespersecond2_dCUnsignedIntRawValueInit() {
+        let raw = metresPerSecond2_d(5)
+        let ctype = mps2_d_to_u32(raw)
+        let expected = Metrespersecond2_d(CUnsignedInt(ctype))
+        XCTAssertEqual(Metrespersecond2_d(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_dAccelerationCUnsignedIntInit() {
+        let raw = Metrespersecond2_d(CUnsignedInt(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_dFloatInits() {
+        let raw = Float(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_mps2_d(5)
+        let expected2 = Float(
+            mps2_d_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_dFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_mps2_d(5)
+        let expected = Metrespersecond2_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(mps2_d_to_f(ctype))
+        )
+    }
+
+    func testMetrespersecond2_dFloatRawValueInit() {
+        let raw = metresPerSecond2_d(5)
+        let ctype = mps2_d_to_f(raw)
+        let expected = Metrespersecond2_d(Float(ctype))
+        XCTAssertEqual(Metrespersecond2_d(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_dAccelerationFloatInit() {
+        let raw = Metrespersecond2_d(Float(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetrespersecond2_dDoubleInits() {
+        let raw = Double(5)
+        let expected = Acceleration(metresPerSecond2: raw)
+        let result = Acceleration.metresPerSecond2(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_mps2_d(5)
+        let expected2 = Double(
+            mps2_d_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetrespersecond2_dDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_mps2_d(5)
+        let expected = Metrespersecond2_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(mps2_d_to_d(ctype))
+        )
+    }
+
+    func testMetrespersecond2_dDoubleRawValueInit() {
+        let raw = metresPerSecond2_d(5)
+        let ctype = mps2_d_to_d(raw)
+        let expected = Metrespersecond2_d(Double(ctype))
+        XCTAssertEqual(Metrespersecond2_d(rawValue: raw), expected)
+    }
+
+    func testMetrespersecond2_dAccelerationDoubleInit() {
+        let raw = Metrespersecond2_d(Double(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metrespersecond2_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+}
+
+final class GConversionTests: XCTestCase {
+
+    func testG_tToMetrespersecond2_tAccelerationConversions() {
+        let original = G_t(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_t
+        XCTAssertEqual(other, Metrespersecond2_t(original))
+    }
+
+    func testMetrespersecond2_tToG_tConversions() {
+        let ctype1 = g_t(5)
+        let swiftType1 = G_t(rawValue: ctype1)
+        let ctype2 = g_t_to_mps2_t(ctype1)
+        let swiftType2 = Metrespersecond2_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_t(swiftType1))
+    }
+
+    func testG_tToMetrespersecond2_uAccelerationConversions() {
+        let original = G_t(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_u
+        XCTAssertEqual(other, Metrespersecond2_u(original))
+    }
+
+    func testMetrespersecond2_uToG_tConversions() {
+        let ctype1 = g_t(5)
+        let swiftType1 = G_t(rawValue: ctype1)
+        let ctype2 = g_t_to_mps2_u(ctype1)
+        let swiftType2 = Metrespersecond2_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_u(swiftType1))
+    }
+
+    func testG_tToMetrespersecond2_fAccelerationConversions() {
+        let original = G_t(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_f
+        XCTAssertEqual(other, Metrespersecond2_f(original))
+    }
+
+    func testMetrespersecond2_fToG_tConversions() {
+        let ctype1 = g_t(5)
+        let swiftType1 = G_t(rawValue: ctype1)
+        let ctype2 = g_t_to_mps2_f(ctype1)
+        let swiftType2 = Metrespersecond2_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_f(swiftType1))
+    }
+
+    func testG_tToMetrespersecond2_dAccelerationConversions() {
+        let original = G_t(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_d
+        XCTAssertEqual(other, Metrespersecond2_d(original))
+    }
+
+    func testMetrespersecond2_dToG_tConversions() {
+        let ctype1 = g_t(5)
+        let swiftType1 = G_t(rawValue: ctype1)
+        let ctype2 = g_t_to_mps2_d(ctype1)
+        let swiftType2 = Metrespersecond2_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_d(swiftType1))
+    }
+
+    func testG_tToG_uAccelerationConversions() {
+        let original = G_t(5)
+        let category = Acceleration(original)
+        let other = category.g_u
+        XCTAssertEqual(other, G_u(original))
+    }
+
+    func testG_uToG_tConversions() {
+        let ctype1 = g_t(5)
+        let swiftType1 = G_t(rawValue: ctype1)
+        let ctype2 = g_t_to_g_u(ctype1)
+        let swiftType2 = G_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_u(swiftType1))
+    }
+
+    func testG_tToG_fAccelerationConversions() {
+        let original = G_t(5)
+        let category = Acceleration(original)
+        let other = category.g_f
+        XCTAssertEqual(other, G_f(original))
+    }
+
+    func testG_fToG_tConversions() {
+        let ctype1 = g_t(5)
+        let swiftType1 = G_t(rawValue: ctype1)
+        let ctype2 = g_t_to_g_f(ctype1)
+        let swiftType2 = G_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_f(swiftType1))
+    }
+
+    func testG_tToG_dAccelerationConversions() {
+        let original = G_t(5)
+        let category = Acceleration(original)
+        let other = category.g_d
+        XCTAssertEqual(other, G_d(original))
+    }
+
+    func testG_dToG_tConversions() {
+        let ctype1 = g_t(5)
+        let swiftType1 = G_t(rawValue: ctype1)
+        let ctype2 = g_t_to_g_d(ctype1)
+        let swiftType2 = G_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_d(swiftType1))
+    }
+
+    func testG_tInitFromTypeEnum() {
+        let underlyingType = Acceleration.AccelerationTypes.g_t(5)
+        let category = Acceleration(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testAccelerationG_tInt8Inits() {
+        let raw = Int8(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_g_t(5)
+        let expected2 = Int8(
+            g_t_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_tInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_g_t(5)
+        let expected = G_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(g_t_to_i8(ctype))
+        )
+    }
+
+    func testG_tInt8RawValueInit() {
+        let raw = g_t(5)
+        let ctype = g_t_to_i8(raw)
+        let expected = G_t(Int8(ctype))
+        XCTAssertEqual(G_t(rawValue: raw), expected)
+    }
+
+    func testG_tAccelerationInt8Init() {
+        let raw = G_t(Int8(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_tInt16Inits() {
+        let raw = Int16(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_g_t(5)
+        let expected2 = Int16(
+            g_t_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_tInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_g_t(5)
+        let expected = G_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(g_t_to_i16(ctype))
+        )
+    }
+
+    func testG_tInt16RawValueInit() {
+        let raw = g_t(5)
+        let ctype = g_t_to_i16(raw)
+        let expected = G_t(Int16(ctype))
+        XCTAssertEqual(G_t(rawValue: raw), expected)
+    }
+
+    func testG_tAccelerationInt16Init() {
+        let raw = G_t(Int16(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_tInt32Inits() {
+        let raw = Int32(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_g_t(5)
+        let expected2 = Int32(
+            g_t_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_tInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_g_t(5)
+        let expected = G_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(g_t_to_i32(ctype))
+        )
+    }
+
+    func testG_tInt32RawValueInit() {
+        let raw = g_t(5)
+        let ctype = g_t_to_i32(raw)
+        let expected = G_t(Int32(ctype))
+        XCTAssertEqual(G_t(rawValue: raw), expected)
+    }
+
+    func testG_tAccelerationInt32Init() {
+        let raw = G_t(Int32(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_tInt64Inits() {
+        let raw = Int64(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_g_t(5)
+        let expected2 = Int64(
+            g_t_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_tInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_g_t(5)
+        let expected = G_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(g_t_to_i64(ctype))
+        )
+    }
+
+    func testG_tInt64RawValueInit() {
+        let raw = g_t(5)
+        let ctype = g_t_to_i64(raw)
+        let expected = G_t(Int64(ctype))
+        XCTAssertEqual(G_t(rawValue: raw), expected)
+    }
+
+    func testG_tAccelerationInt64Init() {
+        let raw = G_t(Int64(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_tIntInits() {
+        let raw = Int(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_g_t(5)
+        let expected2 = Int(
+            g_t_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_tIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_g_t(5)
+        let expected = G_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(g_t_to_i64(ctype))
+        )
+    }
+
+    func testG_tIntRawValueInit() {
+        let raw = g_t(5)
+        let ctype = g_t_to_i64(raw)
+        let expected = G_t(Int(ctype))
+        XCTAssertEqual(G_t(rawValue: raw), expected)
+    }
+
+    func testG_tAccelerationIntInit() {
+        let raw = G_t(Int(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_tCIntInits() {
+        let raw = CInt(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_g_t(5)
+        let expected2 = CInt(
+            g_t_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_tCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_g_t(5)
+        let expected = G_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(g_t_to_i32(ctype))
+        )
+    }
+
+    func testG_tCIntRawValueInit() {
+        let raw = g_t(5)
+        let ctype = g_t_to_i32(raw)
+        let expected = G_t(CInt(ctype))
+        XCTAssertEqual(G_t(rawValue: raw), expected)
+    }
+
+    func testG_tAccelerationCIntInit() {
+        let raw = G_t(CInt(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_tUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_g_t(5)
+        let expected2 = UInt8(
+            g_t_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_tUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_g_t(5)
+        let expected = G_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(g_t_to_u8(ctype))
+        )
+    }
+
+    func testG_tUInt8RawValueInit() {
+        let raw = g_t(5)
+        let ctype = g_t_to_u8(raw)
+        let expected = G_t(UInt8(ctype))
+        XCTAssertEqual(G_t(rawValue: raw), expected)
+    }
+
+    func testG_tAccelerationUInt8Init() {
+        let raw = G_t(UInt8(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_tUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_g_t(5)
+        let expected2 = UInt16(
+            g_t_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_tUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_g_t(5)
+        let expected = G_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(g_t_to_u16(ctype))
+        )
+    }
+
+    func testG_tUInt16RawValueInit() {
+        let raw = g_t(5)
+        let ctype = g_t_to_u16(raw)
+        let expected = G_t(UInt16(ctype))
+        XCTAssertEqual(G_t(rawValue: raw), expected)
+    }
+
+    func testG_tAccelerationUInt16Init() {
+        let raw = G_t(UInt16(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_tUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_g_t(5)
+        let expected2 = UInt32(
+            g_t_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_tUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_g_t(5)
+        let expected = G_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(g_t_to_u32(ctype))
+        )
+    }
+
+    func testG_tUInt32RawValueInit() {
+        let raw = g_t(5)
+        let ctype = g_t_to_u32(raw)
+        let expected = G_t(UInt32(ctype))
+        XCTAssertEqual(G_t(rawValue: raw), expected)
+    }
+
+    func testG_tAccelerationUInt32Init() {
+        let raw = G_t(UInt32(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_tUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_g_t(5)
+        let expected2 = UInt64(
+            g_t_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_tUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_g_t(5)
+        let expected = G_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(g_t_to_u64(ctype))
+        )
+    }
+
+    func testG_tUInt64RawValueInit() {
+        let raw = g_t(5)
+        let ctype = g_t_to_u64(raw)
+        let expected = G_t(UInt64(ctype))
+        XCTAssertEqual(G_t(rawValue: raw), expected)
+    }
+
+    func testG_tAccelerationUInt64Init() {
+        let raw = G_t(UInt64(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_tUIntInits() {
+        let raw = UInt(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_g_t(5)
+        let expected2 = UInt(
+            g_t_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_tUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_g_t(5)
+        let expected = G_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(g_t_to_u64(ctype))
+        )
+    }
+
+    func testG_tUIntRawValueInit() {
+        let raw = g_t(5)
+        let ctype = g_t_to_u64(raw)
+        let expected = G_t(UInt(ctype))
+        XCTAssertEqual(G_t(rawValue: raw), expected)
+    }
+
+    func testG_tAccelerationUIntInit() {
+        let raw = G_t(UInt(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_tCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_g_t(5)
+        let expected2 = CUnsignedInt(
+            g_t_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_tCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_g_t(5)
+        let expected = G_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(g_t_to_u32(ctype))
+        )
+    }
+
+    func testG_tCUnsignedIntRawValueInit() {
+        let raw = g_t(5)
+        let ctype = g_t_to_u32(raw)
+        let expected = G_t(CUnsignedInt(ctype))
+        XCTAssertEqual(G_t(rawValue: raw), expected)
+    }
+
+    func testG_tAccelerationCUnsignedIntInit() {
+        let raw = G_t(CUnsignedInt(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_tFloatInits() {
+        let raw = Float(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_g_t(5)
+        let expected2 = Float(
+            g_t_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_tFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_g_t(5)
+        let expected = G_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(g_t_to_f(ctype))
+        )
+    }
+
+    func testG_tFloatRawValueInit() {
+        let raw = g_t(5)
+        let ctype = g_t_to_f(raw)
+        let expected = G_t(Float(ctype))
+        XCTAssertEqual(G_t(rawValue: raw), expected)
+    }
+
+    func testG_tAccelerationFloatInit() {
+        let raw = G_t(Float(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_tDoubleInits() {
+        let raw = Double(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_g_t(5)
+        let expected2 = Double(
+            g_t_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_tDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_g_t(5)
+        let expected = G_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(g_t_to_d(ctype))
+        )
+    }
+
+    func testG_tDoubleRawValueInit() {
+        let raw = g_t(5)
+        let ctype = g_t_to_d(raw)
+        let expected = G_t(Double(ctype))
+        XCTAssertEqual(G_t(rawValue: raw), expected)
+    }
+
+    func testG_tAccelerationDoubleInit() {
+        let raw = G_t(Double(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testG_uToMetrespersecond2_tAccelerationConversions() {
+        let original = G_u(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_t
+        XCTAssertEqual(other, Metrespersecond2_t(original))
+    }
+
+    func testMetrespersecond2_tToG_uConversions() {
+        let ctype1 = g_u(5)
+        let swiftType1 = G_u(rawValue: ctype1)
+        let ctype2 = g_u_to_mps2_t(ctype1)
+        let swiftType2 = Metrespersecond2_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_t(swiftType1))
+    }
+
+    func testG_uToMetrespersecond2_uAccelerationConversions() {
+        let original = G_u(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_u
+        XCTAssertEqual(other, Metrespersecond2_u(original))
+    }
+
+    func testMetrespersecond2_uToG_uConversions() {
+        let ctype1 = g_u(5)
+        let swiftType1 = G_u(rawValue: ctype1)
+        let ctype2 = g_u_to_mps2_u(ctype1)
+        let swiftType2 = Metrespersecond2_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_u(swiftType1))
+    }
+
+    func testG_uToMetrespersecond2_fAccelerationConversions() {
+        let original = G_u(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_f
+        XCTAssertEqual(other, Metrespersecond2_f(original))
+    }
+
+    func testMetrespersecond2_fToG_uConversions() {
+        let ctype1 = g_u(5)
+        let swiftType1 = G_u(rawValue: ctype1)
+        let ctype2 = g_u_to_mps2_f(ctype1)
+        let swiftType2 = Metrespersecond2_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_f(swiftType1))
+    }
+
+    func testG_uToMetrespersecond2_dAccelerationConversions() {
+        let original = G_u(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_d
+        XCTAssertEqual(other, Metrespersecond2_d(original))
+    }
+
+    func testMetrespersecond2_dToG_uConversions() {
+        let ctype1 = g_u(5)
+        let swiftType1 = G_u(rawValue: ctype1)
+        let ctype2 = g_u_to_mps2_d(ctype1)
+        let swiftType2 = Metrespersecond2_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_d(swiftType1))
+    }
+
+    func testG_uToG_tAccelerationConversions() {
+        let original = G_u(5)
+        let category = Acceleration(original)
+        let other = category.g_t
+        XCTAssertEqual(other, G_t(original))
+    }
+
+    func testG_tToG_uConversions() {
+        let ctype1 = g_u(5)
+        let swiftType1 = G_u(rawValue: ctype1)
+        let ctype2 = g_u_to_g_t(ctype1)
+        let swiftType2 = G_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_t(swiftType1))
+    }
+
+    func testG_uToG_fAccelerationConversions() {
+        let original = G_u(5)
+        let category = Acceleration(original)
+        let other = category.g_f
+        XCTAssertEqual(other, G_f(original))
+    }
+
+    func testG_fToG_uConversions() {
+        let ctype1 = g_u(5)
+        let swiftType1 = G_u(rawValue: ctype1)
+        let ctype2 = g_u_to_g_f(ctype1)
+        let swiftType2 = G_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_f(swiftType1))
+    }
+
+    func testG_uToG_dAccelerationConversions() {
+        let original = G_u(5)
+        let category = Acceleration(original)
+        let other = category.g_d
+        XCTAssertEqual(other, G_d(original))
+    }
+
+    func testG_dToG_uConversions() {
+        let ctype1 = g_u(5)
+        let swiftType1 = G_u(rawValue: ctype1)
+        let ctype2 = g_u_to_g_d(ctype1)
+        let swiftType2 = G_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_d(swiftType1))
+    }
+
+    func testG_uInitFromTypeEnum() {
+        let underlyingType = Acceleration.AccelerationTypes.g_u(5)
+        let category = Acceleration(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testAccelerationG_uInt8Inits() {
+        let raw = Int8(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_g_u(5)
+        let expected2 = Int8(
+            g_u_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_uInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_g_u(5)
+        let expected = G_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(g_u_to_i8(ctype))
+        )
+    }
+
+    func testG_uInt8RawValueInit() {
+        let raw = g_u(5)
+        let ctype = g_u_to_i8(raw)
+        let expected = G_u(Int8(ctype))
+        XCTAssertEqual(G_u(rawValue: raw), expected)
+    }
+
+    func testG_uAccelerationInt8Init() {
+        let raw = G_u(Int8(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_uInt16Inits() {
+        let raw = Int16(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_g_u(5)
+        let expected2 = Int16(
+            g_u_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_uInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_g_u(5)
+        let expected = G_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(g_u_to_i16(ctype))
+        )
+    }
+
+    func testG_uInt16RawValueInit() {
+        let raw = g_u(5)
+        let ctype = g_u_to_i16(raw)
+        let expected = G_u(Int16(ctype))
+        XCTAssertEqual(G_u(rawValue: raw), expected)
+    }
+
+    func testG_uAccelerationInt16Init() {
+        let raw = G_u(Int16(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_uInt32Inits() {
+        let raw = Int32(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_g_u(5)
+        let expected2 = Int32(
+            g_u_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_uInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_g_u(5)
+        let expected = G_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(g_u_to_i32(ctype))
+        )
+    }
+
+    func testG_uInt32RawValueInit() {
+        let raw = g_u(5)
+        let ctype = g_u_to_i32(raw)
+        let expected = G_u(Int32(ctype))
+        XCTAssertEqual(G_u(rawValue: raw), expected)
+    }
+
+    func testG_uAccelerationInt32Init() {
+        let raw = G_u(Int32(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_uInt64Inits() {
+        let raw = Int64(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_g_u(5)
+        let expected2 = Int64(
+            g_u_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_uInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_g_u(5)
+        let expected = G_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(g_u_to_i64(ctype))
+        )
+    }
+
+    func testG_uInt64RawValueInit() {
+        let raw = g_u(5)
+        let ctype = g_u_to_i64(raw)
+        let expected = G_u(Int64(ctype))
+        XCTAssertEqual(G_u(rawValue: raw), expected)
+    }
+
+    func testG_uAccelerationInt64Init() {
+        let raw = G_u(Int64(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_uIntInits() {
+        let raw = Int(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_g_u(5)
+        let expected2 = Int(
+            g_u_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_uIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_g_u(5)
+        let expected = G_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(g_u_to_i64(ctype))
+        )
+    }
+
+    func testG_uIntRawValueInit() {
+        let raw = g_u(5)
+        let ctype = g_u_to_i64(raw)
+        let expected = G_u(Int(ctype))
+        XCTAssertEqual(G_u(rawValue: raw), expected)
+    }
+
+    func testG_uAccelerationIntInit() {
+        let raw = G_u(Int(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_uCIntInits() {
+        let raw = CInt(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_g_u(5)
+        let expected2 = CInt(
+            g_u_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_uCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_g_u(5)
+        let expected = G_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(g_u_to_i32(ctype))
+        )
+    }
+
+    func testG_uCIntRawValueInit() {
+        let raw = g_u(5)
+        let ctype = g_u_to_i32(raw)
+        let expected = G_u(CInt(ctype))
+        XCTAssertEqual(G_u(rawValue: raw), expected)
+    }
+
+    func testG_uAccelerationCIntInit() {
+        let raw = G_u(CInt(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_uUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_g_u(5)
+        let expected2 = UInt8(
+            g_u_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_uUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_g_u(5)
+        let expected = G_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(g_u_to_u8(ctype))
+        )
+    }
+
+    func testG_uUInt8RawValueInit() {
+        let raw = g_u(5)
+        let ctype = g_u_to_u8(raw)
+        let expected = G_u(UInt8(ctype))
+        XCTAssertEqual(G_u(rawValue: raw), expected)
+    }
+
+    func testG_uAccelerationUInt8Init() {
+        let raw = G_u(UInt8(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_uUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_g_u(5)
+        let expected2 = UInt16(
+            g_u_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_uUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_g_u(5)
+        let expected = G_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(g_u_to_u16(ctype))
+        )
+    }
+
+    func testG_uUInt16RawValueInit() {
+        let raw = g_u(5)
+        let ctype = g_u_to_u16(raw)
+        let expected = G_u(UInt16(ctype))
+        XCTAssertEqual(G_u(rawValue: raw), expected)
+    }
+
+    func testG_uAccelerationUInt16Init() {
+        let raw = G_u(UInt16(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_uUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_g_u(5)
+        let expected2 = UInt32(
+            g_u_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_uUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_g_u(5)
+        let expected = G_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(g_u_to_u32(ctype))
+        )
+    }
+
+    func testG_uUInt32RawValueInit() {
+        let raw = g_u(5)
+        let ctype = g_u_to_u32(raw)
+        let expected = G_u(UInt32(ctype))
+        XCTAssertEqual(G_u(rawValue: raw), expected)
+    }
+
+    func testG_uAccelerationUInt32Init() {
+        let raw = G_u(UInt32(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_uUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_g_u(5)
+        let expected2 = UInt64(
+            g_u_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_uUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_g_u(5)
+        let expected = G_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(g_u_to_u64(ctype))
+        )
+    }
+
+    func testG_uUInt64RawValueInit() {
+        let raw = g_u(5)
+        let ctype = g_u_to_u64(raw)
+        let expected = G_u(UInt64(ctype))
+        XCTAssertEqual(G_u(rawValue: raw), expected)
+    }
+
+    func testG_uAccelerationUInt64Init() {
+        let raw = G_u(UInt64(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_uUIntInits() {
+        let raw = UInt(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_g_u(5)
+        let expected2 = UInt(
+            g_u_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_uUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_g_u(5)
+        let expected = G_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(g_u_to_u64(ctype))
+        )
+    }
+
+    func testG_uUIntRawValueInit() {
+        let raw = g_u(5)
+        let ctype = g_u_to_u64(raw)
+        let expected = G_u(UInt(ctype))
+        XCTAssertEqual(G_u(rawValue: raw), expected)
+    }
+
+    func testG_uAccelerationUIntInit() {
+        let raw = G_u(UInt(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_uCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_g_u(5)
+        let expected2 = CUnsignedInt(
+            g_u_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_uCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_g_u(5)
+        let expected = G_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(g_u_to_u32(ctype))
+        )
+    }
+
+    func testG_uCUnsignedIntRawValueInit() {
+        let raw = g_u(5)
+        let ctype = g_u_to_u32(raw)
+        let expected = G_u(CUnsignedInt(ctype))
+        XCTAssertEqual(G_u(rawValue: raw), expected)
+    }
+
+    func testG_uAccelerationCUnsignedIntInit() {
+        let raw = G_u(CUnsignedInt(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_uFloatInits() {
+        let raw = Float(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_g_u(5)
+        let expected2 = Float(
+            g_u_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_uFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_g_u(5)
+        let expected = G_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(g_u_to_f(ctype))
+        )
+    }
+
+    func testG_uFloatRawValueInit() {
+        let raw = g_u(5)
+        let ctype = g_u_to_f(raw)
+        let expected = G_u(Float(ctype))
+        XCTAssertEqual(G_u(rawValue: raw), expected)
+    }
+
+    func testG_uAccelerationFloatInit() {
+        let raw = G_u(Float(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_uDoubleInits() {
+        let raw = Double(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_g_u(5)
+        let expected2 = Double(
+            g_u_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_uDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_g_u(5)
+        let expected = G_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(g_u_to_d(ctype))
+        )
+    }
+
+    func testG_uDoubleRawValueInit() {
+        let raw = g_u(5)
+        let ctype = g_u_to_d(raw)
+        let expected = G_u(Double(ctype))
+        XCTAssertEqual(G_u(rawValue: raw), expected)
+    }
+
+    func testG_uAccelerationDoubleInit() {
+        let raw = G_u(Double(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testG_fToMetrespersecond2_tAccelerationConversions() {
+        let original = G_f(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_t
+        XCTAssertEqual(other, Metrespersecond2_t(original))
+    }
+
+    func testMetrespersecond2_tToG_fConversions() {
+        let ctype1 = g_f(5)
+        let swiftType1 = G_f(rawValue: ctype1)
+        let ctype2 = g_f_to_mps2_t(ctype1)
+        let swiftType2 = Metrespersecond2_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_t(swiftType1))
+    }
+
+    func testG_fToMetrespersecond2_uAccelerationConversions() {
+        let original = G_f(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_u
+        XCTAssertEqual(other, Metrespersecond2_u(original))
+    }
+
+    func testMetrespersecond2_uToG_fConversions() {
+        let ctype1 = g_f(5)
+        let swiftType1 = G_f(rawValue: ctype1)
+        let ctype2 = g_f_to_mps2_u(ctype1)
+        let swiftType2 = Metrespersecond2_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_u(swiftType1))
+    }
+
+    func testG_fToMetrespersecond2_fAccelerationConversions() {
+        let original = G_f(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_f
+        XCTAssertEqual(other, Metrespersecond2_f(original))
+    }
+
+    func testMetrespersecond2_fToG_fConversions() {
+        let ctype1 = g_f(5)
+        let swiftType1 = G_f(rawValue: ctype1)
+        let ctype2 = g_f_to_mps2_f(ctype1)
+        let swiftType2 = Metrespersecond2_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_f(swiftType1))
+    }
+
+    func testG_fToMetrespersecond2_dAccelerationConversions() {
+        let original = G_f(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_d
+        XCTAssertEqual(other, Metrespersecond2_d(original))
+    }
+
+    func testMetrespersecond2_dToG_fConversions() {
+        let ctype1 = g_f(5)
+        let swiftType1 = G_f(rawValue: ctype1)
+        let ctype2 = g_f_to_mps2_d(ctype1)
+        let swiftType2 = Metrespersecond2_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_d(swiftType1))
+    }
+
+    func testG_fToG_tAccelerationConversions() {
+        let original = G_f(5)
+        let category = Acceleration(original)
+        let other = category.g_t
+        XCTAssertEqual(other, G_t(original))
+    }
+
+    func testG_tToG_fConversions() {
+        let ctype1 = g_f(5)
+        let swiftType1 = G_f(rawValue: ctype1)
+        let ctype2 = g_f_to_g_t(ctype1)
+        let swiftType2 = G_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_t(swiftType1))
+    }
+
+    func testG_fToG_uAccelerationConversions() {
+        let original = G_f(5)
+        let category = Acceleration(original)
+        let other = category.g_u
+        XCTAssertEqual(other, G_u(original))
+    }
+
+    func testG_uToG_fConversions() {
+        let ctype1 = g_f(5)
+        let swiftType1 = G_f(rawValue: ctype1)
+        let ctype2 = g_f_to_g_u(ctype1)
+        let swiftType2 = G_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_u(swiftType1))
+    }
+
+    func testG_fToG_dAccelerationConversions() {
+        let original = G_f(5)
+        let category = Acceleration(original)
+        let other = category.g_d
+        XCTAssertEqual(other, G_d(original))
+    }
+
+    func testG_dToG_fConversions() {
+        let ctype1 = g_f(5)
+        let swiftType1 = G_f(rawValue: ctype1)
+        let ctype2 = g_f_to_g_d(ctype1)
+        let swiftType2 = G_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_d(swiftType1))
+    }
+
+    func testG_fInitFromTypeEnum() {
+        let underlyingType = Acceleration.AccelerationTypes.g_f(5)
+        let category = Acceleration(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testAccelerationG_fInt8Inits() {
+        let raw = Int8(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_g_f(5)
+        let expected2 = Int8(
+            g_f_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_fInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_g_f(5)
+        let expected = G_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(g_f_to_i8(ctype))
+        )
+    }
+
+    func testG_fInt8RawValueInit() {
+        let raw = g_f(5)
+        let ctype = g_f_to_i8(raw)
+        let expected = G_f(Int8(ctype))
+        XCTAssertEqual(G_f(rawValue: raw), expected)
+    }
+
+    func testG_fAccelerationInt8Init() {
+        let raw = G_f(Int8(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_fInt16Inits() {
+        let raw = Int16(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_g_f(5)
+        let expected2 = Int16(
+            g_f_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_fInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_g_f(5)
+        let expected = G_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(g_f_to_i16(ctype))
+        )
+    }
+
+    func testG_fInt16RawValueInit() {
+        let raw = g_f(5)
+        let ctype = g_f_to_i16(raw)
+        let expected = G_f(Int16(ctype))
+        XCTAssertEqual(G_f(rawValue: raw), expected)
+    }
+
+    func testG_fAccelerationInt16Init() {
+        let raw = G_f(Int16(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_fInt32Inits() {
+        let raw = Int32(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_g_f(5)
+        let expected2 = Int32(
+            g_f_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_fInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_g_f(5)
+        let expected = G_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(g_f_to_i32(ctype))
+        )
+    }
+
+    func testG_fInt32RawValueInit() {
+        let raw = g_f(5)
+        let ctype = g_f_to_i32(raw)
+        let expected = G_f(Int32(ctype))
+        XCTAssertEqual(G_f(rawValue: raw), expected)
+    }
+
+    func testG_fAccelerationInt32Init() {
+        let raw = G_f(Int32(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_fInt64Inits() {
+        let raw = Int64(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_g_f(5)
+        let expected2 = Int64(
+            g_f_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_fInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_g_f(5)
+        let expected = G_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(g_f_to_i64(ctype))
+        )
+    }
+
+    func testG_fInt64RawValueInit() {
+        let raw = g_f(5)
+        let ctype = g_f_to_i64(raw)
+        let expected = G_f(Int64(ctype))
+        XCTAssertEqual(G_f(rawValue: raw), expected)
+    }
+
+    func testG_fAccelerationInt64Init() {
+        let raw = G_f(Int64(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_fIntInits() {
+        let raw = Int(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_g_f(5)
+        let expected2 = Int(
+            g_f_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_fIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_g_f(5)
+        let expected = G_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(g_f_to_i64(ctype))
+        )
+    }
+
+    func testG_fIntRawValueInit() {
+        let raw = g_f(5)
+        let ctype = g_f_to_i64(raw)
+        let expected = G_f(Int(ctype))
+        XCTAssertEqual(G_f(rawValue: raw), expected)
+    }
+
+    func testG_fAccelerationIntInit() {
+        let raw = G_f(Int(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_fCIntInits() {
+        let raw = CInt(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_g_f(5)
+        let expected2 = CInt(
+            g_f_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_fCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_g_f(5)
+        let expected = G_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(g_f_to_i32(ctype))
+        )
+    }
+
+    func testG_fCIntRawValueInit() {
+        let raw = g_f(5)
+        let ctype = g_f_to_i32(raw)
+        let expected = G_f(CInt(ctype))
+        XCTAssertEqual(G_f(rawValue: raw), expected)
+    }
+
+    func testG_fAccelerationCIntInit() {
+        let raw = G_f(CInt(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_fUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_g_f(5)
+        let expected2 = UInt8(
+            g_f_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_fUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_g_f(5)
+        let expected = G_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(g_f_to_u8(ctype))
+        )
+    }
+
+    func testG_fUInt8RawValueInit() {
+        let raw = g_f(5)
+        let ctype = g_f_to_u8(raw)
+        let expected = G_f(UInt8(ctype))
+        XCTAssertEqual(G_f(rawValue: raw), expected)
+    }
+
+    func testG_fAccelerationUInt8Init() {
+        let raw = G_f(UInt8(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_fUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_g_f(5)
+        let expected2 = UInt16(
+            g_f_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_fUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_g_f(5)
+        let expected = G_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(g_f_to_u16(ctype))
+        )
+    }
+
+    func testG_fUInt16RawValueInit() {
+        let raw = g_f(5)
+        let ctype = g_f_to_u16(raw)
+        let expected = G_f(UInt16(ctype))
+        XCTAssertEqual(G_f(rawValue: raw), expected)
+    }
+
+    func testG_fAccelerationUInt16Init() {
+        let raw = G_f(UInt16(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_fUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_g_f(5)
+        let expected2 = UInt32(
+            g_f_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_fUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_g_f(5)
+        let expected = G_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(g_f_to_u32(ctype))
+        )
+    }
+
+    func testG_fUInt32RawValueInit() {
+        let raw = g_f(5)
+        let ctype = g_f_to_u32(raw)
+        let expected = G_f(UInt32(ctype))
+        XCTAssertEqual(G_f(rawValue: raw), expected)
+    }
+
+    func testG_fAccelerationUInt32Init() {
+        let raw = G_f(UInt32(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_fUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_g_f(5)
+        let expected2 = UInt64(
+            g_f_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_fUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_g_f(5)
+        let expected = G_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(g_f_to_u64(ctype))
+        )
+    }
+
+    func testG_fUInt64RawValueInit() {
+        let raw = g_f(5)
+        let ctype = g_f_to_u64(raw)
+        let expected = G_f(UInt64(ctype))
+        XCTAssertEqual(G_f(rawValue: raw), expected)
+    }
+
+    func testG_fAccelerationUInt64Init() {
+        let raw = G_f(UInt64(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_fUIntInits() {
+        let raw = UInt(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_g_f(5)
+        let expected2 = UInt(
+            g_f_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_fUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_g_f(5)
+        let expected = G_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(g_f_to_u64(ctype))
+        )
+    }
+
+    func testG_fUIntRawValueInit() {
+        let raw = g_f(5)
+        let ctype = g_f_to_u64(raw)
+        let expected = G_f(UInt(ctype))
+        XCTAssertEqual(G_f(rawValue: raw), expected)
+    }
+
+    func testG_fAccelerationUIntInit() {
+        let raw = G_f(UInt(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_fCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_g_f(5)
+        let expected2 = CUnsignedInt(
+            g_f_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_fCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_g_f(5)
+        let expected = G_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(g_f_to_u32(ctype))
+        )
+    }
+
+    func testG_fCUnsignedIntRawValueInit() {
+        let raw = g_f(5)
+        let ctype = g_f_to_u32(raw)
+        let expected = G_f(CUnsignedInt(ctype))
+        XCTAssertEqual(G_f(rawValue: raw), expected)
+    }
+
+    func testG_fAccelerationCUnsignedIntInit() {
+        let raw = G_f(CUnsignedInt(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_fFloatInits() {
+        let raw = Float(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_g_f(5)
+        let expected2 = Float(
+            g_f_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_fFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_g_f(5)
+        let expected = G_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(g_f_to_f(ctype))
+        )
+    }
+
+    func testG_fFloatRawValueInit() {
+        let raw = g_f(5)
+        let ctype = g_f_to_f(raw)
+        let expected = G_f(Float(ctype))
+        XCTAssertEqual(G_f(rawValue: raw), expected)
+    }
+
+    func testG_fAccelerationFloatInit() {
+        let raw = G_f(Float(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_fDoubleInits() {
+        let raw = Double(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_g_f(5)
+        let expected2 = Double(
+            g_f_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_fDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_g_f(5)
+        let expected = G_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(g_f_to_d(ctype))
+        )
+    }
+
+    func testG_fDoubleRawValueInit() {
+        let raw = g_f(5)
+        let ctype = g_f_to_d(raw)
+        let expected = G_f(Double(ctype))
+        XCTAssertEqual(G_f(rawValue: raw), expected)
+    }
+
+    func testG_fAccelerationDoubleInit() {
+        let raw = G_f(Double(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testG_dToMetrespersecond2_tAccelerationConversions() {
+        let original = G_d(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_t
+        XCTAssertEqual(other, Metrespersecond2_t(original))
+    }
+
+    func testMetrespersecond2_tToG_dConversions() {
+        let ctype1 = g_d(5)
+        let swiftType1 = G_d(rawValue: ctype1)
+        let ctype2 = g_d_to_mps2_t(ctype1)
+        let swiftType2 = Metrespersecond2_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_t(swiftType1))
+    }
+
+    func testG_dToMetrespersecond2_uAccelerationConversions() {
+        let original = G_d(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_u
+        XCTAssertEqual(other, Metrespersecond2_u(original))
+    }
+
+    func testMetrespersecond2_uToG_dConversions() {
+        let ctype1 = g_d(5)
+        let swiftType1 = G_d(rawValue: ctype1)
+        let ctype2 = g_d_to_mps2_u(ctype1)
+        let swiftType2 = Metrespersecond2_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_u(swiftType1))
+    }
+
+    func testG_dToMetrespersecond2_fAccelerationConversions() {
+        let original = G_d(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_f
+        XCTAssertEqual(other, Metrespersecond2_f(original))
+    }
+
+    func testMetrespersecond2_fToG_dConversions() {
+        let ctype1 = g_d(5)
+        let swiftType1 = G_d(rawValue: ctype1)
+        let ctype2 = g_d_to_mps2_f(ctype1)
+        let swiftType2 = Metrespersecond2_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_f(swiftType1))
+    }
+
+    func testG_dToMetrespersecond2_dAccelerationConversions() {
+        let original = G_d(5)
+        let category = Acceleration(original)
+        let other = category.metresPerSecond2_d
+        XCTAssertEqual(other, Metrespersecond2_d(original))
+    }
+
+    func testMetrespersecond2_dToG_dConversions() {
+        let ctype1 = g_d(5)
+        let swiftType1 = G_d(rawValue: ctype1)
+        let ctype2 = g_d_to_mps2_d(ctype1)
+        let swiftType2 = Metrespersecond2_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metrespersecond2_d(swiftType1))
+    }
+
+    func testG_dToG_tAccelerationConversions() {
+        let original = G_d(5)
+        let category = Acceleration(original)
+        let other = category.g_t
+        XCTAssertEqual(other, G_t(original))
+    }
+
+    func testG_tToG_dConversions() {
+        let ctype1 = g_d(5)
+        let swiftType1 = G_d(rawValue: ctype1)
+        let ctype2 = g_d_to_g_t(ctype1)
+        let swiftType2 = G_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_t(swiftType1))
+    }
+
+    func testG_dToG_uAccelerationConversions() {
+        let original = G_d(5)
+        let category = Acceleration(original)
+        let other = category.g_u
+        XCTAssertEqual(other, G_u(original))
+    }
+
+    func testG_uToG_dConversions() {
+        let ctype1 = g_d(5)
+        let swiftType1 = G_d(rawValue: ctype1)
+        let ctype2 = g_d_to_g_u(ctype1)
+        let swiftType2 = G_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_u(swiftType1))
+    }
+
+    func testG_dToG_fAccelerationConversions() {
+        let original = G_d(5)
+        let category = Acceleration(original)
+        let other = category.g_f
+        XCTAssertEqual(other, G_f(original))
+    }
+
+    func testG_fToG_dConversions() {
+        let ctype1 = g_d(5)
+        let swiftType1 = G_d(rawValue: ctype1)
+        let ctype2 = g_d_to_g_f(ctype1)
+        let swiftType2 = G_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, G_f(swiftType1))
+    }
+
+    func testG_dInitFromTypeEnum() {
+        let underlyingType = Acceleration.AccelerationTypes.g_d(5)
+        let category = Acceleration(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testAccelerationG_dInt8Inits() {
+        let raw = Int8(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_g_d(5)
+        let expected2 = Int8(
+            g_d_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_dInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_g_d(5)
+        let expected = G_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(g_d_to_i8(ctype))
+        )
+    }
+
+    func testG_dInt8RawValueInit() {
+        let raw = g_d(5)
+        let ctype = g_d_to_i8(raw)
+        let expected = G_d(Int8(ctype))
+        XCTAssertEqual(G_d(rawValue: raw), expected)
+    }
+
+    func testG_dAccelerationInt8Init() {
+        let raw = G_d(Int8(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_dInt16Inits() {
+        let raw = Int16(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_g_d(5)
+        let expected2 = Int16(
+            g_d_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_dInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_g_d(5)
+        let expected = G_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(g_d_to_i16(ctype))
+        )
+    }
+
+    func testG_dInt16RawValueInit() {
+        let raw = g_d(5)
+        let ctype = g_d_to_i16(raw)
+        let expected = G_d(Int16(ctype))
+        XCTAssertEqual(G_d(rawValue: raw), expected)
+    }
+
+    func testG_dAccelerationInt16Init() {
+        let raw = G_d(Int16(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_dInt32Inits() {
+        let raw = Int32(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_g_d(5)
+        let expected2 = Int32(
+            g_d_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_dInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_g_d(5)
+        let expected = G_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(g_d_to_i32(ctype))
+        )
+    }
+
+    func testG_dInt32RawValueInit() {
+        let raw = g_d(5)
+        let ctype = g_d_to_i32(raw)
+        let expected = G_d(Int32(ctype))
+        XCTAssertEqual(G_d(rawValue: raw), expected)
+    }
+
+    func testG_dAccelerationInt32Init() {
+        let raw = G_d(Int32(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_dInt64Inits() {
+        let raw = Int64(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_g_d(5)
+        let expected2 = Int64(
+            g_d_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_dInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_g_d(5)
+        let expected = G_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(g_d_to_i64(ctype))
+        )
+    }
+
+    func testG_dInt64RawValueInit() {
+        let raw = g_d(5)
+        let ctype = g_d_to_i64(raw)
+        let expected = G_d(Int64(ctype))
+        XCTAssertEqual(G_d(rawValue: raw), expected)
+    }
+
+    func testG_dAccelerationInt64Init() {
+        let raw = G_d(Int64(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_dIntInits() {
+        let raw = Int(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_g_d(5)
+        let expected2 = Int(
+            g_d_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_dIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_g_d(5)
+        let expected = G_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(g_d_to_i64(ctype))
+        )
+    }
+
+    func testG_dIntRawValueInit() {
+        let raw = g_d(5)
+        let ctype = g_d_to_i64(raw)
+        let expected = G_d(Int(ctype))
+        XCTAssertEqual(G_d(rawValue: raw), expected)
+    }
+
+    func testG_dAccelerationIntInit() {
+        let raw = G_d(Int(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_dCIntInits() {
+        let raw = CInt(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_g_d(5)
+        let expected2 = CInt(
+            g_d_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_dCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_g_d(5)
+        let expected = G_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(g_d_to_i32(ctype))
+        )
+    }
+
+    func testG_dCIntRawValueInit() {
+        let raw = g_d(5)
+        let ctype = g_d_to_i32(raw)
+        let expected = G_d(CInt(ctype))
+        XCTAssertEqual(G_d(rawValue: raw), expected)
+    }
+
+    func testG_dAccelerationCIntInit() {
+        let raw = G_d(CInt(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_dUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_g_d(5)
+        let expected2 = UInt8(
+            g_d_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_dUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_g_d(5)
+        let expected = G_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(g_d_to_u8(ctype))
+        )
+    }
+
+    func testG_dUInt8RawValueInit() {
+        let raw = g_d(5)
+        let ctype = g_d_to_u8(raw)
+        let expected = G_d(UInt8(ctype))
+        XCTAssertEqual(G_d(rawValue: raw), expected)
+    }
+
+    func testG_dAccelerationUInt8Init() {
+        let raw = G_d(UInt8(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_dUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_g_d(5)
+        let expected2 = UInt16(
+            g_d_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_dUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_g_d(5)
+        let expected = G_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(g_d_to_u16(ctype))
+        )
+    }
+
+    func testG_dUInt16RawValueInit() {
+        let raw = g_d(5)
+        let ctype = g_d_to_u16(raw)
+        let expected = G_d(UInt16(ctype))
+        XCTAssertEqual(G_d(rawValue: raw), expected)
+    }
+
+    func testG_dAccelerationUInt16Init() {
+        let raw = G_d(UInt16(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_dUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_g_d(5)
+        let expected2 = UInt32(
+            g_d_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_dUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_g_d(5)
+        let expected = G_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(g_d_to_u32(ctype))
+        )
+    }
+
+    func testG_dUInt32RawValueInit() {
+        let raw = g_d(5)
+        let ctype = g_d_to_u32(raw)
+        let expected = G_d(UInt32(ctype))
+        XCTAssertEqual(G_d(rawValue: raw), expected)
+    }
+
+    func testG_dAccelerationUInt32Init() {
+        let raw = G_d(UInt32(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_dUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_g_d(5)
+        let expected2 = UInt64(
+            g_d_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_dUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_g_d(5)
+        let expected = G_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(g_d_to_u64(ctype))
+        )
+    }
+
+    func testG_dUInt64RawValueInit() {
+        let raw = g_d(5)
+        let ctype = g_d_to_u64(raw)
+        let expected = G_d(UInt64(ctype))
+        XCTAssertEqual(G_d(rawValue: raw), expected)
+    }
+
+    func testG_dAccelerationUInt64Init() {
+        let raw = G_d(UInt64(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_dUIntInits() {
+        let raw = UInt(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_g_d(5)
+        let expected2 = UInt(
+            g_d_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_dUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_g_d(5)
+        let expected = G_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(g_d_to_u64(ctype))
+        )
+    }
+
+    func testG_dUIntRawValueInit() {
+        let raw = g_d(5)
+        let ctype = g_d_to_u64(raw)
+        let expected = G_d(UInt(ctype))
+        XCTAssertEqual(G_d(rawValue: raw), expected)
+    }
+
+    func testG_dAccelerationUIntInit() {
+        let raw = G_d(UInt(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_dCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_g_d(5)
+        let expected2 = CUnsignedInt(
+            g_d_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_dCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_g_d(5)
+        let expected = G_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(g_d_to_u32(ctype))
+        )
+    }
+
+    func testG_dCUnsignedIntRawValueInit() {
+        let raw = g_d(5)
+        let ctype = g_d_to_u32(raw)
+        let expected = G_d(CUnsignedInt(ctype))
+        XCTAssertEqual(G_d(rawValue: raw), expected)
+    }
+
+    func testG_dAccelerationCUnsignedIntInit() {
+        let raw = G_d(CUnsignedInt(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_dFloatInits() {
+        let raw = Float(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_g_d(5)
+        let expected2 = Float(
+            g_d_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_dFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_g_d(5)
+        let expected = G_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(g_d_to_f(ctype))
+        )
+    }
+
+    func testG_dFloatRawValueInit() {
+        let raw = g_d(5)
+        let ctype = g_d_to_f(raw)
+        let expected = G_d(Float(ctype))
+        XCTAssertEqual(G_d(rawValue: raw), expected)
+    }
+
+    func testG_dAccelerationFloatInit() {
+        let raw = G_d(Float(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationG_dDoubleInits() {
+        let raw = Double(5)
+        let expected = Acceleration(g: raw)
+        let result = Acceleration.g(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_g_d(5)
+        let expected2 = Double(
+            g_d_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testG_dDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_g_d(5)
+        let expected = G_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(g_d_to_d(ctype))
+        )
+    }
+
+    func testG_dDoubleRawValueInit() {
+        let raw = g_d(5)
+        let ctype = g_d_to_d(raw)
+        let expected = G_d(Double(ctype))
+        XCTAssertEqual(G_d(rawValue: raw), expected)
+    }
+
+    func testG_dAccelerationDoubleInit() {
+        let raw = G_d(Double(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .g_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+}
 
 /// Provides metrespersecond2_t unit tests.
 final class Metrespersecond2_tTests: XCTestCase {

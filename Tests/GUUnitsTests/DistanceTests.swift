@@ -57,8 +57,11060 @@
 */
 
 import CGUUnits
-import GUUnits
+@testable import GUUnits
 import XCTest
+
+final class MillimetresTypeTests: XCTestCase {
+
+    func testMillimetres_tEquality() {
+        XCTAssertEqual(Millimetres_t(5), Millimetres_t(5))
+    }
+
+    func testMillimetres_tCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Millimetres_t(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Millimetres_t.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testMillimetres_tSelfInit() {
+        let expected = Millimetres_t(15)
+        XCTAssertEqual(expected, Millimetres_t(expected))
+    }
+
+    func testMillimetres_tSelfExactlyInit() {
+        let expected = Millimetres_t(15)
+        XCTAssertEqual(expected, Millimetres_t(exactly: expected))
+    }
+
+    func testMillimetres_tComparable() {
+        let lhs = Millimetres_t(1)
+        let rhs = Millimetres_t(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testMillimetres_tMagnitude() {
+        let expected = CInt(5).magnitude
+        XCTAssertEqual(Millimetres_t(5).magnitude, expected)
+    }
+
+    func testMillimetres_tTruncatingInit() {
+        let expected = Millimetres_t(CInt(truncatingIfNeeded: UInt64.max))
+        XCTAssertEqual(Millimetres_t(truncatingIfNeeded: expected), expected)
+    }
+
+    func testMillimetres_tClampingInit() {
+        let expected = Millimetres_t(CInt(clamping: UInt64.max))
+        XCTAssertEqual(Millimetres_t(clamping: expected), expected)
+    }
+
+    func testMillimetres_tBitWidth() {
+        let expected = CInt(5).bitWidth
+        XCTAssertEqual(Millimetres_t(5).bitWidth, expected)
+    }
+
+    func testMillimetres_tLeadingZeroBitCount() {
+        let expected = CInt(5).leadingZeroBitCount
+        XCTAssertEqual(Millimetres_t(5).leadingZeroBitCount, expected)
+    }
+
+    func testMillimetres_tNonzeroBitCount() {
+        let expected = CInt(5).nonzeroBitCount
+        XCTAssertEqual(Millimetres_t(5).nonzeroBitCount, expected)
+    }
+
+    func testMillimetres_tIntegerLiteralInit() {
+        let expected = CInt(integerLiteral: CInt.max)
+        XCTAssertEqual(Millimetres_t(expected), Millimetres_t(integerLiteral: CInt.max))
+    }
+
+    func testMillimetres_tTruncatingBits() {
+        let expected = Millimetres_t(CInt(_truncatingBits: UInt.max))
+        XCTAssertEqual(expected, Millimetres_t(_truncatingBits: UInt.max))
+    }
+
+    func testMillimetres_tAddition() {
+        let expected = Millimetres_t(CInt(5) + CInt(3))
+        XCTAssertEqual(Millimetres_t(5) + Millimetres_t(3), expected)
+    }
+
+    func testMillimetres_tSubtraction() {
+        let expected = Millimetres_t(CInt(5) - CInt(3))
+        XCTAssertEqual(Millimetres_t(5) - Millimetres_t(3), expected)
+    }
+
+    func testMillimetres_tMultiplication() {
+        let expected = Millimetres_t(CInt(5) * CInt(3))
+        XCTAssertEqual(Millimetres_t(5) * Millimetres_t(3), expected)
+    }
+
+    func testMillimetres_tDivision() {
+        let expected = Millimetres_t(CInt(6) / CInt(3))
+        XCTAssertEqual(Millimetres_t(6) / Millimetres_t(3), expected)
+    }
+
+    func testMillimetres_tAddOverflow() {
+        let rawOriginal = CInt.max
+        let rawResult = rawOriginal.addingReportingOverflow(CInt(1))
+        let original = Millimetres_t(rawOriginal)
+        let result = original.addingReportingOverflow(Millimetres_t(1))
+        XCTAssertEqual(result.0, Millimetres_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testMillimetres_tMultiplyOverflow() {
+        let rawOriginal = CInt.max
+        let rawResult = rawOriginal.multipliedReportingOverflow(by: CInt(2))
+        let original = Millimetres_t(rawOriginal)
+        let result = original.multipliedReportingOverflow(by: Millimetres_t(2))
+        XCTAssertEqual(result.0, Millimetres_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testMillimetres_tSubtractOverflow() {
+        let rawOriginal = CInt.min
+        let rawResult = rawOriginal.subtractingReportingOverflow(CInt(1))
+        let original = Millimetres_t(rawOriginal)
+        let result = original.subtractingReportingOverflow(Millimetres_t(1))
+        XCTAssertEqual(result.0, Millimetres_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testMillimetres_tDivideOverflow() {
+        let rawOriginal = CInt(1)
+        let rawResult = rawOriginal.dividedReportingOverflow(by: CInt.max)
+        let original = Millimetres_t(rawOriginal)
+        let result = original.dividedReportingOverflow(by: Millimetres_t(CInt.max))
+        XCTAssertEqual(result.0, Millimetres_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testMillimetres_tRemainderOverflow() {
+        let rawOriginal = CInt(1)
+        let rawResult = rawOriginal.remainderReportingOverflow(dividingBy: CInt.max)
+        let original = Millimetres_t(rawOriginal)
+        let result = original.remainderReportingOverflow(dividingBy: Millimetres_t(CInt.max))
+        XCTAssertEqual(result.0, Millimetres_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testMillimetres_tTrailingZeroBitCount() {
+        let original = CInt(1)
+        XCTAssertEqual(Millimetres_t(original).trailingZeroBitCount, original.trailingZeroBitCount)
+    }
+
+    func testMillimetres_tTimesEquals() {
+        var original = CInt(2)
+        original *= 4
+        var result = Millimetres_t(CInt(2))
+        result *= 4
+        XCTAssertEqual(result, Millimetres_t(original))
+    }
+
+    func testMillimetres_tDivideEquals() {
+        var original = CInt(4)
+        original /= 2
+        var result = Millimetres_t(CInt(4))
+        result /= 2
+        XCTAssertEqual(result, Millimetres_t(original))
+    }
+
+    func testMillimetres_tModEquals() {
+        var original = CInt(4)
+        original %= 2
+        var result = Millimetres_t(CInt(4))
+        result %= 2
+        XCTAssertEqual(result, Millimetres_t(original))
+    }
+
+    func testMillimetres_tAndEquals() {
+        var original = CInt(2)
+        original &= 6
+        var result = Millimetres_t(CInt(2))
+        result &= 6
+        XCTAssertEqual(result, Millimetres_t(original))
+    }
+
+    func testMillimetres_tOrEquals() {
+        var original = CInt(2)
+        original |= 4
+        var result = Millimetres_t(CInt(2))
+        result |= 4
+        XCTAssertEqual(result, Millimetres_t(original))
+    }
+
+    func testMillimetres_tHatEquals() {
+        var original = CInt(2)
+        original ^= 4
+        var result = Millimetres_t(CInt(2))
+        result ^= 4
+        XCTAssertEqual(result, Millimetres_t(original))
+    }
+
+    func testMillimetres_tMod() {
+        let original = CInt(4)
+        let expected = Millimetres_t(original % 2)
+        XCTAssertEqual(Millimetres_t(original) % 2, expected)
+    }
+
+    func testMillimetres_uEquality() {
+        XCTAssertEqual(Millimetres_u(5), Millimetres_u(5))
+    }
+
+    func testMillimetres_uCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Millimetres_u(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Millimetres_u.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testMillimetres_uSelfInit() {
+        let expected = Millimetres_u(15)
+        XCTAssertEqual(expected, Millimetres_u(expected))
+    }
+
+    func testMillimetres_uSelfExactlyInit() {
+        let expected = Millimetres_u(15)
+        XCTAssertEqual(expected, Millimetres_u(exactly: expected))
+    }
+
+    func testMillimetres_uComparable() {
+        let lhs = Millimetres_u(1)
+        let rhs = Millimetres_u(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testMillimetres_uMagnitude() {
+        let expected = CUnsignedInt(5).magnitude
+        XCTAssertEqual(Millimetres_u(5).magnitude, expected)
+    }
+
+    func testMillimetres_uTruncatingInit() {
+        let expected = Millimetres_u(CUnsignedInt(truncatingIfNeeded: UInt64.max))
+        XCTAssertEqual(Millimetres_u(truncatingIfNeeded: expected), expected)
+    }
+
+    func testMillimetres_uClampingInit() {
+        let expected = Millimetres_u(CUnsignedInt(clamping: UInt64.max))
+        XCTAssertEqual(Millimetres_u(clamping: expected), expected)
+    }
+
+    func testMillimetres_uBitWidth() {
+        let expected = CUnsignedInt(5).bitWidth
+        XCTAssertEqual(Millimetres_u(5).bitWidth, expected)
+    }
+
+    func testMillimetres_uLeadingZeroBitCount() {
+        let expected = CUnsignedInt(5).leadingZeroBitCount
+        XCTAssertEqual(Millimetres_u(5).leadingZeroBitCount, expected)
+    }
+
+    func testMillimetres_uNonzeroBitCount() {
+        let expected = CUnsignedInt(5).nonzeroBitCount
+        XCTAssertEqual(Millimetres_u(5).nonzeroBitCount, expected)
+    }
+
+    func testMillimetres_uIntegerLiteralInit() {
+        let expected = CUnsignedInt(integerLiteral: CUnsignedInt.max)
+        XCTAssertEqual(Millimetres_u(expected), Millimetres_u(integerLiteral: CUnsignedInt.max))
+    }
+
+    func testMillimetres_uTruncatingBits() {
+        let expected = Millimetres_u(CUnsignedInt(_truncatingBits: UInt.max))
+        XCTAssertEqual(expected, Millimetres_u(_truncatingBits: UInt.max))
+    }
+
+    func testMillimetres_uAddition() {
+        let expected = Millimetres_u(CUnsignedInt(5) + CUnsignedInt(3))
+        XCTAssertEqual(Millimetres_u(5) + Millimetres_u(3), expected)
+    }
+
+    func testMillimetres_uSubtraction() {
+        let expected = Millimetres_u(CUnsignedInt(5) - CUnsignedInt(3))
+        XCTAssertEqual(Millimetres_u(5) - Millimetres_u(3), expected)
+    }
+
+    func testMillimetres_uMultiplication() {
+        let expected = Millimetres_u(CUnsignedInt(5) * CUnsignedInt(3))
+        XCTAssertEqual(Millimetres_u(5) * Millimetres_u(3), expected)
+    }
+
+    func testMillimetres_uDivision() {
+        let expected = Millimetres_u(CUnsignedInt(6) / CUnsignedInt(3))
+        XCTAssertEqual(Millimetres_u(6) / Millimetres_u(3), expected)
+    }
+
+    func testMillimetres_uAddOverflow() {
+        let rawOriginal = CUnsignedInt.max
+        let rawResult = rawOriginal.addingReportingOverflow(CUnsignedInt(1))
+        let original = Millimetres_u(rawOriginal)
+        let result = original.addingReportingOverflow(Millimetres_u(1))
+        XCTAssertEqual(result.0, Millimetres_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testMillimetres_uMultiplyOverflow() {
+        let rawOriginal = CUnsignedInt.max
+        let rawResult = rawOriginal.multipliedReportingOverflow(by: CUnsignedInt(2))
+        let original = Millimetres_u(rawOriginal)
+        let result = original.multipliedReportingOverflow(by: Millimetres_u(2))
+        XCTAssertEqual(result.0, Millimetres_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testMillimetres_uSubtractOverflow() {
+        let rawOriginal = CUnsignedInt.min
+        let rawResult = rawOriginal.subtractingReportingOverflow(CUnsignedInt(1))
+        let original = Millimetres_u(rawOriginal)
+        let result = original.subtractingReportingOverflow(Millimetres_u(1))
+        XCTAssertEqual(result.0, Millimetres_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testMillimetres_uDivideOverflow() {
+        let rawOriginal = CUnsignedInt(1)
+        let rawResult = rawOriginal.dividedReportingOverflow(by: CUnsignedInt.max)
+        let original = Millimetres_u(rawOriginal)
+        let result = original.dividedReportingOverflow(by: Millimetres_u(CUnsignedInt.max))
+        XCTAssertEqual(result.0, Millimetres_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testMillimetres_uRemainderOverflow() {
+        let rawOriginal = CUnsignedInt(1)
+        let rawResult = rawOriginal.remainderReportingOverflow(dividingBy: CUnsignedInt.max)
+        let original = Millimetres_u(rawOriginal)
+        let result = original.remainderReportingOverflow(dividingBy: Millimetres_u(CUnsignedInt.max))
+        XCTAssertEqual(result.0, Millimetres_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testMillimetres_uTrailingZeroBitCount() {
+        let original = CUnsignedInt(1)
+        XCTAssertEqual(Millimetres_u(original).trailingZeroBitCount, original.trailingZeroBitCount)
+    }
+
+    func testMillimetres_uTimesEquals() {
+        var original = CUnsignedInt(2)
+        original *= 4
+        var result = Millimetres_u(CUnsignedInt(2))
+        result *= 4
+        XCTAssertEqual(result, Millimetres_u(original))
+    }
+
+    func testMillimetres_uDivideEquals() {
+        var original = CUnsignedInt(4)
+        original /= 2
+        var result = Millimetres_u(CUnsignedInt(4))
+        result /= 2
+        XCTAssertEqual(result, Millimetres_u(original))
+    }
+
+    func testMillimetres_uModEquals() {
+        var original = CUnsignedInt(4)
+        original %= 2
+        var result = Millimetres_u(CUnsignedInt(4))
+        result %= 2
+        XCTAssertEqual(result, Millimetres_u(original))
+    }
+
+    func testMillimetres_uAndEquals() {
+        var original = CUnsignedInt(2)
+        original &= 6
+        var result = Millimetres_u(CUnsignedInt(2))
+        result &= 6
+        XCTAssertEqual(result, Millimetres_u(original))
+    }
+
+    func testMillimetres_uOrEquals() {
+        var original = CUnsignedInt(2)
+        original |= 4
+        var result = Millimetres_u(CUnsignedInt(2))
+        result |= 4
+        XCTAssertEqual(result, Millimetres_u(original))
+    }
+
+    func testMillimetres_uHatEquals() {
+        var original = CUnsignedInt(2)
+        original ^= 4
+        var result = Millimetres_u(CUnsignedInt(2))
+        result ^= 4
+        XCTAssertEqual(result, Millimetres_u(original))
+    }
+
+    func testMillimetres_uMod() {
+        let original = CUnsignedInt(4)
+        let expected = Millimetres_u(original % 2)
+        XCTAssertEqual(Millimetres_u(original) % 2, expected)
+    }
+
+    func testMillimetres_fEquality() {
+        XCTAssertEqual(Millimetres_f(5), Millimetres_f(5))
+    }
+
+    func testMillimetres_fCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Millimetres_f(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Millimetres_f.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testMillimetres_fSelfInit() {
+        let expected = Millimetres_f(15)
+        XCTAssertEqual(expected, Millimetres_f(expected))
+    }
+
+    func testMillimetres_fSelfExactlyInit() {
+        let expected = Millimetres_f(15)
+        XCTAssertEqual(expected, Millimetres_f(exactly: expected))
+    }
+
+    func testMillimetres_fComparable() {
+        let lhs = Millimetres_f(1)
+        let rhs = Millimetres_f(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testMillimetres_fRadix() {
+        XCTAssertEqual(Millimetres_f.radix, Float.radix)
+    }
+
+    func testMillimetres_fExponentBitCount() {
+        XCTAssertEqual(Millimetres_f.exponentBitCount, Float.exponentBitCount)
+    }
+
+    func testMillimetres_fSignificandBitCount() {
+        XCTAssertEqual(Millimetres_f.significandBitCount, Float.significandBitCount)
+    }
+
+    func testMillimetres_fMagnitude() {
+        let expected = Millimetres_f(Float(5).magnitude)
+        XCTAssertEqual(Millimetres_f(5).magnitude, expected)
+    }
+
+    func testMillimetres_fExactlyInit() {
+        let expected = Millimetres_f(Float(exactly: Int(5)) ?? Float.infinity)
+        XCTAssertEqual(Millimetres_f(exactly: Int(5)), expected)
+    }
+
+    func testMillimetres_fIsTotallyOrdered() {
+        let param = Float(100)
+        let other = Float(5)
+        XCTAssertEqual(
+            Millimetres_f(param).isTotallyOrdered(belowOrEqualTo: Millimetres_f(other)),
+            param.isTotallyOrdered(belowOrEqualTo: other)
+        )
+    }
+
+    func testMillimetres_fBinade() {
+        let raw = Float(5)
+        let expected = Millimetres_f(raw.binade)
+        XCTAssertEqual(Millimetres_f(raw).binade, expected)
+    }
+
+    func testMillimetres_fSignificandWidth() {
+        let raw = Float(5)
+        XCTAssertEqual(Millimetres_f(raw).significandWidth, raw.significandWidth)
+    }
+
+    func testMillimetres_fDebugDescription() {
+        let raw = Float(5)
+        XCTAssertEqual(Millimetres_f(raw).debugDescription, raw.debugDescription)
+    }
+
+    func testMillimetres_fDescriptionInit() {
+        let raw = Float("5.0") ?? Float.nan
+        XCTAssertEqual(Millimetres_f("5.0"), Millimetres_f(raw))
+    }
+
+    func testMillimetres_fStaticVars() {
+        XCTAssertEqual(Millimetres_f.nan.isNaN, Millimetres_f(Float.nan).isNaN)
+        XCTAssertEqual(
+            Millimetres_f.signalingNaN.isSignalingNaN,
+            Millimetres_f(Float.signalingNaN).isSignalingNaN
+        )
+        XCTAssertEqual(Millimetres_f.infinity, Millimetres_f(Float.infinity))
+        XCTAssertEqual(Millimetres_f.greatestFiniteMagnitude, Millimetres_f(Float.greatestFiniteMagnitude))
+        XCTAssertEqual(Millimetres_f.pi, Millimetres_f(Float.pi))
+        XCTAssertEqual(Millimetres_f.leastNormalMagnitude, Millimetres_f(Float.leastNormalMagnitude))
+        XCTAssertEqual(Millimetres_f.leastNonzeroMagnitude, Millimetres_f(Float.leastNonzeroMagnitude))
+    }
+
+    func testMillimetres_fUlp() {
+        let raw = Float(5)
+        XCTAssertEqual(Millimetres_f(raw).ulp, Millimetres_f(raw.ulp))
+    }
+
+    func testMillimetres_fSign() {
+        let raw = Float(5)
+        XCTAssertEqual(Millimetres_f(raw).sign, raw.sign)
+    }
+
+    func testMillimetres_fSignificand() {
+        let raw = Float(5)
+        XCTAssertEqual(Millimetres_f(raw).significand, Millimetres_f(raw.significand))
+    }
+
+    func testMillimetres_fNextUp() {
+        let raw = Float(5)
+        XCTAssertEqual(Millimetres_f(raw).nextUp, Millimetres_f(raw.nextUp))
+    }
+
+    func testMillimetres_fVars() {
+        XCTAssertEqual(Millimetres_f(5).isNormal, Float(5).isNormal)
+        XCTAssertEqual(Millimetres_f(5).isFinite, Float(5).isFinite)
+        XCTAssertEqual(Millimetres_f(5).isZero, Float(5).isZero)
+        XCTAssertEqual(Millimetres_f(0).isZero, Float(0).isZero)
+        XCTAssertEqual(Millimetres_f(5).isSubnormal, Float(5).isSubnormal)
+        XCTAssertEqual(Millimetres_f(5).isInfinite, Float(5).isInfinite)
+        XCTAssertEqual(Millimetres_f.infinity.isInfinite, Float.infinity.isInfinite)
+        XCTAssertEqual(Millimetres_f(5).isNaN, Float(5).isNaN)
+        XCTAssertEqual(Millimetres_f.nan.isNaN, Float.nan.isNaN)
+        XCTAssertEqual(Millimetres_f(5).isSignalingNaN, Float(5).isSignalingNaN)
+        XCTAssertEqual(Millimetres_f.nan.isSignalingNaN, Float.nan.isSignalingNaN)
+        XCTAssertEqual(Millimetres_f(5).isCanonical, Float(5).isCanonical)
+        XCTAssertEqual(Millimetres_f(5).description, Float(5).description)
+        XCTAssertEqual(Millimetres_f(5).exponentBitPattern, Float(5).exponentBitPattern)
+        XCTAssertEqual(Millimetres_f(5).significandBitPattern, Float(5).significandBitPattern)
+        XCTAssertEqual(Millimetres_f(5).exponent, Float(5).exponent)
+    }
+
+    func testMillimetres_fFormRemainder() {
+        var original = Float(4)
+        let denominator = Float(3)
+        original.formRemainder(dividingBy: denominator)
+        var result = Millimetres_f(Float(4))
+        result.formRemainder(dividingBy: Millimetres_f(denominator))
+        XCTAssertEqual(result, Millimetres_f(original))
+    }
+
+    func testMillimetres_fFormTruncatingRemainder() {
+        var original = Float(4)
+        let denominator = Float(3)
+        original.formTruncatingRemainder(dividingBy: denominator)
+        var result = Millimetres_f(Float(4))
+        result.formTruncatingRemainder(dividingBy: Millimetres_f(denominator))
+        XCTAssertEqual(result, Millimetres_f(original))
+    }
+
+    func testMillimetres_fFormSquareRoot() {
+        var original = Float(4)
+        original.formSquareRoot()
+        var result = Millimetres_f(Float(4))
+        result.formSquareRoot()
+        XCTAssertEqual(result, Millimetres_f(original))
+    }
+
+    func testMillimetres_fAddProduct() {
+        var original = Float(4)
+        let lhs = Float(3)
+        let rhs = Float(5)
+        original.addProduct(lhs, rhs)
+        var result = Millimetres_f(Float(4))
+        result.addProduct(Millimetres_f(lhs), Millimetres_f(rhs))
+        XCTAssertEqual(result, Millimetres_f(original))
+    }
+
+    func testMillimetres_fIsEqual() {
+        let this = Millimetres_f(5)
+        let other = Millimetres_f(6)
+        XCTAssertTrue(this.isEqual(to: this))
+        XCTAssertFalse(this.isEqual(to: other))
+    }
+
+    func testMillimetres_fIsLess() {
+        let this = Millimetres_f(5)
+        let other = Millimetres_f(6)
+        XCTAssertFalse(this.isLess(than: this))
+        XCTAssertTrue(this.isLess(than: other))
+    }
+
+    func testMillimetres_fIsLessThanOrEqual() {
+        let this = Millimetres_f(5)
+        let other = Millimetres_f(6)
+        let other2 = Millimetres_f(4)
+        XCTAssertTrue(this.isLessThanOrEqualTo(this))
+        XCTAssertTrue(this.isLessThanOrEqualTo(other))
+        XCTAssertFalse(this.isLessThanOrEqualTo(other2))
+    }
+
+    func testMillimetres_fOperations() {
+        let lhs = Millimetres_f(6)
+        let rhs = Millimetres_f(3)
+        XCTAssertEqual(lhs + rhs, Millimetres_f(9))
+        XCTAssertEqual(lhs - rhs, Millimetres_f(3))
+        XCTAssertEqual(lhs * rhs, Millimetres_f(18))
+        XCTAssertEqual(lhs / rhs, Millimetres_f(2))
+    }
+
+    func testMillimetres_fTimesEqual() {
+        var this = Millimetres_f(3)
+        this *= Millimetres_f(4)
+        XCTAssertEqual(this, Millimetres_f(12))
+    }
+
+    func testMillimetres_fDivideEqual() {
+        var this = Millimetres_f(6)
+        this /= Millimetres_f(3)
+        XCTAssertEqual(this, Millimetres_f(2))
+    }
+
+    func testMillimetres_fRound() {
+        var expected = Float(5.6)
+        expected.round(.up)
+        var result = Millimetres_f(5.6)
+        result.round(.up)
+        XCTAssertEqual(result, Millimetres_f(expected))
+    }
+
+    func testMillimetres_fDistanceTo() {
+        let original = Float(5.0)
+        let other = Float(23)
+        let expected = original.distance(to: other)
+        XCTAssertEqual(Millimetres_f(original).distance(to: Millimetres_f(other)), expected)
+    }
+
+    func testMillimetres_fAdvancedBy() {
+        let original = Float(5)
+        let expected = original.advanced(by: 3)
+        XCTAssertEqual(Millimetres_f(original).advanced(by: 3), Millimetres_f(expected))
+    }
+
+    func testMillimetres_dEquality() {
+        XCTAssertEqual(Millimetres_d(5), Millimetres_d(5))
+    }
+
+    func testMillimetres_dCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Millimetres_d(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Millimetres_d.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testMillimetres_dSelfInit() {
+        let expected = Millimetres_d(15)
+        XCTAssertEqual(expected, Millimetres_d(expected))
+    }
+
+    func testMillimetres_dSelfExactlyInit() {
+        let expected = Millimetres_d(15)
+        XCTAssertEqual(expected, Millimetres_d(exactly: expected))
+    }
+
+    func testMillimetres_dComparable() {
+        let lhs = Millimetres_d(1)
+        let rhs = Millimetres_d(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testMillimetres_dRadix() {
+        XCTAssertEqual(Millimetres_d.radix, Double.radix)
+    }
+
+    func testMillimetres_dExponentBitCount() {
+        XCTAssertEqual(Millimetres_d.exponentBitCount, Double.exponentBitCount)
+    }
+
+    func testMillimetres_dSignificandBitCount() {
+        XCTAssertEqual(Millimetres_d.significandBitCount, Double.significandBitCount)
+    }
+
+    func testMillimetres_dMagnitude() {
+        let expected = Millimetres_d(Double(5).magnitude)
+        XCTAssertEqual(Millimetres_d(5).magnitude, expected)
+    }
+
+    func testMillimetres_dExactlyInit() {
+        let expected = Millimetres_d(Double(exactly: Int(5)) ?? Double.infinity)
+        XCTAssertEqual(Millimetres_d(exactly: Int(5)), expected)
+    }
+
+    func testMillimetres_dIsTotallyOrdered() {
+        let param = Double(100)
+        let other = Double(5)
+        XCTAssertEqual(
+            Millimetres_d(param).isTotallyOrdered(belowOrEqualTo: Millimetres_d(other)),
+            param.isTotallyOrdered(belowOrEqualTo: other)
+        )
+    }
+
+    func testMillimetres_dBinade() {
+        let raw = Double(5)
+        let expected = Millimetres_d(raw.binade)
+        XCTAssertEqual(Millimetres_d(raw).binade, expected)
+    }
+
+    func testMillimetres_dSignificandWidth() {
+        let raw = Double(5)
+        XCTAssertEqual(Millimetres_d(raw).significandWidth, raw.significandWidth)
+    }
+
+    func testMillimetres_dDebugDescription() {
+        let raw = Double(5)
+        XCTAssertEqual(Millimetres_d(raw).debugDescription, raw.debugDescription)
+    }
+
+    func testMillimetres_dDescriptionInit() {
+        let raw = Double("5.0") ?? Double.nan
+        XCTAssertEqual(Millimetres_d("5.0"), Millimetres_d(raw))
+    }
+
+    func testMillimetres_dStaticVars() {
+        XCTAssertEqual(Millimetres_d.nan.isNaN, Millimetres_d(Double.nan).isNaN)
+        XCTAssertEqual(
+            Millimetres_d.signalingNaN.isSignalingNaN,
+            Millimetres_d(Double.signalingNaN).isSignalingNaN
+        )
+        XCTAssertEqual(Millimetres_d.infinity, Millimetres_d(Double.infinity))
+        XCTAssertEqual(Millimetres_d.greatestFiniteMagnitude, Millimetres_d(Double.greatestFiniteMagnitude))
+        XCTAssertEqual(Millimetres_d.pi, Millimetres_d(Double.pi))
+        XCTAssertEqual(Millimetres_d.leastNormalMagnitude, Millimetres_d(Double.leastNormalMagnitude))
+        XCTAssertEqual(Millimetres_d.leastNonzeroMagnitude, Millimetres_d(Double.leastNonzeroMagnitude))
+    }
+
+    func testMillimetres_dUlp() {
+        let raw = Double(5)
+        XCTAssertEqual(Millimetres_d(raw).ulp, Millimetres_d(raw.ulp))
+    }
+
+    func testMillimetres_dSign() {
+        let raw = Double(5)
+        XCTAssertEqual(Millimetres_d(raw).sign, raw.sign)
+    }
+
+    func testMillimetres_dSignificand() {
+        let raw = Double(5)
+        XCTAssertEqual(Millimetres_d(raw).significand, Millimetres_d(raw.significand))
+    }
+
+    func testMillimetres_dNextUp() {
+        let raw = Double(5)
+        XCTAssertEqual(Millimetres_d(raw).nextUp, Millimetres_d(raw.nextUp))
+    }
+
+    func testMillimetres_dVars() {
+        XCTAssertEqual(Millimetres_d(5).isNormal, Double(5).isNormal)
+        XCTAssertEqual(Millimetres_d(5).isFinite, Double(5).isFinite)
+        XCTAssertEqual(Millimetres_d(5).isZero, Double(5).isZero)
+        XCTAssertEqual(Millimetres_d(0).isZero, Double(0).isZero)
+        XCTAssertEqual(Millimetres_d(5).isSubnormal, Double(5).isSubnormal)
+        XCTAssertEqual(Millimetres_d(5).isInfinite, Double(5).isInfinite)
+        XCTAssertEqual(Millimetres_d.infinity.isInfinite, Double.infinity.isInfinite)
+        XCTAssertEqual(Millimetres_d(5).isNaN, Double(5).isNaN)
+        XCTAssertEqual(Millimetres_d.nan.isNaN, Double.nan.isNaN)
+        XCTAssertEqual(Millimetres_d(5).isSignalingNaN, Double(5).isSignalingNaN)
+        XCTAssertEqual(Millimetres_d.nan.isSignalingNaN, Double.nan.isSignalingNaN)
+        XCTAssertEqual(Millimetres_d(5).isCanonical, Double(5).isCanonical)
+        XCTAssertEqual(Millimetres_d(5).description, Double(5).description)
+        XCTAssertEqual(Millimetres_d(5).exponentBitPattern, Double(5).exponentBitPattern)
+        XCTAssertEqual(Millimetres_d(5).significandBitPattern, Double(5).significandBitPattern)
+        XCTAssertEqual(Millimetres_d(5).exponent, Double(5).exponent)
+    }
+
+    func testMillimetres_dFormRemainder() {
+        var original = Double(4)
+        let denominator = Double(3)
+        original.formRemainder(dividingBy: denominator)
+        var result = Millimetres_d(Double(4))
+        result.formRemainder(dividingBy: Millimetres_d(denominator))
+        XCTAssertEqual(result, Millimetres_d(original))
+    }
+
+    func testMillimetres_dFormTruncatingRemainder() {
+        var original = Double(4)
+        let denominator = Double(3)
+        original.formTruncatingRemainder(dividingBy: denominator)
+        var result = Millimetres_d(Double(4))
+        result.formTruncatingRemainder(dividingBy: Millimetres_d(denominator))
+        XCTAssertEqual(result, Millimetres_d(original))
+    }
+
+    func testMillimetres_dFormSquareRoot() {
+        var original = Double(4)
+        original.formSquareRoot()
+        var result = Millimetres_d(Double(4))
+        result.formSquareRoot()
+        XCTAssertEqual(result, Millimetres_d(original))
+    }
+
+    func testMillimetres_dAddProduct() {
+        var original = Double(4)
+        let lhs = Double(3)
+        let rhs = Double(5)
+        original.addProduct(lhs, rhs)
+        var result = Millimetres_d(Double(4))
+        result.addProduct(Millimetres_d(lhs), Millimetres_d(rhs))
+        XCTAssertEqual(result, Millimetres_d(original))
+    }
+
+    func testMillimetres_dIsEqual() {
+        let this = Millimetres_d(5)
+        let other = Millimetres_d(6)
+        XCTAssertTrue(this.isEqual(to: this))
+        XCTAssertFalse(this.isEqual(to: other))
+    }
+
+    func testMillimetres_dIsLess() {
+        let this = Millimetres_d(5)
+        let other = Millimetres_d(6)
+        XCTAssertFalse(this.isLess(than: this))
+        XCTAssertTrue(this.isLess(than: other))
+    }
+
+    func testMillimetres_dIsLessThanOrEqual() {
+        let this = Millimetres_d(5)
+        let other = Millimetres_d(6)
+        let other2 = Millimetres_d(4)
+        XCTAssertTrue(this.isLessThanOrEqualTo(this))
+        XCTAssertTrue(this.isLessThanOrEqualTo(other))
+        XCTAssertFalse(this.isLessThanOrEqualTo(other2))
+    }
+
+    func testMillimetres_dOperations() {
+        let lhs = Millimetres_d(6)
+        let rhs = Millimetres_d(3)
+        XCTAssertEqual(lhs + rhs, Millimetres_d(9))
+        XCTAssertEqual(lhs - rhs, Millimetres_d(3))
+        XCTAssertEqual(lhs * rhs, Millimetres_d(18))
+        XCTAssertEqual(lhs / rhs, Millimetres_d(2))
+    }
+
+    func testMillimetres_dTimesEqual() {
+        var this = Millimetres_d(3)
+        this *= Millimetres_d(4)
+        XCTAssertEqual(this, Millimetres_d(12))
+    }
+
+    func testMillimetres_dDivideEqual() {
+        var this = Millimetres_d(6)
+        this /= Millimetres_d(3)
+        XCTAssertEqual(this, Millimetres_d(2))
+    }
+
+    func testMillimetres_dRound() {
+        var expected = Double(5.6)
+        expected.round(.up)
+        var result = Millimetres_d(5.6)
+        result.round(.up)
+        XCTAssertEqual(result, Millimetres_d(expected))
+    }
+
+    func testMillimetres_dDistanceTo() {
+        let original = Double(5.0)
+        let other = Double(23)
+        let expected = original.distance(to: other)
+        XCTAssertEqual(Millimetres_d(original).distance(to: Millimetres_d(other)), expected)
+    }
+
+    func testMillimetres_dAdvancedBy() {
+        let original = Double(5)
+        let expected = original.advanced(by: 3)
+        XCTAssertEqual(Millimetres_d(original).advanced(by: 3), Millimetres_d(expected))
+    }
+
+}
+
+final class CentimetresTypeTests: XCTestCase {
+
+    func testCentimetres_tEquality() {
+        XCTAssertEqual(Centimetres_t(5), Centimetres_t(5))
+    }
+
+    func testCentimetres_tCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Centimetres_t(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Centimetres_t.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testCentimetres_tSelfInit() {
+        let expected = Centimetres_t(15)
+        XCTAssertEqual(expected, Centimetres_t(expected))
+    }
+
+    func testCentimetres_tSelfExactlyInit() {
+        let expected = Centimetres_t(15)
+        XCTAssertEqual(expected, Centimetres_t(exactly: expected))
+    }
+
+    func testCentimetres_tComparable() {
+        let lhs = Centimetres_t(1)
+        let rhs = Centimetres_t(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testCentimetres_tMagnitude() {
+        let expected = CInt(5).magnitude
+        XCTAssertEqual(Centimetres_t(5).magnitude, expected)
+    }
+
+    func testCentimetres_tTruncatingInit() {
+        let expected = Centimetres_t(CInt(truncatingIfNeeded: UInt64.max))
+        XCTAssertEqual(Centimetres_t(truncatingIfNeeded: expected), expected)
+    }
+
+    func testCentimetres_tClampingInit() {
+        let expected = Centimetres_t(CInt(clamping: UInt64.max))
+        XCTAssertEqual(Centimetres_t(clamping: expected), expected)
+    }
+
+    func testCentimetres_tBitWidth() {
+        let expected = CInt(5).bitWidth
+        XCTAssertEqual(Centimetres_t(5).bitWidth, expected)
+    }
+
+    func testCentimetres_tLeadingZeroBitCount() {
+        let expected = CInt(5).leadingZeroBitCount
+        XCTAssertEqual(Centimetres_t(5).leadingZeroBitCount, expected)
+    }
+
+    func testCentimetres_tNonzeroBitCount() {
+        let expected = CInt(5).nonzeroBitCount
+        XCTAssertEqual(Centimetres_t(5).nonzeroBitCount, expected)
+    }
+
+    func testCentimetres_tIntegerLiteralInit() {
+        let expected = CInt(integerLiteral: CInt.max)
+        XCTAssertEqual(Centimetres_t(expected), Centimetres_t(integerLiteral: CInt.max))
+    }
+
+    func testCentimetres_tTruncatingBits() {
+        let expected = Centimetres_t(CInt(_truncatingBits: UInt.max))
+        XCTAssertEqual(expected, Centimetres_t(_truncatingBits: UInt.max))
+    }
+
+    func testCentimetres_tAddition() {
+        let expected = Centimetres_t(CInt(5) + CInt(3))
+        XCTAssertEqual(Centimetres_t(5) + Centimetres_t(3), expected)
+    }
+
+    func testCentimetres_tSubtraction() {
+        let expected = Centimetres_t(CInt(5) - CInt(3))
+        XCTAssertEqual(Centimetres_t(5) - Centimetres_t(3), expected)
+    }
+
+    func testCentimetres_tMultiplication() {
+        let expected = Centimetres_t(CInt(5) * CInt(3))
+        XCTAssertEqual(Centimetres_t(5) * Centimetres_t(3), expected)
+    }
+
+    func testCentimetres_tDivision() {
+        let expected = Centimetres_t(CInt(6) / CInt(3))
+        XCTAssertEqual(Centimetres_t(6) / Centimetres_t(3), expected)
+    }
+
+    func testCentimetres_tAddOverflow() {
+        let rawOriginal = CInt.max
+        let rawResult = rawOriginal.addingReportingOverflow(CInt(1))
+        let original = Centimetres_t(rawOriginal)
+        let result = original.addingReportingOverflow(Centimetres_t(1))
+        XCTAssertEqual(result.0, Centimetres_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testCentimetres_tMultiplyOverflow() {
+        let rawOriginal = CInt.max
+        let rawResult = rawOriginal.multipliedReportingOverflow(by: CInt(2))
+        let original = Centimetres_t(rawOriginal)
+        let result = original.multipliedReportingOverflow(by: Centimetres_t(2))
+        XCTAssertEqual(result.0, Centimetres_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testCentimetres_tSubtractOverflow() {
+        let rawOriginal = CInt.min
+        let rawResult = rawOriginal.subtractingReportingOverflow(CInt(1))
+        let original = Centimetres_t(rawOriginal)
+        let result = original.subtractingReportingOverflow(Centimetres_t(1))
+        XCTAssertEqual(result.0, Centimetres_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testCentimetres_tDivideOverflow() {
+        let rawOriginal = CInt(1)
+        let rawResult = rawOriginal.dividedReportingOverflow(by: CInt.max)
+        let original = Centimetres_t(rawOriginal)
+        let result = original.dividedReportingOverflow(by: Centimetres_t(CInt.max))
+        XCTAssertEqual(result.0, Centimetres_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testCentimetres_tRemainderOverflow() {
+        let rawOriginal = CInt(1)
+        let rawResult = rawOriginal.remainderReportingOverflow(dividingBy: CInt.max)
+        let original = Centimetres_t(rawOriginal)
+        let result = original.remainderReportingOverflow(dividingBy: Centimetres_t(CInt.max))
+        XCTAssertEqual(result.0, Centimetres_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testCentimetres_tTrailingZeroBitCount() {
+        let original = CInt(1)
+        XCTAssertEqual(Centimetres_t(original).trailingZeroBitCount, original.trailingZeroBitCount)
+    }
+
+    func testCentimetres_tTimesEquals() {
+        var original = CInt(2)
+        original *= 4
+        var result = Centimetres_t(CInt(2))
+        result *= 4
+        XCTAssertEqual(result, Centimetres_t(original))
+    }
+
+    func testCentimetres_tDivideEquals() {
+        var original = CInt(4)
+        original /= 2
+        var result = Centimetres_t(CInt(4))
+        result /= 2
+        XCTAssertEqual(result, Centimetres_t(original))
+    }
+
+    func testCentimetres_tModEquals() {
+        var original = CInt(4)
+        original %= 2
+        var result = Centimetres_t(CInt(4))
+        result %= 2
+        XCTAssertEqual(result, Centimetres_t(original))
+    }
+
+    func testCentimetres_tAndEquals() {
+        var original = CInt(2)
+        original &= 6
+        var result = Centimetres_t(CInt(2))
+        result &= 6
+        XCTAssertEqual(result, Centimetres_t(original))
+    }
+
+    func testCentimetres_tOrEquals() {
+        var original = CInt(2)
+        original |= 4
+        var result = Centimetres_t(CInt(2))
+        result |= 4
+        XCTAssertEqual(result, Centimetres_t(original))
+    }
+
+    func testCentimetres_tHatEquals() {
+        var original = CInt(2)
+        original ^= 4
+        var result = Centimetres_t(CInt(2))
+        result ^= 4
+        XCTAssertEqual(result, Centimetres_t(original))
+    }
+
+    func testCentimetres_tMod() {
+        let original = CInt(4)
+        let expected = Centimetres_t(original % 2)
+        XCTAssertEqual(Centimetres_t(original) % 2, expected)
+    }
+
+    func testCentimetres_uEquality() {
+        XCTAssertEqual(Centimetres_u(5), Centimetres_u(5))
+    }
+
+    func testCentimetres_uCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Centimetres_u(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Centimetres_u.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testCentimetres_uSelfInit() {
+        let expected = Centimetres_u(15)
+        XCTAssertEqual(expected, Centimetres_u(expected))
+    }
+
+    func testCentimetres_uSelfExactlyInit() {
+        let expected = Centimetres_u(15)
+        XCTAssertEqual(expected, Centimetres_u(exactly: expected))
+    }
+
+    func testCentimetres_uComparable() {
+        let lhs = Centimetres_u(1)
+        let rhs = Centimetres_u(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testCentimetres_uMagnitude() {
+        let expected = CUnsignedInt(5).magnitude
+        XCTAssertEqual(Centimetres_u(5).magnitude, expected)
+    }
+
+    func testCentimetres_uTruncatingInit() {
+        let expected = Centimetres_u(CUnsignedInt(truncatingIfNeeded: UInt64.max))
+        XCTAssertEqual(Centimetres_u(truncatingIfNeeded: expected), expected)
+    }
+
+    func testCentimetres_uClampingInit() {
+        let expected = Centimetres_u(CUnsignedInt(clamping: UInt64.max))
+        XCTAssertEqual(Centimetres_u(clamping: expected), expected)
+    }
+
+    func testCentimetres_uBitWidth() {
+        let expected = CUnsignedInt(5).bitWidth
+        XCTAssertEqual(Centimetres_u(5).bitWidth, expected)
+    }
+
+    func testCentimetres_uLeadingZeroBitCount() {
+        let expected = CUnsignedInt(5).leadingZeroBitCount
+        XCTAssertEqual(Centimetres_u(5).leadingZeroBitCount, expected)
+    }
+
+    func testCentimetres_uNonzeroBitCount() {
+        let expected = CUnsignedInt(5).nonzeroBitCount
+        XCTAssertEqual(Centimetres_u(5).nonzeroBitCount, expected)
+    }
+
+    func testCentimetres_uIntegerLiteralInit() {
+        let expected = CUnsignedInt(integerLiteral: CUnsignedInt.max)
+        XCTAssertEqual(Centimetres_u(expected), Centimetres_u(integerLiteral: CUnsignedInt.max))
+    }
+
+    func testCentimetres_uTruncatingBits() {
+        let expected = Centimetres_u(CUnsignedInt(_truncatingBits: UInt.max))
+        XCTAssertEqual(expected, Centimetres_u(_truncatingBits: UInt.max))
+    }
+
+    func testCentimetres_uAddition() {
+        let expected = Centimetres_u(CUnsignedInt(5) + CUnsignedInt(3))
+        XCTAssertEqual(Centimetres_u(5) + Centimetres_u(3), expected)
+    }
+
+    func testCentimetres_uSubtraction() {
+        let expected = Centimetres_u(CUnsignedInt(5) - CUnsignedInt(3))
+        XCTAssertEqual(Centimetres_u(5) - Centimetres_u(3), expected)
+    }
+
+    func testCentimetres_uMultiplication() {
+        let expected = Centimetres_u(CUnsignedInt(5) * CUnsignedInt(3))
+        XCTAssertEqual(Centimetres_u(5) * Centimetres_u(3), expected)
+    }
+
+    func testCentimetres_uDivision() {
+        let expected = Centimetres_u(CUnsignedInt(6) / CUnsignedInt(3))
+        XCTAssertEqual(Centimetres_u(6) / Centimetres_u(3), expected)
+    }
+
+    func testCentimetres_uAddOverflow() {
+        let rawOriginal = CUnsignedInt.max
+        let rawResult = rawOriginal.addingReportingOverflow(CUnsignedInt(1))
+        let original = Centimetres_u(rawOriginal)
+        let result = original.addingReportingOverflow(Centimetres_u(1))
+        XCTAssertEqual(result.0, Centimetres_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testCentimetres_uMultiplyOverflow() {
+        let rawOriginal = CUnsignedInt.max
+        let rawResult = rawOriginal.multipliedReportingOverflow(by: CUnsignedInt(2))
+        let original = Centimetres_u(rawOriginal)
+        let result = original.multipliedReportingOverflow(by: Centimetres_u(2))
+        XCTAssertEqual(result.0, Centimetres_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testCentimetres_uSubtractOverflow() {
+        let rawOriginal = CUnsignedInt.min
+        let rawResult = rawOriginal.subtractingReportingOverflow(CUnsignedInt(1))
+        let original = Centimetres_u(rawOriginal)
+        let result = original.subtractingReportingOverflow(Centimetres_u(1))
+        XCTAssertEqual(result.0, Centimetres_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testCentimetres_uDivideOverflow() {
+        let rawOriginal = CUnsignedInt(1)
+        let rawResult = rawOriginal.dividedReportingOverflow(by: CUnsignedInt.max)
+        let original = Centimetres_u(rawOriginal)
+        let result = original.dividedReportingOverflow(by: Centimetres_u(CUnsignedInt.max))
+        XCTAssertEqual(result.0, Centimetres_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testCentimetres_uRemainderOverflow() {
+        let rawOriginal = CUnsignedInt(1)
+        let rawResult = rawOriginal.remainderReportingOverflow(dividingBy: CUnsignedInt.max)
+        let original = Centimetres_u(rawOriginal)
+        let result = original.remainderReportingOverflow(dividingBy: Centimetres_u(CUnsignedInt.max))
+        XCTAssertEqual(result.0, Centimetres_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testCentimetres_uTrailingZeroBitCount() {
+        let original = CUnsignedInt(1)
+        XCTAssertEqual(Centimetres_u(original).trailingZeroBitCount, original.trailingZeroBitCount)
+    }
+
+    func testCentimetres_uTimesEquals() {
+        var original = CUnsignedInt(2)
+        original *= 4
+        var result = Centimetres_u(CUnsignedInt(2))
+        result *= 4
+        XCTAssertEqual(result, Centimetres_u(original))
+    }
+
+    func testCentimetres_uDivideEquals() {
+        var original = CUnsignedInt(4)
+        original /= 2
+        var result = Centimetres_u(CUnsignedInt(4))
+        result /= 2
+        XCTAssertEqual(result, Centimetres_u(original))
+    }
+
+    func testCentimetres_uModEquals() {
+        var original = CUnsignedInt(4)
+        original %= 2
+        var result = Centimetres_u(CUnsignedInt(4))
+        result %= 2
+        XCTAssertEqual(result, Centimetres_u(original))
+    }
+
+    func testCentimetres_uAndEquals() {
+        var original = CUnsignedInt(2)
+        original &= 6
+        var result = Centimetres_u(CUnsignedInt(2))
+        result &= 6
+        XCTAssertEqual(result, Centimetres_u(original))
+    }
+
+    func testCentimetres_uOrEquals() {
+        var original = CUnsignedInt(2)
+        original |= 4
+        var result = Centimetres_u(CUnsignedInt(2))
+        result |= 4
+        XCTAssertEqual(result, Centimetres_u(original))
+    }
+
+    func testCentimetres_uHatEquals() {
+        var original = CUnsignedInt(2)
+        original ^= 4
+        var result = Centimetres_u(CUnsignedInt(2))
+        result ^= 4
+        XCTAssertEqual(result, Centimetres_u(original))
+    }
+
+    func testCentimetres_uMod() {
+        let original = CUnsignedInt(4)
+        let expected = Centimetres_u(original % 2)
+        XCTAssertEqual(Centimetres_u(original) % 2, expected)
+    }
+
+    func testCentimetres_fEquality() {
+        XCTAssertEqual(Centimetres_f(5), Centimetres_f(5))
+    }
+
+    func testCentimetres_fCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Centimetres_f(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Centimetres_f.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testCentimetres_fSelfInit() {
+        let expected = Centimetres_f(15)
+        XCTAssertEqual(expected, Centimetres_f(expected))
+    }
+
+    func testCentimetres_fSelfExactlyInit() {
+        let expected = Centimetres_f(15)
+        XCTAssertEqual(expected, Centimetres_f(exactly: expected))
+    }
+
+    func testCentimetres_fComparable() {
+        let lhs = Centimetres_f(1)
+        let rhs = Centimetres_f(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testCentimetres_fRadix() {
+        XCTAssertEqual(Centimetres_f.radix, Float.radix)
+    }
+
+    func testCentimetres_fExponentBitCount() {
+        XCTAssertEqual(Centimetres_f.exponentBitCount, Float.exponentBitCount)
+    }
+
+    func testCentimetres_fSignificandBitCount() {
+        XCTAssertEqual(Centimetres_f.significandBitCount, Float.significandBitCount)
+    }
+
+    func testCentimetres_fMagnitude() {
+        let expected = Centimetres_f(Float(5).magnitude)
+        XCTAssertEqual(Centimetres_f(5).magnitude, expected)
+    }
+
+    func testCentimetres_fExactlyInit() {
+        let expected = Centimetres_f(Float(exactly: Int(5)) ?? Float.infinity)
+        XCTAssertEqual(Centimetres_f(exactly: Int(5)), expected)
+    }
+
+    func testCentimetres_fIsTotallyOrdered() {
+        let param = Float(100)
+        let other = Float(5)
+        XCTAssertEqual(
+            Centimetres_f(param).isTotallyOrdered(belowOrEqualTo: Centimetres_f(other)),
+            param.isTotallyOrdered(belowOrEqualTo: other)
+        )
+    }
+
+    func testCentimetres_fBinade() {
+        let raw = Float(5)
+        let expected = Centimetres_f(raw.binade)
+        XCTAssertEqual(Centimetres_f(raw).binade, expected)
+    }
+
+    func testCentimetres_fSignificandWidth() {
+        let raw = Float(5)
+        XCTAssertEqual(Centimetres_f(raw).significandWidth, raw.significandWidth)
+    }
+
+    func testCentimetres_fDebugDescription() {
+        let raw = Float(5)
+        XCTAssertEqual(Centimetres_f(raw).debugDescription, raw.debugDescription)
+    }
+
+    func testCentimetres_fDescriptionInit() {
+        let raw = Float("5.0") ?? Float.nan
+        XCTAssertEqual(Centimetres_f("5.0"), Centimetres_f(raw))
+    }
+
+    func testCentimetres_fStaticVars() {
+        XCTAssertEqual(Centimetres_f.nan.isNaN, Centimetres_f(Float.nan).isNaN)
+        XCTAssertEqual(
+            Centimetres_f.signalingNaN.isSignalingNaN,
+            Centimetres_f(Float.signalingNaN).isSignalingNaN
+        )
+        XCTAssertEqual(Centimetres_f.infinity, Centimetres_f(Float.infinity))
+        XCTAssertEqual(Centimetres_f.greatestFiniteMagnitude, Centimetres_f(Float.greatestFiniteMagnitude))
+        XCTAssertEqual(Centimetres_f.pi, Centimetres_f(Float.pi))
+        XCTAssertEqual(Centimetres_f.leastNormalMagnitude, Centimetres_f(Float.leastNormalMagnitude))
+        XCTAssertEqual(Centimetres_f.leastNonzeroMagnitude, Centimetres_f(Float.leastNonzeroMagnitude))
+    }
+
+    func testCentimetres_fUlp() {
+        let raw = Float(5)
+        XCTAssertEqual(Centimetres_f(raw).ulp, Centimetres_f(raw.ulp))
+    }
+
+    func testCentimetres_fSign() {
+        let raw = Float(5)
+        XCTAssertEqual(Centimetres_f(raw).sign, raw.sign)
+    }
+
+    func testCentimetres_fSignificand() {
+        let raw = Float(5)
+        XCTAssertEqual(Centimetres_f(raw).significand, Centimetres_f(raw.significand))
+    }
+
+    func testCentimetres_fNextUp() {
+        let raw = Float(5)
+        XCTAssertEqual(Centimetres_f(raw).nextUp, Centimetres_f(raw.nextUp))
+    }
+
+    func testCentimetres_fVars() {
+        XCTAssertEqual(Centimetres_f(5).isNormal, Float(5).isNormal)
+        XCTAssertEqual(Centimetres_f(5).isFinite, Float(5).isFinite)
+        XCTAssertEqual(Centimetres_f(5).isZero, Float(5).isZero)
+        XCTAssertEqual(Centimetres_f(0).isZero, Float(0).isZero)
+        XCTAssertEqual(Centimetres_f(5).isSubnormal, Float(5).isSubnormal)
+        XCTAssertEqual(Centimetres_f(5).isInfinite, Float(5).isInfinite)
+        XCTAssertEqual(Centimetres_f.infinity.isInfinite, Float.infinity.isInfinite)
+        XCTAssertEqual(Centimetres_f(5).isNaN, Float(5).isNaN)
+        XCTAssertEqual(Centimetres_f.nan.isNaN, Float.nan.isNaN)
+        XCTAssertEqual(Centimetres_f(5).isSignalingNaN, Float(5).isSignalingNaN)
+        XCTAssertEqual(Centimetres_f.nan.isSignalingNaN, Float.nan.isSignalingNaN)
+        XCTAssertEqual(Centimetres_f(5).isCanonical, Float(5).isCanonical)
+        XCTAssertEqual(Centimetres_f(5).description, Float(5).description)
+        XCTAssertEqual(Centimetres_f(5).exponentBitPattern, Float(5).exponentBitPattern)
+        XCTAssertEqual(Centimetres_f(5).significandBitPattern, Float(5).significandBitPattern)
+        XCTAssertEqual(Centimetres_f(5).exponent, Float(5).exponent)
+    }
+
+    func testCentimetres_fFormRemainder() {
+        var original = Float(4)
+        let denominator = Float(3)
+        original.formRemainder(dividingBy: denominator)
+        var result = Centimetres_f(Float(4))
+        result.formRemainder(dividingBy: Centimetres_f(denominator))
+        XCTAssertEqual(result, Centimetres_f(original))
+    }
+
+    func testCentimetres_fFormTruncatingRemainder() {
+        var original = Float(4)
+        let denominator = Float(3)
+        original.formTruncatingRemainder(dividingBy: denominator)
+        var result = Centimetres_f(Float(4))
+        result.formTruncatingRemainder(dividingBy: Centimetres_f(denominator))
+        XCTAssertEqual(result, Centimetres_f(original))
+    }
+
+    func testCentimetres_fFormSquareRoot() {
+        var original = Float(4)
+        original.formSquareRoot()
+        var result = Centimetres_f(Float(4))
+        result.formSquareRoot()
+        XCTAssertEqual(result, Centimetres_f(original))
+    }
+
+    func testCentimetres_fAddProduct() {
+        var original = Float(4)
+        let lhs = Float(3)
+        let rhs = Float(5)
+        original.addProduct(lhs, rhs)
+        var result = Centimetres_f(Float(4))
+        result.addProduct(Centimetres_f(lhs), Centimetres_f(rhs))
+        XCTAssertEqual(result, Centimetres_f(original))
+    }
+
+    func testCentimetres_fIsEqual() {
+        let this = Centimetres_f(5)
+        let other = Centimetres_f(6)
+        XCTAssertTrue(this.isEqual(to: this))
+        XCTAssertFalse(this.isEqual(to: other))
+    }
+
+    func testCentimetres_fIsLess() {
+        let this = Centimetres_f(5)
+        let other = Centimetres_f(6)
+        XCTAssertFalse(this.isLess(than: this))
+        XCTAssertTrue(this.isLess(than: other))
+    }
+
+    func testCentimetres_fIsLessThanOrEqual() {
+        let this = Centimetres_f(5)
+        let other = Centimetres_f(6)
+        let other2 = Centimetres_f(4)
+        XCTAssertTrue(this.isLessThanOrEqualTo(this))
+        XCTAssertTrue(this.isLessThanOrEqualTo(other))
+        XCTAssertFalse(this.isLessThanOrEqualTo(other2))
+    }
+
+    func testCentimetres_fOperations() {
+        let lhs = Centimetres_f(6)
+        let rhs = Centimetres_f(3)
+        XCTAssertEqual(lhs + rhs, Centimetres_f(9))
+        XCTAssertEqual(lhs - rhs, Centimetres_f(3))
+        XCTAssertEqual(lhs * rhs, Centimetres_f(18))
+        XCTAssertEqual(lhs / rhs, Centimetres_f(2))
+    }
+
+    func testCentimetres_fTimesEqual() {
+        var this = Centimetres_f(3)
+        this *= Centimetres_f(4)
+        XCTAssertEqual(this, Centimetres_f(12))
+    }
+
+    func testCentimetres_fDivideEqual() {
+        var this = Centimetres_f(6)
+        this /= Centimetres_f(3)
+        XCTAssertEqual(this, Centimetres_f(2))
+    }
+
+    func testCentimetres_fRound() {
+        var expected = Float(5.6)
+        expected.round(.up)
+        var result = Centimetres_f(5.6)
+        result.round(.up)
+        XCTAssertEqual(result, Centimetres_f(expected))
+    }
+
+    func testCentimetres_fDistanceTo() {
+        let original = Float(5.0)
+        let other = Float(23)
+        let expected = original.distance(to: other)
+        XCTAssertEqual(Centimetres_f(original).distance(to: Centimetres_f(other)), expected)
+    }
+
+    func testCentimetres_fAdvancedBy() {
+        let original = Float(5)
+        let expected = original.advanced(by: 3)
+        XCTAssertEqual(Centimetres_f(original).advanced(by: 3), Centimetres_f(expected))
+    }
+
+    func testCentimetres_dEquality() {
+        XCTAssertEqual(Centimetres_d(5), Centimetres_d(5))
+    }
+
+    func testCentimetres_dCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Centimetres_d(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Centimetres_d.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testCentimetres_dSelfInit() {
+        let expected = Centimetres_d(15)
+        XCTAssertEqual(expected, Centimetres_d(expected))
+    }
+
+    func testCentimetres_dSelfExactlyInit() {
+        let expected = Centimetres_d(15)
+        XCTAssertEqual(expected, Centimetres_d(exactly: expected))
+    }
+
+    func testCentimetres_dComparable() {
+        let lhs = Centimetres_d(1)
+        let rhs = Centimetres_d(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testCentimetres_dRadix() {
+        XCTAssertEqual(Centimetres_d.radix, Double.radix)
+    }
+
+    func testCentimetres_dExponentBitCount() {
+        XCTAssertEqual(Centimetres_d.exponentBitCount, Double.exponentBitCount)
+    }
+
+    func testCentimetres_dSignificandBitCount() {
+        XCTAssertEqual(Centimetres_d.significandBitCount, Double.significandBitCount)
+    }
+
+    func testCentimetres_dMagnitude() {
+        let expected = Centimetres_d(Double(5).magnitude)
+        XCTAssertEqual(Centimetres_d(5).magnitude, expected)
+    }
+
+    func testCentimetres_dExactlyInit() {
+        let expected = Centimetres_d(Double(exactly: Int(5)) ?? Double.infinity)
+        XCTAssertEqual(Centimetres_d(exactly: Int(5)), expected)
+    }
+
+    func testCentimetres_dIsTotallyOrdered() {
+        let param = Double(100)
+        let other = Double(5)
+        XCTAssertEqual(
+            Centimetres_d(param).isTotallyOrdered(belowOrEqualTo: Centimetres_d(other)),
+            param.isTotallyOrdered(belowOrEqualTo: other)
+        )
+    }
+
+    func testCentimetres_dBinade() {
+        let raw = Double(5)
+        let expected = Centimetres_d(raw.binade)
+        XCTAssertEqual(Centimetres_d(raw).binade, expected)
+    }
+
+    func testCentimetres_dSignificandWidth() {
+        let raw = Double(5)
+        XCTAssertEqual(Centimetres_d(raw).significandWidth, raw.significandWidth)
+    }
+
+    func testCentimetres_dDebugDescription() {
+        let raw = Double(5)
+        XCTAssertEqual(Centimetres_d(raw).debugDescription, raw.debugDescription)
+    }
+
+    func testCentimetres_dDescriptionInit() {
+        let raw = Double("5.0") ?? Double.nan
+        XCTAssertEqual(Centimetres_d("5.0"), Centimetres_d(raw))
+    }
+
+    func testCentimetres_dStaticVars() {
+        XCTAssertEqual(Centimetres_d.nan.isNaN, Centimetres_d(Double.nan).isNaN)
+        XCTAssertEqual(
+            Centimetres_d.signalingNaN.isSignalingNaN,
+            Centimetres_d(Double.signalingNaN).isSignalingNaN
+        )
+        XCTAssertEqual(Centimetres_d.infinity, Centimetres_d(Double.infinity))
+        XCTAssertEqual(Centimetres_d.greatestFiniteMagnitude, Centimetres_d(Double.greatestFiniteMagnitude))
+        XCTAssertEqual(Centimetres_d.pi, Centimetres_d(Double.pi))
+        XCTAssertEqual(Centimetres_d.leastNormalMagnitude, Centimetres_d(Double.leastNormalMagnitude))
+        XCTAssertEqual(Centimetres_d.leastNonzeroMagnitude, Centimetres_d(Double.leastNonzeroMagnitude))
+    }
+
+    func testCentimetres_dUlp() {
+        let raw = Double(5)
+        XCTAssertEqual(Centimetres_d(raw).ulp, Centimetres_d(raw.ulp))
+    }
+
+    func testCentimetres_dSign() {
+        let raw = Double(5)
+        XCTAssertEqual(Centimetres_d(raw).sign, raw.sign)
+    }
+
+    func testCentimetres_dSignificand() {
+        let raw = Double(5)
+        XCTAssertEqual(Centimetres_d(raw).significand, Centimetres_d(raw.significand))
+    }
+
+    func testCentimetres_dNextUp() {
+        let raw = Double(5)
+        XCTAssertEqual(Centimetres_d(raw).nextUp, Centimetres_d(raw.nextUp))
+    }
+
+    func testCentimetres_dVars() {
+        XCTAssertEqual(Centimetres_d(5).isNormal, Double(5).isNormal)
+        XCTAssertEqual(Centimetres_d(5).isFinite, Double(5).isFinite)
+        XCTAssertEqual(Centimetres_d(5).isZero, Double(5).isZero)
+        XCTAssertEqual(Centimetres_d(0).isZero, Double(0).isZero)
+        XCTAssertEqual(Centimetres_d(5).isSubnormal, Double(5).isSubnormal)
+        XCTAssertEqual(Centimetres_d(5).isInfinite, Double(5).isInfinite)
+        XCTAssertEqual(Centimetres_d.infinity.isInfinite, Double.infinity.isInfinite)
+        XCTAssertEqual(Centimetres_d(5).isNaN, Double(5).isNaN)
+        XCTAssertEqual(Centimetres_d.nan.isNaN, Double.nan.isNaN)
+        XCTAssertEqual(Centimetres_d(5).isSignalingNaN, Double(5).isSignalingNaN)
+        XCTAssertEqual(Centimetres_d.nan.isSignalingNaN, Double.nan.isSignalingNaN)
+        XCTAssertEqual(Centimetres_d(5).isCanonical, Double(5).isCanonical)
+        XCTAssertEqual(Centimetres_d(5).description, Double(5).description)
+        XCTAssertEqual(Centimetres_d(5).exponentBitPattern, Double(5).exponentBitPattern)
+        XCTAssertEqual(Centimetres_d(5).significandBitPattern, Double(5).significandBitPattern)
+        XCTAssertEqual(Centimetres_d(5).exponent, Double(5).exponent)
+    }
+
+    func testCentimetres_dFormRemainder() {
+        var original = Double(4)
+        let denominator = Double(3)
+        original.formRemainder(dividingBy: denominator)
+        var result = Centimetres_d(Double(4))
+        result.formRemainder(dividingBy: Centimetres_d(denominator))
+        XCTAssertEqual(result, Centimetres_d(original))
+    }
+
+    func testCentimetres_dFormTruncatingRemainder() {
+        var original = Double(4)
+        let denominator = Double(3)
+        original.formTruncatingRemainder(dividingBy: denominator)
+        var result = Centimetres_d(Double(4))
+        result.formTruncatingRemainder(dividingBy: Centimetres_d(denominator))
+        XCTAssertEqual(result, Centimetres_d(original))
+    }
+
+    func testCentimetres_dFormSquareRoot() {
+        var original = Double(4)
+        original.formSquareRoot()
+        var result = Centimetres_d(Double(4))
+        result.formSquareRoot()
+        XCTAssertEqual(result, Centimetres_d(original))
+    }
+
+    func testCentimetres_dAddProduct() {
+        var original = Double(4)
+        let lhs = Double(3)
+        let rhs = Double(5)
+        original.addProduct(lhs, rhs)
+        var result = Centimetres_d(Double(4))
+        result.addProduct(Centimetres_d(lhs), Centimetres_d(rhs))
+        XCTAssertEqual(result, Centimetres_d(original))
+    }
+
+    func testCentimetres_dIsEqual() {
+        let this = Centimetres_d(5)
+        let other = Centimetres_d(6)
+        XCTAssertTrue(this.isEqual(to: this))
+        XCTAssertFalse(this.isEqual(to: other))
+    }
+
+    func testCentimetres_dIsLess() {
+        let this = Centimetres_d(5)
+        let other = Centimetres_d(6)
+        XCTAssertFalse(this.isLess(than: this))
+        XCTAssertTrue(this.isLess(than: other))
+    }
+
+    func testCentimetres_dIsLessThanOrEqual() {
+        let this = Centimetres_d(5)
+        let other = Centimetres_d(6)
+        let other2 = Centimetres_d(4)
+        XCTAssertTrue(this.isLessThanOrEqualTo(this))
+        XCTAssertTrue(this.isLessThanOrEqualTo(other))
+        XCTAssertFalse(this.isLessThanOrEqualTo(other2))
+    }
+
+    func testCentimetres_dOperations() {
+        let lhs = Centimetres_d(6)
+        let rhs = Centimetres_d(3)
+        XCTAssertEqual(lhs + rhs, Centimetres_d(9))
+        XCTAssertEqual(lhs - rhs, Centimetres_d(3))
+        XCTAssertEqual(lhs * rhs, Centimetres_d(18))
+        XCTAssertEqual(lhs / rhs, Centimetres_d(2))
+    }
+
+    func testCentimetres_dTimesEqual() {
+        var this = Centimetres_d(3)
+        this *= Centimetres_d(4)
+        XCTAssertEqual(this, Centimetres_d(12))
+    }
+
+    func testCentimetres_dDivideEqual() {
+        var this = Centimetres_d(6)
+        this /= Centimetres_d(3)
+        XCTAssertEqual(this, Centimetres_d(2))
+    }
+
+    func testCentimetres_dRound() {
+        var expected = Double(5.6)
+        expected.round(.up)
+        var result = Centimetres_d(5.6)
+        result.round(.up)
+        XCTAssertEqual(result, Centimetres_d(expected))
+    }
+
+    func testCentimetres_dDistanceTo() {
+        let original = Double(5.0)
+        let other = Double(23)
+        let expected = original.distance(to: other)
+        XCTAssertEqual(Centimetres_d(original).distance(to: Centimetres_d(other)), expected)
+    }
+
+    func testCentimetres_dAdvancedBy() {
+        let original = Double(5)
+        let expected = original.advanced(by: 3)
+        XCTAssertEqual(Centimetres_d(original).advanced(by: 3), Centimetres_d(expected))
+    }
+
+}
+
+final class MetresTypeTests: XCTestCase {
+
+    func testMetres_tEquality() {
+        XCTAssertEqual(Metres_t(5), Metres_t(5))
+    }
+
+    func testMetres_tCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Metres_t(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Metres_t.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testMetres_tSelfInit() {
+        let expected = Metres_t(15)
+        XCTAssertEqual(expected, Metres_t(expected))
+    }
+
+    func testMetres_tSelfExactlyInit() {
+        let expected = Metres_t(15)
+        XCTAssertEqual(expected, Metres_t(exactly: expected))
+    }
+
+    func testMetres_tComparable() {
+        let lhs = Metres_t(1)
+        let rhs = Metres_t(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testMetres_tMagnitude() {
+        let expected = CInt(5).magnitude
+        XCTAssertEqual(Metres_t(5).magnitude, expected)
+    }
+
+    func testMetres_tTruncatingInit() {
+        let expected = Metres_t(CInt(truncatingIfNeeded: UInt64.max))
+        XCTAssertEqual(Metres_t(truncatingIfNeeded: expected), expected)
+    }
+
+    func testMetres_tClampingInit() {
+        let expected = Metres_t(CInt(clamping: UInt64.max))
+        XCTAssertEqual(Metres_t(clamping: expected), expected)
+    }
+
+    func testMetres_tBitWidth() {
+        let expected = CInt(5).bitWidth
+        XCTAssertEqual(Metres_t(5).bitWidth, expected)
+    }
+
+    func testMetres_tLeadingZeroBitCount() {
+        let expected = CInt(5).leadingZeroBitCount
+        XCTAssertEqual(Metres_t(5).leadingZeroBitCount, expected)
+    }
+
+    func testMetres_tNonzeroBitCount() {
+        let expected = CInt(5).nonzeroBitCount
+        XCTAssertEqual(Metres_t(5).nonzeroBitCount, expected)
+    }
+
+    func testMetres_tIntegerLiteralInit() {
+        let expected = CInt(integerLiteral: CInt.max)
+        XCTAssertEqual(Metres_t(expected), Metres_t(integerLiteral: CInt.max))
+    }
+
+    func testMetres_tTruncatingBits() {
+        let expected = Metres_t(CInt(_truncatingBits: UInt.max))
+        XCTAssertEqual(expected, Metres_t(_truncatingBits: UInt.max))
+    }
+
+    func testMetres_tAddition() {
+        let expected = Metres_t(CInt(5) + CInt(3))
+        XCTAssertEqual(Metres_t(5) + Metres_t(3), expected)
+    }
+
+    func testMetres_tSubtraction() {
+        let expected = Metres_t(CInt(5) - CInt(3))
+        XCTAssertEqual(Metres_t(5) - Metres_t(3), expected)
+    }
+
+    func testMetres_tMultiplication() {
+        let expected = Metres_t(CInt(5) * CInt(3))
+        XCTAssertEqual(Metres_t(5) * Metres_t(3), expected)
+    }
+
+    func testMetres_tDivision() {
+        let expected = Metres_t(CInt(6) / CInt(3))
+        XCTAssertEqual(Metres_t(6) / Metres_t(3), expected)
+    }
+
+    func testMetres_tAddOverflow() {
+        let rawOriginal = CInt.max
+        let rawResult = rawOriginal.addingReportingOverflow(CInt(1))
+        let original = Metres_t(rawOriginal)
+        let result = original.addingReportingOverflow(Metres_t(1))
+        XCTAssertEqual(result.0, Metres_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testMetres_tMultiplyOverflow() {
+        let rawOriginal = CInt.max
+        let rawResult = rawOriginal.multipliedReportingOverflow(by: CInt(2))
+        let original = Metres_t(rawOriginal)
+        let result = original.multipliedReportingOverflow(by: Metres_t(2))
+        XCTAssertEqual(result.0, Metres_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testMetres_tSubtractOverflow() {
+        let rawOriginal = CInt.min
+        let rawResult = rawOriginal.subtractingReportingOverflow(CInt(1))
+        let original = Metres_t(rawOriginal)
+        let result = original.subtractingReportingOverflow(Metres_t(1))
+        XCTAssertEqual(result.0, Metres_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testMetres_tDivideOverflow() {
+        let rawOriginal = CInt(1)
+        let rawResult = rawOriginal.dividedReportingOverflow(by: CInt.max)
+        let original = Metres_t(rawOriginal)
+        let result = original.dividedReportingOverflow(by: Metres_t(CInt.max))
+        XCTAssertEqual(result.0, Metres_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testMetres_tRemainderOverflow() {
+        let rawOriginal = CInt(1)
+        let rawResult = rawOriginal.remainderReportingOverflow(dividingBy: CInt.max)
+        let original = Metres_t(rawOriginal)
+        let result = original.remainderReportingOverflow(dividingBy: Metres_t(CInt.max))
+        XCTAssertEqual(result.0, Metres_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testMetres_tTrailingZeroBitCount() {
+        let original = CInt(1)
+        XCTAssertEqual(Metres_t(original).trailingZeroBitCount, original.trailingZeroBitCount)
+    }
+
+    func testMetres_tTimesEquals() {
+        var original = CInt(2)
+        original *= 4
+        var result = Metres_t(CInt(2))
+        result *= 4
+        XCTAssertEqual(result, Metres_t(original))
+    }
+
+    func testMetres_tDivideEquals() {
+        var original = CInt(4)
+        original /= 2
+        var result = Metres_t(CInt(4))
+        result /= 2
+        XCTAssertEqual(result, Metres_t(original))
+    }
+
+    func testMetres_tModEquals() {
+        var original = CInt(4)
+        original %= 2
+        var result = Metres_t(CInt(4))
+        result %= 2
+        XCTAssertEqual(result, Metres_t(original))
+    }
+
+    func testMetres_tAndEquals() {
+        var original = CInt(2)
+        original &= 6
+        var result = Metres_t(CInt(2))
+        result &= 6
+        XCTAssertEqual(result, Metres_t(original))
+    }
+
+    func testMetres_tOrEquals() {
+        var original = CInt(2)
+        original |= 4
+        var result = Metres_t(CInt(2))
+        result |= 4
+        XCTAssertEqual(result, Metres_t(original))
+    }
+
+    func testMetres_tHatEquals() {
+        var original = CInt(2)
+        original ^= 4
+        var result = Metres_t(CInt(2))
+        result ^= 4
+        XCTAssertEqual(result, Metres_t(original))
+    }
+
+    func testMetres_tMod() {
+        let original = CInt(4)
+        let expected = Metres_t(original % 2)
+        XCTAssertEqual(Metres_t(original) % 2, expected)
+    }
+
+    func testMetres_uEquality() {
+        XCTAssertEqual(Metres_u(5), Metres_u(5))
+    }
+
+    func testMetres_uCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Metres_u(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Metres_u.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testMetres_uSelfInit() {
+        let expected = Metres_u(15)
+        XCTAssertEqual(expected, Metres_u(expected))
+    }
+
+    func testMetres_uSelfExactlyInit() {
+        let expected = Metres_u(15)
+        XCTAssertEqual(expected, Metres_u(exactly: expected))
+    }
+
+    func testMetres_uComparable() {
+        let lhs = Metres_u(1)
+        let rhs = Metres_u(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testMetres_uMagnitude() {
+        let expected = CUnsignedInt(5).magnitude
+        XCTAssertEqual(Metres_u(5).magnitude, expected)
+    }
+
+    func testMetres_uTruncatingInit() {
+        let expected = Metres_u(CUnsignedInt(truncatingIfNeeded: UInt64.max))
+        XCTAssertEqual(Metres_u(truncatingIfNeeded: expected), expected)
+    }
+
+    func testMetres_uClampingInit() {
+        let expected = Metres_u(CUnsignedInt(clamping: UInt64.max))
+        XCTAssertEqual(Metres_u(clamping: expected), expected)
+    }
+
+    func testMetres_uBitWidth() {
+        let expected = CUnsignedInt(5).bitWidth
+        XCTAssertEqual(Metres_u(5).bitWidth, expected)
+    }
+
+    func testMetres_uLeadingZeroBitCount() {
+        let expected = CUnsignedInt(5).leadingZeroBitCount
+        XCTAssertEqual(Metres_u(5).leadingZeroBitCount, expected)
+    }
+
+    func testMetres_uNonzeroBitCount() {
+        let expected = CUnsignedInt(5).nonzeroBitCount
+        XCTAssertEqual(Metres_u(5).nonzeroBitCount, expected)
+    }
+
+    func testMetres_uIntegerLiteralInit() {
+        let expected = CUnsignedInt(integerLiteral: CUnsignedInt.max)
+        XCTAssertEqual(Metres_u(expected), Metres_u(integerLiteral: CUnsignedInt.max))
+    }
+
+    func testMetres_uTruncatingBits() {
+        let expected = Metres_u(CUnsignedInt(_truncatingBits: UInt.max))
+        XCTAssertEqual(expected, Metres_u(_truncatingBits: UInt.max))
+    }
+
+    func testMetres_uAddition() {
+        let expected = Metres_u(CUnsignedInt(5) + CUnsignedInt(3))
+        XCTAssertEqual(Metres_u(5) + Metres_u(3), expected)
+    }
+
+    func testMetres_uSubtraction() {
+        let expected = Metres_u(CUnsignedInt(5) - CUnsignedInt(3))
+        XCTAssertEqual(Metres_u(5) - Metres_u(3), expected)
+    }
+
+    func testMetres_uMultiplication() {
+        let expected = Metres_u(CUnsignedInt(5) * CUnsignedInt(3))
+        XCTAssertEqual(Metres_u(5) * Metres_u(3), expected)
+    }
+
+    func testMetres_uDivision() {
+        let expected = Metres_u(CUnsignedInt(6) / CUnsignedInt(3))
+        XCTAssertEqual(Metres_u(6) / Metres_u(3), expected)
+    }
+
+    func testMetres_uAddOverflow() {
+        let rawOriginal = CUnsignedInt.max
+        let rawResult = rawOriginal.addingReportingOverflow(CUnsignedInt(1))
+        let original = Metres_u(rawOriginal)
+        let result = original.addingReportingOverflow(Metres_u(1))
+        XCTAssertEqual(result.0, Metres_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testMetres_uMultiplyOverflow() {
+        let rawOriginal = CUnsignedInt.max
+        let rawResult = rawOriginal.multipliedReportingOverflow(by: CUnsignedInt(2))
+        let original = Metres_u(rawOriginal)
+        let result = original.multipliedReportingOverflow(by: Metres_u(2))
+        XCTAssertEqual(result.0, Metres_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testMetres_uSubtractOverflow() {
+        let rawOriginal = CUnsignedInt.min
+        let rawResult = rawOriginal.subtractingReportingOverflow(CUnsignedInt(1))
+        let original = Metres_u(rawOriginal)
+        let result = original.subtractingReportingOverflow(Metres_u(1))
+        XCTAssertEqual(result.0, Metres_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testMetres_uDivideOverflow() {
+        let rawOriginal = CUnsignedInt(1)
+        let rawResult = rawOriginal.dividedReportingOverflow(by: CUnsignedInt.max)
+        let original = Metres_u(rawOriginal)
+        let result = original.dividedReportingOverflow(by: Metres_u(CUnsignedInt.max))
+        XCTAssertEqual(result.0, Metres_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testMetres_uRemainderOverflow() {
+        let rawOriginal = CUnsignedInt(1)
+        let rawResult = rawOriginal.remainderReportingOverflow(dividingBy: CUnsignedInt.max)
+        let original = Metres_u(rawOriginal)
+        let result = original.remainderReportingOverflow(dividingBy: Metres_u(CUnsignedInt.max))
+        XCTAssertEqual(result.0, Metres_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testMetres_uTrailingZeroBitCount() {
+        let original = CUnsignedInt(1)
+        XCTAssertEqual(Metres_u(original).trailingZeroBitCount, original.trailingZeroBitCount)
+    }
+
+    func testMetres_uTimesEquals() {
+        var original = CUnsignedInt(2)
+        original *= 4
+        var result = Metres_u(CUnsignedInt(2))
+        result *= 4
+        XCTAssertEqual(result, Metres_u(original))
+    }
+
+    func testMetres_uDivideEquals() {
+        var original = CUnsignedInt(4)
+        original /= 2
+        var result = Metres_u(CUnsignedInt(4))
+        result /= 2
+        XCTAssertEqual(result, Metres_u(original))
+    }
+
+    func testMetres_uModEquals() {
+        var original = CUnsignedInt(4)
+        original %= 2
+        var result = Metres_u(CUnsignedInt(4))
+        result %= 2
+        XCTAssertEqual(result, Metres_u(original))
+    }
+
+    func testMetres_uAndEquals() {
+        var original = CUnsignedInt(2)
+        original &= 6
+        var result = Metres_u(CUnsignedInt(2))
+        result &= 6
+        XCTAssertEqual(result, Metres_u(original))
+    }
+
+    func testMetres_uOrEquals() {
+        var original = CUnsignedInt(2)
+        original |= 4
+        var result = Metres_u(CUnsignedInt(2))
+        result |= 4
+        XCTAssertEqual(result, Metres_u(original))
+    }
+
+    func testMetres_uHatEquals() {
+        var original = CUnsignedInt(2)
+        original ^= 4
+        var result = Metres_u(CUnsignedInt(2))
+        result ^= 4
+        XCTAssertEqual(result, Metres_u(original))
+    }
+
+    func testMetres_uMod() {
+        let original = CUnsignedInt(4)
+        let expected = Metres_u(original % 2)
+        XCTAssertEqual(Metres_u(original) % 2, expected)
+    }
+
+    func testMetres_fEquality() {
+        XCTAssertEqual(Metres_f(5), Metres_f(5))
+    }
+
+    func testMetres_fCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Metres_f(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Metres_f.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testMetres_fSelfInit() {
+        let expected = Metres_f(15)
+        XCTAssertEqual(expected, Metres_f(expected))
+    }
+
+    func testMetres_fSelfExactlyInit() {
+        let expected = Metres_f(15)
+        XCTAssertEqual(expected, Metres_f(exactly: expected))
+    }
+
+    func testMetres_fComparable() {
+        let lhs = Metres_f(1)
+        let rhs = Metres_f(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testMetres_fRadix() {
+        XCTAssertEqual(Metres_f.radix, Float.radix)
+    }
+
+    func testMetres_fExponentBitCount() {
+        XCTAssertEqual(Metres_f.exponentBitCount, Float.exponentBitCount)
+    }
+
+    func testMetres_fSignificandBitCount() {
+        XCTAssertEqual(Metres_f.significandBitCount, Float.significandBitCount)
+    }
+
+    func testMetres_fMagnitude() {
+        let expected = Metres_f(Float(5).magnitude)
+        XCTAssertEqual(Metres_f(5).magnitude, expected)
+    }
+
+    func testMetres_fExactlyInit() {
+        let expected = Metres_f(Float(exactly: Int(5)) ?? Float.infinity)
+        XCTAssertEqual(Metres_f(exactly: Int(5)), expected)
+    }
+
+    func testMetres_fIsTotallyOrdered() {
+        let param = Float(100)
+        let other = Float(5)
+        XCTAssertEqual(
+            Metres_f(param).isTotallyOrdered(belowOrEqualTo: Metres_f(other)),
+            param.isTotallyOrdered(belowOrEqualTo: other)
+        )
+    }
+
+    func testMetres_fBinade() {
+        let raw = Float(5)
+        let expected = Metres_f(raw.binade)
+        XCTAssertEqual(Metres_f(raw).binade, expected)
+    }
+
+    func testMetres_fSignificandWidth() {
+        let raw = Float(5)
+        XCTAssertEqual(Metres_f(raw).significandWidth, raw.significandWidth)
+    }
+
+    func testMetres_fDebugDescription() {
+        let raw = Float(5)
+        XCTAssertEqual(Metres_f(raw).debugDescription, raw.debugDescription)
+    }
+
+    func testMetres_fDescriptionInit() {
+        let raw = Float("5.0") ?? Float.nan
+        XCTAssertEqual(Metres_f("5.0"), Metres_f(raw))
+    }
+
+    func testMetres_fStaticVars() {
+        XCTAssertEqual(Metres_f.nan.isNaN, Metres_f(Float.nan).isNaN)
+        XCTAssertEqual(
+            Metres_f.signalingNaN.isSignalingNaN,
+            Metres_f(Float.signalingNaN).isSignalingNaN
+        )
+        XCTAssertEqual(Metres_f.infinity, Metres_f(Float.infinity))
+        XCTAssertEqual(Metres_f.greatestFiniteMagnitude, Metres_f(Float.greatestFiniteMagnitude))
+        XCTAssertEqual(Metres_f.pi, Metres_f(Float.pi))
+        XCTAssertEqual(Metres_f.leastNormalMagnitude, Metres_f(Float.leastNormalMagnitude))
+        XCTAssertEqual(Metres_f.leastNonzeroMagnitude, Metres_f(Float.leastNonzeroMagnitude))
+    }
+
+    func testMetres_fUlp() {
+        let raw = Float(5)
+        XCTAssertEqual(Metres_f(raw).ulp, Metres_f(raw.ulp))
+    }
+
+    func testMetres_fSign() {
+        let raw = Float(5)
+        XCTAssertEqual(Metres_f(raw).sign, raw.sign)
+    }
+
+    func testMetres_fSignificand() {
+        let raw = Float(5)
+        XCTAssertEqual(Metres_f(raw).significand, Metres_f(raw.significand))
+    }
+
+    func testMetres_fNextUp() {
+        let raw = Float(5)
+        XCTAssertEqual(Metres_f(raw).nextUp, Metres_f(raw.nextUp))
+    }
+
+    func testMetres_fVars() {
+        XCTAssertEqual(Metres_f(5).isNormal, Float(5).isNormal)
+        XCTAssertEqual(Metres_f(5).isFinite, Float(5).isFinite)
+        XCTAssertEqual(Metres_f(5).isZero, Float(5).isZero)
+        XCTAssertEqual(Metres_f(0).isZero, Float(0).isZero)
+        XCTAssertEqual(Metres_f(5).isSubnormal, Float(5).isSubnormal)
+        XCTAssertEqual(Metres_f(5).isInfinite, Float(5).isInfinite)
+        XCTAssertEqual(Metres_f.infinity.isInfinite, Float.infinity.isInfinite)
+        XCTAssertEqual(Metres_f(5).isNaN, Float(5).isNaN)
+        XCTAssertEqual(Metres_f.nan.isNaN, Float.nan.isNaN)
+        XCTAssertEqual(Metres_f(5).isSignalingNaN, Float(5).isSignalingNaN)
+        XCTAssertEqual(Metres_f.nan.isSignalingNaN, Float.nan.isSignalingNaN)
+        XCTAssertEqual(Metres_f(5).isCanonical, Float(5).isCanonical)
+        XCTAssertEqual(Metres_f(5).description, Float(5).description)
+        XCTAssertEqual(Metres_f(5).exponentBitPattern, Float(5).exponentBitPattern)
+        XCTAssertEqual(Metres_f(5).significandBitPattern, Float(5).significandBitPattern)
+        XCTAssertEqual(Metres_f(5).exponent, Float(5).exponent)
+    }
+
+    func testMetres_fFormRemainder() {
+        var original = Float(4)
+        let denominator = Float(3)
+        original.formRemainder(dividingBy: denominator)
+        var result = Metres_f(Float(4))
+        result.formRemainder(dividingBy: Metres_f(denominator))
+        XCTAssertEqual(result, Metres_f(original))
+    }
+
+    func testMetres_fFormTruncatingRemainder() {
+        var original = Float(4)
+        let denominator = Float(3)
+        original.formTruncatingRemainder(dividingBy: denominator)
+        var result = Metres_f(Float(4))
+        result.formTruncatingRemainder(dividingBy: Metres_f(denominator))
+        XCTAssertEqual(result, Metres_f(original))
+    }
+
+    func testMetres_fFormSquareRoot() {
+        var original = Float(4)
+        original.formSquareRoot()
+        var result = Metres_f(Float(4))
+        result.formSquareRoot()
+        XCTAssertEqual(result, Metres_f(original))
+    }
+
+    func testMetres_fAddProduct() {
+        var original = Float(4)
+        let lhs = Float(3)
+        let rhs = Float(5)
+        original.addProduct(lhs, rhs)
+        var result = Metres_f(Float(4))
+        result.addProduct(Metres_f(lhs), Metres_f(rhs))
+        XCTAssertEqual(result, Metres_f(original))
+    }
+
+    func testMetres_fIsEqual() {
+        let this = Metres_f(5)
+        let other = Metres_f(6)
+        XCTAssertTrue(this.isEqual(to: this))
+        XCTAssertFalse(this.isEqual(to: other))
+    }
+
+    func testMetres_fIsLess() {
+        let this = Metres_f(5)
+        let other = Metres_f(6)
+        XCTAssertFalse(this.isLess(than: this))
+        XCTAssertTrue(this.isLess(than: other))
+    }
+
+    func testMetres_fIsLessThanOrEqual() {
+        let this = Metres_f(5)
+        let other = Metres_f(6)
+        let other2 = Metres_f(4)
+        XCTAssertTrue(this.isLessThanOrEqualTo(this))
+        XCTAssertTrue(this.isLessThanOrEqualTo(other))
+        XCTAssertFalse(this.isLessThanOrEqualTo(other2))
+    }
+
+    func testMetres_fOperations() {
+        let lhs = Metres_f(6)
+        let rhs = Metres_f(3)
+        XCTAssertEqual(lhs + rhs, Metres_f(9))
+        XCTAssertEqual(lhs - rhs, Metres_f(3))
+        XCTAssertEqual(lhs * rhs, Metres_f(18))
+        XCTAssertEqual(lhs / rhs, Metres_f(2))
+    }
+
+    func testMetres_fTimesEqual() {
+        var this = Metres_f(3)
+        this *= Metres_f(4)
+        XCTAssertEqual(this, Metres_f(12))
+    }
+
+    func testMetres_fDivideEqual() {
+        var this = Metres_f(6)
+        this /= Metres_f(3)
+        XCTAssertEqual(this, Metres_f(2))
+    }
+
+    func testMetres_fRound() {
+        var expected = Float(5.6)
+        expected.round(.up)
+        var result = Metres_f(5.6)
+        result.round(.up)
+        XCTAssertEqual(result, Metres_f(expected))
+    }
+
+    func testMetres_fDistanceTo() {
+        let original = Float(5.0)
+        let other = Float(23)
+        let expected = original.distance(to: other)
+        XCTAssertEqual(Metres_f(original).distance(to: Metres_f(other)), expected)
+    }
+
+    func testMetres_fAdvancedBy() {
+        let original = Float(5)
+        let expected = original.advanced(by: 3)
+        XCTAssertEqual(Metres_f(original).advanced(by: 3), Metres_f(expected))
+    }
+
+    func testMetres_dEquality() {
+        XCTAssertEqual(Metres_d(5), Metres_d(5))
+    }
+
+    func testMetres_dCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Metres_d(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Metres_d.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testMetres_dSelfInit() {
+        let expected = Metres_d(15)
+        XCTAssertEqual(expected, Metres_d(expected))
+    }
+
+    func testMetres_dSelfExactlyInit() {
+        let expected = Metres_d(15)
+        XCTAssertEqual(expected, Metres_d(exactly: expected))
+    }
+
+    func testMetres_dComparable() {
+        let lhs = Metres_d(1)
+        let rhs = Metres_d(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testMetres_dRadix() {
+        XCTAssertEqual(Metres_d.radix, Double.radix)
+    }
+
+    func testMetres_dExponentBitCount() {
+        XCTAssertEqual(Metres_d.exponentBitCount, Double.exponentBitCount)
+    }
+
+    func testMetres_dSignificandBitCount() {
+        XCTAssertEqual(Metres_d.significandBitCount, Double.significandBitCount)
+    }
+
+    func testMetres_dMagnitude() {
+        let expected = Metres_d(Double(5).magnitude)
+        XCTAssertEqual(Metres_d(5).magnitude, expected)
+    }
+
+    func testMetres_dExactlyInit() {
+        let expected = Metres_d(Double(exactly: Int(5)) ?? Double.infinity)
+        XCTAssertEqual(Metres_d(exactly: Int(5)), expected)
+    }
+
+    func testMetres_dIsTotallyOrdered() {
+        let param = Double(100)
+        let other = Double(5)
+        XCTAssertEqual(
+            Metres_d(param).isTotallyOrdered(belowOrEqualTo: Metres_d(other)),
+            param.isTotallyOrdered(belowOrEqualTo: other)
+        )
+    }
+
+    func testMetres_dBinade() {
+        let raw = Double(5)
+        let expected = Metres_d(raw.binade)
+        XCTAssertEqual(Metres_d(raw).binade, expected)
+    }
+
+    func testMetres_dSignificandWidth() {
+        let raw = Double(5)
+        XCTAssertEqual(Metres_d(raw).significandWidth, raw.significandWidth)
+    }
+
+    func testMetres_dDebugDescription() {
+        let raw = Double(5)
+        XCTAssertEqual(Metres_d(raw).debugDescription, raw.debugDescription)
+    }
+
+    func testMetres_dDescriptionInit() {
+        let raw = Double("5.0") ?? Double.nan
+        XCTAssertEqual(Metres_d("5.0"), Metres_d(raw))
+    }
+
+    func testMetres_dStaticVars() {
+        XCTAssertEqual(Metres_d.nan.isNaN, Metres_d(Double.nan).isNaN)
+        XCTAssertEqual(
+            Metres_d.signalingNaN.isSignalingNaN,
+            Metres_d(Double.signalingNaN).isSignalingNaN
+        )
+        XCTAssertEqual(Metres_d.infinity, Metres_d(Double.infinity))
+        XCTAssertEqual(Metres_d.greatestFiniteMagnitude, Metres_d(Double.greatestFiniteMagnitude))
+        XCTAssertEqual(Metres_d.pi, Metres_d(Double.pi))
+        XCTAssertEqual(Metres_d.leastNormalMagnitude, Metres_d(Double.leastNormalMagnitude))
+        XCTAssertEqual(Metres_d.leastNonzeroMagnitude, Metres_d(Double.leastNonzeroMagnitude))
+    }
+
+    func testMetres_dUlp() {
+        let raw = Double(5)
+        XCTAssertEqual(Metres_d(raw).ulp, Metres_d(raw.ulp))
+    }
+
+    func testMetres_dSign() {
+        let raw = Double(5)
+        XCTAssertEqual(Metres_d(raw).sign, raw.sign)
+    }
+
+    func testMetres_dSignificand() {
+        let raw = Double(5)
+        XCTAssertEqual(Metres_d(raw).significand, Metres_d(raw.significand))
+    }
+
+    func testMetres_dNextUp() {
+        let raw = Double(5)
+        XCTAssertEqual(Metres_d(raw).nextUp, Metres_d(raw.nextUp))
+    }
+
+    func testMetres_dVars() {
+        XCTAssertEqual(Metres_d(5).isNormal, Double(5).isNormal)
+        XCTAssertEqual(Metres_d(5).isFinite, Double(5).isFinite)
+        XCTAssertEqual(Metres_d(5).isZero, Double(5).isZero)
+        XCTAssertEqual(Metres_d(0).isZero, Double(0).isZero)
+        XCTAssertEqual(Metres_d(5).isSubnormal, Double(5).isSubnormal)
+        XCTAssertEqual(Metres_d(5).isInfinite, Double(5).isInfinite)
+        XCTAssertEqual(Metres_d.infinity.isInfinite, Double.infinity.isInfinite)
+        XCTAssertEqual(Metres_d(5).isNaN, Double(5).isNaN)
+        XCTAssertEqual(Metres_d.nan.isNaN, Double.nan.isNaN)
+        XCTAssertEqual(Metres_d(5).isSignalingNaN, Double(5).isSignalingNaN)
+        XCTAssertEqual(Metres_d.nan.isSignalingNaN, Double.nan.isSignalingNaN)
+        XCTAssertEqual(Metres_d(5).isCanonical, Double(5).isCanonical)
+        XCTAssertEqual(Metres_d(5).description, Double(5).description)
+        XCTAssertEqual(Metres_d(5).exponentBitPattern, Double(5).exponentBitPattern)
+        XCTAssertEqual(Metres_d(5).significandBitPattern, Double(5).significandBitPattern)
+        XCTAssertEqual(Metres_d(5).exponent, Double(5).exponent)
+    }
+
+    func testMetres_dFormRemainder() {
+        var original = Double(4)
+        let denominator = Double(3)
+        original.formRemainder(dividingBy: denominator)
+        var result = Metres_d(Double(4))
+        result.formRemainder(dividingBy: Metres_d(denominator))
+        XCTAssertEqual(result, Metres_d(original))
+    }
+
+    func testMetres_dFormTruncatingRemainder() {
+        var original = Double(4)
+        let denominator = Double(3)
+        original.formTruncatingRemainder(dividingBy: denominator)
+        var result = Metres_d(Double(4))
+        result.formTruncatingRemainder(dividingBy: Metres_d(denominator))
+        XCTAssertEqual(result, Metres_d(original))
+    }
+
+    func testMetres_dFormSquareRoot() {
+        var original = Double(4)
+        original.formSquareRoot()
+        var result = Metres_d(Double(4))
+        result.formSquareRoot()
+        XCTAssertEqual(result, Metres_d(original))
+    }
+
+    func testMetres_dAddProduct() {
+        var original = Double(4)
+        let lhs = Double(3)
+        let rhs = Double(5)
+        original.addProduct(lhs, rhs)
+        var result = Metres_d(Double(4))
+        result.addProduct(Metres_d(lhs), Metres_d(rhs))
+        XCTAssertEqual(result, Metres_d(original))
+    }
+
+    func testMetres_dIsEqual() {
+        let this = Metres_d(5)
+        let other = Metres_d(6)
+        XCTAssertTrue(this.isEqual(to: this))
+        XCTAssertFalse(this.isEqual(to: other))
+    }
+
+    func testMetres_dIsLess() {
+        let this = Metres_d(5)
+        let other = Metres_d(6)
+        XCTAssertFalse(this.isLess(than: this))
+        XCTAssertTrue(this.isLess(than: other))
+    }
+
+    func testMetres_dIsLessThanOrEqual() {
+        let this = Metres_d(5)
+        let other = Metres_d(6)
+        let other2 = Metres_d(4)
+        XCTAssertTrue(this.isLessThanOrEqualTo(this))
+        XCTAssertTrue(this.isLessThanOrEqualTo(other))
+        XCTAssertFalse(this.isLessThanOrEqualTo(other2))
+    }
+
+    func testMetres_dOperations() {
+        let lhs = Metres_d(6)
+        let rhs = Metres_d(3)
+        XCTAssertEqual(lhs + rhs, Metres_d(9))
+        XCTAssertEqual(lhs - rhs, Metres_d(3))
+        XCTAssertEqual(lhs * rhs, Metres_d(18))
+        XCTAssertEqual(lhs / rhs, Metres_d(2))
+    }
+
+    func testMetres_dTimesEqual() {
+        var this = Metres_d(3)
+        this *= Metres_d(4)
+        XCTAssertEqual(this, Metres_d(12))
+    }
+
+    func testMetres_dDivideEqual() {
+        var this = Metres_d(6)
+        this /= Metres_d(3)
+        XCTAssertEqual(this, Metres_d(2))
+    }
+
+    func testMetres_dRound() {
+        var expected = Double(5.6)
+        expected.round(.up)
+        var result = Metres_d(5.6)
+        result.round(.up)
+        XCTAssertEqual(result, Metres_d(expected))
+    }
+
+    func testMetres_dDistanceTo() {
+        let original = Double(5.0)
+        let other = Double(23)
+        let expected = original.distance(to: other)
+        XCTAssertEqual(Metres_d(original).distance(to: Metres_d(other)), expected)
+    }
+
+    func testMetres_dAdvancedBy() {
+        let original = Double(5)
+        let expected = original.advanced(by: 3)
+        XCTAssertEqual(Metres_d(original).advanced(by: 3), Metres_d(expected))
+    }
+
+}
+
+final class MillimetresConversionTests: XCTestCase {
+
+    func testMillimetres_tToMillimetres_uDistanceConversions() {
+        let original = Millimetres_t(5)
+        let category = Distance(original)
+        let other = category.millimetres_u
+        XCTAssertEqual(other, Millimetres_u(original))
+    }
+
+    func testMillimetres_uToMillimetres_tConversions() {
+        let ctype1 = millimetres_t(5)
+        let swiftType1 = Millimetres_t(rawValue: ctype1)
+        let ctype2 = mm_t_to_mm_u(ctype1)
+        let swiftType2 = Millimetres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_u(swiftType1))
+    }
+
+    func testMillimetres_tToMillimetres_fDistanceConversions() {
+        let original = Millimetres_t(5)
+        let category = Distance(original)
+        let other = category.millimetres_f
+        XCTAssertEqual(other, Millimetres_f(original))
+    }
+
+    func testMillimetres_fToMillimetres_tConversions() {
+        let ctype1 = millimetres_t(5)
+        let swiftType1 = Millimetres_t(rawValue: ctype1)
+        let ctype2 = mm_t_to_mm_f(ctype1)
+        let swiftType2 = Millimetres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_f(swiftType1))
+    }
+
+    func testMillimetres_tToMillimetres_dDistanceConversions() {
+        let original = Millimetres_t(5)
+        let category = Distance(original)
+        let other = category.millimetres_d
+        XCTAssertEqual(other, Millimetres_d(original))
+    }
+
+    func testMillimetres_dToMillimetres_tConversions() {
+        let ctype1 = millimetres_t(5)
+        let swiftType1 = Millimetres_t(rawValue: ctype1)
+        let ctype2 = mm_t_to_mm_d(ctype1)
+        let swiftType2 = Millimetres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_d(swiftType1))
+    }
+
+    func testMillimetres_tToCentimetres_tDistanceConversions() {
+        let original = Millimetres_t(5)
+        let category = Distance(original)
+        let other = category.centimetres_t
+        XCTAssertEqual(other, Centimetres_t(original))
+    }
+
+    func testCentimetres_tToMillimetres_tConversions() {
+        let ctype1 = millimetres_t(5)
+        let swiftType1 = Millimetres_t(rawValue: ctype1)
+        let ctype2 = mm_t_to_cm_t(ctype1)
+        let swiftType2 = Centimetres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_t(swiftType1))
+    }
+
+    func testMillimetres_tToCentimetres_uDistanceConversions() {
+        let original = Millimetres_t(5)
+        let category = Distance(original)
+        let other = category.centimetres_u
+        XCTAssertEqual(other, Centimetres_u(original))
+    }
+
+    func testCentimetres_uToMillimetres_tConversions() {
+        let ctype1 = millimetres_t(5)
+        let swiftType1 = Millimetres_t(rawValue: ctype1)
+        let ctype2 = mm_t_to_cm_u(ctype1)
+        let swiftType2 = Centimetres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_u(swiftType1))
+    }
+
+    func testMillimetres_tToCentimetres_fDistanceConversions() {
+        let original = Millimetres_t(5)
+        let category = Distance(original)
+        let other = category.centimetres_f
+        XCTAssertEqual(other, Centimetres_f(original))
+    }
+
+    func testCentimetres_fToMillimetres_tConversions() {
+        let ctype1 = millimetres_t(5)
+        let swiftType1 = Millimetres_t(rawValue: ctype1)
+        let ctype2 = mm_t_to_cm_f(ctype1)
+        let swiftType2 = Centimetres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_f(swiftType1))
+    }
+
+    func testMillimetres_tToCentimetres_dDistanceConversions() {
+        let original = Millimetres_t(5)
+        let category = Distance(original)
+        let other = category.centimetres_d
+        XCTAssertEqual(other, Centimetres_d(original))
+    }
+
+    func testCentimetres_dToMillimetres_tConversions() {
+        let ctype1 = millimetres_t(5)
+        let swiftType1 = Millimetres_t(rawValue: ctype1)
+        let ctype2 = mm_t_to_cm_d(ctype1)
+        let swiftType2 = Centimetres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_d(swiftType1))
+    }
+
+    func testMillimetres_tToMetres_tDistanceConversions() {
+        let original = Millimetres_t(5)
+        let category = Distance(original)
+        let other = category.metres_t
+        XCTAssertEqual(other, Metres_t(original))
+    }
+
+    func testMetres_tToMillimetres_tConversions() {
+        let ctype1 = millimetres_t(5)
+        let swiftType1 = Millimetres_t(rawValue: ctype1)
+        let ctype2 = mm_t_to_m_t(ctype1)
+        let swiftType2 = Metres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_t(swiftType1))
+    }
+
+    func testMillimetres_tToMetres_uDistanceConversions() {
+        let original = Millimetres_t(5)
+        let category = Distance(original)
+        let other = category.metres_u
+        XCTAssertEqual(other, Metres_u(original))
+    }
+
+    func testMetres_uToMillimetres_tConversions() {
+        let ctype1 = millimetres_t(5)
+        let swiftType1 = Millimetres_t(rawValue: ctype1)
+        let ctype2 = mm_t_to_m_u(ctype1)
+        let swiftType2 = Metres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_u(swiftType1))
+    }
+
+    func testMillimetres_tToMetres_fDistanceConversions() {
+        let original = Millimetres_t(5)
+        let category = Distance(original)
+        let other = category.metres_f
+        XCTAssertEqual(other, Metres_f(original))
+    }
+
+    func testMetres_fToMillimetres_tConversions() {
+        let ctype1 = millimetres_t(5)
+        let swiftType1 = Millimetres_t(rawValue: ctype1)
+        let ctype2 = mm_t_to_m_f(ctype1)
+        let swiftType2 = Metres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_f(swiftType1))
+    }
+
+    func testMillimetres_tToMetres_dDistanceConversions() {
+        let original = Millimetres_t(5)
+        let category = Distance(original)
+        let other = category.metres_d
+        XCTAssertEqual(other, Metres_d(original))
+    }
+
+    func testMetres_dToMillimetres_tConversions() {
+        let ctype1 = millimetres_t(5)
+        let swiftType1 = Millimetres_t(rawValue: ctype1)
+        let ctype2 = mm_t_to_m_d(ctype1)
+        let swiftType2 = Metres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_d(swiftType1))
+    }
+
+    func testMillimetres_tInitFromTypeEnum() {
+        let underlyingType = Distance.DistanceTypes.millimetres_t(5)
+        let category = Distance(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testDistanceMillimetres_tInt8Inits() {
+        let raw = Int8(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_mm_t(5)
+        let expected2 = Int8(
+            mm_t_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_tInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_mm_t(5)
+        let expected = Millimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(mm_t_to_i8(ctype))
+        )
+    }
+
+    func testMillimetres_tInt8RawValueInit() {
+        let raw = millimetres_t(5)
+        let ctype = mm_t_to_i8(raw)
+        let expected = Millimetres_t(Int8(ctype))
+        XCTAssertEqual(Millimetres_t(rawValue: raw), expected)
+    }
+
+    func testMillimetres_tDistanceInt8Init() {
+        let raw = Millimetres_t(Int8(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_tInt16Inits() {
+        let raw = Int16(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_mm_t(5)
+        let expected2 = Int16(
+            mm_t_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_tInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_mm_t(5)
+        let expected = Millimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(mm_t_to_i16(ctype))
+        )
+    }
+
+    func testMillimetres_tInt16RawValueInit() {
+        let raw = millimetres_t(5)
+        let ctype = mm_t_to_i16(raw)
+        let expected = Millimetres_t(Int16(ctype))
+        XCTAssertEqual(Millimetres_t(rawValue: raw), expected)
+    }
+
+    func testMillimetres_tDistanceInt16Init() {
+        let raw = Millimetres_t(Int16(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_tInt32Inits() {
+        let raw = Int32(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_mm_t(5)
+        let expected2 = Int32(
+            mm_t_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_tInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_mm_t(5)
+        let expected = Millimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(mm_t_to_i32(ctype))
+        )
+    }
+
+    func testMillimetres_tInt32RawValueInit() {
+        let raw = millimetres_t(5)
+        let ctype = mm_t_to_i32(raw)
+        let expected = Millimetres_t(Int32(ctype))
+        XCTAssertEqual(Millimetres_t(rawValue: raw), expected)
+    }
+
+    func testMillimetres_tDistanceInt32Init() {
+        let raw = Millimetres_t(Int32(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_tInt64Inits() {
+        let raw = Int64(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_mm_t(5)
+        let expected2 = Int64(
+            mm_t_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_tInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_mm_t(5)
+        let expected = Millimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(mm_t_to_i64(ctype))
+        )
+    }
+
+    func testMillimetres_tInt64RawValueInit() {
+        let raw = millimetres_t(5)
+        let ctype = mm_t_to_i64(raw)
+        let expected = Millimetres_t(Int64(ctype))
+        XCTAssertEqual(Millimetres_t(rawValue: raw), expected)
+    }
+
+    func testMillimetres_tDistanceInt64Init() {
+        let raw = Millimetres_t(Int64(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_tIntInits() {
+        let raw = Int(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_mm_t(5)
+        let expected2 = Int(
+            mm_t_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_tIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_mm_t(5)
+        let expected = Millimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(mm_t_to_i64(ctype))
+        )
+    }
+
+    func testMillimetres_tIntRawValueInit() {
+        let raw = millimetres_t(5)
+        let ctype = mm_t_to_i64(raw)
+        let expected = Millimetres_t(Int(ctype))
+        XCTAssertEqual(Millimetres_t(rawValue: raw), expected)
+    }
+
+    func testMillimetres_tDistanceIntInit() {
+        let raw = Millimetres_t(Int(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_tCIntInits() {
+        let raw = CInt(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_mm_t(5)
+        let expected2 = CInt(
+            mm_t_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_tCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_mm_t(5)
+        let expected = Millimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(mm_t_to_i32(ctype))
+        )
+    }
+
+    func testMillimetres_tCIntRawValueInit() {
+        let raw = millimetres_t(5)
+        let ctype = mm_t_to_i32(raw)
+        let expected = Millimetres_t(CInt(ctype))
+        XCTAssertEqual(Millimetres_t(rawValue: raw), expected)
+    }
+
+    func testMillimetres_tDistanceCIntInit() {
+        let raw = Millimetres_t(CInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_tUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_mm_t(5)
+        let expected2 = UInt8(
+            mm_t_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_tUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_mm_t(5)
+        let expected = Millimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(mm_t_to_u8(ctype))
+        )
+    }
+
+    func testMillimetres_tUInt8RawValueInit() {
+        let raw = millimetres_t(5)
+        let ctype = mm_t_to_u8(raw)
+        let expected = Millimetres_t(UInt8(ctype))
+        XCTAssertEqual(Millimetres_t(rawValue: raw), expected)
+    }
+
+    func testMillimetres_tDistanceUInt8Init() {
+        let raw = Millimetres_t(UInt8(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_tUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_mm_t(5)
+        let expected2 = UInt16(
+            mm_t_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_tUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_mm_t(5)
+        let expected = Millimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(mm_t_to_u16(ctype))
+        )
+    }
+
+    func testMillimetres_tUInt16RawValueInit() {
+        let raw = millimetres_t(5)
+        let ctype = mm_t_to_u16(raw)
+        let expected = Millimetres_t(UInt16(ctype))
+        XCTAssertEqual(Millimetres_t(rawValue: raw), expected)
+    }
+
+    func testMillimetres_tDistanceUInt16Init() {
+        let raw = Millimetres_t(UInt16(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_tUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_mm_t(5)
+        let expected2 = UInt32(
+            mm_t_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_tUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_mm_t(5)
+        let expected = Millimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(mm_t_to_u32(ctype))
+        )
+    }
+
+    func testMillimetres_tUInt32RawValueInit() {
+        let raw = millimetres_t(5)
+        let ctype = mm_t_to_u32(raw)
+        let expected = Millimetres_t(UInt32(ctype))
+        XCTAssertEqual(Millimetres_t(rawValue: raw), expected)
+    }
+
+    func testMillimetres_tDistanceUInt32Init() {
+        let raw = Millimetres_t(UInt32(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_tUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_mm_t(5)
+        let expected2 = UInt64(
+            mm_t_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_tUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_mm_t(5)
+        let expected = Millimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(mm_t_to_u64(ctype))
+        )
+    }
+
+    func testMillimetres_tUInt64RawValueInit() {
+        let raw = millimetres_t(5)
+        let ctype = mm_t_to_u64(raw)
+        let expected = Millimetres_t(UInt64(ctype))
+        XCTAssertEqual(Millimetres_t(rawValue: raw), expected)
+    }
+
+    func testMillimetres_tDistanceUInt64Init() {
+        let raw = Millimetres_t(UInt64(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_tUIntInits() {
+        let raw = UInt(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_mm_t(5)
+        let expected2 = UInt(
+            mm_t_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_tUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_mm_t(5)
+        let expected = Millimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(mm_t_to_u64(ctype))
+        )
+    }
+
+    func testMillimetres_tUIntRawValueInit() {
+        let raw = millimetres_t(5)
+        let ctype = mm_t_to_u64(raw)
+        let expected = Millimetres_t(UInt(ctype))
+        XCTAssertEqual(Millimetres_t(rawValue: raw), expected)
+    }
+
+    func testMillimetres_tDistanceUIntInit() {
+        let raw = Millimetres_t(UInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_tCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_mm_t(5)
+        let expected2 = CUnsignedInt(
+            mm_t_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_tCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_mm_t(5)
+        let expected = Millimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(mm_t_to_u32(ctype))
+        )
+    }
+
+    func testMillimetres_tCUnsignedIntRawValueInit() {
+        let raw = millimetres_t(5)
+        let ctype = mm_t_to_u32(raw)
+        let expected = Millimetres_t(CUnsignedInt(ctype))
+        XCTAssertEqual(Millimetres_t(rawValue: raw), expected)
+    }
+
+    func testMillimetres_tDistanceCUnsignedIntInit() {
+        let raw = Millimetres_t(CUnsignedInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_tFloatInits() {
+        let raw = Float(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_mm_t(5)
+        let expected2 = Float(
+            mm_t_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_tFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_mm_t(5)
+        let expected = Millimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(mm_t_to_f(ctype))
+        )
+    }
+
+    func testMillimetres_tFloatRawValueInit() {
+        let raw = millimetres_t(5)
+        let ctype = mm_t_to_f(raw)
+        let expected = Millimetres_t(Float(ctype))
+        XCTAssertEqual(Millimetres_t(rawValue: raw), expected)
+    }
+
+    func testMillimetres_tDistanceFloatInit() {
+        let raw = Millimetres_t(Float(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_tDoubleInits() {
+        let raw = Double(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_mm_t(5)
+        let expected2 = Double(
+            mm_t_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_tDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_mm_t(5)
+        let expected = Millimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(mm_t_to_d(ctype))
+        )
+    }
+
+    func testMillimetres_tDoubleRawValueInit() {
+        let raw = millimetres_t(5)
+        let ctype = mm_t_to_d(raw)
+        let expected = Millimetres_t(Double(ctype))
+        XCTAssertEqual(Millimetres_t(rawValue: raw), expected)
+    }
+
+    func testMillimetres_tDistanceDoubleInit() {
+        let raw = Millimetres_t(Double(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testMillimetres_uToMillimetres_tDistanceConversions() {
+        let original = Millimetres_u(5)
+        let category = Distance(original)
+        let other = category.millimetres_t
+        XCTAssertEqual(other, Millimetres_t(original))
+    }
+
+    func testMillimetres_tToMillimetres_uConversions() {
+        let ctype1 = millimetres_u(5)
+        let swiftType1 = Millimetres_u(rawValue: ctype1)
+        let ctype2 = mm_u_to_mm_t(ctype1)
+        let swiftType2 = Millimetres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_t(swiftType1))
+    }
+
+    func testMillimetres_uToMillimetres_fDistanceConversions() {
+        let original = Millimetres_u(5)
+        let category = Distance(original)
+        let other = category.millimetres_f
+        XCTAssertEqual(other, Millimetres_f(original))
+    }
+
+    func testMillimetres_fToMillimetres_uConversions() {
+        let ctype1 = millimetres_u(5)
+        let swiftType1 = Millimetres_u(rawValue: ctype1)
+        let ctype2 = mm_u_to_mm_f(ctype1)
+        let swiftType2 = Millimetres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_f(swiftType1))
+    }
+
+    func testMillimetres_uToMillimetres_dDistanceConversions() {
+        let original = Millimetres_u(5)
+        let category = Distance(original)
+        let other = category.millimetres_d
+        XCTAssertEqual(other, Millimetres_d(original))
+    }
+
+    func testMillimetres_dToMillimetres_uConversions() {
+        let ctype1 = millimetres_u(5)
+        let swiftType1 = Millimetres_u(rawValue: ctype1)
+        let ctype2 = mm_u_to_mm_d(ctype1)
+        let swiftType2 = Millimetres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_d(swiftType1))
+    }
+
+    func testMillimetres_uToCentimetres_tDistanceConversions() {
+        let original = Millimetres_u(5)
+        let category = Distance(original)
+        let other = category.centimetres_t
+        XCTAssertEqual(other, Centimetres_t(original))
+    }
+
+    func testCentimetres_tToMillimetres_uConversions() {
+        let ctype1 = millimetres_u(5)
+        let swiftType1 = Millimetres_u(rawValue: ctype1)
+        let ctype2 = mm_u_to_cm_t(ctype1)
+        let swiftType2 = Centimetres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_t(swiftType1))
+    }
+
+    func testMillimetres_uToCentimetres_uDistanceConversions() {
+        let original = Millimetres_u(5)
+        let category = Distance(original)
+        let other = category.centimetres_u
+        XCTAssertEqual(other, Centimetres_u(original))
+    }
+
+    func testCentimetres_uToMillimetres_uConversions() {
+        let ctype1 = millimetres_u(5)
+        let swiftType1 = Millimetres_u(rawValue: ctype1)
+        let ctype2 = mm_u_to_cm_u(ctype1)
+        let swiftType2 = Centimetres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_u(swiftType1))
+    }
+
+    func testMillimetres_uToCentimetres_fDistanceConversions() {
+        let original = Millimetres_u(5)
+        let category = Distance(original)
+        let other = category.centimetres_f
+        XCTAssertEqual(other, Centimetres_f(original))
+    }
+
+    func testCentimetres_fToMillimetres_uConversions() {
+        let ctype1 = millimetres_u(5)
+        let swiftType1 = Millimetres_u(rawValue: ctype1)
+        let ctype2 = mm_u_to_cm_f(ctype1)
+        let swiftType2 = Centimetres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_f(swiftType1))
+    }
+
+    func testMillimetres_uToCentimetres_dDistanceConversions() {
+        let original = Millimetres_u(5)
+        let category = Distance(original)
+        let other = category.centimetres_d
+        XCTAssertEqual(other, Centimetres_d(original))
+    }
+
+    func testCentimetres_dToMillimetres_uConversions() {
+        let ctype1 = millimetres_u(5)
+        let swiftType1 = Millimetres_u(rawValue: ctype1)
+        let ctype2 = mm_u_to_cm_d(ctype1)
+        let swiftType2 = Centimetres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_d(swiftType1))
+    }
+
+    func testMillimetres_uToMetres_tDistanceConversions() {
+        let original = Millimetres_u(5)
+        let category = Distance(original)
+        let other = category.metres_t
+        XCTAssertEqual(other, Metres_t(original))
+    }
+
+    func testMetres_tToMillimetres_uConversions() {
+        let ctype1 = millimetres_u(5)
+        let swiftType1 = Millimetres_u(rawValue: ctype1)
+        let ctype2 = mm_u_to_m_t(ctype1)
+        let swiftType2 = Metres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_t(swiftType1))
+    }
+
+    func testMillimetres_uToMetres_uDistanceConversions() {
+        let original = Millimetres_u(5)
+        let category = Distance(original)
+        let other = category.metres_u
+        XCTAssertEqual(other, Metres_u(original))
+    }
+
+    func testMetres_uToMillimetres_uConversions() {
+        let ctype1 = millimetres_u(5)
+        let swiftType1 = Millimetres_u(rawValue: ctype1)
+        let ctype2 = mm_u_to_m_u(ctype1)
+        let swiftType2 = Metres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_u(swiftType1))
+    }
+
+    func testMillimetres_uToMetres_fDistanceConversions() {
+        let original = Millimetres_u(5)
+        let category = Distance(original)
+        let other = category.metres_f
+        XCTAssertEqual(other, Metres_f(original))
+    }
+
+    func testMetres_fToMillimetres_uConversions() {
+        let ctype1 = millimetres_u(5)
+        let swiftType1 = Millimetres_u(rawValue: ctype1)
+        let ctype2 = mm_u_to_m_f(ctype1)
+        let swiftType2 = Metres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_f(swiftType1))
+    }
+
+    func testMillimetres_uToMetres_dDistanceConversions() {
+        let original = Millimetres_u(5)
+        let category = Distance(original)
+        let other = category.metres_d
+        XCTAssertEqual(other, Metres_d(original))
+    }
+
+    func testMetres_dToMillimetres_uConversions() {
+        let ctype1 = millimetres_u(5)
+        let swiftType1 = Millimetres_u(rawValue: ctype1)
+        let ctype2 = mm_u_to_m_d(ctype1)
+        let swiftType2 = Metres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_d(swiftType1))
+    }
+
+    func testMillimetres_uInitFromTypeEnum() {
+        let underlyingType = Distance.DistanceTypes.millimetres_u(5)
+        let category = Distance(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testDistanceMillimetres_uInt8Inits() {
+        let raw = Int8(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_mm_u(5)
+        let expected2 = Int8(
+            mm_u_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_uInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_mm_u(5)
+        let expected = Millimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(mm_u_to_i8(ctype))
+        )
+    }
+
+    func testMillimetres_uInt8RawValueInit() {
+        let raw = millimetres_u(5)
+        let ctype = mm_u_to_i8(raw)
+        let expected = Millimetres_u(Int8(ctype))
+        XCTAssertEqual(Millimetres_u(rawValue: raw), expected)
+    }
+
+    func testMillimetres_uDistanceInt8Init() {
+        let raw = Millimetres_u(Int8(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_uInt16Inits() {
+        let raw = Int16(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_mm_u(5)
+        let expected2 = Int16(
+            mm_u_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_uInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_mm_u(5)
+        let expected = Millimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(mm_u_to_i16(ctype))
+        )
+    }
+
+    func testMillimetres_uInt16RawValueInit() {
+        let raw = millimetres_u(5)
+        let ctype = mm_u_to_i16(raw)
+        let expected = Millimetres_u(Int16(ctype))
+        XCTAssertEqual(Millimetres_u(rawValue: raw), expected)
+    }
+
+    func testMillimetres_uDistanceInt16Init() {
+        let raw = Millimetres_u(Int16(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_uInt32Inits() {
+        let raw = Int32(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_mm_u(5)
+        let expected2 = Int32(
+            mm_u_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_uInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_mm_u(5)
+        let expected = Millimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(mm_u_to_i32(ctype))
+        )
+    }
+
+    func testMillimetres_uInt32RawValueInit() {
+        let raw = millimetres_u(5)
+        let ctype = mm_u_to_i32(raw)
+        let expected = Millimetres_u(Int32(ctype))
+        XCTAssertEqual(Millimetres_u(rawValue: raw), expected)
+    }
+
+    func testMillimetres_uDistanceInt32Init() {
+        let raw = Millimetres_u(Int32(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_uInt64Inits() {
+        let raw = Int64(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_mm_u(5)
+        let expected2 = Int64(
+            mm_u_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_uInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_mm_u(5)
+        let expected = Millimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(mm_u_to_i64(ctype))
+        )
+    }
+
+    func testMillimetres_uInt64RawValueInit() {
+        let raw = millimetres_u(5)
+        let ctype = mm_u_to_i64(raw)
+        let expected = Millimetres_u(Int64(ctype))
+        XCTAssertEqual(Millimetres_u(rawValue: raw), expected)
+    }
+
+    func testMillimetres_uDistanceInt64Init() {
+        let raw = Millimetres_u(Int64(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_uIntInits() {
+        let raw = Int(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_mm_u(5)
+        let expected2 = Int(
+            mm_u_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_uIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_mm_u(5)
+        let expected = Millimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(mm_u_to_i64(ctype))
+        )
+    }
+
+    func testMillimetres_uIntRawValueInit() {
+        let raw = millimetres_u(5)
+        let ctype = mm_u_to_i64(raw)
+        let expected = Millimetres_u(Int(ctype))
+        XCTAssertEqual(Millimetres_u(rawValue: raw), expected)
+    }
+
+    func testMillimetres_uDistanceIntInit() {
+        let raw = Millimetres_u(Int(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_uCIntInits() {
+        let raw = CInt(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_mm_u(5)
+        let expected2 = CInt(
+            mm_u_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_uCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_mm_u(5)
+        let expected = Millimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(mm_u_to_i32(ctype))
+        )
+    }
+
+    func testMillimetres_uCIntRawValueInit() {
+        let raw = millimetres_u(5)
+        let ctype = mm_u_to_i32(raw)
+        let expected = Millimetres_u(CInt(ctype))
+        XCTAssertEqual(Millimetres_u(rawValue: raw), expected)
+    }
+
+    func testMillimetres_uDistanceCIntInit() {
+        let raw = Millimetres_u(CInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_uUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_mm_u(5)
+        let expected2 = UInt8(
+            mm_u_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_uUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_mm_u(5)
+        let expected = Millimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(mm_u_to_u8(ctype))
+        )
+    }
+
+    func testMillimetres_uUInt8RawValueInit() {
+        let raw = millimetres_u(5)
+        let ctype = mm_u_to_u8(raw)
+        let expected = Millimetres_u(UInt8(ctype))
+        XCTAssertEqual(Millimetres_u(rawValue: raw), expected)
+    }
+
+    func testMillimetres_uDistanceUInt8Init() {
+        let raw = Millimetres_u(UInt8(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_uUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_mm_u(5)
+        let expected2 = UInt16(
+            mm_u_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_uUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_mm_u(5)
+        let expected = Millimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(mm_u_to_u16(ctype))
+        )
+    }
+
+    func testMillimetres_uUInt16RawValueInit() {
+        let raw = millimetres_u(5)
+        let ctype = mm_u_to_u16(raw)
+        let expected = Millimetres_u(UInt16(ctype))
+        XCTAssertEqual(Millimetres_u(rawValue: raw), expected)
+    }
+
+    func testMillimetres_uDistanceUInt16Init() {
+        let raw = Millimetres_u(UInt16(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_uUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_mm_u(5)
+        let expected2 = UInt32(
+            mm_u_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_uUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_mm_u(5)
+        let expected = Millimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(mm_u_to_u32(ctype))
+        )
+    }
+
+    func testMillimetres_uUInt32RawValueInit() {
+        let raw = millimetres_u(5)
+        let ctype = mm_u_to_u32(raw)
+        let expected = Millimetres_u(UInt32(ctype))
+        XCTAssertEqual(Millimetres_u(rawValue: raw), expected)
+    }
+
+    func testMillimetres_uDistanceUInt32Init() {
+        let raw = Millimetres_u(UInt32(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_uUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_mm_u(5)
+        let expected2 = UInt64(
+            mm_u_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_uUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_mm_u(5)
+        let expected = Millimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(mm_u_to_u64(ctype))
+        )
+    }
+
+    func testMillimetres_uUInt64RawValueInit() {
+        let raw = millimetres_u(5)
+        let ctype = mm_u_to_u64(raw)
+        let expected = Millimetres_u(UInt64(ctype))
+        XCTAssertEqual(Millimetres_u(rawValue: raw), expected)
+    }
+
+    func testMillimetres_uDistanceUInt64Init() {
+        let raw = Millimetres_u(UInt64(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_uUIntInits() {
+        let raw = UInt(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_mm_u(5)
+        let expected2 = UInt(
+            mm_u_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_uUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_mm_u(5)
+        let expected = Millimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(mm_u_to_u64(ctype))
+        )
+    }
+
+    func testMillimetres_uUIntRawValueInit() {
+        let raw = millimetres_u(5)
+        let ctype = mm_u_to_u64(raw)
+        let expected = Millimetres_u(UInt(ctype))
+        XCTAssertEqual(Millimetres_u(rawValue: raw), expected)
+    }
+
+    func testMillimetres_uDistanceUIntInit() {
+        let raw = Millimetres_u(UInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_uCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_mm_u(5)
+        let expected2 = CUnsignedInt(
+            mm_u_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_uCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_mm_u(5)
+        let expected = Millimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(mm_u_to_u32(ctype))
+        )
+    }
+
+    func testMillimetres_uCUnsignedIntRawValueInit() {
+        let raw = millimetres_u(5)
+        let ctype = mm_u_to_u32(raw)
+        let expected = Millimetres_u(CUnsignedInt(ctype))
+        XCTAssertEqual(Millimetres_u(rawValue: raw), expected)
+    }
+
+    func testMillimetres_uDistanceCUnsignedIntInit() {
+        let raw = Millimetres_u(CUnsignedInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_uFloatInits() {
+        let raw = Float(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_mm_u(5)
+        let expected2 = Float(
+            mm_u_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_uFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_mm_u(5)
+        let expected = Millimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(mm_u_to_f(ctype))
+        )
+    }
+
+    func testMillimetres_uFloatRawValueInit() {
+        let raw = millimetres_u(5)
+        let ctype = mm_u_to_f(raw)
+        let expected = Millimetres_u(Float(ctype))
+        XCTAssertEqual(Millimetres_u(rawValue: raw), expected)
+    }
+
+    func testMillimetres_uDistanceFloatInit() {
+        let raw = Millimetres_u(Float(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_uDoubleInits() {
+        let raw = Double(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_mm_u(5)
+        let expected2 = Double(
+            mm_u_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_uDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_mm_u(5)
+        let expected = Millimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(mm_u_to_d(ctype))
+        )
+    }
+
+    func testMillimetres_uDoubleRawValueInit() {
+        let raw = millimetres_u(5)
+        let ctype = mm_u_to_d(raw)
+        let expected = Millimetres_u(Double(ctype))
+        XCTAssertEqual(Millimetres_u(rawValue: raw), expected)
+    }
+
+    func testMillimetres_uDistanceDoubleInit() {
+        let raw = Millimetres_u(Double(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testMillimetres_fToMillimetres_tDistanceConversions() {
+        let original = Millimetres_f(5)
+        let category = Distance(original)
+        let other = category.millimetres_t
+        XCTAssertEqual(other, Millimetres_t(original))
+    }
+
+    func testMillimetres_tToMillimetres_fConversions() {
+        let ctype1 = millimetres_f(5)
+        let swiftType1 = Millimetres_f(rawValue: ctype1)
+        let ctype2 = mm_f_to_mm_t(ctype1)
+        let swiftType2 = Millimetres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_t(swiftType1))
+    }
+
+    func testMillimetres_fToMillimetres_uDistanceConversions() {
+        let original = Millimetres_f(5)
+        let category = Distance(original)
+        let other = category.millimetres_u
+        XCTAssertEqual(other, Millimetres_u(original))
+    }
+
+    func testMillimetres_uToMillimetres_fConversions() {
+        let ctype1 = millimetres_f(5)
+        let swiftType1 = Millimetres_f(rawValue: ctype1)
+        let ctype2 = mm_f_to_mm_u(ctype1)
+        let swiftType2 = Millimetres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_u(swiftType1))
+    }
+
+    func testMillimetres_fToMillimetres_dDistanceConversions() {
+        let original = Millimetres_f(5)
+        let category = Distance(original)
+        let other = category.millimetres_d
+        XCTAssertEqual(other, Millimetres_d(original))
+    }
+
+    func testMillimetres_dToMillimetres_fConversions() {
+        let ctype1 = millimetres_f(5)
+        let swiftType1 = Millimetres_f(rawValue: ctype1)
+        let ctype2 = mm_f_to_mm_d(ctype1)
+        let swiftType2 = Millimetres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_d(swiftType1))
+    }
+
+    func testMillimetres_fToCentimetres_tDistanceConversions() {
+        let original = Millimetres_f(5)
+        let category = Distance(original)
+        let other = category.centimetres_t
+        XCTAssertEqual(other, Centimetres_t(original))
+    }
+
+    func testCentimetres_tToMillimetres_fConversions() {
+        let ctype1 = millimetres_f(5)
+        let swiftType1 = Millimetres_f(rawValue: ctype1)
+        let ctype2 = mm_f_to_cm_t(ctype1)
+        let swiftType2 = Centimetres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_t(swiftType1))
+    }
+
+    func testMillimetres_fToCentimetres_uDistanceConversions() {
+        let original = Millimetres_f(5)
+        let category = Distance(original)
+        let other = category.centimetres_u
+        XCTAssertEqual(other, Centimetres_u(original))
+    }
+
+    func testCentimetres_uToMillimetres_fConversions() {
+        let ctype1 = millimetres_f(5)
+        let swiftType1 = Millimetres_f(rawValue: ctype1)
+        let ctype2 = mm_f_to_cm_u(ctype1)
+        let swiftType2 = Centimetres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_u(swiftType1))
+    }
+
+    func testMillimetres_fToCentimetres_fDistanceConversions() {
+        let original = Millimetres_f(5)
+        let category = Distance(original)
+        let other = category.centimetres_f
+        XCTAssertEqual(other, Centimetres_f(original))
+    }
+
+    func testCentimetres_fToMillimetres_fConversions() {
+        let ctype1 = millimetres_f(5)
+        let swiftType1 = Millimetres_f(rawValue: ctype1)
+        let ctype2 = mm_f_to_cm_f(ctype1)
+        let swiftType2 = Centimetres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_f(swiftType1))
+    }
+
+    func testMillimetres_fToCentimetres_dDistanceConversions() {
+        let original = Millimetres_f(5)
+        let category = Distance(original)
+        let other = category.centimetres_d
+        XCTAssertEqual(other, Centimetres_d(original))
+    }
+
+    func testCentimetres_dToMillimetres_fConversions() {
+        let ctype1 = millimetres_f(5)
+        let swiftType1 = Millimetres_f(rawValue: ctype1)
+        let ctype2 = mm_f_to_cm_d(ctype1)
+        let swiftType2 = Centimetres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_d(swiftType1))
+    }
+
+    func testMillimetres_fToMetres_tDistanceConversions() {
+        let original = Millimetres_f(5)
+        let category = Distance(original)
+        let other = category.metres_t
+        XCTAssertEqual(other, Metres_t(original))
+    }
+
+    func testMetres_tToMillimetres_fConversions() {
+        let ctype1 = millimetres_f(5)
+        let swiftType1 = Millimetres_f(rawValue: ctype1)
+        let ctype2 = mm_f_to_m_t(ctype1)
+        let swiftType2 = Metres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_t(swiftType1))
+    }
+
+    func testMillimetres_fToMetres_uDistanceConversions() {
+        let original = Millimetres_f(5)
+        let category = Distance(original)
+        let other = category.metres_u
+        XCTAssertEqual(other, Metres_u(original))
+    }
+
+    func testMetres_uToMillimetres_fConversions() {
+        let ctype1 = millimetres_f(5)
+        let swiftType1 = Millimetres_f(rawValue: ctype1)
+        let ctype2 = mm_f_to_m_u(ctype1)
+        let swiftType2 = Metres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_u(swiftType1))
+    }
+
+    func testMillimetres_fToMetres_fDistanceConversions() {
+        let original = Millimetres_f(5)
+        let category = Distance(original)
+        let other = category.metres_f
+        XCTAssertEqual(other, Metres_f(original))
+    }
+
+    func testMetres_fToMillimetres_fConversions() {
+        let ctype1 = millimetres_f(5)
+        let swiftType1 = Millimetres_f(rawValue: ctype1)
+        let ctype2 = mm_f_to_m_f(ctype1)
+        let swiftType2 = Metres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_f(swiftType1))
+    }
+
+    func testMillimetres_fToMetres_dDistanceConversions() {
+        let original = Millimetres_f(5)
+        let category = Distance(original)
+        let other = category.metres_d
+        XCTAssertEqual(other, Metres_d(original))
+    }
+
+    func testMetres_dToMillimetres_fConversions() {
+        let ctype1 = millimetres_f(5)
+        let swiftType1 = Millimetres_f(rawValue: ctype1)
+        let ctype2 = mm_f_to_m_d(ctype1)
+        let swiftType2 = Metres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_d(swiftType1))
+    }
+
+    func testMillimetres_fInitFromTypeEnum() {
+        let underlyingType = Distance.DistanceTypes.millimetres_f(5)
+        let category = Distance(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testDistanceMillimetres_fInt8Inits() {
+        let raw = Int8(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_mm_f(5)
+        let expected2 = Int8(
+            mm_f_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_fInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_mm_f(5)
+        let expected = Millimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(mm_f_to_i8(ctype))
+        )
+    }
+
+    func testMillimetres_fInt8RawValueInit() {
+        let raw = millimetres_f(5)
+        let ctype = mm_f_to_i8(raw)
+        let expected = Millimetres_f(Int8(ctype))
+        XCTAssertEqual(Millimetres_f(rawValue: raw), expected)
+    }
+
+    func testMillimetres_fDistanceInt8Init() {
+        let raw = Millimetres_f(Int8(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_fInt16Inits() {
+        let raw = Int16(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_mm_f(5)
+        let expected2 = Int16(
+            mm_f_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_fInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_mm_f(5)
+        let expected = Millimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(mm_f_to_i16(ctype))
+        )
+    }
+
+    func testMillimetres_fInt16RawValueInit() {
+        let raw = millimetres_f(5)
+        let ctype = mm_f_to_i16(raw)
+        let expected = Millimetres_f(Int16(ctype))
+        XCTAssertEqual(Millimetres_f(rawValue: raw), expected)
+    }
+
+    func testMillimetres_fDistanceInt16Init() {
+        let raw = Millimetres_f(Int16(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_fInt32Inits() {
+        let raw = Int32(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_mm_f(5)
+        let expected2 = Int32(
+            mm_f_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_fInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_mm_f(5)
+        let expected = Millimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(mm_f_to_i32(ctype))
+        )
+    }
+
+    func testMillimetres_fInt32RawValueInit() {
+        let raw = millimetres_f(5)
+        let ctype = mm_f_to_i32(raw)
+        let expected = Millimetres_f(Int32(ctype))
+        XCTAssertEqual(Millimetres_f(rawValue: raw), expected)
+    }
+
+    func testMillimetres_fDistanceInt32Init() {
+        let raw = Millimetres_f(Int32(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_fInt64Inits() {
+        let raw = Int64(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_mm_f(5)
+        let expected2 = Int64(
+            mm_f_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_fInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_mm_f(5)
+        let expected = Millimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(mm_f_to_i64(ctype))
+        )
+    }
+
+    func testMillimetres_fInt64RawValueInit() {
+        let raw = millimetres_f(5)
+        let ctype = mm_f_to_i64(raw)
+        let expected = Millimetres_f(Int64(ctype))
+        XCTAssertEqual(Millimetres_f(rawValue: raw), expected)
+    }
+
+    func testMillimetres_fDistanceInt64Init() {
+        let raw = Millimetres_f(Int64(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_fIntInits() {
+        let raw = Int(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_mm_f(5)
+        let expected2 = Int(
+            mm_f_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_fIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_mm_f(5)
+        let expected = Millimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(mm_f_to_i64(ctype))
+        )
+    }
+
+    func testMillimetres_fIntRawValueInit() {
+        let raw = millimetres_f(5)
+        let ctype = mm_f_to_i64(raw)
+        let expected = Millimetres_f(Int(ctype))
+        XCTAssertEqual(Millimetres_f(rawValue: raw), expected)
+    }
+
+    func testMillimetres_fDistanceIntInit() {
+        let raw = Millimetres_f(Int(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_fCIntInits() {
+        let raw = CInt(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_mm_f(5)
+        let expected2 = CInt(
+            mm_f_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_fCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_mm_f(5)
+        let expected = Millimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(mm_f_to_i32(ctype))
+        )
+    }
+
+    func testMillimetres_fCIntRawValueInit() {
+        let raw = millimetres_f(5)
+        let ctype = mm_f_to_i32(raw)
+        let expected = Millimetres_f(CInt(ctype))
+        XCTAssertEqual(Millimetres_f(rawValue: raw), expected)
+    }
+
+    func testMillimetres_fDistanceCIntInit() {
+        let raw = Millimetres_f(CInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_fUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_mm_f(5)
+        let expected2 = UInt8(
+            mm_f_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_fUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_mm_f(5)
+        let expected = Millimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(mm_f_to_u8(ctype))
+        )
+    }
+
+    func testMillimetres_fUInt8RawValueInit() {
+        let raw = millimetres_f(5)
+        let ctype = mm_f_to_u8(raw)
+        let expected = Millimetres_f(UInt8(ctype))
+        XCTAssertEqual(Millimetres_f(rawValue: raw), expected)
+    }
+
+    func testMillimetres_fDistanceUInt8Init() {
+        let raw = Millimetres_f(UInt8(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_fUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_mm_f(5)
+        let expected2 = UInt16(
+            mm_f_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_fUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_mm_f(5)
+        let expected = Millimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(mm_f_to_u16(ctype))
+        )
+    }
+
+    func testMillimetres_fUInt16RawValueInit() {
+        let raw = millimetres_f(5)
+        let ctype = mm_f_to_u16(raw)
+        let expected = Millimetres_f(UInt16(ctype))
+        XCTAssertEqual(Millimetres_f(rawValue: raw), expected)
+    }
+
+    func testMillimetres_fDistanceUInt16Init() {
+        let raw = Millimetres_f(UInt16(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_fUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_mm_f(5)
+        let expected2 = UInt32(
+            mm_f_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_fUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_mm_f(5)
+        let expected = Millimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(mm_f_to_u32(ctype))
+        )
+    }
+
+    func testMillimetres_fUInt32RawValueInit() {
+        let raw = millimetres_f(5)
+        let ctype = mm_f_to_u32(raw)
+        let expected = Millimetres_f(UInt32(ctype))
+        XCTAssertEqual(Millimetres_f(rawValue: raw), expected)
+    }
+
+    func testMillimetres_fDistanceUInt32Init() {
+        let raw = Millimetres_f(UInt32(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_fUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_mm_f(5)
+        let expected2 = UInt64(
+            mm_f_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_fUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_mm_f(5)
+        let expected = Millimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(mm_f_to_u64(ctype))
+        )
+    }
+
+    func testMillimetres_fUInt64RawValueInit() {
+        let raw = millimetres_f(5)
+        let ctype = mm_f_to_u64(raw)
+        let expected = Millimetres_f(UInt64(ctype))
+        XCTAssertEqual(Millimetres_f(rawValue: raw), expected)
+    }
+
+    func testMillimetres_fDistanceUInt64Init() {
+        let raw = Millimetres_f(UInt64(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_fUIntInits() {
+        let raw = UInt(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_mm_f(5)
+        let expected2 = UInt(
+            mm_f_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_fUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_mm_f(5)
+        let expected = Millimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(mm_f_to_u64(ctype))
+        )
+    }
+
+    func testMillimetres_fUIntRawValueInit() {
+        let raw = millimetres_f(5)
+        let ctype = mm_f_to_u64(raw)
+        let expected = Millimetres_f(UInt(ctype))
+        XCTAssertEqual(Millimetres_f(rawValue: raw), expected)
+    }
+
+    func testMillimetres_fDistanceUIntInit() {
+        let raw = Millimetres_f(UInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_fCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_mm_f(5)
+        let expected2 = CUnsignedInt(
+            mm_f_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_fCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_mm_f(5)
+        let expected = Millimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(mm_f_to_u32(ctype))
+        )
+    }
+
+    func testMillimetres_fCUnsignedIntRawValueInit() {
+        let raw = millimetres_f(5)
+        let ctype = mm_f_to_u32(raw)
+        let expected = Millimetres_f(CUnsignedInt(ctype))
+        XCTAssertEqual(Millimetres_f(rawValue: raw), expected)
+    }
+
+    func testMillimetres_fDistanceCUnsignedIntInit() {
+        let raw = Millimetres_f(CUnsignedInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_fFloatInits() {
+        let raw = Float(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_mm_f(5)
+        let expected2 = Float(
+            mm_f_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_fFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_mm_f(5)
+        let expected = Millimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(mm_f_to_f(ctype))
+        )
+    }
+
+    func testMillimetres_fFloatRawValueInit() {
+        let raw = millimetres_f(5)
+        let ctype = mm_f_to_f(raw)
+        let expected = Millimetres_f(Float(ctype))
+        XCTAssertEqual(Millimetres_f(rawValue: raw), expected)
+    }
+
+    func testMillimetres_fDistanceFloatInit() {
+        let raw = Millimetres_f(Float(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_fDoubleInits() {
+        let raw = Double(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_mm_f(5)
+        let expected2 = Double(
+            mm_f_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_fDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_mm_f(5)
+        let expected = Millimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(mm_f_to_d(ctype))
+        )
+    }
+
+    func testMillimetres_fDoubleRawValueInit() {
+        let raw = millimetres_f(5)
+        let ctype = mm_f_to_d(raw)
+        let expected = Millimetres_f(Double(ctype))
+        XCTAssertEqual(Millimetres_f(rawValue: raw), expected)
+    }
+
+    func testMillimetres_fDistanceDoubleInit() {
+        let raw = Millimetres_f(Double(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testMillimetres_dToMillimetres_tDistanceConversions() {
+        let original = Millimetres_d(5)
+        let category = Distance(original)
+        let other = category.millimetres_t
+        XCTAssertEqual(other, Millimetres_t(original))
+    }
+
+    func testMillimetres_tToMillimetres_dConversions() {
+        let ctype1 = millimetres_d(5)
+        let swiftType1 = Millimetres_d(rawValue: ctype1)
+        let ctype2 = mm_d_to_mm_t(ctype1)
+        let swiftType2 = Millimetres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_t(swiftType1))
+    }
+
+    func testMillimetres_dToMillimetres_uDistanceConversions() {
+        let original = Millimetres_d(5)
+        let category = Distance(original)
+        let other = category.millimetres_u
+        XCTAssertEqual(other, Millimetres_u(original))
+    }
+
+    func testMillimetres_uToMillimetres_dConversions() {
+        let ctype1 = millimetres_d(5)
+        let swiftType1 = Millimetres_d(rawValue: ctype1)
+        let ctype2 = mm_d_to_mm_u(ctype1)
+        let swiftType2 = Millimetres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_u(swiftType1))
+    }
+
+    func testMillimetres_dToMillimetres_fDistanceConversions() {
+        let original = Millimetres_d(5)
+        let category = Distance(original)
+        let other = category.millimetres_f
+        XCTAssertEqual(other, Millimetres_f(original))
+    }
+
+    func testMillimetres_fToMillimetres_dConversions() {
+        let ctype1 = millimetres_d(5)
+        let swiftType1 = Millimetres_d(rawValue: ctype1)
+        let ctype2 = mm_d_to_mm_f(ctype1)
+        let swiftType2 = Millimetres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_f(swiftType1))
+    }
+
+    func testMillimetres_dToCentimetres_tDistanceConversions() {
+        let original = Millimetres_d(5)
+        let category = Distance(original)
+        let other = category.centimetres_t
+        XCTAssertEqual(other, Centimetres_t(original))
+    }
+
+    func testCentimetres_tToMillimetres_dConversions() {
+        let ctype1 = millimetres_d(5)
+        let swiftType1 = Millimetres_d(rawValue: ctype1)
+        let ctype2 = mm_d_to_cm_t(ctype1)
+        let swiftType2 = Centimetres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_t(swiftType1))
+    }
+
+    func testMillimetres_dToCentimetres_uDistanceConversions() {
+        let original = Millimetres_d(5)
+        let category = Distance(original)
+        let other = category.centimetres_u
+        XCTAssertEqual(other, Centimetres_u(original))
+    }
+
+    func testCentimetres_uToMillimetres_dConversions() {
+        let ctype1 = millimetres_d(5)
+        let swiftType1 = Millimetres_d(rawValue: ctype1)
+        let ctype2 = mm_d_to_cm_u(ctype1)
+        let swiftType2 = Centimetres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_u(swiftType1))
+    }
+
+    func testMillimetres_dToCentimetres_fDistanceConversions() {
+        let original = Millimetres_d(5)
+        let category = Distance(original)
+        let other = category.centimetres_f
+        XCTAssertEqual(other, Centimetres_f(original))
+    }
+
+    func testCentimetres_fToMillimetres_dConversions() {
+        let ctype1 = millimetres_d(5)
+        let swiftType1 = Millimetres_d(rawValue: ctype1)
+        let ctype2 = mm_d_to_cm_f(ctype1)
+        let swiftType2 = Centimetres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_f(swiftType1))
+    }
+
+    func testMillimetres_dToCentimetres_dDistanceConversions() {
+        let original = Millimetres_d(5)
+        let category = Distance(original)
+        let other = category.centimetres_d
+        XCTAssertEqual(other, Centimetres_d(original))
+    }
+
+    func testCentimetres_dToMillimetres_dConversions() {
+        let ctype1 = millimetres_d(5)
+        let swiftType1 = Millimetres_d(rawValue: ctype1)
+        let ctype2 = mm_d_to_cm_d(ctype1)
+        let swiftType2 = Centimetres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_d(swiftType1))
+    }
+
+    func testMillimetres_dToMetres_tDistanceConversions() {
+        let original = Millimetres_d(5)
+        let category = Distance(original)
+        let other = category.metres_t
+        XCTAssertEqual(other, Metres_t(original))
+    }
+
+    func testMetres_tToMillimetres_dConversions() {
+        let ctype1 = millimetres_d(5)
+        let swiftType1 = Millimetres_d(rawValue: ctype1)
+        let ctype2 = mm_d_to_m_t(ctype1)
+        let swiftType2 = Metres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_t(swiftType1))
+    }
+
+    func testMillimetres_dToMetres_uDistanceConversions() {
+        let original = Millimetres_d(5)
+        let category = Distance(original)
+        let other = category.metres_u
+        XCTAssertEqual(other, Metres_u(original))
+    }
+
+    func testMetres_uToMillimetres_dConversions() {
+        let ctype1 = millimetres_d(5)
+        let swiftType1 = Millimetres_d(rawValue: ctype1)
+        let ctype2 = mm_d_to_m_u(ctype1)
+        let swiftType2 = Metres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_u(swiftType1))
+    }
+
+    func testMillimetres_dToMetres_fDistanceConversions() {
+        let original = Millimetres_d(5)
+        let category = Distance(original)
+        let other = category.metres_f
+        XCTAssertEqual(other, Metres_f(original))
+    }
+
+    func testMetres_fToMillimetres_dConversions() {
+        let ctype1 = millimetres_d(5)
+        let swiftType1 = Millimetres_d(rawValue: ctype1)
+        let ctype2 = mm_d_to_m_f(ctype1)
+        let swiftType2 = Metres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_f(swiftType1))
+    }
+
+    func testMillimetres_dToMetres_dDistanceConversions() {
+        let original = Millimetres_d(5)
+        let category = Distance(original)
+        let other = category.metres_d
+        XCTAssertEqual(other, Metres_d(original))
+    }
+
+    func testMetres_dToMillimetres_dConversions() {
+        let ctype1 = millimetres_d(5)
+        let swiftType1 = Millimetres_d(rawValue: ctype1)
+        let ctype2 = mm_d_to_m_d(ctype1)
+        let swiftType2 = Metres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_d(swiftType1))
+    }
+
+    func testMillimetres_dInitFromTypeEnum() {
+        let underlyingType = Distance.DistanceTypes.millimetres_d(5)
+        let category = Distance(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testDistanceMillimetres_dInt8Inits() {
+        let raw = Int8(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_mm_d(5)
+        let expected2 = Int8(
+            mm_d_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_dInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_mm_d(5)
+        let expected = Millimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(mm_d_to_i8(ctype))
+        )
+    }
+
+    func testMillimetres_dInt8RawValueInit() {
+        let raw = millimetres_d(5)
+        let ctype = mm_d_to_i8(raw)
+        let expected = Millimetres_d(Int8(ctype))
+        XCTAssertEqual(Millimetres_d(rawValue: raw), expected)
+    }
+
+    func testMillimetres_dDistanceInt8Init() {
+        let raw = Millimetres_d(Int8(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_dInt16Inits() {
+        let raw = Int16(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_mm_d(5)
+        let expected2 = Int16(
+            mm_d_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_dInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_mm_d(5)
+        let expected = Millimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(mm_d_to_i16(ctype))
+        )
+    }
+
+    func testMillimetres_dInt16RawValueInit() {
+        let raw = millimetres_d(5)
+        let ctype = mm_d_to_i16(raw)
+        let expected = Millimetres_d(Int16(ctype))
+        XCTAssertEqual(Millimetres_d(rawValue: raw), expected)
+    }
+
+    func testMillimetres_dDistanceInt16Init() {
+        let raw = Millimetres_d(Int16(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_dInt32Inits() {
+        let raw = Int32(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_mm_d(5)
+        let expected2 = Int32(
+            mm_d_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_dInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_mm_d(5)
+        let expected = Millimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(mm_d_to_i32(ctype))
+        )
+    }
+
+    func testMillimetres_dInt32RawValueInit() {
+        let raw = millimetres_d(5)
+        let ctype = mm_d_to_i32(raw)
+        let expected = Millimetres_d(Int32(ctype))
+        XCTAssertEqual(Millimetres_d(rawValue: raw), expected)
+    }
+
+    func testMillimetres_dDistanceInt32Init() {
+        let raw = Millimetres_d(Int32(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_dInt64Inits() {
+        let raw = Int64(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_mm_d(5)
+        let expected2 = Int64(
+            mm_d_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_dInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_mm_d(5)
+        let expected = Millimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(mm_d_to_i64(ctype))
+        )
+    }
+
+    func testMillimetres_dInt64RawValueInit() {
+        let raw = millimetres_d(5)
+        let ctype = mm_d_to_i64(raw)
+        let expected = Millimetres_d(Int64(ctype))
+        XCTAssertEqual(Millimetres_d(rawValue: raw), expected)
+    }
+
+    func testMillimetres_dDistanceInt64Init() {
+        let raw = Millimetres_d(Int64(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_dIntInits() {
+        let raw = Int(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_mm_d(5)
+        let expected2 = Int(
+            mm_d_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_dIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_mm_d(5)
+        let expected = Millimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(mm_d_to_i64(ctype))
+        )
+    }
+
+    func testMillimetres_dIntRawValueInit() {
+        let raw = millimetres_d(5)
+        let ctype = mm_d_to_i64(raw)
+        let expected = Millimetres_d(Int(ctype))
+        XCTAssertEqual(Millimetres_d(rawValue: raw), expected)
+    }
+
+    func testMillimetres_dDistanceIntInit() {
+        let raw = Millimetres_d(Int(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_dCIntInits() {
+        let raw = CInt(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_mm_d(5)
+        let expected2 = CInt(
+            mm_d_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_dCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_mm_d(5)
+        let expected = Millimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(mm_d_to_i32(ctype))
+        )
+    }
+
+    func testMillimetres_dCIntRawValueInit() {
+        let raw = millimetres_d(5)
+        let ctype = mm_d_to_i32(raw)
+        let expected = Millimetres_d(CInt(ctype))
+        XCTAssertEqual(Millimetres_d(rawValue: raw), expected)
+    }
+
+    func testMillimetres_dDistanceCIntInit() {
+        let raw = Millimetres_d(CInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_dUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_mm_d(5)
+        let expected2 = UInt8(
+            mm_d_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_dUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_mm_d(5)
+        let expected = Millimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(mm_d_to_u8(ctype))
+        )
+    }
+
+    func testMillimetres_dUInt8RawValueInit() {
+        let raw = millimetres_d(5)
+        let ctype = mm_d_to_u8(raw)
+        let expected = Millimetres_d(UInt8(ctype))
+        XCTAssertEqual(Millimetres_d(rawValue: raw), expected)
+    }
+
+    func testMillimetres_dDistanceUInt8Init() {
+        let raw = Millimetres_d(UInt8(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_dUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_mm_d(5)
+        let expected2 = UInt16(
+            mm_d_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_dUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_mm_d(5)
+        let expected = Millimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(mm_d_to_u16(ctype))
+        )
+    }
+
+    func testMillimetres_dUInt16RawValueInit() {
+        let raw = millimetres_d(5)
+        let ctype = mm_d_to_u16(raw)
+        let expected = Millimetres_d(UInt16(ctype))
+        XCTAssertEqual(Millimetres_d(rawValue: raw), expected)
+    }
+
+    func testMillimetres_dDistanceUInt16Init() {
+        let raw = Millimetres_d(UInt16(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_dUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_mm_d(5)
+        let expected2 = UInt32(
+            mm_d_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_dUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_mm_d(5)
+        let expected = Millimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(mm_d_to_u32(ctype))
+        )
+    }
+
+    func testMillimetres_dUInt32RawValueInit() {
+        let raw = millimetres_d(5)
+        let ctype = mm_d_to_u32(raw)
+        let expected = Millimetres_d(UInt32(ctype))
+        XCTAssertEqual(Millimetres_d(rawValue: raw), expected)
+    }
+
+    func testMillimetres_dDistanceUInt32Init() {
+        let raw = Millimetres_d(UInt32(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_dUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_mm_d(5)
+        let expected2 = UInt64(
+            mm_d_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_dUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_mm_d(5)
+        let expected = Millimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(mm_d_to_u64(ctype))
+        )
+    }
+
+    func testMillimetres_dUInt64RawValueInit() {
+        let raw = millimetres_d(5)
+        let ctype = mm_d_to_u64(raw)
+        let expected = Millimetres_d(UInt64(ctype))
+        XCTAssertEqual(Millimetres_d(rawValue: raw), expected)
+    }
+
+    func testMillimetres_dDistanceUInt64Init() {
+        let raw = Millimetres_d(UInt64(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_dUIntInits() {
+        let raw = UInt(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_mm_d(5)
+        let expected2 = UInt(
+            mm_d_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_dUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_mm_d(5)
+        let expected = Millimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(mm_d_to_u64(ctype))
+        )
+    }
+
+    func testMillimetres_dUIntRawValueInit() {
+        let raw = millimetres_d(5)
+        let ctype = mm_d_to_u64(raw)
+        let expected = Millimetres_d(UInt(ctype))
+        XCTAssertEqual(Millimetres_d(rawValue: raw), expected)
+    }
+
+    func testMillimetres_dDistanceUIntInit() {
+        let raw = Millimetres_d(UInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_dCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_mm_d(5)
+        let expected2 = CUnsignedInt(
+            mm_d_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_dCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_mm_d(5)
+        let expected = Millimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(mm_d_to_u32(ctype))
+        )
+    }
+
+    func testMillimetres_dCUnsignedIntRawValueInit() {
+        let raw = millimetres_d(5)
+        let ctype = mm_d_to_u32(raw)
+        let expected = Millimetres_d(CUnsignedInt(ctype))
+        XCTAssertEqual(Millimetres_d(rawValue: raw), expected)
+    }
+
+    func testMillimetres_dDistanceCUnsignedIntInit() {
+        let raw = Millimetres_d(CUnsignedInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_dFloatInits() {
+        let raw = Float(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_mm_d(5)
+        let expected2 = Float(
+            mm_d_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_dFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_mm_d(5)
+        let expected = Millimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(mm_d_to_f(ctype))
+        )
+    }
+
+    func testMillimetres_dFloatRawValueInit() {
+        let raw = millimetres_d(5)
+        let ctype = mm_d_to_f(raw)
+        let expected = Millimetres_d(Float(ctype))
+        XCTAssertEqual(Millimetres_d(rawValue: raw), expected)
+    }
+
+    func testMillimetres_dDistanceFloatInit() {
+        let raw = Millimetres_d(Float(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMillimetres_dDoubleInits() {
+        let raw = Double(5)
+        let expected = Distance(millimetres: raw)
+        let result = Distance.millimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_mm_d(5)
+        let expected2 = Double(
+            mm_d_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMillimetres_dDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_mm_d(5)
+        let expected = Millimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(mm_d_to_d(ctype))
+        )
+    }
+
+    func testMillimetres_dDoubleRawValueInit() {
+        let raw = millimetres_d(5)
+        let ctype = mm_d_to_d(raw)
+        let expected = Millimetres_d(Double(ctype))
+        XCTAssertEqual(Millimetres_d(rawValue: raw), expected)
+    }
+
+    func testMillimetres_dDistanceDoubleInit() {
+        let raw = Millimetres_d(Double(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .millimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+}
+
+final class CentimetresConversionTests: XCTestCase {
+
+    func testCentimetres_tToMillimetres_tDistanceConversions() {
+        let original = Centimetres_t(5)
+        let category = Distance(original)
+        let other = category.millimetres_t
+        XCTAssertEqual(other, Millimetres_t(original))
+    }
+
+    func testMillimetres_tToCentimetres_tConversions() {
+        let ctype1 = centimetres_t(5)
+        let swiftType1 = Centimetres_t(rawValue: ctype1)
+        let ctype2 = cm_t_to_mm_t(ctype1)
+        let swiftType2 = Millimetres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_t(swiftType1))
+    }
+
+    func testCentimetres_tToMillimetres_uDistanceConversions() {
+        let original = Centimetres_t(5)
+        let category = Distance(original)
+        let other = category.millimetres_u
+        XCTAssertEqual(other, Millimetres_u(original))
+    }
+
+    func testMillimetres_uToCentimetres_tConversions() {
+        let ctype1 = centimetres_t(5)
+        let swiftType1 = Centimetres_t(rawValue: ctype1)
+        let ctype2 = cm_t_to_mm_u(ctype1)
+        let swiftType2 = Millimetres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_u(swiftType1))
+    }
+
+    func testCentimetres_tToMillimetres_fDistanceConversions() {
+        let original = Centimetres_t(5)
+        let category = Distance(original)
+        let other = category.millimetres_f
+        XCTAssertEqual(other, Millimetres_f(original))
+    }
+
+    func testMillimetres_fToCentimetres_tConversions() {
+        let ctype1 = centimetres_t(5)
+        let swiftType1 = Centimetres_t(rawValue: ctype1)
+        let ctype2 = cm_t_to_mm_f(ctype1)
+        let swiftType2 = Millimetres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_f(swiftType1))
+    }
+
+    func testCentimetres_tToMillimetres_dDistanceConversions() {
+        let original = Centimetres_t(5)
+        let category = Distance(original)
+        let other = category.millimetres_d
+        XCTAssertEqual(other, Millimetres_d(original))
+    }
+
+    func testMillimetres_dToCentimetres_tConversions() {
+        let ctype1 = centimetres_t(5)
+        let swiftType1 = Centimetres_t(rawValue: ctype1)
+        let ctype2 = cm_t_to_mm_d(ctype1)
+        let swiftType2 = Millimetres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_d(swiftType1))
+    }
+
+    func testCentimetres_tToCentimetres_uDistanceConversions() {
+        let original = Centimetres_t(5)
+        let category = Distance(original)
+        let other = category.centimetres_u
+        XCTAssertEqual(other, Centimetres_u(original))
+    }
+
+    func testCentimetres_uToCentimetres_tConversions() {
+        let ctype1 = centimetres_t(5)
+        let swiftType1 = Centimetres_t(rawValue: ctype1)
+        let ctype2 = cm_t_to_cm_u(ctype1)
+        let swiftType2 = Centimetres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_u(swiftType1))
+    }
+
+    func testCentimetres_tToCentimetres_fDistanceConversions() {
+        let original = Centimetres_t(5)
+        let category = Distance(original)
+        let other = category.centimetres_f
+        XCTAssertEqual(other, Centimetres_f(original))
+    }
+
+    func testCentimetres_fToCentimetres_tConversions() {
+        let ctype1 = centimetres_t(5)
+        let swiftType1 = Centimetres_t(rawValue: ctype1)
+        let ctype2 = cm_t_to_cm_f(ctype1)
+        let swiftType2 = Centimetres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_f(swiftType1))
+    }
+
+    func testCentimetres_tToCentimetres_dDistanceConversions() {
+        let original = Centimetres_t(5)
+        let category = Distance(original)
+        let other = category.centimetres_d
+        XCTAssertEqual(other, Centimetres_d(original))
+    }
+
+    func testCentimetres_dToCentimetres_tConversions() {
+        let ctype1 = centimetres_t(5)
+        let swiftType1 = Centimetres_t(rawValue: ctype1)
+        let ctype2 = cm_t_to_cm_d(ctype1)
+        let swiftType2 = Centimetres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_d(swiftType1))
+    }
+
+    func testCentimetres_tToMetres_tDistanceConversions() {
+        let original = Centimetres_t(5)
+        let category = Distance(original)
+        let other = category.metres_t
+        XCTAssertEqual(other, Metres_t(original))
+    }
+
+    func testMetres_tToCentimetres_tConversions() {
+        let ctype1 = centimetres_t(5)
+        let swiftType1 = Centimetres_t(rawValue: ctype1)
+        let ctype2 = cm_t_to_m_t(ctype1)
+        let swiftType2 = Metres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_t(swiftType1))
+    }
+
+    func testCentimetres_tToMetres_uDistanceConversions() {
+        let original = Centimetres_t(5)
+        let category = Distance(original)
+        let other = category.metres_u
+        XCTAssertEqual(other, Metres_u(original))
+    }
+
+    func testMetres_uToCentimetres_tConversions() {
+        let ctype1 = centimetres_t(5)
+        let swiftType1 = Centimetres_t(rawValue: ctype1)
+        let ctype2 = cm_t_to_m_u(ctype1)
+        let swiftType2 = Metres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_u(swiftType1))
+    }
+
+    func testCentimetres_tToMetres_fDistanceConversions() {
+        let original = Centimetres_t(5)
+        let category = Distance(original)
+        let other = category.metres_f
+        XCTAssertEqual(other, Metres_f(original))
+    }
+
+    func testMetres_fToCentimetres_tConversions() {
+        let ctype1 = centimetres_t(5)
+        let swiftType1 = Centimetres_t(rawValue: ctype1)
+        let ctype2 = cm_t_to_m_f(ctype1)
+        let swiftType2 = Metres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_f(swiftType1))
+    }
+
+    func testCentimetres_tToMetres_dDistanceConversions() {
+        let original = Centimetres_t(5)
+        let category = Distance(original)
+        let other = category.metres_d
+        XCTAssertEqual(other, Metres_d(original))
+    }
+
+    func testMetres_dToCentimetres_tConversions() {
+        let ctype1 = centimetres_t(5)
+        let swiftType1 = Centimetres_t(rawValue: ctype1)
+        let ctype2 = cm_t_to_m_d(ctype1)
+        let swiftType2 = Metres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_d(swiftType1))
+    }
+
+    func testCentimetres_tInitFromTypeEnum() {
+        let underlyingType = Distance.DistanceTypes.centimetres_t(5)
+        let category = Distance(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testDistanceCentimetres_tInt8Inits() {
+        let raw = Int8(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_cm_t(5)
+        let expected2 = Int8(
+            cm_t_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_tInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_cm_t(5)
+        let expected = Centimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(cm_t_to_i8(ctype))
+        )
+    }
+
+    func testCentimetres_tInt8RawValueInit() {
+        let raw = centimetres_t(5)
+        let ctype = cm_t_to_i8(raw)
+        let expected = Centimetres_t(Int8(ctype))
+        XCTAssertEqual(Centimetres_t(rawValue: raw), expected)
+    }
+
+    func testCentimetres_tDistanceInt8Init() {
+        let raw = Centimetres_t(Int8(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_tInt16Inits() {
+        let raw = Int16(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_cm_t(5)
+        let expected2 = Int16(
+            cm_t_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_tInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_cm_t(5)
+        let expected = Centimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(cm_t_to_i16(ctype))
+        )
+    }
+
+    func testCentimetres_tInt16RawValueInit() {
+        let raw = centimetres_t(5)
+        let ctype = cm_t_to_i16(raw)
+        let expected = Centimetres_t(Int16(ctype))
+        XCTAssertEqual(Centimetres_t(rawValue: raw), expected)
+    }
+
+    func testCentimetres_tDistanceInt16Init() {
+        let raw = Centimetres_t(Int16(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_tInt32Inits() {
+        let raw = Int32(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_cm_t(5)
+        let expected2 = Int32(
+            cm_t_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_tInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_cm_t(5)
+        let expected = Centimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(cm_t_to_i32(ctype))
+        )
+    }
+
+    func testCentimetres_tInt32RawValueInit() {
+        let raw = centimetres_t(5)
+        let ctype = cm_t_to_i32(raw)
+        let expected = Centimetres_t(Int32(ctype))
+        XCTAssertEqual(Centimetres_t(rawValue: raw), expected)
+    }
+
+    func testCentimetres_tDistanceInt32Init() {
+        let raw = Centimetres_t(Int32(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_tInt64Inits() {
+        let raw = Int64(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_cm_t(5)
+        let expected2 = Int64(
+            cm_t_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_tInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_cm_t(5)
+        let expected = Centimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(cm_t_to_i64(ctype))
+        )
+    }
+
+    func testCentimetres_tInt64RawValueInit() {
+        let raw = centimetres_t(5)
+        let ctype = cm_t_to_i64(raw)
+        let expected = Centimetres_t(Int64(ctype))
+        XCTAssertEqual(Centimetres_t(rawValue: raw), expected)
+    }
+
+    func testCentimetres_tDistanceInt64Init() {
+        let raw = Centimetres_t(Int64(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_tIntInits() {
+        let raw = Int(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_cm_t(5)
+        let expected2 = Int(
+            cm_t_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_tIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_cm_t(5)
+        let expected = Centimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(cm_t_to_i64(ctype))
+        )
+    }
+
+    func testCentimetres_tIntRawValueInit() {
+        let raw = centimetres_t(5)
+        let ctype = cm_t_to_i64(raw)
+        let expected = Centimetres_t(Int(ctype))
+        XCTAssertEqual(Centimetres_t(rawValue: raw), expected)
+    }
+
+    func testCentimetres_tDistanceIntInit() {
+        let raw = Centimetres_t(Int(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_tCIntInits() {
+        let raw = CInt(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_cm_t(5)
+        let expected2 = CInt(
+            cm_t_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_tCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_cm_t(5)
+        let expected = Centimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(cm_t_to_i32(ctype))
+        )
+    }
+
+    func testCentimetres_tCIntRawValueInit() {
+        let raw = centimetres_t(5)
+        let ctype = cm_t_to_i32(raw)
+        let expected = Centimetres_t(CInt(ctype))
+        XCTAssertEqual(Centimetres_t(rawValue: raw), expected)
+    }
+
+    func testCentimetres_tDistanceCIntInit() {
+        let raw = Centimetres_t(CInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_tUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_cm_t(5)
+        let expected2 = UInt8(
+            cm_t_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_tUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_cm_t(5)
+        let expected = Centimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(cm_t_to_u8(ctype))
+        )
+    }
+
+    func testCentimetres_tUInt8RawValueInit() {
+        let raw = centimetres_t(5)
+        let ctype = cm_t_to_u8(raw)
+        let expected = Centimetres_t(UInt8(ctype))
+        XCTAssertEqual(Centimetres_t(rawValue: raw), expected)
+    }
+
+    func testCentimetres_tDistanceUInt8Init() {
+        let raw = Centimetres_t(UInt8(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_tUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_cm_t(5)
+        let expected2 = UInt16(
+            cm_t_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_tUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_cm_t(5)
+        let expected = Centimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(cm_t_to_u16(ctype))
+        )
+    }
+
+    func testCentimetres_tUInt16RawValueInit() {
+        let raw = centimetres_t(5)
+        let ctype = cm_t_to_u16(raw)
+        let expected = Centimetres_t(UInt16(ctype))
+        XCTAssertEqual(Centimetres_t(rawValue: raw), expected)
+    }
+
+    func testCentimetres_tDistanceUInt16Init() {
+        let raw = Centimetres_t(UInt16(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_tUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_cm_t(5)
+        let expected2 = UInt32(
+            cm_t_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_tUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_cm_t(5)
+        let expected = Centimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(cm_t_to_u32(ctype))
+        )
+    }
+
+    func testCentimetres_tUInt32RawValueInit() {
+        let raw = centimetres_t(5)
+        let ctype = cm_t_to_u32(raw)
+        let expected = Centimetres_t(UInt32(ctype))
+        XCTAssertEqual(Centimetres_t(rawValue: raw), expected)
+    }
+
+    func testCentimetres_tDistanceUInt32Init() {
+        let raw = Centimetres_t(UInt32(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_tUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_cm_t(5)
+        let expected2 = UInt64(
+            cm_t_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_tUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_cm_t(5)
+        let expected = Centimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(cm_t_to_u64(ctype))
+        )
+    }
+
+    func testCentimetres_tUInt64RawValueInit() {
+        let raw = centimetres_t(5)
+        let ctype = cm_t_to_u64(raw)
+        let expected = Centimetres_t(UInt64(ctype))
+        XCTAssertEqual(Centimetres_t(rawValue: raw), expected)
+    }
+
+    func testCentimetres_tDistanceUInt64Init() {
+        let raw = Centimetres_t(UInt64(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_tUIntInits() {
+        let raw = UInt(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_cm_t(5)
+        let expected2 = UInt(
+            cm_t_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_tUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_cm_t(5)
+        let expected = Centimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(cm_t_to_u64(ctype))
+        )
+    }
+
+    func testCentimetres_tUIntRawValueInit() {
+        let raw = centimetres_t(5)
+        let ctype = cm_t_to_u64(raw)
+        let expected = Centimetres_t(UInt(ctype))
+        XCTAssertEqual(Centimetres_t(rawValue: raw), expected)
+    }
+
+    func testCentimetres_tDistanceUIntInit() {
+        let raw = Centimetres_t(UInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_tCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_cm_t(5)
+        let expected2 = CUnsignedInt(
+            cm_t_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_tCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_cm_t(5)
+        let expected = Centimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(cm_t_to_u32(ctype))
+        )
+    }
+
+    func testCentimetres_tCUnsignedIntRawValueInit() {
+        let raw = centimetres_t(5)
+        let ctype = cm_t_to_u32(raw)
+        let expected = Centimetres_t(CUnsignedInt(ctype))
+        XCTAssertEqual(Centimetres_t(rawValue: raw), expected)
+    }
+
+    func testCentimetres_tDistanceCUnsignedIntInit() {
+        let raw = Centimetres_t(CUnsignedInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_tFloatInits() {
+        let raw = Float(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_cm_t(5)
+        let expected2 = Float(
+            cm_t_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_tFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_cm_t(5)
+        let expected = Centimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(cm_t_to_f(ctype))
+        )
+    }
+
+    func testCentimetres_tFloatRawValueInit() {
+        let raw = centimetres_t(5)
+        let ctype = cm_t_to_f(raw)
+        let expected = Centimetres_t(Float(ctype))
+        XCTAssertEqual(Centimetres_t(rawValue: raw), expected)
+    }
+
+    func testCentimetres_tDistanceFloatInit() {
+        let raw = Centimetres_t(Float(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_tDoubleInits() {
+        let raw = Double(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_cm_t(5)
+        let expected2 = Double(
+            cm_t_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_tDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_cm_t(5)
+        let expected = Centimetres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(cm_t_to_d(ctype))
+        )
+    }
+
+    func testCentimetres_tDoubleRawValueInit() {
+        let raw = centimetres_t(5)
+        let ctype = cm_t_to_d(raw)
+        let expected = Centimetres_t(Double(ctype))
+        XCTAssertEqual(Centimetres_t(rawValue: raw), expected)
+    }
+
+    func testCentimetres_tDistanceDoubleInit() {
+        let raw = Centimetres_t(Double(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testCentimetres_uToMillimetres_tDistanceConversions() {
+        let original = Centimetres_u(5)
+        let category = Distance(original)
+        let other = category.millimetres_t
+        XCTAssertEqual(other, Millimetres_t(original))
+    }
+
+    func testMillimetres_tToCentimetres_uConversions() {
+        let ctype1 = centimetres_u(5)
+        let swiftType1 = Centimetres_u(rawValue: ctype1)
+        let ctype2 = cm_u_to_mm_t(ctype1)
+        let swiftType2 = Millimetres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_t(swiftType1))
+    }
+
+    func testCentimetres_uToMillimetres_uDistanceConversions() {
+        let original = Centimetres_u(5)
+        let category = Distance(original)
+        let other = category.millimetres_u
+        XCTAssertEqual(other, Millimetres_u(original))
+    }
+
+    func testMillimetres_uToCentimetres_uConversions() {
+        let ctype1 = centimetres_u(5)
+        let swiftType1 = Centimetres_u(rawValue: ctype1)
+        let ctype2 = cm_u_to_mm_u(ctype1)
+        let swiftType2 = Millimetres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_u(swiftType1))
+    }
+
+    func testCentimetres_uToMillimetres_fDistanceConversions() {
+        let original = Centimetres_u(5)
+        let category = Distance(original)
+        let other = category.millimetres_f
+        XCTAssertEqual(other, Millimetres_f(original))
+    }
+
+    func testMillimetres_fToCentimetres_uConversions() {
+        let ctype1 = centimetres_u(5)
+        let swiftType1 = Centimetres_u(rawValue: ctype1)
+        let ctype2 = cm_u_to_mm_f(ctype1)
+        let swiftType2 = Millimetres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_f(swiftType1))
+    }
+
+    func testCentimetres_uToMillimetres_dDistanceConversions() {
+        let original = Centimetres_u(5)
+        let category = Distance(original)
+        let other = category.millimetres_d
+        XCTAssertEqual(other, Millimetres_d(original))
+    }
+
+    func testMillimetres_dToCentimetres_uConversions() {
+        let ctype1 = centimetres_u(5)
+        let swiftType1 = Centimetres_u(rawValue: ctype1)
+        let ctype2 = cm_u_to_mm_d(ctype1)
+        let swiftType2 = Millimetres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_d(swiftType1))
+    }
+
+    func testCentimetres_uToCentimetres_tDistanceConversions() {
+        let original = Centimetres_u(5)
+        let category = Distance(original)
+        let other = category.centimetres_t
+        XCTAssertEqual(other, Centimetres_t(original))
+    }
+
+    func testCentimetres_tToCentimetres_uConversions() {
+        let ctype1 = centimetres_u(5)
+        let swiftType1 = Centimetres_u(rawValue: ctype1)
+        let ctype2 = cm_u_to_cm_t(ctype1)
+        let swiftType2 = Centimetres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_t(swiftType1))
+    }
+
+    func testCentimetres_uToCentimetres_fDistanceConversions() {
+        let original = Centimetres_u(5)
+        let category = Distance(original)
+        let other = category.centimetres_f
+        XCTAssertEqual(other, Centimetres_f(original))
+    }
+
+    func testCentimetres_fToCentimetres_uConversions() {
+        let ctype1 = centimetres_u(5)
+        let swiftType1 = Centimetres_u(rawValue: ctype1)
+        let ctype2 = cm_u_to_cm_f(ctype1)
+        let swiftType2 = Centimetres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_f(swiftType1))
+    }
+
+    func testCentimetres_uToCentimetres_dDistanceConversions() {
+        let original = Centimetres_u(5)
+        let category = Distance(original)
+        let other = category.centimetres_d
+        XCTAssertEqual(other, Centimetres_d(original))
+    }
+
+    func testCentimetres_dToCentimetres_uConversions() {
+        let ctype1 = centimetres_u(5)
+        let swiftType1 = Centimetres_u(rawValue: ctype1)
+        let ctype2 = cm_u_to_cm_d(ctype1)
+        let swiftType2 = Centimetres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_d(swiftType1))
+    }
+
+    func testCentimetres_uToMetres_tDistanceConversions() {
+        let original = Centimetres_u(5)
+        let category = Distance(original)
+        let other = category.metres_t
+        XCTAssertEqual(other, Metres_t(original))
+    }
+
+    func testMetres_tToCentimetres_uConversions() {
+        let ctype1 = centimetres_u(5)
+        let swiftType1 = Centimetres_u(rawValue: ctype1)
+        let ctype2 = cm_u_to_m_t(ctype1)
+        let swiftType2 = Metres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_t(swiftType1))
+    }
+
+    func testCentimetres_uToMetres_uDistanceConversions() {
+        let original = Centimetres_u(5)
+        let category = Distance(original)
+        let other = category.metres_u
+        XCTAssertEqual(other, Metres_u(original))
+    }
+
+    func testMetres_uToCentimetres_uConversions() {
+        let ctype1 = centimetres_u(5)
+        let swiftType1 = Centimetres_u(rawValue: ctype1)
+        let ctype2 = cm_u_to_m_u(ctype1)
+        let swiftType2 = Metres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_u(swiftType1))
+    }
+
+    func testCentimetres_uToMetres_fDistanceConversions() {
+        let original = Centimetres_u(5)
+        let category = Distance(original)
+        let other = category.metres_f
+        XCTAssertEqual(other, Metres_f(original))
+    }
+
+    func testMetres_fToCentimetres_uConversions() {
+        let ctype1 = centimetres_u(5)
+        let swiftType1 = Centimetres_u(rawValue: ctype1)
+        let ctype2 = cm_u_to_m_f(ctype1)
+        let swiftType2 = Metres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_f(swiftType1))
+    }
+
+    func testCentimetres_uToMetres_dDistanceConversions() {
+        let original = Centimetres_u(5)
+        let category = Distance(original)
+        let other = category.metres_d
+        XCTAssertEqual(other, Metres_d(original))
+    }
+
+    func testMetres_dToCentimetres_uConversions() {
+        let ctype1 = centimetres_u(5)
+        let swiftType1 = Centimetres_u(rawValue: ctype1)
+        let ctype2 = cm_u_to_m_d(ctype1)
+        let swiftType2 = Metres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_d(swiftType1))
+    }
+
+    func testCentimetres_uInitFromTypeEnum() {
+        let underlyingType = Distance.DistanceTypes.centimetres_u(5)
+        let category = Distance(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testDistanceCentimetres_uInt8Inits() {
+        let raw = Int8(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_cm_u(5)
+        let expected2 = Int8(
+            cm_u_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_uInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_cm_u(5)
+        let expected = Centimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(cm_u_to_i8(ctype))
+        )
+    }
+
+    func testCentimetres_uInt8RawValueInit() {
+        let raw = centimetres_u(5)
+        let ctype = cm_u_to_i8(raw)
+        let expected = Centimetres_u(Int8(ctype))
+        XCTAssertEqual(Centimetres_u(rawValue: raw), expected)
+    }
+
+    func testCentimetres_uDistanceInt8Init() {
+        let raw = Centimetres_u(Int8(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_uInt16Inits() {
+        let raw = Int16(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_cm_u(5)
+        let expected2 = Int16(
+            cm_u_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_uInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_cm_u(5)
+        let expected = Centimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(cm_u_to_i16(ctype))
+        )
+    }
+
+    func testCentimetres_uInt16RawValueInit() {
+        let raw = centimetres_u(5)
+        let ctype = cm_u_to_i16(raw)
+        let expected = Centimetres_u(Int16(ctype))
+        XCTAssertEqual(Centimetres_u(rawValue: raw), expected)
+    }
+
+    func testCentimetres_uDistanceInt16Init() {
+        let raw = Centimetres_u(Int16(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_uInt32Inits() {
+        let raw = Int32(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_cm_u(5)
+        let expected2 = Int32(
+            cm_u_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_uInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_cm_u(5)
+        let expected = Centimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(cm_u_to_i32(ctype))
+        )
+    }
+
+    func testCentimetres_uInt32RawValueInit() {
+        let raw = centimetres_u(5)
+        let ctype = cm_u_to_i32(raw)
+        let expected = Centimetres_u(Int32(ctype))
+        XCTAssertEqual(Centimetres_u(rawValue: raw), expected)
+    }
+
+    func testCentimetres_uDistanceInt32Init() {
+        let raw = Centimetres_u(Int32(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_uInt64Inits() {
+        let raw = Int64(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_cm_u(5)
+        let expected2 = Int64(
+            cm_u_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_uInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_cm_u(5)
+        let expected = Centimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(cm_u_to_i64(ctype))
+        )
+    }
+
+    func testCentimetres_uInt64RawValueInit() {
+        let raw = centimetres_u(5)
+        let ctype = cm_u_to_i64(raw)
+        let expected = Centimetres_u(Int64(ctype))
+        XCTAssertEqual(Centimetres_u(rawValue: raw), expected)
+    }
+
+    func testCentimetres_uDistanceInt64Init() {
+        let raw = Centimetres_u(Int64(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_uIntInits() {
+        let raw = Int(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_cm_u(5)
+        let expected2 = Int(
+            cm_u_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_uIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_cm_u(5)
+        let expected = Centimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(cm_u_to_i64(ctype))
+        )
+    }
+
+    func testCentimetres_uIntRawValueInit() {
+        let raw = centimetres_u(5)
+        let ctype = cm_u_to_i64(raw)
+        let expected = Centimetres_u(Int(ctype))
+        XCTAssertEqual(Centimetres_u(rawValue: raw), expected)
+    }
+
+    func testCentimetres_uDistanceIntInit() {
+        let raw = Centimetres_u(Int(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_uCIntInits() {
+        let raw = CInt(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_cm_u(5)
+        let expected2 = CInt(
+            cm_u_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_uCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_cm_u(5)
+        let expected = Centimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(cm_u_to_i32(ctype))
+        )
+    }
+
+    func testCentimetres_uCIntRawValueInit() {
+        let raw = centimetres_u(5)
+        let ctype = cm_u_to_i32(raw)
+        let expected = Centimetres_u(CInt(ctype))
+        XCTAssertEqual(Centimetres_u(rawValue: raw), expected)
+    }
+
+    func testCentimetres_uDistanceCIntInit() {
+        let raw = Centimetres_u(CInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_uUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_cm_u(5)
+        let expected2 = UInt8(
+            cm_u_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_uUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_cm_u(5)
+        let expected = Centimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(cm_u_to_u8(ctype))
+        )
+    }
+
+    func testCentimetres_uUInt8RawValueInit() {
+        let raw = centimetres_u(5)
+        let ctype = cm_u_to_u8(raw)
+        let expected = Centimetres_u(UInt8(ctype))
+        XCTAssertEqual(Centimetres_u(rawValue: raw), expected)
+    }
+
+    func testCentimetres_uDistanceUInt8Init() {
+        let raw = Centimetres_u(UInt8(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_uUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_cm_u(5)
+        let expected2 = UInt16(
+            cm_u_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_uUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_cm_u(5)
+        let expected = Centimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(cm_u_to_u16(ctype))
+        )
+    }
+
+    func testCentimetres_uUInt16RawValueInit() {
+        let raw = centimetres_u(5)
+        let ctype = cm_u_to_u16(raw)
+        let expected = Centimetres_u(UInt16(ctype))
+        XCTAssertEqual(Centimetres_u(rawValue: raw), expected)
+    }
+
+    func testCentimetres_uDistanceUInt16Init() {
+        let raw = Centimetres_u(UInt16(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_uUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_cm_u(5)
+        let expected2 = UInt32(
+            cm_u_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_uUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_cm_u(5)
+        let expected = Centimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(cm_u_to_u32(ctype))
+        )
+    }
+
+    func testCentimetres_uUInt32RawValueInit() {
+        let raw = centimetres_u(5)
+        let ctype = cm_u_to_u32(raw)
+        let expected = Centimetres_u(UInt32(ctype))
+        XCTAssertEqual(Centimetres_u(rawValue: raw), expected)
+    }
+
+    func testCentimetres_uDistanceUInt32Init() {
+        let raw = Centimetres_u(UInt32(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_uUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_cm_u(5)
+        let expected2 = UInt64(
+            cm_u_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_uUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_cm_u(5)
+        let expected = Centimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(cm_u_to_u64(ctype))
+        )
+    }
+
+    func testCentimetres_uUInt64RawValueInit() {
+        let raw = centimetres_u(5)
+        let ctype = cm_u_to_u64(raw)
+        let expected = Centimetres_u(UInt64(ctype))
+        XCTAssertEqual(Centimetres_u(rawValue: raw), expected)
+    }
+
+    func testCentimetres_uDistanceUInt64Init() {
+        let raw = Centimetres_u(UInt64(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_uUIntInits() {
+        let raw = UInt(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_cm_u(5)
+        let expected2 = UInt(
+            cm_u_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_uUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_cm_u(5)
+        let expected = Centimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(cm_u_to_u64(ctype))
+        )
+    }
+
+    func testCentimetres_uUIntRawValueInit() {
+        let raw = centimetres_u(5)
+        let ctype = cm_u_to_u64(raw)
+        let expected = Centimetres_u(UInt(ctype))
+        XCTAssertEqual(Centimetres_u(rawValue: raw), expected)
+    }
+
+    func testCentimetres_uDistanceUIntInit() {
+        let raw = Centimetres_u(UInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_uCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_cm_u(5)
+        let expected2 = CUnsignedInt(
+            cm_u_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_uCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_cm_u(5)
+        let expected = Centimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(cm_u_to_u32(ctype))
+        )
+    }
+
+    func testCentimetres_uCUnsignedIntRawValueInit() {
+        let raw = centimetres_u(5)
+        let ctype = cm_u_to_u32(raw)
+        let expected = Centimetres_u(CUnsignedInt(ctype))
+        XCTAssertEqual(Centimetres_u(rawValue: raw), expected)
+    }
+
+    func testCentimetres_uDistanceCUnsignedIntInit() {
+        let raw = Centimetres_u(CUnsignedInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_uFloatInits() {
+        let raw = Float(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_cm_u(5)
+        let expected2 = Float(
+            cm_u_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_uFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_cm_u(5)
+        let expected = Centimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(cm_u_to_f(ctype))
+        )
+    }
+
+    func testCentimetres_uFloatRawValueInit() {
+        let raw = centimetres_u(5)
+        let ctype = cm_u_to_f(raw)
+        let expected = Centimetres_u(Float(ctype))
+        XCTAssertEqual(Centimetres_u(rawValue: raw), expected)
+    }
+
+    func testCentimetres_uDistanceFloatInit() {
+        let raw = Centimetres_u(Float(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_uDoubleInits() {
+        let raw = Double(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_cm_u(5)
+        let expected2 = Double(
+            cm_u_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_uDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_cm_u(5)
+        let expected = Centimetres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(cm_u_to_d(ctype))
+        )
+    }
+
+    func testCentimetres_uDoubleRawValueInit() {
+        let raw = centimetres_u(5)
+        let ctype = cm_u_to_d(raw)
+        let expected = Centimetres_u(Double(ctype))
+        XCTAssertEqual(Centimetres_u(rawValue: raw), expected)
+    }
+
+    func testCentimetres_uDistanceDoubleInit() {
+        let raw = Centimetres_u(Double(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testCentimetres_fToMillimetres_tDistanceConversions() {
+        let original = Centimetres_f(5)
+        let category = Distance(original)
+        let other = category.millimetres_t
+        XCTAssertEqual(other, Millimetres_t(original))
+    }
+
+    func testMillimetres_tToCentimetres_fConversions() {
+        let ctype1 = centimetres_f(5)
+        let swiftType1 = Centimetres_f(rawValue: ctype1)
+        let ctype2 = cm_f_to_mm_t(ctype1)
+        let swiftType2 = Millimetres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_t(swiftType1))
+    }
+
+    func testCentimetres_fToMillimetres_uDistanceConversions() {
+        let original = Centimetres_f(5)
+        let category = Distance(original)
+        let other = category.millimetres_u
+        XCTAssertEqual(other, Millimetres_u(original))
+    }
+
+    func testMillimetres_uToCentimetres_fConversions() {
+        let ctype1 = centimetres_f(5)
+        let swiftType1 = Centimetres_f(rawValue: ctype1)
+        let ctype2 = cm_f_to_mm_u(ctype1)
+        let swiftType2 = Millimetres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_u(swiftType1))
+    }
+
+    func testCentimetres_fToMillimetres_fDistanceConversions() {
+        let original = Centimetres_f(5)
+        let category = Distance(original)
+        let other = category.millimetres_f
+        XCTAssertEqual(other, Millimetres_f(original))
+    }
+
+    func testMillimetres_fToCentimetres_fConversions() {
+        let ctype1 = centimetres_f(5)
+        let swiftType1 = Centimetres_f(rawValue: ctype1)
+        let ctype2 = cm_f_to_mm_f(ctype1)
+        let swiftType2 = Millimetres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_f(swiftType1))
+    }
+
+    func testCentimetres_fToMillimetres_dDistanceConversions() {
+        let original = Centimetres_f(5)
+        let category = Distance(original)
+        let other = category.millimetres_d
+        XCTAssertEqual(other, Millimetres_d(original))
+    }
+
+    func testMillimetres_dToCentimetres_fConversions() {
+        let ctype1 = centimetres_f(5)
+        let swiftType1 = Centimetres_f(rawValue: ctype1)
+        let ctype2 = cm_f_to_mm_d(ctype1)
+        let swiftType2 = Millimetres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_d(swiftType1))
+    }
+
+    func testCentimetres_fToCentimetres_tDistanceConversions() {
+        let original = Centimetres_f(5)
+        let category = Distance(original)
+        let other = category.centimetres_t
+        XCTAssertEqual(other, Centimetres_t(original))
+    }
+
+    func testCentimetres_tToCentimetres_fConversions() {
+        let ctype1 = centimetres_f(5)
+        let swiftType1 = Centimetres_f(rawValue: ctype1)
+        let ctype2 = cm_f_to_cm_t(ctype1)
+        let swiftType2 = Centimetres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_t(swiftType1))
+    }
+
+    func testCentimetres_fToCentimetres_uDistanceConversions() {
+        let original = Centimetres_f(5)
+        let category = Distance(original)
+        let other = category.centimetres_u
+        XCTAssertEqual(other, Centimetres_u(original))
+    }
+
+    func testCentimetres_uToCentimetres_fConversions() {
+        let ctype1 = centimetres_f(5)
+        let swiftType1 = Centimetres_f(rawValue: ctype1)
+        let ctype2 = cm_f_to_cm_u(ctype1)
+        let swiftType2 = Centimetres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_u(swiftType1))
+    }
+
+    func testCentimetres_fToCentimetres_dDistanceConversions() {
+        let original = Centimetres_f(5)
+        let category = Distance(original)
+        let other = category.centimetres_d
+        XCTAssertEqual(other, Centimetres_d(original))
+    }
+
+    func testCentimetres_dToCentimetres_fConversions() {
+        let ctype1 = centimetres_f(5)
+        let swiftType1 = Centimetres_f(rawValue: ctype1)
+        let ctype2 = cm_f_to_cm_d(ctype1)
+        let swiftType2 = Centimetres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_d(swiftType1))
+    }
+
+    func testCentimetres_fToMetres_tDistanceConversions() {
+        let original = Centimetres_f(5)
+        let category = Distance(original)
+        let other = category.metres_t
+        XCTAssertEqual(other, Metres_t(original))
+    }
+
+    func testMetres_tToCentimetres_fConversions() {
+        let ctype1 = centimetres_f(5)
+        let swiftType1 = Centimetres_f(rawValue: ctype1)
+        let ctype2 = cm_f_to_m_t(ctype1)
+        let swiftType2 = Metres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_t(swiftType1))
+    }
+
+    func testCentimetres_fToMetres_uDistanceConversions() {
+        let original = Centimetres_f(5)
+        let category = Distance(original)
+        let other = category.metres_u
+        XCTAssertEqual(other, Metres_u(original))
+    }
+
+    func testMetres_uToCentimetres_fConversions() {
+        let ctype1 = centimetres_f(5)
+        let swiftType1 = Centimetres_f(rawValue: ctype1)
+        let ctype2 = cm_f_to_m_u(ctype1)
+        let swiftType2 = Metres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_u(swiftType1))
+    }
+
+    func testCentimetres_fToMetres_fDistanceConversions() {
+        let original = Centimetres_f(5)
+        let category = Distance(original)
+        let other = category.metres_f
+        XCTAssertEqual(other, Metres_f(original))
+    }
+
+    func testMetres_fToCentimetres_fConversions() {
+        let ctype1 = centimetres_f(5)
+        let swiftType1 = Centimetres_f(rawValue: ctype1)
+        let ctype2 = cm_f_to_m_f(ctype1)
+        let swiftType2 = Metres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_f(swiftType1))
+    }
+
+    func testCentimetres_fToMetres_dDistanceConversions() {
+        let original = Centimetres_f(5)
+        let category = Distance(original)
+        let other = category.metres_d
+        XCTAssertEqual(other, Metres_d(original))
+    }
+
+    func testMetres_dToCentimetres_fConversions() {
+        let ctype1 = centimetres_f(5)
+        let swiftType1 = Centimetres_f(rawValue: ctype1)
+        let ctype2 = cm_f_to_m_d(ctype1)
+        let swiftType2 = Metres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_d(swiftType1))
+    }
+
+    func testCentimetres_fInitFromTypeEnum() {
+        let underlyingType = Distance.DistanceTypes.centimetres_f(5)
+        let category = Distance(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testDistanceCentimetres_fInt8Inits() {
+        let raw = Int8(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_cm_f(5)
+        let expected2 = Int8(
+            cm_f_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_fInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_cm_f(5)
+        let expected = Centimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(cm_f_to_i8(ctype))
+        )
+    }
+
+    func testCentimetres_fInt8RawValueInit() {
+        let raw = centimetres_f(5)
+        let ctype = cm_f_to_i8(raw)
+        let expected = Centimetres_f(Int8(ctype))
+        XCTAssertEqual(Centimetres_f(rawValue: raw), expected)
+    }
+
+    func testCentimetres_fDistanceInt8Init() {
+        let raw = Centimetres_f(Int8(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_fInt16Inits() {
+        let raw = Int16(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_cm_f(5)
+        let expected2 = Int16(
+            cm_f_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_fInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_cm_f(5)
+        let expected = Centimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(cm_f_to_i16(ctype))
+        )
+    }
+
+    func testCentimetres_fInt16RawValueInit() {
+        let raw = centimetres_f(5)
+        let ctype = cm_f_to_i16(raw)
+        let expected = Centimetres_f(Int16(ctype))
+        XCTAssertEqual(Centimetres_f(rawValue: raw), expected)
+    }
+
+    func testCentimetres_fDistanceInt16Init() {
+        let raw = Centimetres_f(Int16(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_fInt32Inits() {
+        let raw = Int32(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_cm_f(5)
+        let expected2 = Int32(
+            cm_f_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_fInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_cm_f(5)
+        let expected = Centimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(cm_f_to_i32(ctype))
+        )
+    }
+
+    func testCentimetres_fInt32RawValueInit() {
+        let raw = centimetres_f(5)
+        let ctype = cm_f_to_i32(raw)
+        let expected = Centimetres_f(Int32(ctype))
+        XCTAssertEqual(Centimetres_f(rawValue: raw), expected)
+    }
+
+    func testCentimetres_fDistanceInt32Init() {
+        let raw = Centimetres_f(Int32(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_fInt64Inits() {
+        let raw = Int64(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_cm_f(5)
+        let expected2 = Int64(
+            cm_f_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_fInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_cm_f(5)
+        let expected = Centimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(cm_f_to_i64(ctype))
+        )
+    }
+
+    func testCentimetres_fInt64RawValueInit() {
+        let raw = centimetres_f(5)
+        let ctype = cm_f_to_i64(raw)
+        let expected = Centimetres_f(Int64(ctype))
+        XCTAssertEqual(Centimetres_f(rawValue: raw), expected)
+    }
+
+    func testCentimetres_fDistanceInt64Init() {
+        let raw = Centimetres_f(Int64(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_fIntInits() {
+        let raw = Int(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_cm_f(5)
+        let expected2 = Int(
+            cm_f_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_fIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_cm_f(5)
+        let expected = Centimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(cm_f_to_i64(ctype))
+        )
+    }
+
+    func testCentimetres_fIntRawValueInit() {
+        let raw = centimetres_f(5)
+        let ctype = cm_f_to_i64(raw)
+        let expected = Centimetres_f(Int(ctype))
+        XCTAssertEqual(Centimetres_f(rawValue: raw), expected)
+    }
+
+    func testCentimetres_fDistanceIntInit() {
+        let raw = Centimetres_f(Int(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_fCIntInits() {
+        let raw = CInt(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_cm_f(5)
+        let expected2 = CInt(
+            cm_f_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_fCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_cm_f(5)
+        let expected = Centimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(cm_f_to_i32(ctype))
+        )
+    }
+
+    func testCentimetres_fCIntRawValueInit() {
+        let raw = centimetres_f(5)
+        let ctype = cm_f_to_i32(raw)
+        let expected = Centimetres_f(CInt(ctype))
+        XCTAssertEqual(Centimetres_f(rawValue: raw), expected)
+    }
+
+    func testCentimetres_fDistanceCIntInit() {
+        let raw = Centimetres_f(CInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_fUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_cm_f(5)
+        let expected2 = UInt8(
+            cm_f_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_fUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_cm_f(5)
+        let expected = Centimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(cm_f_to_u8(ctype))
+        )
+    }
+
+    func testCentimetres_fUInt8RawValueInit() {
+        let raw = centimetres_f(5)
+        let ctype = cm_f_to_u8(raw)
+        let expected = Centimetres_f(UInt8(ctype))
+        XCTAssertEqual(Centimetres_f(rawValue: raw), expected)
+    }
+
+    func testCentimetres_fDistanceUInt8Init() {
+        let raw = Centimetres_f(UInt8(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_fUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_cm_f(5)
+        let expected2 = UInt16(
+            cm_f_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_fUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_cm_f(5)
+        let expected = Centimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(cm_f_to_u16(ctype))
+        )
+    }
+
+    func testCentimetres_fUInt16RawValueInit() {
+        let raw = centimetres_f(5)
+        let ctype = cm_f_to_u16(raw)
+        let expected = Centimetres_f(UInt16(ctype))
+        XCTAssertEqual(Centimetres_f(rawValue: raw), expected)
+    }
+
+    func testCentimetres_fDistanceUInt16Init() {
+        let raw = Centimetres_f(UInt16(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_fUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_cm_f(5)
+        let expected2 = UInt32(
+            cm_f_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_fUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_cm_f(5)
+        let expected = Centimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(cm_f_to_u32(ctype))
+        )
+    }
+
+    func testCentimetres_fUInt32RawValueInit() {
+        let raw = centimetres_f(5)
+        let ctype = cm_f_to_u32(raw)
+        let expected = Centimetres_f(UInt32(ctype))
+        XCTAssertEqual(Centimetres_f(rawValue: raw), expected)
+    }
+
+    func testCentimetres_fDistanceUInt32Init() {
+        let raw = Centimetres_f(UInt32(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_fUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_cm_f(5)
+        let expected2 = UInt64(
+            cm_f_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_fUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_cm_f(5)
+        let expected = Centimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(cm_f_to_u64(ctype))
+        )
+    }
+
+    func testCentimetres_fUInt64RawValueInit() {
+        let raw = centimetres_f(5)
+        let ctype = cm_f_to_u64(raw)
+        let expected = Centimetres_f(UInt64(ctype))
+        XCTAssertEqual(Centimetres_f(rawValue: raw), expected)
+    }
+
+    func testCentimetres_fDistanceUInt64Init() {
+        let raw = Centimetres_f(UInt64(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_fUIntInits() {
+        let raw = UInt(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_cm_f(5)
+        let expected2 = UInt(
+            cm_f_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_fUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_cm_f(5)
+        let expected = Centimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(cm_f_to_u64(ctype))
+        )
+    }
+
+    func testCentimetres_fUIntRawValueInit() {
+        let raw = centimetres_f(5)
+        let ctype = cm_f_to_u64(raw)
+        let expected = Centimetres_f(UInt(ctype))
+        XCTAssertEqual(Centimetres_f(rawValue: raw), expected)
+    }
+
+    func testCentimetres_fDistanceUIntInit() {
+        let raw = Centimetres_f(UInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_fCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_cm_f(5)
+        let expected2 = CUnsignedInt(
+            cm_f_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_fCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_cm_f(5)
+        let expected = Centimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(cm_f_to_u32(ctype))
+        )
+    }
+
+    func testCentimetres_fCUnsignedIntRawValueInit() {
+        let raw = centimetres_f(5)
+        let ctype = cm_f_to_u32(raw)
+        let expected = Centimetres_f(CUnsignedInt(ctype))
+        XCTAssertEqual(Centimetres_f(rawValue: raw), expected)
+    }
+
+    func testCentimetres_fDistanceCUnsignedIntInit() {
+        let raw = Centimetres_f(CUnsignedInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_fFloatInits() {
+        let raw = Float(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_cm_f(5)
+        let expected2 = Float(
+            cm_f_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_fFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_cm_f(5)
+        let expected = Centimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(cm_f_to_f(ctype))
+        )
+    }
+
+    func testCentimetres_fFloatRawValueInit() {
+        let raw = centimetres_f(5)
+        let ctype = cm_f_to_f(raw)
+        let expected = Centimetres_f(Float(ctype))
+        XCTAssertEqual(Centimetres_f(rawValue: raw), expected)
+    }
+
+    func testCentimetres_fDistanceFloatInit() {
+        let raw = Centimetres_f(Float(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_fDoubleInits() {
+        let raw = Double(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_cm_f(5)
+        let expected2 = Double(
+            cm_f_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_fDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_cm_f(5)
+        let expected = Centimetres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(cm_f_to_d(ctype))
+        )
+    }
+
+    func testCentimetres_fDoubleRawValueInit() {
+        let raw = centimetres_f(5)
+        let ctype = cm_f_to_d(raw)
+        let expected = Centimetres_f(Double(ctype))
+        XCTAssertEqual(Centimetres_f(rawValue: raw), expected)
+    }
+
+    func testCentimetres_fDistanceDoubleInit() {
+        let raw = Centimetres_f(Double(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testCentimetres_dToMillimetres_tDistanceConversions() {
+        let original = Centimetres_d(5)
+        let category = Distance(original)
+        let other = category.millimetres_t
+        XCTAssertEqual(other, Millimetres_t(original))
+    }
+
+    func testMillimetres_tToCentimetres_dConversions() {
+        let ctype1 = centimetres_d(5)
+        let swiftType1 = Centimetres_d(rawValue: ctype1)
+        let ctype2 = cm_d_to_mm_t(ctype1)
+        let swiftType2 = Millimetres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_t(swiftType1))
+    }
+
+    func testCentimetres_dToMillimetres_uDistanceConversions() {
+        let original = Centimetres_d(5)
+        let category = Distance(original)
+        let other = category.millimetres_u
+        XCTAssertEqual(other, Millimetres_u(original))
+    }
+
+    func testMillimetres_uToCentimetres_dConversions() {
+        let ctype1 = centimetres_d(5)
+        let swiftType1 = Centimetres_d(rawValue: ctype1)
+        let ctype2 = cm_d_to_mm_u(ctype1)
+        let swiftType2 = Millimetres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_u(swiftType1))
+    }
+
+    func testCentimetres_dToMillimetres_fDistanceConversions() {
+        let original = Centimetres_d(5)
+        let category = Distance(original)
+        let other = category.millimetres_f
+        XCTAssertEqual(other, Millimetres_f(original))
+    }
+
+    func testMillimetres_fToCentimetres_dConversions() {
+        let ctype1 = centimetres_d(5)
+        let swiftType1 = Centimetres_d(rawValue: ctype1)
+        let ctype2 = cm_d_to_mm_f(ctype1)
+        let swiftType2 = Millimetres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_f(swiftType1))
+    }
+
+    func testCentimetres_dToMillimetres_dDistanceConversions() {
+        let original = Centimetres_d(5)
+        let category = Distance(original)
+        let other = category.millimetres_d
+        XCTAssertEqual(other, Millimetres_d(original))
+    }
+
+    func testMillimetres_dToCentimetres_dConversions() {
+        let ctype1 = centimetres_d(5)
+        let swiftType1 = Centimetres_d(rawValue: ctype1)
+        let ctype2 = cm_d_to_mm_d(ctype1)
+        let swiftType2 = Millimetres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_d(swiftType1))
+    }
+
+    func testCentimetres_dToCentimetres_tDistanceConversions() {
+        let original = Centimetres_d(5)
+        let category = Distance(original)
+        let other = category.centimetres_t
+        XCTAssertEqual(other, Centimetres_t(original))
+    }
+
+    func testCentimetres_tToCentimetres_dConversions() {
+        let ctype1 = centimetres_d(5)
+        let swiftType1 = Centimetres_d(rawValue: ctype1)
+        let ctype2 = cm_d_to_cm_t(ctype1)
+        let swiftType2 = Centimetres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_t(swiftType1))
+    }
+
+    func testCentimetres_dToCentimetres_uDistanceConversions() {
+        let original = Centimetres_d(5)
+        let category = Distance(original)
+        let other = category.centimetres_u
+        XCTAssertEqual(other, Centimetres_u(original))
+    }
+
+    func testCentimetres_uToCentimetres_dConversions() {
+        let ctype1 = centimetres_d(5)
+        let swiftType1 = Centimetres_d(rawValue: ctype1)
+        let ctype2 = cm_d_to_cm_u(ctype1)
+        let swiftType2 = Centimetres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_u(swiftType1))
+    }
+
+    func testCentimetres_dToCentimetres_fDistanceConversions() {
+        let original = Centimetres_d(5)
+        let category = Distance(original)
+        let other = category.centimetres_f
+        XCTAssertEqual(other, Centimetres_f(original))
+    }
+
+    func testCentimetres_fToCentimetres_dConversions() {
+        let ctype1 = centimetres_d(5)
+        let swiftType1 = Centimetres_d(rawValue: ctype1)
+        let ctype2 = cm_d_to_cm_f(ctype1)
+        let swiftType2 = Centimetres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_f(swiftType1))
+    }
+
+    func testCentimetres_dToMetres_tDistanceConversions() {
+        let original = Centimetres_d(5)
+        let category = Distance(original)
+        let other = category.metres_t
+        XCTAssertEqual(other, Metres_t(original))
+    }
+
+    func testMetres_tToCentimetres_dConversions() {
+        let ctype1 = centimetres_d(5)
+        let swiftType1 = Centimetres_d(rawValue: ctype1)
+        let ctype2 = cm_d_to_m_t(ctype1)
+        let swiftType2 = Metres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_t(swiftType1))
+    }
+
+    func testCentimetres_dToMetres_uDistanceConversions() {
+        let original = Centimetres_d(5)
+        let category = Distance(original)
+        let other = category.metres_u
+        XCTAssertEqual(other, Metres_u(original))
+    }
+
+    func testMetres_uToCentimetres_dConversions() {
+        let ctype1 = centimetres_d(5)
+        let swiftType1 = Centimetres_d(rawValue: ctype1)
+        let ctype2 = cm_d_to_m_u(ctype1)
+        let swiftType2 = Metres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_u(swiftType1))
+    }
+
+    func testCentimetres_dToMetres_fDistanceConversions() {
+        let original = Centimetres_d(5)
+        let category = Distance(original)
+        let other = category.metres_f
+        XCTAssertEqual(other, Metres_f(original))
+    }
+
+    func testMetres_fToCentimetres_dConversions() {
+        let ctype1 = centimetres_d(5)
+        let swiftType1 = Centimetres_d(rawValue: ctype1)
+        let ctype2 = cm_d_to_m_f(ctype1)
+        let swiftType2 = Metres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_f(swiftType1))
+    }
+
+    func testCentimetres_dToMetres_dDistanceConversions() {
+        let original = Centimetres_d(5)
+        let category = Distance(original)
+        let other = category.metres_d
+        XCTAssertEqual(other, Metres_d(original))
+    }
+
+    func testMetres_dToCentimetres_dConversions() {
+        let ctype1 = centimetres_d(5)
+        let swiftType1 = Centimetres_d(rawValue: ctype1)
+        let ctype2 = cm_d_to_m_d(ctype1)
+        let swiftType2 = Metres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_d(swiftType1))
+    }
+
+    func testCentimetres_dInitFromTypeEnum() {
+        let underlyingType = Distance.DistanceTypes.centimetres_d(5)
+        let category = Distance(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testDistanceCentimetres_dInt8Inits() {
+        let raw = Int8(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_cm_d(5)
+        let expected2 = Int8(
+            cm_d_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_dInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_cm_d(5)
+        let expected = Centimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(cm_d_to_i8(ctype))
+        )
+    }
+
+    func testCentimetres_dInt8RawValueInit() {
+        let raw = centimetres_d(5)
+        let ctype = cm_d_to_i8(raw)
+        let expected = Centimetres_d(Int8(ctype))
+        XCTAssertEqual(Centimetres_d(rawValue: raw), expected)
+    }
+
+    func testCentimetres_dDistanceInt8Init() {
+        let raw = Centimetres_d(Int8(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_dInt16Inits() {
+        let raw = Int16(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_cm_d(5)
+        let expected2 = Int16(
+            cm_d_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_dInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_cm_d(5)
+        let expected = Centimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(cm_d_to_i16(ctype))
+        )
+    }
+
+    func testCentimetres_dInt16RawValueInit() {
+        let raw = centimetres_d(5)
+        let ctype = cm_d_to_i16(raw)
+        let expected = Centimetres_d(Int16(ctype))
+        XCTAssertEqual(Centimetres_d(rawValue: raw), expected)
+    }
+
+    func testCentimetres_dDistanceInt16Init() {
+        let raw = Centimetres_d(Int16(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_dInt32Inits() {
+        let raw = Int32(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_cm_d(5)
+        let expected2 = Int32(
+            cm_d_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_dInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_cm_d(5)
+        let expected = Centimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(cm_d_to_i32(ctype))
+        )
+    }
+
+    func testCentimetres_dInt32RawValueInit() {
+        let raw = centimetres_d(5)
+        let ctype = cm_d_to_i32(raw)
+        let expected = Centimetres_d(Int32(ctype))
+        XCTAssertEqual(Centimetres_d(rawValue: raw), expected)
+    }
+
+    func testCentimetres_dDistanceInt32Init() {
+        let raw = Centimetres_d(Int32(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_dInt64Inits() {
+        let raw = Int64(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_cm_d(5)
+        let expected2 = Int64(
+            cm_d_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_dInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_cm_d(5)
+        let expected = Centimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(cm_d_to_i64(ctype))
+        )
+    }
+
+    func testCentimetres_dInt64RawValueInit() {
+        let raw = centimetres_d(5)
+        let ctype = cm_d_to_i64(raw)
+        let expected = Centimetres_d(Int64(ctype))
+        XCTAssertEqual(Centimetres_d(rawValue: raw), expected)
+    }
+
+    func testCentimetres_dDistanceInt64Init() {
+        let raw = Centimetres_d(Int64(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_dIntInits() {
+        let raw = Int(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_cm_d(5)
+        let expected2 = Int(
+            cm_d_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_dIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_cm_d(5)
+        let expected = Centimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(cm_d_to_i64(ctype))
+        )
+    }
+
+    func testCentimetres_dIntRawValueInit() {
+        let raw = centimetres_d(5)
+        let ctype = cm_d_to_i64(raw)
+        let expected = Centimetres_d(Int(ctype))
+        XCTAssertEqual(Centimetres_d(rawValue: raw), expected)
+    }
+
+    func testCentimetres_dDistanceIntInit() {
+        let raw = Centimetres_d(Int(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_dCIntInits() {
+        let raw = CInt(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_cm_d(5)
+        let expected2 = CInt(
+            cm_d_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_dCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_cm_d(5)
+        let expected = Centimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(cm_d_to_i32(ctype))
+        )
+    }
+
+    func testCentimetres_dCIntRawValueInit() {
+        let raw = centimetres_d(5)
+        let ctype = cm_d_to_i32(raw)
+        let expected = Centimetres_d(CInt(ctype))
+        XCTAssertEqual(Centimetres_d(rawValue: raw), expected)
+    }
+
+    func testCentimetres_dDistanceCIntInit() {
+        let raw = Centimetres_d(CInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_dUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_cm_d(5)
+        let expected2 = UInt8(
+            cm_d_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_dUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_cm_d(5)
+        let expected = Centimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(cm_d_to_u8(ctype))
+        )
+    }
+
+    func testCentimetres_dUInt8RawValueInit() {
+        let raw = centimetres_d(5)
+        let ctype = cm_d_to_u8(raw)
+        let expected = Centimetres_d(UInt8(ctype))
+        XCTAssertEqual(Centimetres_d(rawValue: raw), expected)
+    }
+
+    func testCentimetres_dDistanceUInt8Init() {
+        let raw = Centimetres_d(UInt8(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_dUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_cm_d(5)
+        let expected2 = UInt16(
+            cm_d_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_dUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_cm_d(5)
+        let expected = Centimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(cm_d_to_u16(ctype))
+        )
+    }
+
+    func testCentimetres_dUInt16RawValueInit() {
+        let raw = centimetres_d(5)
+        let ctype = cm_d_to_u16(raw)
+        let expected = Centimetres_d(UInt16(ctype))
+        XCTAssertEqual(Centimetres_d(rawValue: raw), expected)
+    }
+
+    func testCentimetres_dDistanceUInt16Init() {
+        let raw = Centimetres_d(UInt16(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_dUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_cm_d(5)
+        let expected2 = UInt32(
+            cm_d_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_dUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_cm_d(5)
+        let expected = Centimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(cm_d_to_u32(ctype))
+        )
+    }
+
+    func testCentimetres_dUInt32RawValueInit() {
+        let raw = centimetres_d(5)
+        let ctype = cm_d_to_u32(raw)
+        let expected = Centimetres_d(UInt32(ctype))
+        XCTAssertEqual(Centimetres_d(rawValue: raw), expected)
+    }
+
+    func testCentimetres_dDistanceUInt32Init() {
+        let raw = Centimetres_d(UInt32(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_dUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_cm_d(5)
+        let expected2 = UInt64(
+            cm_d_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_dUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_cm_d(5)
+        let expected = Centimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(cm_d_to_u64(ctype))
+        )
+    }
+
+    func testCentimetres_dUInt64RawValueInit() {
+        let raw = centimetres_d(5)
+        let ctype = cm_d_to_u64(raw)
+        let expected = Centimetres_d(UInt64(ctype))
+        XCTAssertEqual(Centimetres_d(rawValue: raw), expected)
+    }
+
+    func testCentimetres_dDistanceUInt64Init() {
+        let raw = Centimetres_d(UInt64(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_dUIntInits() {
+        let raw = UInt(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_cm_d(5)
+        let expected2 = UInt(
+            cm_d_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_dUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_cm_d(5)
+        let expected = Centimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(cm_d_to_u64(ctype))
+        )
+    }
+
+    func testCentimetres_dUIntRawValueInit() {
+        let raw = centimetres_d(5)
+        let ctype = cm_d_to_u64(raw)
+        let expected = Centimetres_d(UInt(ctype))
+        XCTAssertEqual(Centimetres_d(rawValue: raw), expected)
+    }
+
+    func testCentimetres_dDistanceUIntInit() {
+        let raw = Centimetres_d(UInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_dCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_cm_d(5)
+        let expected2 = CUnsignedInt(
+            cm_d_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_dCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_cm_d(5)
+        let expected = Centimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(cm_d_to_u32(ctype))
+        )
+    }
+
+    func testCentimetres_dCUnsignedIntRawValueInit() {
+        let raw = centimetres_d(5)
+        let ctype = cm_d_to_u32(raw)
+        let expected = Centimetres_d(CUnsignedInt(ctype))
+        XCTAssertEqual(Centimetres_d(rawValue: raw), expected)
+    }
+
+    func testCentimetres_dDistanceCUnsignedIntInit() {
+        let raw = Centimetres_d(CUnsignedInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_dFloatInits() {
+        let raw = Float(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_cm_d(5)
+        let expected2 = Float(
+            cm_d_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_dFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_cm_d(5)
+        let expected = Centimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(cm_d_to_f(ctype))
+        )
+    }
+
+    func testCentimetres_dFloatRawValueInit() {
+        let raw = centimetres_d(5)
+        let ctype = cm_d_to_f(raw)
+        let expected = Centimetres_d(Float(ctype))
+        XCTAssertEqual(Centimetres_d(rawValue: raw), expected)
+    }
+
+    func testCentimetres_dDistanceFloatInit() {
+        let raw = Centimetres_d(Float(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceCentimetres_dDoubleInits() {
+        let raw = Double(5)
+        let expected = Distance(centimetres: raw)
+        let result = Distance.centimetres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_cm_d(5)
+        let expected2 = Double(
+            cm_d_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testCentimetres_dDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_cm_d(5)
+        let expected = Centimetres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(cm_d_to_d(ctype))
+        )
+    }
+
+    func testCentimetres_dDoubleRawValueInit() {
+        let raw = centimetres_d(5)
+        let ctype = cm_d_to_d(raw)
+        let expected = Centimetres_d(Double(ctype))
+        XCTAssertEqual(Centimetres_d(rawValue: raw), expected)
+    }
+
+    func testCentimetres_dDistanceDoubleInit() {
+        let raw = Centimetres_d(Double(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .centimetres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+}
+
+final class MetresConversionTests: XCTestCase {
+
+    func testMetres_tToMillimetres_tDistanceConversions() {
+        let original = Metres_t(5)
+        let category = Distance(original)
+        let other = category.millimetres_t
+        XCTAssertEqual(other, Millimetres_t(original))
+    }
+
+    func testMillimetres_tToMetres_tConversions() {
+        let ctype1 = metres_t(5)
+        let swiftType1 = Metres_t(rawValue: ctype1)
+        let ctype2 = m_t_to_mm_t(ctype1)
+        let swiftType2 = Millimetres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_t(swiftType1))
+    }
+
+    func testMetres_tToMillimetres_uDistanceConversions() {
+        let original = Metres_t(5)
+        let category = Distance(original)
+        let other = category.millimetres_u
+        XCTAssertEqual(other, Millimetres_u(original))
+    }
+
+    func testMillimetres_uToMetres_tConversions() {
+        let ctype1 = metres_t(5)
+        let swiftType1 = Metres_t(rawValue: ctype1)
+        let ctype2 = m_t_to_mm_u(ctype1)
+        let swiftType2 = Millimetres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_u(swiftType1))
+    }
+
+    func testMetres_tToMillimetres_fDistanceConversions() {
+        let original = Metres_t(5)
+        let category = Distance(original)
+        let other = category.millimetres_f
+        XCTAssertEqual(other, Millimetres_f(original))
+    }
+
+    func testMillimetres_fToMetres_tConversions() {
+        let ctype1 = metres_t(5)
+        let swiftType1 = Metres_t(rawValue: ctype1)
+        let ctype2 = m_t_to_mm_f(ctype1)
+        let swiftType2 = Millimetres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_f(swiftType1))
+    }
+
+    func testMetres_tToMillimetres_dDistanceConversions() {
+        let original = Metres_t(5)
+        let category = Distance(original)
+        let other = category.millimetres_d
+        XCTAssertEqual(other, Millimetres_d(original))
+    }
+
+    func testMillimetres_dToMetres_tConversions() {
+        let ctype1 = metres_t(5)
+        let swiftType1 = Metres_t(rawValue: ctype1)
+        let ctype2 = m_t_to_mm_d(ctype1)
+        let swiftType2 = Millimetres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_d(swiftType1))
+    }
+
+    func testMetres_tToCentimetres_tDistanceConversions() {
+        let original = Metres_t(5)
+        let category = Distance(original)
+        let other = category.centimetres_t
+        XCTAssertEqual(other, Centimetres_t(original))
+    }
+
+    func testCentimetres_tToMetres_tConversions() {
+        let ctype1 = metres_t(5)
+        let swiftType1 = Metres_t(rawValue: ctype1)
+        let ctype2 = m_t_to_cm_t(ctype1)
+        let swiftType2 = Centimetres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_t(swiftType1))
+    }
+
+    func testMetres_tToCentimetres_uDistanceConversions() {
+        let original = Metres_t(5)
+        let category = Distance(original)
+        let other = category.centimetres_u
+        XCTAssertEqual(other, Centimetres_u(original))
+    }
+
+    func testCentimetres_uToMetres_tConversions() {
+        let ctype1 = metres_t(5)
+        let swiftType1 = Metres_t(rawValue: ctype1)
+        let ctype2 = m_t_to_cm_u(ctype1)
+        let swiftType2 = Centimetres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_u(swiftType1))
+    }
+
+    func testMetres_tToCentimetres_fDistanceConversions() {
+        let original = Metres_t(5)
+        let category = Distance(original)
+        let other = category.centimetres_f
+        XCTAssertEqual(other, Centimetres_f(original))
+    }
+
+    func testCentimetres_fToMetres_tConversions() {
+        let ctype1 = metres_t(5)
+        let swiftType1 = Metres_t(rawValue: ctype1)
+        let ctype2 = m_t_to_cm_f(ctype1)
+        let swiftType2 = Centimetres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_f(swiftType1))
+    }
+
+    func testMetres_tToCentimetres_dDistanceConversions() {
+        let original = Metres_t(5)
+        let category = Distance(original)
+        let other = category.centimetres_d
+        XCTAssertEqual(other, Centimetres_d(original))
+    }
+
+    func testCentimetres_dToMetres_tConversions() {
+        let ctype1 = metres_t(5)
+        let swiftType1 = Metres_t(rawValue: ctype1)
+        let ctype2 = m_t_to_cm_d(ctype1)
+        let swiftType2 = Centimetres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_d(swiftType1))
+    }
+
+    func testMetres_tToMetres_uDistanceConversions() {
+        let original = Metres_t(5)
+        let category = Distance(original)
+        let other = category.metres_u
+        XCTAssertEqual(other, Metres_u(original))
+    }
+
+    func testMetres_uToMetres_tConversions() {
+        let ctype1 = metres_t(5)
+        let swiftType1 = Metres_t(rawValue: ctype1)
+        let ctype2 = m_t_to_m_u(ctype1)
+        let swiftType2 = Metres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_u(swiftType1))
+    }
+
+    func testMetres_tToMetres_fDistanceConversions() {
+        let original = Metres_t(5)
+        let category = Distance(original)
+        let other = category.metres_f
+        XCTAssertEqual(other, Metres_f(original))
+    }
+
+    func testMetres_fToMetres_tConversions() {
+        let ctype1 = metres_t(5)
+        let swiftType1 = Metres_t(rawValue: ctype1)
+        let ctype2 = m_t_to_m_f(ctype1)
+        let swiftType2 = Metres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_f(swiftType1))
+    }
+
+    func testMetres_tToMetres_dDistanceConversions() {
+        let original = Metres_t(5)
+        let category = Distance(original)
+        let other = category.metres_d
+        XCTAssertEqual(other, Metres_d(original))
+    }
+
+    func testMetres_dToMetres_tConversions() {
+        let ctype1 = metres_t(5)
+        let swiftType1 = Metres_t(rawValue: ctype1)
+        let ctype2 = m_t_to_m_d(ctype1)
+        let swiftType2 = Metres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_d(swiftType1))
+    }
+
+    func testMetres_tInitFromTypeEnum() {
+        let underlyingType = Distance.DistanceTypes.metres_t(5)
+        let category = Distance(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testDistanceMetres_tInt8Inits() {
+        let raw = Int8(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_m_t(5)
+        let expected2 = Int8(
+            m_t_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_tInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_m_t(5)
+        let expected = Metres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(m_t_to_i8(ctype))
+        )
+    }
+
+    func testMetres_tInt8RawValueInit() {
+        let raw = metres_t(5)
+        let ctype = m_t_to_i8(raw)
+        let expected = Metres_t(Int8(ctype))
+        XCTAssertEqual(Metres_t(rawValue: raw), expected)
+    }
+
+    func testMetres_tDistanceInt8Init() {
+        let raw = Metres_t(Int8(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_tInt16Inits() {
+        let raw = Int16(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_m_t(5)
+        let expected2 = Int16(
+            m_t_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_tInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_m_t(5)
+        let expected = Metres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(m_t_to_i16(ctype))
+        )
+    }
+
+    func testMetres_tInt16RawValueInit() {
+        let raw = metres_t(5)
+        let ctype = m_t_to_i16(raw)
+        let expected = Metres_t(Int16(ctype))
+        XCTAssertEqual(Metres_t(rawValue: raw), expected)
+    }
+
+    func testMetres_tDistanceInt16Init() {
+        let raw = Metres_t(Int16(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_tInt32Inits() {
+        let raw = Int32(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_m_t(5)
+        let expected2 = Int32(
+            m_t_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_tInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_m_t(5)
+        let expected = Metres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(m_t_to_i32(ctype))
+        )
+    }
+
+    func testMetres_tInt32RawValueInit() {
+        let raw = metres_t(5)
+        let ctype = m_t_to_i32(raw)
+        let expected = Metres_t(Int32(ctype))
+        XCTAssertEqual(Metres_t(rawValue: raw), expected)
+    }
+
+    func testMetres_tDistanceInt32Init() {
+        let raw = Metres_t(Int32(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_tInt64Inits() {
+        let raw = Int64(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_m_t(5)
+        let expected2 = Int64(
+            m_t_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_tInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_m_t(5)
+        let expected = Metres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(m_t_to_i64(ctype))
+        )
+    }
+
+    func testMetres_tInt64RawValueInit() {
+        let raw = metres_t(5)
+        let ctype = m_t_to_i64(raw)
+        let expected = Metres_t(Int64(ctype))
+        XCTAssertEqual(Metres_t(rawValue: raw), expected)
+    }
+
+    func testMetres_tDistanceInt64Init() {
+        let raw = Metres_t(Int64(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_tIntInits() {
+        let raw = Int(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_m_t(5)
+        let expected2 = Int(
+            m_t_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_tIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_m_t(5)
+        let expected = Metres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(m_t_to_i64(ctype))
+        )
+    }
+
+    func testMetres_tIntRawValueInit() {
+        let raw = metres_t(5)
+        let ctype = m_t_to_i64(raw)
+        let expected = Metres_t(Int(ctype))
+        XCTAssertEqual(Metres_t(rawValue: raw), expected)
+    }
+
+    func testMetres_tDistanceIntInit() {
+        let raw = Metres_t(Int(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_tCIntInits() {
+        let raw = CInt(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_m_t(5)
+        let expected2 = CInt(
+            m_t_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_tCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_m_t(5)
+        let expected = Metres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(m_t_to_i32(ctype))
+        )
+    }
+
+    func testMetres_tCIntRawValueInit() {
+        let raw = metres_t(5)
+        let ctype = m_t_to_i32(raw)
+        let expected = Metres_t(CInt(ctype))
+        XCTAssertEqual(Metres_t(rawValue: raw), expected)
+    }
+
+    func testMetres_tDistanceCIntInit() {
+        let raw = Metres_t(CInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_tUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_m_t(5)
+        let expected2 = UInt8(
+            m_t_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_tUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_m_t(5)
+        let expected = Metres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(m_t_to_u8(ctype))
+        )
+    }
+
+    func testMetres_tUInt8RawValueInit() {
+        let raw = metres_t(5)
+        let ctype = m_t_to_u8(raw)
+        let expected = Metres_t(UInt8(ctype))
+        XCTAssertEqual(Metres_t(rawValue: raw), expected)
+    }
+
+    func testMetres_tDistanceUInt8Init() {
+        let raw = Metres_t(UInt8(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_tUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_m_t(5)
+        let expected2 = UInt16(
+            m_t_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_tUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_m_t(5)
+        let expected = Metres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(m_t_to_u16(ctype))
+        )
+    }
+
+    func testMetres_tUInt16RawValueInit() {
+        let raw = metres_t(5)
+        let ctype = m_t_to_u16(raw)
+        let expected = Metres_t(UInt16(ctype))
+        XCTAssertEqual(Metres_t(rawValue: raw), expected)
+    }
+
+    func testMetres_tDistanceUInt16Init() {
+        let raw = Metres_t(UInt16(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_tUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_m_t(5)
+        let expected2 = UInt32(
+            m_t_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_tUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_m_t(5)
+        let expected = Metres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(m_t_to_u32(ctype))
+        )
+    }
+
+    func testMetres_tUInt32RawValueInit() {
+        let raw = metres_t(5)
+        let ctype = m_t_to_u32(raw)
+        let expected = Metres_t(UInt32(ctype))
+        XCTAssertEqual(Metres_t(rawValue: raw), expected)
+    }
+
+    func testMetres_tDistanceUInt32Init() {
+        let raw = Metres_t(UInt32(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_tUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_m_t(5)
+        let expected2 = UInt64(
+            m_t_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_tUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_m_t(5)
+        let expected = Metres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(m_t_to_u64(ctype))
+        )
+    }
+
+    func testMetres_tUInt64RawValueInit() {
+        let raw = metres_t(5)
+        let ctype = m_t_to_u64(raw)
+        let expected = Metres_t(UInt64(ctype))
+        XCTAssertEqual(Metres_t(rawValue: raw), expected)
+    }
+
+    func testMetres_tDistanceUInt64Init() {
+        let raw = Metres_t(UInt64(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_tUIntInits() {
+        let raw = UInt(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_m_t(5)
+        let expected2 = UInt(
+            m_t_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_tUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_m_t(5)
+        let expected = Metres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(m_t_to_u64(ctype))
+        )
+    }
+
+    func testMetres_tUIntRawValueInit() {
+        let raw = metres_t(5)
+        let ctype = m_t_to_u64(raw)
+        let expected = Metres_t(UInt(ctype))
+        XCTAssertEqual(Metres_t(rawValue: raw), expected)
+    }
+
+    func testMetres_tDistanceUIntInit() {
+        let raw = Metres_t(UInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_tCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_m_t(5)
+        let expected2 = CUnsignedInt(
+            m_t_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_tCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_m_t(5)
+        let expected = Metres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(m_t_to_u32(ctype))
+        )
+    }
+
+    func testMetres_tCUnsignedIntRawValueInit() {
+        let raw = metres_t(5)
+        let ctype = m_t_to_u32(raw)
+        let expected = Metres_t(CUnsignedInt(ctype))
+        XCTAssertEqual(Metres_t(rawValue: raw), expected)
+    }
+
+    func testMetres_tDistanceCUnsignedIntInit() {
+        let raw = Metres_t(CUnsignedInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_tFloatInits() {
+        let raw = Float(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_m_t(5)
+        let expected2 = Float(
+            m_t_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_tFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_m_t(5)
+        let expected = Metres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(m_t_to_f(ctype))
+        )
+    }
+
+    func testMetres_tFloatRawValueInit() {
+        let raw = metres_t(5)
+        let ctype = m_t_to_f(raw)
+        let expected = Metres_t(Float(ctype))
+        XCTAssertEqual(Metres_t(rawValue: raw), expected)
+    }
+
+    func testMetres_tDistanceFloatInit() {
+        let raw = Metres_t(Float(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_tDoubleInits() {
+        let raw = Double(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_m_t(5)
+        let expected2 = Double(
+            m_t_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_tDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_m_t(5)
+        let expected = Metres_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(m_t_to_d(ctype))
+        )
+    }
+
+    func testMetres_tDoubleRawValueInit() {
+        let raw = metres_t(5)
+        let ctype = m_t_to_d(raw)
+        let expected = Metres_t(Double(ctype))
+        XCTAssertEqual(Metres_t(rawValue: raw), expected)
+    }
+
+    func testMetres_tDistanceDoubleInit() {
+        let raw = Metres_t(Double(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testMetres_uToMillimetres_tDistanceConversions() {
+        let original = Metres_u(5)
+        let category = Distance(original)
+        let other = category.millimetres_t
+        XCTAssertEqual(other, Millimetres_t(original))
+    }
+
+    func testMillimetres_tToMetres_uConversions() {
+        let ctype1 = metres_u(5)
+        let swiftType1 = Metres_u(rawValue: ctype1)
+        let ctype2 = m_u_to_mm_t(ctype1)
+        let swiftType2 = Millimetres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_t(swiftType1))
+    }
+
+    func testMetres_uToMillimetres_uDistanceConversions() {
+        let original = Metres_u(5)
+        let category = Distance(original)
+        let other = category.millimetres_u
+        XCTAssertEqual(other, Millimetres_u(original))
+    }
+
+    func testMillimetres_uToMetres_uConversions() {
+        let ctype1 = metres_u(5)
+        let swiftType1 = Metres_u(rawValue: ctype1)
+        let ctype2 = m_u_to_mm_u(ctype1)
+        let swiftType2 = Millimetres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_u(swiftType1))
+    }
+
+    func testMetres_uToMillimetres_fDistanceConversions() {
+        let original = Metres_u(5)
+        let category = Distance(original)
+        let other = category.millimetres_f
+        XCTAssertEqual(other, Millimetres_f(original))
+    }
+
+    func testMillimetres_fToMetres_uConversions() {
+        let ctype1 = metres_u(5)
+        let swiftType1 = Metres_u(rawValue: ctype1)
+        let ctype2 = m_u_to_mm_f(ctype1)
+        let swiftType2 = Millimetres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_f(swiftType1))
+    }
+
+    func testMetres_uToMillimetres_dDistanceConversions() {
+        let original = Metres_u(5)
+        let category = Distance(original)
+        let other = category.millimetres_d
+        XCTAssertEqual(other, Millimetres_d(original))
+    }
+
+    func testMillimetres_dToMetres_uConversions() {
+        let ctype1 = metres_u(5)
+        let swiftType1 = Metres_u(rawValue: ctype1)
+        let ctype2 = m_u_to_mm_d(ctype1)
+        let swiftType2 = Millimetres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_d(swiftType1))
+    }
+
+    func testMetres_uToCentimetres_tDistanceConversions() {
+        let original = Metres_u(5)
+        let category = Distance(original)
+        let other = category.centimetres_t
+        XCTAssertEqual(other, Centimetres_t(original))
+    }
+
+    func testCentimetres_tToMetres_uConversions() {
+        let ctype1 = metres_u(5)
+        let swiftType1 = Metres_u(rawValue: ctype1)
+        let ctype2 = m_u_to_cm_t(ctype1)
+        let swiftType2 = Centimetres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_t(swiftType1))
+    }
+
+    func testMetres_uToCentimetres_uDistanceConversions() {
+        let original = Metres_u(5)
+        let category = Distance(original)
+        let other = category.centimetres_u
+        XCTAssertEqual(other, Centimetres_u(original))
+    }
+
+    func testCentimetres_uToMetres_uConversions() {
+        let ctype1 = metres_u(5)
+        let swiftType1 = Metres_u(rawValue: ctype1)
+        let ctype2 = m_u_to_cm_u(ctype1)
+        let swiftType2 = Centimetres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_u(swiftType1))
+    }
+
+    func testMetres_uToCentimetres_fDistanceConversions() {
+        let original = Metres_u(5)
+        let category = Distance(original)
+        let other = category.centimetres_f
+        XCTAssertEqual(other, Centimetres_f(original))
+    }
+
+    func testCentimetres_fToMetres_uConversions() {
+        let ctype1 = metres_u(5)
+        let swiftType1 = Metres_u(rawValue: ctype1)
+        let ctype2 = m_u_to_cm_f(ctype1)
+        let swiftType2 = Centimetres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_f(swiftType1))
+    }
+
+    func testMetres_uToCentimetres_dDistanceConversions() {
+        let original = Metres_u(5)
+        let category = Distance(original)
+        let other = category.centimetres_d
+        XCTAssertEqual(other, Centimetres_d(original))
+    }
+
+    func testCentimetres_dToMetres_uConversions() {
+        let ctype1 = metres_u(5)
+        let swiftType1 = Metres_u(rawValue: ctype1)
+        let ctype2 = m_u_to_cm_d(ctype1)
+        let swiftType2 = Centimetres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_d(swiftType1))
+    }
+
+    func testMetres_uToMetres_tDistanceConversions() {
+        let original = Metres_u(5)
+        let category = Distance(original)
+        let other = category.metres_t
+        XCTAssertEqual(other, Metres_t(original))
+    }
+
+    func testMetres_tToMetres_uConversions() {
+        let ctype1 = metres_u(5)
+        let swiftType1 = Metres_u(rawValue: ctype1)
+        let ctype2 = m_u_to_m_t(ctype1)
+        let swiftType2 = Metres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_t(swiftType1))
+    }
+
+    func testMetres_uToMetres_fDistanceConversions() {
+        let original = Metres_u(5)
+        let category = Distance(original)
+        let other = category.metres_f
+        XCTAssertEqual(other, Metres_f(original))
+    }
+
+    func testMetres_fToMetres_uConversions() {
+        let ctype1 = metres_u(5)
+        let swiftType1 = Metres_u(rawValue: ctype1)
+        let ctype2 = m_u_to_m_f(ctype1)
+        let swiftType2 = Metres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_f(swiftType1))
+    }
+
+    func testMetres_uToMetres_dDistanceConversions() {
+        let original = Metres_u(5)
+        let category = Distance(original)
+        let other = category.metres_d
+        XCTAssertEqual(other, Metres_d(original))
+    }
+
+    func testMetres_dToMetres_uConversions() {
+        let ctype1 = metres_u(5)
+        let swiftType1 = Metres_u(rawValue: ctype1)
+        let ctype2 = m_u_to_m_d(ctype1)
+        let swiftType2 = Metres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_d(swiftType1))
+    }
+
+    func testMetres_uInitFromTypeEnum() {
+        let underlyingType = Distance.DistanceTypes.metres_u(5)
+        let category = Distance(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testDistanceMetres_uInt8Inits() {
+        let raw = Int8(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_m_u(5)
+        let expected2 = Int8(
+            m_u_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_uInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_m_u(5)
+        let expected = Metres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(m_u_to_i8(ctype))
+        )
+    }
+
+    func testMetres_uInt8RawValueInit() {
+        let raw = metres_u(5)
+        let ctype = m_u_to_i8(raw)
+        let expected = Metres_u(Int8(ctype))
+        XCTAssertEqual(Metres_u(rawValue: raw), expected)
+    }
+
+    func testMetres_uDistanceInt8Init() {
+        let raw = Metres_u(Int8(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_uInt16Inits() {
+        let raw = Int16(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_m_u(5)
+        let expected2 = Int16(
+            m_u_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_uInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_m_u(5)
+        let expected = Metres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(m_u_to_i16(ctype))
+        )
+    }
+
+    func testMetres_uInt16RawValueInit() {
+        let raw = metres_u(5)
+        let ctype = m_u_to_i16(raw)
+        let expected = Metres_u(Int16(ctype))
+        XCTAssertEqual(Metres_u(rawValue: raw), expected)
+    }
+
+    func testMetres_uDistanceInt16Init() {
+        let raw = Metres_u(Int16(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_uInt32Inits() {
+        let raw = Int32(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_m_u(5)
+        let expected2 = Int32(
+            m_u_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_uInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_m_u(5)
+        let expected = Metres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(m_u_to_i32(ctype))
+        )
+    }
+
+    func testMetres_uInt32RawValueInit() {
+        let raw = metres_u(5)
+        let ctype = m_u_to_i32(raw)
+        let expected = Metres_u(Int32(ctype))
+        XCTAssertEqual(Metres_u(rawValue: raw), expected)
+    }
+
+    func testMetres_uDistanceInt32Init() {
+        let raw = Metres_u(Int32(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_uInt64Inits() {
+        let raw = Int64(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_m_u(5)
+        let expected2 = Int64(
+            m_u_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_uInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_m_u(5)
+        let expected = Metres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(m_u_to_i64(ctype))
+        )
+    }
+
+    func testMetres_uInt64RawValueInit() {
+        let raw = metres_u(5)
+        let ctype = m_u_to_i64(raw)
+        let expected = Metres_u(Int64(ctype))
+        XCTAssertEqual(Metres_u(rawValue: raw), expected)
+    }
+
+    func testMetres_uDistanceInt64Init() {
+        let raw = Metres_u(Int64(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_uIntInits() {
+        let raw = Int(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_m_u(5)
+        let expected2 = Int(
+            m_u_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_uIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_m_u(5)
+        let expected = Metres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(m_u_to_i64(ctype))
+        )
+    }
+
+    func testMetres_uIntRawValueInit() {
+        let raw = metres_u(5)
+        let ctype = m_u_to_i64(raw)
+        let expected = Metres_u(Int(ctype))
+        XCTAssertEqual(Metres_u(rawValue: raw), expected)
+    }
+
+    func testMetres_uDistanceIntInit() {
+        let raw = Metres_u(Int(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_uCIntInits() {
+        let raw = CInt(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_m_u(5)
+        let expected2 = CInt(
+            m_u_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_uCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_m_u(5)
+        let expected = Metres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(m_u_to_i32(ctype))
+        )
+    }
+
+    func testMetres_uCIntRawValueInit() {
+        let raw = metres_u(5)
+        let ctype = m_u_to_i32(raw)
+        let expected = Metres_u(CInt(ctype))
+        XCTAssertEqual(Metres_u(rawValue: raw), expected)
+    }
+
+    func testMetres_uDistanceCIntInit() {
+        let raw = Metres_u(CInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_uUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_m_u(5)
+        let expected2 = UInt8(
+            m_u_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_uUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_m_u(5)
+        let expected = Metres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(m_u_to_u8(ctype))
+        )
+    }
+
+    func testMetres_uUInt8RawValueInit() {
+        let raw = metres_u(5)
+        let ctype = m_u_to_u8(raw)
+        let expected = Metres_u(UInt8(ctype))
+        XCTAssertEqual(Metres_u(rawValue: raw), expected)
+    }
+
+    func testMetres_uDistanceUInt8Init() {
+        let raw = Metres_u(UInt8(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_uUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_m_u(5)
+        let expected2 = UInt16(
+            m_u_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_uUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_m_u(5)
+        let expected = Metres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(m_u_to_u16(ctype))
+        )
+    }
+
+    func testMetres_uUInt16RawValueInit() {
+        let raw = metres_u(5)
+        let ctype = m_u_to_u16(raw)
+        let expected = Metres_u(UInt16(ctype))
+        XCTAssertEqual(Metres_u(rawValue: raw), expected)
+    }
+
+    func testMetres_uDistanceUInt16Init() {
+        let raw = Metres_u(UInt16(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_uUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_m_u(5)
+        let expected2 = UInt32(
+            m_u_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_uUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_m_u(5)
+        let expected = Metres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(m_u_to_u32(ctype))
+        )
+    }
+
+    func testMetres_uUInt32RawValueInit() {
+        let raw = metres_u(5)
+        let ctype = m_u_to_u32(raw)
+        let expected = Metres_u(UInt32(ctype))
+        XCTAssertEqual(Metres_u(rawValue: raw), expected)
+    }
+
+    func testMetres_uDistanceUInt32Init() {
+        let raw = Metres_u(UInt32(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_uUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_m_u(5)
+        let expected2 = UInt64(
+            m_u_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_uUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_m_u(5)
+        let expected = Metres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(m_u_to_u64(ctype))
+        )
+    }
+
+    func testMetres_uUInt64RawValueInit() {
+        let raw = metres_u(5)
+        let ctype = m_u_to_u64(raw)
+        let expected = Metres_u(UInt64(ctype))
+        XCTAssertEqual(Metres_u(rawValue: raw), expected)
+    }
+
+    func testMetres_uDistanceUInt64Init() {
+        let raw = Metres_u(UInt64(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_uUIntInits() {
+        let raw = UInt(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_m_u(5)
+        let expected2 = UInt(
+            m_u_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_uUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_m_u(5)
+        let expected = Metres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(m_u_to_u64(ctype))
+        )
+    }
+
+    func testMetres_uUIntRawValueInit() {
+        let raw = metres_u(5)
+        let ctype = m_u_to_u64(raw)
+        let expected = Metres_u(UInt(ctype))
+        XCTAssertEqual(Metres_u(rawValue: raw), expected)
+    }
+
+    func testMetres_uDistanceUIntInit() {
+        let raw = Metres_u(UInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_uCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_m_u(5)
+        let expected2 = CUnsignedInt(
+            m_u_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_uCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_m_u(5)
+        let expected = Metres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(m_u_to_u32(ctype))
+        )
+    }
+
+    func testMetres_uCUnsignedIntRawValueInit() {
+        let raw = metres_u(5)
+        let ctype = m_u_to_u32(raw)
+        let expected = Metres_u(CUnsignedInt(ctype))
+        XCTAssertEqual(Metres_u(rawValue: raw), expected)
+    }
+
+    func testMetres_uDistanceCUnsignedIntInit() {
+        let raw = Metres_u(CUnsignedInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_uFloatInits() {
+        let raw = Float(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_m_u(5)
+        let expected2 = Float(
+            m_u_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_uFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_m_u(5)
+        let expected = Metres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(m_u_to_f(ctype))
+        )
+    }
+
+    func testMetres_uFloatRawValueInit() {
+        let raw = metres_u(5)
+        let ctype = m_u_to_f(raw)
+        let expected = Metres_u(Float(ctype))
+        XCTAssertEqual(Metres_u(rawValue: raw), expected)
+    }
+
+    func testMetres_uDistanceFloatInit() {
+        let raw = Metres_u(Float(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_uDoubleInits() {
+        let raw = Double(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_m_u(5)
+        let expected2 = Double(
+            m_u_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_uDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_m_u(5)
+        let expected = Metres_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(m_u_to_d(ctype))
+        )
+    }
+
+    func testMetres_uDoubleRawValueInit() {
+        let raw = metres_u(5)
+        let ctype = m_u_to_d(raw)
+        let expected = Metres_u(Double(ctype))
+        XCTAssertEqual(Metres_u(rawValue: raw), expected)
+    }
+
+    func testMetres_uDistanceDoubleInit() {
+        let raw = Metres_u(Double(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testMetres_fToMillimetres_tDistanceConversions() {
+        let original = Metres_f(5)
+        let category = Distance(original)
+        let other = category.millimetres_t
+        XCTAssertEqual(other, Millimetres_t(original))
+    }
+
+    func testMillimetres_tToMetres_fConversions() {
+        let ctype1 = metres_f(5)
+        let swiftType1 = Metres_f(rawValue: ctype1)
+        let ctype2 = m_f_to_mm_t(ctype1)
+        let swiftType2 = Millimetres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_t(swiftType1))
+    }
+
+    func testMetres_fToMillimetres_uDistanceConversions() {
+        let original = Metres_f(5)
+        let category = Distance(original)
+        let other = category.millimetres_u
+        XCTAssertEqual(other, Millimetres_u(original))
+    }
+
+    func testMillimetres_uToMetres_fConversions() {
+        let ctype1 = metres_f(5)
+        let swiftType1 = Metres_f(rawValue: ctype1)
+        let ctype2 = m_f_to_mm_u(ctype1)
+        let swiftType2 = Millimetres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_u(swiftType1))
+    }
+
+    func testMetres_fToMillimetres_fDistanceConversions() {
+        let original = Metres_f(5)
+        let category = Distance(original)
+        let other = category.millimetres_f
+        XCTAssertEqual(other, Millimetres_f(original))
+    }
+
+    func testMillimetres_fToMetres_fConversions() {
+        let ctype1 = metres_f(5)
+        let swiftType1 = Metres_f(rawValue: ctype1)
+        let ctype2 = m_f_to_mm_f(ctype1)
+        let swiftType2 = Millimetres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_f(swiftType1))
+    }
+
+    func testMetres_fToMillimetres_dDistanceConversions() {
+        let original = Metres_f(5)
+        let category = Distance(original)
+        let other = category.millimetres_d
+        XCTAssertEqual(other, Millimetres_d(original))
+    }
+
+    func testMillimetres_dToMetres_fConversions() {
+        let ctype1 = metres_f(5)
+        let swiftType1 = Metres_f(rawValue: ctype1)
+        let ctype2 = m_f_to_mm_d(ctype1)
+        let swiftType2 = Millimetres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_d(swiftType1))
+    }
+
+    func testMetres_fToCentimetres_tDistanceConversions() {
+        let original = Metres_f(5)
+        let category = Distance(original)
+        let other = category.centimetres_t
+        XCTAssertEqual(other, Centimetres_t(original))
+    }
+
+    func testCentimetres_tToMetres_fConversions() {
+        let ctype1 = metres_f(5)
+        let swiftType1 = Metres_f(rawValue: ctype1)
+        let ctype2 = m_f_to_cm_t(ctype1)
+        let swiftType2 = Centimetres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_t(swiftType1))
+    }
+
+    func testMetres_fToCentimetres_uDistanceConversions() {
+        let original = Metres_f(5)
+        let category = Distance(original)
+        let other = category.centimetres_u
+        XCTAssertEqual(other, Centimetres_u(original))
+    }
+
+    func testCentimetres_uToMetres_fConversions() {
+        let ctype1 = metres_f(5)
+        let swiftType1 = Metres_f(rawValue: ctype1)
+        let ctype2 = m_f_to_cm_u(ctype1)
+        let swiftType2 = Centimetres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_u(swiftType1))
+    }
+
+    func testMetres_fToCentimetres_fDistanceConversions() {
+        let original = Metres_f(5)
+        let category = Distance(original)
+        let other = category.centimetres_f
+        XCTAssertEqual(other, Centimetres_f(original))
+    }
+
+    func testCentimetres_fToMetres_fConversions() {
+        let ctype1 = metres_f(5)
+        let swiftType1 = Metres_f(rawValue: ctype1)
+        let ctype2 = m_f_to_cm_f(ctype1)
+        let swiftType2 = Centimetres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_f(swiftType1))
+    }
+
+    func testMetres_fToCentimetres_dDistanceConversions() {
+        let original = Metres_f(5)
+        let category = Distance(original)
+        let other = category.centimetres_d
+        XCTAssertEqual(other, Centimetres_d(original))
+    }
+
+    func testCentimetres_dToMetres_fConversions() {
+        let ctype1 = metres_f(5)
+        let swiftType1 = Metres_f(rawValue: ctype1)
+        let ctype2 = m_f_to_cm_d(ctype1)
+        let swiftType2 = Centimetres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_d(swiftType1))
+    }
+
+    func testMetres_fToMetres_tDistanceConversions() {
+        let original = Metres_f(5)
+        let category = Distance(original)
+        let other = category.metres_t
+        XCTAssertEqual(other, Metres_t(original))
+    }
+
+    func testMetres_tToMetres_fConversions() {
+        let ctype1 = metres_f(5)
+        let swiftType1 = Metres_f(rawValue: ctype1)
+        let ctype2 = m_f_to_m_t(ctype1)
+        let swiftType2 = Metres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_t(swiftType1))
+    }
+
+    func testMetres_fToMetres_uDistanceConversions() {
+        let original = Metres_f(5)
+        let category = Distance(original)
+        let other = category.metres_u
+        XCTAssertEqual(other, Metres_u(original))
+    }
+
+    func testMetres_uToMetres_fConversions() {
+        let ctype1 = metres_f(5)
+        let swiftType1 = Metres_f(rawValue: ctype1)
+        let ctype2 = m_f_to_m_u(ctype1)
+        let swiftType2 = Metres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_u(swiftType1))
+    }
+
+    func testMetres_fToMetres_dDistanceConversions() {
+        let original = Metres_f(5)
+        let category = Distance(original)
+        let other = category.metres_d
+        XCTAssertEqual(other, Metres_d(original))
+    }
+
+    func testMetres_dToMetres_fConversions() {
+        let ctype1 = metres_f(5)
+        let swiftType1 = Metres_f(rawValue: ctype1)
+        let ctype2 = m_f_to_m_d(ctype1)
+        let swiftType2 = Metres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_d(swiftType1))
+    }
+
+    func testMetres_fInitFromTypeEnum() {
+        let underlyingType = Distance.DistanceTypes.metres_f(5)
+        let category = Distance(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testDistanceMetres_fInt8Inits() {
+        let raw = Int8(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_m_f(5)
+        let expected2 = Int8(
+            m_f_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_fInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_m_f(5)
+        let expected = Metres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(m_f_to_i8(ctype))
+        )
+    }
+
+    func testMetres_fInt8RawValueInit() {
+        let raw = metres_f(5)
+        let ctype = m_f_to_i8(raw)
+        let expected = Metres_f(Int8(ctype))
+        XCTAssertEqual(Metres_f(rawValue: raw), expected)
+    }
+
+    func testMetres_fDistanceInt8Init() {
+        let raw = Metres_f(Int8(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_fInt16Inits() {
+        let raw = Int16(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_m_f(5)
+        let expected2 = Int16(
+            m_f_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_fInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_m_f(5)
+        let expected = Metres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(m_f_to_i16(ctype))
+        )
+    }
+
+    func testMetres_fInt16RawValueInit() {
+        let raw = metres_f(5)
+        let ctype = m_f_to_i16(raw)
+        let expected = Metres_f(Int16(ctype))
+        XCTAssertEqual(Metres_f(rawValue: raw), expected)
+    }
+
+    func testMetres_fDistanceInt16Init() {
+        let raw = Metres_f(Int16(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_fInt32Inits() {
+        let raw = Int32(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_m_f(5)
+        let expected2 = Int32(
+            m_f_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_fInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_m_f(5)
+        let expected = Metres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(m_f_to_i32(ctype))
+        )
+    }
+
+    func testMetres_fInt32RawValueInit() {
+        let raw = metres_f(5)
+        let ctype = m_f_to_i32(raw)
+        let expected = Metres_f(Int32(ctype))
+        XCTAssertEqual(Metres_f(rawValue: raw), expected)
+    }
+
+    func testMetres_fDistanceInt32Init() {
+        let raw = Metres_f(Int32(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_fInt64Inits() {
+        let raw = Int64(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_m_f(5)
+        let expected2 = Int64(
+            m_f_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_fInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_m_f(5)
+        let expected = Metres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(m_f_to_i64(ctype))
+        )
+    }
+
+    func testMetres_fInt64RawValueInit() {
+        let raw = metres_f(5)
+        let ctype = m_f_to_i64(raw)
+        let expected = Metres_f(Int64(ctype))
+        XCTAssertEqual(Metres_f(rawValue: raw), expected)
+    }
+
+    func testMetres_fDistanceInt64Init() {
+        let raw = Metres_f(Int64(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_fIntInits() {
+        let raw = Int(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_m_f(5)
+        let expected2 = Int(
+            m_f_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_fIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_m_f(5)
+        let expected = Metres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(m_f_to_i64(ctype))
+        )
+    }
+
+    func testMetres_fIntRawValueInit() {
+        let raw = metres_f(5)
+        let ctype = m_f_to_i64(raw)
+        let expected = Metres_f(Int(ctype))
+        XCTAssertEqual(Metres_f(rawValue: raw), expected)
+    }
+
+    func testMetres_fDistanceIntInit() {
+        let raw = Metres_f(Int(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_fCIntInits() {
+        let raw = CInt(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_m_f(5)
+        let expected2 = CInt(
+            m_f_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_fCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_m_f(5)
+        let expected = Metres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(m_f_to_i32(ctype))
+        )
+    }
+
+    func testMetres_fCIntRawValueInit() {
+        let raw = metres_f(5)
+        let ctype = m_f_to_i32(raw)
+        let expected = Metres_f(CInt(ctype))
+        XCTAssertEqual(Metres_f(rawValue: raw), expected)
+    }
+
+    func testMetres_fDistanceCIntInit() {
+        let raw = Metres_f(CInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_fUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_m_f(5)
+        let expected2 = UInt8(
+            m_f_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_fUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_m_f(5)
+        let expected = Metres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(m_f_to_u8(ctype))
+        )
+    }
+
+    func testMetres_fUInt8RawValueInit() {
+        let raw = metres_f(5)
+        let ctype = m_f_to_u8(raw)
+        let expected = Metres_f(UInt8(ctype))
+        XCTAssertEqual(Metres_f(rawValue: raw), expected)
+    }
+
+    func testMetres_fDistanceUInt8Init() {
+        let raw = Metres_f(UInt8(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_fUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_m_f(5)
+        let expected2 = UInt16(
+            m_f_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_fUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_m_f(5)
+        let expected = Metres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(m_f_to_u16(ctype))
+        )
+    }
+
+    func testMetres_fUInt16RawValueInit() {
+        let raw = metres_f(5)
+        let ctype = m_f_to_u16(raw)
+        let expected = Metres_f(UInt16(ctype))
+        XCTAssertEqual(Metres_f(rawValue: raw), expected)
+    }
+
+    func testMetres_fDistanceUInt16Init() {
+        let raw = Metres_f(UInt16(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_fUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_m_f(5)
+        let expected2 = UInt32(
+            m_f_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_fUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_m_f(5)
+        let expected = Metres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(m_f_to_u32(ctype))
+        )
+    }
+
+    func testMetres_fUInt32RawValueInit() {
+        let raw = metres_f(5)
+        let ctype = m_f_to_u32(raw)
+        let expected = Metres_f(UInt32(ctype))
+        XCTAssertEqual(Metres_f(rawValue: raw), expected)
+    }
+
+    func testMetres_fDistanceUInt32Init() {
+        let raw = Metres_f(UInt32(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_fUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_m_f(5)
+        let expected2 = UInt64(
+            m_f_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_fUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_m_f(5)
+        let expected = Metres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(m_f_to_u64(ctype))
+        )
+    }
+
+    func testMetres_fUInt64RawValueInit() {
+        let raw = metres_f(5)
+        let ctype = m_f_to_u64(raw)
+        let expected = Metres_f(UInt64(ctype))
+        XCTAssertEqual(Metres_f(rawValue: raw), expected)
+    }
+
+    func testMetres_fDistanceUInt64Init() {
+        let raw = Metres_f(UInt64(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_fUIntInits() {
+        let raw = UInt(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_m_f(5)
+        let expected2 = UInt(
+            m_f_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_fUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_m_f(5)
+        let expected = Metres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(m_f_to_u64(ctype))
+        )
+    }
+
+    func testMetres_fUIntRawValueInit() {
+        let raw = metres_f(5)
+        let ctype = m_f_to_u64(raw)
+        let expected = Metres_f(UInt(ctype))
+        XCTAssertEqual(Metres_f(rawValue: raw), expected)
+    }
+
+    func testMetres_fDistanceUIntInit() {
+        let raw = Metres_f(UInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_fCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_m_f(5)
+        let expected2 = CUnsignedInt(
+            m_f_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_fCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_m_f(5)
+        let expected = Metres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(m_f_to_u32(ctype))
+        )
+    }
+
+    func testMetres_fCUnsignedIntRawValueInit() {
+        let raw = metres_f(5)
+        let ctype = m_f_to_u32(raw)
+        let expected = Metres_f(CUnsignedInt(ctype))
+        XCTAssertEqual(Metres_f(rawValue: raw), expected)
+    }
+
+    func testMetres_fDistanceCUnsignedIntInit() {
+        let raw = Metres_f(CUnsignedInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_fFloatInits() {
+        let raw = Float(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_m_f(5)
+        let expected2 = Float(
+            m_f_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_fFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_m_f(5)
+        let expected = Metres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(m_f_to_f(ctype))
+        )
+    }
+
+    func testMetres_fFloatRawValueInit() {
+        let raw = metres_f(5)
+        let ctype = m_f_to_f(raw)
+        let expected = Metres_f(Float(ctype))
+        XCTAssertEqual(Metres_f(rawValue: raw), expected)
+    }
+
+    func testMetres_fDistanceFloatInit() {
+        let raw = Metres_f(Float(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_fDoubleInits() {
+        let raw = Double(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_m_f(5)
+        let expected2 = Double(
+            m_f_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_fDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_m_f(5)
+        let expected = Metres_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(m_f_to_d(ctype))
+        )
+    }
+
+    func testMetres_fDoubleRawValueInit() {
+        let raw = metres_f(5)
+        let ctype = m_f_to_d(raw)
+        let expected = Metres_f(Double(ctype))
+        XCTAssertEqual(Metres_f(rawValue: raw), expected)
+    }
+
+    func testMetres_fDistanceDoubleInit() {
+        let raw = Metres_f(Double(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testMetres_dToMillimetres_tDistanceConversions() {
+        let original = Metres_d(5)
+        let category = Distance(original)
+        let other = category.millimetres_t
+        XCTAssertEqual(other, Millimetres_t(original))
+    }
+
+    func testMillimetres_tToMetres_dConversions() {
+        let ctype1 = metres_d(5)
+        let swiftType1 = Metres_d(rawValue: ctype1)
+        let ctype2 = m_d_to_mm_t(ctype1)
+        let swiftType2 = Millimetres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_t(swiftType1))
+    }
+
+    func testMetres_dToMillimetres_uDistanceConversions() {
+        let original = Metres_d(5)
+        let category = Distance(original)
+        let other = category.millimetres_u
+        XCTAssertEqual(other, Millimetres_u(original))
+    }
+
+    func testMillimetres_uToMetres_dConversions() {
+        let ctype1 = metres_d(5)
+        let swiftType1 = Metres_d(rawValue: ctype1)
+        let ctype2 = m_d_to_mm_u(ctype1)
+        let swiftType2 = Millimetres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_u(swiftType1))
+    }
+
+    func testMetres_dToMillimetres_fDistanceConversions() {
+        let original = Metres_d(5)
+        let category = Distance(original)
+        let other = category.millimetres_f
+        XCTAssertEqual(other, Millimetres_f(original))
+    }
+
+    func testMillimetres_fToMetres_dConversions() {
+        let ctype1 = metres_d(5)
+        let swiftType1 = Metres_d(rawValue: ctype1)
+        let ctype2 = m_d_to_mm_f(ctype1)
+        let swiftType2 = Millimetres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_f(swiftType1))
+    }
+
+    func testMetres_dToMillimetres_dDistanceConversions() {
+        let original = Metres_d(5)
+        let category = Distance(original)
+        let other = category.millimetres_d
+        XCTAssertEqual(other, Millimetres_d(original))
+    }
+
+    func testMillimetres_dToMetres_dConversions() {
+        let ctype1 = metres_d(5)
+        let swiftType1 = Metres_d(rawValue: ctype1)
+        let ctype2 = m_d_to_mm_d(ctype1)
+        let swiftType2 = Millimetres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_d(swiftType1))
+    }
+
+    func testMetres_dToCentimetres_tDistanceConversions() {
+        let original = Metres_d(5)
+        let category = Distance(original)
+        let other = category.centimetres_t
+        XCTAssertEqual(other, Centimetres_t(original))
+    }
+
+    func testCentimetres_tToMetres_dConversions() {
+        let ctype1 = metres_d(5)
+        let swiftType1 = Metres_d(rawValue: ctype1)
+        let ctype2 = m_d_to_cm_t(ctype1)
+        let swiftType2 = Centimetres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_t(swiftType1))
+    }
+
+    func testMetres_dToCentimetres_uDistanceConversions() {
+        let original = Metres_d(5)
+        let category = Distance(original)
+        let other = category.centimetres_u
+        XCTAssertEqual(other, Centimetres_u(original))
+    }
+
+    func testCentimetres_uToMetres_dConversions() {
+        let ctype1 = metres_d(5)
+        let swiftType1 = Metres_d(rawValue: ctype1)
+        let ctype2 = m_d_to_cm_u(ctype1)
+        let swiftType2 = Centimetres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_u(swiftType1))
+    }
+
+    func testMetres_dToCentimetres_fDistanceConversions() {
+        let original = Metres_d(5)
+        let category = Distance(original)
+        let other = category.centimetres_f
+        XCTAssertEqual(other, Centimetres_f(original))
+    }
+
+    func testCentimetres_fToMetres_dConversions() {
+        let ctype1 = metres_d(5)
+        let swiftType1 = Metres_d(rawValue: ctype1)
+        let ctype2 = m_d_to_cm_f(ctype1)
+        let swiftType2 = Centimetres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_f(swiftType1))
+    }
+
+    func testMetres_dToCentimetres_dDistanceConversions() {
+        let original = Metres_d(5)
+        let category = Distance(original)
+        let other = category.centimetres_d
+        XCTAssertEqual(other, Centimetres_d(original))
+    }
+
+    func testCentimetres_dToMetres_dConversions() {
+        let ctype1 = metres_d(5)
+        let swiftType1 = Metres_d(rawValue: ctype1)
+        let ctype2 = m_d_to_cm_d(ctype1)
+        let swiftType2 = Centimetres_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_d(swiftType1))
+    }
+
+    func testMetres_dToMetres_tDistanceConversions() {
+        let original = Metres_d(5)
+        let category = Distance(original)
+        let other = category.metres_t
+        XCTAssertEqual(other, Metres_t(original))
+    }
+
+    func testMetres_tToMetres_dConversions() {
+        let ctype1 = metres_d(5)
+        let swiftType1 = Metres_d(rawValue: ctype1)
+        let ctype2 = m_d_to_m_t(ctype1)
+        let swiftType2 = Metres_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_t(swiftType1))
+    }
+
+    func testMetres_dToMetres_uDistanceConversions() {
+        let original = Metres_d(5)
+        let category = Distance(original)
+        let other = category.metres_u
+        XCTAssertEqual(other, Metres_u(original))
+    }
+
+    func testMetres_uToMetres_dConversions() {
+        let ctype1 = metres_d(5)
+        let swiftType1 = Metres_d(rawValue: ctype1)
+        let ctype2 = m_d_to_m_u(ctype1)
+        let swiftType2 = Metres_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_u(swiftType1))
+    }
+
+    func testMetres_dToMetres_fDistanceConversions() {
+        let original = Metres_d(5)
+        let category = Distance(original)
+        let other = category.metres_f
+        XCTAssertEqual(other, Metres_f(original))
+    }
+
+    func testMetres_fToMetres_dConversions() {
+        let ctype1 = metres_d(5)
+        let swiftType1 = Metres_d(rawValue: ctype1)
+        let ctype2 = m_d_to_m_f(ctype1)
+        let swiftType2 = Metres_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_f(swiftType1))
+    }
+
+    func testMetres_dInitFromTypeEnum() {
+        let underlyingType = Distance.DistanceTypes.metres_d(5)
+        let category = Distance(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testDistanceMetres_dInt8Inits() {
+        let raw = Int8(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_m_d(5)
+        let expected2 = Int8(
+            m_d_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_dInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_m_d(5)
+        let expected = Metres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(m_d_to_i8(ctype))
+        )
+    }
+
+    func testMetres_dInt8RawValueInit() {
+        let raw = metres_d(5)
+        let ctype = m_d_to_i8(raw)
+        let expected = Metres_d(Int8(ctype))
+        XCTAssertEqual(Metres_d(rawValue: raw), expected)
+    }
+
+    func testMetres_dDistanceInt8Init() {
+        let raw = Metres_d(Int8(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_dInt16Inits() {
+        let raw = Int16(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_m_d(5)
+        let expected2 = Int16(
+            m_d_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_dInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_m_d(5)
+        let expected = Metres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(m_d_to_i16(ctype))
+        )
+    }
+
+    func testMetres_dInt16RawValueInit() {
+        let raw = metres_d(5)
+        let ctype = m_d_to_i16(raw)
+        let expected = Metres_d(Int16(ctype))
+        XCTAssertEqual(Metres_d(rawValue: raw), expected)
+    }
+
+    func testMetres_dDistanceInt16Init() {
+        let raw = Metres_d(Int16(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_dInt32Inits() {
+        let raw = Int32(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_m_d(5)
+        let expected2 = Int32(
+            m_d_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_dInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_m_d(5)
+        let expected = Metres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(m_d_to_i32(ctype))
+        )
+    }
+
+    func testMetres_dInt32RawValueInit() {
+        let raw = metres_d(5)
+        let ctype = m_d_to_i32(raw)
+        let expected = Metres_d(Int32(ctype))
+        XCTAssertEqual(Metres_d(rawValue: raw), expected)
+    }
+
+    func testMetres_dDistanceInt32Init() {
+        let raw = Metres_d(Int32(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_dInt64Inits() {
+        let raw = Int64(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_m_d(5)
+        let expected2 = Int64(
+            m_d_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_dInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_m_d(5)
+        let expected = Metres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(m_d_to_i64(ctype))
+        )
+    }
+
+    func testMetres_dInt64RawValueInit() {
+        let raw = metres_d(5)
+        let ctype = m_d_to_i64(raw)
+        let expected = Metres_d(Int64(ctype))
+        XCTAssertEqual(Metres_d(rawValue: raw), expected)
+    }
+
+    func testMetres_dDistanceInt64Init() {
+        let raw = Metres_d(Int64(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_dIntInits() {
+        let raw = Int(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_m_d(5)
+        let expected2 = Int(
+            m_d_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_dIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_m_d(5)
+        let expected = Metres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(m_d_to_i64(ctype))
+        )
+    }
+
+    func testMetres_dIntRawValueInit() {
+        let raw = metres_d(5)
+        let ctype = m_d_to_i64(raw)
+        let expected = Metres_d(Int(ctype))
+        XCTAssertEqual(Metres_d(rawValue: raw), expected)
+    }
+
+    func testMetres_dDistanceIntInit() {
+        let raw = Metres_d(Int(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_dCIntInits() {
+        let raw = CInt(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_m_d(5)
+        let expected2 = CInt(
+            m_d_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_dCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_m_d(5)
+        let expected = Metres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(m_d_to_i32(ctype))
+        )
+    }
+
+    func testMetres_dCIntRawValueInit() {
+        let raw = metres_d(5)
+        let ctype = m_d_to_i32(raw)
+        let expected = Metres_d(CInt(ctype))
+        XCTAssertEqual(Metres_d(rawValue: raw), expected)
+    }
+
+    func testMetres_dDistanceCIntInit() {
+        let raw = Metres_d(CInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_dUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_m_d(5)
+        let expected2 = UInt8(
+            m_d_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_dUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_m_d(5)
+        let expected = Metres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(m_d_to_u8(ctype))
+        )
+    }
+
+    func testMetres_dUInt8RawValueInit() {
+        let raw = metres_d(5)
+        let ctype = m_d_to_u8(raw)
+        let expected = Metres_d(UInt8(ctype))
+        XCTAssertEqual(Metres_d(rawValue: raw), expected)
+    }
+
+    func testMetres_dDistanceUInt8Init() {
+        let raw = Metres_d(UInt8(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_dUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_m_d(5)
+        let expected2 = UInt16(
+            m_d_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_dUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_m_d(5)
+        let expected = Metres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(m_d_to_u16(ctype))
+        )
+    }
+
+    func testMetres_dUInt16RawValueInit() {
+        let raw = metres_d(5)
+        let ctype = m_d_to_u16(raw)
+        let expected = Metres_d(UInt16(ctype))
+        XCTAssertEqual(Metres_d(rawValue: raw), expected)
+    }
+
+    func testMetres_dDistanceUInt16Init() {
+        let raw = Metres_d(UInt16(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_dUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_m_d(5)
+        let expected2 = UInt32(
+            m_d_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_dUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_m_d(5)
+        let expected = Metres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(m_d_to_u32(ctype))
+        )
+    }
+
+    func testMetres_dUInt32RawValueInit() {
+        let raw = metres_d(5)
+        let ctype = m_d_to_u32(raw)
+        let expected = Metres_d(UInt32(ctype))
+        XCTAssertEqual(Metres_d(rawValue: raw), expected)
+    }
+
+    func testMetres_dDistanceUInt32Init() {
+        let raw = Metres_d(UInt32(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_dUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_m_d(5)
+        let expected2 = UInt64(
+            m_d_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_dUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_m_d(5)
+        let expected = Metres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(m_d_to_u64(ctype))
+        )
+    }
+
+    func testMetres_dUInt64RawValueInit() {
+        let raw = metres_d(5)
+        let ctype = m_d_to_u64(raw)
+        let expected = Metres_d(UInt64(ctype))
+        XCTAssertEqual(Metres_d(rawValue: raw), expected)
+    }
+
+    func testMetres_dDistanceUInt64Init() {
+        let raw = Metres_d(UInt64(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_dUIntInits() {
+        let raw = UInt(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_m_d(5)
+        let expected2 = UInt(
+            m_d_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_dUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_m_d(5)
+        let expected = Metres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(m_d_to_u64(ctype))
+        )
+    }
+
+    func testMetres_dUIntRawValueInit() {
+        let raw = metres_d(5)
+        let ctype = m_d_to_u64(raw)
+        let expected = Metres_d(UInt(ctype))
+        XCTAssertEqual(Metres_d(rawValue: raw), expected)
+    }
+
+    func testMetres_dDistanceUIntInit() {
+        let raw = Metres_d(UInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_dCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_m_d(5)
+        let expected2 = CUnsignedInt(
+            m_d_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_dCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_m_d(5)
+        let expected = Metres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(m_d_to_u32(ctype))
+        )
+    }
+
+    func testMetres_dCUnsignedIntRawValueInit() {
+        let raw = metres_d(5)
+        let ctype = m_d_to_u32(raw)
+        let expected = Metres_d(CUnsignedInt(ctype))
+        XCTAssertEqual(Metres_d(rawValue: raw), expected)
+    }
+
+    func testMetres_dDistanceCUnsignedIntInit() {
+        let raw = Metres_d(CUnsignedInt(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_dFloatInits() {
+        let raw = Float(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_m_d(5)
+        let expected2 = Float(
+            m_d_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_dFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_m_d(5)
+        let expected = Metres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(m_d_to_f(ctype))
+        )
+    }
+
+    func testMetres_dFloatRawValueInit() {
+        let raw = metres_d(5)
+        let ctype = m_d_to_f(raw)
+        let expected = Metres_d(Float(ctype))
+        XCTAssertEqual(Metres_d(rawValue: raw), expected)
+    }
+
+    func testMetres_dDistanceFloatInit() {
+        let raw = Metres_d(Float(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testDistanceMetres_dDoubleInits() {
+        let raw = Double(5)
+        let expected = Distance(metres: raw)
+        let result = Distance.metres(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_m_d(5)
+        let expected2 = Double(
+            m_d_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_dDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_m_d(5)
+        let expected = Metres_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(m_d_to_d(ctype))
+        )
+    }
+
+    func testMetres_dDoubleRawValueInit() {
+        let raw = metres_d(5)
+        let ctype = m_d_to_d(raw)
+        let expected = Metres_d(Double(ctype))
+        XCTAssertEqual(Metres_d(rawValue: raw), expected)
+    }
+
+    func testMetres_dDistanceDoubleInit() {
+        let raw = Metres_d(Double(5))
+        let category = Distance(raw)
+        let expected = Distance(rawValue: .metres_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+}
 
 /// Provides millimetres_t unit tests.
 final class Millimetres_tTests: XCTestCase {

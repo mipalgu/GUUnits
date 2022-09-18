@@ -82,6 +82,20 @@ typedef unsigned int metres_u;
 typedef float metres_f;
 typedef double metres_d;
 
+// Current Units.
+typedef int microamperes_t;
+typedef unsigned int microamperes_u;
+typedef float microamperes_f;
+typedef double microamperes_d;
+typedef int milliamperes_t;
+typedef unsigned int milliamperes_u;
+typedef float milliamperes_f;
+typedef double milliamperes_d;
+typedef int amperes_t;
+typedef unsigned int amperes_u;
+typedef float amperes_f;
+typedef double amperes_d;
+
 // Time Units.
 typedef int microseconds_t;
 typedef unsigned int microseconds_u;
@@ -2241,6 +2255,2106 @@ millimetres_t u_to_mm_t(unsigned int millimetres);
  * Convert unsigned int to millimetres_u.
  */
 millimetres_u u_to_mm_u(unsigned int millimetres);
+
+/**
+ * Convert amperes_d to amperes_f.
+ */
+amperes_f A_d_to_A_f(amperes_d amperes);
+
+/**
+ * Convert amperes_d to amperes_t.
+ */
+amperes_t A_d_to_A_t(amperes_d amperes);
+
+/**
+ * Convert amperes_d to amperes_u.
+ */
+amperes_u A_d_to_A_u(amperes_d amperes);
+
+/**
+ * Convert amperes_d to double.
+ */
+double A_d_to_d(amperes_d amperes);
+
+/**
+ * Convert amperes_d to float.
+ */
+float A_d_to_f(amperes_d amperes);
+
+/**
+ * Convert amperes_d to int.
+ */
+int A_d_to_i(amperes_d amperes);
+
+/**
+ * Convert amperes_d to int16_t.
+ */
+int16_t A_d_to_i16(amperes_d amperes);
+
+/**
+ * Convert amperes_d to int32_t.
+ */
+int32_t A_d_to_i32(amperes_d amperes);
+
+/**
+ * Convert amperes_d to int64_t.
+ */
+int64_t A_d_to_i64(amperes_d amperes);
+
+/**
+ * Convert amperes_d to int8_t.
+ */
+int8_t A_d_to_i8(amperes_d amperes);
+
+/**
+ * Convert amperes_d to microamperes_d.
+ */
+microamperes_d A_d_to_uA_d(amperes_d amperes);
+
+/**
+ * Convert amperes_d to microamperes_f.
+ */
+microamperes_f A_d_to_uA_f(amperes_d amperes);
+
+/**
+ * Convert amperes_d to microamperes_t.
+ */
+microamperes_t A_d_to_uA_t(amperes_d amperes);
+
+/**
+ * Convert amperes_d to microamperes_u.
+ */
+microamperes_u A_d_to_uA_u(amperes_d amperes);
+
+/**
+ * Convert amperes_d to milliamperes_d.
+ */
+milliamperes_d A_d_to_mA_d(amperes_d amperes);
+
+/**
+ * Convert amperes_d to milliamperes_f.
+ */
+milliamperes_f A_d_to_mA_f(amperes_d amperes);
+
+/**
+ * Convert amperes_d to milliamperes_t.
+ */
+milliamperes_t A_d_to_mA_t(amperes_d amperes);
+
+/**
+ * Convert amperes_d to milliamperes_u.
+ */
+milliamperes_u A_d_to_mA_u(amperes_d amperes);
+
+/**
+ * Convert amperes_d to uint16_t.
+ */
+uint16_t A_d_to_u16(amperes_d amperes);
+
+/**
+ * Convert amperes_d to uint32_t.
+ */
+uint32_t A_d_to_u32(amperes_d amperes);
+
+/**
+ * Convert amperes_d to uint64_t.
+ */
+uint64_t A_d_to_u64(amperes_d amperes);
+
+/**
+ * Convert amperes_d to uint8_t.
+ */
+uint8_t A_d_to_u8(amperes_d amperes);
+
+/**
+ * Convert amperes_d to unsigned int.
+ */
+unsigned int A_d_to_u(amperes_d amperes);
+
+/**
+ * Convert amperes_f to amperes_d.
+ */
+amperes_d A_f_to_A_d(amperes_f amperes);
+
+/**
+ * Convert amperes_f to amperes_t.
+ */
+amperes_t A_f_to_A_t(amperes_f amperes);
+
+/**
+ * Convert amperes_f to amperes_u.
+ */
+amperes_u A_f_to_A_u(amperes_f amperes);
+
+/**
+ * Convert amperes_f to double.
+ */
+double A_f_to_d(amperes_f amperes);
+
+/**
+ * Convert amperes_f to float.
+ */
+float A_f_to_f(amperes_f amperes);
+
+/**
+ * Convert amperes_f to int.
+ */
+int A_f_to_i(amperes_f amperes);
+
+/**
+ * Convert amperes_f to int16_t.
+ */
+int16_t A_f_to_i16(amperes_f amperes);
+
+/**
+ * Convert amperes_f to int32_t.
+ */
+int32_t A_f_to_i32(amperes_f amperes);
+
+/**
+ * Convert amperes_f to int64_t.
+ */
+int64_t A_f_to_i64(amperes_f amperes);
+
+/**
+ * Convert amperes_f to int8_t.
+ */
+int8_t A_f_to_i8(amperes_f amperes);
+
+/**
+ * Convert amperes_f to microamperes_d.
+ */
+microamperes_d A_f_to_uA_d(amperes_f amperes);
+
+/**
+ * Convert amperes_f to microamperes_f.
+ */
+microamperes_f A_f_to_uA_f(amperes_f amperes);
+
+/**
+ * Convert amperes_f to microamperes_t.
+ */
+microamperes_t A_f_to_uA_t(amperes_f amperes);
+
+/**
+ * Convert amperes_f to microamperes_u.
+ */
+microamperes_u A_f_to_uA_u(amperes_f amperes);
+
+/**
+ * Convert amperes_f to milliamperes_d.
+ */
+milliamperes_d A_f_to_mA_d(amperes_f amperes);
+
+/**
+ * Convert amperes_f to milliamperes_f.
+ */
+milliamperes_f A_f_to_mA_f(amperes_f amperes);
+
+/**
+ * Convert amperes_f to milliamperes_t.
+ */
+milliamperes_t A_f_to_mA_t(amperes_f amperes);
+
+/**
+ * Convert amperes_f to milliamperes_u.
+ */
+milliamperes_u A_f_to_mA_u(amperes_f amperes);
+
+/**
+ * Convert amperes_f to uint16_t.
+ */
+uint16_t A_f_to_u16(amperes_f amperes);
+
+/**
+ * Convert amperes_f to uint32_t.
+ */
+uint32_t A_f_to_u32(amperes_f amperes);
+
+/**
+ * Convert amperes_f to uint64_t.
+ */
+uint64_t A_f_to_u64(amperes_f amperes);
+
+/**
+ * Convert amperes_f to uint8_t.
+ */
+uint8_t A_f_to_u8(amperes_f amperes);
+
+/**
+ * Convert amperes_f to unsigned int.
+ */
+unsigned int A_f_to_u(amperes_f amperes);
+
+/**
+ * Convert amperes_t to amperes_d.
+ */
+amperes_d A_t_to_A_d(amperes_t amperes);
+
+/**
+ * Convert amperes_t to amperes_f.
+ */
+amperes_f A_t_to_A_f(amperes_t amperes);
+
+/**
+ * Convert amperes_t to amperes_u.
+ */
+amperes_u A_t_to_A_u(amperes_t amperes);
+
+/**
+ * Convert amperes_t to double.
+ */
+double A_t_to_d(amperes_t amperes);
+
+/**
+ * Convert amperes_t to float.
+ */
+float A_t_to_f(amperes_t amperes);
+
+/**
+ * Convert amperes_t to int.
+ */
+int A_t_to_i(amperes_t amperes);
+
+/**
+ * Convert amperes_t to int16_t.
+ */
+int16_t A_t_to_i16(amperes_t amperes);
+
+/**
+ * Convert amperes_t to int32_t.
+ */
+int32_t A_t_to_i32(amperes_t amperes);
+
+/**
+ * Convert amperes_t to int64_t.
+ */
+int64_t A_t_to_i64(amperes_t amperes);
+
+/**
+ * Convert amperes_t to int8_t.
+ */
+int8_t A_t_to_i8(amperes_t amperes);
+
+/**
+ * Convert amperes_t to microamperes_d.
+ */
+microamperes_d A_t_to_uA_d(amperes_t amperes);
+
+/**
+ * Convert amperes_t to microamperes_f.
+ */
+microamperes_f A_t_to_uA_f(amperes_t amperes);
+
+/**
+ * Convert amperes_t to microamperes_t.
+ */
+microamperes_t A_t_to_uA_t(amperes_t amperes);
+
+/**
+ * Convert amperes_t to microamperes_u.
+ */
+microamperes_u A_t_to_uA_u(amperes_t amperes);
+
+/**
+ * Convert amperes_t to milliamperes_d.
+ */
+milliamperes_d A_t_to_mA_d(amperes_t amperes);
+
+/**
+ * Convert amperes_t to milliamperes_f.
+ */
+milliamperes_f A_t_to_mA_f(amperes_t amperes);
+
+/**
+ * Convert amperes_t to milliamperes_t.
+ */
+milliamperes_t A_t_to_mA_t(amperes_t amperes);
+
+/**
+ * Convert amperes_t to milliamperes_u.
+ */
+milliamperes_u A_t_to_mA_u(amperes_t amperes);
+
+/**
+ * Convert amperes_t to uint16_t.
+ */
+uint16_t A_t_to_u16(amperes_t amperes);
+
+/**
+ * Convert amperes_t to uint32_t.
+ */
+uint32_t A_t_to_u32(amperes_t amperes);
+
+/**
+ * Convert amperes_t to uint64_t.
+ */
+uint64_t A_t_to_u64(amperes_t amperes);
+
+/**
+ * Convert amperes_t to uint8_t.
+ */
+uint8_t A_t_to_u8(amperes_t amperes);
+
+/**
+ * Convert amperes_t to unsigned int.
+ */
+unsigned int A_t_to_u(amperes_t amperes);
+
+/**
+ * Convert amperes_u to amperes_d.
+ */
+amperes_d A_u_to_A_d(amperes_u amperes);
+
+/**
+ * Convert amperes_u to amperes_f.
+ */
+amperes_f A_u_to_A_f(amperes_u amperes);
+
+/**
+ * Convert amperes_u to amperes_t.
+ */
+amperes_t A_u_to_A_t(amperes_u amperes);
+
+/**
+ * Convert amperes_u to double.
+ */
+double A_u_to_d(amperes_u amperes);
+
+/**
+ * Convert amperes_u to float.
+ */
+float A_u_to_f(amperes_u amperes);
+
+/**
+ * Convert amperes_u to int.
+ */
+int A_u_to_i(amperes_u amperes);
+
+/**
+ * Convert amperes_u to int16_t.
+ */
+int16_t A_u_to_i16(amperes_u amperes);
+
+/**
+ * Convert amperes_u to int32_t.
+ */
+int32_t A_u_to_i32(amperes_u amperes);
+
+/**
+ * Convert amperes_u to int64_t.
+ */
+int64_t A_u_to_i64(amperes_u amperes);
+
+/**
+ * Convert amperes_u to int8_t.
+ */
+int8_t A_u_to_i8(amperes_u amperes);
+
+/**
+ * Convert amperes_u to microamperes_d.
+ */
+microamperes_d A_u_to_uA_d(amperes_u amperes);
+
+/**
+ * Convert amperes_u to microamperes_f.
+ */
+microamperes_f A_u_to_uA_f(amperes_u amperes);
+
+/**
+ * Convert amperes_u to microamperes_t.
+ */
+microamperes_t A_u_to_uA_t(amperes_u amperes);
+
+/**
+ * Convert amperes_u to microamperes_u.
+ */
+microamperes_u A_u_to_uA_u(amperes_u amperes);
+
+/**
+ * Convert amperes_u to milliamperes_d.
+ */
+milliamperes_d A_u_to_mA_d(amperes_u amperes);
+
+/**
+ * Convert amperes_u to milliamperes_f.
+ */
+milliamperes_f A_u_to_mA_f(amperes_u amperes);
+
+/**
+ * Convert amperes_u to milliamperes_t.
+ */
+milliamperes_t A_u_to_mA_t(amperes_u amperes);
+
+/**
+ * Convert amperes_u to milliamperes_u.
+ */
+milliamperes_u A_u_to_mA_u(amperes_u amperes);
+
+/**
+ * Convert amperes_u to uint16_t.
+ */
+uint16_t A_u_to_u16(amperes_u amperes);
+
+/**
+ * Convert amperes_u to uint32_t.
+ */
+uint32_t A_u_to_u32(amperes_u amperes);
+
+/**
+ * Convert amperes_u to uint64_t.
+ */
+uint64_t A_u_to_u64(amperes_u amperes);
+
+/**
+ * Convert amperes_u to uint8_t.
+ */
+uint8_t A_u_to_u8(amperes_u amperes);
+
+/**
+ * Convert amperes_u to unsigned int.
+ */
+unsigned int A_u_to_u(amperes_u amperes);
+
+/**
+ * Convert double to amperes_d.
+ */
+amperes_d d_to_A_d(double amperes);
+
+/**
+ * Convert double to amperes_f.
+ */
+amperes_f d_to_A_f(double amperes);
+
+/**
+ * Convert double to amperes_t.
+ */
+amperes_t d_to_A_t(double amperes);
+
+/**
+ * Convert double to amperes_u.
+ */
+amperes_u d_to_A_u(double amperes);
+
+/**
+ * Convert double to microamperes_d.
+ */
+microamperes_d d_to_uA_d(double microamperes);
+
+/**
+ * Convert double to microamperes_f.
+ */
+microamperes_f d_to_uA_f(double microamperes);
+
+/**
+ * Convert double to microamperes_t.
+ */
+microamperes_t d_to_uA_t(double microamperes);
+
+/**
+ * Convert double to microamperes_u.
+ */
+microamperes_u d_to_uA_u(double microamperes);
+
+/**
+ * Convert double to milliamperes_d.
+ */
+milliamperes_d d_to_mA_d(double milliamperes);
+
+/**
+ * Convert double to milliamperes_f.
+ */
+milliamperes_f d_to_mA_f(double milliamperes);
+
+/**
+ * Convert double to milliamperes_t.
+ */
+milliamperes_t d_to_mA_t(double milliamperes);
+
+/**
+ * Convert double to milliamperes_u.
+ */
+milliamperes_u d_to_mA_u(double milliamperes);
+
+/**
+ * Convert float to amperes_d.
+ */
+amperes_d f_to_A_d(float amperes);
+
+/**
+ * Convert float to amperes_f.
+ */
+amperes_f f_to_A_f(float amperes);
+
+/**
+ * Convert float to amperes_t.
+ */
+amperes_t f_to_A_t(float amperes);
+
+/**
+ * Convert float to amperes_u.
+ */
+amperes_u f_to_A_u(float amperes);
+
+/**
+ * Convert float to microamperes_d.
+ */
+microamperes_d f_to_uA_d(float microamperes);
+
+/**
+ * Convert float to microamperes_f.
+ */
+microamperes_f f_to_uA_f(float microamperes);
+
+/**
+ * Convert float to microamperes_t.
+ */
+microamperes_t f_to_uA_t(float microamperes);
+
+/**
+ * Convert float to microamperes_u.
+ */
+microamperes_u f_to_uA_u(float microamperes);
+
+/**
+ * Convert float to milliamperes_d.
+ */
+milliamperes_d f_to_mA_d(float milliamperes);
+
+/**
+ * Convert float to milliamperes_f.
+ */
+milliamperes_f f_to_mA_f(float milliamperes);
+
+/**
+ * Convert float to milliamperes_t.
+ */
+milliamperes_t f_to_mA_t(float milliamperes);
+
+/**
+ * Convert float to milliamperes_u.
+ */
+milliamperes_u f_to_mA_u(float milliamperes);
+
+/**
+ * Convert int16_t to amperes_d.
+ */
+amperes_d i16_to_A_d(int16_t amperes);
+
+/**
+ * Convert int16_t to amperes_f.
+ */
+amperes_f i16_to_A_f(int16_t amperes);
+
+/**
+ * Convert int16_t to amperes_t.
+ */
+amperes_t i16_to_A_t(int16_t amperes);
+
+/**
+ * Convert int16_t to amperes_u.
+ */
+amperes_u i16_to_A_u(int16_t amperes);
+
+/**
+ * Convert int16_t to microamperes_d.
+ */
+microamperes_d i16_to_uA_d(int16_t microamperes);
+
+/**
+ * Convert int16_t to microamperes_f.
+ */
+microamperes_f i16_to_uA_f(int16_t microamperes);
+
+/**
+ * Convert int16_t to microamperes_t.
+ */
+microamperes_t i16_to_uA_t(int16_t microamperes);
+
+/**
+ * Convert int16_t to microamperes_u.
+ */
+microamperes_u i16_to_uA_u(int16_t microamperes);
+
+/**
+ * Convert int16_t to milliamperes_d.
+ */
+milliamperes_d i16_to_mA_d(int16_t milliamperes);
+
+/**
+ * Convert int16_t to milliamperes_f.
+ */
+milliamperes_f i16_to_mA_f(int16_t milliamperes);
+
+/**
+ * Convert int16_t to milliamperes_t.
+ */
+milliamperes_t i16_to_mA_t(int16_t milliamperes);
+
+/**
+ * Convert int16_t to milliamperes_u.
+ */
+milliamperes_u i16_to_mA_u(int16_t milliamperes);
+
+/**
+ * Convert int32_t to amperes_d.
+ */
+amperes_d i32_to_A_d(int32_t amperes);
+
+/**
+ * Convert int32_t to amperes_f.
+ */
+amperes_f i32_to_A_f(int32_t amperes);
+
+/**
+ * Convert int32_t to amperes_t.
+ */
+amperes_t i32_to_A_t(int32_t amperes);
+
+/**
+ * Convert int32_t to amperes_u.
+ */
+amperes_u i32_to_A_u(int32_t amperes);
+
+/**
+ * Convert int32_t to microamperes_d.
+ */
+microamperes_d i32_to_uA_d(int32_t microamperes);
+
+/**
+ * Convert int32_t to microamperes_f.
+ */
+microamperes_f i32_to_uA_f(int32_t microamperes);
+
+/**
+ * Convert int32_t to microamperes_t.
+ */
+microamperes_t i32_to_uA_t(int32_t microamperes);
+
+/**
+ * Convert int32_t to microamperes_u.
+ */
+microamperes_u i32_to_uA_u(int32_t microamperes);
+
+/**
+ * Convert int32_t to milliamperes_d.
+ */
+milliamperes_d i32_to_mA_d(int32_t milliamperes);
+
+/**
+ * Convert int32_t to milliamperes_f.
+ */
+milliamperes_f i32_to_mA_f(int32_t milliamperes);
+
+/**
+ * Convert int32_t to milliamperes_t.
+ */
+milliamperes_t i32_to_mA_t(int32_t milliamperes);
+
+/**
+ * Convert int32_t to milliamperes_u.
+ */
+milliamperes_u i32_to_mA_u(int32_t milliamperes);
+
+/**
+ * Convert int64_t to amperes_d.
+ */
+amperes_d i64_to_A_d(int64_t amperes);
+
+/**
+ * Convert int64_t to amperes_f.
+ */
+amperes_f i64_to_A_f(int64_t amperes);
+
+/**
+ * Convert int64_t to amperes_t.
+ */
+amperes_t i64_to_A_t(int64_t amperes);
+
+/**
+ * Convert int64_t to amperes_u.
+ */
+amperes_u i64_to_A_u(int64_t amperes);
+
+/**
+ * Convert int64_t to microamperes_d.
+ */
+microamperes_d i64_to_uA_d(int64_t microamperes);
+
+/**
+ * Convert int64_t to microamperes_f.
+ */
+microamperes_f i64_to_uA_f(int64_t microamperes);
+
+/**
+ * Convert int64_t to microamperes_t.
+ */
+microamperes_t i64_to_uA_t(int64_t microamperes);
+
+/**
+ * Convert int64_t to microamperes_u.
+ */
+microamperes_u i64_to_uA_u(int64_t microamperes);
+
+/**
+ * Convert int64_t to milliamperes_d.
+ */
+milliamperes_d i64_to_mA_d(int64_t milliamperes);
+
+/**
+ * Convert int64_t to milliamperes_f.
+ */
+milliamperes_f i64_to_mA_f(int64_t milliamperes);
+
+/**
+ * Convert int64_t to milliamperes_t.
+ */
+milliamperes_t i64_to_mA_t(int64_t milliamperes);
+
+/**
+ * Convert int64_t to milliamperes_u.
+ */
+milliamperes_u i64_to_mA_u(int64_t milliamperes);
+
+/**
+ * Convert int8_t to amperes_d.
+ */
+amperes_d i8_to_A_d(int8_t amperes);
+
+/**
+ * Convert int8_t to amperes_f.
+ */
+amperes_f i8_to_A_f(int8_t amperes);
+
+/**
+ * Convert int8_t to amperes_t.
+ */
+amperes_t i8_to_A_t(int8_t amperes);
+
+/**
+ * Convert int8_t to amperes_u.
+ */
+amperes_u i8_to_A_u(int8_t amperes);
+
+/**
+ * Convert int8_t to microamperes_d.
+ */
+microamperes_d i8_to_uA_d(int8_t microamperes);
+
+/**
+ * Convert int8_t to microamperes_f.
+ */
+microamperes_f i8_to_uA_f(int8_t microamperes);
+
+/**
+ * Convert int8_t to microamperes_t.
+ */
+microamperes_t i8_to_uA_t(int8_t microamperes);
+
+/**
+ * Convert int8_t to microamperes_u.
+ */
+microamperes_u i8_to_uA_u(int8_t microamperes);
+
+/**
+ * Convert int8_t to milliamperes_d.
+ */
+milliamperes_d i8_to_mA_d(int8_t milliamperes);
+
+/**
+ * Convert int8_t to milliamperes_f.
+ */
+milliamperes_f i8_to_mA_f(int8_t milliamperes);
+
+/**
+ * Convert int8_t to milliamperes_t.
+ */
+milliamperes_t i8_to_mA_t(int8_t milliamperes);
+
+/**
+ * Convert int8_t to milliamperes_u.
+ */
+milliamperes_u i8_to_mA_u(int8_t milliamperes);
+
+/**
+ * Convert int to amperes_d.
+ */
+amperes_d i_to_A_d(int amperes);
+
+/**
+ * Convert int to amperes_f.
+ */
+amperes_f i_to_A_f(int amperes);
+
+/**
+ * Convert int to amperes_t.
+ */
+amperes_t i_to_A_t(int amperes);
+
+/**
+ * Convert int to amperes_u.
+ */
+amperes_u i_to_A_u(int amperes);
+
+/**
+ * Convert int to microamperes_d.
+ */
+microamperes_d i_to_uA_d(int microamperes);
+
+/**
+ * Convert int to microamperes_f.
+ */
+microamperes_f i_to_uA_f(int microamperes);
+
+/**
+ * Convert int to microamperes_t.
+ */
+microamperes_t i_to_uA_t(int microamperes);
+
+/**
+ * Convert int to microamperes_u.
+ */
+microamperes_u i_to_uA_u(int microamperes);
+
+/**
+ * Convert int to milliamperes_d.
+ */
+milliamperes_d i_to_mA_d(int milliamperes);
+
+/**
+ * Convert int to milliamperes_f.
+ */
+milliamperes_f i_to_mA_f(int milliamperes);
+
+/**
+ * Convert int to milliamperes_t.
+ */
+milliamperes_t i_to_mA_t(int milliamperes);
+
+/**
+ * Convert int to milliamperes_u.
+ */
+milliamperes_u i_to_mA_u(int milliamperes);
+
+/**
+ * Convert microamperes_d to amperes_d.
+ */
+amperes_d uA_d_to_A_d(microamperes_d microamperes);
+
+/**
+ * Convert microamperes_d to amperes_f.
+ */
+amperes_f uA_d_to_A_f(microamperes_d microamperes);
+
+/**
+ * Convert microamperes_d to amperes_t.
+ */
+amperes_t uA_d_to_A_t(microamperes_d microamperes);
+
+/**
+ * Convert microamperes_d to amperes_u.
+ */
+amperes_u uA_d_to_A_u(microamperes_d microamperes);
+
+/**
+ * Convert microamperes_d to double.
+ */
+double uA_d_to_d(microamperes_d microamperes);
+
+/**
+ * Convert microamperes_d to float.
+ */
+float uA_d_to_f(microamperes_d microamperes);
+
+/**
+ * Convert microamperes_d to int.
+ */
+int uA_d_to_i(microamperes_d microamperes);
+
+/**
+ * Convert microamperes_d to int16_t.
+ */
+int16_t uA_d_to_i16(microamperes_d microamperes);
+
+/**
+ * Convert microamperes_d to int32_t.
+ */
+int32_t uA_d_to_i32(microamperes_d microamperes);
+
+/**
+ * Convert microamperes_d to int64_t.
+ */
+int64_t uA_d_to_i64(microamperes_d microamperes);
+
+/**
+ * Convert microamperes_d to int8_t.
+ */
+int8_t uA_d_to_i8(microamperes_d microamperes);
+
+/**
+ * Convert microamperes_d to microamperes_f.
+ */
+microamperes_f uA_d_to_uA_f(microamperes_d microamperes);
+
+/**
+ * Convert microamperes_d to microamperes_t.
+ */
+microamperes_t uA_d_to_uA_t(microamperes_d microamperes);
+
+/**
+ * Convert microamperes_d to microamperes_u.
+ */
+microamperes_u uA_d_to_uA_u(microamperes_d microamperes);
+
+/**
+ * Convert microamperes_d to milliamperes_d.
+ */
+milliamperes_d uA_d_to_mA_d(microamperes_d microamperes);
+
+/**
+ * Convert microamperes_d to milliamperes_f.
+ */
+milliamperes_f uA_d_to_mA_f(microamperes_d microamperes);
+
+/**
+ * Convert microamperes_d to milliamperes_t.
+ */
+milliamperes_t uA_d_to_mA_t(microamperes_d microamperes);
+
+/**
+ * Convert microamperes_d to milliamperes_u.
+ */
+milliamperes_u uA_d_to_mA_u(microamperes_d microamperes);
+
+/**
+ * Convert microamperes_d to uint16_t.
+ */
+uint16_t uA_d_to_u16(microamperes_d microamperes);
+
+/**
+ * Convert microamperes_d to uint32_t.
+ */
+uint32_t uA_d_to_u32(microamperes_d microamperes);
+
+/**
+ * Convert microamperes_d to uint64_t.
+ */
+uint64_t uA_d_to_u64(microamperes_d microamperes);
+
+/**
+ * Convert microamperes_d to uint8_t.
+ */
+uint8_t uA_d_to_u8(microamperes_d microamperes);
+
+/**
+ * Convert microamperes_d to unsigned int.
+ */
+unsigned int uA_d_to_u(microamperes_d microamperes);
+
+/**
+ * Convert microamperes_f to amperes_d.
+ */
+amperes_d uA_f_to_A_d(microamperes_f microamperes);
+
+/**
+ * Convert microamperes_f to amperes_f.
+ */
+amperes_f uA_f_to_A_f(microamperes_f microamperes);
+
+/**
+ * Convert microamperes_f to amperes_t.
+ */
+amperes_t uA_f_to_A_t(microamperes_f microamperes);
+
+/**
+ * Convert microamperes_f to amperes_u.
+ */
+amperes_u uA_f_to_A_u(microamperes_f microamperes);
+
+/**
+ * Convert microamperes_f to double.
+ */
+double uA_f_to_d(microamperes_f microamperes);
+
+/**
+ * Convert microamperes_f to float.
+ */
+float uA_f_to_f(microamperes_f microamperes);
+
+/**
+ * Convert microamperes_f to int.
+ */
+int uA_f_to_i(microamperes_f microamperes);
+
+/**
+ * Convert microamperes_f to int16_t.
+ */
+int16_t uA_f_to_i16(microamperes_f microamperes);
+
+/**
+ * Convert microamperes_f to int32_t.
+ */
+int32_t uA_f_to_i32(microamperes_f microamperes);
+
+/**
+ * Convert microamperes_f to int64_t.
+ */
+int64_t uA_f_to_i64(microamperes_f microamperes);
+
+/**
+ * Convert microamperes_f to int8_t.
+ */
+int8_t uA_f_to_i8(microamperes_f microamperes);
+
+/**
+ * Convert microamperes_f to microamperes_d.
+ */
+microamperes_d uA_f_to_uA_d(microamperes_f microamperes);
+
+/**
+ * Convert microamperes_f to microamperes_t.
+ */
+microamperes_t uA_f_to_uA_t(microamperes_f microamperes);
+
+/**
+ * Convert microamperes_f to microamperes_u.
+ */
+microamperes_u uA_f_to_uA_u(microamperes_f microamperes);
+
+/**
+ * Convert microamperes_f to milliamperes_d.
+ */
+milliamperes_d uA_f_to_mA_d(microamperes_f microamperes);
+
+/**
+ * Convert microamperes_f to milliamperes_f.
+ */
+milliamperes_f uA_f_to_mA_f(microamperes_f microamperes);
+
+/**
+ * Convert microamperes_f to milliamperes_t.
+ */
+milliamperes_t uA_f_to_mA_t(microamperes_f microamperes);
+
+/**
+ * Convert microamperes_f to milliamperes_u.
+ */
+milliamperes_u uA_f_to_mA_u(microamperes_f microamperes);
+
+/**
+ * Convert microamperes_f to uint16_t.
+ */
+uint16_t uA_f_to_u16(microamperes_f microamperes);
+
+/**
+ * Convert microamperes_f to uint32_t.
+ */
+uint32_t uA_f_to_u32(microamperes_f microamperes);
+
+/**
+ * Convert microamperes_f to uint64_t.
+ */
+uint64_t uA_f_to_u64(microamperes_f microamperes);
+
+/**
+ * Convert microamperes_f to uint8_t.
+ */
+uint8_t uA_f_to_u8(microamperes_f microamperes);
+
+/**
+ * Convert microamperes_f to unsigned int.
+ */
+unsigned int uA_f_to_u(microamperes_f microamperes);
+
+/**
+ * Convert microamperes_t to amperes_d.
+ */
+amperes_d uA_t_to_A_d(microamperes_t microamperes);
+
+/**
+ * Convert microamperes_t to amperes_f.
+ */
+amperes_f uA_t_to_A_f(microamperes_t microamperes);
+
+/**
+ * Convert microamperes_t to amperes_t.
+ */
+amperes_t uA_t_to_A_t(microamperes_t microamperes);
+
+/**
+ * Convert microamperes_t to amperes_u.
+ */
+amperes_u uA_t_to_A_u(microamperes_t microamperes);
+
+/**
+ * Convert microamperes_t to double.
+ */
+double uA_t_to_d(microamperes_t microamperes);
+
+/**
+ * Convert microamperes_t to float.
+ */
+float uA_t_to_f(microamperes_t microamperes);
+
+/**
+ * Convert microamperes_t to int.
+ */
+int uA_t_to_i(microamperes_t microamperes);
+
+/**
+ * Convert microamperes_t to int16_t.
+ */
+int16_t uA_t_to_i16(microamperes_t microamperes);
+
+/**
+ * Convert microamperes_t to int32_t.
+ */
+int32_t uA_t_to_i32(microamperes_t microamperes);
+
+/**
+ * Convert microamperes_t to int64_t.
+ */
+int64_t uA_t_to_i64(microamperes_t microamperes);
+
+/**
+ * Convert microamperes_t to int8_t.
+ */
+int8_t uA_t_to_i8(microamperes_t microamperes);
+
+/**
+ * Convert microamperes_t to microamperes_d.
+ */
+microamperes_d uA_t_to_uA_d(microamperes_t microamperes);
+
+/**
+ * Convert microamperes_t to microamperes_f.
+ */
+microamperes_f uA_t_to_uA_f(microamperes_t microamperes);
+
+/**
+ * Convert microamperes_t to microamperes_u.
+ */
+microamperes_u uA_t_to_uA_u(microamperes_t microamperes);
+
+/**
+ * Convert microamperes_t to milliamperes_d.
+ */
+milliamperes_d uA_t_to_mA_d(microamperes_t microamperes);
+
+/**
+ * Convert microamperes_t to milliamperes_f.
+ */
+milliamperes_f uA_t_to_mA_f(microamperes_t microamperes);
+
+/**
+ * Convert microamperes_t to milliamperes_t.
+ */
+milliamperes_t uA_t_to_mA_t(microamperes_t microamperes);
+
+/**
+ * Convert microamperes_t to milliamperes_u.
+ */
+milliamperes_u uA_t_to_mA_u(microamperes_t microamperes);
+
+/**
+ * Convert microamperes_t to uint16_t.
+ */
+uint16_t uA_t_to_u16(microamperes_t microamperes);
+
+/**
+ * Convert microamperes_t to uint32_t.
+ */
+uint32_t uA_t_to_u32(microamperes_t microamperes);
+
+/**
+ * Convert microamperes_t to uint64_t.
+ */
+uint64_t uA_t_to_u64(microamperes_t microamperes);
+
+/**
+ * Convert microamperes_t to uint8_t.
+ */
+uint8_t uA_t_to_u8(microamperes_t microamperes);
+
+/**
+ * Convert microamperes_t to unsigned int.
+ */
+unsigned int uA_t_to_u(microamperes_t microamperes);
+
+/**
+ * Convert microamperes_u to amperes_d.
+ */
+amperes_d uA_u_to_A_d(microamperes_u microamperes);
+
+/**
+ * Convert microamperes_u to amperes_f.
+ */
+amperes_f uA_u_to_A_f(microamperes_u microamperes);
+
+/**
+ * Convert microamperes_u to amperes_t.
+ */
+amperes_t uA_u_to_A_t(microamperes_u microamperes);
+
+/**
+ * Convert microamperes_u to amperes_u.
+ */
+amperes_u uA_u_to_A_u(microamperes_u microamperes);
+
+/**
+ * Convert microamperes_u to double.
+ */
+double uA_u_to_d(microamperes_u microamperes);
+
+/**
+ * Convert microamperes_u to float.
+ */
+float uA_u_to_f(microamperes_u microamperes);
+
+/**
+ * Convert microamperes_u to int.
+ */
+int uA_u_to_i(microamperes_u microamperes);
+
+/**
+ * Convert microamperes_u to int16_t.
+ */
+int16_t uA_u_to_i16(microamperes_u microamperes);
+
+/**
+ * Convert microamperes_u to int32_t.
+ */
+int32_t uA_u_to_i32(microamperes_u microamperes);
+
+/**
+ * Convert microamperes_u to int64_t.
+ */
+int64_t uA_u_to_i64(microamperes_u microamperes);
+
+/**
+ * Convert microamperes_u to int8_t.
+ */
+int8_t uA_u_to_i8(microamperes_u microamperes);
+
+/**
+ * Convert microamperes_u to microamperes_d.
+ */
+microamperes_d uA_u_to_uA_d(microamperes_u microamperes);
+
+/**
+ * Convert microamperes_u to microamperes_f.
+ */
+microamperes_f uA_u_to_uA_f(microamperes_u microamperes);
+
+/**
+ * Convert microamperes_u to microamperes_t.
+ */
+microamperes_t uA_u_to_uA_t(microamperes_u microamperes);
+
+/**
+ * Convert microamperes_u to milliamperes_d.
+ */
+milliamperes_d uA_u_to_mA_d(microamperes_u microamperes);
+
+/**
+ * Convert microamperes_u to milliamperes_f.
+ */
+milliamperes_f uA_u_to_mA_f(microamperes_u microamperes);
+
+/**
+ * Convert microamperes_u to milliamperes_t.
+ */
+milliamperes_t uA_u_to_mA_t(microamperes_u microamperes);
+
+/**
+ * Convert microamperes_u to milliamperes_u.
+ */
+milliamperes_u uA_u_to_mA_u(microamperes_u microamperes);
+
+/**
+ * Convert microamperes_u to uint16_t.
+ */
+uint16_t uA_u_to_u16(microamperes_u microamperes);
+
+/**
+ * Convert microamperes_u to uint32_t.
+ */
+uint32_t uA_u_to_u32(microamperes_u microamperes);
+
+/**
+ * Convert microamperes_u to uint64_t.
+ */
+uint64_t uA_u_to_u64(microamperes_u microamperes);
+
+/**
+ * Convert microamperes_u to uint8_t.
+ */
+uint8_t uA_u_to_u8(microamperes_u microamperes);
+
+/**
+ * Convert microamperes_u to unsigned int.
+ */
+unsigned int uA_u_to_u(microamperes_u microamperes);
+
+/**
+ * Convert milliamperes_d to amperes_d.
+ */
+amperes_d mA_d_to_A_d(milliamperes_d milliamperes);
+
+/**
+ * Convert milliamperes_d to amperes_f.
+ */
+amperes_f mA_d_to_A_f(milliamperes_d milliamperes);
+
+/**
+ * Convert milliamperes_d to amperes_t.
+ */
+amperes_t mA_d_to_A_t(milliamperes_d milliamperes);
+
+/**
+ * Convert milliamperes_d to amperes_u.
+ */
+amperes_u mA_d_to_A_u(milliamperes_d milliamperes);
+
+/**
+ * Convert milliamperes_d to double.
+ */
+double mA_d_to_d(milliamperes_d milliamperes);
+
+/**
+ * Convert milliamperes_d to float.
+ */
+float mA_d_to_f(milliamperes_d milliamperes);
+
+/**
+ * Convert milliamperes_d to int.
+ */
+int mA_d_to_i(milliamperes_d milliamperes);
+
+/**
+ * Convert milliamperes_d to int16_t.
+ */
+int16_t mA_d_to_i16(milliamperes_d milliamperes);
+
+/**
+ * Convert milliamperes_d to int32_t.
+ */
+int32_t mA_d_to_i32(milliamperes_d milliamperes);
+
+/**
+ * Convert milliamperes_d to int64_t.
+ */
+int64_t mA_d_to_i64(milliamperes_d milliamperes);
+
+/**
+ * Convert milliamperes_d to int8_t.
+ */
+int8_t mA_d_to_i8(milliamperes_d milliamperes);
+
+/**
+ * Convert milliamperes_d to microamperes_d.
+ */
+microamperes_d mA_d_to_uA_d(milliamperes_d milliamperes);
+
+/**
+ * Convert milliamperes_d to microamperes_f.
+ */
+microamperes_f mA_d_to_uA_f(milliamperes_d milliamperes);
+
+/**
+ * Convert milliamperes_d to microamperes_t.
+ */
+microamperes_t mA_d_to_uA_t(milliamperes_d milliamperes);
+
+/**
+ * Convert milliamperes_d to microamperes_u.
+ */
+microamperes_u mA_d_to_uA_u(milliamperes_d milliamperes);
+
+/**
+ * Convert milliamperes_d to milliamperes_f.
+ */
+milliamperes_f mA_d_to_mA_f(milliamperes_d milliamperes);
+
+/**
+ * Convert milliamperes_d to milliamperes_t.
+ */
+milliamperes_t mA_d_to_mA_t(milliamperes_d milliamperes);
+
+/**
+ * Convert milliamperes_d to milliamperes_u.
+ */
+milliamperes_u mA_d_to_mA_u(milliamperes_d milliamperes);
+
+/**
+ * Convert milliamperes_d to uint16_t.
+ */
+uint16_t mA_d_to_u16(milliamperes_d milliamperes);
+
+/**
+ * Convert milliamperes_d to uint32_t.
+ */
+uint32_t mA_d_to_u32(milliamperes_d milliamperes);
+
+/**
+ * Convert milliamperes_d to uint64_t.
+ */
+uint64_t mA_d_to_u64(milliamperes_d milliamperes);
+
+/**
+ * Convert milliamperes_d to uint8_t.
+ */
+uint8_t mA_d_to_u8(milliamperes_d milliamperes);
+
+/**
+ * Convert milliamperes_d to unsigned int.
+ */
+unsigned int mA_d_to_u(milliamperes_d milliamperes);
+
+/**
+ * Convert milliamperes_f to amperes_d.
+ */
+amperes_d mA_f_to_A_d(milliamperes_f milliamperes);
+
+/**
+ * Convert milliamperes_f to amperes_f.
+ */
+amperes_f mA_f_to_A_f(milliamperes_f milliamperes);
+
+/**
+ * Convert milliamperes_f to amperes_t.
+ */
+amperes_t mA_f_to_A_t(milliamperes_f milliamperes);
+
+/**
+ * Convert milliamperes_f to amperes_u.
+ */
+amperes_u mA_f_to_A_u(milliamperes_f milliamperes);
+
+/**
+ * Convert milliamperes_f to double.
+ */
+double mA_f_to_d(milliamperes_f milliamperes);
+
+/**
+ * Convert milliamperes_f to float.
+ */
+float mA_f_to_f(milliamperes_f milliamperes);
+
+/**
+ * Convert milliamperes_f to int.
+ */
+int mA_f_to_i(milliamperes_f milliamperes);
+
+/**
+ * Convert milliamperes_f to int16_t.
+ */
+int16_t mA_f_to_i16(milliamperes_f milliamperes);
+
+/**
+ * Convert milliamperes_f to int32_t.
+ */
+int32_t mA_f_to_i32(milliamperes_f milliamperes);
+
+/**
+ * Convert milliamperes_f to int64_t.
+ */
+int64_t mA_f_to_i64(milliamperes_f milliamperes);
+
+/**
+ * Convert milliamperes_f to int8_t.
+ */
+int8_t mA_f_to_i8(milliamperes_f milliamperes);
+
+/**
+ * Convert milliamperes_f to microamperes_d.
+ */
+microamperes_d mA_f_to_uA_d(milliamperes_f milliamperes);
+
+/**
+ * Convert milliamperes_f to microamperes_f.
+ */
+microamperes_f mA_f_to_uA_f(milliamperes_f milliamperes);
+
+/**
+ * Convert milliamperes_f to microamperes_t.
+ */
+microamperes_t mA_f_to_uA_t(milliamperes_f milliamperes);
+
+/**
+ * Convert milliamperes_f to microamperes_u.
+ */
+microamperes_u mA_f_to_uA_u(milliamperes_f milliamperes);
+
+/**
+ * Convert milliamperes_f to milliamperes_d.
+ */
+milliamperes_d mA_f_to_mA_d(milliamperes_f milliamperes);
+
+/**
+ * Convert milliamperes_f to milliamperes_t.
+ */
+milliamperes_t mA_f_to_mA_t(milliamperes_f milliamperes);
+
+/**
+ * Convert milliamperes_f to milliamperes_u.
+ */
+milliamperes_u mA_f_to_mA_u(milliamperes_f milliamperes);
+
+/**
+ * Convert milliamperes_f to uint16_t.
+ */
+uint16_t mA_f_to_u16(milliamperes_f milliamperes);
+
+/**
+ * Convert milliamperes_f to uint32_t.
+ */
+uint32_t mA_f_to_u32(milliamperes_f milliamperes);
+
+/**
+ * Convert milliamperes_f to uint64_t.
+ */
+uint64_t mA_f_to_u64(milliamperes_f milliamperes);
+
+/**
+ * Convert milliamperes_f to uint8_t.
+ */
+uint8_t mA_f_to_u8(milliamperes_f milliamperes);
+
+/**
+ * Convert milliamperes_f to unsigned int.
+ */
+unsigned int mA_f_to_u(milliamperes_f milliamperes);
+
+/**
+ * Convert milliamperes_t to amperes_d.
+ */
+amperes_d mA_t_to_A_d(milliamperes_t milliamperes);
+
+/**
+ * Convert milliamperes_t to amperes_f.
+ */
+amperes_f mA_t_to_A_f(milliamperes_t milliamperes);
+
+/**
+ * Convert milliamperes_t to amperes_t.
+ */
+amperes_t mA_t_to_A_t(milliamperes_t milliamperes);
+
+/**
+ * Convert milliamperes_t to amperes_u.
+ */
+amperes_u mA_t_to_A_u(milliamperes_t milliamperes);
+
+/**
+ * Convert milliamperes_t to double.
+ */
+double mA_t_to_d(milliamperes_t milliamperes);
+
+/**
+ * Convert milliamperes_t to float.
+ */
+float mA_t_to_f(milliamperes_t milliamperes);
+
+/**
+ * Convert milliamperes_t to int.
+ */
+int mA_t_to_i(milliamperes_t milliamperes);
+
+/**
+ * Convert milliamperes_t to int16_t.
+ */
+int16_t mA_t_to_i16(milliamperes_t milliamperes);
+
+/**
+ * Convert milliamperes_t to int32_t.
+ */
+int32_t mA_t_to_i32(milliamperes_t milliamperes);
+
+/**
+ * Convert milliamperes_t to int64_t.
+ */
+int64_t mA_t_to_i64(milliamperes_t milliamperes);
+
+/**
+ * Convert milliamperes_t to int8_t.
+ */
+int8_t mA_t_to_i8(milliamperes_t milliamperes);
+
+/**
+ * Convert milliamperes_t to microamperes_d.
+ */
+microamperes_d mA_t_to_uA_d(milliamperes_t milliamperes);
+
+/**
+ * Convert milliamperes_t to microamperes_f.
+ */
+microamperes_f mA_t_to_uA_f(milliamperes_t milliamperes);
+
+/**
+ * Convert milliamperes_t to microamperes_t.
+ */
+microamperes_t mA_t_to_uA_t(milliamperes_t milliamperes);
+
+/**
+ * Convert milliamperes_t to microamperes_u.
+ */
+microamperes_u mA_t_to_uA_u(milliamperes_t milliamperes);
+
+/**
+ * Convert milliamperes_t to milliamperes_d.
+ */
+milliamperes_d mA_t_to_mA_d(milliamperes_t milliamperes);
+
+/**
+ * Convert milliamperes_t to milliamperes_f.
+ */
+milliamperes_f mA_t_to_mA_f(milliamperes_t milliamperes);
+
+/**
+ * Convert milliamperes_t to milliamperes_u.
+ */
+milliamperes_u mA_t_to_mA_u(milliamperes_t milliamperes);
+
+/**
+ * Convert milliamperes_t to uint16_t.
+ */
+uint16_t mA_t_to_u16(milliamperes_t milliamperes);
+
+/**
+ * Convert milliamperes_t to uint32_t.
+ */
+uint32_t mA_t_to_u32(milliamperes_t milliamperes);
+
+/**
+ * Convert milliamperes_t to uint64_t.
+ */
+uint64_t mA_t_to_u64(milliamperes_t milliamperes);
+
+/**
+ * Convert milliamperes_t to uint8_t.
+ */
+uint8_t mA_t_to_u8(milliamperes_t milliamperes);
+
+/**
+ * Convert milliamperes_t to unsigned int.
+ */
+unsigned int mA_t_to_u(milliamperes_t milliamperes);
+
+/**
+ * Convert milliamperes_u to amperes_d.
+ */
+amperes_d mA_u_to_A_d(milliamperes_u milliamperes);
+
+/**
+ * Convert milliamperes_u to amperes_f.
+ */
+amperes_f mA_u_to_A_f(milliamperes_u milliamperes);
+
+/**
+ * Convert milliamperes_u to amperes_t.
+ */
+amperes_t mA_u_to_A_t(milliamperes_u milliamperes);
+
+/**
+ * Convert milliamperes_u to amperes_u.
+ */
+amperes_u mA_u_to_A_u(milliamperes_u milliamperes);
+
+/**
+ * Convert milliamperes_u to double.
+ */
+double mA_u_to_d(milliamperes_u milliamperes);
+
+/**
+ * Convert milliamperes_u to float.
+ */
+float mA_u_to_f(milliamperes_u milliamperes);
+
+/**
+ * Convert milliamperes_u to int.
+ */
+int mA_u_to_i(milliamperes_u milliamperes);
+
+/**
+ * Convert milliamperes_u to int16_t.
+ */
+int16_t mA_u_to_i16(milliamperes_u milliamperes);
+
+/**
+ * Convert milliamperes_u to int32_t.
+ */
+int32_t mA_u_to_i32(milliamperes_u milliamperes);
+
+/**
+ * Convert milliamperes_u to int64_t.
+ */
+int64_t mA_u_to_i64(milliamperes_u milliamperes);
+
+/**
+ * Convert milliamperes_u to int8_t.
+ */
+int8_t mA_u_to_i8(milliamperes_u milliamperes);
+
+/**
+ * Convert milliamperes_u to microamperes_d.
+ */
+microamperes_d mA_u_to_uA_d(milliamperes_u milliamperes);
+
+/**
+ * Convert milliamperes_u to microamperes_f.
+ */
+microamperes_f mA_u_to_uA_f(milliamperes_u milliamperes);
+
+/**
+ * Convert milliamperes_u to microamperes_t.
+ */
+microamperes_t mA_u_to_uA_t(milliamperes_u milliamperes);
+
+/**
+ * Convert milliamperes_u to microamperes_u.
+ */
+microamperes_u mA_u_to_uA_u(milliamperes_u milliamperes);
+
+/**
+ * Convert milliamperes_u to milliamperes_d.
+ */
+milliamperes_d mA_u_to_mA_d(milliamperes_u milliamperes);
+
+/**
+ * Convert milliamperes_u to milliamperes_f.
+ */
+milliamperes_f mA_u_to_mA_f(milliamperes_u milliamperes);
+
+/**
+ * Convert milliamperes_u to milliamperes_t.
+ */
+milliamperes_t mA_u_to_mA_t(milliamperes_u milliamperes);
+
+/**
+ * Convert milliamperes_u to uint16_t.
+ */
+uint16_t mA_u_to_u16(milliamperes_u milliamperes);
+
+/**
+ * Convert milliamperes_u to uint32_t.
+ */
+uint32_t mA_u_to_u32(milliamperes_u milliamperes);
+
+/**
+ * Convert milliamperes_u to uint64_t.
+ */
+uint64_t mA_u_to_u64(milliamperes_u milliamperes);
+
+/**
+ * Convert milliamperes_u to uint8_t.
+ */
+uint8_t mA_u_to_u8(milliamperes_u milliamperes);
+
+/**
+ * Convert milliamperes_u to unsigned int.
+ */
+unsigned int mA_u_to_u(milliamperes_u milliamperes);
+
+/**
+ * Convert uint16_t to amperes_d.
+ */
+amperes_d u16_to_A_d(uint16_t amperes);
+
+/**
+ * Convert uint16_t to amperes_f.
+ */
+amperes_f u16_to_A_f(uint16_t amperes);
+
+/**
+ * Convert uint16_t to amperes_t.
+ */
+amperes_t u16_to_A_t(uint16_t amperes);
+
+/**
+ * Convert uint16_t to amperes_u.
+ */
+amperes_u u16_to_A_u(uint16_t amperes);
+
+/**
+ * Convert uint16_t to microamperes_d.
+ */
+microamperes_d u16_to_uA_d(uint16_t microamperes);
+
+/**
+ * Convert uint16_t to microamperes_f.
+ */
+microamperes_f u16_to_uA_f(uint16_t microamperes);
+
+/**
+ * Convert uint16_t to microamperes_t.
+ */
+microamperes_t u16_to_uA_t(uint16_t microamperes);
+
+/**
+ * Convert uint16_t to microamperes_u.
+ */
+microamperes_u u16_to_uA_u(uint16_t microamperes);
+
+/**
+ * Convert uint16_t to milliamperes_d.
+ */
+milliamperes_d u16_to_mA_d(uint16_t milliamperes);
+
+/**
+ * Convert uint16_t to milliamperes_f.
+ */
+milliamperes_f u16_to_mA_f(uint16_t milliamperes);
+
+/**
+ * Convert uint16_t to milliamperes_t.
+ */
+milliamperes_t u16_to_mA_t(uint16_t milliamperes);
+
+/**
+ * Convert uint16_t to milliamperes_u.
+ */
+milliamperes_u u16_to_mA_u(uint16_t milliamperes);
+
+/**
+ * Convert uint32_t to amperes_d.
+ */
+amperes_d u32_to_A_d(uint32_t amperes);
+
+/**
+ * Convert uint32_t to amperes_f.
+ */
+amperes_f u32_to_A_f(uint32_t amperes);
+
+/**
+ * Convert uint32_t to amperes_t.
+ */
+amperes_t u32_to_A_t(uint32_t amperes);
+
+/**
+ * Convert uint32_t to amperes_u.
+ */
+amperes_u u32_to_A_u(uint32_t amperes);
+
+/**
+ * Convert uint32_t to microamperes_d.
+ */
+microamperes_d u32_to_uA_d(uint32_t microamperes);
+
+/**
+ * Convert uint32_t to microamperes_f.
+ */
+microamperes_f u32_to_uA_f(uint32_t microamperes);
+
+/**
+ * Convert uint32_t to microamperes_t.
+ */
+microamperes_t u32_to_uA_t(uint32_t microamperes);
+
+/**
+ * Convert uint32_t to microamperes_u.
+ */
+microamperes_u u32_to_uA_u(uint32_t microamperes);
+
+/**
+ * Convert uint32_t to milliamperes_d.
+ */
+milliamperes_d u32_to_mA_d(uint32_t milliamperes);
+
+/**
+ * Convert uint32_t to milliamperes_f.
+ */
+milliamperes_f u32_to_mA_f(uint32_t milliamperes);
+
+/**
+ * Convert uint32_t to milliamperes_t.
+ */
+milliamperes_t u32_to_mA_t(uint32_t milliamperes);
+
+/**
+ * Convert uint32_t to milliamperes_u.
+ */
+milliamperes_u u32_to_mA_u(uint32_t milliamperes);
+
+/**
+ * Convert uint64_t to amperes_d.
+ */
+amperes_d u64_to_A_d(uint64_t amperes);
+
+/**
+ * Convert uint64_t to amperes_f.
+ */
+amperes_f u64_to_A_f(uint64_t amperes);
+
+/**
+ * Convert uint64_t to amperes_t.
+ */
+amperes_t u64_to_A_t(uint64_t amperes);
+
+/**
+ * Convert uint64_t to amperes_u.
+ */
+amperes_u u64_to_A_u(uint64_t amperes);
+
+/**
+ * Convert uint64_t to microamperes_d.
+ */
+microamperes_d u64_to_uA_d(uint64_t microamperes);
+
+/**
+ * Convert uint64_t to microamperes_f.
+ */
+microamperes_f u64_to_uA_f(uint64_t microamperes);
+
+/**
+ * Convert uint64_t to microamperes_t.
+ */
+microamperes_t u64_to_uA_t(uint64_t microamperes);
+
+/**
+ * Convert uint64_t to microamperes_u.
+ */
+microamperes_u u64_to_uA_u(uint64_t microamperes);
+
+/**
+ * Convert uint64_t to milliamperes_d.
+ */
+milliamperes_d u64_to_mA_d(uint64_t milliamperes);
+
+/**
+ * Convert uint64_t to milliamperes_f.
+ */
+milliamperes_f u64_to_mA_f(uint64_t milliamperes);
+
+/**
+ * Convert uint64_t to milliamperes_t.
+ */
+milliamperes_t u64_to_mA_t(uint64_t milliamperes);
+
+/**
+ * Convert uint64_t to milliamperes_u.
+ */
+milliamperes_u u64_to_mA_u(uint64_t milliamperes);
+
+/**
+ * Convert uint8_t to amperes_d.
+ */
+amperes_d u8_to_A_d(uint8_t amperes);
+
+/**
+ * Convert uint8_t to amperes_f.
+ */
+amperes_f u8_to_A_f(uint8_t amperes);
+
+/**
+ * Convert uint8_t to amperes_t.
+ */
+amperes_t u8_to_A_t(uint8_t amperes);
+
+/**
+ * Convert uint8_t to amperes_u.
+ */
+amperes_u u8_to_A_u(uint8_t amperes);
+
+/**
+ * Convert uint8_t to microamperes_d.
+ */
+microamperes_d u8_to_uA_d(uint8_t microamperes);
+
+/**
+ * Convert uint8_t to microamperes_f.
+ */
+microamperes_f u8_to_uA_f(uint8_t microamperes);
+
+/**
+ * Convert uint8_t to microamperes_t.
+ */
+microamperes_t u8_to_uA_t(uint8_t microamperes);
+
+/**
+ * Convert uint8_t to microamperes_u.
+ */
+microamperes_u u8_to_uA_u(uint8_t microamperes);
+
+/**
+ * Convert uint8_t to milliamperes_d.
+ */
+milliamperes_d u8_to_mA_d(uint8_t milliamperes);
+
+/**
+ * Convert uint8_t to milliamperes_f.
+ */
+milliamperes_f u8_to_mA_f(uint8_t milliamperes);
+
+/**
+ * Convert uint8_t to milliamperes_t.
+ */
+milliamperes_t u8_to_mA_t(uint8_t milliamperes);
+
+/**
+ * Convert uint8_t to milliamperes_u.
+ */
+milliamperes_u u8_to_mA_u(uint8_t milliamperes);
+
+/**
+ * Convert unsigned int to amperes_d.
+ */
+amperes_d u_to_A_d(unsigned int amperes);
+
+/**
+ * Convert unsigned int to amperes_f.
+ */
+amperes_f u_to_A_f(unsigned int amperes);
+
+/**
+ * Convert unsigned int to amperes_t.
+ */
+amperes_t u_to_A_t(unsigned int amperes);
+
+/**
+ * Convert unsigned int to amperes_u.
+ */
+amperes_u u_to_A_u(unsigned int amperes);
+
+/**
+ * Convert unsigned int to microamperes_d.
+ */
+microamperes_d u_to_uA_d(unsigned int microamperes);
+
+/**
+ * Convert unsigned int to microamperes_f.
+ */
+microamperes_f u_to_uA_f(unsigned int microamperes);
+
+/**
+ * Convert unsigned int to microamperes_t.
+ */
+microamperes_t u_to_uA_t(unsigned int microamperes);
+
+/**
+ * Convert unsigned int to microamperes_u.
+ */
+microamperes_u u_to_uA_u(unsigned int microamperes);
+
+/**
+ * Convert unsigned int to milliamperes_d.
+ */
+milliamperes_d u_to_mA_d(unsigned int milliamperes);
+
+/**
+ * Convert unsigned int to milliamperes_f.
+ */
+milliamperes_f u_to_mA_f(unsigned int milliamperes);
+
+/**
+ * Convert unsigned int to milliamperes_t.
+ */
+milliamperes_t u_to_mA_t(unsigned int milliamperes);
+
+/**
+ * Convert unsigned int to milliamperes_u.
+ */
+milliamperes_u u_to_mA_u(unsigned int milliamperes);
 
 /**
  * Convert double to microseconds_d.

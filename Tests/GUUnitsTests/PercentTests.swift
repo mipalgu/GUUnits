@@ -57,8 +57,3212 @@
 */
 
 import CGUUnits
-import GUUnits
+@testable import GUUnits
 import XCTest
+
+final class PercentTypeTests: XCTestCase {
+
+    func testPercent_tEquality() {
+        XCTAssertEqual(Percent_t(5), Percent_t(5))
+    }
+
+    func testPercent_tCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Percent_t(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Percent_t.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testPercent_tSelfInit() {
+        let expected = Percent_t(15)
+        XCTAssertEqual(expected, Percent_t(expected))
+    }
+
+    func testPercent_tSelfExactlyInit() {
+        let expected = Percent_t(15)
+        XCTAssertEqual(expected, Percent_t(exactly: expected))
+    }
+
+    func testPercent_tComparable() {
+        let lhs = Percent_t(1)
+        let rhs = Percent_t(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testPercent_tMagnitude() {
+        let expected = CInt(5).magnitude
+        XCTAssertEqual(Percent_t(5).magnitude, expected)
+    }
+
+    func testPercent_tTruncatingInit() {
+        let expected = Percent_t(CInt(truncatingIfNeeded: UInt64.max))
+        XCTAssertEqual(Percent_t(truncatingIfNeeded: expected), expected)
+    }
+
+    func testPercent_tClampingInit() {
+        let expected = Percent_t(CInt(clamping: UInt64.max))
+        XCTAssertEqual(Percent_t(clamping: expected), expected)
+    }
+
+    func testPercent_tBitWidth() {
+        let expected = CInt(5).bitWidth
+        XCTAssertEqual(Percent_t(5).bitWidth, expected)
+    }
+
+    func testPercent_tLeadingZeroBitCount() {
+        let expected = CInt(5).leadingZeroBitCount
+        XCTAssertEqual(Percent_t(5).leadingZeroBitCount, expected)
+    }
+
+    func testPercent_tNonzeroBitCount() {
+        let expected = CInt(5).nonzeroBitCount
+        XCTAssertEqual(Percent_t(5).nonzeroBitCount, expected)
+    }
+
+    func testPercent_tIntegerLiteralInit() {
+        let expected = CInt(integerLiteral: CInt.max)
+        XCTAssertEqual(Percent_t(expected), Percent_t(integerLiteral: CInt.max))
+    }
+
+    func testPercent_tTruncatingBits() {
+        let expected = Percent_t(CInt(_truncatingBits: UInt.max))
+        XCTAssertEqual(expected, Percent_t(_truncatingBits: UInt.max))
+    }
+
+    func testPercent_tAddition() {
+        let expected = Percent_t(CInt(5) + CInt(3))
+        XCTAssertEqual(Percent_t(5) + Percent_t(3), expected)
+    }
+
+    func testPercent_tSubtraction() {
+        let expected = Percent_t(CInt(5) - CInt(3))
+        XCTAssertEqual(Percent_t(5) - Percent_t(3), expected)
+    }
+
+    func testPercent_tMultiplication() {
+        let expected = Percent_t(CInt(5) * CInt(3))
+        XCTAssertEqual(Percent_t(5) * Percent_t(3), expected)
+    }
+
+    func testPercent_tDivision() {
+        let expected = Percent_t(CInt(6) / CInt(3))
+        XCTAssertEqual(Percent_t(6) / Percent_t(3), expected)
+    }
+
+    func testPercent_tAddOverflow() {
+        let rawOriginal = CInt.max
+        let rawResult = rawOriginal.addingReportingOverflow(CInt(1))
+        let original = Percent_t(rawOriginal)
+        let result = original.addingReportingOverflow(Percent_t(1))
+        XCTAssertEqual(result.0, Percent_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testPercent_tMultiplyOverflow() {
+        let rawOriginal = CInt.max
+        let rawResult = rawOriginal.multipliedReportingOverflow(by: CInt(2))
+        let original = Percent_t(rawOriginal)
+        let result = original.multipliedReportingOverflow(by: Percent_t(2))
+        XCTAssertEqual(result.0, Percent_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testPercent_tSubtractOverflow() {
+        let rawOriginal = CInt.min
+        let rawResult = rawOriginal.subtractingReportingOverflow(CInt(1))
+        let original = Percent_t(rawOriginal)
+        let result = original.subtractingReportingOverflow(Percent_t(1))
+        XCTAssertEqual(result.0, Percent_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testPercent_tDivideOverflow() {
+        let rawOriginal = CInt(1)
+        let rawResult = rawOriginal.dividedReportingOverflow(by: CInt.max)
+        let original = Percent_t(rawOriginal)
+        let result = original.dividedReportingOverflow(by: Percent_t(CInt.max))
+        XCTAssertEqual(result.0, Percent_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testPercent_tRemainderOverflow() {
+        let rawOriginal = CInt(1)
+        let rawResult = rawOriginal.remainderReportingOverflow(dividingBy: CInt.max)
+        let original = Percent_t(rawOriginal)
+        let result = original.remainderReportingOverflow(dividingBy: Percent_t(CInt.max))
+        XCTAssertEqual(result.0, Percent_t(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testPercent_tTrailingZeroBitCount() {
+        let original = CInt(1)
+        XCTAssertEqual(Percent_t(original).trailingZeroBitCount, original.trailingZeroBitCount)
+    }
+
+    func testPercent_tTimesEquals() {
+        var original = CInt(2)
+        original *= 4
+        var result = Percent_t(CInt(2))
+        result *= 4
+        XCTAssertEqual(result, Percent_t(original))
+    }
+
+    func testPercent_tDivideEquals() {
+        var original = CInt(4)
+        original /= 2
+        var result = Percent_t(CInt(4))
+        result /= 2
+        XCTAssertEqual(result, Percent_t(original))
+    }
+
+    func testPercent_tModEquals() {
+        var original = CInt(4)
+        original %= 2
+        var result = Percent_t(CInt(4))
+        result %= 2
+        XCTAssertEqual(result, Percent_t(original))
+    }
+
+    func testPercent_tAndEquals() {
+        var original = CInt(2)
+        original &= 6
+        var result = Percent_t(CInt(2))
+        result &= 6
+        XCTAssertEqual(result, Percent_t(original))
+    }
+
+    func testPercent_tOrEquals() {
+        var original = CInt(2)
+        original |= 4
+        var result = Percent_t(CInt(2))
+        result |= 4
+        XCTAssertEqual(result, Percent_t(original))
+    }
+
+    func testPercent_tHatEquals() {
+        var original = CInt(2)
+        original ^= 4
+        var result = Percent_t(CInt(2))
+        result ^= 4
+        XCTAssertEqual(result, Percent_t(original))
+    }
+
+    func testPercent_tMod() {
+        let original = CInt(4)
+        let expected = Percent_t(original % 2)
+        XCTAssertEqual(Percent_t(original) % 2, expected)
+    }
+
+    func testPercent_uEquality() {
+        XCTAssertEqual(Percent_u(5), Percent_u(5))
+    }
+
+    func testPercent_uCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Percent_u(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Percent_u.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testPercent_uSelfInit() {
+        let expected = Percent_u(15)
+        XCTAssertEqual(expected, Percent_u(expected))
+    }
+
+    func testPercent_uSelfExactlyInit() {
+        let expected = Percent_u(15)
+        XCTAssertEqual(expected, Percent_u(exactly: expected))
+    }
+
+    func testPercent_uComparable() {
+        let lhs = Percent_u(1)
+        let rhs = Percent_u(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testPercent_uMagnitude() {
+        let expected = CUnsignedInt(5).magnitude
+        XCTAssertEqual(Percent_u(5).magnitude, expected)
+    }
+
+    func testPercent_uTruncatingInit() {
+        let expected = Percent_u(CUnsignedInt(truncatingIfNeeded: UInt64.max))
+        XCTAssertEqual(Percent_u(truncatingIfNeeded: expected), expected)
+    }
+
+    func testPercent_uClampingInit() {
+        let expected = Percent_u(CUnsignedInt(clamping: UInt64.max))
+        XCTAssertEqual(Percent_u(clamping: expected), expected)
+    }
+
+    func testPercent_uBitWidth() {
+        let expected = CUnsignedInt(5).bitWidth
+        XCTAssertEqual(Percent_u(5).bitWidth, expected)
+    }
+
+    func testPercent_uLeadingZeroBitCount() {
+        let expected = CUnsignedInt(5).leadingZeroBitCount
+        XCTAssertEqual(Percent_u(5).leadingZeroBitCount, expected)
+    }
+
+    func testPercent_uNonzeroBitCount() {
+        let expected = CUnsignedInt(5).nonzeroBitCount
+        XCTAssertEqual(Percent_u(5).nonzeroBitCount, expected)
+    }
+
+    func testPercent_uIntegerLiteralInit() {
+        let expected = CUnsignedInt(integerLiteral: CUnsignedInt.max)
+        XCTAssertEqual(Percent_u(expected), Percent_u(integerLiteral: CUnsignedInt.max))
+    }
+
+    func testPercent_uTruncatingBits() {
+        let expected = Percent_u(CUnsignedInt(_truncatingBits: UInt.max))
+        XCTAssertEqual(expected, Percent_u(_truncatingBits: UInt.max))
+    }
+
+    func testPercent_uAddition() {
+        let expected = Percent_u(CUnsignedInt(5) + CUnsignedInt(3))
+        XCTAssertEqual(Percent_u(5) + Percent_u(3), expected)
+    }
+
+    func testPercent_uSubtraction() {
+        let expected = Percent_u(CUnsignedInt(5) - CUnsignedInt(3))
+        XCTAssertEqual(Percent_u(5) - Percent_u(3), expected)
+    }
+
+    func testPercent_uMultiplication() {
+        let expected = Percent_u(CUnsignedInt(5) * CUnsignedInt(3))
+        XCTAssertEqual(Percent_u(5) * Percent_u(3), expected)
+    }
+
+    func testPercent_uDivision() {
+        let expected = Percent_u(CUnsignedInt(6) / CUnsignedInt(3))
+        XCTAssertEqual(Percent_u(6) / Percent_u(3), expected)
+    }
+
+    func testPercent_uAddOverflow() {
+        let rawOriginal = CUnsignedInt.max
+        let rawResult = rawOriginal.addingReportingOverflow(CUnsignedInt(1))
+        let original = Percent_u(rawOriginal)
+        let result = original.addingReportingOverflow(Percent_u(1))
+        XCTAssertEqual(result.0, Percent_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testPercent_uMultiplyOverflow() {
+        let rawOriginal = CUnsignedInt.max
+        let rawResult = rawOriginal.multipliedReportingOverflow(by: CUnsignedInt(2))
+        let original = Percent_u(rawOriginal)
+        let result = original.multipliedReportingOverflow(by: Percent_u(2))
+        XCTAssertEqual(result.0, Percent_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testPercent_uSubtractOverflow() {
+        let rawOriginal = CUnsignedInt.min
+        let rawResult = rawOriginal.subtractingReportingOverflow(CUnsignedInt(1))
+        let original = Percent_u(rawOriginal)
+        let result = original.subtractingReportingOverflow(Percent_u(1))
+        XCTAssertEqual(result.0, Percent_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+        XCTAssertTrue(result.1)
+    }
+
+    func testPercent_uDivideOverflow() {
+        let rawOriginal = CUnsignedInt(1)
+        let rawResult = rawOriginal.dividedReportingOverflow(by: CUnsignedInt.max)
+        let original = Percent_u(rawOriginal)
+        let result = original.dividedReportingOverflow(by: Percent_u(CUnsignedInt.max))
+        XCTAssertEqual(result.0, Percent_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testPercent_uRemainderOverflow() {
+        let rawOriginal = CUnsignedInt(1)
+        let rawResult = rawOriginal.remainderReportingOverflow(dividingBy: CUnsignedInt.max)
+        let original = Percent_u(rawOriginal)
+        let result = original.remainderReportingOverflow(dividingBy: Percent_u(CUnsignedInt.max))
+        XCTAssertEqual(result.0, Percent_u(rawResult.0))
+        XCTAssertEqual(result.1, rawResult.1)
+    }
+
+    func testPercent_uTrailingZeroBitCount() {
+        let original = CUnsignedInt(1)
+        XCTAssertEqual(Percent_u(original).trailingZeroBitCount, original.trailingZeroBitCount)
+    }
+
+    func testPercent_uTimesEquals() {
+        var original = CUnsignedInt(2)
+        original *= 4
+        var result = Percent_u(CUnsignedInt(2))
+        result *= 4
+        XCTAssertEqual(result, Percent_u(original))
+    }
+
+    func testPercent_uDivideEquals() {
+        var original = CUnsignedInt(4)
+        original /= 2
+        var result = Percent_u(CUnsignedInt(4))
+        result /= 2
+        XCTAssertEqual(result, Percent_u(original))
+    }
+
+    func testPercent_uModEquals() {
+        var original = CUnsignedInt(4)
+        original %= 2
+        var result = Percent_u(CUnsignedInt(4))
+        result %= 2
+        XCTAssertEqual(result, Percent_u(original))
+    }
+
+    func testPercent_uAndEquals() {
+        var original = CUnsignedInt(2)
+        original &= 6
+        var result = Percent_u(CUnsignedInt(2))
+        result &= 6
+        XCTAssertEqual(result, Percent_u(original))
+    }
+
+    func testPercent_uOrEquals() {
+        var original = CUnsignedInt(2)
+        original |= 4
+        var result = Percent_u(CUnsignedInt(2))
+        result |= 4
+        XCTAssertEqual(result, Percent_u(original))
+    }
+
+    func testPercent_uHatEquals() {
+        var original = CUnsignedInt(2)
+        original ^= 4
+        var result = Percent_u(CUnsignedInt(2))
+        result ^= 4
+        XCTAssertEqual(result, Percent_u(original))
+    }
+
+    func testPercent_uMod() {
+        let original = CUnsignedInt(4)
+        let expected = Percent_u(original % 2)
+        XCTAssertEqual(Percent_u(original) % 2, expected)
+    }
+
+    func testPercent_fEquality() {
+        XCTAssertEqual(Percent_f(5), Percent_f(5))
+    }
+
+    func testPercent_fCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Percent_f(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Percent_f.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testPercent_fSelfInit() {
+        let expected = Percent_f(15)
+        XCTAssertEqual(expected, Percent_f(expected))
+    }
+
+    func testPercent_fSelfExactlyInit() {
+        let expected = Percent_f(15)
+        XCTAssertEqual(expected, Percent_f(exactly: expected))
+    }
+
+    func testPercent_fComparable() {
+        let lhs = Percent_f(1)
+        let rhs = Percent_f(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testPercent_fRadix() {
+        XCTAssertEqual(Percent_f.radix, Float.radix)
+    }
+
+    func testPercent_fExponentBitCount() {
+        XCTAssertEqual(Percent_f.exponentBitCount, Float.exponentBitCount)
+    }
+
+    func testPercent_fSignificandBitCount() {
+        XCTAssertEqual(Percent_f.significandBitCount, Float.significandBitCount)
+    }
+
+    func testPercent_fMagnitude() {
+        let expected = Percent_f(Float(5).magnitude)
+        XCTAssertEqual(Percent_f(5).magnitude, expected)
+    }
+
+    func testPercent_fExactlyInit() {
+        let expected = Percent_f(Float(exactly: Int(5)) ?? Float.infinity)
+        XCTAssertEqual(Percent_f(exactly: Int(5)), expected)
+    }
+
+    func testPercent_fIsTotallyOrdered() {
+        let param = Float(100)
+        let other = Float(5)
+        XCTAssertEqual(
+            Percent_f(param).isTotallyOrdered(belowOrEqualTo: Percent_f(other)),
+            param.isTotallyOrdered(belowOrEqualTo: other)
+        )
+    }
+
+    func testPercent_fBinade() {
+        let raw = Float(5)
+        let expected = Percent_f(raw.binade)
+        XCTAssertEqual(Percent_f(raw).binade, expected)
+    }
+
+    func testPercent_fSignificandWidth() {
+        let raw = Float(5)
+        XCTAssertEqual(Percent_f(raw).significandWidth, raw.significandWidth)
+    }
+
+    func testPercent_fDebugDescription() {
+        let raw = Float(5)
+        XCTAssertEqual(Percent_f(raw).debugDescription, raw.debugDescription)
+    }
+
+    func testPercent_fDescriptionInit() {
+        let raw = Float("5.0") ?? Float.nan
+        XCTAssertEqual(Percent_f("5.0"), Percent_f(raw))
+    }
+
+    func testPercent_fStaticVars() {
+        XCTAssertEqual(Percent_f.nan.isNaN, Percent_f(Float.nan).isNaN)
+        XCTAssertEqual(
+            Percent_f.signalingNaN.isSignalingNaN,
+            Percent_f(Float.signalingNaN).isSignalingNaN
+        )
+        XCTAssertEqual(Percent_f.infinity, Percent_f(Float.infinity))
+        XCTAssertEqual(Percent_f.greatestFiniteMagnitude, Percent_f(Float.greatestFiniteMagnitude))
+        XCTAssertEqual(Percent_f.pi, Percent_f(Float.pi))
+        XCTAssertEqual(Percent_f.leastNormalMagnitude, Percent_f(Float.leastNormalMagnitude))
+        XCTAssertEqual(Percent_f.leastNonzeroMagnitude, Percent_f(Float.leastNonzeroMagnitude))
+    }
+
+    func testPercent_fUlp() {
+        let raw = Float(5)
+        XCTAssertEqual(Percent_f(raw).ulp, Percent_f(raw.ulp))
+    }
+
+    func testPercent_fSign() {
+        let raw = Float(5)
+        XCTAssertEqual(Percent_f(raw).sign, raw.sign)
+    }
+
+    func testPercent_fSignificand() {
+        let raw = Float(5)
+        XCTAssertEqual(Percent_f(raw).significand, Percent_f(raw.significand))
+    }
+
+    func testPercent_fNextUp() {
+        let raw = Float(5)
+        XCTAssertEqual(Percent_f(raw).nextUp, Percent_f(raw.nextUp))
+    }
+
+    func testPercent_fVars() {
+        XCTAssertEqual(Percent_f(5).isNormal, Float(5).isNormal)
+        XCTAssertEqual(Percent_f(5).isFinite, Float(5).isFinite)
+        XCTAssertEqual(Percent_f(5).isZero, Float(5).isZero)
+        XCTAssertEqual(Percent_f(0).isZero, Float(0).isZero)
+        XCTAssertEqual(Percent_f(5).isSubnormal, Float(5).isSubnormal)
+        XCTAssertEqual(Percent_f(5).isInfinite, Float(5).isInfinite)
+        XCTAssertEqual(Percent_f.infinity.isInfinite, Float.infinity.isInfinite)
+        XCTAssertEqual(Percent_f(5).isNaN, Float(5).isNaN)
+        XCTAssertEqual(Percent_f.nan.isNaN, Float.nan.isNaN)
+        XCTAssertEqual(Percent_f(5).isSignalingNaN, Float(5).isSignalingNaN)
+        XCTAssertEqual(Percent_f.nan.isSignalingNaN, Float.nan.isSignalingNaN)
+        XCTAssertEqual(Percent_f(5).isCanonical, Float(5).isCanonical)
+        XCTAssertEqual(Percent_f(5).description, Float(5).description)
+        XCTAssertEqual(Percent_f(5).exponentBitPattern, Float(5).exponentBitPattern)
+        XCTAssertEqual(Percent_f(5).significandBitPattern, Float(5).significandBitPattern)
+        XCTAssertEqual(Percent_f(5).exponent, Float(5).exponent)
+    }
+
+    func testPercent_fFormRemainder() {
+        var original = Float(4)
+        let denominator = Float(3)
+        original.formRemainder(dividingBy: denominator)
+        var result = Percent_f(Float(4))
+        result.formRemainder(dividingBy: Percent_f(denominator))
+        XCTAssertEqual(result, Percent_f(original))
+    }
+
+    func testPercent_fFormTruncatingRemainder() {
+        var original = Float(4)
+        let denominator = Float(3)
+        original.formTruncatingRemainder(dividingBy: denominator)
+        var result = Percent_f(Float(4))
+        result.formTruncatingRemainder(dividingBy: Percent_f(denominator))
+        XCTAssertEqual(result, Percent_f(original))
+    }
+
+    func testPercent_fFormSquareRoot() {
+        var original = Float(4)
+        original.formSquareRoot()
+        var result = Percent_f(Float(4))
+        result.formSquareRoot()
+        XCTAssertEqual(result, Percent_f(original))
+    }
+
+    func testPercent_fAddProduct() {
+        var original = Float(4)
+        let lhs = Float(3)
+        let rhs = Float(5)
+        original.addProduct(lhs, rhs)
+        var result = Percent_f(Float(4))
+        result.addProduct(Percent_f(lhs), Percent_f(rhs))
+        XCTAssertEqual(result, Percent_f(original))
+    }
+
+    func testPercent_fIsEqual() {
+        let this = Percent_f(5)
+        let other = Percent_f(6)
+        XCTAssertTrue(this.isEqual(to: this))
+        XCTAssertFalse(this.isEqual(to: other))
+    }
+
+    func testPercent_fIsLess() {
+        let this = Percent_f(5)
+        let other = Percent_f(6)
+        XCTAssertFalse(this.isLess(than: this))
+        XCTAssertTrue(this.isLess(than: other))
+    }
+
+    func testPercent_fIsLessThanOrEqual() {
+        let this = Percent_f(5)
+        let other = Percent_f(6)
+        let other2 = Percent_f(4)
+        XCTAssertTrue(this.isLessThanOrEqualTo(this))
+        XCTAssertTrue(this.isLessThanOrEqualTo(other))
+        XCTAssertFalse(this.isLessThanOrEqualTo(other2))
+    }
+
+    func testPercent_fOperations() {
+        let lhs = Percent_f(6)
+        let rhs = Percent_f(3)
+        XCTAssertEqual(lhs + rhs, Percent_f(9))
+        XCTAssertEqual(lhs - rhs, Percent_f(3))
+        XCTAssertEqual(lhs * rhs, Percent_f(18))
+        XCTAssertEqual(lhs / rhs, Percent_f(2))
+    }
+
+    func testPercent_fTimesEqual() {
+        var this = Percent_f(3)
+        this *= Percent_f(4)
+        XCTAssertEqual(this, Percent_f(12))
+    }
+
+    func testPercent_fDivideEqual() {
+        var this = Percent_f(6)
+        this /= Percent_f(3)
+        XCTAssertEqual(this, Percent_f(2))
+    }
+
+    func testPercent_fRound() {
+        var expected = Float(5.6)
+        expected.round(.up)
+        var result = Percent_f(5.6)
+        result.round(.up)
+        XCTAssertEqual(result, Percent_f(expected))
+    }
+
+    func testPercent_fDistanceTo() {
+        let original = Float(5.0)
+        let other = Float(23)
+        let expected = original.distance(to: other)
+        XCTAssertEqual(Percent_f(original).distance(to: Percent_f(other)), expected)
+    }
+
+    func testPercent_fAdvancedBy() {
+        let original = Float(5)
+        let expected = original.advanced(by: 3)
+        XCTAssertEqual(Percent_f(original).advanced(by: 3), Percent_f(expected))
+    }
+
+    func testPercent_dEquality() {
+        XCTAssertEqual(Percent_d(5), Percent_d(5))
+    }
+
+    func testPercent_dCoding() throws {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        let original = Percent_d(10)
+        XCTAssertEqual(
+            original,
+            try decoder.decode(Percent_d.self, from: try encoder.encode(original))
+        )
+    }
+
+    func testPercent_dSelfInit() {
+        let expected = Percent_d(15)
+        XCTAssertEqual(expected, Percent_d(expected))
+    }
+
+    func testPercent_dSelfExactlyInit() {
+        let expected = Percent_d(15)
+        XCTAssertEqual(expected, Percent_d(exactly: expected))
+    }
+
+    func testPercent_dComparable() {
+        let lhs = Percent_d(1)
+        let rhs = Percent_d(100)
+        XCTAssertLessThan(lhs, rhs)
+    }
+
+    func testPercent_dRadix() {
+        XCTAssertEqual(Percent_d.radix, Double.radix)
+    }
+
+    func testPercent_dExponentBitCount() {
+        XCTAssertEqual(Percent_d.exponentBitCount, Double.exponentBitCount)
+    }
+
+    func testPercent_dSignificandBitCount() {
+        XCTAssertEqual(Percent_d.significandBitCount, Double.significandBitCount)
+    }
+
+    func testPercent_dMagnitude() {
+        let expected = Percent_d(Double(5).magnitude)
+        XCTAssertEqual(Percent_d(5).magnitude, expected)
+    }
+
+    func testPercent_dExactlyInit() {
+        let expected = Percent_d(Double(exactly: Int(5)) ?? Double.infinity)
+        XCTAssertEqual(Percent_d(exactly: Int(5)), expected)
+    }
+
+    func testPercent_dIsTotallyOrdered() {
+        let param = Double(100)
+        let other = Double(5)
+        XCTAssertEqual(
+            Percent_d(param).isTotallyOrdered(belowOrEqualTo: Percent_d(other)),
+            param.isTotallyOrdered(belowOrEqualTo: other)
+        )
+    }
+
+    func testPercent_dBinade() {
+        let raw = Double(5)
+        let expected = Percent_d(raw.binade)
+        XCTAssertEqual(Percent_d(raw).binade, expected)
+    }
+
+    func testPercent_dSignificandWidth() {
+        let raw = Double(5)
+        XCTAssertEqual(Percent_d(raw).significandWidth, raw.significandWidth)
+    }
+
+    func testPercent_dDebugDescription() {
+        let raw = Double(5)
+        XCTAssertEqual(Percent_d(raw).debugDescription, raw.debugDescription)
+    }
+
+    func testPercent_dDescriptionInit() {
+        let raw = Double("5.0") ?? Double.nan
+        XCTAssertEqual(Percent_d("5.0"), Percent_d(raw))
+    }
+
+    func testPercent_dStaticVars() {
+        XCTAssertEqual(Percent_d.nan.isNaN, Percent_d(Double.nan).isNaN)
+        XCTAssertEqual(
+            Percent_d.signalingNaN.isSignalingNaN,
+            Percent_d(Double.signalingNaN).isSignalingNaN
+        )
+        XCTAssertEqual(Percent_d.infinity, Percent_d(Double.infinity))
+        XCTAssertEqual(Percent_d.greatestFiniteMagnitude, Percent_d(Double.greatestFiniteMagnitude))
+        XCTAssertEqual(Percent_d.pi, Percent_d(Double.pi))
+        XCTAssertEqual(Percent_d.leastNormalMagnitude, Percent_d(Double.leastNormalMagnitude))
+        XCTAssertEqual(Percent_d.leastNonzeroMagnitude, Percent_d(Double.leastNonzeroMagnitude))
+    }
+
+    func testPercent_dUlp() {
+        let raw = Double(5)
+        XCTAssertEqual(Percent_d(raw).ulp, Percent_d(raw.ulp))
+    }
+
+    func testPercent_dSign() {
+        let raw = Double(5)
+        XCTAssertEqual(Percent_d(raw).sign, raw.sign)
+    }
+
+    func testPercent_dSignificand() {
+        let raw = Double(5)
+        XCTAssertEqual(Percent_d(raw).significand, Percent_d(raw.significand))
+    }
+
+    func testPercent_dNextUp() {
+        let raw = Double(5)
+        XCTAssertEqual(Percent_d(raw).nextUp, Percent_d(raw.nextUp))
+    }
+
+    func testPercent_dVars() {
+        XCTAssertEqual(Percent_d(5).isNormal, Double(5).isNormal)
+        XCTAssertEqual(Percent_d(5).isFinite, Double(5).isFinite)
+        XCTAssertEqual(Percent_d(5).isZero, Double(5).isZero)
+        XCTAssertEqual(Percent_d(0).isZero, Double(0).isZero)
+        XCTAssertEqual(Percent_d(5).isSubnormal, Double(5).isSubnormal)
+        XCTAssertEqual(Percent_d(5).isInfinite, Double(5).isInfinite)
+        XCTAssertEqual(Percent_d.infinity.isInfinite, Double.infinity.isInfinite)
+        XCTAssertEqual(Percent_d(5).isNaN, Double(5).isNaN)
+        XCTAssertEqual(Percent_d.nan.isNaN, Double.nan.isNaN)
+        XCTAssertEqual(Percent_d(5).isSignalingNaN, Double(5).isSignalingNaN)
+        XCTAssertEqual(Percent_d.nan.isSignalingNaN, Double.nan.isSignalingNaN)
+        XCTAssertEqual(Percent_d(5).isCanonical, Double(5).isCanonical)
+        XCTAssertEqual(Percent_d(5).description, Double(5).description)
+        XCTAssertEqual(Percent_d(5).exponentBitPattern, Double(5).exponentBitPattern)
+        XCTAssertEqual(Percent_d(5).significandBitPattern, Double(5).significandBitPattern)
+        XCTAssertEqual(Percent_d(5).exponent, Double(5).exponent)
+    }
+
+    func testPercent_dFormRemainder() {
+        var original = Double(4)
+        let denominator = Double(3)
+        original.formRemainder(dividingBy: denominator)
+        var result = Percent_d(Double(4))
+        result.formRemainder(dividingBy: Percent_d(denominator))
+        XCTAssertEqual(result, Percent_d(original))
+    }
+
+    func testPercent_dFormTruncatingRemainder() {
+        var original = Double(4)
+        let denominator = Double(3)
+        original.formTruncatingRemainder(dividingBy: denominator)
+        var result = Percent_d(Double(4))
+        result.formTruncatingRemainder(dividingBy: Percent_d(denominator))
+        XCTAssertEqual(result, Percent_d(original))
+    }
+
+    func testPercent_dFormSquareRoot() {
+        var original = Double(4)
+        original.formSquareRoot()
+        var result = Percent_d(Double(4))
+        result.formSquareRoot()
+        XCTAssertEqual(result, Percent_d(original))
+    }
+
+    func testPercent_dAddProduct() {
+        var original = Double(4)
+        let lhs = Double(3)
+        let rhs = Double(5)
+        original.addProduct(lhs, rhs)
+        var result = Percent_d(Double(4))
+        result.addProduct(Percent_d(lhs), Percent_d(rhs))
+        XCTAssertEqual(result, Percent_d(original))
+    }
+
+    func testPercent_dIsEqual() {
+        let this = Percent_d(5)
+        let other = Percent_d(6)
+        XCTAssertTrue(this.isEqual(to: this))
+        XCTAssertFalse(this.isEqual(to: other))
+    }
+
+    func testPercent_dIsLess() {
+        let this = Percent_d(5)
+        let other = Percent_d(6)
+        XCTAssertFalse(this.isLess(than: this))
+        XCTAssertTrue(this.isLess(than: other))
+    }
+
+    func testPercent_dIsLessThanOrEqual() {
+        let this = Percent_d(5)
+        let other = Percent_d(6)
+        let other2 = Percent_d(4)
+        XCTAssertTrue(this.isLessThanOrEqualTo(this))
+        XCTAssertTrue(this.isLessThanOrEqualTo(other))
+        XCTAssertFalse(this.isLessThanOrEqualTo(other2))
+    }
+
+    func testPercent_dOperations() {
+        let lhs = Percent_d(6)
+        let rhs = Percent_d(3)
+        XCTAssertEqual(lhs + rhs, Percent_d(9))
+        XCTAssertEqual(lhs - rhs, Percent_d(3))
+        XCTAssertEqual(lhs * rhs, Percent_d(18))
+        XCTAssertEqual(lhs / rhs, Percent_d(2))
+    }
+
+    func testPercent_dTimesEqual() {
+        var this = Percent_d(3)
+        this *= Percent_d(4)
+        XCTAssertEqual(this, Percent_d(12))
+    }
+
+    func testPercent_dDivideEqual() {
+        var this = Percent_d(6)
+        this /= Percent_d(3)
+        XCTAssertEqual(this, Percent_d(2))
+    }
+
+    func testPercent_dRound() {
+        var expected = Double(5.6)
+        expected.round(.up)
+        var result = Percent_d(5.6)
+        result.round(.up)
+        XCTAssertEqual(result, Percent_d(expected))
+    }
+
+    func testPercent_dDistanceTo() {
+        let original = Double(5.0)
+        let other = Double(23)
+        let expected = original.distance(to: other)
+        XCTAssertEqual(Percent_d(original).distance(to: Percent_d(other)), expected)
+    }
+
+    func testPercent_dAdvancedBy() {
+        let original = Double(5)
+        let expected = original.advanced(by: 3)
+        XCTAssertEqual(Percent_d(original).advanced(by: 3), Percent_d(expected))
+    }
+
+}
+
+final class PercentConversionTests: XCTestCase {
+
+    func testPercent_tToPercent_uPercentConversions() {
+        let original = Percent_t(5)
+        let category = Percent(original)
+        let other = category.percent_u
+        XCTAssertEqual(other, Percent_u(original))
+    }
+
+    func testPercent_uToPercent_tConversions() {
+        let ctype1 = percent_t(5)
+        let swiftType1 = Percent_t(rawValue: ctype1)
+        let ctype2 = pct_t_to_pct_u(ctype1)
+        let swiftType2 = Percent_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Percent_u(swiftType1))
+    }
+
+    func testPercent_tToPercent_fPercentConversions() {
+        let original = Percent_t(5)
+        let category = Percent(original)
+        let other = category.percent_f
+        XCTAssertEqual(other, Percent_f(original))
+    }
+
+    func testPercent_fToPercent_tConversions() {
+        let ctype1 = percent_t(5)
+        let swiftType1 = Percent_t(rawValue: ctype1)
+        let ctype2 = pct_t_to_pct_f(ctype1)
+        let swiftType2 = Percent_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Percent_f(swiftType1))
+    }
+
+    func testPercent_tToPercent_dPercentConversions() {
+        let original = Percent_t(5)
+        let category = Percent(original)
+        let other = category.percent_d
+        XCTAssertEqual(other, Percent_d(original))
+    }
+
+    func testPercent_dToPercent_tConversions() {
+        let ctype1 = percent_t(5)
+        let swiftType1 = Percent_t(rawValue: ctype1)
+        let ctype2 = pct_t_to_pct_d(ctype1)
+        let swiftType2 = Percent_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Percent_d(swiftType1))
+    }
+
+    func testPercent_tInitFromTypeEnum() {
+        let underlyingType = Percent.PercentTypes.percent_t(5)
+        let category = Percent(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testPercentPercent_tInt8Inits() {
+        let raw = Int8(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_pct_t(5)
+        let expected2 = Int8(
+            pct_t_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_tInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_pct_t(5)
+        let expected = Percent_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(pct_t_to_i8(ctype))
+        )
+    }
+
+    func testPercent_tInt8RawValueInit() {
+        let raw = percent_t(5)
+        let ctype = pct_t_to_i8(raw)
+        let expected = Percent_t(Int8(ctype))
+        XCTAssertEqual(Percent_t(rawValue: raw), expected)
+    }
+
+    func testPercent_tPercentInt8Init() {
+        let raw = Percent_t(Int8(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_tInt16Inits() {
+        let raw = Int16(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_pct_t(5)
+        let expected2 = Int16(
+            pct_t_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_tInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_pct_t(5)
+        let expected = Percent_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(pct_t_to_i16(ctype))
+        )
+    }
+
+    func testPercent_tInt16RawValueInit() {
+        let raw = percent_t(5)
+        let ctype = pct_t_to_i16(raw)
+        let expected = Percent_t(Int16(ctype))
+        XCTAssertEqual(Percent_t(rawValue: raw), expected)
+    }
+
+    func testPercent_tPercentInt16Init() {
+        let raw = Percent_t(Int16(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_tInt32Inits() {
+        let raw = Int32(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_pct_t(5)
+        let expected2 = Int32(
+            pct_t_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_tInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_pct_t(5)
+        let expected = Percent_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(pct_t_to_i32(ctype))
+        )
+    }
+
+    func testPercent_tInt32RawValueInit() {
+        let raw = percent_t(5)
+        let ctype = pct_t_to_i32(raw)
+        let expected = Percent_t(Int32(ctype))
+        XCTAssertEqual(Percent_t(rawValue: raw), expected)
+    }
+
+    func testPercent_tPercentInt32Init() {
+        let raw = Percent_t(Int32(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_tInt64Inits() {
+        let raw = Int64(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_pct_t(5)
+        let expected2 = Int64(
+            pct_t_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_tInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_pct_t(5)
+        let expected = Percent_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(pct_t_to_i64(ctype))
+        )
+    }
+
+    func testPercent_tInt64RawValueInit() {
+        let raw = percent_t(5)
+        let ctype = pct_t_to_i64(raw)
+        let expected = Percent_t(Int64(ctype))
+        XCTAssertEqual(Percent_t(rawValue: raw), expected)
+    }
+
+    func testPercent_tPercentInt64Init() {
+        let raw = Percent_t(Int64(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_tIntInits() {
+        let raw = Int(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_pct_t(5)
+        let expected2 = Int(
+            pct_t_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_tIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_pct_t(5)
+        let expected = Percent_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(pct_t_to_i64(ctype))
+        )
+    }
+
+    func testPercent_tIntRawValueInit() {
+        let raw = percent_t(5)
+        let ctype = pct_t_to_i64(raw)
+        let expected = Percent_t(Int(ctype))
+        XCTAssertEqual(Percent_t(rawValue: raw), expected)
+    }
+
+    func testPercent_tPercentIntInit() {
+        let raw = Percent_t(Int(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_tCIntInits() {
+        let raw = CInt(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_pct_t(5)
+        let expected2 = CInt(
+            pct_t_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_tCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_pct_t(5)
+        let expected = Percent_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(pct_t_to_i32(ctype))
+        )
+    }
+
+    func testPercent_tCIntRawValueInit() {
+        let raw = percent_t(5)
+        let ctype = pct_t_to_i32(raw)
+        let expected = Percent_t(CInt(ctype))
+        XCTAssertEqual(Percent_t(rawValue: raw), expected)
+    }
+
+    func testPercent_tPercentCIntInit() {
+        let raw = Percent_t(CInt(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_tUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_pct_t(5)
+        let expected2 = UInt8(
+            pct_t_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_tUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_pct_t(5)
+        let expected = Percent_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(pct_t_to_u8(ctype))
+        )
+    }
+
+    func testPercent_tUInt8RawValueInit() {
+        let raw = percent_t(5)
+        let ctype = pct_t_to_u8(raw)
+        let expected = Percent_t(UInt8(ctype))
+        XCTAssertEqual(Percent_t(rawValue: raw), expected)
+    }
+
+    func testPercent_tPercentUInt8Init() {
+        let raw = Percent_t(UInt8(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_tUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_pct_t(5)
+        let expected2 = UInt16(
+            pct_t_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_tUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_pct_t(5)
+        let expected = Percent_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(pct_t_to_u16(ctype))
+        )
+    }
+
+    func testPercent_tUInt16RawValueInit() {
+        let raw = percent_t(5)
+        let ctype = pct_t_to_u16(raw)
+        let expected = Percent_t(UInt16(ctype))
+        XCTAssertEqual(Percent_t(rawValue: raw), expected)
+    }
+
+    func testPercent_tPercentUInt16Init() {
+        let raw = Percent_t(UInt16(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_tUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_pct_t(5)
+        let expected2 = UInt32(
+            pct_t_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_tUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_pct_t(5)
+        let expected = Percent_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(pct_t_to_u32(ctype))
+        )
+    }
+
+    func testPercent_tUInt32RawValueInit() {
+        let raw = percent_t(5)
+        let ctype = pct_t_to_u32(raw)
+        let expected = Percent_t(UInt32(ctype))
+        XCTAssertEqual(Percent_t(rawValue: raw), expected)
+    }
+
+    func testPercent_tPercentUInt32Init() {
+        let raw = Percent_t(UInt32(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_tUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_pct_t(5)
+        let expected2 = UInt64(
+            pct_t_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_tUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_pct_t(5)
+        let expected = Percent_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(pct_t_to_u64(ctype))
+        )
+    }
+
+    func testPercent_tUInt64RawValueInit() {
+        let raw = percent_t(5)
+        let ctype = pct_t_to_u64(raw)
+        let expected = Percent_t(UInt64(ctype))
+        XCTAssertEqual(Percent_t(rawValue: raw), expected)
+    }
+
+    func testPercent_tPercentUInt64Init() {
+        let raw = Percent_t(UInt64(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_tUIntInits() {
+        let raw = UInt(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_pct_t(5)
+        let expected2 = UInt(
+            pct_t_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_tUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_pct_t(5)
+        let expected = Percent_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(pct_t_to_u64(ctype))
+        )
+    }
+
+    func testPercent_tUIntRawValueInit() {
+        let raw = percent_t(5)
+        let ctype = pct_t_to_u64(raw)
+        let expected = Percent_t(UInt(ctype))
+        XCTAssertEqual(Percent_t(rawValue: raw), expected)
+    }
+
+    func testPercent_tPercentUIntInit() {
+        let raw = Percent_t(UInt(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_tCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_pct_t(5)
+        let expected2 = CUnsignedInt(
+            pct_t_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_tCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_pct_t(5)
+        let expected = Percent_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(pct_t_to_u32(ctype))
+        )
+    }
+
+    func testPercent_tCUnsignedIntRawValueInit() {
+        let raw = percent_t(5)
+        let ctype = pct_t_to_u32(raw)
+        let expected = Percent_t(CUnsignedInt(ctype))
+        XCTAssertEqual(Percent_t(rawValue: raw), expected)
+    }
+
+    func testPercent_tPercentCUnsignedIntInit() {
+        let raw = Percent_t(CUnsignedInt(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_tFloatInits() {
+        let raw = Float(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_pct_t(5)
+        let expected2 = Float(
+            pct_t_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_tFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_pct_t(5)
+        let expected = Percent_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(pct_t_to_f(ctype))
+        )
+    }
+
+    func testPercent_tFloatRawValueInit() {
+        let raw = percent_t(5)
+        let ctype = pct_t_to_f(raw)
+        let expected = Percent_t(Float(ctype))
+        XCTAssertEqual(Percent_t(rawValue: raw), expected)
+    }
+
+    func testPercent_tPercentFloatInit() {
+        let raw = Percent_t(Float(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_tDoubleInits() {
+        let raw = Double(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_pct_t(5)
+        let expected2 = Double(
+            pct_t_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_tDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_pct_t(5)
+        let expected = Percent_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(pct_t_to_d(ctype))
+        )
+    }
+
+    func testPercent_tDoubleRawValueInit() {
+        let raw = percent_t(5)
+        let ctype = pct_t_to_d(raw)
+        let expected = Percent_t(Double(ctype))
+        XCTAssertEqual(Percent_t(rawValue: raw), expected)
+    }
+
+    func testPercent_tPercentDoubleInit() {
+        let raw = Percent_t(Double(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercent_uToPercent_tPercentConversions() {
+        let original = Percent_u(5)
+        let category = Percent(original)
+        let other = category.percent_t
+        XCTAssertEqual(other, Percent_t(original))
+    }
+
+    func testPercent_tToPercent_uConversions() {
+        let ctype1 = percent_u(5)
+        let swiftType1 = Percent_u(rawValue: ctype1)
+        let ctype2 = pct_u_to_pct_t(ctype1)
+        let swiftType2 = Percent_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Percent_t(swiftType1))
+    }
+
+    func testPercent_uToPercent_fPercentConversions() {
+        let original = Percent_u(5)
+        let category = Percent(original)
+        let other = category.percent_f
+        XCTAssertEqual(other, Percent_f(original))
+    }
+
+    func testPercent_fToPercent_uConversions() {
+        let ctype1 = percent_u(5)
+        let swiftType1 = Percent_u(rawValue: ctype1)
+        let ctype2 = pct_u_to_pct_f(ctype1)
+        let swiftType2 = Percent_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Percent_f(swiftType1))
+    }
+
+    func testPercent_uToPercent_dPercentConversions() {
+        let original = Percent_u(5)
+        let category = Percent(original)
+        let other = category.percent_d
+        XCTAssertEqual(other, Percent_d(original))
+    }
+
+    func testPercent_dToPercent_uConversions() {
+        let ctype1 = percent_u(5)
+        let swiftType1 = Percent_u(rawValue: ctype1)
+        let ctype2 = pct_u_to_pct_d(ctype1)
+        let swiftType2 = Percent_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Percent_d(swiftType1))
+    }
+
+    func testPercent_uInitFromTypeEnum() {
+        let underlyingType = Percent.PercentTypes.percent_u(5)
+        let category = Percent(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testPercentPercent_uInt8Inits() {
+        let raw = Int8(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_pct_u(5)
+        let expected2 = Int8(
+            pct_u_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_uInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_pct_u(5)
+        let expected = Percent_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(pct_u_to_i8(ctype))
+        )
+    }
+
+    func testPercent_uInt8RawValueInit() {
+        let raw = percent_u(5)
+        let ctype = pct_u_to_i8(raw)
+        let expected = Percent_u(Int8(ctype))
+        XCTAssertEqual(Percent_u(rawValue: raw), expected)
+    }
+
+    func testPercent_uPercentInt8Init() {
+        let raw = Percent_u(Int8(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_uInt16Inits() {
+        let raw = Int16(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_pct_u(5)
+        let expected2 = Int16(
+            pct_u_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_uInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_pct_u(5)
+        let expected = Percent_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(pct_u_to_i16(ctype))
+        )
+    }
+
+    func testPercent_uInt16RawValueInit() {
+        let raw = percent_u(5)
+        let ctype = pct_u_to_i16(raw)
+        let expected = Percent_u(Int16(ctype))
+        XCTAssertEqual(Percent_u(rawValue: raw), expected)
+    }
+
+    func testPercent_uPercentInt16Init() {
+        let raw = Percent_u(Int16(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_uInt32Inits() {
+        let raw = Int32(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_pct_u(5)
+        let expected2 = Int32(
+            pct_u_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_uInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_pct_u(5)
+        let expected = Percent_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(pct_u_to_i32(ctype))
+        )
+    }
+
+    func testPercent_uInt32RawValueInit() {
+        let raw = percent_u(5)
+        let ctype = pct_u_to_i32(raw)
+        let expected = Percent_u(Int32(ctype))
+        XCTAssertEqual(Percent_u(rawValue: raw), expected)
+    }
+
+    func testPercent_uPercentInt32Init() {
+        let raw = Percent_u(Int32(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_uInt64Inits() {
+        let raw = Int64(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_pct_u(5)
+        let expected2 = Int64(
+            pct_u_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_uInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_pct_u(5)
+        let expected = Percent_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(pct_u_to_i64(ctype))
+        )
+    }
+
+    func testPercent_uInt64RawValueInit() {
+        let raw = percent_u(5)
+        let ctype = pct_u_to_i64(raw)
+        let expected = Percent_u(Int64(ctype))
+        XCTAssertEqual(Percent_u(rawValue: raw), expected)
+    }
+
+    func testPercent_uPercentInt64Init() {
+        let raw = Percent_u(Int64(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_uIntInits() {
+        let raw = Int(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_pct_u(5)
+        let expected2 = Int(
+            pct_u_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_uIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_pct_u(5)
+        let expected = Percent_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(pct_u_to_i64(ctype))
+        )
+    }
+
+    func testPercent_uIntRawValueInit() {
+        let raw = percent_u(5)
+        let ctype = pct_u_to_i64(raw)
+        let expected = Percent_u(Int(ctype))
+        XCTAssertEqual(Percent_u(rawValue: raw), expected)
+    }
+
+    func testPercent_uPercentIntInit() {
+        let raw = Percent_u(Int(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_uCIntInits() {
+        let raw = CInt(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_pct_u(5)
+        let expected2 = CInt(
+            pct_u_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_uCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_pct_u(5)
+        let expected = Percent_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(pct_u_to_i32(ctype))
+        )
+    }
+
+    func testPercent_uCIntRawValueInit() {
+        let raw = percent_u(5)
+        let ctype = pct_u_to_i32(raw)
+        let expected = Percent_u(CInt(ctype))
+        XCTAssertEqual(Percent_u(rawValue: raw), expected)
+    }
+
+    func testPercent_uPercentCIntInit() {
+        let raw = Percent_u(CInt(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_uUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_pct_u(5)
+        let expected2 = UInt8(
+            pct_u_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_uUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_pct_u(5)
+        let expected = Percent_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(pct_u_to_u8(ctype))
+        )
+    }
+
+    func testPercent_uUInt8RawValueInit() {
+        let raw = percent_u(5)
+        let ctype = pct_u_to_u8(raw)
+        let expected = Percent_u(UInt8(ctype))
+        XCTAssertEqual(Percent_u(rawValue: raw), expected)
+    }
+
+    func testPercent_uPercentUInt8Init() {
+        let raw = Percent_u(UInt8(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_uUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_pct_u(5)
+        let expected2 = UInt16(
+            pct_u_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_uUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_pct_u(5)
+        let expected = Percent_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(pct_u_to_u16(ctype))
+        )
+    }
+
+    func testPercent_uUInt16RawValueInit() {
+        let raw = percent_u(5)
+        let ctype = pct_u_to_u16(raw)
+        let expected = Percent_u(UInt16(ctype))
+        XCTAssertEqual(Percent_u(rawValue: raw), expected)
+    }
+
+    func testPercent_uPercentUInt16Init() {
+        let raw = Percent_u(UInt16(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_uUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_pct_u(5)
+        let expected2 = UInt32(
+            pct_u_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_uUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_pct_u(5)
+        let expected = Percent_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(pct_u_to_u32(ctype))
+        )
+    }
+
+    func testPercent_uUInt32RawValueInit() {
+        let raw = percent_u(5)
+        let ctype = pct_u_to_u32(raw)
+        let expected = Percent_u(UInt32(ctype))
+        XCTAssertEqual(Percent_u(rawValue: raw), expected)
+    }
+
+    func testPercent_uPercentUInt32Init() {
+        let raw = Percent_u(UInt32(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_uUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_pct_u(5)
+        let expected2 = UInt64(
+            pct_u_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_uUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_pct_u(5)
+        let expected = Percent_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(pct_u_to_u64(ctype))
+        )
+    }
+
+    func testPercent_uUInt64RawValueInit() {
+        let raw = percent_u(5)
+        let ctype = pct_u_to_u64(raw)
+        let expected = Percent_u(UInt64(ctype))
+        XCTAssertEqual(Percent_u(rawValue: raw), expected)
+    }
+
+    func testPercent_uPercentUInt64Init() {
+        let raw = Percent_u(UInt64(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_uUIntInits() {
+        let raw = UInt(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_pct_u(5)
+        let expected2 = UInt(
+            pct_u_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_uUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_pct_u(5)
+        let expected = Percent_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(pct_u_to_u64(ctype))
+        )
+    }
+
+    func testPercent_uUIntRawValueInit() {
+        let raw = percent_u(5)
+        let ctype = pct_u_to_u64(raw)
+        let expected = Percent_u(UInt(ctype))
+        XCTAssertEqual(Percent_u(rawValue: raw), expected)
+    }
+
+    func testPercent_uPercentUIntInit() {
+        let raw = Percent_u(UInt(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_uCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_pct_u(5)
+        let expected2 = CUnsignedInt(
+            pct_u_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_uCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_pct_u(5)
+        let expected = Percent_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(pct_u_to_u32(ctype))
+        )
+    }
+
+    func testPercent_uCUnsignedIntRawValueInit() {
+        let raw = percent_u(5)
+        let ctype = pct_u_to_u32(raw)
+        let expected = Percent_u(CUnsignedInt(ctype))
+        XCTAssertEqual(Percent_u(rawValue: raw), expected)
+    }
+
+    func testPercent_uPercentCUnsignedIntInit() {
+        let raw = Percent_u(CUnsignedInt(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_uFloatInits() {
+        let raw = Float(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_pct_u(5)
+        let expected2 = Float(
+            pct_u_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_uFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_pct_u(5)
+        let expected = Percent_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(pct_u_to_f(ctype))
+        )
+    }
+
+    func testPercent_uFloatRawValueInit() {
+        let raw = percent_u(5)
+        let ctype = pct_u_to_f(raw)
+        let expected = Percent_u(Float(ctype))
+        XCTAssertEqual(Percent_u(rawValue: raw), expected)
+    }
+
+    func testPercent_uPercentFloatInit() {
+        let raw = Percent_u(Float(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_uDoubleInits() {
+        let raw = Double(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_pct_u(5)
+        let expected2 = Double(
+            pct_u_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_uDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_pct_u(5)
+        let expected = Percent_u(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(pct_u_to_d(ctype))
+        )
+    }
+
+    func testPercent_uDoubleRawValueInit() {
+        let raw = percent_u(5)
+        let ctype = pct_u_to_d(raw)
+        let expected = Percent_u(Double(ctype))
+        XCTAssertEqual(Percent_u(rawValue: raw), expected)
+    }
+
+    func testPercent_uPercentDoubleInit() {
+        let raw = Percent_u(Double(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_u(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercent_fToPercent_tPercentConversions() {
+        let original = Percent_f(5)
+        let category = Percent(original)
+        let other = category.percent_t
+        XCTAssertEqual(other, Percent_t(original))
+    }
+
+    func testPercent_tToPercent_fConversions() {
+        let ctype1 = percent_f(5)
+        let swiftType1 = Percent_f(rawValue: ctype1)
+        let ctype2 = pct_f_to_pct_t(ctype1)
+        let swiftType2 = Percent_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Percent_t(swiftType1))
+    }
+
+    func testPercent_fToPercent_uPercentConversions() {
+        let original = Percent_f(5)
+        let category = Percent(original)
+        let other = category.percent_u
+        XCTAssertEqual(other, Percent_u(original))
+    }
+
+    func testPercent_uToPercent_fConversions() {
+        let ctype1 = percent_f(5)
+        let swiftType1 = Percent_f(rawValue: ctype1)
+        let ctype2 = pct_f_to_pct_u(ctype1)
+        let swiftType2 = Percent_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Percent_u(swiftType1))
+    }
+
+    func testPercent_fToPercent_dPercentConversions() {
+        let original = Percent_f(5)
+        let category = Percent(original)
+        let other = category.percent_d
+        XCTAssertEqual(other, Percent_d(original))
+    }
+
+    func testPercent_dToPercent_fConversions() {
+        let ctype1 = percent_f(5)
+        let swiftType1 = Percent_f(rawValue: ctype1)
+        let ctype2 = pct_f_to_pct_d(ctype1)
+        let swiftType2 = Percent_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Percent_d(swiftType1))
+    }
+
+    func testPercent_fInitFromTypeEnum() {
+        let underlyingType = Percent.PercentTypes.percent_f(5)
+        let category = Percent(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testPercentPercent_fInt8Inits() {
+        let raw = Int8(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_pct_f(5)
+        let expected2 = Int8(
+            pct_f_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_fInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_pct_f(5)
+        let expected = Percent_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(pct_f_to_i8(ctype))
+        )
+    }
+
+    func testPercent_fInt8RawValueInit() {
+        let raw = percent_f(5)
+        let ctype = pct_f_to_i8(raw)
+        let expected = Percent_f(Int8(ctype))
+        XCTAssertEqual(Percent_f(rawValue: raw), expected)
+    }
+
+    func testPercent_fPercentInt8Init() {
+        let raw = Percent_f(Int8(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_fInt16Inits() {
+        let raw = Int16(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_pct_f(5)
+        let expected2 = Int16(
+            pct_f_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_fInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_pct_f(5)
+        let expected = Percent_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(pct_f_to_i16(ctype))
+        )
+    }
+
+    func testPercent_fInt16RawValueInit() {
+        let raw = percent_f(5)
+        let ctype = pct_f_to_i16(raw)
+        let expected = Percent_f(Int16(ctype))
+        XCTAssertEqual(Percent_f(rawValue: raw), expected)
+    }
+
+    func testPercent_fPercentInt16Init() {
+        let raw = Percent_f(Int16(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_fInt32Inits() {
+        let raw = Int32(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_pct_f(5)
+        let expected2 = Int32(
+            pct_f_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_fInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_pct_f(5)
+        let expected = Percent_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(pct_f_to_i32(ctype))
+        )
+    }
+
+    func testPercent_fInt32RawValueInit() {
+        let raw = percent_f(5)
+        let ctype = pct_f_to_i32(raw)
+        let expected = Percent_f(Int32(ctype))
+        XCTAssertEqual(Percent_f(rawValue: raw), expected)
+    }
+
+    func testPercent_fPercentInt32Init() {
+        let raw = Percent_f(Int32(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_fInt64Inits() {
+        let raw = Int64(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_pct_f(5)
+        let expected2 = Int64(
+            pct_f_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_fInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_pct_f(5)
+        let expected = Percent_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(pct_f_to_i64(ctype))
+        )
+    }
+
+    func testPercent_fInt64RawValueInit() {
+        let raw = percent_f(5)
+        let ctype = pct_f_to_i64(raw)
+        let expected = Percent_f(Int64(ctype))
+        XCTAssertEqual(Percent_f(rawValue: raw), expected)
+    }
+
+    func testPercent_fPercentInt64Init() {
+        let raw = Percent_f(Int64(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_fIntInits() {
+        let raw = Int(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_pct_f(5)
+        let expected2 = Int(
+            pct_f_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_fIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_pct_f(5)
+        let expected = Percent_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(pct_f_to_i64(ctype))
+        )
+    }
+
+    func testPercent_fIntRawValueInit() {
+        let raw = percent_f(5)
+        let ctype = pct_f_to_i64(raw)
+        let expected = Percent_f(Int(ctype))
+        XCTAssertEqual(Percent_f(rawValue: raw), expected)
+    }
+
+    func testPercent_fPercentIntInit() {
+        let raw = Percent_f(Int(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_fCIntInits() {
+        let raw = CInt(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_pct_f(5)
+        let expected2 = CInt(
+            pct_f_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_fCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_pct_f(5)
+        let expected = Percent_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(pct_f_to_i32(ctype))
+        )
+    }
+
+    func testPercent_fCIntRawValueInit() {
+        let raw = percent_f(5)
+        let ctype = pct_f_to_i32(raw)
+        let expected = Percent_f(CInt(ctype))
+        XCTAssertEqual(Percent_f(rawValue: raw), expected)
+    }
+
+    func testPercent_fPercentCIntInit() {
+        let raw = Percent_f(CInt(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_fUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_pct_f(5)
+        let expected2 = UInt8(
+            pct_f_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_fUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_pct_f(5)
+        let expected = Percent_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(pct_f_to_u8(ctype))
+        )
+    }
+
+    func testPercent_fUInt8RawValueInit() {
+        let raw = percent_f(5)
+        let ctype = pct_f_to_u8(raw)
+        let expected = Percent_f(UInt8(ctype))
+        XCTAssertEqual(Percent_f(rawValue: raw), expected)
+    }
+
+    func testPercent_fPercentUInt8Init() {
+        let raw = Percent_f(UInt8(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_fUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_pct_f(5)
+        let expected2 = UInt16(
+            pct_f_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_fUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_pct_f(5)
+        let expected = Percent_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(pct_f_to_u16(ctype))
+        )
+    }
+
+    func testPercent_fUInt16RawValueInit() {
+        let raw = percent_f(5)
+        let ctype = pct_f_to_u16(raw)
+        let expected = Percent_f(UInt16(ctype))
+        XCTAssertEqual(Percent_f(rawValue: raw), expected)
+    }
+
+    func testPercent_fPercentUInt16Init() {
+        let raw = Percent_f(UInt16(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_fUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_pct_f(5)
+        let expected2 = UInt32(
+            pct_f_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_fUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_pct_f(5)
+        let expected = Percent_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(pct_f_to_u32(ctype))
+        )
+    }
+
+    func testPercent_fUInt32RawValueInit() {
+        let raw = percent_f(5)
+        let ctype = pct_f_to_u32(raw)
+        let expected = Percent_f(UInt32(ctype))
+        XCTAssertEqual(Percent_f(rawValue: raw), expected)
+    }
+
+    func testPercent_fPercentUInt32Init() {
+        let raw = Percent_f(UInt32(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_fUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_pct_f(5)
+        let expected2 = UInt64(
+            pct_f_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_fUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_pct_f(5)
+        let expected = Percent_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(pct_f_to_u64(ctype))
+        )
+    }
+
+    func testPercent_fUInt64RawValueInit() {
+        let raw = percent_f(5)
+        let ctype = pct_f_to_u64(raw)
+        let expected = Percent_f(UInt64(ctype))
+        XCTAssertEqual(Percent_f(rawValue: raw), expected)
+    }
+
+    func testPercent_fPercentUInt64Init() {
+        let raw = Percent_f(UInt64(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_fUIntInits() {
+        let raw = UInt(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_pct_f(5)
+        let expected2 = UInt(
+            pct_f_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_fUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_pct_f(5)
+        let expected = Percent_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(pct_f_to_u64(ctype))
+        )
+    }
+
+    func testPercent_fUIntRawValueInit() {
+        let raw = percent_f(5)
+        let ctype = pct_f_to_u64(raw)
+        let expected = Percent_f(UInt(ctype))
+        XCTAssertEqual(Percent_f(rawValue: raw), expected)
+    }
+
+    func testPercent_fPercentUIntInit() {
+        let raw = Percent_f(UInt(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_fCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_pct_f(5)
+        let expected2 = CUnsignedInt(
+            pct_f_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_fCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_pct_f(5)
+        let expected = Percent_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(pct_f_to_u32(ctype))
+        )
+    }
+
+    func testPercent_fCUnsignedIntRawValueInit() {
+        let raw = percent_f(5)
+        let ctype = pct_f_to_u32(raw)
+        let expected = Percent_f(CUnsignedInt(ctype))
+        XCTAssertEqual(Percent_f(rawValue: raw), expected)
+    }
+
+    func testPercent_fPercentCUnsignedIntInit() {
+        let raw = Percent_f(CUnsignedInt(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_fFloatInits() {
+        let raw = Float(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_pct_f(5)
+        let expected2 = Float(
+            pct_f_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_fFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_pct_f(5)
+        let expected = Percent_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(pct_f_to_f(ctype))
+        )
+    }
+
+    func testPercent_fFloatRawValueInit() {
+        let raw = percent_f(5)
+        let ctype = pct_f_to_f(raw)
+        let expected = Percent_f(Float(ctype))
+        XCTAssertEqual(Percent_f(rawValue: raw), expected)
+    }
+
+    func testPercent_fPercentFloatInit() {
+        let raw = Percent_f(Float(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_fDoubleInits() {
+        let raw = Double(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_pct_f(5)
+        let expected2 = Double(
+            pct_f_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_fDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_pct_f(5)
+        let expected = Percent_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(pct_f_to_d(ctype))
+        )
+    }
+
+    func testPercent_fDoubleRawValueInit() {
+        let raw = percent_f(5)
+        let ctype = pct_f_to_d(raw)
+        let expected = Percent_f(Double(ctype))
+        XCTAssertEqual(Percent_f(rawValue: raw), expected)
+    }
+
+    func testPercent_fPercentDoubleInit() {
+        let raw = Percent_f(Double(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercent_dToPercent_tPercentConversions() {
+        let original = Percent_d(5)
+        let category = Percent(original)
+        let other = category.percent_t
+        XCTAssertEqual(other, Percent_t(original))
+    }
+
+    func testPercent_tToPercent_dConversions() {
+        let ctype1 = percent_d(5)
+        let swiftType1 = Percent_d(rawValue: ctype1)
+        let ctype2 = pct_d_to_pct_t(ctype1)
+        let swiftType2 = Percent_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Percent_t(swiftType1))
+    }
+
+    func testPercent_dToPercent_uPercentConversions() {
+        let original = Percent_d(5)
+        let category = Percent(original)
+        let other = category.percent_u
+        XCTAssertEqual(other, Percent_u(original))
+    }
+
+    func testPercent_uToPercent_dConversions() {
+        let ctype1 = percent_d(5)
+        let swiftType1 = Percent_d(rawValue: ctype1)
+        let ctype2 = pct_d_to_pct_u(ctype1)
+        let swiftType2 = Percent_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Percent_u(swiftType1))
+    }
+
+    func testPercent_dToPercent_fPercentConversions() {
+        let original = Percent_d(5)
+        let category = Percent(original)
+        let other = category.percent_f
+        XCTAssertEqual(other, Percent_f(original))
+    }
+
+    func testPercent_fToPercent_dConversions() {
+        let ctype1 = percent_d(5)
+        let swiftType1 = Percent_d(rawValue: ctype1)
+        let ctype2 = pct_d_to_pct_f(ctype1)
+        let swiftType2 = Percent_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Percent_f(swiftType1))
+    }
+
+    func testPercent_dInitFromTypeEnum() {
+        let underlyingType = Percent.PercentTypes.percent_d(5)
+        let category = Percent(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testPercentPercent_dInt8Inits() {
+        let raw = Int8(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i8_to_pct_d(5)
+        let expected2 = Int8(
+            pct_d_to_i8(ctype)
+        )
+        let result2 = Int8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_dInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_pct_d(5)
+        let expected = Percent_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int8(expected),
+            Int8(pct_d_to_i8(ctype))
+        )
+    }
+
+    func testPercent_dInt8RawValueInit() {
+        let raw = percent_d(5)
+        let ctype = pct_d_to_i8(raw)
+        let expected = Percent_d(Int8(ctype))
+        XCTAssertEqual(Percent_d(rawValue: raw), expected)
+    }
+
+    func testPercent_dPercentInt8Init() {
+        let raw = Percent_d(Int8(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_dInt16Inits() {
+        let raw = Int16(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_pct_d(5)
+        let expected2 = Int16(
+            pct_d_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_dInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_pct_d(5)
+        let expected = Percent_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(pct_d_to_i16(ctype))
+        )
+    }
+
+    func testPercent_dInt16RawValueInit() {
+        let raw = percent_d(5)
+        let ctype = pct_d_to_i16(raw)
+        let expected = Percent_d(Int16(ctype))
+        XCTAssertEqual(Percent_d(rawValue: raw), expected)
+    }
+
+    func testPercent_dPercentInt16Init() {
+        let raw = Percent_d(Int16(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_dInt32Inits() {
+        let raw = Int32(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_pct_d(5)
+        let expected2 = Int32(
+            pct_d_to_i32(ctype)
+        )
+        let result2 = Int32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_dInt32Inits() {
+        let raw = Int32(5)
+        let ctype = i32_to_pct_d(5)
+        let expected = Percent_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int32(expected),
+            Int32(pct_d_to_i32(ctype))
+        )
+    }
+
+    func testPercent_dInt32RawValueInit() {
+        let raw = percent_d(5)
+        let ctype = pct_d_to_i32(raw)
+        let expected = Percent_d(Int32(ctype))
+        XCTAssertEqual(Percent_d(rawValue: raw), expected)
+    }
+
+    func testPercent_dPercentInt32Init() {
+        let raw = Percent_d(Int32(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_dInt64Inits() {
+        let raw = Int64(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_pct_d(5)
+        let expected2 = Int64(
+            pct_d_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_dInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_pct_d(5)
+        let expected = Percent_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(pct_d_to_i64(ctype))
+        )
+    }
+
+    func testPercent_dInt64RawValueInit() {
+        let raw = percent_d(5)
+        let ctype = pct_d_to_i64(raw)
+        let expected = Percent_d(Int64(ctype))
+        XCTAssertEqual(Percent_d(rawValue: raw), expected)
+    }
+
+    func testPercent_dPercentInt64Init() {
+        let raw = Percent_d(Int64(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_dIntInits() {
+        let raw = Int(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_pct_d(5)
+        let expected2 = Int(
+            pct_d_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_dIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_pct_d(5)
+        let expected = Percent_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(pct_d_to_i64(ctype))
+        )
+    }
+
+    func testPercent_dIntRawValueInit() {
+        let raw = percent_d(5)
+        let ctype = pct_d_to_i64(raw)
+        let expected = Percent_d(Int(ctype))
+        XCTAssertEqual(Percent_d(rawValue: raw), expected)
+    }
+
+    func testPercent_dPercentIntInit() {
+        let raw = Percent_d(Int(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_dCIntInits() {
+        let raw = CInt(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_pct_d(5)
+        let expected2 = CInt(
+            pct_d_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_dCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_pct_d(5)
+        let expected = Percent_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(pct_d_to_i32(ctype))
+        )
+    }
+
+    func testPercent_dCIntRawValueInit() {
+        let raw = percent_d(5)
+        let ctype = pct_d_to_i32(raw)
+        let expected = Percent_d(CInt(ctype))
+        XCTAssertEqual(Percent_d(rawValue: raw), expected)
+    }
+
+    func testPercent_dPercentCIntInit() {
+        let raw = Percent_d(CInt(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_dUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_pct_d(5)
+        let expected2 = UInt8(
+            pct_d_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_dUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_pct_d(5)
+        let expected = Percent_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(pct_d_to_u8(ctype))
+        )
+    }
+
+    func testPercent_dUInt8RawValueInit() {
+        let raw = percent_d(5)
+        let ctype = pct_d_to_u8(raw)
+        let expected = Percent_d(UInt8(ctype))
+        XCTAssertEqual(Percent_d(rawValue: raw), expected)
+    }
+
+    func testPercent_dPercentUInt8Init() {
+        let raw = Percent_d(UInt8(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_dUInt16Inits() {
+        let raw = UInt16(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u16_to_pct_d(5)
+        let expected2 = UInt16(
+            pct_d_to_u16(ctype)
+        )
+        let result2 = UInt16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_dUInt16Inits() {
+        let raw = UInt16(5)
+        let ctype = u16_to_pct_d(5)
+        let expected = Percent_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt16(expected),
+            UInt16(pct_d_to_u16(ctype))
+        )
+    }
+
+    func testPercent_dUInt16RawValueInit() {
+        let raw = percent_d(5)
+        let ctype = pct_d_to_u16(raw)
+        let expected = Percent_d(UInt16(ctype))
+        XCTAssertEqual(Percent_d(rawValue: raw), expected)
+    }
+
+    func testPercent_dPercentUInt16Init() {
+        let raw = Percent_d(UInt16(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_dUInt32Inits() {
+        let raw = UInt32(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_pct_d(5)
+        let expected2 = UInt32(
+            pct_d_to_u32(ctype)
+        )
+        let result2 = UInt32(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_dUInt32Inits() {
+        let raw = UInt32(5)
+        let ctype = u32_to_pct_d(5)
+        let expected = Percent_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt32(expected),
+            UInt32(pct_d_to_u32(ctype))
+        )
+    }
+
+    func testPercent_dUInt32RawValueInit() {
+        let raw = percent_d(5)
+        let ctype = pct_d_to_u32(raw)
+        let expected = Percent_d(UInt32(ctype))
+        XCTAssertEqual(Percent_d(rawValue: raw), expected)
+    }
+
+    func testPercent_dPercentUInt32Init() {
+        let raw = Percent_d(UInt32(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_dUInt64Inits() {
+        let raw = UInt64(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_pct_d(5)
+        let expected2 = UInt64(
+            pct_d_to_u64(ctype)
+        )
+        let result2 = UInt64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_dUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_pct_d(5)
+        let expected = Percent_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt64(expected),
+            UInt64(pct_d_to_u64(ctype))
+        )
+    }
+
+    func testPercent_dUInt64RawValueInit() {
+        let raw = percent_d(5)
+        let ctype = pct_d_to_u64(raw)
+        let expected = Percent_d(UInt64(ctype))
+        XCTAssertEqual(Percent_d(rawValue: raw), expected)
+    }
+
+    func testPercent_dPercentUInt64Init() {
+        let raw = Percent_d(UInt64(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_dUIntInits() {
+        let raw = UInt(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u64_to_pct_d(5)
+        let expected2 = UInt(
+            pct_d_to_u64(ctype)
+        )
+        let result2 = UInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_dUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_pct_d(5)
+        let expected = Percent_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(pct_d_to_u64(ctype))
+        )
+    }
+
+    func testPercent_dUIntRawValueInit() {
+        let raw = percent_d(5)
+        let ctype = pct_d_to_u64(raw)
+        let expected = Percent_d(UInt(ctype))
+        XCTAssertEqual(Percent_d(rawValue: raw), expected)
+    }
+
+    func testPercent_dPercentUIntInit() {
+        let raw = Percent_d(UInt(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_dCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_pct_d(5)
+        let expected2 = CUnsignedInt(
+            pct_d_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_dCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_pct_d(5)
+        let expected = Percent_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(pct_d_to_u32(ctype))
+        )
+    }
+
+    func testPercent_dCUnsignedIntRawValueInit() {
+        let raw = percent_d(5)
+        let ctype = pct_d_to_u32(raw)
+        let expected = Percent_d(CUnsignedInt(ctype))
+        XCTAssertEqual(Percent_d(rawValue: raw), expected)
+    }
+
+    func testPercent_dPercentCUnsignedIntInit() {
+        let raw = Percent_d(CUnsignedInt(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_dFloatInits() {
+        let raw = Float(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_pct_d(5)
+        let expected2 = Float(
+            pct_d_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_dFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_pct_d(5)
+        let expected = Percent_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(pct_d_to_f(ctype))
+        )
+    }
+
+    func testPercent_dFloatRawValueInit() {
+        let raw = percent_d(5)
+        let ctype = pct_d_to_f(raw)
+        let expected = Percent_d(Float(ctype))
+        XCTAssertEqual(Percent_d(rawValue: raw), expected)
+    }
+
+    func testPercent_dPercentFloatInit() {
+        let raw = Percent_d(Float(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testPercentPercent_dDoubleInits() {
+        let raw = Double(5)
+        let expected = Percent(percent: raw)
+        let result = Percent.percent(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_pct_d(5)
+        let expected2 = Double(
+            pct_d_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testPercent_dDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_pct_d(5)
+        let expected = Percent_d(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(pct_d_to_d(ctype))
+        )
+    }
+
+    func testPercent_dDoubleRawValueInit() {
+        let raw = percent_d(5)
+        let ctype = pct_d_to_d(raw)
+        let expected = Percent_d(Double(ctype))
+        XCTAssertEqual(Percent_d(rawValue: raw), expected)
+    }
+
+    func testPercent_dPercentDoubleInit() {
+        let raw = Percent_d(Double(5))
+        let category = Percent(raw)
+        let expected = Percent(rawValue: .percent_d(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+}
 
 /// Provides percent_t unit tests.
 final class Percent_tTests: XCTestCase {
