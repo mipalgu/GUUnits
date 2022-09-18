@@ -1,4 +1,4 @@
-name: MacOS Monterey Swift CI
+name: MacOS Monterey Swift Release CI
 
 on:
   push:
