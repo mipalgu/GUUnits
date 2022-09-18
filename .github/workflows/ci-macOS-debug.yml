@@ -16,9 +16,6 @@ jobs:
         with:
           swift-version: "5.6"
 
-      #- name: Install guunits
-      #  uses: mipalgu/install-guunits@main
-
       - name: Setup SSH Key
         uses: webfactory/ssh-agent@v0.5.4
         with:
@@ -33,11 +30,6 @@ jobs:
       - name: Debug Build
         run: swift build -c debug
 
-      - name: Release build
-        run: swift build -c release
-
       - name: Debug Test
         run: swift test
 
-      - name: Release Test
-        run: swift test -c release -Xswiftc -DRELEASE_BUILD
