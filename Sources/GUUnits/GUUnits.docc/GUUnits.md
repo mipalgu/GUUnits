@@ -66,6 +66,22 @@ let package = Package(name: "MyPackage",
 - ``Radians_f``
 - ``Radians_d``
 
+### Current
+
+- ``Current``
+- ``Amperes_t``
+- ``Amperes_u``
+- ``Amperes_f``
+- ``Amperes_d``
+- ``Milliamperes_t``
+- ``Milliamperes_u``
+- ``Milliamperes_f``
+- ``Milliamperes_d``
+- ``Microamperes_t``
+- ``Microamperes_u``
+- ``Microamperes_f``
+- ``Microamperes_d``
+
 ### Distances
 
 - ``Distance``
