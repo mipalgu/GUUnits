@@ -86,7 +86,7 @@ centimetres_f cm_d_to_cm_f(centimetres_d centimetres)
  */
 centimetres_t cm_d_to_cm_t(centimetres_d centimetres)
 {
-    return ((centimetres_t) (round(((double) (centimetres))) < ((double) (INT_MAX)) ? (round(((double) (centimetres))) > ((double) (INT_MIN)) ? round(((double) (centimetres))) : INT_MIN) : INT_MAX));
+    return ((centimetres_t) (round(((double) (centimetres))) < ((double) (9223372036854775807)) ? (round(((double) (centimetres))) > ((double) (-9223372036854775807 - 1)) ? ((centimetres_t) (round(((double) (centimetres))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -94,7 +94,7 @@ centimetres_t cm_d_to_cm_t(centimetres_d centimetres)
  */
 centimetres_u cm_d_to_cm_u(centimetres_d centimetres)
 {
-    return ((centimetres_u) (round(((double) (centimetres))) < ((double) (UINT_MAX)) ? (round(((double) (centimetres))) > ((double) (0)) ? round(((double) (centimetres))) : 0) : UINT_MAX));
+    return ((centimetres_u) (round(((double) (centimetres))) < ((double) (18446744073709551615U)) ? (round(((double) (centimetres))) > ((double) (0)) ? ((centimetres_u) (round(((double) (centimetres))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -111,14 +111,6 @@ double cm_d_to_d(centimetres_d centimetres)
 float cm_d_to_f(centimetres_d centimetres)
 {
     return d_to_f(((double) (centimetres)));
-}
-
-/**
- * Convert centimetres_d to int.
- */
-int cm_d_to_i(centimetres_d centimetres)
-{
-    return d_to_i(((double) (centimetres)));
 }
 
 /**
@@ -176,7 +168,7 @@ metres_f cm_d_to_m_f(centimetres_d centimetres)
 metres_t cm_d_to_m_t(centimetres_d centimetres)
 {
     const centimetres_d conversion = centimetres / 100.0;
-    return ((metres_t) (round(((double) (conversion))) < ((double) (INT_MAX)) ? (round(((double) (conversion))) > ((double) (INT_MIN)) ? round(((double) (conversion))) : INT_MIN) : INT_MAX));
+    return ((metres_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((metres_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -185,7 +177,7 @@ metres_t cm_d_to_m_t(centimetres_d centimetres)
 metres_u cm_d_to_m_u(centimetres_d centimetres)
 {
     const centimetres_d conversion = centimetres / 100.0;
-    return ((metres_u) (round(((double) (conversion))) < ((double) (UINT_MAX)) ? (round(((double) (conversion))) > ((double) (0)) ? round(((double) (conversion))) : 0) : UINT_MAX));
+    return ((metres_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((metres_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -221,11 +213,11 @@ millimetres_f cm_d_to_mm_f(centimetres_d centimetres)
  */
 millimetres_t cm_d_to_mm_t(centimetres_d centimetres)
 {
-    if (centimetres > ((centimetres_d) (INT_MAX)) / 10.0) {
-        return INT_MAX;
+    if (centimetres > ((centimetres_d) (9223372036854775807)) / 10.0) {
+        return 9223372036854775807;
     }
-    if (centimetres < ((centimetres_d) (INT_MIN)) / 10.0) {
-        return INT_MIN;
+    if (centimetres < ((centimetres_d) (-9223372036854775807 - 1)) / 10.0) {
+        return -9223372036854775807 - 1;
     }
     return ((millimetres_t) (centimetres * 10.0));
 }
@@ -235,8 +227,8 @@ millimetres_t cm_d_to_mm_t(centimetres_d centimetres)
  */
 millimetres_u cm_d_to_mm_u(centimetres_d centimetres)
 {
-    if (centimetres > ((centimetres_d) (UINT_MAX)) / 10.0) {
-        return UINT_MAX;
+    if (centimetres > ((centimetres_d) (18446744073709551615U)) / 10.0) {
+        return 18446744073709551615U;
     }
     if (centimetres < ((centimetres_d) (0)) / 10.0) {
         return 0;
@@ -277,14 +269,6 @@ uint8_t cm_d_to_u8(centimetres_d centimetres)
 }
 
 /**
- * Convert centimetres_d to unsigned int.
- */
-unsigned int cm_d_to_u(centimetres_d centimetres)
-{
-    return d_to_u(((double) (centimetres)));
-}
-
-/**
  * Convert centimetres_f to centimetres_d.
  */
 centimetres_d cm_f_to_cm_d(centimetres_f centimetres)
@@ -297,7 +281,7 @@ centimetres_d cm_f_to_cm_d(centimetres_f centimetres)
  */
 centimetres_t cm_f_to_cm_t(centimetres_f centimetres)
 {
-    return ((centimetres_t) (round(((double) (centimetres))) < ((double) (INT_MAX)) ? (round(((double) (centimetres))) > ((double) (INT_MIN)) ? round(((double) (centimetres))) : INT_MIN) : INT_MAX));
+    return ((centimetres_t) (round(((double) (centimetres))) < ((double) (9223372036854775807)) ? (round(((double) (centimetres))) > ((double) (-9223372036854775807 - 1)) ? ((centimetres_t) (round(((double) (centimetres))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -305,7 +289,7 @@ centimetres_t cm_f_to_cm_t(centimetres_f centimetres)
  */
 centimetres_u cm_f_to_cm_u(centimetres_f centimetres)
 {
-    return ((centimetres_u) (round(((double) (centimetres))) < ((double) (UINT_MAX)) ? (round(((double) (centimetres))) > ((double) (0)) ? round(((double) (centimetres))) : 0) : UINT_MAX));
+    return ((centimetres_u) (round(((double) (centimetres))) < ((double) (18446744073709551615U)) ? (round(((double) (centimetres))) > ((double) (0)) ? ((centimetres_u) (round(((double) (centimetres))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -322,14 +306,6 @@ double cm_f_to_d(centimetres_f centimetres)
 float cm_f_to_f(centimetres_f centimetres)
 {
     return ((float) (centimetres));
-}
-
-/**
- * Convert centimetres_f to int.
- */
-int cm_f_to_i(centimetres_f centimetres)
-{
-    return f_to_i(((float) (centimetres)));
 }
 
 /**
@@ -386,7 +362,7 @@ metres_f cm_f_to_m_f(centimetres_f centimetres)
 metres_t cm_f_to_m_t(centimetres_f centimetres)
 {
     const centimetres_f conversion = centimetres / 100.0f;
-    return ((metres_t) (round(((double) (conversion))) < ((double) (INT_MAX)) ? (round(((double) (conversion))) > ((double) (INT_MIN)) ? round(((double) (conversion))) : INT_MIN) : INT_MAX));
+    return ((metres_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((metres_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -395,7 +371,7 @@ metres_t cm_f_to_m_t(centimetres_f centimetres)
 metres_u cm_f_to_m_u(centimetres_f centimetres)
 {
     const centimetres_f conversion = centimetres / 100.0f;
-    return ((metres_u) (round(((double) (conversion))) < ((double) (UINT_MAX)) ? (round(((double) (conversion))) > ((double) (0)) ? round(((double) (conversion))) : 0) : UINT_MAX));
+    return ((metres_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((metres_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -425,11 +401,11 @@ millimetres_f cm_f_to_mm_f(centimetres_f centimetres)
  */
 millimetres_t cm_f_to_mm_t(centimetres_f centimetres)
 {
-    if (centimetres > ((centimetres_f) (INT_MAX)) / 10.0f) {
-        return INT_MAX;
+    if (centimetres > ((centimetres_f) (9223372036854775807)) / 10.0f) {
+        return 9223372036854775807;
     }
-    if (centimetres < ((centimetres_f) (INT_MIN)) / 10.0f) {
-        return INT_MIN;
+    if (centimetres < ((centimetres_f) (-9223372036854775807 - 1)) / 10.0f) {
+        return -9223372036854775807 - 1;
     }
     return ((millimetres_t) (centimetres * 10.0f));
 }
@@ -439,8 +415,8 @@ millimetres_t cm_f_to_mm_t(centimetres_f centimetres)
  */
 millimetres_u cm_f_to_mm_u(centimetres_f centimetres)
 {
-    if (centimetres > ((centimetres_f) (UINT_MAX)) / 10.0f) {
-        return UINT_MAX;
+    if (centimetres > ((centimetres_f) (18446744073709551615U)) / 10.0f) {
+        return 18446744073709551615U;
     }
     if (centimetres < ((centimetres_f) (0)) / 10.0f) {
         return 0;
@@ -481,14 +457,6 @@ uint8_t cm_f_to_u8(centimetres_f centimetres)
 }
 
 /**
- * Convert centimetres_f to unsigned int.
- */
-unsigned int cm_f_to_u(centimetres_f centimetres)
-{
-    return f_to_u(((float) (centimetres)));
-}
-
-/**
  * Convert centimetres_t to centimetres_d.
  */
 centimetres_d cm_t_to_cm_d(centimetres_t centimetres)
@@ -526,14 +494,6 @@ double cm_t_to_d(centimetres_t centimetres)
 float cm_t_to_f(centimetres_t centimetres)
 {
     return ((float) (centimetres));
-}
-
-/**
- * Convert centimetres_t to int.
- */
-int cm_t_to_i(centimetres_t centimetres)
-{
-    return ((int) (centimetres));
 }
 
 /**
@@ -624,11 +584,11 @@ millimetres_f cm_t_to_mm_f(centimetres_t centimetres)
  */
 millimetres_t cm_t_to_mm_t(centimetres_t centimetres)
 {
-    if (centimetres < INT_MIN / 10) {
-        return INT_MIN;
+    if (centimetres < -9223372036854775807 - 1 / 10) {
+        return -9223372036854775807 - 1;
     }
-    if (centimetres > INT_MAX / 10) {
-        return INT_MAX;
+    if (centimetres > 9223372036854775807 / 10) {
+        return 9223372036854775807;
     }
     return ((millimetres_t) (centimetres)) * 10;
 }
@@ -642,8 +602,8 @@ millimetres_u cm_t_to_mm_u(centimetres_t centimetres)
         return 0;
     }
     const millimetres_u otherCentimetres = ((millimetres_u) (centimetres));
-    if (otherCentimetres > UINT_MAX / 10) {
-        return UINT_MAX;
+    if (otherCentimetres > 18446744073709551615U / 10) {
+        return 18446744073709551615U;
     }
     return otherCentimetres * 10;
 }
@@ -681,14 +641,6 @@ uint8_t cm_t_to_u8(centimetres_t centimetres)
 }
 
 /**
- * Convert centimetres_t to unsigned int.
- */
-unsigned int cm_t_to_u(centimetres_t centimetres)
-{
-    return ((unsigned int) (MAX(((centimetres_t) (0)), centimetres)));
-}
-
-/**
  * Convert centimetres_u to centimetres_d.
  */
 centimetres_d cm_u_to_cm_d(centimetres_u centimetres)
@@ -709,7 +661,7 @@ centimetres_f cm_u_to_cm_f(centimetres_u centimetres)
  */
 centimetres_t cm_u_to_cm_t(centimetres_u centimetres)
 {
-    return ((centimetres_t) ((centimetres) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : centimetres));
+    return ((centimetres_t) ((centimetres) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : centimetres));
 }
 
 /**
@@ -726,14 +678,6 @@ double cm_u_to_d(centimetres_u centimetres)
 float cm_u_to_f(centimetres_u centimetres)
 {
     return ((float) (centimetres));
-}
-
-/**
- * Convert centimetres_u to int.
- */
-int cm_u_to_i(centimetres_u centimetres)
-{
-    return ((int) (MIN(((centimetres_u) (INT_MAX)), centimetres)));
 }
 
 /**
@@ -757,7 +701,7 @@ int32_t cm_u_to_i32(centimetres_u centimetres)
  */
 int64_t cm_u_to_i64(centimetres_u centimetres)
 {
-    return ((int64_t) (centimetres));
+    return ((int64_t) (MIN(((centimetres_u) (9223372036854775807)), centimetres)));
 }
 
 /**
@@ -790,7 +734,7 @@ metres_f cm_u_to_m_f(centimetres_u centimetres)
 metres_t cm_u_to_m_t(centimetres_u centimetres)
 {
     const centimetres_u conversion = centimetres / 100;
-    return ((metres_t) ((conversion) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : conversion));
+    return ((metres_t) ((conversion) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : conversion));
 }
 
 /**
@@ -822,8 +766,8 @@ millimetres_f cm_u_to_mm_f(centimetres_u centimetres)
  */
 millimetres_t cm_u_to_mm_t(centimetres_u centimetres)
 {
-    if (centimetres > ((centimetres_u) (INT_MAX / 10))) {
-        return INT_MAX;
+    if (centimetres > ((centimetres_u) (9223372036854775807 / 10))) {
+        return 9223372036854775807;
     }
     return ((millimetres_t) (centimetres * 10));
 }
@@ -833,8 +777,8 @@ millimetres_t cm_u_to_mm_t(centimetres_u centimetres)
  */
 millimetres_u cm_u_to_mm_u(centimetres_u centimetres)
 {
-    if (centimetres > UINT_MAX / 10) {
-        return UINT_MAX;
+    if (centimetres > 18446744073709551615U / 10) {
+        return 18446744073709551615U;
     }
     return ((millimetres_u) (centimetres)) * 10;
 }
@@ -872,14 +816,6 @@ uint8_t cm_u_to_u8(centimetres_u centimetres)
 }
 
 /**
- * Convert centimetres_u to unsigned int.
- */
-unsigned int cm_u_to_u(centimetres_u centimetres)
-{
-    return ((unsigned int) (centimetres));
-}
-
-/**
  * Convert double to centimetres_d.
  */
 centimetres_d d_to_cm_d(double centimetres)
@@ -900,7 +836,7 @@ centimetres_f d_to_cm_f(double centimetres)
  */
 centimetres_t d_to_cm_t(double centimetres)
 {
-    return d_to_i(centimetres);
+    return d_to_i64(centimetres);
 }
 
 /**
@@ -908,7 +844,7 @@ centimetres_t d_to_cm_t(double centimetres)
  */
 centimetres_u d_to_cm_u(double centimetres)
 {
-    return d_to_u(centimetres);
+    return d_to_u64(centimetres);
 }
 
 /**
@@ -932,7 +868,7 @@ metres_f d_to_m_f(double metres)
  */
 metres_t d_to_m_t(double metres)
 {
-    return d_to_i(metres);
+    return d_to_i64(metres);
 }
 
 /**
@@ -940,7 +876,7 @@ metres_t d_to_m_t(double metres)
  */
 metres_u d_to_m_u(double metres)
 {
-    return d_to_u(metres);
+    return d_to_u64(metres);
 }
 
 /**
@@ -964,7 +900,7 @@ millimetres_f d_to_mm_f(double millimetres)
  */
 millimetres_t d_to_mm_t(double millimetres)
 {
-    return d_to_i(millimetres);
+    return d_to_i64(millimetres);
 }
 
 /**
@@ -972,7 +908,7 @@ millimetres_t d_to_mm_t(double millimetres)
  */
 millimetres_u d_to_mm_u(double millimetres)
 {
-    return d_to_u(millimetres);
+    return d_to_u64(millimetres);
 }
 
 /**
@@ -996,7 +932,7 @@ centimetres_f f_to_cm_f(float centimetres)
  */
 centimetres_t f_to_cm_t(float centimetres)
 {
-    return f_to_i(centimetres);
+    return f_to_i64(centimetres);
 }
 
 /**
@@ -1004,7 +940,7 @@ centimetres_t f_to_cm_t(float centimetres)
  */
 centimetres_u f_to_cm_u(float centimetres)
 {
-    return f_to_u(centimetres);
+    return f_to_u64(centimetres);
 }
 
 /**
@@ -1028,7 +964,7 @@ metres_f f_to_m_f(float metres)
  */
 metres_t f_to_m_t(float metres)
 {
-    return f_to_i(metres);
+    return f_to_i64(metres);
 }
 
 /**
@@ -1036,7 +972,7 @@ metres_t f_to_m_t(float metres)
  */
 metres_u f_to_m_u(float metres)
 {
-    return f_to_u(metres);
+    return f_to_u64(metres);
 }
 
 /**
@@ -1060,7 +996,7 @@ millimetres_f f_to_mm_f(float millimetres)
  */
 millimetres_t f_to_mm_t(float millimetres)
 {
-    return f_to_i(millimetres);
+    return f_to_i64(millimetres);
 }
 
 /**
@@ -1068,7 +1004,7 @@ millimetres_t f_to_mm_t(float millimetres)
  */
 millimetres_u f_to_mm_u(float millimetres)
 {
-    return f_to_u(millimetres);
+    return f_to_u64(millimetres);
 }
 
 /**
@@ -1188,7 +1124,7 @@ centimetres_f i32_to_cm_f(int32_t centimetres)
  */
 centimetres_t i32_to_cm_t(int32_t centimetres)
 {
-    return ((centimetres_t) (MIN(((int32_t) (INT_MAX)), MAX(((int32_t) (INT_MIN)), centimetres))));
+    return ((centimetres_t) (centimetres));
 }
 
 /**
@@ -1220,7 +1156,7 @@ metres_f i32_to_m_f(int32_t metres)
  */
 metres_t i32_to_m_t(int32_t metres)
 {
-    return ((metres_t) (MIN(((int32_t) (INT_MAX)), MAX(((int32_t) (INT_MIN)), metres))));
+    return ((metres_t) (metres));
 }
 
 /**
@@ -1252,7 +1188,7 @@ millimetres_f i32_to_mm_f(int32_t millimetres)
  */
 millimetres_t i32_to_mm_t(int32_t millimetres)
 {
-    return ((millimetres_t) (MIN(((int32_t) (INT_MAX)), MAX(((int32_t) (INT_MIN)), millimetres))));
+    return ((millimetres_t) (millimetres));
 }
 
 /**
@@ -1284,7 +1220,7 @@ centimetres_f i64_to_cm_f(int64_t centimetres)
  */
 centimetres_t i64_to_cm_t(int64_t centimetres)
 {
-    return ((centimetres_t) (MIN(((int64_t) (INT_MAX)), MAX(((int64_t) (INT_MIN)), centimetres))));
+    return ((centimetres_t) (centimetres));
 }
 
 /**
@@ -1316,7 +1252,7 @@ metres_f i64_to_m_f(int64_t metres)
  */
 metres_t i64_to_m_t(int64_t metres)
 {
-    return ((metres_t) (MIN(((int64_t) (INT_MAX)), MAX(((int64_t) (INT_MIN)), metres))));
+    return ((metres_t) (metres));
 }
 
 /**
@@ -1348,7 +1284,7 @@ millimetres_f i64_to_mm_f(int64_t millimetres)
  */
 millimetres_t i64_to_mm_t(int64_t millimetres)
 {
-    return ((millimetres_t) (MIN(((int64_t) (INT_MAX)), MAX(((int64_t) (INT_MIN)), millimetres))));
+    return ((millimetres_t) (millimetres));
 }
 
 /**
@@ -1456,102 +1392,6 @@ millimetres_u i8_to_mm_u(int8_t millimetres)
 }
 
 /**
- * Convert int to centimetres_d.
- */
-centimetres_d i_to_cm_d(int centimetres)
-{
-    return ((centimetres_d) (centimetres));
-}
-
-/**
- * Convert int to centimetres_f.
- */
-centimetres_f i_to_cm_f(int centimetres)
-{
-    return ((centimetres_f) (centimetres));
-}
-
-/**
- * Convert int to centimetres_t.
- */
-centimetres_t i_to_cm_t(int centimetres)
-{
-    return ((centimetres_t) (centimetres));
-}
-
-/**
- * Convert int to centimetres_u.
- */
-centimetres_u i_to_cm_u(int centimetres)
-{
-    return ((centimetres_u) (MAX(((int) (0)), centimetres)));
-}
-
-/**
- * Convert int to metres_d.
- */
-metres_d i_to_m_d(int metres)
-{
-    return ((metres_d) (metres));
-}
-
-/**
- * Convert int to metres_f.
- */
-metres_f i_to_m_f(int metres)
-{
-    return ((metres_f) (metres));
-}
-
-/**
- * Convert int to metres_t.
- */
-metres_t i_to_m_t(int metres)
-{
-    return ((metres_t) (metres));
-}
-
-/**
- * Convert int to metres_u.
- */
-metres_u i_to_m_u(int metres)
-{
-    return ((metres_u) (MAX(((int) (0)), metres)));
-}
-
-/**
- * Convert int to millimetres_d.
- */
-millimetres_d i_to_mm_d(int millimetres)
-{
-    return ((millimetres_d) (millimetres));
-}
-
-/**
- * Convert int to millimetres_f.
- */
-millimetres_f i_to_mm_f(int millimetres)
-{
-    return ((millimetres_f) (millimetres));
-}
-
-/**
- * Convert int to millimetres_t.
- */
-millimetres_t i_to_mm_t(int millimetres)
-{
-    return ((millimetres_t) (millimetres));
-}
-
-/**
- * Convert int to millimetres_u.
- */
-millimetres_u i_to_mm_u(int millimetres)
-{
-    return ((millimetres_u) (MAX(((int) (0)), millimetres)));
-}
-
-/**
  * Convert metres_d to centimetres_d.
  */
 centimetres_d m_d_to_cm_d(metres_d metres)
@@ -1584,11 +1424,11 @@ centimetres_f m_d_to_cm_f(metres_d metres)
  */
 centimetres_t m_d_to_cm_t(metres_d metres)
 {
-    if (metres > ((metres_d) (INT_MAX)) / 100.0) {
-        return INT_MAX;
+    if (metres > ((metres_d) (9223372036854775807)) / 100.0) {
+        return 9223372036854775807;
     }
-    if (metres < ((metres_d) (INT_MIN)) / 100.0) {
-        return INT_MIN;
+    if (metres < ((metres_d) (-9223372036854775807 - 1)) / 100.0) {
+        return -9223372036854775807 - 1;
     }
     return ((centimetres_t) (metres * 100.0));
 }
@@ -1598,8 +1438,8 @@ centimetres_t m_d_to_cm_t(metres_d metres)
  */
 centimetres_u m_d_to_cm_u(metres_d metres)
 {
-    if (metres > ((metres_d) (UINT_MAX)) / 100.0) {
-        return UINT_MAX;
+    if (metres > ((metres_d) (18446744073709551615U)) / 100.0) {
+        return 18446744073709551615U;
     }
     if (metres < ((metres_d) (0)) / 100.0) {
         return 0;
@@ -1621,14 +1461,6 @@ double m_d_to_d(metres_d metres)
 float m_d_to_f(metres_d metres)
 {
     return d_to_f(((double) (metres)));
-}
-
-/**
- * Convert metres_d to int.
- */
-int m_d_to_i(metres_d metres)
-{
-    return d_to_i(((double) (metres)));
 }
 
 /**
@@ -1676,7 +1508,7 @@ metres_f m_d_to_m_f(metres_d metres)
  */
 metres_t m_d_to_m_t(metres_d metres)
 {
-    return ((metres_t) (round(((double) (metres))) < ((double) (INT_MAX)) ? (round(((double) (metres))) > ((double) (INT_MIN)) ? round(((double) (metres))) : INT_MIN) : INT_MAX));
+    return ((metres_t) (round(((double) (metres))) < ((double) (9223372036854775807)) ? (round(((double) (metres))) > ((double) (-9223372036854775807 - 1)) ? ((metres_t) (round(((double) (metres))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -1684,7 +1516,7 @@ metres_t m_d_to_m_t(metres_d metres)
  */
 metres_u m_d_to_m_u(metres_d metres)
 {
-    return ((metres_u) (round(((double) (metres))) < ((double) (UINT_MAX)) ? (round(((double) (metres))) > ((double) (0)) ? round(((double) (metres))) : 0) : UINT_MAX));
+    return ((metres_u) (round(((double) (metres))) < ((double) (18446744073709551615U)) ? (round(((double) (metres))) > ((double) (0)) ? ((metres_u) (round(((double) (metres))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -1720,11 +1552,11 @@ millimetres_f m_d_to_mm_f(metres_d metres)
  */
 millimetres_t m_d_to_mm_t(metres_d metres)
 {
-    if (metres > ((metres_d) (INT_MAX)) / 1000.0) {
-        return INT_MAX;
+    if (metres > ((metres_d) (9223372036854775807)) / 1000.0) {
+        return 9223372036854775807;
     }
-    if (metres < ((metres_d) (INT_MIN)) / 1000.0) {
-        return INT_MIN;
+    if (metres < ((metres_d) (-9223372036854775807 - 1)) / 1000.0) {
+        return -9223372036854775807 - 1;
     }
     return ((millimetres_t) (metres * 1000.0));
 }
@@ -1734,8 +1566,8 @@ millimetres_t m_d_to_mm_t(metres_d metres)
  */
 millimetres_u m_d_to_mm_u(metres_d metres)
 {
-    if (metres > ((metres_d) (UINT_MAX)) / 1000.0) {
-        return UINT_MAX;
+    if (metres > ((metres_d) (18446744073709551615U)) / 1000.0) {
+        return 18446744073709551615U;
     }
     if (metres < ((metres_d) (0)) / 1000.0) {
         return 0;
@@ -1776,14 +1608,6 @@ uint8_t m_d_to_u8(metres_d metres)
 }
 
 /**
- * Convert metres_d to unsigned int.
- */
-unsigned int m_d_to_u(metres_d metres)
-{
-    return d_to_u(((double) (metres)));
-}
-
-/**
  * Convert metres_f to centimetres_d.
  */
 centimetres_d m_f_to_cm_d(metres_f metres)
@@ -1810,11 +1634,11 @@ centimetres_f m_f_to_cm_f(metres_f metres)
  */
 centimetres_t m_f_to_cm_t(metres_f metres)
 {
-    if (metres > ((metres_f) (INT_MAX)) / 100.0f) {
-        return INT_MAX;
+    if (metres > ((metres_f) (9223372036854775807)) / 100.0f) {
+        return 9223372036854775807;
     }
-    if (metres < ((metres_f) (INT_MIN)) / 100.0f) {
-        return INT_MIN;
+    if (metres < ((metres_f) (-9223372036854775807 - 1)) / 100.0f) {
+        return -9223372036854775807 - 1;
     }
     return ((centimetres_t) (metres * 100.0f));
 }
@@ -1824,8 +1648,8 @@ centimetres_t m_f_to_cm_t(metres_f metres)
  */
 centimetres_u m_f_to_cm_u(metres_f metres)
 {
-    if (metres > ((metres_f) (UINT_MAX)) / 100.0f) {
-        return UINT_MAX;
+    if (metres > ((metres_f) (18446744073709551615U)) / 100.0f) {
+        return 18446744073709551615U;
     }
     if (metres < ((metres_f) (0)) / 100.0f) {
         return 0;
@@ -1847,14 +1671,6 @@ double m_f_to_d(metres_f metres)
 float m_f_to_f(metres_f metres)
 {
     return ((float) (metres));
-}
-
-/**
- * Convert metres_f to int.
- */
-int m_f_to_i(metres_f metres)
-{
-    return f_to_i(((float) (metres)));
 }
 
 /**
@@ -1902,7 +1718,7 @@ metres_d m_f_to_m_d(metres_f metres)
  */
 metres_t m_f_to_m_t(metres_f metres)
 {
-    return ((metres_t) (round(((double) (metres))) < ((double) (INT_MAX)) ? (round(((double) (metres))) > ((double) (INT_MIN)) ? round(((double) (metres))) : INT_MIN) : INT_MAX));
+    return ((metres_t) (round(((double) (metres))) < ((double) (9223372036854775807)) ? (round(((double) (metres))) > ((double) (-9223372036854775807 - 1)) ? ((metres_t) (round(((double) (metres))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -1910,7 +1726,7 @@ metres_t m_f_to_m_t(metres_f metres)
  */
 metres_u m_f_to_m_u(metres_f metres)
 {
-    return ((metres_u) (round(((double) (metres))) < ((double) (UINT_MAX)) ? (round(((double) (metres))) > ((double) (0)) ? round(((double) (metres))) : 0) : UINT_MAX));
+    return ((metres_u) (round(((double) (metres))) < ((double) (18446744073709551615U)) ? (round(((double) (metres))) > ((double) (0)) ? ((metres_u) (round(((double) (metres))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -1940,11 +1756,11 @@ millimetres_f m_f_to_mm_f(metres_f metres)
  */
 millimetres_t m_f_to_mm_t(metres_f metres)
 {
-    if (metres > ((metres_f) (INT_MAX)) / 1000.0f) {
-        return INT_MAX;
+    if (metres > ((metres_f) (9223372036854775807)) / 1000.0f) {
+        return 9223372036854775807;
     }
-    if (metres < ((metres_f) (INT_MIN)) / 1000.0f) {
-        return INT_MIN;
+    if (metres < ((metres_f) (-9223372036854775807 - 1)) / 1000.0f) {
+        return -9223372036854775807 - 1;
     }
     return ((millimetres_t) (metres * 1000.0f));
 }
@@ -1954,8 +1770,8 @@ millimetres_t m_f_to_mm_t(metres_f metres)
  */
 millimetres_u m_f_to_mm_u(metres_f metres)
 {
-    if (metres > ((metres_f) (UINT_MAX)) / 1000.0f) {
-        return UINT_MAX;
+    if (metres > ((metres_f) (18446744073709551615U)) / 1000.0f) {
+        return 18446744073709551615U;
     }
     if (metres < ((metres_f) (0)) / 1000.0f) {
         return 0;
@@ -1996,14 +1812,6 @@ uint8_t m_f_to_u8(metres_f metres)
 }
 
 /**
- * Convert metres_f to unsigned int.
- */
-unsigned int m_f_to_u(metres_f metres)
-{
-    return f_to_u(((float) (metres)));
-}
-
-/**
  * Convert metres_t to centimetres_d.
  */
 centimetres_d m_t_to_cm_d(metres_t metres)
@@ -2024,11 +1832,11 @@ centimetres_f m_t_to_cm_f(metres_t metres)
  */
 centimetres_t m_t_to_cm_t(metres_t metres)
 {
-    if (metres < INT_MIN / 100) {
-        return INT_MIN;
+    if (metres < -9223372036854775807 - 1 / 100) {
+        return -9223372036854775807 - 1;
     }
-    if (metres > INT_MAX / 100) {
-        return INT_MAX;
+    if (metres > 9223372036854775807 / 100) {
+        return 9223372036854775807;
     }
     return ((centimetres_t) (metres)) * 100;
 }
@@ -2042,8 +1850,8 @@ centimetres_u m_t_to_cm_u(metres_t metres)
         return 0;
     }
     const centimetres_u otherMetres = ((centimetres_u) (metres));
-    if (otherMetres > UINT_MAX / 100) {
-        return UINT_MAX;
+    if (otherMetres > 18446744073709551615U / 100) {
+        return 18446744073709551615U;
     }
     return otherMetres * 100;
 }
@@ -2062,14 +1870,6 @@ double m_t_to_d(metres_t metres)
 float m_t_to_f(metres_t metres)
 {
     return ((float) (metres));
-}
-
-/**
- * Convert metres_t to int.
- */
-int m_t_to_i(metres_t metres)
-{
-    return ((int) (metres));
 }
 
 /**
@@ -2149,11 +1949,11 @@ millimetres_f m_t_to_mm_f(metres_t metres)
  */
 millimetres_t m_t_to_mm_t(metres_t metres)
 {
-    if (metres < INT_MIN / 1000) {
-        return INT_MIN;
+    if (metres < -9223372036854775807 - 1 / 1000) {
+        return -9223372036854775807 - 1;
     }
-    if (metres > INT_MAX / 1000) {
-        return INT_MAX;
+    if (metres > 9223372036854775807 / 1000) {
+        return 9223372036854775807;
     }
     return ((millimetres_t) (metres)) * 1000;
 }
@@ -2167,8 +1967,8 @@ millimetres_u m_t_to_mm_u(metres_t metres)
         return 0;
     }
     const millimetres_u otherMetres = ((millimetres_u) (metres));
-    if (otherMetres > UINT_MAX / 1000) {
-        return UINT_MAX;
+    if (otherMetres > 18446744073709551615U / 1000) {
+        return 18446744073709551615U;
     }
     return otherMetres * 1000;
 }
@@ -2206,14 +2006,6 @@ uint8_t m_t_to_u8(metres_t metres)
 }
 
 /**
- * Convert metres_t to unsigned int.
- */
-unsigned int m_t_to_u(metres_t metres)
-{
-    return ((unsigned int) (MAX(((metres_t) (0)), metres)));
-}
-
-/**
  * Convert metres_u to centimetres_d.
  */
 centimetres_d m_u_to_cm_d(metres_u metres)
@@ -2234,8 +2026,8 @@ centimetres_f m_u_to_cm_f(metres_u metres)
  */
 centimetres_t m_u_to_cm_t(metres_u metres)
 {
-    if (metres > ((metres_u) (INT_MAX / 100))) {
-        return INT_MAX;
+    if (metres > ((metres_u) (9223372036854775807 / 100))) {
+        return 9223372036854775807;
     }
     return ((centimetres_t) (metres * 100));
 }
@@ -2245,8 +2037,8 @@ centimetres_t m_u_to_cm_t(metres_u metres)
  */
 centimetres_u m_u_to_cm_u(metres_u metres)
 {
-    if (metres > UINT_MAX / 100) {
-        return UINT_MAX;
+    if (metres > 18446744073709551615U / 100) {
+        return 18446744073709551615U;
     }
     return ((centimetres_u) (metres)) * 100;
 }
@@ -2265,14 +2057,6 @@ double m_u_to_d(metres_u metres)
 float m_u_to_f(metres_u metres)
 {
     return ((float) (metres));
-}
-
-/**
- * Convert metres_u to int.
- */
-int m_u_to_i(metres_u metres)
-{
-    return ((int) (MIN(((metres_u) (INT_MAX)), metres)));
 }
 
 /**
@@ -2296,7 +2080,7 @@ int32_t m_u_to_i32(metres_u metres)
  */
 int64_t m_u_to_i64(metres_u metres)
 {
-    return ((int64_t) (metres));
+    return ((int64_t) (MIN(((metres_u) (9223372036854775807)), metres)));
 }
 
 /**
@@ -2328,7 +2112,7 @@ metres_f m_u_to_m_f(metres_u metres)
  */
 metres_t m_u_to_m_t(metres_u metres)
 {
-    return ((metres_t) ((metres) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : metres));
+    return ((metres_t) ((metres) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : metres));
 }
 
 /**
@@ -2352,8 +2136,8 @@ millimetres_f m_u_to_mm_f(metres_u metres)
  */
 millimetres_t m_u_to_mm_t(metres_u metres)
 {
-    if (metres > ((metres_u) (INT_MAX / 1000))) {
-        return INT_MAX;
+    if (metres > ((metres_u) (9223372036854775807 / 1000))) {
+        return 9223372036854775807;
     }
     return ((millimetres_t) (metres * 1000));
 }
@@ -2363,8 +2147,8 @@ millimetres_t m_u_to_mm_t(metres_u metres)
  */
 millimetres_u m_u_to_mm_u(metres_u metres)
 {
-    if (metres > UINT_MAX / 1000) {
-        return UINT_MAX;
+    if (metres > 18446744073709551615U / 1000) {
+        return 18446744073709551615U;
     }
     return ((millimetres_u) (metres)) * 1000;
 }
@@ -2402,14 +2186,6 @@ uint8_t m_u_to_u8(metres_u metres)
 }
 
 /**
- * Convert metres_u to unsigned int.
- */
-unsigned int m_u_to_u(metres_u metres)
-{
-    return ((unsigned int) (metres));
-}
-
-/**
  * Convert millimetres_d to centimetres_d.
  */
 centimetres_d mm_d_to_cm_d(millimetres_d millimetres)
@@ -2432,7 +2208,7 @@ centimetres_f mm_d_to_cm_f(millimetres_d millimetres)
 centimetres_t mm_d_to_cm_t(millimetres_d millimetres)
 {
     const millimetres_d conversion = millimetres / 10.0;
-    return ((centimetres_t) (round(((double) (conversion))) < ((double) (INT_MAX)) ? (round(((double) (conversion))) > ((double) (INT_MIN)) ? round(((double) (conversion))) : INT_MIN) : INT_MAX));
+    return ((centimetres_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((centimetres_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -2441,7 +2217,7 @@ centimetres_t mm_d_to_cm_t(millimetres_d millimetres)
 centimetres_u mm_d_to_cm_u(millimetres_d millimetres)
 {
     const millimetres_d conversion = millimetres / 10.0;
-    return ((centimetres_u) (round(((double) (conversion))) < ((double) (UINT_MAX)) ? (round(((double) (conversion))) > ((double) (0)) ? round(((double) (conversion))) : 0) : UINT_MAX));
+    return ((centimetres_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((centimetres_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -2458,14 +2234,6 @@ double mm_d_to_d(millimetres_d millimetres)
 float mm_d_to_f(millimetres_d millimetres)
 {
     return d_to_f(((double) (millimetres)));
-}
-
-/**
- * Convert millimetres_d to int.
- */
-int mm_d_to_i(millimetres_d millimetres)
-{
-    return d_to_i(((double) (millimetres)));
 }
 
 /**
@@ -2523,7 +2291,7 @@ metres_f mm_d_to_m_f(millimetres_d millimetres)
 metres_t mm_d_to_m_t(millimetres_d millimetres)
 {
     const millimetres_d conversion = millimetres / 1000.0;
-    return ((metres_t) (round(((double) (conversion))) < ((double) (INT_MAX)) ? (round(((double) (conversion))) > ((double) (INT_MIN)) ? round(((double) (conversion))) : INT_MIN) : INT_MAX));
+    return ((metres_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((metres_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -2532,7 +2300,7 @@ metres_t mm_d_to_m_t(millimetres_d millimetres)
 metres_u mm_d_to_m_u(millimetres_d millimetres)
 {
     const millimetres_d conversion = millimetres / 1000.0;
-    return ((metres_u) (round(((double) (conversion))) < ((double) (UINT_MAX)) ? (round(((double) (conversion))) > ((double) (0)) ? round(((double) (conversion))) : 0) : UINT_MAX));
+    return ((metres_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((metres_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -2548,7 +2316,7 @@ millimetres_f mm_d_to_mm_f(millimetres_d millimetres)
  */
 millimetres_t mm_d_to_mm_t(millimetres_d millimetres)
 {
-    return ((millimetres_t) (round(((double) (millimetres))) < ((double) (INT_MAX)) ? (round(((double) (millimetres))) > ((double) (INT_MIN)) ? round(((double) (millimetres))) : INT_MIN) : INT_MAX));
+    return ((millimetres_t) (round(((double) (millimetres))) < ((double) (9223372036854775807)) ? (round(((double) (millimetres))) > ((double) (-9223372036854775807 - 1)) ? ((millimetres_t) (round(((double) (millimetres))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -2556,7 +2324,7 @@ millimetres_t mm_d_to_mm_t(millimetres_d millimetres)
  */
 millimetres_u mm_d_to_mm_u(millimetres_d millimetres)
 {
-    return ((millimetres_u) (round(((double) (millimetres))) < ((double) (UINT_MAX)) ? (round(((double) (millimetres))) > ((double) (0)) ? round(((double) (millimetres))) : 0) : UINT_MAX));
+    return ((millimetres_u) (round(((double) (millimetres))) < ((double) (18446744073709551615U)) ? (round(((double) (millimetres))) > ((double) (0)) ? ((millimetres_u) (round(((double) (millimetres))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -2592,14 +2360,6 @@ uint8_t mm_d_to_u8(millimetres_d millimetres)
 }
 
 /**
- * Convert millimetres_d to unsigned int.
- */
-unsigned int mm_d_to_u(millimetres_d millimetres)
-{
-    return d_to_u(((double) (millimetres)));
-}
-
-/**
  * Convert millimetres_f to centimetres_d.
  */
 centimetres_d mm_f_to_cm_d(millimetres_f millimetres)
@@ -2621,7 +2381,7 @@ centimetres_f mm_f_to_cm_f(millimetres_f millimetres)
 centimetres_t mm_f_to_cm_t(millimetres_f millimetres)
 {
     const millimetres_f conversion = millimetres / 10.0f;
-    return ((centimetres_t) (round(((double) (conversion))) < ((double) (INT_MAX)) ? (round(((double) (conversion))) > ((double) (INT_MIN)) ? round(((double) (conversion))) : INT_MIN) : INT_MAX));
+    return ((centimetres_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((centimetres_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -2630,7 +2390,7 @@ centimetres_t mm_f_to_cm_t(millimetres_f millimetres)
 centimetres_u mm_f_to_cm_u(millimetres_f millimetres)
 {
     const millimetres_f conversion = millimetres / 10.0f;
-    return ((centimetres_u) (round(((double) (conversion))) < ((double) (UINT_MAX)) ? (round(((double) (conversion))) > ((double) (0)) ? round(((double) (conversion))) : 0) : UINT_MAX));
+    return ((centimetres_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((centimetres_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -2647,14 +2407,6 @@ double mm_f_to_d(millimetres_f millimetres)
 float mm_f_to_f(millimetres_f millimetres)
 {
     return ((float) (millimetres));
-}
-
-/**
- * Convert millimetres_f to int.
- */
-int mm_f_to_i(millimetres_f millimetres)
-{
-    return f_to_i(((float) (millimetres)));
 }
 
 /**
@@ -2711,7 +2463,7 @@ metres_f mm_f_to_m_f(millimetres_f millimetres)
 metres_t mm_f_to_m_t(millimetres_f millimetres)
 {
     const millimetres_f conversion = millimetres / 1000.0f;
-    return ((metres_t) (round(((double) (conversion))) < ((double) (INT_MAX)) ? (round(((double) (conversion))) > ((double) (INT_MIN)) ? round(((double) (conversion))) : INT_MIN) : INT_MAX));
+    return ((metres_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((metres_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -2720,7 +2472,7 @@ metres_t mm_f_to_m_t(millimetres_f millimetres)
 metres_u mm_f_to_m_u(millimetres_f millimetres)
 {
     const millimetres_f conversion = millimetres / 1000.0f;
-    return ((metres_u) (round(((double) (conversion))) < ((double) (UINT_MAX)) ? (round(((double) (conversion))) > ((double) (0)) ? round(((double) (conversion))) : 0) : UINT_MAX));
+    return ((metres_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((metres_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -2736,7 +2488,7 @@ millimetres_d mm_f_to_mm_d(millimetres_f millimetres)
  */
 millimetres_t mm_f_to_mm_t(millimetres_f millimetres)
 {
-    return ((millimetres_t) (round(((double) (millimetres))) < ((double) (INT_MAX)) ? (round(((double) (millimetres))) > ((double) (INT_MIN)) ? round(((double) (millimetres))) : INT_MIN) : INT_MAX));
+    return ((millimetres_t) (round(((double) (millimetres))) < ((double) (9223372036854775807)) ? (round(((double) (millimetres))) > ((double) (-9223372036854775807 - 1)) ? ((millimetres_t) (round(((double) (millimetres))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -2744,7 +2496,7 @@ millimetres_t mm_f_to_mm_t(millimetres_f millimetres)
  */
 millimetres_u mm_f_to_mm_u(millimetres_f millimetres)
 {
-    return ((millimetres_u) (round(((double) (millimetres))) < ((double) (UINT_MAX)) ? (round(((double) (millimetres))) > ((double) (0)) ? round(((double) (millimetres))) : 0) : UINT_MAX));
+    return ((millimetres_u) (round(((double) (millimetres))) < ((double) (18446744073709551615U)) ? (round(((double) (millimetres))) > ((double) (0)) ? ((millimetres_u) (round(((double) (millimetres))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -2777,14 +2529,6 @@ uint64_t mm_f_to_u64(millimetres_f millimetres)
 uint8_t mm_f_to_u8(millimetres_f millimetres)
 {
     return f_to_u8(((float) (millimetres)));
-}
-
-/**
- * Convert millimetres_f to unsigned int.
- */
-unsigned int mm_f_to_u(millimetres_f millimetres)
-{
-    return f_to_u(((float) (millimetres)));
 }
 
 /**
@@ -2836,14 +2580,6 @@ double mm_t_to_d(millimetres_t millimetres)
 float mm_t_to_f(millimetres_t millimetres)
 {
     return ((float) (millimetres));
-}
-
-/**
- * Convert millimetres_t to int.
- */
-int mm_t_to_i(millimetres_t millimetres)
-{
-    return ((int) (millimetres));
 }
 
 /**
@@ -2970,14 +2706,6 @@ uint8_t mm_t_to_u8(millimetres_t millimetres)
 }
 
 /**
- * Convert millimetres_t to unsigned int.
- */
-unsigned int mm_t_to_u(millimetres_t millimetres)
-{
-    return ((unsigned int) (MAX(((millimetres_t) (0)), millimetres)));
-}
-
-/**
  * Convert millimetres_u to centimetres_d.
  */
 centimetres_d mm_u_to_cm_d(millimetres_u millimetres)
@@ -2999,7 +2727,7 @@ centimetres_f mm_u_to_cm_f(millimetres_u millimetres)
 centimetres_t mm_u_to_cm_t(millimetres_u millimetres)
 {
     const millimetres_u conversion = millimetres / 10;
-    return ((centimetres_t) ((conversion) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : conversion));
+    return ((centimetres_t) ((conversion) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : conversion));
 }
 
 /**
@@ -3027,14 +2755,6 @@ float mm_u_to_f(millimetres_u millimetres)
 }
 
 /**
- * Convert millimetres_u to int.
- */
-int mm_u_to_i(millimetres_u millimetres)
-{
-    return ((int) (MIN(((millimetres_u) (INT_MAX)), millimetres)));
-}
-
-/**
  * Convert millimetres_u to int16_t.
  */
 int16_t mm_u_to_i16(millimetres_u millimetres)
@@ -3055,7 +2775,7 @@ int32_t mm_u_to_i32(millimetres_u millimetres)
  */
 int64_t mm_u_to_i64(millimetres_u millimetres)
 {
-    return ((int64_t) (millimetres));
+    return ((int64_t) (MIN(((millimetres_u) (9223372036854775807)), millimetres)));
 }
 
 /**
@@ -3088,7 +2808,7 @@ metres_f mm_u_to_m_f(millimetres_u millimetres)
 metres_t mm_u_to_m_t(millimetres_u millimetres)
 {
     const millimetres_u conversion = millimetres / 1000;
-    return ((metres_t) ((conversion) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : conversion));
+    return ((metres_t) ((conversion) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : conversion));
 }
 
 /**
@@ -3120,7 +2840,7 @@ millimetres_f mm_u_to_mm_f(millimetres_u millimetres)
  */
 millimetres_t mm_u_to_mm_t(millimetres_u millimetres)
 {
-    return ((millimetres_t) ((millimetres) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : millimetres));
+    return ((millimetres_t) ((millimetres) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : millimetres));
 }
 
 /**
@@ -3153,14 +2873,6 @@ uint64_t mm_u_to_u64(millimetres_u millimetres)
 uint8_t mm_u_to_u8(millimetres_u millimetres)
 {
     return ((uint8_t) (MIN(((millimetres_u) (255)), MAX(((millimetres_u) (0)), millimetres))));
-}
-
-/**
- * Convert millimetres_u to unsigned int.
- */
-unsigned int mm_u_to_u(millimetres_u millimetres)
-{
-    return ((unsigned int) (millimetres));
 }
 
 /**
@@ -3280,7 +2992,7 @@ centimetres_f u32_to_cm_f(uint32_t centimetres)
  */
 centimetres_t u32_to_cm_t(uint32_t centimetres)
 {
-    return ((centimetres_t) (MIN(((uint32_t) (INT_MAX)), centimetres)));
+    return ((centimetres_t) (centimetres));
 }
 
 /**
@@ -3288,7 +3000,7 @@ centimetres_t u32_to_cm_t(uint32_t centimetres)
  */
 centimetres_u u32_to_cm_u(uint32_t centimetres)
 {
-    return ((centimetres_u) (MIN(((uint32_t) (UINT_MAX)), MAX(((uint32_t) (0)), centimetres))));
+    return ((centimetres_u) (centimetres));
 }
 
 /**
@@ -3312,7 +3024,7 @@ metres_f u32_to_m_f(uint32_t metres)
  */
 metres_t u32_to_m_t(uint32_t metres)
 {
-    return ((metres_t) (MIN(((uint32_t) (INT_MAX)), metres)));
+    return ((metres_t) (metres));
 }
 
 /**
@@ -3320,7 +3032,7 @@ metres_t u32_to_m_t(uint32_t metres)
  */
 metres_u u32_to_m_u(uint32_t metres)
 {
-    return ((metres_u) (MIN(((uint32_t) (UINT_MAX)), MAX(((uint32_t) (0)), metres))));
+    return ((metres_u) (metres));
 }
 
 /**
@@ -3344,7 +3056,7 @@ millimetres_f u32_to_mm_f(uint32_t millimetres)
  */
 millimetres_t u32_to_mm_t(uint32_t millimetres)
 {
-    return ((millimetres_t) (MIN(((uint32_t) (INT_MAX)), millimetres)));
+    return ((millimetres_t) (millimetres));
 }
 
 /**
@@ -3352,7 +3064,7 @@ millimetres_t u32_to_mm_t(uint32_t millimetres)
  */
 millimetres_u u32_to_mm_u(uint32_t millimetres)
 {
-    return ((millimetres_u) (MIN(((uint32_t) (UINT_MAX)), MAX(((uint32_t) (0)), millimetres))));
+    return ((millimetres_u) (millimetres));
 }
 
 /**
@@ -3376,7 +3088,7 @@ centimetres_f u64_to_cm_f(uint64_t centimetres)
  */
 centimetres_t u64_to_cm_t(uint64_t centimetres)
 {
-    return ((centimetres_t) (MIN(((uint64_t) (INT_MAX)), centimetres)));
+    return ((centimetres_t) (MIN(((uint64_t) (9223372036854775807)), centimetres)));
 }
 
 /**
@@ -3384,7 +3096,7 @@ centimetres_t u64_to_cm_t(uint64_t centimetres)
  */
 centimetres_u u64_to_cm_u(uint64_t centimetres)
 {
-    return ((centimetres_u) (MIN(((uint64_t) (UINT_MAX)), MAX(((uint64_t) (0)), centimetres))));
+    return ((centimetres_u) (centimetres));
 }
 
 /**
@@ -3408,7 +3120,7 @@ metres_f u64_to_m_f(uint64_t metres)
  */
 metres_t u64_to_m_t(uint64_t metres)
 {
-    return ((metres_t) (MIN(((uint64_t) (INT_MAX)), metres)));
+    return ((metres_t) (MIN(((uint64_t) (9223372036854775807)), metres)));
 }
 
 /**
@@ -3416,7 +3128,7 @@ metres_t u64_to_m_t(uint64_t metres)
  */
 metres_u u64_to_m_u(uint64_t metres)
 {
-    return ((metres_u) (MIN(((uint64_t) (UINT_MAX)), MAX(((uint64_t) (0)), metres))));
+    return ((metres_u) (metres));
 }
 
 /**
@@ -3440,7 +3152,7 @@ millimetres_f u64_to_mm_f(uint64_t millimetres)
  */
 millimetres_t u64_to_mm_t(uint64_t millimetres)
 {
-    return ((millimetres_t) (MIN(((uint64_t) (INT_MAX)), millimetres)));
+    return ((millimetres_t) (MIN(((uint64_t) (9223372036854775807)), millimetres)));
 }
 
 /**
@@ -3448,7 +3160,7 @@ millimetres_t u64_to_mm_t(uint64_t millimetres)
  */
 millimetres_u u64_to_mm_u(uint64_t millimetres)
 {
-    return ((millimetres_u) (MIN(((uint64_t) (UINT_MAX)), MAX(((uint64_t) (0)), millimetres))));
+    return ((millimetres_u) (millimetres));
 }
 
 /**
@@ -3548,102 +3260,6 @@ millimetres_u u8_to_mm_u(uint8_t millimetres)
 }
 
 /**
- * Convert unsigned int to centimetres_d.
- */
-centimetres_d u_to_cm_d(unsigned int centimetres)
-{
-    return ((centimetres_d) (centimetres));
-}
-
-/**
- * Convert unsigned int to centimetres_f.
- */
-centimetres_f u_to_cm_f(unsigned int centimetres)
-{
-    return ((centimetres_f) (centimetres));
-}
-
-/**
- * Convert unsigned int to centimetres_t.
- */
-centimetres_t u_to_cm_t(unsigned int centimetres)
-{
-    return ((centimetres_t) (MIN(((unsigned int) (INT_MAX)), centimetres)));
-}
-
-/**
- * Convert unsigned int to centimetres_u.
- */
-centimetres_u u_to_cm_u(unsigned int centimetres)
-{
-    return ((centimetres_u) (centimetres));
-}
-
-/**
- * Convert unsigned int to metres_d.
- */
-metres_d u_to_m_d(unsigned int metres)
-{
-    return ((metres_d) (metres));
-}
-
-/**
- * Convert unsigned int to metres_f.
- */
-metres_f u_to_m_f(unsigned int metres)
-{
-    return ((metres_f) (metres));
-}
-
-/**
- * Convert unsigned int to metres_t.
- */
-metres_t u_to_m_t(unsigned int metres)
-{
-    return ((metres_t) (MIN(((unsigned int) (INT_MAX)), metres)));
-}
-
-/**
- * Convert unsigned int to metres_u.
- */
-metres_u u_to_m_u(unsigned int metres)
-{
-    return ((metres_u) (metres));
-}
-
-/**
- * Convert unsigned int to millimetres_d.
- */
-millimetres_d u_to_mm_d(unsigned int millimetres)
-{
-    return ((millimetres_d) (millimetres));
-}
-
-/**
- * Convert unsigned int to millimetres_f.
- */
-millimetres_f u_to_mm_f(unsigned int millimetres)
-{
-    return ((millimetres_f) (millimetres));
-}
-
-/**
- * Convert unsigned int to millimetres_t.
- */
-millimetres_t u_to_mm_t(unsigned int millimetres)
-{
-    return ((millimetres_t) (MIN(((unsigned int) (INT_MAX)), millimetres)));
-}
-
-/**
- * Convert unsigned int to millimetres_u.
- */
-millimetres_u u_to_mm_u(unsigned int millimetres)
-{
-    return ((millimetres_u) (millimetres));
-}
-
-/**
  * Convert amperes_d to amperes_f.
  */
 amperes_f A_d_to_A_f(amperes_d amperes)
@@ -3656,7 +3272,7 @@ amperes_f A_d_to_A_f(amperes_d amperes)
  */
 amperes_t A_d_to_A_t(amperes_d amperes)
 {
-    return ((amperes_t) (round(((double) (amperes))) < ((double) (INT_MAX)) ? (round(((double) (amperes))) > ((double) (INT_MIN)) ? round(((double) (amperes))) : INT_MIN) : INT_MAX));
+    return ((amperes_t) (round(((double) (amperes))) < ((double) (9223372036854775807)) ? (round(((double) (amperes))) > ((double) (-9223372036854775807 - 1)) ? ((amperes_t) (round(((double) (amperes))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -3664,7 +3280,7 @@ amperes_t A_d_to_A_t(amperes_d amperes)
  */
 amperes_u A_d_to_A_u(amperes_d amperes)
 {
-    return ((amperes_u) (round(((double) (amperes))) < ((double) (UINT_MAX)) ? (round(((double) (amperes))) > ((double) (0)) ? round(((double) (amperes))) : 0) : UINT_MAX));
+    return ((amperes_u) (round(((double) (amperes))) < ((double) (18446744073709551615U)) ? (round(((double) (amperes))) > ((double) (0)) ? ((amperes_u) (round(((double) (amperes))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -3681,14 +3297,6 @@ double A_d_to_d(amperes_d amperes)
 float A_d_to_f(amperes_d amperes)
 {
     return d_to_f(((double) (amperes)));
-}
-
-/**
- * Convert amperes_d to int.
- */
-int A_d_to_i(amperes_d amperes)
-{
-    return d_to_i(((double) (amperes)));
 }
 
 /**
@@ -3756,11 +3364,11 @@ microamperes_f A_d_to_uA_f(amperes_d amperes)
  */
 microamperes_t A_d_to_uA_t(amperes_d amperes)
 {
-    if (amperes > ((amperes_d) (INT_MAX)) / 1000000.0) {
-        return INT_MAX;
+    if (amperes > ((amperes_d) (9223372036854775807)) / 1000000.0) {
+        return 9223372036854775807;
     }
-    if (amperes < ((amperes_d) (INT_MIN)) / 1000000.0) {
-        return INT_MIN;
+    if (amperes < ((amperes_d) (-9223372036854775807 - 1)) / 1000000.0) {
+        return -9223372036854775807 - 1;
     }
     return ((microamperes_t) (amperes * 1000000.0));
 }
@@ -3770,8 +3378,8 @@ microamperes_t A_d_to_uA_t(amperes_d amperes)
  */
 microamperes_u A_d_to_uA_u(amperes_d amperes)
 {
-    if (amperes > ((amperes_d) (UINT_MAX)) / 1000000.0) {
-        return UINT_MAX;
+    if (amperes > ((amperes_d) (18446744073709551615U)) / 1000000.0) {
+        return 18446744073709551615U;
     }
     if (amperes < ((amperes_d) (0)) / 1000000.0) {
         return 0;
@@ -3812,11 +3420,11 @@ milliamperes_f A_d_to_mA_f(amperes_d amperes)
  */
 milliamperes_t A_d_to_mA_t(amperes_d amperes)
 {
-    if (amperes > ((amperes_d) (INT_MAX)) / 1000.0) {
-        return INT_MAX;
+    if (amperes > ((amperes_d) (9223372036854775807)) / 1000.0) {
+        return 9223372036854775807;
     }
-    if (amperes < ((amperes_d) (INT_MIN)) / 1000.0) {
-        return INT_MIN;
+    if (amperes < ((amperes_d) (-9223372036854775807 - 1)) / 1000.0) {
+        return -9223372036854775807 - 1;
     }
     return ((milliamperes_t) (amperes * 1000.0));
 }
@@ -3826,8 +3434,8 @@ milliamperes_t A_d_to_mA_t(amperes_d amperes)
  */
 milliamperes_u A_d_to_mA_u(amperes_d amperes)
 {
-    if (amperes > ((amperes_d) (UINT_MAX)) / 1000.0) {
-        return UINT_MAX;
+    if (amperes > ((amperes_d) (18446744073709551615U)) / 1000.0) {
+        return 18446744073709551615U;
     }
     if (amperes < ((amperes_d) (0)) / 1000.0) {
         return 0;
@@ -3868,14 +3476,6 @@ uint8_t A_d_to_u8(amperes_d amperes)
 }
 
 /**
- * Convert amperes_d to unsigned int.
- */
-unsigned int A_d_to_u(amperes_d amperes)
-{
-    return d_to_u(((double) (amperes)));
-}
-
-/**
  * Convert amperes_f to amperes_d.
  */
 amperes_d A_f_to_A_d(amperes_f amperes)
@@ -3888,7 +3488,7 @@ amperes_d A_f_to_A_d(amperes_f amperes)
  */
 amperes_t A_f_to_A_t(amperes_f amperes)
 {
-    return ((amperes_t) (round(((double) (amperes))) < ((double) (INT_MAX)) ? (round(((double) (amperes))) > ((double) (INT_MIN)) ? round(((double) (amperes))) : INT_MIN) : INT_MAX));
+    return ((amperes_t) (round(((double) (amperes))) < ((double) (9223372036854775807)) ? (round(((double) (amperes))) > ((double) (-9223372036854775807 - 1)) ? ((amperes_t) (round(((double) (amperes))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -3896,7 +3496,7 @@ amperes_t A_f_to_A_t(amperes_f amperes)
  */
 amperes_u A_f_to_A_u(amperes_f amperes)
 {
-    return ((amperes_u) (round(((double) (amperes))) < ((double) (UINT_MAX)) ? (round(((double) (amperes))) > ((double) (0)) ? round(((double) (amperes))) : 0) : UINT_MAX));
+    return ((amperes_u) (round(((double) (amperes))) < ((double) (18446744073709551615U)) ? (round(((double) (amperes))) > ((double) (0)) ? ((amperes_u) (round(((double) (amperes))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -3913,14 +3513,6 @@ double A_f_to_d(amperes_f amperes)
 float A_f_to_f(amperes_f amperes)
 {
     return ((float) (amperes));
-}
-
-/**
- * Convert amperes_f to int.
- */
-int A_f_to_i(amperes_f amperes)
-{
-    return f_to_i(((float) (amperes)));
 }
 
 /**
@@ -3982,11 +3574,11 @@ microamperes_f A_f_to_uA_f(amperes_f amperes)
  */
 microamperes_t A_f_to_uA_t(amperes_f amperes)
 {
-    if (amperes > ((amperes_f) (INT_MAX)) / 1000000.0f) {
-        return INT_MAX;
+    if (amperes > ((amperes_f) (9223372036854775807)) / 1000000.0f) {
+        return 9223372036854775807;
     }
-    if (amperes < ((amperes_f) (INT_MIN)) / 1000000.0f) {
-        return INT_MIN;
+    if (amperes < ((amperes_f) (-9223372036854775807 - 1)) / 1000000.0f) {
+        return -9223372036854775807 - 1;
     }
     return ((microamperes_t) (amperes * 1000000.0f));
 }
@@ -3996,8 +3588,8 @@ microamperes_t A_f_to_uA_t(amperes_f amperes)
  */
 microamperes_u A_f_to_uA_u(amperes_f amperes)
 {
-    if (amperes > ((amperes_f) (UINT_MAX)) / 1000000.0f) {
-        return UINT_MAX;
+    if (amperes > ((amperes_f) (18446744073709551615U)) / 1000000.0f) {
+        return 18446744073709551615U;
     }
     if (amperes < ((amperes_f) (0)) / 1000000.0f) {
         return 0;
@@ -4032,11 +3624,11 @@ milliamperes_f A_f_to_mA_f(amperes_f amperes)
  */
 milliamperes_t A_f_to_mA_t(amperes_f amperes)
 {
-    if (amperes > ((amperes_f) (INT_MAX)) / 1000.0f) {
-        return INT_MAX;
+    if (amperes > ((amperes_f) (9223372036854775807)) / 1000.0f) {
+        return 9223372036854775807;
     }
-    if (amperes < ((amperes_f) (INT_MIN)) / 1000.0f) {
-        return INT_MIN;
+    if (amperes < ((amperes_f) (-9223372036854775807 - 1)) / 1000.0f) {
+        return -9223372036854775807 - 1;
     }
     return ((milliamperes_t) (amperes * 1000.0f));
 }
@@ -4046,8 +3638,8 @@ milliamperes_t A_f_to_mA_t(amperes_f amperes)
  */
 milliamperes_u A_f_to_mA_u(amperes_f amperes)
 {
-    if (amperes > ((amperes_f) (UINT_MAX)) / 1000.0f) {
-        return UINT_MAX;
+    if (amperes > ((amperes_f) (18446744073709551615U)) / 1000.0f) {
+        return 18446744073709551615U;
     }
     if (amperes < ((amperes_f) (0)) / 1000.0f) {
         return 0;
@@ -4088,14 +3680,6 @@ uint8_t A_f_to_u8(amperes_f amperes)
 }
 
 /**
- * Convert amperes_f to unsigned int.
- */
-unsigned int A_f_to_u(amperes_f amperes)
-{
-    return f_to_u(((float) (amperes)));
-}
-
-/**
  * Convert amperes_t to amperes_d.
  */
 amperes_d A_t_to_A_d(amperes_t amperes)
@@ -4133,14 +3717,6 @@ double A_t_to_d(amperes_t amperes)
 float A_t_to_f(amperes_t amperes)
 {
     return ((float) (amperes));
-}
-
-/**
- * Convert amperes_t to int.
- */
-int A_t_to_i(amperes_t amperes)
-{
-    return ((int) (amperes));
 }
 
 /**
@@ -4196,11 +3772,11 @@ microamperes_f A_t_to_uA_f(amperes_t amperes)
  */
 microamperes_t A_t_to_uA_t(amperes_t amperes)
 {
-    if (amperes < INT_MIN / 1000000) {
-        return INT_MIN;
+    if (amperes < -9223372036854775807 - 1 / 1000000) {
+        return -9223372036854775807 - 1;
     }
-    if (amperes > INT_MAX / 1000000) {
-        return INT_MAX;
+    if (amperes > 9223372036854775807 / 1000000) {
+        return 9223372036854775807;
     }
     return ((microamperes_t) (amperes)) * 1000000;
 }
@@ -4214,8 +3790,8 @@ microamperes_u A_t_to_uA_u(amperes_t amperes)
         return 0;
     }
     const microamperes_u otherAmperes = ((microamperes_u) (amperes));
-    if (otherAmperes > UINT_MAX / 1000000) {
-        return UINT_MAX;
+    if (otherAmperes > 18446744073709551615U / 1000000) {
+        return 18446744073709551615U;
     }
     return otherAmperes * 1000000;
 }
@@ -4241,11 +3817,11 @@ milliamperes_f A_t_to_mA_f(amperes_t amperes)
  */
 milliamperes_t A_t_to_mA_t(amperes_t amperes)
 {
-    if (amperes < INT_MIN / 1000) {
-        return INT_MIN;
+    if (amperes < -9223372036854775807 - 1 / 1000) {
+        return -9223372036854775807 - 1;
     }
-    if (amperes > INT_MAX / 1000) {
-        return INT_MAX;
+    if (amperes > 9223372036854775807 / 1000) {
+        return 9223372036854775807;
     }
     return ((milliamperes_t) (amperes)) * 1000;
 }
@@ -4259,8 +3835,8 @@ milliamperes_u A_t_to_mA_u(amperes_t amperes)
         return 0;
     }
     const milliamperes_u otherAmperes = ((milliamperes_u) (amperes));
-    if (otherAmperes > UINT_MAX / 1000) {
-        return UINT_MAX;
+    if (otherAmperes > 18446744073709551615U / 1000) {
+        return 18446744073709551615U;
     }
     return otherAmperes * 1000;
 }
@@ -4298,14 +3874,6 @@ uint8_t A_t_to_u8(amperes_t amperes)
 }
 
 /**
- * Convert amperes_t to unsigned int.
- */
-unsigned int A_t_to_u(amperes_t amperes)
-{
-    return ((unsigned int) (MAX(((amperes_t) (0)), amperes)));
-}
-
-/**
  * Convert amperes_u to amperes_d.
  */
 amperes_d A_u_to_A_d(amperes_u amperes)
@@ -4326,7 +3894,7 @@ amperes_f A_u_to_A_f(amperes_u amperes)
  */
 amperes_t A_u_to_A_t(amperes_u amperes)
 {
-    return ((amperes_t) ((amperes) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : amperes));
+    return ((amperes_t) ((amperes) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : amperes));
 }
 
 /**
@@ -4343,14 +3911,6 @@ double A_u_to_d(amperes_u amperes)
 float A_u_to_f(amperes_u amperes)
 {
     return ((float) (amperes));
-}
-
-/**
- * Convert amperes_u to int.
- */
-int A_u_to_i(amperes_u amperes)
-{
-    return ((int) (MIN(((amperes_u) (INT_MAX)), amperes)));
 }
 
 /**
@@ -4374,7 +3934,7 @@ int32_t A_u_to_i32(amperes_u amperes)
  */
 int64_t A_u_to_i64(amperes_u amperes)
 {
-    return ((int64_t) (amperes));
+    return ((int64_t) (MIN(((amperes_u) (9223372036854775807)), amperes)));
 }
 
 /**
@@ -4406,8 +3966,8 @@ microamperes_f A_u_to_uA_f(amperes_u amperes)
  */
 microamperes_t A_u_to_uA_t(amperes_u amperes)
 {
-    if (amperes > ((amperes_u) (INT_MAX / 1000000))) {
-        return INT_MAX;
+    if (amperes > ((amperes_u) (9223372036854775807 / 1000000))) {
+        return 9223372036854775807;
     }
     return ((microamperes_t) (amperes * 1000000));
 }
@@ -4417,8 +3977,8 @@ microamperes_t A_u_to_uA_t(amperes_u amperes)
  */
 microamperes_u A_u_to_uA_u(amperes_u amperes)
 {
-    if (amperes > UINT_MAX / 1000000) {
-        return UINT_MAX;
+    if (amperes > 18446744073709551615U / 1000000) {
+        return 18446744073709551615U;
     }
     return ((microamperes_u) (amperes)) * 1000000;
 }
@@ -4444,8 +4004,8 @@ milliamperes_f A_u_to_mA_f(amperes_u amperes)
  */
 milliamperes_t A_u_to_mA_t(amperes_u amperes)
 {
-    if (amperes > ((amperes_u) (INT_MAX / 1000))) {
-        return INT_MAX;
+    if (amperes > ((amperes_u) (9223372036854775807 / 1000))) {
+        return 9223372036854775807;
     }
     return ((milliamperes_t) (amperes * 1000));
 }
@@ -4455,8 +4015,8 @@ milliamperes_t A_u_to_mA_t(amperes_u amperes)
  */
 milliamperes_u A_u_to_mA_u(amperes_u amperes)
 {
-    if (amperes > UINT_MAX / 1000) {
-        return UINT_MAX;
+    if (amperes > 18446744073709551615U / 1000) {
+        return 18446744073709551615U;
     }
     return ((milliamperes_u) (amperes)) * 1000;
 }
@@ -4494,14 +4054,6 @@ uint8_t A_u_to_u8(amperes_u amperes)
 }
 
 /**
- * Convert amperes_u to unsigned int.
- */
-unsigned int A_u_to_u(amperes_u amperes)
-{
-    return ((unsigned int) (amperes));
-}
-
-/**
  * Convert double to amperes_d.
  */
 amperes_d d_to_A_d(double amperes)
@@ -4522,7 +4074,7 @@ amperes_f d_to_A_f(double amperes)
  */
 amperes_t d_to_A_t(double amperes)
 {
-    return d_to_i(amperes);
+    return d_to_i64(amperes);
 }
 
 /**
@@ -4530,7 +4082,7 @@ amperes_t d_to_A_t(double amperes)
  */
 amperes_u d_to_A_u(double amperes)
 {
-    return d_to_u(amperes);
+    return d_to_u64(amperes);
 }
 
 /**
@@ -4554,7 +4106,7 @@ microamperes_f d_to_uA_f(double microamperes)
  */
 microamperes_t d_to_uA_t(double microamperes)
 {
-    return d_to_i(microamperes);
+    return d_to_i64(microamperes);
 }
 
 /**
@@ -4562,7 +4114,7 @@ microamperes_t d_to_uA_t(double microamperes)
  */
 microamperes_u d_to_uA_u(double microamperes)
 {
-    return d_to_u(microamperes);
+    return d_to_u64(microamperes);
 }
 
 /**
@@ -4586,7 +4138,7 @@ milliamperes_f d_to_mA_f(double milliamperes)
  */
 milliamperes_t d_to_mA_t(double milliamperes)
 {
-    return d_to_i(milliamperes);
+    return d_to_i64(milliamperes);
 }
 
 /**
@@ -4594,7 +4146,7 @@ milliamperes_t d_to_mA_t(double milliamperes)
  */
 milliamperes_u d_to_mA_u(double milliamperes)
 {
-    return d_to_u(milliamperes);
+    return d_to_u64(milliamperes);
 }
 
 /**
@@ -4618,7 +4170,7 @@ amperes_f f_to_A_f(float amperes)
  */
 amperes_t f_to_A_t(float amperes)
 {
-    return f_to_i(amperes);
+    return f_to_i64(amperes);
 }
 
 /**
@@ -4626,7 +4178,7 @@ amperes_t f_to_A_t(float amperes)
  */
 amperes_u f_to_A_u(float amperes)
 {
-    return f_to_u(amperes);
+    return f_to_u64(amperes);
 }
 
 /**
@@ -4650,7 +4202,7 @@ microamperes_f f_to_uA_f(float microamperes)
  */
 microamperes_t f_to_uA_t(float microamperes)
 {
-    return f_to_i(microamperes);
+    return f_to_i64(microamperes);
 }
 
 /**
@@ -4658,7 +4210,7 @@ microamperes_t f_to_uA_t(float microamperes)
  */
 microamperes_u f_to_uA_u(float microamperes)
 {
-    return f_to_u(microamperes);
+    return f_to_u64(microamperes);
 }
 
 /**
@@ -4682,7 +4234,7 @@ milliamperes_f f_to_mA_f(float milliamperes)
  */
 milliamperes_t f_to_mA_t(float milliamperes)
 {
-    return f_to_i(milliamperes);
+    return f_to_i64(milliamperes);
 }
 
 /**
@@ -4690,7 +4242,7 @@ milliamperes_t f_to_mA_t(float milliamperes)
  */
 milliamperes_u f_to_mA_u(float milliamperes)
 {
-    return f_to_u(milliamperes);
+    return f_to_u64(milliamperes);
 }
 
 /**
@@ -4810,7 +4362,7 @@ amperes_f i32_to_A_f(int32_t amperes)
  */
 amperes_t i32_to_A_t(int32_t amperes)
 {
-    return ((amperes_t) (MIN(((int32_t) (INT_MAX)), MAX(((int32_t) (INT_MIN)), amperes))));
+    return ((amperes_t) (amperes));
 }
 
 /**
@@ -4842,7 +4394,7 @@ microamperes_f i32_to_uA_f(int32_t microamperes)
  */
 microamperes_t i32_to_uA_t(int32_t microamperes)
 {
-    return ((microamperes_t) (MIN(((int32_t) (INT_MAX)), MAX(((int32_t) (INT_MIN)), microamperes))));
+    return ((microamperes_t) (microamperes));
 }
 
 /**
@@ -4874,7 +4426,7 @@ milliamperes_f i32_to_mA_f(int32_t milliamperes)
  */
 milliamperes_t i32_to_mA_t(int32_t milliamperes)
 {
-    return ((milliamperes_t) (MIN(((int32_t) (INT_MAX)), MAX(((int32_t) (INT_MIN)), milliamperes))));
+    return ((milliamperes_t) (milliamperes));
 }
 
 /**
@@ -4906,7 +4458,7 @@ amperes_f i64_to_A_f(int64_t amperes)
  */
 amperes_t i64_to_A_t(int64_t amperes)
 {
-    return ((amperes_t) (MIN(((int64_t) (INT_MAX)), MAX(((int64_t) (INT_MIN)), amperes))));
+    return ((amperes_t) (amperes));
 }
 
 /**
@@ -4938,7 +4490,7 @@ microamperes_f i64_to_uA_f(int64_t microamperes)
  */
 microamperes_t i64_to_uA_t(int64_t microamperes)
 {
-    return ((microamperes_t) (MIN(((int64_t) (INT_MAX)), MAX(((int64_t) (INT_MIN)), microamperes))));
+    return ((microamperes_t) (microamperes));
 }
 
 /**
@@ -4970,7 +4522,7 @@ milliamperes_f i64_to_mA_f(int64_t milliamperes)
  */
 milliamperes_t i64_to_mA_t(int64_t milliamperes)
 {
-    return ((milliamperes_t) (MIN(((int64_t) (INT_MAX)), MAX(((int64_t) (INT_MIN)), milliamperes))));
+    return ((milliamperes_t) (milliamperes));
 }
 
 /**
@@ -5078,102 +4630,6 @@ milliamperes_u i8_to_mA_u(int8_t milliamperes)
 }
 
 /**
- * Convert int to amperes_d.
- */
-amperes_d i_to_A_d(int amperes)
-{
-    return ((amperes_d) (amperes));
-}
-
-/**
- * Convert int to amperes_f.
- */
-amperes_f i_to_A_f(int amperes)
-{
-    return ((amperes_f) (amperes));
-}
-
-/**
- * Convert int to amperes_t.
- */
-amperes_t i_to_A_t(int amperes)
-{
-    return ((amperes_t) (amperes));
-}
-
-/**
- * Convert int to amperes_u.
- */
-amperes_u i_to_A_u(int amperes)
-{
-    return ((amperes_u) (MAX(((int) (0)), amperes)));
-}
-
-/**
- * Convert int to microamperes_d.
- */
-microamperes_d i_to_uA_d(int microamperes)
-{
-    return ((microamperes_d) (microamperes));
-}
-
-/**
- * Convert int to microamperes_f.
- */
-microamperes_f i_to_uA_f(int microamperes)
-{
-    return ((microamperes_f) (microamperes));
-}
-
-/**
- * Convert int to microamperes_t.
- */
-microamperes_t i_to_uA_t(int microamperes)
-{
-    return ((microamperes_t) (microamperes));
-}
-
-/**
- * Convert int to microamperes_u.
- */
-microamperes_u i_to_uA_u(int microamperes)
-{
-    return ((microamperes_u) (MAX(((int) (0)), microamperes)));
-}
-
-/**
- * Convert int to milliamperes_d.
- */
-milliamperes_d i_to_mA_d(int milliamperes)
-{
-    return ((milliamperes_d) (milliamperes));
-}
-
-/**
- * Convert int to milliamperes_f.
- */
-milliamperes_f i_to_mA_f(int milliamperes)
-{
-    return ((milliamperes_f) (milliamperes));
-}
-
-/**
- * Convert int to milliamperes_t.
- */
-milliamperes_t i_to_mA_t(int milliamperes)
-{
-    return ((milliamperes_t) (milliamperes));
-}
-
-/**
- * Convert int to milliamperes_u.
- */
-milliamperes_u i_to_mA_u(int milliamperes)
-{
-    return ((milliamperes_u) (MAX(((int) (0)), milliamperes)));
-}
-
-/**
  * Convert microamperes_d to amperes_d.
  */
 amperes_d uA_d_to_A_d(microamperes_d microamperes)
@@ -5196,7 +4652,7 @@ amperes_f uA_d_to_A_f(microamperes_d microamperes)
 amperes_t uA_d_to_A_t(microamperes_d microamperes)
 {
     const microamperes_d conversion = microamperes / 1000000.0;
-    return ((amperes_t) (round(((double) (conversion))) < ((double) (INT_MAX)) ? (round(((double) (conversion))) > ((double) (INT_MIN)) ? round(((double) (conversion))) : INT_MIN) : INT_MAX));
+    return ((amperes_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((amperes_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -5205,7 +4661,7 @@ amperes_t uA_d_to_A_t(microamperes_d microamperes)
 amperes_u uA_d_to_A_u(microamperes_d microamperes)
 {
     const microamperes_d conversion = microamperes / 1000000.0;
-    return ((amperes_u) (round(((double) (conversion))) < ((double) (UINT_MAX)) ? (round(((double) (conversion))) > ((double) (0)) ? round(((double) (conversion))) : 0) : UINT_MAX));
+    return ((amperes_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((amperes_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -5222,14 +4678,6 @@ double uA_d_to_d(microamperes_d microamperes)
 float uA_d_to_f(microamperes_d microamperes)
 {
     return d_to_f(((double) (microamperes)));
-}
-
-/**
- * Convert microamperes_d to int.
- */
-int uA_d_to_i(microamperes_d microamperes)
-{
-    return d_to_i(((double) (microamperes)));
 }
 
 /**
@@ -5277,7 +4725,7 @@ microamperes_f uA_d_to_uA_f(microamperes_d microamperes)
  */
 microamperes_t uA_d_to_uA_t(microamperes_d microamperes)
 {
-    return ((microamperes_t) (round(((double) (microamperes))) < ((double) (INT_MAX)) ? (round(((double) (microamperes))) > ((double) (INT_MIN)) ? round(((double) (microamperes))) : INT_MIN) : INT_MAX));
+    return ((microamperes_t) (round(((double) (microamperes))) < ((double) (9223372036854775807)) ? (round(((double) (microamperes))) > ((double) (-9223372036854775807 - 1)) ? ((microamperes_t) (round(((double) (microamperes))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -5285,7 +4733,7 @@ microamperes_t uA_d_to_uA_t(microamperes_d microamperes)
  */
 microamperes_u uA_d_to_uA_u(microamperes_d microamperes)
 {
-    return ((microamperes_u) (round(((double) (microamperes))) < ((double) (UINT_MAX)) ? (round(((double) (microamperes))) > ((double) (0)) ? round(((double) (microamperes))) : 0) : UINT_MAX));
+    return ((microamperes_u) (round(((double) (microamperes))) < ((double) (18446744073709551615U)) ? (round(((double) (microamperes))) > ((double) (0)) ? ((microamperes_u) (round(((double) (microamperes))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -5311,7 +4759,7 @@ milliamperes_f uA_d_to_mA_f(microamperes_d microamperes)
 milliamperes_t uA_d_to_mA_t(microamperes_d microamperes)
 {
     const microamperes_d conversion = microamperes / 1000.0;
-    return ((milliamperes_t) (round(((double) (conversion))) < ((double) (INT_MAX)) ? (round(((double) (conversion))) > ((double) (INT_MIN)) ? round(((double) (conversion))) : INT_MIN) : INT_MAX));
+    return ((milliamperes_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((milliamperes_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -5320,7 +4768,7 @@ milliamperes_t uA_d_to_mA_t(microamperes_d microamperes)
 milliamperes_u uA_d_to_mA_u(microamperes_d microamperes)
 {
     const microamperes_d conversion = microamperes / 1000.0;
-    return ((milliamperes_u) (round(((double) (conversion))) < ((double) (UINT_MAX)) ? (round(((double) (conversion))) > ((double) (0)) ? round(((double) (conversion))) : 0) : UINT_MAX));
+    return ((milliamperes_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((milliamperes_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -5356,14 +4804,6 @@ uint8_t uA_d_to_u8(microamperes_d microamperes)
 }
 
 /**
- * Convert microamperes_d to unsigned int.
- */
-unsigned int uA_d_to_u(microamperes_d microamperes)
-{
-    return d_to_u(((double) (microamperes)));
-}
-
-/**
  * Convert microamperes_f to amperes_d.
  */
 amperes_d uA_f_to_A_d(microamperes_f microamperes)
@@ -5385,7 +4825,7 @@ amperes_f uA_f_to_A_f(microamperes_f microamperes)
 amperes_t uA_f_to_A_t(microamperes_f microamperes)
 {
     const microamperes_f conversion = microamperes / 1000000.0f;
-    return ((amperes_t) (round(((double) (conversion))) < ((double) (INT_MAX)) ? (round(((double) (conversion))) > ((double) (INT_MIN)) ? round(((double) (conversion))) : INT_MIN) : INT_MAX));
+    return ((amperes_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((amperes_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -5394,7 +4834,7 @@ amperes_t uA_f_to_A_t(microamperes_f microamperes)
 amperes_u uA_f_to_A_u(microamperes_f microamperes)
 {
     const microamperes_f conversion = microamperes / 1000000.0f;
-    return ((amperes_u) (round(((double) (conversion))) < ((double) (UINT_MAX)) ? (round(((double) (conversion))) > ((double) (0)) ? round(((double) (conversion))) : 0) : UINT_MAX));
+    return ((amperes_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((amperes_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -5411,14 +4851,6 @@ double uA_f_to_d(microamperes_f microamperes)
 float uA_f_to_f(microamperes_f microamperes)
 {
     return ((float) (microamperes));
-}
-
-/**
- * Convert microamperes_f to int.
- */
-int uA_f_to_i(microamperes_f microamperes)
-{
-    return f_to_i(((float) (microamperes)));
 }
 
 /**
@@ -5466,7 +4898,7 @@ microamperes_d uA_f_to_uA_d(microamperes_f microamperes)
  */
 microamperes_t uA_f_to_uA_t(microamperes_f microamperes)
 {
-    return ((microamperes_t) (round(((double) (microamperes))) < ((double) (INT_MAX)) ? (round(((double) (microamperes))) > ((double) (INT_MIN)) ? round(((double) (microamperes))) : INT_MIN) : INT_MAX));
+    return ((microamperes_t) (round(((double) (microamperes))) < ((double) (9223372036854775807)) ? (round(((double) (microamperes))) > ((double) (-9223372036854775807 - 1)) ? ((microamperes_t) (round(((double) (microamperes))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -5474,7 +4906,7 @@ microamperes_t uA_f_to_uA_t(microamperes_f microamperes)
  */
 microamperes_u uA_f_to_uA_u(microamperes_f microamperes)
 {
-    return ((microamperes_u) (round(((double) (microamperes))) < ((double) (UINT_MAX)) ? (round(((double) (microamperes))) > ((double) (0)) ? round(((double) (microamperes))) : 0) : UINT_MAX));
+    return ((microamperes_u) (round(((double) (microamperes))) < ((double) (18446744073709551615U)) ? (round(((double) (microamperes))) > ((double) (0)) ? ((microamperes_u) (round(((double) (microamperes))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -5499,7 +4931,7 @@ milliamperes_f uA_f_to_mA_f(microamperes_f microamperes)
 milliamperes_t uA_f_to_mA_t(microamperes_f microamperes)
 {
     const microamperes_f conversion = microamperes / 1000.0f;
-    return ((milliamperes_t) (round(((double) (conversion))) < ((double) (INT_MAX)) ? (round(((double) (conversion))) > ((double) (INT_MIN)) ? round(((double) (conversion))) : INT_MIN) : INT_MAX));
+    return ((milliamperes_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((milliamperes_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -5508,7 +4940,7 @@ milliamperes_t uA_f_to_mA_t(microamperes_f microamperes)
 milliamperes_u uA_f_to_mA_u(microamperes_f microamperes)
 {
     const microamperes_f conversion = microamperes / 1000.0f;
-    return ((milliamperes_u) (round(((double) (conversion))) < ((double) (UINT_MAX)) ? (round(((double) (conversion))) > ((double) (0)) ? round(((double) (conversion))) : 0) : UINT_MAX));
+    return ((milliamperes_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((milliamperes_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -5541,14 +4973,6 @@ uint64_t uA_f_to_u64(microamperes_f microamperes)
 uint8_t uA_f_to_u8(microamperes_f microamperes)
 {
     return f_to_u8(((float) (microamperes)));
-}
-
-/**
- * Convert microamperes_f to unsigned int.
- */
-unsigned int uA_f_to_u(microamperes_f microamperes)
-{
-    return f_to_u(((float) (microamperes)));
 }
 
 /**
@@ -5600,14 +5024,6 @@ double uA_t_to_d(microamperes_t microamperes)
 float uA_t_to_f(microamperes_t microamperes)
 {
     return ((float) (microamperes));
-}
-
-/**
- * Convert microamperes_t to int.
- */
-int uA_t_to_i(microamperes_t microamperes)
-{
-    return ((int) (microamperes));
 }
 
 /**
@@ -5734,14 +5150,6 @@ uint8_t uA_t_to_u8(microamperes_t microamperes)
 }
 
 /**
- * Convert microamperes_t to unsigned int.
- */
-unsigned int uA_t_to_u(microamperes_t microamperes)
-{
-    return ((unsigned int) (MAX(((microamperes_t) (0)), microamperes)));
-}
-
-/**
  * Convert microamperes_u to amperes_d.
  */
 amperes_d uA_u_to_A_d(microamperes_u microamperes)
@@ -5763,7 +5171,7 @@ amperes_f uA_u_to_A_f(microamperes_u microamperes)
 amperes_t uA_u_to_A_t(microamperes_u microamperes)
 {
     const microamperes_u conversion = microamperes / 1000000;
-    return ((amperes_t) ((conversion) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : conversion));
+    return ((amperes_t) ((conversion) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : conversion));
 }
 
 /**
@@ -5791,14 +5199,6 @@ float uA_u_to_f(microamperes_u microamperes)
 }
 
 /**
- * Convert microamperes_u to int.
- */
-int uA_u_to_i(microamperes_u microamperes)
-{
-    return ((int) (MIN(((microamperes_u) (INT_MAX)), microamperes)));
-}
-
-/**
  * Convert microamperes_u to int16_t.
  */
 int16_t uA_u_to_i16(microamperes_u microamperes)
@@ -5819,7 +5219,7 @@ int32_t uA_u_to_i32(microamperes_u microamperes)
  */
 int64_t uA_u_to_i64(microamperes_u microamperes)
 {
-    return ((int64_t) (microamperes));
+    return ((int64_t) (MIN(((microamperes_u) (9223372036854775807)), microamperes)));
 }
 
 /**
@@ -5851,7 +5251,7 @@ microamperes_f uA_u_to_uA_f(microamperes_u microamperes)
  */
 microamperes_t uA_u_to_uA_t(microamperes_u microamperes)
 {
-    return ((microamperes_t) ((microamperes) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : microamperes));
+    return ((microamperes_t) ((microamperes) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : microamperes));
 }
 
 /**
@@ -5876,7 +5276,7 @@ milliamperes_f uA_u_to_mA_f(microamperes_u microamperes)
 milliamperes_t uA_u_to_mA_t(microamperes_u microamperes)
 {
     const microamperes_u conversion = microamperes / 1000;
-    return ((milliamperes_t) ((conversion) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : conversion));
+    return ((milliamperes_t) ((conversion) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : conversion));
 }
 
 /**
@@ -5920,14 +5320,6 @@ uint8_t uA_u_to_u8(microamperes_u microamperes)
 }
 
 /**
- * Convert microamperes_u to unsigned int.
- */
-unsigned int uA_u_to_u(microamperes_u microamperes)
-{
-    return ((unsigned int) (microamperes));
-}
-
-/**
  * Convert milliamperes_d to amperes_d.
  */
 amperes_d mA_d_to_A_d(milliamperes_d milliamperes)
@@ -5950,7 +5342,7 @@ amperes_f mA_d_to_A_f(milliamperes_d milliamperes)
 amperes_t mA_d_to_A_t(milliamperes_d milliamperes)
 {
     const milliamperes_d conversion = milliamperes / 1000.0;
-    return ((amperes_t) (round(((double) (conversion))) < ((double) (INT_MAX)) ? (round(((double) (conversion))) > ((double) (INT_MIN)) ? round(((double) (conversion))) : INT_MIN) : INT_MAX));
+    return ((amperes_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((amperes_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -5959,7 +5351,7 @@ amperes_t mA_d_to_A_t(milliamperes_d milliamperes)
 amperes_u mA_d_to_A_u(milliamperes_d milliamperes)
 {
     const milliamperes_d conversion = milliamperes / 1000.0;
-    return ((amperes_u) (round(((double) (conversion))) < ((double) (UINT_MAX)) ? (round(((double) (conversion))) > ((double) (0)) ? round(((double) (conversion))) : 0) : UINT_MAX));
+    return ((amperes_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((amperes_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -5976,14 +5368,6 @@ double mA_d_to_d(milliamperes_d milliamperes)
 float mA_d_to_f(milliamperes_d milliamperes)
 {
     return d_to_f(((double) (milliamperes)));
-}
-
-/**
- * Convert milliamperes_d to int.
- */
-int mA_d_to_i(milliamperes_d milliamperes)
-{
-    return d_to_i(((double) (milliamperes)));
 }
 
 /**
@@ -6051,11 +5435,11 @@ microamperes_f mA_d_to_uA_f(milliamperes_d milliamperes)
  */
 microamperes_t mA_d_to_uA_t(milliamperes_d milliamperes)
 {
-    if (milliamperes > ((milliamperes_d) (INT_MAX)) / 1000.0) {
-        return INT_MAX;
+    if (milliamperes > ((milliamperes_d) (9223372036854775807)) / 1000.0) {
+        return 9223372036854775807;
     }
-    if (milliamperes < ((milliamperes_d) (INT_MIN)) / 1000.0) {
-        return INT_MIN;
+    if (milliamperes < ((milliamperes_d) (-9223372036854775807 - 1)) / 1000.0) {
+        return -9223372036854775807 - 1;
     }
     return ((microamperes_t) (milliamperes * 1000.0));
 }
@@ -6065,8 +5449,8 @@ microamperes_t mA_d_to_uA_t(milliamperes_d milliamperes)
  */
 microamperes_u mA_d_to_uA_u(milliamperes_d milliamperes)
 {
-    if (milliamperes > ((milliamperes_d) (UINT_MAX)) / 1000.0) {
-        return UINT_MAX;
+    if (milliamperes > ((milliamperes_d) (18446744073709551615U)) / 1000.0) {
+        return 18446744073709551615U;
     }
     if (milliamperes < ((milliamperes_d) (0)) / 1000.0) {
         return 0;
@@ -6087,7 +5471,7 @@ milliamperes_f mA_d_to_mA_f(milliamperes_d milliamperes)
  */
 milliamperes_t mA_d_to_mA_t(milliamperes_d milliamperes)
 {
-    return ((milliamperes_t) (round(((double) (milliamperes))) < ((double) (INT_MAX)) ? (round(((double) (milliamperes))) > ((double) (INT_MIN)) ? round(((double) (milliamperes))) : INT_MIN) : INT_MAX));
+    return ((milliamperes_t) (round(((double) (milliamperes))) < ((double) (9223372036854775807)) ? (round(((double) (milliamperes))) > ((double) (-9223372036854775807 - 1)) ? ((milliamperes_t) (round(((double) (milliamperes))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -6095,7 +5479,7 @@ milliamperes_t mA_d_to_mA_t(milliamperes_d milliamperes)
  */
 milliamperes_u mA_d_to_mA_u(milliamperes_d milliamperes)
 {
-    return ((milliamperes_u) (round(((double) (milliamperes))) < ((double) (UINT_MAX)) ? (round(((double) (milliamperes))) > ((double) (0)) ? round(((double) (milliamperes))) : 0) : UINT_MAX));
+    return ((milliamperes_u) (round(((double) (milliamperes))) < ((double) (18446744073709551615U)) ? (round(((double) (milliamperes))) > ((double) (0)) ? ((milliamperes_u) (round(((double) (milliamperes))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -6131,14 +5515,6 @@ uint8_t mA_d_to_u8(milliamperes_d milliamperes)
 }
 
 /**
- * Convert milliamperes_d to unsigned int.
- */
-unsigned int mA_d_to_u(milliamperes_d milliamperes)
-{
-    return d_to_u(((double) (milliamperes)));
-}
-
-/**
  * Convert milliamperes_f to amperes_d.
  */
 amperes_d mA_f_to_A_d(milliamperes_f milliamperes)
@@ -6160,7 +5536,7 @@ amperes_f mA_f_to_A_f(milliamperes_f milliamperes)
 amperes_t mA_f_to_A_t(milliamperes_f milliamperes)
 {
     const milliamperes_f conversion = milliamperes / 1000.0f;
-    return ((amperes_t) (round(((double) (conversion))) < ((double) (INT_MAX)) ? (round(((double) (conversion))) > ((double) (INT_MIN)) ? round(((double) (conversion))) : INT_MIN) : INT_MAX));
+    return ((amperes_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((amperes_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -6169,7 +5545,7 @@ amperes_t mA_f_to_A_t(milliamperes_f milliamperes)
 amperes_u mA_f_to_A_u(milliamperes_f milliamperes)
 {
     const milliamperes_f conversion = milliamperes / 1000.0f;
-    return ((amperes_u) (round(((double) (conversion))) < ((double) (UINT_MAX)) ? (round(((double) (conversion))) > ((double) (0)) ? round(((double) (conversion))) : 0) : UINT_MAX));
+    return ((amperes_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((amperes_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -6186,14 +5562,6 @@ double mA_f_to_d(milliamperes_f milliamperes)
 float mA_f_to_f(milliamperes_f milliamperes)
 {
     return ((float) (milliamperes));
-}
-
-/**
- * Convert milliamperes_f to int.
- */
-int mA_f_to_i(milliamperes_f milliamperes)
-{
-    return f_to_i(((float) (milliamperes)));
 }
 
 /**
@@ -6255,11 +5623,11 @@ microamperes_f mA_f_to_uA_f(milliamperes_f milliamperes)
  */
 microamperes_t mA_f_to_uA_t(milliamperes_f milliamperes)
 {
-    if (milliamperes > ((milliamperes_f) (INT_MAX)) / 1000.0f) {
-        return INT_MAX;
+    if (milliamperes > ((milliamperes_f) (9223372036854775807)) / 1000.0f) {
+        return 9223372036854775807;
     }
-    if (milliamperes < ((milliamperes_f) (INT_MIN)) / 1000.0f) {
-        return INT_MIN;
+    if (milliamperes < ((milliamperes_f) (-9223372036854775807 - 1)) / 1000.0f) {
+        return -9223372036854775807 - 1;
     }
     return ((microamperes_t) (milliamperes * 1000.0f));
 }
@@ -6269,8 +5637,8 @@ microamperes_t mA_f_to_uA_t(milliamperes_f milliamperes)
  */
 microamperes_u mA_f_to_uA_u(milliamperes_f milliamperes)
 {
-    if (milliamperes > ((milliamperes_f) (UINT_MAX)) / 1000.0f) {
-        return UINT_MAX;
+    if (milliamperes > ((milliamperes_f) (18446744073709551615U)) / 1000.0f) {
+        return 18446744073709551615U;
     }
     if (milliamperes < ((milliamperes_f) (0)) / 1000.0f) {
         return 0;
@@ -6291,7 +5659,7 @@ milliamperes_d mA_f_to_mA_d(milliamperes_f milliamperes)
  */
 milliamperes_t mA_f_to_mA_t(milliamperes_f milliamperes)
 {
-    return ((milliamperes_t) (round(((double) (milliamperes))) < ((double) (INT_MAX)) ? (round(((double) (milliamperes))) > ((double) (INT_MIN)) ? round(((double) (milliamperes))) : INT_MIN) : INT_MAX));
+    return ((milliamperes_t) (round(((double) (milliamperes))) < ((double) (9223372036854775807)) ? (round(((double) (milliamperes))) > ((double) (-9223372036854775807 - 1)) ? ((milliamperes_t) (round(((double) (milliamperes))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -6299,7 +5667,7 @@ milliamperes_t mA_f_to_mA_t(milliamperes_f milliamperes)
  */
 milliamperes_u mA_f_to_mA_u(milliamperes_f milliamperes)
 {
-    return ((milliamperes_u) (round(((double) (milliamperes))) < ((double) (UINT_MAX)) ? (round(((double) (milliamperes))) > ((double) (0)) ? round(((double) (milliamperes))) : 0) : UINT_MAX));
+    return ((milliamperes_u) (round(((double) (milliamperes))) < ((double) (18446744073709551615U)) ? (round(((double) (milliamperes))) > ((double) (0)) ? ((milliamperes_u) (round(((double) (milliamperes))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -6332,14 +5700,6 @@ uint64_t mA_f_to_u64(milliamperes_f milliamperes)
 uint8_t mA_f_to_u8(milliamperes_f milliamperes)
 {
     return f_to_u8(((float) (milliamperes)));
-}
-
-/**
- * Convert milliamperes_f to unsigned int.
- */
-unsigned int mA_f_to_u(milliamperes_f milliamperes)
-{
-    return f_to_u(((float) (milliamperes)));
 }
 
 /**
@@ -6391,14 +5751,6 @@ double mA_t_to_d(milliamperes_t milliamperes)
 float mA_t_to_f(milliamperes_t milliamperes)
 {
     return ((float) (milliamperes));
-}
-
-/**
- * Convert milliamperes_t to int.
- */
-int mA_t_to_i(milliamperes_t milliamperes)
-{
-    return ((int) (milliamperes));
 }
 
 /**
@@ -6454,11 +5806,11 @@ microamperes_f mA_t_to_uA_f(milliamperes_t milliamperes)
  */
 microamperes_t mA_t_to_uA_t(milliamperes_t milliamperes)
 {
-    if (milliamperes < INT_MIN / 1000) {
-        return INT_MIN;
+    if (milliamperes < -9223372036854775807 - 1 / 1000) {
+        return -9223372036854775807 - 1;
     }
-    if (milliamperes > INT_MAX / 1000) {
-        return INT_MAX;
+    if (milliamperes > 9223372036854775807 / 1000) {
+        return 9223372036854775807;
     }
     return ((microamperes_t) (milliamperes)) * 1000;
 }
@@ -6472,8 +5824,8 @@ microamperes_u mA_t_to_uA_u(milliamperes_t milliamperes)
         return 0;
     }
     const microamperes_u otherMilliamperes = ((microamperes_u) (milliamperes));
-    if (otherMilliamperes > UINT_MAX / 1000) {
-        return UINT_MAX;
+    if (otherMilliamperes > 18446744073709551615U / 1000) {
+        return 18446744073709551615U;
     }
     return otherMilliamperes * 1000;
 }
@@ -6535,14 +5887,6 @@ uint8_t mA_t_to_u8(milliamperes_t milliamperes)
 }
 
 /**
- * Convert milliamperes_t to unsigned int.
- */
-unsigned int mA_t_to_u(milliamperes_t milliamperes)
-{
-    return ((unsigned int) (MAX(((milliamperes_t) (0)), milliamperes)));
-}
-
-/**
  * Convert milliamperes_u to amperes_d.
  */
 amperes_d mA_u_to_A_d(milliamperes_u milliamperes)
@@ -6564,7 +5908,7 @@ amperes_f mA_u_to_A_f(milliamperes_u milliamperes)
 amperes_t mA_u_to_A_t(milliamperes_u milliamperes)
 {
     const milliamperes_u conversion = milliamperes / 1000;
-    return ((amperes_t) ((conversion) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : conversion));
+    return ((amperes_t) ((conversion) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : conversion));
 }
 
 /**
@@ -6592,14 +5936,6 @@ float mA_u_to_f(milliamperes_u milliamperes)
 }
 
 /**
- * Convert milliamperes_u to int.
- */
-int mA_u_to_i(milliamperes_u milliamperes)
-{
-    return ((int) (MIN(((milliamperes_u) (INT_MAX)), milliamperes)));
-}
-
-/**
  * Convert milliamperes_u to int16_t.
  */
 int16_t mA_u_to_i16(milliamperes_u milliamperes)
@@ -6620,7 +5956,7 @@ int32_t mA_u_to_i32(milliamperes_u milliamperes)
  */
 int64_t mA_u_to_i64(milliamperes_u milliamperes)
 {
-    return ((int64_t) (milliamperes));
+    return ((int64_t) (MIN(((milliamperes_u) (9223372036854775807)), milliamperes)));
 }
 
 /**
@@ -6652,8 +5988,8 @@ microamperes_f mA_u_to_uA_f(milliamperes_u milliamperes)
  */
 microamperes_t mA_u_to_uA_t(milliamperes_u milliamperes)
 {
-    if (milliamperes > ((milliamperes_u) (INT_MAX / 1000))) {
-        return INT_MAX;
+    if (milliamperes > ((milliamperes_u) (9223372036854775807 / 1000))) {
+        return 9223372036854775807;
     }
     return ((microamperes_t) (milliamperes * 1000));
 }
@@ -6663,8 +5999,8 @@ microamperes_t mA_u_to_uA_t(milliamperes_u milliamperes)
  */
 microamperes_u mA_u_to_uA_u(milliamperes_u milliamperes)
 {
-    if (milliamperes > UINT_MAX / 1000) {
-        return UINT_MAX;
+    if (milliamperes > 18446744073709551615U / 1000) {
+        return 18446744073709551615U;
     }
     return ((microamperes_u) (milliamperes)) * 1000;
 }
@@ -6690,7 +6026,7 @@ milliamperes_f mA_u_to_mA_f(milliamperes_u milliamperes)
  */
 milliamperes_t mA_u_to_mA_t(milliamperes_u milliamperes)
 {
-    return ((milliamperes_t) ((milliamperes) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : milliamperes));
+    return ((milliamperes_t) ((milliamperes) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : milliamperes));
 }
 
 /**
@@ -6723,14 +6059,6 @@ uint64_t mA_u_to_u64(milliamperes_u milliamperes)
 uint8_t mA_u_to_u8(milliamperes_u milliamperes)
 {
     return ((uint8_t) (MIN(((milliamperes_u) (255)), MAX(((milliamperes_u) (0)), milliamperes))));
-}
-
-/**
- * Convert milliamperes_u to unsigned int.
- */
-unsigned int mA_u_to_u(milliamperes_u milliamperes)
-{
-    return ((unsigned int) (milliamperes));
 }
 
 /**
@@ -6850,7 +6178,7 @@ amperes_f u32_to_A_f(uint32_t amperes)
  */
 amperes_t u32_to_A_t(uint32_t amperes)
 {
-    return ((amperes_t) (MIN(((uint32_t) (INT_MAX)), amperes)));
+    return ((amperes_t) (amperes));
 }
 
 /**
@@ -6858,7 +6186,7 @@ amperes_t u32_to_A_t(uint32_t amperes)
  */
 amperes_u u32_to_A_u(uint32_t amperes)
 {
-    return ((amperes_u) (MIN(((uint32_t) (UINT_MAX)), MAX(((uint32_t) (0)), amperes))));
+    return ((amperes_u) (amperes));
 }
 
 /**
@@ -6882,7 +6210,7 @@ microamperes_f u32_to_uA_f(uint32_t microamperes)
  */
 microamperes_t u32_to_uA_t(uint32_t microamperes)
 {
-    return ((microamperes_t) (MIN(((uint32_t) (INT_MAX)), microamperes)));
+    return ((microamperes_t) (microamperes));
 }
 
 /**
@@ -6890,7 +6218,7 @@ microamperes_t u32_to_uA_t(uint32_t microamperes)
  */
 microamperes_u u32_to_uA_u(uint32_t microamperes)
 {
-    return ((microamperes_u) (MIN(((uint32_t) (UINT_MAX)), MAX(((uint32_t) (0)), microamperes))));
+    return ((microamperes_u) (microamperes));
 }
 
 /**
@@ -6914,7 +6242,7 @@ milliamperes_f u32_to_mA_f(uint32_t milliamperes)
  */
 milliamperes_t u32_to_mA_t(uint32_t milliamperes)
 {
-    return ((milliamperes_t) (MIN(((uint32_t) (INT_MAX)), milliamperes)));
+    return ((milliamperes_t) (milliamperes));
 }
 
 /**
@@ -6922,7 +6250,7 @@ milliamperes_t u32_to_mA_t(uint32_t milliamperes)
  */
 milliamperes_u u32_to_mA_u(uint32_t milliamperes)
 {
-    return ((milliamperes_u) (MIN(((uint32_t) (UINT_MAX)), MAX(((uint32_t) (0)), milliamperes))));
+    return ((milliamperes_u) (milliamperes));
 }
 
 /**
@@ -6946,7 +6274,7 @@ amperes_f u64_to_A_f(uint64_t amperes)
  */
 amperes_t u64_to_A_t(uint64_t amperes)
 {
-    return ((amperes_t) (MIN(((uint64_t) (INT_MAX)), amperes)));
+    return ((amperes_t) (MIN(((uint64_t) (9223372036854775807)), amperes)));
 }
 
 /**
@@ -6954,7 +6282,7 @@ amperes_t u64_to_A_t(uint64_t amperes)
  */
 amperes_u u64_to_A_u(uint64_t amperes)
 {
-    return ((amperes_u) (MIN(((uint64_t) (UINT_MAX)), MAX(((uint64_t) (0)), amperes))));
+    return ((amperes_u) (amperes));
 }
 
 /**
@@ -6978,7 +6306,7 @@ microamperes_f u64_to_uA_f(uint64_t microamperes)
  */
 microamperes_t u64_to_uA_t(uint64_t microamperes)
 {
-    return ((microamperes_t) (MIN(((uint64_t) (INT_MAX)), microamperes)));
+    return ((microamperes_t) (MIN(((uint64_t) (9223372036854775807)), microamperes)));
 }
 
 /**
@@ -6986,7 +6314,7 @@ microamperes_t u64_to_uA_t(uint64_t microamperes)
  */
 microamperes_u u64_to_uA_u(uint64_t microamperes)
 {
-    return ((microamperes_u) (MIN(((uint64_t) (UINT_MAX)), MAX(((uint64_t) (0)), microamperes))));
+    return ((microamperes_u) (microamperes));
 }
 
 /**
@@ -7010,7 +6338,7 @@ milliamperes_f u64_to_mA_f(uint64_t milliamperes)
  */
 milliamperes_t u64_to_mA_t(uint64_t milliamperes)
 {
-    return ((milliamperes_t) (MIN(((uint64_t) (INT_MAX)), milliamperes)));
+    return ((milliamperes_t) (MIN(((uint64_t) (9223372036854775807)), milliamperes)));
 }
 
 /**
@@ -7018,7 +6346,7 @@ milliamperes_t u64_to_mA_t(uint64_t milliamperes)
  */
 milliamperes_u u64_to_mA_u(uint64_t milliamperes)
 {
-    return ((milliamperes_u) (MIN(((uint64_t) (UINT_MAX)), MAX(((uint64_t) (0)), milliamperes))));
+    return ((milliamperes_u) (milliamperes));
 }
 
 /**
@@ -7118,102 +6446,6 @@ milliamperes_u u8_to_mA_u(uint8_t milliamperes)
 }
 
 /**
- * Convert unsigned int to amperes_d.
- */
-amperes_d u_to_A_d(unsigned int amperes)
-{
-    return ((amperes_d) (amperes));
-}
-
-/**
- * Convert unsigned int to amperes_f.
- */
-amperes_f u_to_A_f(unsigned int amperes)
-{
-    return ((amperes_f) (amperes));
-}
-
-/**
- * Convert unsigned int to amperes_t.
- */
-amperes_t u_to_A_t(unsigned int amperes)
-{
-    return ((amperes_t) (MIN(((unsigned int) (INT_MAX)), amperes)));
-}
-
-/**
- * Convert unsigned int to amperes_u.
- */
-amperes_u u_to_A_u(unsigned int amperes)
-{
-    return ((amperes_u) (amperes));
-}
-
-/**
- * Convert unsigned int to microamperes_d.
- */
-microamperes_d u_to_uA_d(unsigned int microamperes)
-{
-    return ((microamperes_d) (microamperes));
-}
-
-/**
- * Convert unsigned int to microamperes_f.
- */
-microamperes_f u_to_uA_f(unsigned int microamperes)
-{
-    return ((microamperes_f) (microamperes));
-}
-
-/**
- * Convert unsigned int to microamperes_t.
- */
-microamperes_t u_to_uA_t(unsigned int microamperes)
-{
-    return ((microamperes_t) (MIN(((unsigned int) (INT_MAX)), microamperes)));
-}
-
-/**
- * Convert unsigned int to microamperes_u.
- */
-microamperes_u u_to_uA_u(unsigned int microamperes)
-{
-    return ((microamperes_u) (microamperes));
-}
-
-/**
- * Convert unsigned int to milliamperes_d.
- */
-milliamperes_d u_to_mA_d(unsigned int milliamperes)
-{
-    return ((milliamperes_d) (milliamperes));
-}
-
-/**
- * Convert unsigned int to milliamperes_f.
- */
-milliamperes_f u_to_mA_f(unsigned int milliamperes)
-{
-    return ((milliamperes_f) (milliamperes));
-}
-
-/**
- * Convert unsigned int to milliamperes_t.
- */
-milliamperes_t u_to_mA_t(unsigned int milliamperes)
-{
-    return ((milliamperes_t) (MIN(((unsigned int) (INT_MAX)), milliamperes)));
-}
-
-/**
- * Convert unsigned int to milliamperes_u.
- */
-milliamperes_u u_to_mA_u(unsigned int milliamperes)
-{
-    return ((milliamperes_u) (milliamperes));
-}
-
-/**
  * Convert double to microseconds_d.
  */
 microseconds_d d_to_us_d(double microseconds)
@@ -7234,7 +6466,7 @@ microseconds_f d_to_us_f(double microseconds)
  */
 microseconds_t d_to_us_t(double microseconds)
 {
-    return d_to_i(microseconds);
+    return d_to_i64(microseconds);
 }
 
 /**
@@ -7242,7 +6474,7 @@ microseconds_t d_to_us_t(double microseconds)
  */
 microseconds_u d_to_us_u(double microseconds)
 {
-    return d_to_u(microseconds);
+    return d_to_u64(microseconds);
 }
 
 /**
@@ -7266,7 +6498,7 @@ milliseconds_f d_to_ms_f(double milliseconds)
  */
 milliseconds_t d_to_ms_t(double milliseconds)
 {
-    return d_to_i(milliseconds);
+    return d_to_i64(milliseconds);
 }
 
 /**
@@ -7274,7 +6506,7 @@ milliseconds_t d_to_ms_t(double milliseconds)
  */
 milliseconds_u d_to_ms_u(double milliseconds)
 {
-    return d_to_u(milliseconds);
+    return d_to_u64(milliseconds);
 }
 
 /**
@@ -7298,7 +6530,7 @@ seconds_f d_to_s_f(double seconds)
  */
 seconds_t d_to_s_t(double seconds)
 {
-    return d_to_i(seconds);
+    return d_to_i64(seconds);
 }
 
 /**
@@ -7306,7 +6538,7 @@ seconds_t d_to_s_t(double seconds)
  */
 seconds_u d_to_s_u(double seconds)
 {
-    return d_to_u(seconds);
+    return d_to_u64(seconds);
 }
 
 /**
@@ -7330,7 +6562,7 @@ microseconds_f f_to_us_f(float microseconds)
  */
 microseconds_t f_to_us_t(float microseconds)
 {
-    return f_to_i(microseconds);
+    return f_to_i64(microseconds);
 }
 
 /**
@@ -7338,7 +6570,7 @@ microseconds_t f_to_us_t(float microseconds)
  */
 microseconds_u f_to_us_u(float microseconds)
 {
-    return f_to_u(microseconds);
+    return f_to_u64(microseconds);
 }
 
 /**
@@ -7362,7 +6594,7 @@ milliseconds_f f_to_ms_f(float milliseconds)
  */
 milliseconds_t f_to_ms_t(float milliseconds)
 {
-    return f_to_i(milliseconds);
+    return f_to_i64(milliseconds);
 }
 
 /**
@@ -7370,7 +6602,7 @@ milliseconds_t f_to_ms_t(float milliseconds)
  */
 milliseconds_u f_to_ms_u(float milliseconds)
 {
-    return f_to_u(milliseconds);
+    return f_to_u64(milliseconds);
 }
 
 /**
@@ -7394,7 +6626,7 @@ seconds_f f_to_s_f(float seconds)
  */
 seconds_t f_to_s_t(float seconds)
 {
-    return f_to_i(seconds);
+    return f_to_i64(seconds);
 }
 
 /**
@@ -7402,7 +6634,7 @@ seconds_t f_to_s_t(float seconds)
  */
 seconds_u f_to_s_u(float seconds)
 {
-    return f_to_u(seconds);
+    return f_to_u64(seconds);
 }
 
 /**
@@ -7522,7 +6754,7 @@ microseconds_f i32_to_us_f(int32_t microseconds)
  */
 microseconds_t i32_to_us_t(int32_t microseconds)
 {
-    return ((microseconds_t) (MIN(((int32_t) (INT_MAX)), MAX(((int32_t) (INT_MIN)), microseconds))));
+    return ((microseconds_t) (microseconds));
 }
 
 /**
@@ -7554,7 +6786,7 @@ milliseconds_f i32_to_ms_f(int32_t milliseconds)
  */
 milliseconds_t i32_to_ms_t(int32_t milliseconds)
 {
-    return ((milliseconds_t) (MIN(((int32_t) (INT_MAX)), MAX(((int32_t) (INT_MIN)), milliseconds))));
+    return ((milliseconds_t) (milliseconds));
 }
 
 /**
@@ -7586,7 +6818,7 @@ seconds_f i32_to_s_f(int32_t seconds)
  */
 seconds_t i32_to_s_t(int32_t seconds)
 {
-    return ((seconds_t) (MIN(((int32_t) (INT_MAX)), MAX(((int32_t) (INT_MIN)), seconds))));
+    return ((seconds_t) (seconds));
 }
 
 /**
@@ -7618,7 +6850,7 @@ microseconds_f i64_to_us_f(int64_t microseconds)
  */
 microseconds_t i64_to_us_t(int64_t microseconds)
 {
-    return ((microseconds_t) (MIN(((int64_t) (INT_MAX)), MAX(((int64_t) (INT_MIN)), microseconds))));
+    return ((microseconds_t) (microseconds));
 }
 
 /**
@@ -7650,7 +6882,7 @@ milliseconds_f i64_to_ms_f(int64_t milliseconds)
  */
 milliseconds_t i64_to_ms_t(int64_t milliseconds)
 {
-    return ((milliseconds_t) (MIN(((int64_t) (INT_MAX)), MAX(((int64_t) (INT_MIN)), milliseconds))));
+    return ((milliseconds_t) (milliseconds));
 }
 
 /**
@@ -7682,7 +6914,7 @@ seconds_f i64_to_s_f(int64_t seconds)
  */
 seconds_t i64_to_s_t(int64_t seconds)
 {
-    return ((seconds_t) (MIN(((int64_t) (INT_MAX)), MAX(((int64_t) (INT_MIN)), seconds))));
+    return ((seconds_t) (seconds));
 }
 
 /**
@@ -7790,102 +7022,6 @@ seconds_u i8_to_s_u(int8_t seconds)
 }
 
 /**
- * Convert int to microseconds_d.
- */
-microseconds_d i_to_us_d(int microseconds)
-{
-    return ((microseconds_d) (microseconds));
-}
-
-/**
- * Convert int to microseconds_f.
- */
-microseconds_f i_to_us_f(int microseconds)
-{
-    return ((microseconds_f) (microseconds));
-}
-
-/**
- * Convert int to microseconds_t.
- */
-microseconds_t i_to_us_t(int microseconds)
-{
-    return ((microseconds_t) (microseconds));
-}
-
-/**
- * Convert int to microseconds_u.
- */
-microseconds_u i_to_us_u(int microseconds)
-{
-    return ((microseconds_u) (MAX(((int) (0)), microseconds)));
-}
-
-/**
- * Convert int to milliseconds_d.
- */
-milliseconds_d i_to_ms_d(int milliseconds)
-{
-    return ((milliseconds_d) (milliseconds));
-}
-
-/**
- * Convert int to milliseconds_f.
- */
-milliseconds_f i_to_ms_f(int milliseconds)
-{
-    return ((milliseconds_f) (milliseconds));
-}
-
-/**
- * Convert int to milliseconds_t.
- */
-milliseconds_t i_to_ms_t(int milliseconds)
-{
-    return ((milliseconds_t) (milliseconds));
-}
-
-/**
- * Convert int to milliseconds_u.
- */
-milliseconds_u i_to_ms_u(int milliseconds)
-{
-    return ((milliseconds_u) (MAX(((int) (0)), milliseconds)));
-}
-
-/**
- * Convert int to seconds_d.
- */
-seconds_d i_to_s_d(int seconds)
-{
-    return ((seconds_d) (seconds));
-}
-
-/**
- * Convert int to seconds_f.
- */
-seconds_f i_to_s_f(int seconds)
-{
-    return ((seconds_f) (seconds));
-}
-
-/**
- * Convert int to seconds_t.
- */
-seconds_t i_to_s_t(int seconds)
-{
-    return ((seconds_t) (seconds));
-}
-
-/**
- * Convert int to seconds_u.
- */
-seconds_u i_to_s_u(int seconds)
-{
-    return ((seconds_u) (MAX(((int) (0)), seconds)));
-}
-
-/**
  * Convert microseconds_d to double.
  */
 double us_d_to_d(microseconds_d microseconds)
@@ -7899,14 +7035,6 @@ double us_d_to_d(microseconds_d microseconds)
 float us_d_to_f(microseconds_d microseconds)
 {
     return d_to_f(((double) (microseconds)));
-}
-
-/**
- * Convert microseconds_d to int.
- */
-int us_d_to_i(microseconds_d microseconds)
-{
-    return d_to_i(((double) (microseconds)));
 }
 
 /**
@@ -7954,7 +7082,7 @@ microseconds_f us_d_to_us_f(microseconds_d microseconds)
  */
 microseconds_t us_d_to_us_t(microseconds_d microseconds)
 {
-    return ((microseconds_t) (round(((double) (microseconds))) < ((double) (INT_MAX)) ? (round(((double) (microseconds))) > ((double) (INT_MIN)) ? round(((double) (microseconds))) : INT_MIN) : INT_MAX));
+    return ((microseconds_t) (round(((double) (microseconds))) < ((double) (9223372036854775807)) ? (round(((double) (microseconds))) > ((double) (-9223372036854775807 - 1)) ? ((microseconds_t) (round(((double) (microseconds))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -7962,7 +7090,7 @@ microseconds_t us_d_to_us_t(microseconds_d microseconds)
  */
 microseconds_u us_d_to_us_u(microseconds_d microseconds)
 {
-    return ((microseconds_u) (round(((double) (microseconds))) < ((double) (UINT_MAX)) ? (round(((double) (microseconds))) > ((double) (0)) ? round(((double) (microseconds))) : 0) : UINT_MAX));
+    return ((microseconds_u) (round(((double) (microseconds))) < ((double) (18446744073709551615U)) ? (round(((double) (microseconds))) > ((double) (0)) ? ((microseconds_u) (round(((double) (microseconds))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -7988,7 +7116,7 @@ milliseconds_f us_d_to_ms_f(microseconds_d microseconds)
 milliseconds_t us_d_to_ms_t(microseconds_d microseconds)
 {
     const microseconds_d conversion = microseconds / 1000.0;
-    return ((milliseconds_t) (round(((double) (conversion))) < ((double) (INT_MAX)) ? (round(((double) (conversion))) > ((double) (INT_MIN)) ? round(((double) (conversion))) : INT_MIN) : INT_MAX));
+    return ((milliseconds_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((milliseconds_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -7997,7 +7125,7 @@ milliseconds_t us_d_to_ms_t(microseconds_d microseconds)
 milliseconds_u us_d_to_ms_u(microseconds_d microseconds)
 {
     const microseconds_d conversion = microseconds / 1000.0;
-    return ((milliseconds_u) (round(((double) (conversion))) < ((double) (UINT_MAX)) ? (round(((double) (conversion))) > ((double) (0)) ? round(((double) (conversion))) : 0) : UINT_MAX));
+    return ((milliseconds_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((milliseconds_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -8023,7 +7151,7 @@ seconds_f us_d_to_s_f(microseconds_d microseconds)
 seconds_t us_d_to_s_t(microseconds_d microseconds)
 {
     const microseconds_d conversion = microseconds / 1000000.0;
-    return ((seconds_t) (round(((double) (conversion))) < ((double) (INT_MAX)) ? (round(((double) (conversion))) > ((double) (INT_MIN)) ? round(((double) (conversion))) : INT_MIN) : INT_MAX));
+    return ((seconds_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((seconds_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -8032,7 +7160,7 @@ seconds_t us_d_to_s_t(microseconds_d microseconds)
 seconds_u us_d_to_s_u(microseconds_d microseconds)
 {
     const microseconds_d conversion = microseconds / 1000000.0;
-    return ((seconds_u) (round(((double) (conversion))) < ((double) (UINT_MAX)) ? (round(((double) (conversion))) > ((double) (0)) ? round(((double) (conversion))) : 0) : UINT_MAX));
+    return ((seconds_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((seconds_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -8068,14 +7196,6 @@ uint8_t us_d_to_u8(microseconds_d microseconds)
 }
 
 /**
- * Convert microseconds_d to unsigned int.
- */
-unsigned int us_d_to_u(microseconds_d microseconds)
-{
-    return d_to_u(((double) (microseconds)));
-}
-
-/**
  * Convert microseconds_f to double.
  */
 double us_f_to_d(microseconds_f microseconds)
@@ -8089,14 +7209,6 @@ double us_f_to_d(microseconds_f microseconds)
 float us_f_to_f(microseconds_f microseconds)
 {
     return ((float) (microseconds));
-}
-
-/**
- * Convert microseconds_f to int.
- */
-int us_f_to_i(microseconds_f microseconds)
-{
-    return f_to_i(((float) (microseconds)));
 }
 
 /**
@@ -8144,7 +7256,7 @@ microseconds_d us_f_to_us_d(microseconds_f microseconds)
  */
 microseconds_t us_f_to_us_t(microseconds_f microseconds)
 {
-    return ((microseconds_t) (round(((double) (microseconds))) < ((double) (INT_MAX)) ? (round(((double) (microseconds))) > ((double) (INT_MIN)) ? round(((double) (microseconds))) : INT_MIN) : INT_MAX));
+    return ((microseconds_t) (round(((double) (microseconds))) < ((double) (9223372036854775807)) ? (round(((double) (microseconds))) > ((double) (-9223372036854775807 - 1)) ? ((microseconds_t) (round(((double) (microseconds))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -8152,7 +7264,7 @@ microseconds_t us_f_to_us_t(microseconds_f microseconds)
  */
 microseconds_u us_f_to_us_u(microseconds_f microseconds)
 {
-    return ((microseconds_u) (round(((double) (microseconds))) < ((double) (UINT_MAX)) ? (round(((double) (microseconds))) > ((double) (0)) ? round(((double) (microseconds))) : 0) : UINT_MAX));
+    return ((microseconds_u) (round(((double) (microseconds))) < ((double) (18446744073709551615U)) ? (round(((double) (microseconds))) > ((double) (0)) ? ((microseconds_u) (round(((double) (microseconds))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -8177,7 +7289,7 @@ milliseconds_f us_f_to_ms_f(microseconds_f microseconds)
 milliseconds_t us_f_to_ms_t(microseconds_f microseconds)
 {
     const microseconds_f conversion = microseconds / 1000.0f;
-    return ((milliseconds_t) (round(((double) (conversion))) < ((double) (INT_MAX)) ? (round(((double) (conversion))) > ((double) (INT_MIN)) ? round(((double) (conversion))) : INT_MIN) : INT_MAX));
+    return ((milliseconds_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((milliseconds_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -8186,7 +7298,7 @@ milliseconds_t us_f_to_ms_t(microseconds_f microseconds)
 milliseconds_u us_f_to_ms_u(microseconds_f microseconds)
 {
     const microseconds_f conversion = microseconds / 1000.0f;
-    return ((milliseconds_u) (round(((double) (conversion))) < ((double) (UINT_MAX)) ? (round(((double) (conversion))) > ((double) (0)) ? round(((double) (conversion))) : 0) : UINT_MAX));
+    return ((milliseconds_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((milliseconds_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -8211,7 +7323,7 @@ seconds_f us_f_to_s_f(microseconds_f microseconds)
 seconds_t us_f_to_s_t(microseconds_f microseconds)
 {
     const microseconds_f conversion = microseconds / 1000000.0f;
-    return ((seconds_t) (round(((double) (conversion))) < ((double) (INT_MAX)) ? (round(((double) (conversion))) > ((double) (INT_MIN)) ? round(((double) (conversion))) : INT_MIN) : INT_MAX));
+    return ((seconds_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((seconds_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -8220,7 +7332,7 @@ seconds_t us_f_to_s_t(microseconds_f microseconds)
 seconds_u us_f_to_s_u(microseconds_f microseconds)
 {
     const microseconds_f conversion = microseconds / 1000000.0f;
-    return ((seconds_u) (round(((double) (conversion))) < ((double) (UINT_MAX)) ? (round(((double) (conversion))) > ((double) (0)) ? round(((double) (conversion))) : 0) : UINT_MAX));
+    return ((seconds_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((seconds_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -8256,14 +7368,6 @@ uint8_t us_f_to_u8(microseconds_f microseconds)
 }
 
 /**
- * Convert microseconds_f to unsigned int.
- */
-unsigned int us_f_to_u(microseconds_f microseconds)
-{
-    return f_to_u(((float) (microseconds)));
-}
-
-/**
  * Convert microseconds_t to double.
  */
 double us_t_to_d(microseconds_t microseconds)
@@ -8277,14 +7381,6 @@ double us_t_to_d(microseconds_t microseconds)
 float us_t_to_f(microseconds_t microseconds)
 {
     return ((float) (microseconds));
-}
-
-/**
- * Convert microseconds_t to int.
- */
-int us_t_to_i(microseconds_t microseconds)
-{
-    return ((int) (microseconds));
 }
 
 /**
@@ -8446,14 +7542,6 @@ uint8_t us_t_to_u8(microseconds_t microseconds)
 }
 
 /**
- * Convert microseconds_t to unsigned int.
- */
-unsigned int us_t_to_u(microseconds_t microseconds)
-{
-    return ((unsigned int) (MAX(((microseconds_t) (0)), microseconds)));
-}
-
-/**
  * Convert microseconds_u to double.
  */
 double us_u_to_d(microseconds_u microseconds)
@@ -8467,14 +7555,6 @@ double us_u_to_d(microseconds_u microseconds)
 float us_u_to_f(microseconds_u microseconds)
 {
     return ((float) (microseconds));
-}
-
-/**
- * Convert microseconds_u to int.
- */
-int us_u_to_i(microseconds_u microseconds)
-{
-    return ((int) (MIN(((microseconds_u) (INT_MAX)), microseconds)));
 }
 
 /**
@@ -8498,7 +7578,7 @@ int32_t us_u_to_i32(microseconds_u microseconds)
  */
 int64_t us_u_to_i64(microseconds_u microseconds)
 {
-    return ((int64_t) (microseconds));
+    return ((int64_t) (MIN(((microseconds_u) (9223372036854775807)), microseconds)));
 }
 
 /**
@@ -8530,7 +7610,7 @@ microseconds_f us_u_to_us_f(microseconds_u microseconds)
  */
 microseconds_t us_u_to_us_t(microseconds_u microseconds)
 {
-    return ((microseconds_t) ((microseconds) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : microseconds));
+    return ((microseconds_t) ((microseconds) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : microseconds));
 }
 
 /**
@@ -8555,7 +7635,7 @@ milliseconds_f us_u_to_ms_f(microseconds_u microseconds)
 milliseconds_t us_u_to_ms_t(microseconds_u microseconds)
 {
     const microseconds_u conversion = microseconds / 1000;
-    return ((milliseconds_t) ((conversion) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : conversion));
+    return ((milliseconds_t) ((conversion) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : conversion));
 }
 
 /**
@@ -8588,7 +7668,7 @@ seconds_f us_u_to_s_f(microseconds_u microseconds)
 seconds_t us_u_to_s_t(microseconds_u microseconds)
 {
     const microseconds_u conversion = microseconds / 1000000;
-    return ((seconds_t) ((conversion) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : conversion));
+    return ((seconds_t) ((conversion) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : conversion));
 }
 
 /**
@@ -8632,14 +7712,6 @@ uint8_t us_u_to_u8(microseconds_u microseconds)
 }
 
 /**
- * Convert microseconds_u to unsigned int.
- */
-unsigned int us_u_to_u(microseconds_u microseconds)
-{
-    return ((unsigned int) (microseconds));
-}
-
-/**
  * Convert milliseconds_d to double.
  */
 double ms_d_to_d(milliseconds_d milliseconds)
@@ -8653,14 +7725,6 @@ double ms_d_to_d(milliseconds_d milliseconds)
 float ms_d_to_f(milliseconds_d milliseconds)
 {
     return d_to_f(((double) (milliseconds)));
-}
-
-/**
- * Convert milliseconds_d to int.
- */
-int ms_d_to_i(milliseconds_d milliseconds)
-{
-    return d_to_i(((double) (milliseconds)));
 }
 
 /**
@@ -8728,11 +7792,11 @@ microseconds_f ms_d_to_us_f(milliseconds_d milliseconds)
  */
 microseconds_t ms_d_to_us_t(milliseconds_d milliseconds)
 {
-    if (milliseconds > ((milliseconds_d) (INT_MAX)) / 1000.0) {
-        return INT_MAX;
+    if (milliseconds > ((milliseconds_d) (9223372036854775807)) / 1000.0) {
+        return 9223372036854775807;
     }
-    if (milliseconds < ((milliseconds_d) (INT_MIN)) / 1000.0) {
-        return INT_MIN;
+    if (milliseconds < ((milliseconds_d) (-9223372036854775807 - 1)) / 1000.0) {
+        return -9223372036854775807 - 1;
     }
     return ((microseconds_t) (milliseconds * 1000.0));
 }
@@ -8742,8 +7806,8 @@ microseconds_t ms_d_to_us_t(milliseconds_d milliseconds)
  */
 microseconds_u ms_d_to_us_u(milliseconds_d milliseconds)
 {
-    if (milliseconds > ((milliseconds_d) (UINT_MAX)) / 1000.0) {
-        return UINT_MAX;
+    if (milliseconds > ((milliseconds_d) (18446744073709551615U)) / 1000.0) {
+        return 18446744073709551615U;
     }
     if (milliseconds < ((milliseconds_d) (0)) / 1000.0) {
         return 0;
@@ -8764,7 +7828,7 @@ milliseconds_f ms_d_to_ms_f(milliseconds_d milliseconds)
  */
 milliseconds_t ms_d_to_ms_t(milliseconds_d milliseconds)
 {
-    return ((milliseconds_t) (round(((double) (milliseconds))) < ((double) (INT_MAX)) ? (round(((double) (milliseconds))) > ((double) (INT_MIN)) ? round(((double) (milliseconds))) : INT_MIN) : INT_MAX));
+    return ((milliseconds_t) (round(((double) (milliseconds))) < ((double) (9223372036854775807)) ? (round(((double) (milliseconds))) > ((double) (-9223372036854775807 - 1)) ? ((milliseconds_t) (round(((double) (milliseconds))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -8772,7 +7836,7 @@ milliseconds_t ms_d_to_ms_t(milliseconds_d milliseconds)
  */
 milliseconds_u ms_d_to_ms_u(milliseconds_d milliseconds)
 {
-    return ((milliseconds_u) (round(((double) (milliseconds))) < ((double) (UINT_MAX)) ? (round(((double) (milliseconds))) > ((double) (0)) ? round(((double) (milliseconds))) : 0) : UINT_MAX));
+    return ((milliseconds_u) (round(((double) (milliseconds))) < ((double) (18446744073709551615U)) ? (round(((double) (milliseconds))) > ((double) (0)) ? ((milliseconds_u) (round(((double) (milliseconds))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -8798,7 +7862,7 @@ seconds_f ms_d_to_s_f(milliseconds_d milliseconds)
 seconds_t ms_d_to_s_t(milliseconds_d milliseconds)
 {
     const milliseconds_d conversion = milliseconds / 1000.0;
-    return ((seconds_t) (round(((double) (conversion))) < ((double) (INT_MAX)) ? (round(((double) (conversion))) > ((double) (INT_MIN)) ? round(((double) (conversion))) : INT_MIN) : INT_MAX));
+    return ((seconds_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((seconds_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -8807,7 +7871,7 @@ seconds_t ms_d_to_s_t(milliseconds_d milliseconds)
 seconds_u ms_d_to_s_u(milliseconds_d milliseconds)
 {
     const milliseconds_d conversion = milliseconds / 1000.0;
-    return ((seconds_u) (round(((double) (conversion))) < ((double) (UINT_MAX)) ? (round(((double) (conversion))) > ((double) (0)) ? round(((double) (conversion))) : 0) : UINT_MAX));
+    return ((seconds_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((seconds_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -8843,14 +7907,6 @@ uint8_t ms_d_to_u8(milliseconds_d milliseconds)
 }
 
 /**
- * Convert milliseconds_d to unsigned int.
- */
-unsigned int ms_d_to_u(milliseconds_d milliseconds)
-{
-    return d_to_u(((double) (milliseconds)));
-}
-
-/**
  * Convert milliseconds_f to double.
  */
 double ms_f_to_d(milliseconds_f milliseconds)
@@ -8864,14 +7920,6 @@ double ms_f_to_d(milliseconds_f milliseconds)
 float ms_f_to_f(milliseconds_f milliseconds)
 {
     return ((float) (milliseconds));
-}
-
-/**
- * Convert milliseconds_f to int.
- */
-int ms_f_to_i(milliseconds_f milliseconds)
-{
-    return f_to_i(((float) (milliseconds)));
 }
 
 /**
@@ -8933,11 +7981,11 @@ microseconds_f ms_f_to_us_f(milliseconds_f milliseconds)
  */
 microseconds_t ms_f_to_us_t(milliseconds_f milliseconds)
 {
-    if (milliseconds > ((milliseconds_f) (INT_MAX)) / 1000.0f) {
-        return INT_MAX;
+    if (milliseconds > ((milliseconds_f) (9223372036854775807)) / 1000.0f) {
+        return 9223372036854775807;
     }
-    if (milliseconds < ((milliseconds_f) (INT_MIN)) / 1000.0f) {
-        return INT_MIN;
+    if (milliseconds < ((milliseconds_f) (-9223372036854775807 - 1)) / 1000.0f) {
+        return -9223372036854775807 - 1;
     }
     return ((microseconds_t) (milliseconds * 1000.0f));
 }
@@ -8947,8 +7995,8 @@ microseconds_t ms_f_to_us_t(milliseconds_f milliseconds)
  */
 microseconds_u ms_f_to_us_u(milliseconds_f milliseconds)
 {
-    if (milliseconds > ((milliseconds_f) (UINT_MAX)) / 1000.0f) {
-        return UINT_MAX;
+    if (milliseconds > ((milliseconds_f) (18446744073709551615U)) / 1000.0f) {
+        return 18446744073709551615U;
     }
     if (milliseconds < ((milliseconds_f) (0)) / 1000.0f) {
         return 0;
@@ -8969,7 +8017,7 @@ milliseconds_d ms_f_to_ms_d(milliseconds_f milliseconds)
  */
 milliseconds_t ms_f_to_ms_t(milliseconds_f milliseconds)
 {
-    return ((milliseconds_t) (round(((double) (milliseconds))) < ((double) (INT_MAX)) ? (round(((double) (milliseconds))) > ((double) (INT_MIN)) ? round(((double) (milliseconds))) : INT_MIN) : INT_MAX));
+    return ((milliseconds_t) (round(((double) (milliseconds))) < ((double) (9223372036854775807)) ? (round(((double) (milliseconds))) > ((double) (-9223372036854775807 - 1)) ? ((milliseconds_t) (round(((double) (milliseconds))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -8977,7 +8025,7 @@ milliseconds_t ms_f_to_ms_t(milliseconds_f milliseconds)
  */
 milliseconds_u ms_f_to_ms_u(milliseconds_f milliseconds)
 {
-    return ((milliseconds_u) (round(((double) (milliseconds))) < ((double) (UINT_MAX)) ? (round(((double) (milliseconds))) > ((double) (0)) ? round(((double) (milliseconds))) : 0) : UINT_MAX));
+    return ((milliseconds_u) (round(((double) (milliseconds))) < ((double) (18446744073709551615U)) ? (round(((double) (milliseconds))) > ((double) (0)) ? ((milliseconds_u) (round(((double) (milliseconds))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -9002,7 +8050,7 @@ seconds_f ms_f_to_s_f(milliseconds_f milliseconds)
 seconds_t ms_f_to_s_t(milliseconds_f milliseconds)
 {
     const milliseconds_f conversion = milliseconds / 1000.0f;
-    return ((seconds_t) (round(((double) (conversion))) < ((double) (INT_MAX)) ? (round(((double) (conversion))) > ((double) (INT_MIN)) ? round(((double) (conversion))) : INT_MIN) : INT_MAX));
+    return ((seconds_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((seconds_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -9011,7 +8059,7 @@ seconds_t ms_f_to_s_t(milliseconds_f milliseconds)
 seconds_u ms_f_to_s_u(milliseconds_f milliseconds)
 {
     const milliseconds_f conversion = milliseconds / 1000.0f;
-    return ((seconds_u) (round(((double) (conversion))) < ((double) (UINT_MAX)) ? (round(((double) (conversion))) > ((double) (0)) ? round(((double) (conversion))) : 0) : UINT_MAX));
+    return ((seconds_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((seconds_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -9047,14 +8095,6 @@ uint8_t ms_f_to_u8(milliseconds_f milliseconds)
 }
 
 /**
- * Convert milliseconds_f to unsigned int.
- */
-unsigned int ms_f_to_u(milliseconds_f milliseconds)
-{
-    return f_to_u(((float) (milliseconds)));
-}
-
-/**
  * Convert milliseconds_t to double.
  */
 double ms_t_to_d(milliseconds_t milliseconds)
@@ -9068,14 +8108,6 @@ double ms_t_to_d(milliseconds_t milliseconds)
 float ms_t_to_f(milliseconds_t milliseconds)
 {
     return ((float) (milliseconds));
-}
-
-/**
- * Convert milliseconds_t to int.
- */
-int ms_t_to_i(milliseconds_t milliseconds)
-{
-    return ((int) (milliseconds));
 }
 
 /**
@@ -9131,11 +8163,11 @@ microseconds_f ms_t_to_us_f(milliseconds_t milliseconds)
  */
 microseconds_t ms_t_to_us_t(milliseconds_t milliseconds)
 {
-    if (milliseconds < INT_MIN / 1000) {
-        return INT_MIN;
+    if (milliseconds < -9223372036854775807 - 1 / 1000) {
+        return -9223372036854775807 - 1;
     }
-    if (milliseconds > INT_MAX / 1000) {
-        return INT_MAX;
+    if (milliseconds > 9223372036854775807 / 1000) {
+        return 9223372036854775807;
     }
     return ((microseconds_t) (milliseconds)) * 1000;
 }
@@ -9149,8 +8181,8 @@ microseconds_u ms_t_to_us_u(milliseconds_t milliseconds)
         return 0;
     }
     const microseconds_u otherMilliseconds = ((microseconds_u) (milliseconds));
-    if (otherMilliseconds > UINT_MAX / 1000) {
-        return UINT_MAX;
+    if (otherMilliseconds > 18446744073709551615U / 1000) {
+        return 18446744073709551615U;
     }
     return otherMilliseconds * 1000;
 }
@@ -9247,14 +8279,6 @@ uint8_t ms_t_to_u8(milliseconds_t milliseconds)
 }
 
 /**
- * Convert milliseconds_t to unsigned int.
- */
-unsigned int ms_t_to_u(milliseconds_t milliseconds)
-{
-    return ((unsigned int) (MAX(((milliseconds_t) (0)), milliseconds)));
-}
-
-/**
  * Convert milliseconds_u to double.
  */
 double ms_u_to_d(milliseconds_u milliseconds)
@@ -9268,14 +8292,6 @@ double ms_u_to_d(milliseconds_u milliseconds)
 float ms_u_to_f(milliseconds_u milliseconds)
 {
     return ((float) (milliseconds));
-}
-
-/**
- * Convert milliseconds_u to int.
- */
-int ms_u_to_i(milliseconds_u milliseconds)
-{
-    return ((int) (MIN(((milliseconds_u) (INT_MAX)), milliseconds)));
 }
 
 /**
@@ -9299,7 +8315,7 @@ int32_t ms_u_to_i32(milliseconds_u milliseconds)
  */
 int64_t ms_u_to_i64(milliseconds_u milliseconds)
 {
-    return ((int64_t) (milliseconds));
+    return ((int64_t) (MIN(((milliseconds_u) (9223372036854775807)), milliseconds)));
 }
 
 /**
@@ -9331,8 +8347,8 @@ microseconds_f ms_u_to_us_f(milliseconds_u milliseconds)
  */
 microseconds_t ms_u_to_us_t(milliseconds_u milliseconds)
 {
-    if (milliseconds > ((milliseconds_u) (INT_MAX / 1000))) {
-        return INT_MAX;
+    if (milliseconds > ((milliseconds_u) (9223372036854775807 / 1000))) {
+        return 9223372036854775807;
     }
     return ((microseconds_t) (milliseconds * 1000));
 }
@@ -9342,8 +8358,8 @@ microseconds_t ms_u_to_us_t(milliseconds_u milliseconds)
  */
 microseconds_u ms_u_to_us_u(milliseconds_u milliseconds)
 {
-    if (milliseconds > UINT_MAX / 1000) {
-        return UINT_MAX;
+    if (milliseconds > 18446744073709551615U / 1000) {
+        return 18446744073709551615U;
     }
     return ((microseconds_u) (milliseconds)) * 1000;
 }
@@ -9369,7 +8385,7 @@ milliseconds_f ms_u_to_ms_f(milliseconds_u milliseconds)
  */
 milliseconds_t ms_u_to_ms_t(milliseconds_u milliseconds)
 {
-    return ((milliseconds_t) ((milliseconds) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : milliseconds));
+    return ((milliseconds_t) ((milliseconds) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : milliseconds));
 }
 
 /**
@@ -9394,7 +8410,7 @@ seconds_f ms_u_to_s_f(milliseconds_u milliseconds)
 seconds_t ms_u_to_s_t(milliseconds_u milliseconds)
 {
     const milliseconds_u conversion = milliseconds / 1000;
-    return ((seconds_t) ((conversion) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : conversion));
+    return ((seconds_t) ((conversion) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : conversion));
 }
 
 /**
@@ -9438,14 +8454,6 @@ uint8_t ms_u_to_u8(milliseconds_u milliseconds)
 }
 
 /**
- * Convert milliseconds_u to unsigned int.
- */
-unsigned int ms_u_to_u(milliseconds_u milliseconds)
-{
-    return ((unsigned int) (milliseconds));
-}
-
-/**
  * Convert seconds_d to double.
  */
 double s_d_to_d(seconds_d seconds)
@@ -9459,14 +8467,6 @@ double s_d_to_d(seconds_d seconds)
 float s_d_to_f(seconds_d seconds)
 {
     return d_to_f(((double) (seconds)));
-}
-
-/**
- * Convert seconds_d to int.
- */
-int s_d_to_i(seconds_d seconds)
-{
-    return d_to_i(((double) (seconds)));
 }
 
 /**
@@ -9534,11 +8534,11 @@ microseconds_f s_d_to_us_f(seconds_d seconds)
  */
 microseconds_t s_d_to_us_t(seconds_d seconds)
 {
-    if (seconds > ((seconds_d) (INT_MAX)) / 1000000.0) {
-        return INT_MAX;
+    if (seconds > ((seconds_d) (9223372036854775807)) / 1000000.0) {
+        return 9223372036854775807;
     }
-    if (seconds < ((seconds_d) (INT_MIN)) / 1000000.0) {
-        return INT_MIN;
+    if (seconds < ((seconds_d) (-9223372036854775807 - 1)) / 1000000.0) {
+        return -9223372036854775807 - 1;
     }
     return ((microseconds_t) (seconds * 1000000.0));
 }
@@ -9548,8 +8548,8 @@ microseconds_t s_d_to_us_t(seconds_d seconds)
  */
 microseconds_u s_d_to_us_u(seconds_d seconds)
 {
-    if (seconds > ((seconds_d) (UINT_MAX)) / 1000000.0) {
-        return UINT_MAX;
+    if (seconds > ((seconds_d) (18446744073709551615U)) / 1000000.0) {
+        return 18446744073709551615U;
     }
     if (seconds < ((seconds_d) (0)) / 1000000.0) {
         return 0;
@@ -9590,11 +8590,11 @@ milliseconds_f s_d_to_ms_f(seconds_d seconds)
  */
 milliseconds_t s_d_to_ms_t(seconds_d seconds)
 {
-    if (seconds > ((seconds_d) (INT_MAX)) / 1000.0) {
-        return INT_MAX;
+    if (seconds > ((seconds_d) (9223372036854775807)) / 1000.0) {
+        return 9223372036854775807;
     }
-    if (seconds < ((seconds_d) (INT_MIN)) / 1000.0) {
-        return INT_MIN;
+    if (seconds < ((seconds_d) (-9223372036854775807 - 1)) / 1000.0) {
+        return -9223372036854775807 - 1;
     }
     return ((milliseconds_t) (seconds * 1000.0));
 }
@@ -9604,8 +8604,8 @@ milliseconds_t s_d_to_ms_t(seconds_d seconds)
  */
 milliseconds_u s_d_to_ms_u(seconds_d seconds)
 {
-    if (seconds > ((seconds_d) (UINT_MAX)) / 1000.0) {
-        return UINT_MAX;
+    if (seconds > ((seconds_d) (18446744073709551615U)) / 1000.0) {
+        return 18446744073709551615U;
     }
     if (seconds < ((seconds_d) (0)) / 1000.0) {
         return 0;
@@ -9626,7 +8626,7 @@ seconds_f s_d_to_s_f(seconds_d seconds)
  */
 seconds_t s_d_to_s_t(seconds_d seconds)
 {
-    return ((seconds_t) (round(((double) (seconds))) < ((double) (INT_MAX)) ? (round(((double) (seconds))) > ((double) (INT_MIN)) ? round(((double) (seconds))) : INT_MIN) : INT_MAX));
+    return ((seconds_t) (round(((double) (seconds))) < ((double) (9223372036854775807)) ? (round(((double) (seconds))) > ((double) (-9223372036854775807 - 1)) ? ((seconds_t) (round(((double) (seconds))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -9634,7 +8634,7 @@ seconds_t s_d_to_s_t(seconds_d seconds)
  */
 seconds_u s_d_to_s_u(seconds_d seconds)
 {
-    return ((seconds_u) (round(((double) (seconds))) < ((double) (UINT_MAX)) ? (round(((double) (seconds))) > ((double) (0)) ? round(((double) (seconds))) : 0) : UINT_MAX));
+    return ((seconds_u) (round(((double) (seconds))) < ((double) (18446744073709551615U)) ? (round(((double) (seconds))) > ((double) (0)) ? ((seconds_u) (round(((double) (seconds))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -9670,14 +8670,6 @@ uint8_t s_d_to_u8(seconds_d seconds)
 }
 
 /**
- * Convert seconds_d to unsigned int.
- */
-unsigned int s_d_to_u(seconds_d seconds)
-{
-    return d_to_u(((double) (seconds)));
-}
-
-/**
  * Convert seconds_f to double.
  */
 double s_f_to_d(seconds_f seconds)
@@ -9691,14 +8683,6 @@ double s_f_to_d(seconds_f seconds)
 float s_f_to_f(seconds_f seconds)
 {
     return ((float) (seconds));
-}
-
-/**
- * Convert seconds_f to int.
- */
-int s_f_to_i(seconds_f seconds)
-{
-    return f_to_i(((float) (seconds)));
 }
 
 /**
@@ -9760,11 +8744,11 @@ microseconds_f s_f_to_us_f(seconds_f seconds)
  */
 microseconds_t s_f_to_us_t(seconds_f seconds)
 {
-    if (seconds > ((seconds_f) (INT_MAX)) / 1000000.0f) {
-        return INT_MAX;
+    if (seconds > ((seconds_f) (9223372036854775807)) / 1000000.0f) {
+        return 9223372036854775807;
     }
-    if (seconds < ((seconds_f) (INT_MIN)) / 1000000.0f) {
-        return INT_MIN;
+    if (seconds < ((seconds_f) (-9223372036854775807 - 1)) / 1000000.0f) {
+        return -9223372036854775807 - 1;
     }
     return ((microseconds_t) (seconds * 1000000.0f));
 }
@@ -9774,8 +8758,8 @@ microseconds_t s_f_to_us_t(seconds_f seconds)
  */
 microseconds_u s_f_to_us_u(seconds_f seconds)
 {
-    if (seconds > ((seconds_f) (UINT_MAX)) / 1000000.0f) {
-        return UINT_MAX;
+    if (seconds > ((seconds_f) (18446744073709551615U)) / 1000000.0f) {
+        return 18446744073709551615U;
     }
     if (seconds < ((seconds_f) (0)) / 1000000.0f) {
         return 0;
@@ -9810,11 +8794,11 @@ milliseconds_f s_f_to_ms_f(seconds_f seconds)
  */
 milliseconds_t s_f_to_ms_t(seconds_f seconds)
 {
-    if (seconds > ((seconds_f) (INT_MAX)) / 1000.0f) {
-        return INT_MAX;
+    if (seconds > ((seconds_f) (9223372036854775807)) / 1000.0f) {
+        return 9223372036854775807;
     }
-    if (seconds < ((seconds_f) (INT_MIN)) / 1000.0f) {
-        return INT_MIN;
+    if (seconds < ((seconds_f) (-9223372036854775807 - 1)) / 1000.0f) {
+        return -9223372036854775807 - 1;
     }
     return ((milliseconds_t) (seconds * 1000.0f));
 }
@@ -9824,8 +8808,8 @@ milliseconds_t s_f_to_ms_t(seconds_f seconds)
  */
 milliseconds_u s_f_to_ms_u(seconds_f seconds)
 {
-    if (seconds > ((seconds_f) (UINT_MAX)) / 1000.0f) {
-        return UINT_MAX;
+    if (seconds > ((seconds_f) (18446744073709551615U)) / 1000.0f) {
+        return 18446744073709551615U;
     }
     if (seconds < ((seconds_f) (0)) / 1000.0f) {
         return 0;
@@ -9846,7 +8830,7 @@ seconds_d s_f_to_s_d(seconds_f seconds)
  */
 seconds_t s_f_to_s_t(seconds_f seconds)
 {
-    return ((seconds_t) (round(((double) (seconds))) < ((double) (INT_MAX)) ? (round(((double) (seconds))) > ((double) (INT_MIN)) ? round(((double) (seconds))) : INT_MIN) : INT_MAX));
+    return ((seconds_t) (round(((double) (seconds))) < ((double) (9223372036854775807)) ? (round(((double) (seconds))) > ((double) (-9223372036854775807 - 1)) ? ((seconds_t) (round(((double) (seconds))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -9854,7 +8838,7 @@ seconds_t s_f_to_s_t(seconds_f seconds)
  */
 seconds_u s_f_to_s_u(seconds_f seconds)
 {
-    return ((seconds_u) (round(((double) (seconds))) < ((double) (UINT_MAX)) ? (round(((double) (seconds))) > ((double) (0)) ? round(((double) (seconds))) : 0) : UINT_MAX));
+    return ((seconds_u) (round(((double) (seconds))) < ((double) (18446744073709551615U)) ? (round(((double) (seconds))) > ((double) (0)) ? ((seconds_u) (round(((double) (seconds))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -9890,14 +8874,6 @@ uint8_t s_f_to_u8(seconds_f seconds)
 }
 
 /**
- * Convert seconds_f to unsigned int.
- */
-unsigned int s_f_to_u(seconds_f seconds)
-{
-    return f_to_u(((float) (seconds)));
-}
-
-/**
  * Convert seconds_t to double.
  */
 double s_t_to_d(seconds_t seconds)
@@ -9911,14 +8887,6 @@ double s_t_to_d(seconds_t seconds)
 float s_t_to_f(seconds_t seconds)
 {
     return ((float) (seconds));
-}
-
-/**
- * Convert seconds_t to int.
- */
-int s_t_to_i(seconds_t seconds)
-{
-    return ((int) (seconds));
 }
 
 /**
@@ -9974,11 +8942,11 @@ microseconds_f s_t_to_us_f(seconds_t seconds)
  */
 microseconds_t s_t_to_us_t(seconds_t seconds)
 {
-    if (seconds < INT_MIN / 1000000) {
-        return INT_MIN;
+    if (seconds < -9223372036854775807 - 1 / 1000000) {
+        return -9223372036854775807 - 1;
     }
-    if (seconds > INT_MAX / 1000000) {
-        return INT_MAX;
+    if (seconds > 9223372036854775807 / 1000000) {
+        return 9223372036854775807;
     }
     return ((microseconds_t) (seconds)) * 1000000;
 }
@@ -9992,8 +8960,8 @@ microseconds_u s_t_to_us_u(seconds_t seconds)
         return 0;
     }
     const microseconds_u otherSeconds = ((microseconds_u) (seconds));
-    if (otherSeconds > UINT_MAX / 1000000) {
-        return UINT_MAX;
+    if (otherSeconds > 18446744073709551615U / 1000000) {
+        return 18446744073709551615U;
     }
     return otherSeconds * 1000000;
 }
@@ -10019,11 +8987,11 @@ milliseconds_f s_t_to_ms_f(seconds_t seconds)
  */
 milliseconds_t s_t_to_ms_t(seconds_t seconds)
 {
-    if (seconds < INT_MIN / 1000) {
-        return INT_MIN;
+    if (seconds < -9223372036854775807 - 1 / 1000) {
+        return -9223372036854775807 - 1;
     }
-    if (seconds > INT_MAX / 1000) {
-        return INT_MAX;
+    if (seconds > 9223372036854775807 / 1000) {
+        return 9223372036854775807;
     }
     return ((milliseconds_t) (seconds)) * 1000;
 }
@@ -10037,8 +9005,8 @@ milliseconds_u s_t_to_ms_u(seconds_t seconds)
         return 0;
     }
     const milliseconds_u otherSeconds = ((milliseconds_u) (seconds));
-    if (otherSeconds > UINT_MAX / 1000) {
-        return UINT_MAX;
+    if (otherSeconds > 18446744073709551615U / 1000) {
+        return 18446744073709551615U;
     }
     return otherSeconds * 1000;
 }
@@ -10100,14 +9068,6 @@ uint8_t s_t_to_u8(seconds_t seconds)
 }
 
 /**
- * Convert seconds_t to unsigned int.
- */
-unsigned int s_t_to_u(seconds_t seconds)
-{
-    return ((unsigned int) (MAX(((seconds_t) (0)), seconds)));
-}
-
-/**
  * Convert seconds_u to double.
  */
 double s_u_to_d(seconds_u seconds)
@@ -10121,14 +9081,6 @@ double s_u_to_d(seconds_u seconds)
 float s_u_to_f(seconds_u seconds)
 {
     return ((float) (seconds));
-}
-
-/**
- * Convert seconds_u to int.
- */
-int s_u_to_i(seconds_u seconds)
-{
-    return ((int) (MIN(((seconds_u) (INT_MAX)), seconds)));
 }
 
 /**
@@ -10152,7 +9104,7 @@ int32_t s_u_to_i32(seconds_u seconds)
  */
 int64_t s_u_to_i64(seconds_u seconds)
 {
-    return ((int64_t) (seconds));
+    return ((int64_t) (MIN(((seconds_u) (9223372036854775807)), seconds)));
 }
 
 /**
@@ -10184,8 +9136,8 @@ microseconds_f s_u_to_us_f(seconds_u seconds)
  */
 microseconds_t s_u_to_us_t(seconds_u seconds)
 {
-    if (seconds > ((seconds_u) (INT_MAX / 1000000))) {
-        return INT_MAX;
+    if (seconds > ((seconds_u) (9223372036854775807 / 1000000))) {
+        return 9223372036854775807;
     }
     return ((microseconds_t) (seconds * 1000000));
 }
@@ -10195,8 +9147,8 @@ microseconds_t s_u_to_us_t(seconds_u seconds)
  */
 microseconds_u s_u_to_us_u(seconds_u seconds)
 {
-    if (seconds > UINT_MAX / 1000000) {
-        return UINT_MAX;
+    if (seconds > 18446744073709551615U / 1000000) {
+        return 18446744073709551615U;
     }
     return ((microseconds_u) (seconds)) * 1000000;
 }
@@ -10222,8 +9174,8 @@ milliseconds_f s_u_to_ms_f(seconds_u seconds)
  */
 milliseconds_t s_u_to_ms_t(seconds_u seconds)
 {
-    if (seconds > ((seconds_u) (INT_MAX / 1000))) {
-        return INT_MAX;
+    if (seconds > ((seconds_u) (9223372036854775807 / 1000))) {
+        return 9223372036854775807;
     }
     return ((milliseconds_t) (seconds * 1000));
 }
@@ -10233,8 +9185,8 @@ milliseconds_t s_u_to_ms_t(seconds_u seconds)
  */
 milliseconds_u s_u_to_ms_u(seconds_u seconds)
 {
-    if (seconds > UINT_MAX / 1000) {
-        return UINT_MAX;
+    if (seconds > 18446744073709551615U / 1000) {
+        return 18446744073709551615U;
     }
     return ((milliseconds_u) (seconds)) * 1000;
 }
@@ -10260,7 +9212,7 @@ seconds_f s_u_to_s_f(seconds_u seconds)
  */
 seconds_t s_u_to_s_t(seconds_u seconds)
 {
-    return ((seconds_t) ((seconds) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : seconds));
+    return ((seconds_t) ((seconds) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : seconds));
 }
 
 /**
@@ -10293,14 +9245,6 @@ uint64_t s_u_to_u64(seconds_u seconds)
 uint8_t s_u_to_u8(seconds_u seconds)
 {
     return ((uint8_t) (MIN(((seconds_u) (255)), MAX(((seconds_u) (0)), seconds))));
-}
-
-/**
- * Convert seconds_u to unsigned int.
- */
-unsigned int s_u_to_u(seconds_u seconds)
-{
-    return ((unsigned int) (seconds));
 }
 
 /**
@@ -10420,7 +9364,7 @@ microseconds_f u32_to_us_f(uint32_t microseconds)
  */
 microseconds_t u32_to_us_t(uint32_t microseconds)
 {
-    return ((microseconds_t) (MIN(((uint32_t) (INT_MAX)), microseconds)));
+    return ((microseconds_t) (microseconds));
 }
 
 /**
@@ -10428,7 +9372,7 @@ microseconds_t u32_to_us_t(uint32_t microseconds)
  */
 microseconds_u u32_to_us_u(uint32_t microseconds)
 {
-    return ((microseconds_u) (MIN(((uint32_t) (UINT_MAX)), MAX(((uint32_t) (0)), microseconds))));
+    return ((microseconds_u) (microseconds));
 }
 
 /**
@@ -10452,7 +9396,7 @@ milliseconds_f u32_to_ms_f(uint32_t milliseconds)
  */
 milliseconds_t u32_to_ms_t(uint32_t milliseconds)
 {
-    return ((milliseconds_t) (MIN(((uint32_t) (INT_MAX)), milliseconds)));
+    return ((milliseconds_t) (milliseconds));
 }
 
 /**
@@ -10460,7 +9404,7 @@ milliseconds_t u32_to_ms_t(uint32_t milliseconds)
  */
 milliseconds_u u32_to_ms_u(uint32_t milliseconds)
 {
-    return ((milliseconds_u) (MIN(((uint32_t) (UINT_MAX)), MAX(((uint32_t) (0)), milliseconds))));
+    return ((milliseconds_u) (milliseconds));
 }
 
 /**
@@ -10484,7 +9428,7 @@ seconds_f u32_to_s_f(uint32_t seconds)
  */
 seconds_t u32_to_s_t(uint32_t seconds)
 {
-    return ((seconds_t) (MIN(((uint32_t) (INT_MAX)), seconds)));
+    return ((seconds_t) (seconds));
 }
 
 /**
@@ -10492,7 +9436,7 @@ seconds_t u32_to_s_t(uint32_t seconds)
  */
 seconds_u u32_to_s_u(uint32_t seconds)
 {
-    return ((seconds_u) (MIN(((uint32_t) (UINT_MAX)), MAX(((uint32_t) (0)), seconds))));
+    return ((seconds_u) (seconds));
 }
 
 /**
@@ -10516,7 +9460,7 @@ microseconds_f u64_to_us_f(uint64_t microseconds)
  */
 microseconds_t u64_to_us_t(uint64_t microseconds)
 {
-    return ((microseconds_t) (MIN(((uint64_t) (INT_MAX)), microseconds)));
+    return ((microseconds_t) (MIN(((uint64_t) (9223372036854775807)), microseconds)));
 }
 
 /**
@@ -10524,7 +9468,7 @@ microseconds_t u64_to_us_t(uint64_t microseconds)
  */
 microseconds_u u64_to_us_u(uint64_t microseconds)
 {
-    return ((microseconds_u) (MIN(((uint64_t) (UINT_MAX)), MAX(((uint64_t) (0)), microseconds))));
+    return ((microseconds_u) (microseconds));
 }
 
 /**
@@ -10548,7 +9492,7 @@ milliseconds_f u64_to_ms_f(uint64_t milliseconds)
  */
 milliseconds_t u64_to_ms_t(uint64_t milliseconds)
 {
-    return ((milliseconds_t) (MIN(((uint64_t) (INT_MAX)), milliseconds)));
+    return ((milliseconds_t) (MIN(((uint64_t) (9223372036854775807)), milliseconds)));
 }
 
 /**
@@ -10556,7 +9500,7 @@ milliseconds_t u64_to_ms_t(uint64_t milliseconds)
  */
 milliseconds_u u64_to_ms_u(uint64_t milliseconds)
 {
-    return ((milliseconds_u) (MIN(((uint64_t) (UINT_MAX)), MAX(((uint64_t) (0)), milliseconds))));
+    return ((milliseconds_u) (milliseconds));
 }
 
 /**
@@ -10580,7 +9524,7 @@ seconds_f u64_to_s_f(uint64_t seconds)
  */
 seconds_t u64_to_s_t(uint64_t seconds)
 {
-    return ((seconds_t) (MIN(((uint64_t) (INT_MAX)), seconds)));
+    return ((seconds_t) (MIN(((uint64_t) (9223372036854775807)), seconds)));
 }
 
 /**
@@ -10588,7 +9532,7 @@ seconds_t u64_to_s_t(uint64_t seconds)
  */
 seconds_u u64_to_s_u(uint64_t seconds)
 {
-    return ((seconds_u) (MIN(((uint64_t) (UINT_MAX)), MAX(((uint64_t) (0)), seconds))));
+    return ((seconds_u) (seconds));
 }
 
 /**
@@ -10688,102 +9632,6 @@ seconds_u u8_to_s_u(uint8_t seconds)
 }
 
 /**
- * Convert unsigned int to microseconds_d.
- */
-microseconds_d u_to_us_d(unsigned int microseconds)
-{
-    return ((microseconds_d) (microseconds));
-}
-
-/**
- * Convert unsigned int to microseconds_f.
- */
-microseconds_f u_to_us_f(unsigned int microseconds)
-{
-    return ((microseconds_f) (microseconds));
-}
-
-/**
- * Convert unsigned int to microseconds_t.
- */
-microseconds_t u_to_us_t(unsigned int microseconds)
-{
-    return ((microseconds_t) (MIN(((unsigned int) (INT_MAX)), microseconds)));
-}
-
-/**
- * Convert unsigned int to microseconds_u.
- */
-microseconds_u u_to_us_u(unsigned int microseconds)
-{
-    return ((microseconds_u) (microseconds));
-}
-
-/**
- * Convert unsigned int to milliseconds_d.
- */
-milliseconds_d u_to_ms_d(unsigned int milliseconds)
-{
-    return ((milliseconds_d) (milliseconds));
-}
-
-/**
- * Convert unsigned int to milliseconds_f.
- */
-milliseconds_f u_to_ms_f(unsigned int milliseconds)
-{
-    return ((milliseconds_f) (milliseconds));
-}
-
-/**
- * Convert unsigned int to milliseconds_t.
- */
-milliseconds_t u_to_ms_t(unsigned int milliseconds)
-{
-    return ((milliseconds_t) (MIN(((unsigned int) (INT_MAX)), milliseconds)));
-}
-
-/**
- * Convert unsigned int to milliseconds_u.
- */
-milliseconds_u u_to_ms_u(unsigned int milliseconds)
-{
-    return ((milliseconds_u) (milliseconds));
-}
-
-/**
- * Convert unsigned int to seconds_d.
- */
-seconds_d u_to_s_d(unsigned int seconds)
-{
-    return ((seconds_d) (seconds));
-}
-
-/**
- * Convert unsigned int to seconds_f.
- */
-seconds_f u_to_s_f(unsigned int seconds)
-{
-    return ((seconds_f) (seconds));
-}
-
-/**
- * Convert unsigned int to seconds_t.
- */
-seconds_t u_to_s_t(unsigned int seconds)
-{
-    return ((seconds_t) (MIN(((unsigned int) (INT_MAX)), seconds)));
-}
-
-/**
- * Convert unsigned int to seconds_u.
- */
-seconds_u u_to_s_u(unsigned int seconds)
-{
-    return ((seconds_u) (seconds));
-}
-
-/**
  * Convert degrees_d to degrees_f.
  */
 degrees_f deg_d_to_deg_f(degrees_d degrees)
@@ -10796,7 +9644,7 @@ degrees_f deg_d_to_deg_f(degrees_d degrees)
  */
 degrees_t deg_d_to_deg_t(degrees_d degrees)
 {
-    return ((degrees_t) (round(((double) (degrees))) < ((double) (INT_MAX)) ? (round(((double) (degrees))) > ((double) (INT_MIN)) ? round(((double) (degrees))) : INT_MIN) : INT_MAX));
+    return ((degrees_t) (round(((double) (degrees))) < ((double) (9223372036854775807)) ? (round(((double) (degrees))) > ((double) (-9223372036854775807 - 1)) ? ((degrees_t) (round(((double) (degrees))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -10804,7 +9652,7 @@ degrees_t deg_d_to_deg_t(degrees_d degrees)
  */
 degrees_u deg_d_to_deg_u(degrees_d degrees)
 {
-    return ((degrees_u) (round(((double) (degrees))) < ((double) (UINT_MAX)) ? (round(((double) (degrees))) > ((double) (0)) ? round(((double) (degrees))) : 0) : UINT_MAX));
+    return ((degrees_u) (round(((double) (degrees))) < ((double) (18446744073709551615U)) ? (round(((double) (degrees))) > ((double) (0)) ? ((degrees_u) (round(((double) (degrees))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -10821,14 +9669,6 @@ double deg_d_to_d(degrees_d degrees)
 float deg_d_to_f(degrees_d degrees)
 {
     return d_to_f(((double) (degrees)));
-}
-
-/**
- * Convert degrees_d to int.
- */
-int deg_d_to_i(degrees_d degrees)
-{
-    return d_to_i(((double) (degrees)));
 }
 
 /**
@@ -10893,14 +9733,14 @@ radians_f deg_d_to_rad_f(degrees_d degrees)
  */
 radians_t deg_d_to_rad_t(degrees_d degrees)
 {
-    const double maxValue = ((double) (INT_MAX)) / M_PI * 180.0;
-    const double minValue = ((double) (INT_MIN)) / M_PI * 180.0;
+    const double maxValue = ((double) (9223372036854775807)) / M_PI * 180.0;
+    const double minValue = ((double) (-9223372036854775807 - 1)) / M_PI * 180.0;
     const double castedValue = ((double) (degrees));
     if (castedValue > maxValue) {
-        return INT_MAX;
+        return 9223372036854775807;
     }
     if (castedValue < minValue) {
-        return INT_MIN;
+        return -9223372036854775807 - 1;
     }
     return ((radians_t) (round(castedValue / 180.0 * M_PI)));
 }
@@ -10910,11 +9750,11 @@ radians_t deg_d_to_rad_t(degrees_d degrees)
  */
 radians_u deg_d_to_rad_u(degrees_d degrees)
 {
-    const double maxValue = ((double) (UINT_MAX)) / M_PI * 180.0;
+    const double maxValue = ((double) (18446744073709551615U)) / M_PI * 180.0;
     const double minValue = ((double) (0)) / M_PI * 180.0;
     const double castedValue = ((double) (degrees));
     if (castedValue > maxValue) {
-        return UINT_MAX;
+        return 18446744073709551615U;
     }
     if (castedValue < minValue) {
         return 0;
@@ -10955,14 +9795,6 @@ uint8_t deg_d_to_u8(degrees_d degrees)
 }
 
 /**
- * Convert degrees_d to unsigned int.
- */
-unsigned int deg_d_to_u(degrees_d degrees)
-{
-    return d_to_u(((double) (degrees)));
-}
-
-/**
  * Convert degrees_f to degrees_d.
  */
 degrees_d deg_f_to_deg_d(degrees_f degrees)
@@ -10975,7 +9807,7 @@ degrees_d deg_f_to_deg_d(degrees_f degrees)
  */
 degrees_t deg_f_to_deg_t(degrees_f degrees)
 {
-    return ((degrees_t) (round(((double) (degrees))) < ((double) (INT_MAX)) ? (round(((double) (degrees))) > ((double) (INT_MIN)) ? round(((double) (degrees))) : INT_MIN) : INT_MAX));
+    return ((degrees_t) (round(((double) (degrees))) < ((double) (9223372036854775807)) ? (round(((double) (degrees))) > ((double) (-9223372036854775807 - 1)) ? ((degrees_t) (round(((double) (degrees))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -10983,7 +9815,7 @@ degrees_t deg_f_to_deg_t(degrees_f degrees)
  */
 degrees_u deg_f_to_deg_u(degrees_f degrees)
 {
-    return ((degrees_u) (round(((double) (degrees))) < ((double) (UINT_MAX)) ? (round(((double) (degrees))) > ((double) (0)) ? round(((double) (degrees))) : 0) : UINT_MAX));
+    return ((degrees_u) (round(((double) (degrees))) < ((double) (18446744073709551615U)) ? (round(((double) (degrees))) > ((double) (0)) ? ((degrees_u) (round(((double) (degrees))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -11000,14 +9832,6 @@ double deg_f_to_d(degrees_f degrees)
 float deg_f_to_f(degrees_f degrees)
 {
     return ((float) (degrees));
-}
-
-/**
- * Convert degrees_f to int.
- */
-int deg_f_to_i(degrees_f degrees)
-{
-    return f_to_i(((float) (degrees)));
 }
 
 /**
@@ -11072,14 +9896,14 @@ radians_f deg_f_to_rad_f(degrees_f degrees)
  */
 radians_t deg_f_to_rad_t(degrees_f degrees)
 {
-    const double maxValue = ((double) (INT_MAX)) / M_PI * 180.0;
-    const double minValue = ((double) (INT_MIN)) / M_PI * 180.0;
+    const double maxValue = ((double) (9223372036854775807)) / M_PI * 180.0;
+    const double minValue = ((double) (-9223372036854775807 - 1)) / M_PI * 180.0;
     const double castedValue = ((double) (degrees));
     if (castedValue > maxValue) {
-        return INT_MAX;
+        return 9223372036854775807;
     }
     if (castedValue < minValue) {
-        return INT_MIN;
+        return -9223372036854775807 - 1;
     }
     return ((radians_t) (round(castedValue / 180.0 * M_PI)));
 }
@@ -11089,11 +9913,11 @@ radians_t deg_f_to_rad_t(degrees_f degrees)
  */
 radians_u deg_f_to_rad_u(degrees_f degrees)
 {
-    const double maxValue = ((double) (UINT_MAX)) / M_PI * 180.0;
+    const double maxValue = ((double) (18446744073709551615U)) / M_PI * 180.0;
     const double minValue = ((double) (0)) / M_PI * 180.0;
     const double castedValue = ((double) (degrees));
     if (castedValue > maxValue) {
-        return UINT_MAX;
+        return 18446744073709551615U;
     }
     if (castedValue < minValue) {
         return 0;
@@ -11134,14 +9958,6 @@ uint8_t deg_f_to_u8(degrees_f degrees)
 }
 
 /**
- * Convert degrees_f to unsigned int.
- */
-unsigned int deg_f_to_u(degrees_f degrees)
-{
-    return f_to_u(((float) (degrees)));
-}
-
-/**
  * Convert degrees_t to degrees_d.
  */
 degrees_d deg_t_to_deg_d(degrees_t degrees)
@@ -11179,14 +9995,6 @@ double deg_t_to_d(degrees_t degrees)
 float deg_t_to_f(degrees_t degrees)
 {
     return ((float) (degrees));
-}
-
-/**
- * Convert degrees_t to int.
- */
-int deg_t_to_i(degrees_t degrees)
-{
-    return ((int) (degrees));
 }
 
 /**
@@ -11251,14 +10059,14 @@ radians_f deg_t_to_rad_f(degrees_t degrees)
  */
 radians_t deg_t_to_rad_t(degrees_t degrees)
 {
-    const double maxValue = ((double) (INT_MAX)) / M_PI * 180.0;
-    const double minValue = ((double) (INT_MIN)) / M_PI * 180.0;
+    const double maxValue = ((double) (9223372036854775807)) / M_PI * 180.0;
+    const double minValue = ((double) (-9223372036854775807 - 1)) / M_PI * 180.0;
     const double castedValue = ((double) (degrees));
     if (castedValue > maxValue) {
-        return INT_MAX;
+        return 9223372036854775807;
     }
     if (castedValue < minValue) {
-        return INT_MIN;
+        return -9223372036854775807 - 1;
     }
     return ((radians_t) (round(castedValue / 180.0 * M_PI)));
 }
@@ -11268,11 +10076,11 @@ radians_t deg_t_to_rad_t(degrees_t degrees)
  */
 radians_u deg_t_to_rad_u(degrees_t degrees)
 {
-    const double maxValue = ((double) (UINT_MAX)) / M_PI * 180.0;
+    const double maxValue = ((double) (18446744073709551615U)) / M_PI * 180.0;
     const double minValue = ((double) (0)) / M_PI * 180.0;
     const double castedValue = ((double) (degrees));
     if (castedValue > maxValue) {
-        return UINT_MAX;
+        return 18446744073709551615U;
     }
     if (castedValue < minValue) {
         return 0;
@@ -11313,14 +10121,6 @@ uint8_t deg_t_to_u8(degrees_t degrees)
 }
 
 /**
- * Convert degrees_t to unsigned int.
- */
-unsigned int deg_t_to_u(degrees_t degrees)
-{
-    return ((unsigned int) (MAX(((degrees_t) (0)), degrees)));
-}
-
-/**
  * Convert degrees_u to degrees_d.
  */
 degrees_d deg_u_to_deg_d(degrees_u degrees)
@@ -11341,7 +10141,7 @@ degrees_f deg_u_to_deg_f(degrees_u degrees)
  */
 degrees_t deg_u_to_deg_t(degrees_u degrees)
 {
-    return ((degrees_t) ((degrees) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : degrees));
+    return ((degrees_t) ((degrees) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : degrees));
 }
 
 /**
@@ -11358,14 +10158,6 @@ double deg_u_to_d(degrees_u degrees)
 float deg_u_to_f(degrees_u degrees)
 {
     return ((float) (degrees));
-}
-
-/**
- * Convert degrees_u to int.
- */
-int deg_u_to_i(degrees_u degrees)
-{
-    return ((int) (MIN(((degrees_u) (INT_MAX)), degrees)));
 }
 
 /**
@@ -11389,7 +10181,7 @@ int32_t deg_u_to_i32(degrees_u degrees)
  */
 int64_t deg_u_to_i64(degrees_u degrees)
 {
-    return ((int64_t) (degrees));
+    return ((int64_t) (MIN(((degrees_u) (9223372036854775807)), degrees)));
 }
 
 /**
@@ -11430,14 +10222,14 @@ radians_f deg_u_to_rad_f(degrees_u degrees)
  */
 radians_t deg_u_to_rad_t(degrees_u degrees)
 {
-    const double maxValue = ((double) (INT_MAX)) / M_PI * 180.0;
-    const double minValue = ((double) (INT_MIN)) / M_PI * 180.0;
+    const double maxValue = ((double) (9223372036854775807)) / M_PI * 180.0;
+    const double minValue = ((double) (-9223372036854775807 - 1)) / M_PI * 180.0;
     const double castedValue = ((double) (degrees));
     if (castedValue > maxValue) {
-        return INT_MAX;
+        return 9223372036854775807;
     }
     if (castedValue < minValue) {
-        return INT_MIN;
+        return -9223372036854775807 - 1;
     }
     return ((radians_t) (round(castedValue / 180.0 * M_PI)));
 }
@@ -11447,11 +10239,11 @@ radians_t deg_u_to_rad_t(degrees_u degrees)
  */
 radians_u deg_u_to_rad_u(degrees_u degrees)
 {
-    const double maxValue = ((double) (UINT_MAX)) / M_PI * 180.0;
+    const double maxValue = ((double) (18446744073709551615U)) / M_PI * 180.0;
     const double minValue = ((double) (0)) / M_PI * 180.0;
     const double castedValue = ((double) (degrees));
     if (castedValue > maxValue) {
-        return UINT_MAX;
+        return 18446744073709551615U;
     }
     if (castedValue < minValue) {
         return 0;
@@ -11492,14 +10284,6 @@ uint8_t deg_u_to_u8(degrees_u degrees)
 }
 
 /**
- * Convert degrees_u to unsigned int.
- */
-unsigned int deg_u_to_u(degrees_u degrees)
-{
-    return ((unsigned int) (degrees));
-}
-
-/**
  * Convert double to degrees_d.
  */
 degrees_d d_to_deg_d(double degrees)
@@ -11520,7 +10304,7 @@ degrees_f d_to_deg_f(double degrees)
  */
 degrees_t d_to_deg_t(double degrees)
 {
-    return d_to_i(degrees);
+    return d_to_i64(degrees);
 }
 
 /**
@@ -11528,7 +10312,7 @@ degrees_t d_to_deg_t(double degrees)
  */
 degrees_u d_to_deg_u(double degrees)
 {
-    return d_to_u(degrees);
+    return d_to_u64(degrees);
 }
 
 /**
@@ -11552,7 +10336,7 @@ radians_f d_to_rad_f(double radians)
  */
 radians_t d_to_rad_t(double radians)
 {
-    return d_to_i(radians);
+    return d_to_i64(radians);
 }
 
 /**
@@ -11560,7 +10344,7 @@ radians_t d_to_rad_t(double radians)
  */
 radians_u d_to_rad_u(double radians)
 {
-    return d_to_u(radians);
+    return d_to_u64(radians);
 }
 
 /**
@@ -11584,7 +10368,7 @@ degrees_f f_to_deg_f(float degrees)
  */
 degrees_t f_to_deg_t(float degrees)
 {
-    return f_to_i(degrees);
+    return f_to_i64(degrees);
 }
 
 /**
@@ -11592,7 +10376,7 @@ degrees_t f_to_deg_t(float degrees)
  */
 degrees_u f_to_deg_u(float degrees)
 {
-    return f_to_u(degrees);
+    return f_to_u64(degrees);
 }
 
 /**
@@ -11616,7 +10400,7 @@ radians_f f_to_rad_f(float radians)
  */
 radians_t f_to_rad_t(float radians)
 {
-    return f_to_i(radians);
+    return f_to_i64(radians);
 }
 
 /**
@@ -11624,7 +10408,7 @@ radians_t f_to_rad_t(float radians)
  */
 radians_u f_to_rad_u(float radians)
 {
-    return f_to_u(radians);
+    return f_to_u64(radians);
 }
 
 /**
@@ -11712,7 +10496,7 @@ degrees_f i32_to_deg_f(int32_t degrees)
  */
 degrees_t i32_to_deg_t(int32_t degrees)
 {
-    return ((degrees_t) (MIN(((int32_t) (INT_MAX)), MAX(((int32_t) (INT_MIN)), degrees))));
+    return ((degrees_t) (degrees));
 }
 
 /**
@@ -11744,7 +10528,7 @@ radians_f i32_to_rad_f(int32_t radians)
  */
 radians_t i32_to_rad_t(int32_t radians)
 {
-    return ((radians_t) (MIN(((int32_t) (INT_MAX)), MAX(((int32_t) (INT_MIN)), radians))));
+    return ((radians_t) (radians));
 }
 
 /**
@@ -11776,7 +10560,7 @@ degrees_f i64_to_deg_f(int64_t degrees)
  */
 degrees_t i64_to_deg_t(int64_t degrees)
 {
-    return ((degrees_t) (MIN(((int64_t) (INT_MAX)), MAX(((int64_t) (INT_MIN)), degrees))));
+    return ((degrees_t) (degrees));
 }
 
 /**
@@ -11808,7 +10592,7 @@ radians_f i64_to_rad_f(int64_t radians)
  */
 radians_t i64_to_rad_t(int64_t radians)
 {
-    return ((radians_t) (MIN(((int64_t) (INT_MAX)), MAX(((int64_t) (INT_MIN)), radians))));
+    return ((radians_t) (radians));
 }
 
 /**
@@ -11884,70 +10668,6 @@ radians_u i8_to_rad_u(int8_t radians)
 }
 
 /**
- * Convert int to degrees_d.
- */
-degrees_d i_to_deg_d(int degrees)
-{
-    return ((degrees_d) (degrees));
-}
-
-/**
- * Convert int to degrees_f.
- */
-degrees_f i_to_deg_f(int degrees)
-{
-    return ((degrees_f) (degrees));
-}
-
-/**
- * Convert int to degrees_t.
- */
-degrees_t i_to_deg_t(int degrees)
-{
-    return ((degrees_t) (degrees));
-}
-
-/**
- * Convert int to degrees_u.
- */
-degrees_u i_to_deg_u(int degrees)
-{
-    return ((degrees_u) (MAX(((int) (0)), degrees)));
-}
-
-/**
- * Convert int to radians_d.
- */
-radians_d i_to_rad_d(int radians)
-{
-    return ((radians_d) (radians));
-}
-
-/**
- * Convert int to radians_f.
- */
-radians_f i_to_rad_f(int radians)
-{
-    return ((radians_f) (radians));
-}
-
-/**
- * Convert int to radians_t.
- */
-radians_t i_to_rad_t(int radians)
-{
-    return ((radians_t) (radians));
-}
-
-/**
- * Convert int to radians_u.
- */
-radians_u i_to_rad_u(int radians)
-{
-    return ((radians_u) (MAX(((int) (0)), radians)));
-}
-
-/**
  * Convert radians_d to degrees_d.
  */
 degrees_d rad_d_to_deg_d(radians_d radians)
@@ -11986,14 +10706,14 @@ degrees_f rad_d_to_deg_f(radians_d radians)
  */
 degrees_t rad_d_to_deg_t(radians_d radians)
 {
-    const double maxValue = ((double) (INT_MAX)) / 180.0 * M_PI;
-    const double minValue = ((double) (INT_MIN)) / 180.0 * M_PI;
+    const double maxValue = ((double) (9223372036854775807)) / 180.0 * M_PI;
+    const double minValue = ((double) (-9223372036854775807 - 1)) / 180.0 * M_PI;
     const double castedValue = ((double) (radians));
     if (castedValue > maxValue) {
-        return INT_MAX;
+        return 9223372036854775807;
     }
     if (castedValue < minValue) {
-        return INT_MIN;
+        return -9223372036854775807 - 1;
     }
     return ((degrees_t) (round(castedValue / M_PI * 180.0)));
 }
@@ -12003,11 +10723,11 @@ degrees_t rad_d_to_deg_t(radians_d radians)
  */
 degrees_u rad_d_to_deg_u(radians_d radians)
 {
-    const double maxValue = ((double) (UINT_MAX)) / 180.0 * M_PI;
+    const double maxValue = ((double) (18446744073709551615U)) / 180.0 * M_PI;
     const double minValue = ((double) (0)) / 180.0 * M_PI;
     const double castedValue = ((double) (radians));
     if (castedValue > maxValue) {
-        return UINT_MAX;
+        return 18446744073709551615U;
     }
     if (castedValue < minValue) {
         return 0;
@@ -12029,14 +10749,6 @@ double rad_d_to_d(radians_d radians)
 float rad_d_to_f(radians_d radians)
 {
     return d_to_f(((double) (radians)));
-}
-
-/**
- * Convert radians_d to int.
- */
-int rad_d_to_i(radians_d radians)
-{
-    return d_to_i(((double) (radians)));
 }
 
 /**
@@ -12084,7 +10796,7 @@ radians_f rad_d_to_rad_f(radians_d radians)
  */
 radians_t rad_d_to_rad_t(radians_d radians)
 {
-    return ((radians_t) (round(((double) (radians))) < ((double) (INT_MAX)) ? (round(((double) (radians))) > ((double) (INT_MIN)) ? round(((double) (radians))) : INT_MIN) : INT_MAX));
+    return ((radians_t) (round(((double) (radians))) < ((double) (9223372036854775807)) ? (round(((double) (radians))) > ((double) (-9223372036854775807 - 1)) ? ((radians_t) (round(((double) (radians))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -12092,7 +10804,7 @@ radians_t rad_d_to_rad_t(radians_d radians)
  */
 radians_u rad_d_to_rad_u(radians_d radians)
 {
-    return ((radians_u) (round(((double) (radians))) < ((double) (UINT_MAX)) ? (round(((double) (radians))) > ((double) (0)) ? round(((double) (radians))) : 0) : UINT_MAX));
+    return ((radians_u) (round(((double) (radians))) < ((double) (18446744073709551615U)) ? (round(((double) (radians))) > ((double) (0)) ? ((radians_u) (round(((double) (radians))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -12125,14 +10837,6 @@ uint64_t rad_d_to_u64(radians_d radians)
 uint8_t rad_d_to_u8(radians_d radians)
 {
     return d_to_u8(((double) (radians)));
-}
-
-/**
- * Convert radians_d to unsigned int.
- */
-unsigned int rad_d_to_u(radians_d radians)
-{
-    return d_to_u(((double) (radians)));
 }
 
 /**
@@ -12174,14 +10878,14 @@ degrees_f rad_f_to_deg_f(radians_f radians)
  */
 degrees_t rad_f_to_deg_t(radians_f radians)
 {
-    const double maxValue = ((double) (INT_MAX)) / 180.0 * M_PI;
-    const double minValue = ((double) (INT_MIN)) / 180.0 * M_PI;
+    const double maxValue = ((double) (9223372036854775807)) / 180.0 * M_PI;
+    const double minValue = ((double) (-9223372036854775807 - 1)) / 180.0 * M_PI;
     const double castedValue = ((double) (radians));
     if (castedValue > maxValue) {
-        return INT_MAX;
+        return 9223372036854775807;
     }
     if (castedValue < minValue) {
-        return INT_MIN;
+        return -9223372036854775807 - 1;
     }
     return ((degrees_t) (round(castedValue / M_PI * 180.0)));
 }
@@ -12191,11 +10895,11 @@ degrees_t rad_f_to_deg_t(radians_f radians)
  */
 degrees_u rad_f_to_deg_u(radians_f radians)
 {
-    const double maxValue = ((double) (UINT_MAX)) / 180.0 * M_PI;
+    const double maxValue = ((double) (18446744073709551615U)) / 180.0 * M_PI;
     const double minValue = ((double) (0)) / 180.0 * M_PI;
     const double castedValue = ((double) (radians));
     if (castedValue > maxValue) {
-        return UINT_MAX;
+        return 18446744073709551615U;
     }
     if (castedValue < minValue) {
         return 0;
@@ -12217,14 +10921,6 @@ double rad_f_to_d(radians_f radians)
 float rad_f_to_f(radians_f radians)
 {
     return ((float) (radians));
-}
-
-/**
- * Convert radians_f to int.
- */
-int rad_f_to_i(radians_f radians)
-{
-    return f_to_i(((float) (radians)));
 }
 
 /**
@@ -12272,7 +10968,7 @@ radians_d rad_f_to_rad_d(radians_f radians)
  */
 radians_t rad_f_to_rad_t(radians_f radians)
 {
-    return ((radians_t) (round(((double) (radians))) < ((double) (INT_MAX)) ? (round(((double) (radians))) > ((double) (INT_MIN)) ? round(((double) (radians))) : INT_MIN) : INT_MAX));
+    return ((radians_t) (round(((double) (radians))) < ((double) (9223372036854775807)) ? (round(((double) (radians))) > ((double) (-9223372036854775807 - 1)) ? ((radians_t) (round(((double) (radians))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -12280,7 +10976,7 @@ radians_t rad_f_to_rad_t(radians_f radians)
  */
 radians_u rad_f_to_rad_u(radians_f radians)
 {
-    return ((radians_u) (round(((double) (radians))) < ((double) (UINT_MAX)) ? (round(((double) (radians))) > ((double) (0)) ? round(((double) (radians))) : 0) : UINT_MAX));
+    return ((radians_u) (round(((double) (radians))) < ((double) (18446744073709551615U)) ? (round(((double) (radians))) > ((double) (0)) ? ((radians_u) (round(((double) (radians))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -12313,14 +11009,6 @@ uint64_t rad_f_to_u64(radians_f radians)
 uint8_t rad_f_to_u8(radians_f radians)
 {
     return f_to_u8(((float) (radians)));
-}
-
-/**
- * Convert radians_f to unsigned int.
- */
-unsigned int rad_f_to_u(radians_f radians)
-{
-    return f_to_u(((float) (radians)));
 }
 
 /**
@@ -12362,14 +11050,14 @@ degrees_f rad_t_to_deg_f(radians_t radians)
  */
 degrees_t rad_t_to_deg_t(radians_t radians)
 {
-    const double maxValue = ((double) (INT_MAX)) / 180.0 * M_PI;
-    const double minValue = ((double) (INT_MIN)) / 180.0 * M_PI;
+    const double maxValue = ((double) (9223372036854775807)) / 180.0 * M_PI;
+    const double minValue = ((double) (-9223372036854775807 - 1)) / 180.0 * M_PI;
     const double castedValue = ((double) (radians));
     if (castedValue > maxValue) {
-        return INT_MAX;
+        return 9223372036854775807;
     }
     if (castedValue < minValue) {
-        return INT_MIN;
+        return -9223372036854775807 - 1;
     }
     return ((degrees_t) (round(castedValue / M_PI * 180.0)));
 }
@@ -12379,11 +11067,11 @@ degrees_t rad_t_to_deg_t(radians_t radians)
  */
 degrees_u rad_t_to_deg_u(radians_t radians)
 {
-    const double maxValue = ((double) (UINT_MAX)) / 180.0 * M_PI;
+    const double maxValue = ((double) (18446744073709551615U)) / 180.0 * M_PI;
     const double minValue = ((double) (0)) / 180.0 * M_PI;
     const double castedValue = ((double) (radians));
     if (castedValue > maxValue) {
-        return UINT_MAX;
+        return 18446744073709551615U;
     }
     if (castedValue < minValue) {
         return 0;
@@ -12405,14 +11093,6 @@ double rad_t_to_d(radians_t radians)
 float rad_t_to_f(radians_t radians)
 {
     return ((float) (radians));
-}
-
-/**
- * Convert radians_t to int.
- */
-int rad_t_to_i(radians_t radians)
-{
-    return ((int) (radians));
 }
 
 /**
@@ -12504,14 +11184,6 @@ uint8_t rad_t_to_u8(radians_t radians)
 }
 
 /**
- * Convert radians_t to unsigned int.
- */
-unsigned int rad_t_to_u(radians_t radians)
-{
-    return ((unsigned int) (MAX(((radians_t) (0)), radians)));
-}
-
-/**
  * Convert radians_u to degrees_d.
  */
 degrees_d rad_u_to_deg_d(radians_u radians)
@@ -12550,14 +11222,14 @@ degrees_f rad_u_to_deg_f(radians_u radians)
  */
 degrees_t rad_u_to_deg_t(radians_u radians)
 {
-    const double maxValue = ((double) (INT_MAX)) / 180.0 * M_PI;
-    const double minValue = ((double) (INT_MIN)) / 180.0 * M_PI;
+    const double maxValue = ((double) (9223372036854775807)) / 180.0 * M_PI;
+    const double minValue = ((double) (-9223372036854775807 - 1)) / 180.0 * M_PI;
     const double castedValue = ((double) (radians));
     if (castedValue > maxValue) {
-        return INT_MAX;
+        return 9223372036854775807;
     }
     if (castedValue < minValue) {
-        return INT_MIN;
+        return -9223372036854775807 - 1;
     }
     return ((degrees_t) (round(castedValue / M_PI * 180.0)));
 }
@@ -12567,11 +11239,11 @@ degrees_t rad_u_to_deg_t(radians_u radians)
  */
 degrees_u rad_u_to_deg_u(radians_u radians)
 {
-    const double maxValue = ((double) (UINT_MAX)) / 180.0 * M_PI;
+    const double maxValue = ((double) (18446744073709551615U)) / 180.0 * M_PI;
     const double minValue = ((double) (0)) / 180.0 * M_PI;
     const double castedValue = ((double) (radians));
     if (castedValue > maxValue) {
-        return UINT_MAX;
+        return 18446744073709551615U;
     }
     if (castedValue < minValue) {
         return 0;
@@ -12596,14 +11268,6 @@ float rad_u_to_f(radians_u radians)
 }
 
 /**
- * Convert radians_u to int.
- */
-int rad_u_to_i(radians_u radians)
-{
-    return ((int) (MIN(((radians_u) (INT_MAX)), radians)));
-}
-
-/**
  * Convert radians_u to int16_t.
  */
 int16_t rad_u_to_i16(radians_u radians)
@@ -12624,7 +11288,7 @@ int32_t rad_u_to_i32(radians_u radians)
  */
 int64_t rad_u_to_i64(radians_u radians)
 {
-    return ((int64_t) (radians));
+    return ((int64_t) (MIN(((radians_u) (9223372036854775807)), radians)));
 }
 
 /**
@@ -12656,7 +11320,7 @@ radians_f rad_u_to_rad_f(radians_u radians)
  */
 radians_t rad_u_to_rad_t(radians_u radians)
 {
-    return ((radians_t) ((radians) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : radians));
+    return ((radians_t) ((radians) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : radians));
 }
 
 /**
@@ -12689,14 +11353,6 @@ uint64_t rad_u_to_u64(radians_u radians)
 uint8_t rad_u_to_u8(radians_u radians)
 {
     return ((uint8_t) (MIN(((radians_u) (255)), MAX(((radians_u) (0)), radians))));
-}
-
-/**
- * Convert radians_u to unsigned int.
- */
-unsigned int rad_u_to_u(radians_u radians)
-{
-    return ((unsigned int) (radians));
 }
 
 /**
@@ -12784,7 +11440,7 @@ degrees_f u32_to_deg_f(uint32_t degrees)
  */
 degrees_t u32_to_deg_t(uint32_t degrees)
 {
-    return ((degrees_t) (MIN(((uint32_t) (INT_MAX)), degrees)));
+    return ((degrees_t) (degrees));
 }
 
 /**
@@ -12792,7 +11448,7 @@ degrees_t u32_to_deg_t(uint32_t degrees)
  */
 degrees_u u32_to_deg_u(uint32_t degrees)
 {
-    return ((degrees_u) (MIN(((uint32_t) (UINT_MAX)), MAX(((uint32_t) (0)), degrees))));
+    return ((degrees_u) (degrees));
 }
 
 /**
@@ -12816,7 +11472,7 @@ radians_f u32_to_rad_f(uint32_t radians)
  */
 radians_t u32_to_rad_t(uint32_t radians)
 {
-    return ((radians_t) (MIN(((uint32_t) (INT_MAX)), radians)));
+    return ((radians_t) (radians));
 }
 
 /**
@@ -12824,7 +11480,7 @@ radians_t u32_to_rad_t(uint32_t radians)
  */
 radians_u u32_to_rad_u(uint32_t radians)
 {
-    return ((radians_u) (MIN(((uint32_t) (UINT_MAX)), MAX(((uint32_t) (0)), radians))));
+    return ((radians_u) (radians));
 }
 
 /**
@@ -12848,7 +11504,7 @@ degrees_f u64_to_deg_f(uint64_t degrees)
  */
 degrees_t u64_to_deg_t(uint64_t degrees)
 {
-    return ((degrees_t) (MIN(((uint64_t) (INT_MAX)), degrees)));
+    return ((degrees_t) (MIN(((uint64_t) (9223372036854775807)), degrees)));
 }
 
 /**
@@ -12856,7 +11512,7 @@ degrees_t u64_to_deg_t(uint64_t degrees)
  */
 degrees_u u64_to_deg_u(uint64_t degrees)
 {
-    return ((degrees_u) (MIN(((uint64_t) (UINT_MAX)), MAX(((uint64_t) (0)), degrees))));
+    return ((degrees_u) (degrees));
 }
 
 /**
@@ -12880,7 +11536,7 @@ radians_f u64_to_rad_f(uint64_t radians)
  */
 radians_t u64_to_rad_t(uint64_t radians)
 {
-    return ((radians_t) (MIN(((uint64_t) (INT_MAX)), radians)));
+    return ((radians_t) (MIN(((uint64_t) (9223372036854775807)), radians)));
 }
 
 /**
@@ -12888,7 +11544,7 @@ radians_t u64_to_rad_t(uint64_t radians)
  */
 radians_u u64_to_rad_u(uint64_t radians)
 {
-    return ((radians_u) (MIN(((uint64_t) (UINT_MAX)), MAX(((uint64_t) (0)), radians))));
+    return ((radians_u) (radians));
 }
 
 /**
@@ -12956,70 +11612,6 @@ radians_u u8_to_rad_u(uint8_t radians)
 }
 
 /**
- * Convert unsigned int to degrees_d.
- */
-degrees_d u_to_deg_d(unsigned int degrees)
-{
-    return ((degrees_d) (degrees));
-}
-
-/**
- * Convert unsigned int to degrees_f.
- */
-degrees_f u_to_deg_f(unsigned int degrees)
-{
-    return ((degrees_f) (degrees));
-}
-
-/**
- * Convert unsigned int to degrees_t.
- */
-degrees_t u_to_deg_t(unsigned int degrees)
-{
-    return ((degrees_t) (MIN(((unsigned int) (INT_MAX)), degrees)));
-}
-
-/**
- * Convert unsigned int to degrees_u.
- */
-degrees_u u_to_deg_u(unsigned int degrees)
-{
-    return ((degrees_u) (degrees));
-}
-
-/**
- * Convert unsigned int to radians_d.
- */
-radians_d u_to_rad_d(unsigned int radians)
-{
-    return ((radians_d) (radians));
-}
-
-/**
- * Convert unsigned int to radians_f.
- */
-radians_f u_to_rad_f(unsigned int radians)
-{
-    return ((radians_f) (radians));
-}
-
-/**
- * Convert unsigned int to radians_t.
- */
-radians_t u_to_rad_t(unsigned int radians)
-{
-    return ((radians_t) (MIN(((unsigned int) (INT_MAX)), radians)));
-}
-
-/**
- * Convert unsigned int to radians_u.
- */
-radians_u u_to_rad_u(unsigned int radians)
-{
-    return ((radians_u) (radians));
-}
-
-/**
  * Convert double to pixels_d.
  */
 pixels_d d_to_px_d(double pixels)
@@ -13040,7 +11632,7 @@ pixels_f d_to_px_f(double pixels)
  */
 pixels_t d_to_px_t(double pixels)
 {
-    return d_to_i(pixels);
+    return d_to_i64(pixels);
 }
 
 /**
@@ -13048,7 +11640,7 @@ pixels_t d_to_px_t(double pixels)
  */
 pixels_u d_to_px_u(double pixels)
 {
-    return d_to_u(pixels);
+    return d_to_u64(pixels);
 }
 
 /**
@@ -13072,7 +11664,7 @@ pixels_f f_to_px_f(float pixels)
  */
 pixels_t f_to_px_t(float pixels)
 {
-    return f_to_i(pixels);
+    return f_to_i64(pixels);
 }
 
 /**
@@ -13080,7 +11672,7 @@ pixels_t f_to_px_t(float pixels)
  */
 pixels_u f_to_px_u(float pixels)
 {
-    return f_to_u(pixels);
+    return f_to_u64(pixels);
 }
 
 /**
@@ -13136,7 +11728,7 @@ pixels_f i32_to_px_f(int32_t pixels)
  */
 pixels_t i32_to_px_t(int32_t pixels)
 {
-    return ((pixels_t) (MIN(((int32_t) (INT_MAX)), MAX(((int32_t) (INT_MIN)), pixels))));
+    return ((pixels_t) (pixels));
 }
 
 /**
@@ -13168,7 +11760,7 @@ pixels_f i64_to_px_f(int64_t pixels)
  */
 pixels_t i64_to_px_t(int64_t pixels)
 {
-    return ((pixels_t) (MIN(((int64_t) (INT_MAX)), MAX(((int64_t) (INT_MIN)), pixels))));
+    return ((pixels_t) (pixels));
 }
 
 /**
@@ -13212,38 +11804,6 @@ pixels_u i8_to_px_u(int8_t pixels)
 }
 
 /**
- * Convert int to pixels_d.
- */
-pixels_d i_to_px_d(int pixels)
-{
-    return ((pixels_d) (pixels));
-}
-
-/**
- * Convert int to pixels_f.
- */
-pixels_f i_to_px_f(int pixels)
-{
-    return ((pixels_f) (pixels));
-}
-
-/**
- * Convert int to pixels_t.
- */
-pixels_t i_to_px_t(int pixels)
-{
-    return ((pixels_t) (pixels));
-}
-
-/**
- * Convert int to pixels_u.
- */
-pixels_u i_to_px_u(int pixels)
-{
-    return ((pixels_u) (MAX(((int) (0)), pixels)));
-}
-
-/**
  * Convert pixels_d to double.
  */
 double px_d_to_d(pixels_d pixels)
@@ -13257,14 +11817,6 @@ double px_d_to_d(pixels_d pixels)
 float px_d_to_f(pixels_d pixels)
 {
     return d_to_f(((double) (pixels)));
-}
-
-/**
- * Convert pixels_d to int.
- */
-int px_d_to_i(pixels_d pixels)
-{
-    return d_to_i(((double) (pixels)));
 }
 
 /**
@@ -13312,7 +11864,7 @@ pixels_f px_d_to_px_f(pixels_d pixels)
  */
 pixels_t px_d_to_px_t(pixels_d pixels)
 {
-    return ((pixels_t) (round(((double) (pixels))) < ((double) (INT_MAX)) ? (round(((double) (pixels))) > ((double) (INT_MIN)) ? round(((double) (pixels))) : INT_MIN) : INT_MAX));
+    return ((pixels_t) (round(((double) (pixels))) < ((double) (9223372036854775807)) ? (round(((double) (pixels))) > ((double) (-9223372036854775807 - 1)) ? ((pixels_t) (round(((double) (pixels))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -13320,7 +11872,7 @@ pixels_t px_d_to_px_t(pixels_d pixels)
  */
 pixels_u px_d_to_px_u(pixels_d pixels)
 {
-    return ((pixels_u) (round(((double) (pixels))) < ((double) (UINT_MAX)) ? (round(((double) (pixels))) > ((double) (0)) ? round(((double) (pixels))) : 0) : UINT_MAX));
+    return ((pixels_u) (round(((double) (pixels))) < ((double) (18446744073709551615U)) ? (round(((double) (pixels))) > ((double) (0)) ? ((pixels_u) (round(((double) (pixels))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -13356,14 +11908,6 @@ uint8_t px_d_to_u8(pixels_d pixels)
 }
 
 /**
- * Convert pixels_d to unsigned int.
- */
-unsigned int px_d_to_u(pixels_d pixels)
-{
-    return d_to_u(((double) (pixels)));
-}
-
-/**
  * Convert pixels_f to double.
  */
 double px_f_to_d(pixels_f pixels)
@@ -13377,14 +11921,6 @@ double px_f_to_d(pixels_f pixels)
 float px_f_to_f(pixels_f pixels)
 {
     return ((float) (pixels));
-}
-
-/**
- * Convert pixels_f to int.
- */
-int px_f_to_i(pixels_f pixels)
-{
-    return f_to_i(((float) (pixels)));
 }
 
 /**
@@ -13432,7 +11968,7 @@ pixels_d px_f_to_px_d(pixels_f pixels)
  */
 pixels_t px_f_to_px_t(pixels_f pixels)
 {
-    return ((pixels_t) (round(((double) (pixels))) < ((double) (INT_MAX)) ? (round(((double) (pixels))) > ((double) (INT_MIN)) ? round(((double) (pixels))) : INT_MIN) : INT_MAX));
+    return ((pixels_t) (round(((double) (pixels))) < ((double) (9223372036854775807)) ? (round(((double) (pixels))) > ((double) (-9223372036854775807 - 1)) ? ((pixels_t) (round(((double) (pixels))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -13440,7 +11976,7 @@ pixels_t px_f_to_px_t(pixels_f pixels)
  */
 pixels_u px_f_to_px_u(pixels_f pixels)
 {
-    return ((pixels_u) (round(((double) (pixels))) < ((double) (UINT_MAX)) ? (round(((double) (pixels))) > ((double) (0)) ? round(((double) (pixels))) : 0) : UINT_MAX));
+    return ((pixels_u) (round(((double) (pixels))) < ((double) (18446744073709551615U)) ? (round(((double) (pixels))) > ((double) (0)) ? ((pixels_u) (round(((double) (pixels))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -13476,14 +12012,6 @@ uint8_t px_f_to_u8(pixels_f pixels)
 }
 
 /**
- * Convert pixels_f to unsigned int.
- */
-unsigned int px_f_to_u(pixels_f pixels)
-{
-    return f_to_u(((float) (pixels)));
-}
-
-/**
  * Convert pixels_t to double.
  */
 double px_t_to_d(pixels_t pixels)
@@ -13497,14 +12025,6 @@ double px_t_to_d(pixels_t pixels)
 float px_t_to_f(pixels_t pixels)
 {
     return ((float) (pixels));
-}
-
-/**
- * Convert pixels_t to int.
- */
-int px_t_to_i(pixels_t pixels)
-{
-    return ((int) (pixels));
 }
 
 /**
@@ -13596,14 +12116,6 @@ uint8_t px_t_to_u8(pixels_t pixels)
 }
 
 /**
- * Convert pixels_t to unsigned int.
- */
-unsigned int px_t_to_u(pixels_t pixels)
-{
-    return ((unsigned int) (MAX(((pixels_t) (0)), pixels)));
-}
-
-/**
  * Convert pixels_u to double.
  */
 double px_u_to_d(pixels_u pixels)
@@ -13617,14 +12129,6 @@ double px_u_to_d(pixels_u pixels)
 float px_u_to_f(pixels_u pixels)
 {
     return ((float) (pixels));
-}
-
-/**
- * Convert pixels_u to int.
- */
-int px_u_to_i(pixels_u pixels)
-{
-    return ((int) (MIN(((pixels_u) (INT_MAX)), pixels)));
 }
 
 /**
@@ -13648,7 +12152,7 @@ int32_t px_u_to_i32(pixels_u pixels)
  */
 int64_t px_u_to_i64(pixels_u pixels)
 {
-    return ((int64_t) (pixels));
+    return ((int64_t) (MIN(((pixels_u) (9223372036854775807)), pixels)));
 }
 
 /**
@@ -13680,7 +12184,7 @@ pixels_f px_u_to_px_f(pixels_u pixels)
  */
 pixels_t px_u_to_px_t(pixels_u pixels)
 {
-    return ((pixels_t) ((pixels) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : pixels));
+    return ((pixels_t) ((pixels) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : pixels));
 }
 
 /**
@@ -13713,14 +12217,6 @@ uint64_t px_u_to_u64(pixels_u pixels)
 uint8_t px_u_to_u8(pixels_u pixels)
 {
     return ((uint8_t) (MIN(((pixels_u) (255)), MAX(((pixels_u) (0)), pixels))));
-}
-
-/**
- * Convert pixels_u to unsigned int.
- */
-unsigned int px_u_to_u(pixels_u pixels)
-{
-    return ((unsigned int) (pixels));
 }
 
 /**
@@ -13776,7 +12272,7 @@ pixels_f u32_to_px_f(uint32_t pixels)
  */
 pixels_t u32_to_px_t(uint32_t pixels)
 {
-    return ((pixels_t) (MIN(((uint32_t) (INT_MAX)), pixels)));
+    return ((pixels_t) (pixels));
 }
 
 /**
@@ -13784,7 +12280,7 @@ pixels_t u32_to_px_t(uint32_t pixels)
  */
 pixels_u u32_to_px_u(uint32_t pixels)
 {
-    return ((pixels_u) (MIN(((uint32_t) (UINT_MAX)), MAX(((uint32_t) (0)), pixels))));
+    return ((pixels_u) (pixels));
 }
 
 /**
@@ -13808,7 +12304,7 @@ pixels_f u64_to_px_f(uint64_t pixels)
  */
 pixels_t u64_to_px_t(uint64_t pixels)
 {
-    return ((pixels_t) (MIN(((uint64_t) (INT_MAX)), pixels)));
+    return ((pixels_t) (MIN(((uint64_t) (9223372036854775807)), pixels)));
 }
 
 /**
@@ -13816,7 +12312,7 @@ pixels_t u64_to_px_t(uint64_t pixels)
  */
 pixels_u u64_to_px_u(uint64_t pixels)
 {
-    return ((pixels_u) (MIN(((uint64_t) (UINT_MAX)), MAX(((uint64_t) (0)), pixels))));
+    return ((pixels_u) (pixels));
 }
 
 /**
@@ -13852,38 +12348,6 @@ pixels_u u8_to_px_u(uint8_t pixels)
 }
 
 /**
- * Convert unsigned int to pixels_d.
- */
-pixels_d u_to_px_d(unsigned int pixels)
-{
-    return ((pixels_d) (pixels));
-}
-
-/**
- * Convert unsigned int to pixels_f.
- */
-pixels_f u_to_px_f(unsigned int pixels)
-{
-    return ((pixels_f) (pixels));
-}
-
-/**
- * Convert unsigned int to pixels_t.
- */
-pixels_t u_to_px_t(unsigned int pixels)
-{
-    return ((pixels_t) (MIN(((unsigned int) (INT_MAX)), pixels)));
-}
-
-/**
- * Convert unsigned int to pixels_u.
- */
-pixels_u u_to_px_u(unsigned int pixels)
-{
-    return ((pixels_u) (pixels));
-}
-
-/**
  * Convert double to percent_d.
  */
 percent_d d_to_pct_d(double percent)
@@ -13904,7 +12368,7 @@ percent_f d_to_pct_f(double percent)
  */
 percent_t d_to_pct_t(double percent)
 {
-    return d_to_i(percent);
+    return d_to_i64(percent);
 }
 
 /**
@@ -13912,7 +12376,7 @@ percent_t d_to_pct_t(double percent)
  */
 percent_u d_to_pct_u(double percent)
 {
-    return d_to_u(percent);
+    return d_to_u64(percent);
 }
 
 /**
@@ -13936,7 +12400,7 @@ percent_f f_to_pct_f(float percent)
  */
 percent_t f_to_pct_t(float percent)
 {
-    return f_to_i(percent);
+    return f_to_i64(percent);
 }
 
 /**
@@ -13944,7 +12408,7 @@ percent_t f_to_pct_t(float percent)
  */
 percent_u f_to_pct_u(float percent)
 {
-    return f_to_u(percent);
+    return f_to_u64(percent);
 }
 
 /**
@@ -14000,7 +12464,7 @@ percent_f i32_to_pct_f(int32_t percent)
  */
 percent_t i32_to_pct_t(int32_t percent)
 {
-    return ((percent_t) (MIN(((int32_t) (INT_MAX)), MAX(((int32_t) (INT_MIN)), percent))));
+    return ((percent_t) (percent));
 }
 
 /**
@@ -14032,7 +12496,7 @@ percent_f i64_to_pct_f(int64_t percent)
  */
 percent_t i64_to_pct_t(int64_t percent)
 {
-    return ((percent_t) (MIN(((int64_t) (INT_MAX)), MAX(((int64_t) (INT_MIN)), percent))));
+    return ((percent_t) (percent));
 }
 
 /**
@@ -14076,38 +12540,6 @@ percent_u i8_to_pct_u(int8_t percent)
 }
 
 /**
- * Convert int to percent_d.
- */
-percent_d i_to_pct_d(int percent)
-{
-    return ((percent_d) (percent));
-}
-
-/**
- * Convert int to percent_f.
- */
-percent_f i_to_pct_f(int percent)
-{
-    return ((percent_f) (percent));
-}
-
-/**
- * Convert int to percent_t.
- */
-percent_t i_to_pct_t(int percent)
-{
-    return ((percent_t) (percent));
-}
-
-/**
- * Convert int to percent_u.
- */
-percent_u i_to_pct_u(int percent)
-{
-    return ((percent_u) (MAX(((int) (0)), percent)));
-}
-
-/**
  * Convert percent_d to double.
  */
 double pct_d_to_d(percent_d percent)
@@ -14121,14 +12553,6 @@ double pct_d_to_d(percent_d percent)
 float pct_d_to_f(percent_d percent)
 {
     return d_to_f(((double) (percent)));
-}
-
-/**
- * Convert percent_d to int.
- */
-int pct_d_to_i(percent_d percent)
-{
-    return d_to_i(((double) (percent)));
 }
 
 /**
@@ -14176,7 +12600,7 @@ percent_f pct_d_to_pct_f(percent_d percent)
  */
 percent_t pct_d_to_pct_t(percent_d percent)
 {
-    return ((percent_t) (round(((double) (percent))) < ((double) (INT_MAX)) ? (round(((double) (percent))) > ((double) (INT_MIN)) ? round(((double) (percent))) : INT_MIN) : INT_MAX));
+    return ((percent_t) (round(((double) (percent))) < ((double) (9223372036854775807)) ? (round(((double) (percent))) > ((double) (-9223372036854775807 - 1)) ? ((percent_t) (round(((double) (percent))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -14184,7 +12608,7 @@ percent_t pct_d_to_pct_t(percent_d percent)
  */
 percent_u pct_d_to_pct_u(percent_d percent)
 {
-    return ((percent_u) (round(((double) (percent))) < ((double) (UINT_MAX)) ? (round(((double) (percent))) > ((double) (0)) ? round(((double) (percent))) : 0) : UINT_MAX));
+    return ((percent_u) (round(((double) (percent))) < ((double) (18446744073709551615U)) ? (round(((double) (percent))) > ((double) (0)) ? ((percent_u) (round(((double) (percent))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -14220,14 +12644,6 @@ uint8_t pct_d_to_u8(percent_d percent)
 }
 
 /**
- * Convert percent_d to unsigned int.
- */
-unsigned int pct_d_to_u(percent_d percent)
-{
-    return d_to_u(((double) (percent)));
-}
-
-/**
  * Convert percent_f to double.
  */
 double pct_f_to_d(percent_f percent)
@@ -14241,14 +12657,6 @@ double pct_f_to_d(percent_f percent)
 float pct_f_to_f(percent_f percent)
 {
     return ((float) (percent));
-}
-
-/**
- * Convert percent_f to int.
- */
-int pct_f_to_i(percent_f percent)
-{
-    return f_to_i(((float) (percent)));
 }
 
 /**
@@ -14296,7 +12704,7 @@ percent_d pct_f_to_pct_d(percent_f percent)
  */
 percent_t pct_f_to_pct_t(percent_f percent)
 {
-    return ((percent_t) (round(((double) (percent))) < ((double) (INT_MAX)) ? (round(((double) (percent))) > ((double) (INT_MIN)) ? round(((double) (percent))) : INT_MIN) : INT_MAX));
+    return ((percent_t) (round(((double) (percent))) < ((double) (9223372036854775807)) ? (round(((double) (percent))) > ((double) (-9223372036854775807 - 1)) ? ((percent_t) (round(((double) (percent))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -14304,7 +12712,7 @@ percent_t pct_f_to_pct_t(percent_f percent)
  */
 percent_u pct_f_to_pct_u(percent_f percent)
 {
-    return ((percent_u) (round(((double) (percent))) < ((double) (UINT_MAX)) ? (round(((double) (percent))) > ((double) (0)) ? round(((double) (percent))) : 0) : UINT_MAX));
+    return ((percent_u) (round(((double) (percent))) < ((double) (18446744073709551615U)) ? (round(((double) (percent))) > ((double) (0)) ? ((percent_u) (round(((double) (percent))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -14340,14 +12748,6 @@ uint8_t pct_f_to_u8(percent_f percent)
 }
 
 /**
- * Convert percent_f to unsigned int.
- */
-unsigned int pct_f_to_u(percent_f percent)
-{
-    return f_to_u(((float) (percent)));
-}
-
-/**
  * Convert percent_t to double.
  */
 double pct_t_to_d(percent_t percent)
@@ -14361,14 +12761,6 @@ double pct_t_to_d(percent_t percent)
 float pct_t_to_f(percent_t percent)
 {
     return ((float) (percent));
-}
-
-/**
- * Convert percent_t to int.
- */
-int pct_t_to_i(percent_t percent)
-{
-    return ((int) (percent));
 }
 
 /**
@@ -14460,14 +12852,6 @@ uint8_t pct_t_to_u8(percent_t percent)
 }
 
 /**
- * Convert percent_t to unsigned int.
- */
-unsigned int pct_t_to_u(percent_t percent)
-{
-    return ((unsigned int) (MAX(((percent_t) (0)), percent)));
-}
-
-/**
  * Convert percent_u to double.
  */
 double pct_u_to_d(percent_u percent)
@@ -14481,14 +12865,6 @@ double pct_u_to_d(percent_u percent)
 float pct_u_to_f(percent_u percent)
 {
     return ((float) (percent));
-}
-
-/**
- * Convert percent_u to int.
- */
-int pct_u_to_i(percent_u percent)
-{
-    return ((int) (MIN(((percent_u) (INT_MAX)), percent)));
 }
 
 /**
@@ -14512,7 +12888,7 @@ int32_t pct_u_to_i32(percent_u percent)
  */
 int64_t pct_u_to_i64(percent_u percent)
 {
-    return ((int64_t) (percent));
+    return ((int64_t) (MIN(((percent_u) (9223372036854775807)), percent)));
 }
 
 /**
@@ -14544,7 +12920,7 @@ percent_f pct_u_to_pct_f(percent_u percent)
  */
 percent_t pct_u_to_pct_t(percent_u percent)
 {
-    return ((percent_t) ((percent) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : percent));
+    return ((percent_t) ((percent) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : percent));
 }
 
 /**
@@ -14577,14 +12953,6 @@ uint64_t pct_u_to_u64(percent_u percent)
 uint8_t pct_u_to_u8(percent_u percent)
 {
     return ((uint8_t) (MIN(((percent_u) (255)), MAX(((percent_u) (0)), percent))));
-}
-
-/**
- * Convert percent_u to unsigned int.
- */
-unsigned int pct_u_to_u(percent_u percent)
-{
-    return ((unsigned int) (percent));
 }
 
 /**
@@ -14640,7 +13008,7 @@ percent_f u32_to_pct_f(uint32_t percent)
  */
 percent_t u32_to_pct_t(uint32_t percent)
 {
-    return ((percent_t) (MIN(((uint32_t) (INT_MAX)), percent)));
+    return ((percent_t) (percent));
 }
 
 /**
@@ -14648,7 +13016,7 @@ percent_t u32_to_pct_t(uint32_t percent)
  */
 percent_u u32_to_pct_u(uint32_t percent)
 {
-    return ((percent_u) (MIN(((uint32_t) (UINT_MAX)), MAX(((uint32_t) (0)), percent))));
+    return ((percent_u) (percent));
 }
 
 /**
@@ -14672,7 +13040,7 @@ percent_f u64_to_pct_f(uint64_t percent)
  */
 percent_t u64_to_pct_t(uint64_t percent)
 {
-    return ((percent_t) (MIN(((uint64_t) (INT_MAX)), percent)));
+    return ((percent_t) (MIN(((uint64_t) (9223372036854775807)), percent)));
 }
 
 /**
@@ -14680,7 +13048,7 @@ percent_t u64_to_pct_t(uint64_t percent)
  */
 percent_u u64_to_pct_u(uint64_t percent)
 {
-    return ((percent_u) (MIN(((uint64_t) (UINT_MAX)), MAX(((uint64_t) (0)), percent))));
+    return ((percent_u) (percent));
 }
 
 /**
@@ -14716,38 +13084,6 @@ percent_u u8_to_pct_u(uint8_t percent)
 }
 
 /**
- * Convert unsigned int to percent_d.
- */
-percent_d u_to_pct_d(unsigned int percent)
-{
-    return ((percent_d) (percent));
-}
-
-/**
- * Convert unsigned int to percent_f.
- */
-percent_f u_to_pct_f(unsigned int percent)
-{
-    return ((percent_f) (percent));
-}
-
-/**
- * Convert unsigned int to percent_t.
- */
-percent_t u_to_pct_t(unsigned int percent)
-{
-    return ((percent_t) (MIN(((unsigned int) (INT_MAX)), percent)));
-}
-
-/**
- * Convert unsigned int to percent_u.
- */
-percent_u u_to_pct_u(unsigned int percent)
-{
-    return ((percent_u) (percent));
-}
-
-/**
  * Convert celsius_d to celsius_f.
  */
 celsius_f degC_d_to_degC_f(celsius_d celsius)
@@ -14760,7 +13096,7 @@ celsius_f degC_d_to_degC_f(celsius_d celsius)
  */
 celsius_t degC_d_to_degC_t(celsius_d celsius)
 {
-    return ((celsius_t) (d_to_i((double) (celsius))));
+    return ((celsius_t) (d_to_i64((double) (celsius))));
 }
 
 /**
@@ -14768,7 +13104,7 @@ celsius_t degC_d_to_degC_t(celsius_d celsius)
  */
 celsius_u degC_d_to_degC_u(celsius_d celsius)
 {
-    return ((celsius_u) (d_to_u((double) (celsius))));
+    return ((celsius_u) (d_to_u64((double) (celsius))));
 }
 
 /**
@@ -14799,7 +13135,16 @@ fahrenheit_d degC_d_to_degF_d(celsius_d celsius)
  */
 fahrenheit_f degC_d_to_degF_f(celsius_d celsius)
 {
-    return ((fahrenheit_f) (MAX(((double) (-FLT_MAX)), MIN(((double) (FLT_MAX)), (((((double) (celsius)) * 1.8) + 32.0))))));
+    const double upperLimit = nexttoward(((double) (FLT_MAX)), 0.0);
+    const double lowerLimit = nexttoward(((double) (-FLT_MAX)), 0.0);
+    const double conversion = ((double) (celsius)) * 1.8 + 32.0;
+    if (conversion > upperLimit) {
+        return FLT_MAX;
+    }
+    if (conversion < lowerLimit) {
+        return -FLT_MAX;
+    }
+    return ((fahrenheit_f) (conversion));
 }
 
 /**
@@ -14807,7 +13152,16 @@ fahrenheit_f degC_d_to_degF_f(celsius_d celsius)
  */
 fahrenheit_t degC_d_to_degF_t(celsius_d celsius)
 {
-    return ((fahrenheit_t) (MAX(((double) (INT_MIN)), MIN(((double) (INT_MAX)), (round(((((double) (celsius)) * 1.8) + 32.0)))))));
+    const double upperLimit = nexttoward(((double) (9223372036854775807)), 0.0);
+    const double lowerLimit = nexttoward(((double) (-9223372036854775807 - 1)), 0.0);
+    const double conversion = round(((double) (celsius)) * 1.8 + 32.0);
+    if (conversion > upperLimit) {
+        return 9223372036854775807;
+    }
+    if (conversion < lowerLimit) {
+        return -9223372036854775807 - 1;
+    }
+    return ((fahrenheit_t) (conversion));
 }
 
 /**
@@ -14815,7 +13169,16 @@ fahrenheit_t degC_d_to_degF_t(celsius_d celsius)
  */
 fahrenheit_u degC_d_to_degF_u(celsius_d celsius)
 {
-    return ((fahrenheit_u) (MAX(((double) (0)), MIN(((double) (UINT_MAX)), (round(((((double) (celsius)) * 1.8) + 32.0)))))));
+    const double upperLimit = nexttoward(((double) (18446744073709551615U)), 0.0);
+    const double lowerLimit = nexttoward(((double) (0)), 0.0);
+    const double conversion = round(((double) (celsius)) * 1.8 + 32.0);
+    if (conversion > upperLimit) {
+        return 18446744073709551615U;
+    }
+    if (conversion < lowerLimit) {
+        return 0;
+    }
+    return ((fahrenheit_u) (conversion));
 }
 
 /**
@@ -14824,14 +13187,6 @@ fahrenheit_u degC_d_to_degF_u(celsius_d celsius)
 float degC_d_to_f(celsius_d celsius)
 {
     return d_to_f(((double) (celsius)));
-}
-
-/**
- * Convert celsius_d to int.
- */
-int degC_d_to_i(celsius_d celsius)
-{
-    return d_to_i(((double) (celsius)));
 }
 
 /**
@@ -14897,12 +13252,12 @@ kelvin_f degC_d_to_K_f(celsius_d celsius)
  */
 kelvin_t degC_d_to_K_t(celsius_d celsius)
 {
-    const celsius_d upperLimit = ((celsius_d) (INT_MAX));
-    const celsius_d lowerLimit = ((celsius_d) (INT_MIN));
+    const celsius_d upperLimit = ((celsius_d) (9223372036854775807));
+    const celsius_d lowerLimit = ((celsius_d) (-9223372036854775807 - 1));
     if (celsius > (upperLimit - 273.15)) {
-        return ((kelvin_t) (INT_MAX));
+        return ((kelvin_t) (9223372036854775807));
     } else if (celsius < (lowerLimit - 273.15)) {
-        return ((kelvin_t) (INT_MIN));
+        return ((kelvin_t) (-9223372036854775807 - 1));
     }
     return ((kelvin_t) (round(celsius + 273.15)));
 }
@@ -14912,10 +13267,10 @@ kelvin_t degC_d_to_K_t(celsius_d celsius)
  */
 kelvin_u degC_d_to_K_u(celsius_d celsius)
 {
-    const celsius_d upperLimit = ((celsius_d) (UINT_MAX));
+    const celsius_d upperLimit = ((celsius_d) (18446744073709551615U));
     const celsius_d lowerLimit = ((celsius_d) (0));
     if (celsius > (upperLimit - 273.15)) {
-        return ((kelvin_u) (UINT_MAX));
+        return ((kelvin_u) (18446744073709551615U));
     } else if (celsius < (lowerLimit - 273.15)) {
         return ((kelvin_u) (0));
     }
@@ -14955,14 +13310,6 @@ uint8_t degC_d_to_u8(celsius_d celsius)
 }
 
 /**
- * Convert celsius_d to unsigned int.
- */
-unsigned int degC_d_to_u(celsius_d celsius)
-{
-    return d_to_u(((double) (celsius)));
-}
-
-/**
  * Convert celsius_f to celsius_d.
  */
 celsius_d degC_f_to_degC_d(celsius_f celsius)
@@ -14975,7 +13322,7 @@ celsius_d degC_f_to_degC_d(celsius_f celsius)
  */
 celsius_t degC_f_to_degC_t(celsius_f celsius)
 {
-    return ((celsius_t) (f_to_i((float) (celsius))));
+    return ((celsius_t) (f_to_i64((float) (celsius))));
 }
 
 /**
@@ -14983,7 +13330,7 @@ celsius_t degC_f_to_degC_t(celsius_f celsius)
  */
 celsius_u degC_f_to_degC_u(celsius_f celsius)
 {
-    return ((celsius_u) (f_to_u((float) (celsius))));
+    return ((celsius_u) (f_to_u64((float) (celsius))));
 }
 
 /**
@@ -14999,7 +13346,7 @@ double degC_f_to_d(celsius_f celsius)
  */
 fahrenheit_d degC_f_to_degF_d(celsius_f celsius)
 {
-    return ((fahrenheit_d) (((((double) (celsius)) * 1.8) + 32.0)));
+    return ((fahrenheit_d) (((double) (celsius)) * 1.8 + 32.0));
 }
 
 /**
@@ -15007,7 +13354,16 @@ fahrenheit_d degC_f_to_degF_d(celsius_f celsius)
  */
 fahrenheit_f degC_f_to_degF_f(celsius_f celsius)
 {
-    return ((fahrenheit_f) (MAX(((double) (-FLT_MAX)), MIN(((double) (FLT_MAX)), (((((double) (celsius)) * 1.8) + 32.0))))));
+    const double upperLimit = nexttoward(((double) (FLT_MAX)), 0.0);
+    const double lowerLimit = nexttoward(((double) (-FLT_MAX)), 0.0);
+    const double conversion = ((double) (celsius)) * 1.8 + 32.0;
+    if (conversion > upperLimit) {
+        return FLT_MAX;
+    }
+    if (conversion < lowerLimit) {
+        return -FLT_MAX;
+    }
+    return ((fahrenheit_f) (conversion));
 }
 
 /**
@@ -15015,7 +13371,16 @@ fahrenheit_f degC_f_to_degF_f(celsius_f celsius)
  */
 fahrenheit_t degC_f_to_degF_t(celsius_f celsius)
 {
-    return ((fahrenheit_t) (MAX(((double) (INT_MIN)), MIN(((double) (INT_MAX)), (round(((((double) (celsius)) * 1.8) + 32.0)))))));
+    const double upperLimit = nexttoward(((double) (9223372036854775807)), 0.0);
+    const double lowerLimit = nexttoward(((double) (-9223372036854775807 - 1)), 0.0);
+    const double conversion = round(((double) (celsius)) * 1.8 + 32.0);
+    if (conversion > upperLimit) {
+        return 9223372036854775807;
+    }
+    if (conversion < lowerLimit) {
+        return -9223372036854775807 - 1;
+    }
+    return ((fahrenheit_t) (conversion));
 }
 
 /**
@@ -15023,7 +13388,16 @@ fahrenheit_t degC_f_to_degF_t(celsius_f celsius)
  */
 fahrenheit_u degC_f_to_degF_u(celsius_f celsius)
 {
-    return ((fahrenheit_u) (MAX(((double) (0)), MIN(((double) (UINT_MAX)), (round(((((double) (celsius)) * 1.8) + 32.0)))))));
+    const double upperLimit = nexttoward(((double) (18446744073709551615U)), 0.0);
+    const double lowerLimit = nexttoward(((double) (0)), 0.0);
+    const double conversion = round(((double) (celsius)) * 1.8 + 32.0);
+    if (conversion > upperLimit) {
+        return 18446744073709551615U;
+    }
+    if (conversion < lowerLimit) {
+        return 0;
+    }
+    return ((fahrenheit_u) (conversion));
 }
 
 /**
@@ -15032,14 +13406,6 @@ fahrenheit_u degC_f_to_degF_u(celsius_f celsius)
 float degC_f_to_f(celsius_f celsius)
 {
     return ((float) (celsius));
-}
-
-/**
- * Convert celsius_f to int.
- */
-int degC_f_to_i(celsius_f celsius)
-{
-    return f_to_i(((float) (celsius)));
 }
 
 /**
@@ -15098,12 +13464,12 @@ kelvin_f degC_f_to_K_f(celsius_f celsius)
  */
 kelvin_t degC_f_to_K_t(celsius_f celsius)
 {
-    const celsius_f upperLimit = ((celsius_f) (INT_MAX));
-    const celsius_f lowerLimit = ((celsius_f) (INT_MIN));
+    const celsius_f upperLimit = ((celsius_f) (9223372036854775807));
+    const celsius_f lowerLimit = ((celsius_f) (-9223372036854775807 - 1));
     if (celsius > (upperLimit - 273.15f)) {
-        return ((kelvin_t) (INT_MAX));
+        return ((kelvin_t) (9223372036854775807));
     } else if (celsius < (lowerLimit - 273.15f)) {
-        return ((kelvin_t) (INT_MIN));
+        return ((kelvin_t) (-9223372036854775807 - 1));
     }
     return ((kelvin_t) (roundf(celsius + 273.15f)));
 }
@@ -15113,10 +13479,10 @@ kelvin_t degC_f_to_K_t(celsius_f celsius)
  */
 kelvin_u degC_f_to_K_u(celsius_f celsius)
 {
-    const celsius_f upperLimit = ((celsius_f) (UINT_MAX));
+    const celsius_f upperLimit = ((celsius_f) (18446744073709551615U));
     const celsius_f lowerLimit = ((celsius_f) (0));
     if (celsius > (upperLimit - 273.15f)) {
-        return ((kelvin_u) (UINT_MAX));
+        return ((kelvin_u) (18446744073709551615U));
     } else if (celsius < (lowerLimit - 273.15f)) {
         return ((kelvin_u) (0));
     }
@@ -15156,14 +13522,6 @@ uint8_t degC_f_to_u8(celsius_f celsius)
 }
 
 /**
- * Convert celsius_f to unsigned int.
- */
-unsigned int degC_f_to_u(celsius_f celsius)
-{
-    return f_to_u(((float) (celsius)));
-}
-
-/**
  * Convert celsius_t to celsius_d.
  */
 celsius_d degC_t_to_degC_d(celsius_t celsius)
@@ -15200,7 +13558,7 @@ double degC_t_to_d(celsius_t celsius)
  */
 fahrenheit_d degC_t_to_degF_d(celsius_t celsius)
 {
-    return ((fahrenheit_d) (((((double) (celsius)) * 1.8) + 32.0)));
+    return ((fahrenheit_d) (((double) (celsius)) * 1.8 + 32.0));
 }
 
 /**
@@ -15208,7 +13566,16 @@ fahrenheit_d degC_t_to_degF_d(celsius_t celsius)
  */
 fahrenheit_f degC_t_to_degF_f(celsius_t celsius)
 {
-    return ((fahrenheit_f) (MAX(((double) (-FLT_MAX)), MIN(((double) (FLT_MAX)), (((((double) (celsius)) * 1.8) + 32.0))))));
+    const double upperLimit = nexttoward(((double) (FLT_MAX)), 0.0);
+    const double lowerLimit = nexttoward(((double) (-FLT_MAX)), 0.0);
+    const double conversion = ((double) (celsius)) * 1.8 + 32.0;
+    if (conversion > upperLimit) {
+        return FLT_MAX;
+    }
+    if (conversion < lowerLimit) {
+        return -FLT_MAX;
+    }
+    return ((fahrenheit_f) (conversion));
 }
 
 /**
@@ -15216,7 +13583,16 @@ fahrenheit_f degC_t_to_degF_f(celsius_t celsius)
  */
 fahrenheit_t degC_t_to_degF_t(celsius_t celsius)
 {
-    return ((fahrenheit_t) (MAX(((double) (INT_MIN)), MIN(((double) (INT_MAX)), (round(((((double) (celsius)) * 1.8) + 32.0)))))));
+    const double upperLimit = nexttoward(((double) (9223372036854775807)), 0.0);
+    const double lowerLimit = nexttoward(((double) (-9223372036854775807 - 1)), 0.0);
+    const double conversion = round(((double) (celsius)) * 1.8 + 32.0);
+    if (conversion > upperLimit) {
+        return 9223372036854775807;
+    }
+    if (conversion < lowerLimit) {
+        return -9223372036854775807 - 1;
+    }
+    return ((fahrenheit_t) (conversion));
 }
 
 /**
@@ -15224,7 +13600,16 @@ fahrenheit_t degC_t_to_degF_t(celsius_t celsius)
  */
 fahrenheit_u degC_t_to_degF_u(celsius_t celsius)
 {
-    return ((fahrenheit_u) (MAX(((double) (0)), MIN(((double) (UINT_MAX)), (round(((((double) (celsius)) * 1.8) + 32.0)))))));
+    const double upperLimit = nexttoward(((double) (18446744073709551615U)), 0.0);
+    const double lowerLimit = nexttoward(((double) (0)), 0.0);
+    const double conversion = round(((double) (celsius)) * 1.8 + 32.0);
+    if (conversion > upperLimit) {
+        return 18446744073709551615U;
+    }
+    if (conversion < lowerLimit) {
+        return 0;
+    }
+    return ((fahrenheit_u) (conversion));
 }
 
 /**
@@ -15233,14 +13618,6 @@ fahrenheit_u degC_t_to_degF_u(celsius_t celsius)
 float degC_t_to_f(celsius_t celsius)
 {
     return ((float) (celsius));
-}
-
-/**
- * Convert celsius_t to int.
- */
-int degC_t_to_i(celsius_t celsius)
-{
-    return ((int) (celsius));
 }
 
 /**
@@ -15296,8 +13673,8 @@ kelvin_f degC_t_to_K_f(celsius_t celsius)
  */
 kelvin_t degC_t_to_K_t(celsius_t celsius)
 {
-    if (celsius > (INT_MAX - 273)) {
-        return ((kelvin_t) (INT_MAX));
+    if (celsius > (9223372036854775807 - 273)) {
+        return ((kelvin_t) (9223372036854775807));
     }
     return ((kelvin_t) (celsius + 273));
 }
@@ -15349,14 +13726,6 @@ uint8_t degC_t_to_u8(celsius_t celsius)
 }
 
 /**
- * Convert celsius_t to unsigned int.
- */
-unsigned int degC_t_to_u(celsius_t celsius)
-{
-    return ((unsigned int) (MAX(((celsius_t) (0)), celsius)));
-}
-
-/**
  * Convert celsius_u to celsius_d.
  */
 celsius_d degC_u_to_degC_d(celsius_u celsius)
@@ -15377,7 +13746,7 @@ celsius_f degC_u_to_degC_f(celsius_u celsius)
  */
 celsius_t degC_u_to_degC_t(celsius_u celsius)
 {
-    return ((celsius_t) ((celsius) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : celsius));
+    return ((celsius_t) ((celsius) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : celsius));
 }
 
 /**
@@ -15393,7 +13762,7 @@ double degC_u_to_d(celsius_u celsius)
  */
 fahrenheit_d degC_u_to_degF_d(celsius_u celsius)
 {
-    return ((fahrenheit_d) (((((double) (celsius)) * 1.8) + 32.0)));
+    return ((fahrenheit_d) (((double) (celsius)) * 1.8 + 32.0));
 }
 
 /**
@@ -15401,7 +13770,16 @@ fahrenheit_d degC_u_to_degF_d(celsius_u celsius)
  */
 fahrenheit_f degC_u_to_degF_f(celsius_u celsius)
 {
-    return ((fahrenheit_f) (MAX(((double) (-FLT_MAX)), MIN(((double) (FLT_MAX)), (((((double) (celsius)) * 1.8) + 32.0))))));
+    const double upperLimit = nexttoward(((double) (FLT_MAX)), 0.0);
+    const double lowerLimit = nexttoward(((double) (-FLT_MAX)), 0.0);
+    const double conversion = ((double) (celsius)) * 1.8 + 32.0;
+    if (conversion > upperLimit) {
+        return FLT_MAX;
+    }
+    if (conversion < lowerLimit) {
+        return -FLT_MAX;
+    }
+    return ((fahrenheit_f) (conversion));
 }
 
 /**
@@ -15409,7 +13787,16 @@ fahrenheit_f degC_u_to_degF_f(celsius_u celsius)
  */
 fahrenheit_t degC_u_to_degF_t(celsius_u celsius)
 {
-    return ((fahrenheit_t) (MAX(((double) (INT_MIN)), MIN(((double) (INT_MAX)), (round(((((double) (celsius)) * 1.8) + 32.0)))))));
+    const double upperLimit = nexttoward(((double) (9223372036854775807)), 0.0);
+    const double lowerLimit = nexttoward(((double) (-9223372036854775807 - 1)), 0.0);
+    const double conversion = round(((double) (celsius)) * 1.8 + 32.0);
+    if (conversion > upperLimit) {
+        return 9223372036854775807;
+    }
+    if (conversion < lowerLimit) {
+        return -9223372036854775807 - 1;
+    }
+    return ((fahrenheit_t) (conversion));
 }
 
 /**
@@ -15417,7 +13804,16 @@ fahrenheit_t degC_u_to_degF_t(celsius_u celsius)
  */
 fahrenheit_u degC_u_to_degF_u(celsius_u celsius)
 {
-    return ((fahrenheit_u) (MAX(((double) (0)), MIN(((double) (UINT_MAX)), (round(((((double) (celsius)) * 1.8) + 32.0)))))));
+    const double upperLimit = nexttoward(((double) (18446744073709551615U)), 0.0);
+    const double lowerLimit = nexttoward(((double) (0)), 0.0);
+    const double conversion = round(((double) (celsius)) * 1.8 + 32.0);
+    if (conversion > upperLimit) {
+        return 18446744073709551615U;
+    }
+    if (conversion < lowerLimit) {
+        return 0;
+    }
+    return ((fahrenheit_u) (conversion));
 }
 
 /**
@@ -15426,14 +13822,6 @@ fahrenheit_u degC_u_to_degF_u(celsius_u celsius)
 float degC_u_to_f(celsius_u celsius)
 {
     return ((float) (celsius));
-}
-
-/**
- * Convert celsius_u to int.
- */
-int degC_u_to_i(celsius_u celsius)
-{
-    return ((int) (MIN(((celsius_u) (INT_MAX)), celsius)));
 }
 
 /**
@@ -15457,7 +13845,7 @@ int32_t degC_u_to_i32(celsius_u celsius)
  */
 int64_t degC_u_to_i64(celsius_u celsius)
 {
-    return ((int64_t) (celsius));
+    return ((int64_t) (MIN(((celsius_u) (9223372036854775807)), celsius)));
 }
 
 /**
@@ -15489,8 +13877,8 @@ kelvin_f degC_u_to_K_f(celsius_u celsius)
  */
 kelvin_t degC_u_to_K_t(celsius_u celsius)
 {
-    if (celsius > (INT_MAX - 273)) {
-        return ((kelvin_t) (INT_MAX));
+    if (celsius > (9223372036854775807 - 273)) {
+        return ((kelvin_t) (9223372036854775807));
     }
     return ((kelvin_t) (celsius + 273));
 }
@@ -15500,8 +13888,8 @@ kelvin_t degC_u_to_K_t(celsius_u celsius)
  */
 kelvin_u degC_u_to_K_u(celsius_u celsius)
 {
-    if (celsius > (UINT_MAX - 273)) {
-        return ((kelvin_u) (UINT_MAX));
+    if (celsius > (18446744073709551615U - 273)) {
+        return ((kelvin_u) (18446744073709551615U));
     }
     return ((kelvin_u) (celsius + 273));
 }
@@ -15539,14 +13927,6 @@ uint8_t degC_u_to_u8(celsius_u celsius)
 }
 
 /**
- * Convert celsius_u to unsigned int.
- */
-unsigned int degC_u_to_u(celsius_u celsius)
-{
-    return ((unsigned int) (celsius));
-}
-
-/**
  * Convert double to celsius_d.
  */
 celsius_d d_to_degC_d(double celsius)
@@ -15567,7 +13947,7 @@ celsius_f d_to_degC_f(double celsius)
  */
 celsius_t d_to_degC_t(double celsius)
 {
-    return d_to_i(celsius);
+    return d_to_i64(celsius);
 }
 
 /**
@@ -15575,7 +13955,7 @@ celsius_t d_to_degC_t(double celsius)
  */
 celsius_u d_to_degC_u(double celsius)
 {
-    return d_to_u(celsius);
+    return d_to_u64(celsius);
 }
 
 /**
@@ -15599,7 +13979,7 @@ fahrenheit_f d_to_degF_f(double fahrenheit)
  */
 fahrenheit_t d_to_degF_t(double fahrenheit)
 {
-    return d_to_i(fahrenheit);
+    return d_to_i64(fahrenheit);
 }
 
 /**
@@ -15607,7 +13987,7 @@ fahrenheit_t d_to_degF_t(double fahrenheit)
  */
 fahrenheit_u d_to_degF_u(double fahrenheit)
 {
-    return d_to_u(fahrenheit);
+    return d_to_u64(fahrenheit);
 }
 
 /**
@@ -15631,7 +14011,7 @@ kelvin_f d_to_K_f(double kelvin)
  */
 kelvin_t d_to_K_t(double kelvin)
 {
-    return d_to_i(kelvin);
+    return d_to_i64(kelvin);
 }
 
 /**
@@ -15639,7 +14019,7 @@ kelvin_t d_to_K_t(double kelvin)
  */
 kelvin_u d_to_K_u(double kelvin)
 {
-    return d_to_u(kelvin);
+    return d_to_u64(kelvin);
 }
 
 /**
@@ -15655,7 +14035,7 @@ celsius_d degF_d_to_degC_d(fahrenheit_d fahrenheit)
  */
 celsius_f degF_d_to_degC_f(fahrenheit_d fahrenheit)
 {
-    return ((celsius_f) (MAX(((double) (-FLT_MAX)), MIN(((double) (FLT_MAX)), (((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0))))));
+    return ((celsius_f) (d_to_f(((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0))));
 }
 
 /**
@@ -15663,7 +14043,7 @@ celsius_f degF_d_to_degC_f(fahrenheit_d fahrenheit)
  */
 celsius_t degF_d_to_degC_t(fahrenheit_d fahrenheit)
 {
-    return ((celsius_t) (MAX(((double) (INT_MIN)), MIN(((double) (INT_MAX)), (round(((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0)))))));
+    return ((celsius_t) (d_to_i64(round(((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0)))));
 }
 
 /**
@@ -15671,7 +14051,7 @@ celsius_t degF_d_to_degC_t(fahrenheit_d fahrenheit)
  */
 celsius_u degF_d_to_degC_u(fahrenheit_d fahrenheit)
 {
-    return ((celsius_u) (MAX(((double) (0)), MIN(((double) (UINT_MAX)), (round(((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0)))))));
+    return ((celsius_u) (d_to_u64(round(((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0)))));
 }
 
 /**
@@ -15695,7 +14075,7 @@ fahrenheit_f degF_d_to_degF_f(fahrenheit_d fahrenheit)
  */
 fahrenheit_t degF_d_to_degF_t(fahrenheit_d fahrenheit)
 {
-    return ((fahrenheit_t) (d_to_i((double) (fahrenheit))));
+    return ((fahrenheit_t) (d_to_i64((double) (fahrenheit))));
 }
 
 /**
@@ -15703,7 +14083,7 @@ fahrenheit_t degF_d_to_degF_t(fahrenheit_d fahrenheit)
  */
 fahrenheit_u degF_d_to_degF_u(fahrenheit_d fahrenheit)
 {
-    return ((fahrenheit_u) (d_to_u((double) (fahrenheit))));
+    return ((fahrenheit_u) (d_to_u64((double) (fahrenheit))));
 }
 
 /**
@@ -15712,14 +14092,6 @@ fahrenheit_u degF_d_to_degF_u(fahrenheit_d fahrenheit)
 float degF_d_to_f(fahrenheit_d fahrenheit)
 {
     return d_to_f(((double) (fahrenheit)));
-}
-
-/**
- * Convert fahrenheit_d to int.
- */
-int degF_d_to_i(fahrenheit_d fahrenheit)
-{
-    return d_to_i(((double) (fahrenheit)));
 }
 
 /**
@@ -15759,7 +14131,8 @@ int8_t degF_d_to_i8(fahrenheit_d fahrenheit)
  */
 kelvin_d degF_d_to_K_d(fahrenheit_d fahrenheit)
 {
-    return ((kelvin_d) ((fahrenheit - 32.0) * (5.0 / 9.0) + 273.15));
+    const double scaleFactor = 5.0 / 9.0;
+    return ((kelvin_d) (((double) (fahrenheit)) * scaleFactor - 32.0 * scaleFactor + 273.15));
 }
 
 /**
@@ -15767,7 +14140,8 @@ kelvin_d degF_d_to_K_d(fahrenheit_d fahrenheit)
  */
 kelvin_f degF_d_to_K_f(fahrenheit_d fahrenheit)
 {
-    return ((kelvin_f) (MAX(((double) (-FLT_MAX)), MIN(((double) (FLT_MAX)), ((((double) (fahrenheit)) - 32.0) * (5.0 / 9.0) + 273.15)))));
+    const double scaleFactor = 5.0 / 9.0;
+    return ((kelvin_f) (d_to_f(((double) (fahrenheit)) * scaleFactor - 32.0 * scaleFactor + 273.15)));
 }
 
 /**
@@ -15775,7 +14149,8 @@ kelvin_f degF_d_to_K_f(fahrenheit_d fahrenheit)
  */
 kelvin_t degF_d_to_K_t(fahrenheit_d fahrenheit)
 {
-    return ((kelvin_t) (MAX(((double) (INT_MIN)), MIN(((double) (INT_MAX)), (round((((double) (fahrenheit)) - 32.0) * (5.0 / 9.0) + 273.15))))));
+    const double scaleFactor = 5.0 / 9.0;
+    return ((kelvin_t) (d_to_i64(round(((double) (fahrenheit)) * scaleFactor - 32.0 * scaleFactor + 273.15))));
 }
 
 /**
@@ -15783,7 +14158,8 @@ kelvin_t degF_d_to_K_t(fahrenheit_d fahrenheit)
  */
 kelvin_u degF_d_to_K_u(fahrenheit_d fahrenheit)
 {
-    return ((kelvin_u) (MAX(((double) (0)), MIN(((double) (UINT_MAX)), (round((((double) (fahrenheit)) - 32.0) * (5.0 / 9.0) + 273.15))))));
+    const double scaleFactor = 5.0 / 9.0;
+    return ((kelvin_u) (d_to_u64(round(((double) (fahrenheit)) * scaleFactor - 32.0 * scaleFactor + 273.15))));
 }
 
 /**
@@ -15819,19 +14195,11 @@ uint8_t degF_d_to_u8(fahrenheit_d fahrenheit)
 }
 
 /**
- * Convert fahrenheit_d to unsigned int.
- */
-unsigned int degF_d_to_u(fahrenheit_d fahrenheit)
-{
-    return d_to_u(((double) (fahrenheit)));
-}
-
-/**
  * Convert fahrenheit_f to celsius_d.
  */
 celsius_d degF_f_to_degC_d(fahrenheit_f fahrenheit)
 {
-    return ((celsius_d) (MAX(((double) (-DBL_MAX)), MIN(((double) (DBL_MAX)), (((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0))))));
+    return ((celsius_d) (((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0)));
 }
 
 /**
@@ -15839,7 +14207,7 @@ celsius_d degF_f_to_degC_d(fahrenheit_f fahrenheit)
  */
 celsius_f degF_f_to_degC_f(fahrenheit_f fahrenheit)
 {
-    return ((celsius_f) (MAX(((double) (-FLT_MAX)), MIN(((double) (FLT_MAX)), (((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0))))));
+    return ((celsius_f) (d_to_f(((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0))));
 }
 
 /**
@@ -15847,7 +14215,7 @@ celsius_f degF_f_to_degC_f(fahrenheit_f fahrenheit)
  */
 celsius_t degF_f_to_degC_t(fahrenheit_f fahrenheit)
 {
-    return ((celsius_t) (MAX(((double) (INT_MIN)), MIN(((double) (INT_MAX)), (round(((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0)))))));
+    return ((celsius_t) (d_to_i64(round(((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0)))));
 }
 
 /**
@@ -15855,7 +14223,7 @@ celsius_t degF_f_to_degC_t(fahrenheit_f fahrenheit)
  */
 celsius_u degF_f_to_degC_u(fahrenheit_f fahrenheit)
 {
-    return ((celsius_u) (MAX(((double) (0)), MIN(((double) (UINT_MAX)), (round(((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0)))))));
+    return ((celsius_u) (d_to_u64(round(((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0)))));
 }
 
 /**
@@ -15879,7 +14247,7 @@ fahrenheit_d degF_f_to_degF_d(fahrenheit_f fahrenheit)
  */
 fahrenheit_t degF_f_to_degF_t(fahrenheit_f fahrenheit)
 {
-    return ((fahrenheit_t) (f_to_i((float) (fahrenheit))));
+    return ((fahrenheit_t) (f_to_i64((float) (fahrenheit))));
 }
 
 /**
@@ -15887,7 +14255,7 @@ fahrenheit_t degF_f_to_degF_t(fahrenheit_f fahrenheit)
  */
 fahrenheit_u degF_f_to_degF_u(fahrenheit_f fahrenheit)
 {
-    return ((fahrenheit_u) (f_to_u((float) (fahrenheit))));
+    return ((fahrenheit_u) (f_to_u64((float) (fahrenheit))));
 }
 
 /**
@@ -15896,14 +14264,6 @@ fahrenheit_u degF_f_to_degF_u(fahrenheit_f fahrenheit)
 float degF_f_to_f(fahrenheit_f fahrenheit)
 {
     return ((float) (fahrenheit));
-}
-
-/**
- * Convert fahrenheit_f to int.
- */
-int degF_f_to_i(fahrenheit_f fahrenheit)
-{
-    return f_to_i(((float) (fahrenheit)));
 }
 
 /**
@@ -15943,7 +14303,8 @@ int8_t degF_f_to_i8(fahrenheit_f fahrenheit)
  */
 kelvin_d degF_f_to_K_d(fahrenheit_f fahrenheit)
 {
-    return ((kelvin_d) (MAX(((double) (-DBL_MAX)), MIN(((double) (DBL_MAX)), ((((double) (fahrenheit)) - 32.0) * (5.0 / 9.0) + 273.15)))));
+    const double scaleFactor = 5.0 / 9.0;
+    return ((kelvin_d) (((double) (fahrenheit)) * scaleFactor - 32.0 * scaleFactor + 273.15));
 }
 
 /**
@@ -15951,7 +14312,8 @@ kelvin_d degF_f_to_K_d(fahrenheit_f fahrenheit)
  */
 kelvin_f degF_f_to_K_f(fahrenheit_f fahrenheit)
 {
-    return ((kelvin_f) (MAX(((double) (-FLT_MAX)), MIN(((double) (FLT_MAX)), ((((double) (fahrenheit)) - 32.0) * (5.0 / 9.0) + 273.15)))));
+    const double scaleFactor = 5.0 / 9.0;
+    return ((kelvin_f) (d_to_f(((double) (fahrenheit)) * scaleFactor - 32.0 * scaleFactor + 273.15)));
 }
 
 /**
@@ -15959,7 +14321,8 @@ kelvin_f degF_f_to_K_f(fahrenheit_f fahrenheit)
  */
 kelvin_t degF_f_to_K_t(fahrenheit_f fahrenheit)
 {
-    return ((kelvin_t) (MAX(((double) (INT_MIN)), MIN(((double) (INT_MAX)), (round((((double) (fahrenheit)) - 32.0) * (5.0 / 9.0) + 273.15))))));
+    const double scaleFactor = 5.0 / 9.0;
+    return ((kelvin_t) (d_to_i64(round(((double) (fahrenheit)) * scaleFactor - 32.0 * scaleFactor + 273.15))));
 }
 
 /**
@@ -15967,7 +14330,8 @@ kelvin_t degF_f_to_K_t(fahrenheit_f fahrenheit)
  */
 kelvin_u degF_f_to_K_u(fahrenheit_f fahrenheit)
 {
-    return ((kelvin_u) (MAX(((double) (0)), MIN(((double) (UINT_MAX)), (round((((double) (fahrenheit)) - 32.0) * (5.0 / 9.0) + 273.15))))));
+    const double scaleFactor = 5.0 / 9.0;
+    return ((kelvin_u) (d_to_u64(round(((double) (fahrenheit)) * scaleFactor - 32.0 * scaleFactor + 273.15))));
 }
 
 /**
@@ -16003,19 +14367,11 @@ uint8_t degF_f_to_u8(fahrenheit_f fahrenheit)
 }
 
 /**
- * Convert fahrenheit_f to unsigned int.
- */
-unsigned int degF_f_to_u(fahrenheit_f fahrenheit)
-{
-    return f_to_u(((float) (fahrenheit)));
-}
-
-/**
  * Convert fahrenheit_t to celsius_d.
  */
 celsius_d degF_t_to_degC_d(fahrenheit_t fahrenheit)
 {
-    return ((celsius_d) (MAX(((double) (-DBL_MAX)), MIN(((double) (DBL_MAX)), (((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0))))));
+    return ((celsius_d) (((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0)));
 }
 
 /**
@@ -16023,7 +14379,7 @@ celsius_d degF_t_to_degC_d(fahrenheit_t fahrenheit)
  */
 celsius_f degF_t_to_degC_f(fahrenheit_t fahrenheit)
 {
-    return ((celsius_f) (MAX(((double) (-FLT_MAX)), MIN(((double) (FLT_MAX)), (((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0))))));
+    return ((celsius_f) (d_to_f(((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0))));
 }
 
 /**
@@ -16031,7 +14387,7 @@ celsius_f degF_t_to_degC_f(fahrenheit_t fahrenheit)
  */
 celsius_t degF_t_to_degC_t(fahrenheit_t fahrenheit)
 {
-    return ((celsius_t) (MAX(((double) (INT_MIN)), MIN(((double) (INT_MAX)), (round(((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0)))))));
+    return ((celsius_t) (d_to_i64(round(((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0)))));
 }
 
 /**
@@ -16039,7 +14395,7 @@ celsius_t degF_t_to_degC_t(fahrenheit_t fahrenheit)
  */
 celsius_u degF_t_to_degC_u(fahrenheit_t fahrenheit)
 {
-    return ((celsius_u) (MAX(((double) (0)), MIN(((double) (UINT_MAX)), (round(((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0)))))));
+    return ((celsius_u) (d_to_u64(round(((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0)))));
 }
 
 /**
@@ -16083,14 +14439,6 @@ float degF_t_to_f(fahrenheit_t fahrenheit)
 }
 
 /**
- * Convert fahrenheit_t to int.
- */
-int degF_t_to_i(fahrenheit_t fahrenheit)
-{
-    return ((int) (fahrenheit));
-}
-
-/**
  * Convert fahrenheit_t to int16_t.
  */
 int16_t degF_t_to_i16(fahrenheit_t fahrenheit)
@@ -16127,7 +14475,8 @@ int8_t degF_t_to_i8(fahrenheit_t fahrenheit)
  */
 kelvin_d degF_t_to_K_d(fahrenheit_t fahrenheit)
 {
-    return ((kelvin_d) (MAX(((double) (-DBL_MAX)), MIN(((double) (DBL_MAX)), ((((double) (fahrenheit)) - 32.0) * (5.0 / 9.0) + 273.15)))));
+    const double scaleFactor = 5.0 / 9.0;
+    return ((kelvin_d) (((double) (fahrenheit)) * scaleFactor - 32.0 * scaleFactor + 273.15));
 }
 
 /**
@@ -16135,7 +14484,8 @@ kelvin_d degF_t_to_K_d(fahrenheit_t fahrenheit)
  */
 kelvin_f degF_t_to_K_f(fahrenheit_t fahrenheit)
 {
-    return ((kelvin_f) (MAX(((double) (-FLT_MAX)), MIN(((double) (FLT_MAX)), ((((double) (fahrenheit)) - 32.0) * (5.0 / 9.0) + 273.15)))));
+    const double scaleFactor = 5.0 / 9.0;
+    return ((kelvin_f) (d_to_f(((double) (fahrenheit)) * scaleFactor - 32.0 * scaleFactor + 273.15)));
 }
 
 /**
@@ -16143,7 +14493,8 @@ kelvin_f degF_t_to_K_f(fahrenheit_t fahrenheit)
  */
 kelvin_t degF_t_to_K_t(fahrenheit_t fahrenheit)
 {
-    return ((kelvin_t) (MAX(((double) (INT_MIN)), MIN(((double) (INT_MAX)), (round((((double) (fahrenheit)) - 32.0) * (5.0 / 9.0) + 273.15))))));
+    const double scaleFactor = 5.0 / 9.0;
+    return ((kelvin_t) (d_to_i64(round(((double) (fahrenheit)) * scaleFactor - 32.0 * scaleFactor + 273.15))));
 }
 
 /**
@@ -16151,7 +14502,8 @@ kelvin_t degF_t_to_K_t(fahrenheit_t fahrenheit)
  */
 kelvin_u degF_t_to_K_u(fahrenheit_t fahrenheit)
 {
-    return ((kelvin_u) (MAX(((double) (0)), MIN(((double) (UINT_MAX)), (round((((double) (fahrenheit)) - 32.0) * (5.0 / 9.0) + 273.15))))));
+    const double scaleFactor = 5.0 / 9.0;
+    return ((kelvin_u) (d_to_u64(round(((double) (fahrenheit)) * scaleFactor - 32.0 * scaleFactor + 273.15))));
 }
 
 /**
@@ -16187,19 +14539,11 @@ uint8_t degF_t_to_u8(fahrenheit_t fahrenheit)
 }
 
 /**
- * Convert fahrenheit_t to unsigned int.
- */
-unsigned int degF_t_to_u(fahrenheit_t fahrenheit)
-{
-    return ((unsigned int) (MAX(((fahrenheit_t) (0)), fahrenheit)));
-}
-
-/**
  * Convert fahrenheit_u to celsius_d.
  */
 celsius_d degF_u_to_degC_d(fahrenheit_u fahrenheit)
 {
-    return ((celsius_d) (MAX(((double) (-DBL_MAX)), MIN(((double) (DBL_MAX)), (((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0))))));
+    return ((celsius_d) (((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0)));
 }
 
 /**
@@ -16207,7 +14551,7 @@ celsius_d degF_u_to_degC_d(fahrenheit_u fahrenheit)
  */
 celsius_f degF_u_to_degC_f(fahrenheit_u fahrenheit)
 {
-    return ((celsius_f) (MAX(((double) (-FLT_MAX)), MIN(((double) (FLT_MAX)), (((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0))))));
+    return ((celsius_f) (d_to_f(((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0))));
 }
 
 /**
@@ -16215,7 +14559,7 @@ celsius_f degF_u_to_degC_f(fahrenheit_u fahrenheit)
  */
 celsius_t degF_u_to_degC_t(fahrenheit_u fahrenheit)
 {
-    return ((celsius_t) (MAX(((double) (INT_MIN)), MIN(((double) (INT_MAX)), (round(((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0)))))));
+    return ((celsius_t) (d_to_i64(round(((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0)))));
 }
 
 /**
@@ -16223,7 +14567,7 @@ celsius_t degF_u_to_degC_t(fahrenheit_u fahrenheit)
  */
 celsius_u degF_u_to_degC_u(fahrenheit_u fahrenheit)
 {
-    return ((celsius_u) (MAX(((double) (0)), MIN(((double) (UINT_MAX)), (round(((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0)))))));
+    return ((celsius_u) (d_to_u64(round(((double) (fahrenheit)) * (5.0 / 9.0) - 32.0 * (5.0 / 9.0)))));
 }
 
 /**
@@ -16255,7 +14599,7 @@ fahrenheit_f degF_u_to_degF_f(fahrenheit_u fahrenheit)
  */
 fahrenheit_t degF_u_to_degF_t(fahrenheit_u fahrenheit)
 {
-    return ((fahrenheit_t) ((fahrenheit) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : fahrenheit));
+    return ((fahrenheit_t) ((fahrenheit) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : fahrenheit));
 }
 
 /**
@@ -16264,14 +14608,6 @@ fahrenheit_t degF_u_to_degF_t(fahrenheit_u fahrenheit)
 float degF_u_to_f(fahrenheit_u fahrenheit)
 {
     return ((float) (fahrenheit));
-}
-
-/**
- * Convert fahrenheit_u to int.
- */
-int degF_u_to_i(fahrenheit_u fahrenheit)
-{
-    return ((int) (MIN(((fahrenheit_u) (INT_MAX)), fahrenheit)));
 }
 
 /**
@@ -16295,7 +14631,7 @@ int32_t degF_u_to_i32(fahrenheit_u fahrenheit)
  */
 int64_t degF_u_to_i64(fahrenheit_u fahrenheit)
 {
-    return ((int64_t) (fahrenheit));
+    return ((int64_t) (MIN(((fahrenheit_u) (9223372036854775807)), fahrenheit)));
 }
 
 /**
@@ -16311,7 +14647,8 @@ int8_t degF_u_to_i8(fahrenheit_u fahrenheit)
  */
 kelvin_d degF_u_to_K_d(fahrenheit_u fahrenheit)
 {
-    return ((kelvin_d) (MAX(((double) (-DBL_MAX)), MIN(((double) (DBL_MAX)), ((((double) (fahrenheit)) - 32.0) * (5.0 / 9.0) + 273.15)))));
+    const double scaleFactor = 5.0 / 9.0;
+    return ((kelvin_d) (((double) (fahrenheit)) * scaleFactor - 32.0 * scaleFactor + 273.15));
 }
 
 /**
@@ -16319,7 +14656,8 @@ kelvin_d degF_u_to_K_d(fahrenheit_u fahrenheit)
  */
 kelvin_f degF_u_to_K_f(fahrenheit_u fahrenheit)
 {
-    return ((kelvin_f) (MAX(((double) (-FLT_MAX)), MIN(((double) (FLT_MAX)), ((((double) (fahrenheit)) - 32.0) * (5.0 / 9.0) + 273.15)))));
+    const double scaleFactor = 5.0 / 9.0;
+    return ((kelvin_f) (d_to_f(((double) (fahrenheit)) * scaleFactor - 32.0 * scaleFactor + 273.15)));
 }
 
 /**
@@ -16327,7 +14665,8 @@ kelvin_f degF_u_to_K_f(fahrenheit_u fahrenheit)
  */
 kelvin_t degF_u_to_K_t(fahrenheit_u fahrenheit)
 {
-    return ((kelvin_t) (MAX(((double) (INT_MIN)), MIN(((double) (INT_MAX)), (round((((double) (fahrenheit)) - 32.0) * (5.0 / 9.0) + 273.15))))));
+    const double scaleFactor = 5.0 / 9.0;
+    return ((kelvin_t) (d_to_i64(round(((double) (fahrenheit)) * scaleFactor - 32.0 * scaleFactor + 273.15))));
 }
 
 /**
@@ -16335,7 +14674,8 @@ kelvin_t degF_u_to_K_t(fahrenheit_u fahrenheit)
  */
 kelvin_u degF_u_to_K_u(fahrenheit_u fahrenheit)
 {
-    return ((kelvin_u) (MAX(((double) (0)), MIN(((double) (UINT_MAX)), (round((((double) (fahrenheit)) - 32.0) * (5.0 / 9.0) + 273.15))))));
+    const double scaleFactor = 5.0 / 9.0;
+    return ((kelvin_u) (d_to_u64(round(((double) (fahrenheit)) * scaleFactor - 32.0 * scaleFactor + 273.15))));
 }
 
 /**
@@ -16371,14 +14711,6 @@ uint8_t degF_u_to_u8(fahrenheit_u fahrenheit)
 }
 
 /**
- * Convert fahrenheit_u to unsigned int.
- */
-unsigned int degF_u_to_u(fahrenheit_u fahrenheit)
-{
-    return ((unsigned int) (fahrenheit));
-}
-
-/**
  * Convert float to celsius_d.
  */
 celsius_d f_to_degC_d(float celsius)
@@ -16399,7 +14731,7 @@ celsius_f f_to_degC_f(float celsius)
  */
 celsius_t f_to_degC_t(float celsius)
 {
-    return f_to_i(celsius);
+    return f_to_i64(celsius);
 }
 
 /**
@@ -16407,7 +14739,7 @@ celsius_t f_to_degC_t(float celsius)
  */
 celsius_u f_to_degC_u(float celsius)
 {
-    return f_to_u(celsius);
+    return f_to_u64(celsius);
 }
 
 /**
@@ -16431,7 +14763,7 @@ fahrenheit_f f_to_degF_f(float fahrenheit)
  */
 fahrenheit_t f_to_degF_t(float fahrenheit)
 {
-    return f_to_i(fahrenheit);
+    return f_to_i64(fahrenheit);
 }
 
 /**
@@ -16439,7 +14771,7 @@ fahrenheit_t f_to_degF_t(float fahrenheit)
  */
 fahrenheit_u f_to_degF_u(float fahrenheit)
 {
-    return f_to_u(fahrenheit);
+    return f_to_u64(fahrenheit);
 }
 
 /**
@@ -16463,7 +14795,7 @@ kelvin_f f_to_K_f(float kelvin)
  */
 kelvin_t f_to_K_t(float kelvin)
 {
-    return f_to_i(kelvin);
+    return f_to_i64(kelvin);
 }
 
 /**
@@ -16471,7 +14803,7 @@ kelvin_t f_to_K_t(float kelvin)
  */
 kelvin_u f_to_K_u(float kelvin)
 {
-    return f_to_u(kelvin);
+    return f_to_u64(kelvin);
 }
 
 /**
@@ -16591,7 +14923,7 @@ celsius_f i32_to_degC_f(int32_t celsius)
  */
 celsius_t i32_to_degC_t(int32_t celsius)
 {
-    return ((celsius_t) (MIN(((int32_t) (INT_MAX)), MAX(((int32_t) (INT_MIN)), celsius))));
+    return ((celsius_t) (celsius));
 }
 
 /**
@@ -16623,7 +14955,7 @@ fahrenheit_f i32_to_degF_f(int32_t fahrenheit)
  */
 fahrenheit_t i32_to_degF_t(int32_t fahrenheit)
 {
-    return ((fahrenheit_t) (MIN(((int32_t) (INT_MAX)), MAX(((int32_t) (INT_MIN)), fahrenheit))));
+    return ((fahrenheit_t) (fahrenheit));
 }
 
 /**
@@ -16655,7 +14987,7 @@ kelvin_f i32_to_K_f(int32_t kelvin)
  */
 kelvin_t i32_to_K_t(int32_t kelvin)
 {
-    return ((kelvin_t) (MIN(((int32_t) (INT_MAX)), MAX(((int32_t) (INT_MIN)), kelvin))));
+    return ((kelvin_t) (kelvin));
 }
 
 /**
@@ -16687,7 +15019,7 @@ celsius_f i64_to_degC_f(int64_t celsius)
  */
 celsius_t i64_to_degC_t(int64_t celsius)
 {
-    return ((celsius_t) (MIN(((int64_t) (INT_MAX)), MAX(((int64_t) (INT_MIN)), celsius))));
+    return ((celsius_t) (celsius));
 }
 
 /**
@@ -16719,7 +15051,7 @@ fahrenheit_f i64_to_degF_f(int64_t fahrenheit)
  */
 fahrenheit_t i64_to_degF_t(int64_t fahrenheit)
 {
-    return ((fahrenheit_t) (MIN(((int64_t) (INT_MAX)), MAX(((int64_t) (INT_MIN)), fahrenheit))));
+    return ((fahrenheit_t) (fahrenheit));
 }
 
 /**
@@ -16751,7 +15083,7 @@ kelvin_f i64_to_K_f(int64_t kelvin)
  */
 kelvin_t i64_to_K_t(int64_t kelvin)
 {
-    return ((kelvin_t) (MIN(((int64_t) (INT_MAX)), MAX(((int64_t) (INT_MIN)), kelvin))));
+    return ((kelvin_t) (kelvin));
 }
 
 /**
@@ -16859,102 +15191,6 @@ kelvin_u i8_to_K_u(int8_t kelvin)
 }
 
 /**
- * Convert int to celsius_d.
- */
-celsius_d i_to_degC_d(int celsius)
-{
-    return ((celsius_d) (celsius));
-}
-
-/**
- * Convert int to celsius_f.
- */
-celsius_f i_to_degC_f(int celsius)
-{
-    return ((celsius_f) (celsius));
-}
-
-/**
- * Convert int to celsius_t.
- */
-celsius_t i_to_degC_t(int celsius)
-{
-    return ((celsius_t) (celsius));
-}
-
-/**
- * Convert int to celsius_u.
- */
-celsius_u i_to_degC_u(int celsius)
-{
-    return ((celsius_u) (MAX(((int) (0)), celsius)));
-}
-
-/**
- * Convert int to fahrenheit_d.
- */
-fahrenheit_d i_to_degF_d(int fahrenheit)
-{
-    return ((fahrenheit_d) (fahrenheit));
-}
-
-/**
- * Convert int to fahrenheit_f.
- */
-fahrenheit_f i_to_degF_f(int fahrenheit)
-{
-    return ((fahrenheit_f) (fahrenheit));
-}
-
-/**
- * Convert int to fahrenheit_t.
- */
-fahrenheit_t i_to_degF_t(int fahrenheit)
-{
-    return ((fahrenheit_t) (fahrenheit));
-}
-
-/**
- * Convert int to fahrenheit_u.
- */
-fahrenheit_u i_to_degF_u(int fahrenheit)
-{
-    return ((fahrenheit_u) (MAX(((int) (0)), fahrenheit)));
-}
-
-/**
- * Convert int to kelvin_d.
- */
-kelvin_d i_to_K_d(int kelvin)
-{
-    return ((kelvin_d) (kelvin));
-}
-
-/**
- * Convert int to kelvin_f.
- */
-kelvin_f i_to_K_f(int kelvin)
-{
-    return ((kelvin_f) (kelvin));
-}
-
-/**
- * Convert int to kelvin_t.
- */
-kelvin_t i_to_K_t(int kelvin)
-{
-    return ((kelvin_t) (kelvin));
-}
-
-/**
- * Convert int to kelvin_u.
- */
-kelvin_u i_to_K_u(int kelvin)
-{
-    return ((kelvin_u) (MAX(((int) (0)), kelvin)));
-}
-
-/**
  * Convert kelvin_d to celsius_d.
  */
 celsius_d K_d_to_degC_d(kelvin_d kelvin)
@@ -16985,12 +15221,12 @@ celsius_f K_d_to_degC_f(kelvin_d kelvin)
  */
 celsius_t K_d_to_degC_t(kelvin_d kelvin)
 {
-    const kelvin_d upperLimit = ((kelvin_d) (INT_MAX));
-    const kelvin_d lowerLimit = ((kelvin_d) (INT_MIN));
+    const kelvin_d upperLimit = ((kelvin_d) (9223372036854775807));
+    const kelvin_d lowerLimit = ((kelvin_d) (-9223372036854775807 - 1));
     if (kelvin < (lowerLimit + 273.15)) {
-        return ((celsius_t) (INT_MIN));
+        return ((celsius_t) (-9223372036854775807 - 1));
     } else if (kelvin > (upperLimit + 273.15)) {
-        return ((celsius_t) (INT_MAX));
+        return ((celsius_t) (9223372036854775807));
     }
     return ((celsius_t) (round(kelvin - 273.15)));
 }
@@ -17000,12 +15236,12 @@ celsius_t K_d_to_degC_t(kelvin_d kelvin)
  */
 celsius_u K_d_to_degC_u(kelvin_d kelvin)
 {
-    const kelvin_d upperLimit = ((kelvin_d) (UINT_MAX));
+    const kelvin_d upperLimit = ((kelvin_d) (18446744073709551615U));
     const kelvin_d lowerLimit = ((kelvin_d) (0));
     if (kelvin < (lowerLimit + 273.15)) {
         return ((celsius_u) (0));
     } else if (kelvin > (upperLimit + 273.15)) {
-        return ((celsius_u) (UINT_MAX));
+        return ((celsius_u) (18446744073709551615U));
     }
     return ((celsius_u) (round(kelvin - 273.15)));
 }
@@ -17057,14 +15293,14 @@ fahrenheit_f K_d_to_degF_f(kelvin_d kelvin)
  */
 fahrenheit_t K_d_to_degF_t(kelvin_d kelvin)
 {
-    const double maxValue = (((double) (INT_MAX)) - 32.0) / 1.8 + 273.15;
-    const double minValue = ((double) (INT_MIN)) / 1.8 - 32.0 / 1.8 + 273.15;
+    const double maxValue = (((double) (9223372036854775807)) - 32.0) / 1.8 + 273.15;
+    const double minValue = ((double) (-9223372036854775807 - 1)) / 1.8 - 32.0 / 1.8 + 273.15;
     const double value = ((double) (kelvin));
     if (value > maxValue) {
-        return INT_MAX;
+        return 9223372036854775807;
     }
     if (value < minValue) {
-        return INT_MIN;
+        return -9223372036854775807 - 1;
     }
     return ((fahrenheit_t) (round((value - 273.15) * 1.8 + 32.0)));
 }
@@ -17074,11 +15310,11 @@ fahrenheit_t K_d_to_degF_t(kelvin_d kelvin)
  */
 fahrenheit_u K_d_to_degF_u(kelvin_d kelvin)
 {
-    const double maxValue = (((double) (UINT_MAX)) - 32.0) / 1.8 + 273.15;
+    const double maxValue = (((double) (18446744073709551615U)) - 32.0) / 1.8 + 273.15;
     const double minValue = ((double) (0)) / 1.8 - 32.0 / 1.8 + 273.15;
     const double value = ((double) (kelvin));
     if (value > maxValue) {
-        return UINT_MAX;
+        return 18446744073709551615U;
     }
     if (value < minValue) {
         return 0;
@@ -17092,14 +15328,6 @@ fahrenheit_u K_d_to_degF_u(kelvin_d kelvin)
 float K_d_to_f(kelvin_d kelvin)
 {
     return d_to_f(((double) (kelvin)));
-}
-
-/**
- * Convert kelvin_d to int.
- */
-int K_d_to_i(kelvin_d kelvin)
-{
-    return d_to_i(((double) (kelvin)));
 }
 
 /**
@@ -17147,7 +15375,7 @@ kelvin_f K_d_to_K_f(kelvin_d kelvin)
  */
 kelvin_t K_d_to_K_t(kelvin_d kelvin)
 {
-    return ((kelvin_t) (d_to_i((double) (kelvin))));
+    return ((kelvin_t) (d_to_i64((double) (kelvin))));
 }
 
 /**
@@ -17155,7 +15383,7 @@ kelvin_t K_d_to_K_t(kelvin_d kelvin)
  */
 kelvin_u K_d_to_K_u(kelvin_d kelvin)
 {
-    return ((kelvin_u) (d_to_u((double) (kelvin))));
+    return ((kelvin_u) (d_to_u64((double) (kelvin))));
 }
 
 /**
@@ -17191,14 +15419,6 @@ uint8_t K_d_to_u8(kelvin_d kelvin)
 }
 
 /**
- * Convert kelvin_d to unsigned int.
- */
-unsigned int K_d_to_u(kelvin_d kelvin)
-{
-    return d_to_u(((double) (kelvin)));
-}
-
-/**
  * Convert kelvin_f to celsius_d.
  */
 celsius_d K_f_to_degC_d(kelvin_f kelvin)
@@ -17222,12 +15442,12 @@ celsius_f K_f_to_degC_f(kelvin_f kelvin)
  */
 celsius_t K_f_to_degC_t(kelvin_f kelvin)
 {
-    const kelvin_f upperLimit = ((kelvin_f) (INT_MAX));
-    const kelvin_f lowerLimit = ((kelvin_f) (INT_MIN));
+    const kelvin_f upperLimit = ((kelvin_f) (9223372036854775807));
+    const kelvin_f lowerLimit = ((kelvin_f) (-9223372036854775807 - 1));
     if (kelvin < (lowerLimit + 273.15f)) {
-        return ((celsius_t) (INT_MIN));
+        return ((celsius_t) (-9223372036854775807 - 1));
     } else if (kelvin > (upperLimit + 273.15f)) {
-        return ((celsius_t) (INT_MAX));
+        return ((celsius_t) (9223372036854775807));
     }
     return ((celsius_t) (roundf(kelvin - 273.15f)));
 }
@@ -17237,12 +15457,12 @@ celsius_t K_f_to_degC_t(kelvin_f kelvin)
  */
 celsius_u K_f_to_degC_u(kelvin_f kelvin)
 {
-    const kelvin_f upperLimit = ((kelvin_f) (UINT_MAX));
+    const kelvin_f upperLimit = ((kelvin_f) (18446744073709551615U));
     const kelvin_f lowerLimit = ((kelvin_f) (0));
     if (kelvin < (lowerLimit + 273.15f)) {
         return ((celsius_u) (0));
     } else if (kelvin > (upperLimit + 273.15f)) {
-        return ((celsius_u) (UINT_MAX));
+        return ((celsius_u) (18446744073709551615U));
     }
     return ((celsius_u) (roundf(kelvin - 273.15f)));
 }
@@ -17294,14 +15514,14 @@ fahrenheit_f K_f_to_degF_f(kelvin_f kelvin)
  */
 fahrenheit_t K_f_to_degF_t(kelvin_f kelvin)
 {
-    const double maxValue = (((double) (INT_MAX)) - 32.0) / 1.8 + 273.15;
-    const double minValue = ((double) (INT_MIN)) / 1.8 - 32.0 / 1.8 + 273.15;
+    const double maxValue = (((double) (9223372036854775807)) - 32.0) / 1.8 + 273.15;
+    const double minValue = ((double) (-9223372036854775807 - 1)) / 1.8 - 32.0 / 1.8 + 273.15;
     const double value = ((double) (kelvin));
     if (value > maxValue) {
-        return INT_MAX;
+        return 9223372036854775807;
     }
     if (value < minValue) {
-        return INT_MIN;
+        return -9223372036854775807 - 1;
     }
     return ((fahrenheit_t) (round((value - 273.15) * 1.8 + 32.0)));
 }
@@ -17311,11 +15531,11 @@ fahrenheit_t K_f_to_degF_t(kelvin_f kelvin)
  */
 fahrenheit_u K_f_to_degF_u(kelvin_f kelvin)
 {
-    const double maxValue = (((double) (UINT_MAX)) - 32.0) / 1.8 + 273.15;
+    const double maxValue = (((double) (18446744073709551615U)) - 32.0) / 1.8 + 273.15;
     const double minValue = ((double) (0)) / 1.8 - 32.0 / 1.8 + 273.15;
     const double value = ((double) (kelvin));
     if (value > maxValue) {
-        return UINT_MAX;
+        return 18446744073709551615U;
     }
     if (value < minValue) {
         return 0;
@@ -17329,14 +15549,6 @@ fahrenheit_u K_f_to_degF_u(kelvin_f kelvin)
 float K_f_to_f(kelvin_f kelvin)
 {
     return ((float) (kelvin));
-}
-
-/**
- * Convert kelvin_f to int.
- */
-int K_f_to_i(kelvin_f kelvin)
-{
-    return f_to_i(((float) (kelvin)));
 }
 
 /**
@@ -17384,7 +15596,7 @@ kelvin_d K_f_to_K_d(kelvin_f kelvin)
  */
 kelvin_t K_f_to_K_t(kelvin_f kelvin)
 {
-    return ((kelvin_t) (f_to_i((float) (kelvin))));
+    return ((kelvin_t) (f_to_i64((float) (kelvin))));
 }
 
 /**
@@ -17392,7 +15604,7 @@ kelvin_t K_f_to_K_t(kelvin_f kelvin)
  */
 kelvin_u K_f_to_K_u(kelvin_f kelvin)
 {
-    return ((kelvin_u) (f_to_u((float) (kelvin))));
+    return ((kelvin_u) (f_to_u64((float) (kelvin))));
 }
 
 /**
@@ -17428,14 +15640,6 @@ uint8_t K_f_to_u8(kelvin_f kelvin)
 }
 
 /**
- * Convert kelvin_f to unsigned int.
- */
-unsigned int K_f_to_u(kelvin_f kelvin)
-{
-    return f_to_u(((float) (kelvin)));
-}
-
-/**
  * Convert kelvin_t to celsius_d.
  */
 celsius_d K_t_to_degC_d(kelvin_t kelvin)
@@ -17456,8 +15660,8 @@ celsius_f K_t_to_degC_f(kelvin_t kelvin)
  */
 celsius_t K_t_to_degC_t(kelvin_t kelvin)
 {
-    if (kelvin < (INT_MIN + 273)) {
-        return ((celsius_t) (INT_MIN));
+    if (kelvin < (-9223372036854775807 - 1 + 273)) {
+        return ((celsius_t) (-9223372036854775807 - 1));
     }
     return ((celsius_t) (kelvin - 273));
 }
@@ -17520,14 +15724,14 @@ fahrenheit_f K_t_to_degF_f(kelvin_t kelvin)
  */
 fahrenheit_t K_t_to_degF_t(kelvin_t kelvin)
 {
-    const double maxValue = (((double) (INT_MAX)) - 32.0) / 1.8 + 273.15;
-    const double minValue = ((double) (INT_MIN)) / 1.8 - 32.0 / 1.8 + 273.15;
+    const double maxValue = (((double) (9223372036854775807)) - 32.0) / 1.8 + 273.15;
+    const double minValue = ((double) (-9223372036854775807 - 1)) / 1.8 - 32.0 / 1.8 + 273.15;
     const double value = ((double) (kelvin));
     if (value > maxValue) {
-        return INT_MAX;
+        return 9223372036854775807;
     }
     if (value < minValue) {
-        return INT_MIN;
+        return -9223372036854775807 - 1;
     }
     return ((fahrenheit_t) (round((value - 273.15) * 1.8 + 32.0)));
 }
@@ -17537,11 +15741,11 @@ fahrenheit_t K_t_to_degF_t(kelvin_t kelvin)
  */
 fahrenheit_u K_t_to_degF_u(kelvin_t kelvin)
 {
-    const double maxValue = (((double) (UINT_MAX)) - 32.0) / 1.8 + 273.15;
+    const double maxValue = (((double) (18446744073709551615U)) - 32.0) / 1.8 + 273.15;
     const double minValue = ((double) (0)) / 1.8 - 32.0 / 1.8 + 273.15;
     const double value = ((double) (kelvin));
     if (value > maxValue) {
-        return UINT_MAX;
+        return 18446744073709551615U;
     }
     if (value < minValue) {
         return 0;
@@ -17555,14 +15759,6 @@ fahrenheit_u K_t_to_degF_u(kelvin_t kelvin)
 float K_t_to_f(kelvin_t kelvin)
 {
     return ((float) (kelvin));
-}
-
-/**
- * Convert kelvin_t to int.
- */
-int K_t_to_i(kelvin_t kelvin)
-{
-    return ((int) (kelvin));
 }
 
 /**
@@ -17654,14 +15850,6 @@ uint8_t K_t_to_u8(kelvin_t kelvin)
 }
 
 /**
- * Convert kelvin_t to unsigned int.
- */
-unsigned int K_t_to_u(kelvin_t kelvin)
-{
-    return ((unsigned int) (MAX(((kelvin_t) (0)), kelvin)));
-}
-
-/**
  * Convert kelvin_u to celsius_d.
  */
 celsius_d K_u_to_degC_d(kelvin_u kelvin)
@@ -17685,7 +15873,7 @@ celsius_t K_u_to_degC_t(kelvin_u kelvin)
     if (kelvin < (0 + 273)) {
         return (((celsius_t) (kelvin)) - 273);
     }
-    return ((celsius_t) (((kelvin_t) ((kelvin - 273) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : kelvin - 273))));
+    return ((celsius_t) (((kelvin_t) ((kelvin - 273) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : kelvin - 273))));
 }
 
 /**
@@ -17746,14 +15934,14 @@ fahrenheit_f K_u_to_degF_f(kelvin_u kelvin)
  */
 fahrenheit_t K_u_to_degF_t(kelvin_u kelvin)
 {
-    const double maxValue = (((double) (INT_MAX)) - 32.0) / 1.8 + 273.15;
-    const double minValue = ((double) (INT_MIN)) / 1.8 - 32.0 / 1.8 + 273.15;
+    const double maxValue = (((double) (9223372036854775807)) - 32.0) / 1.8 + 273.15;
+    const double minValue = ((double) (-9223372036854775807 - 1)) / 1.8 - 32.0 / 1.8 + 273.15;
     const double value = ((double) (kelvin));
     if (value > maxValue) {
-        return INT_MAX;
+        return 9223372036854775807;
     }
     if (value < minValue) {
-        return INT_MIN;
+        return -9223372036854775807 - 1;
     }
     return ((fahrenheit_t) (round((value - 273.15) * 1.8 + 32.0)));
 }
@@ -17763,11 +15951,11 @@ fahrenheit_t K_u_to_degF_t(kelvin_u kelvin)
  */
 fahrenheit_u K_u_to_degF_u(kelvin_u kelvin)
 {
-    const double maxValue = (((double) (UINT_MAX)) - 32.0) / 1.8 + 273.15;
+    const double maxValue = (((double) (18446744073709551615U)) - 32.0) / 1.8 + 273.15;
     const double minValue = ((double) (0)) / 1.8 - 32.0 / 1.8 + 273.15;
     const double value = ((double) (kelvin));
     if (value > maxValue) {
-        return UINT_MAX;
+        return 18446744073709551615U;
     }
     if (value < minValue) {
         return 0;
@@ -17781,14 +15969,6 @@ fahrenheit_u K_u_to_degF_u(kelvin_u kelvin)
 float K_u_to_f(kelvin_u kelvin)
 {
     return ((float) (kelvin));
-}
-
-/**
- * Convert kelvin_u to int.
- */
-int K_u_to_i(kelvin_u kelvin)
-{
-    return ((int) (MIN(((kelvin_u) (INT_MAX)), kelvin)));
 }
 
 /**
@@ -17812,7 +15992,7 @@ int32_t K_u_to_i32(kelvin_u kelvin)
  */
 int64_t K_u_to_i64(kelvin_u kelvin)
 {
-    return ((int64_t) (kelvin));
+    return ((int64_t) (MIN(((kelvin_u) (9223372036854775807)), kelvin)));
 }
 
 /**
@@ -17844,7 +16024,7 @@ kelvin_f K_u_to_K_f(kelvin_u kelvin)
  */
 kelvin_t K_u_to_K_t(kelvin_u kelvin)
 {
-    return ((kelvin_t) ((kelvin) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : kelvin));
+    return ((kelvin_t) ((kelvin) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : kelvin));
 }
 
 /**
@@ -17877,14 +16057,6 @@ uint64_t K_u_to_u64(kelvin_u kelvin)
 uint8_t K_u_to_u8(kelvin_u kelvin)
 {
     return ((uint8_t) (MIN(((kelvin_u) (255)), MAX(((kelvin_u) (0)), kelvin))));
-}
-
-/**
- * Convert kelvin_u to unsigned int.
- */
-unsigned int K_u_to_u(kelvin_u kelvin)
-{
-    return ((unsigned int) (kelvin));
 }
 
 /**
@@ -18004,7 +16176,7 @@ celsius_f u32_to_degC_f(uint32_t celsius)
  */
 celsius_t u32_to_degC_t(uint32_t celsius)
 {
-    return ((celsius_t) (MIN(((uint32_t) (INT_MAX)), celsius)));
+    return ((celsius_t) (celsius));
 }
 
 /**
@@ -18012,7 +16184,7 @@ celsius_t u32_to_degC_t(uint32_t celsius)
  */
 celsius_u u32_to_degC_u(uint32_t celsius)
 {
-    return ((celsius_u) (MIN(((uint32_t) (UINT_MAX)), MAX(((uint32_t) (0)), celsius))));
+    return ((celsius_u) (celsius));
 }
 
 /**
@@ -18036,7 +16208,7 @@ fahrenheit_f u32_to_degF_f(uint32_t fahrenheit)
  */
 fahrenheit_t u32_to_degF_t(uint32_t fahrenheit)
 {
-    return ((fahrenheit_t) (MIN(((uint32_t) (INT_MAX)), fahrenheit)));
+    return ((fahrenheit_t) (fahrenheit));
 }
 
 /**
@@ -18044,7 +16216,7 @@ fahrenheit_t u32_to_degF_t(uint32_t fahrenheit)
  */
 fahrenheit_u u32_to_degF_u(uint32_t fahrenheit)
 {
-    return ((fahrenheit_u) (MIN(((uint32_t) (UINT_MAX)), MAX(((uint32_t) (0)), fahrenheit))));
+    return ((fahrenheit_u) (fahrenheit));
 }
 
 /**
@@ -18068,7 +16240,7 @@ kelvin_f u32_to_K_f(uint32_t kelvin)
  */
 kelvin_t u32_to_K_t(uint32_t kelvin)
 {
-    return ((kelvin_t) (MIN(((uint32_t) (INT_MAX)), kelvin)));
+    return ((kelvin_t) (kelvin));
 }
 
 /**
@@ -18076,7 +16248,7 @@ kelvin_t u32_to_K_t(uint32_t kelvin)
  */
 kelvin_u u32_to_K_u(uint32_t kelvin)
 {
-    return ((kelvin_u) (MIN(((uint32_t) (UINT_MAX)), MAX(((uint32_t) (0)), kelvin))));
+    return ((kelvin_u) (kelvin));
 }
 
 /**
@@ -18100,7 +16272,7 @@ celsius_f u64_to_degC_f(uint64_t celsius)
  */
 celsius_t u64_to_degC_t(uint64_t celsius)
 {
-    return ((celsius_t) (MIN(((uint64_t) (INT_MAX)), celsius)));
+    return ((celsius_t) (MIN(((uint64_t) (9223372036854775807)), celsius)));
 }
 
 /**
@@ -18108,7 +16280,7 @@ celsius_t u64_to_degC_t(uint64_t celsius)
  */
 celsius_u u64_to_degC_u(uint64_t celsius)
 {
-    return ((celsius_u) (MIN(((uint64_t) (UINT_MAX)), MAX(((uint64_t) (0)), celsius))));
+    return ((celsius_u) (celsius));
 }
 
 /**
@@ -18132,7 +16304,7 @@ fahrenheit_f u64_to_degF_f(uint64_t fahrenheit)
  */
 fahrenheit_t u64_to_degF_t(uint64_t fahrenheit)
 {
-    return ((fahrenheit_t) (MIN(((uint64_t) (INT_MAX)), fahrenheit)));
+    return ((fahrenheit_t) (MIN(((uint64_t) (9223372036854775807)), fahrenheit)));
 }
 
 /**
@@ -18140,7 +16312,7 @@ fahrenheit_t u64_to_degF_t(uint64_t fahrenheit)
  */
 fahrenheit_u u64_to_degF_u(uint64_t fahrenheit)
 {
-    return ((fahrenheit_u) (MIN(((uint64_t) (UINT_MAX)), MAX(((uint64_t) (0)), fahrenheit))));
+    return ((fahrenheit_u) (fahrenheit));
 }
 
 /**
@@ -18164,7 +16336,7 @@ kelvin_f u64_to_K_f(uint64_t kelvin)
  */
 kelvin_t u64_to_K_t(uint64_t kelvin)
 {
-    return ((kelvin_t) (MIN(((uint64_t) (INT_MAX)), kelvin)));
+    return ((kelvin_t) (MIN(((uint64_t) (9223372036854775807)), kelvin)));
 }
 
 /**
@@ -18172,7 +16344,7 @@ kelvin_t u64_to_K_t(uint64_t kelvin)
  */
 kelvin_u u64_to_K_u(uint64_t kelvin)
 {
-    return ((kelvin_u) (MIN(((uint64_t) (UINT_MAX)), MAX(((uint64_t) (0)), kelvin))));
+    return ((kelvin_u) (kelvin));
 }
 
 /**
@@ -18272,131 +16444,35 @@ kelvin_u u8_to_K_u(uint8_t kelvin)
 }
 
 /**
- * Convert unsigned int to celsius_d.
+ * Convert double to gs_d.
  */
-celsius_d u_to_degC_d(unsigned int celsius)
+gs_d d_to_gs_d(double gs)
 {
-    return ((celsius_d) (celsius));
+    return ((gs_d) (gs));
 }
 
 /**
- * Convert unsigned int to celsius_f.
+ * Convert double to gs_f.
  */
-celsius_f u_to_degC_f(unsigned int celsius)
+gs_f d_to_gs_f(double gs)
 {
-    return ((celsius_f) (celsius));
+    return ((gs_f) (d_to_f(gs)));
 }
 
 /**
- * Convert unsigned int to celsius_t.
+ * Convert double to gs_t.
  */
-celsius_t u_to_degC_t(unsigned int celsius)
+gs_t d_to_gs_t(double gs)
 {
-    return ((celsius_t) (MIN(((unsigned int) (INT_MAX)), celsius)));
+    return d_to_i64(gs);
 }
 
 /**
- * Convert unsigned int to celsius_u.
+ * Convert double to gs_u.
  */
-celsius_u u_to_degC_u(unsigned int celsius)
+gs_u d_to_gs_u(double gs)
 {
-    return ((celsius_u) (celsius));
-}
-
-/**
- * Convert unsigned int to fahrenheit_d.
- */
-fahrenheit_d u_to_degF_d(unsigned int fahrenheit)
-{
-    return ((fahrenheit_d) (fahrenheit));
-}
-
-/**
- * Convert unsigned int to fahrenheit_f.
- */
-fahrenheit_f u_to_degF_f(unsigned int fahrenheit)
-{
-    return ((fahrenheit_f) (fahrenheit));
-}
-
-/**
- * Convert unsigned int to fahrenheit_t.
- */
-fahrenheit_t u_to_degF_t(unsigned int fahrenheit)
-{
-    return ((fahrenheit_t) (MIN(((unsigned int) (INT_MAX)), fahrenheit)));
-}
-
-/**
- * Convert unsigned int to fahrenheit_u.
- */
-fahrenheit_u u_to_degF_u(unsigned int fahrenheit)
-{
-    return ((fahrenheit_u) (fahrenheit));
-}
-
-/**
- * Convert unsigned int to kelvin_d.
- */
-kelvin_d u_to_K_d(unsigned int kelvin)
-{
-    return ((kelvin_d) (kelvin));
-}
-
-/**
- * Convert unsigned int to kelvin_f.
- */
-kelvin_f u_to_K_f(unsigned int kelvin)
-{
-    return ((kelvin_f) (kelvin));
-}
-
-/**
- * Convert unsigned int to kelvin_t.
- */
-kelvin_t u_to_K_t(unsigned int kelvin)
-{
-    return ((kelvin_t) (MIN(((unsigned int) (INT_MAX)), kelvin)));
-}
-
-/**
- * Convert unsigned int to kelvin_u.
- */
-kelvin_u u_to_K_u(unsigned int kelvin)
-{
-    return ((kelvin_u) (kelvin));
-}
-
-/**
- * Convert double to g_d.
- */
-g_d d_to_g_d(double g)
-{
-    return ((g_d) (g));
-}
-
-/**
- * Convert double to g_f.
- */
-g_f d_to_g_f(double g)
-{
-    return ((g_f) (d_to_f(g)));
-}
-
-/**
- * Convert double to g_t.
- */
-g_t d_to_g_t(double g)
-{
-    return d_to_i(g);
-}
-
-/**
- * Convert double to g_u.
- */
-g_u d_to_g_u(double g)
-{
-    return d_to_u(g);
+    return d_to_u64(gs);
 }
 
 /**
@@ -18420,7 +16496,7 @@ metresPerSecond2_f d_to_mps2_f(double metresPerSecond2)
  */
 metresPerSecond2_t d_to_mps2_t(double metresPerSecond2)
 {
-    return d_to_i(metresPerSecond2);
+    return d_to_i64(metresPerSecond2);
 }
 
 /**
@@ -18428,39 +16504,39 @@ metresPerSecond2_t d_to_mps2_t(double metresPerSecond2)
  */
 metresPerSecond2_u d_to_mps2_u(double metresPerSecond2)
 {
-    return d_to_u(metresPerSecond2);
+    return d_to_u64(metresPerSecond2);
 }
 
 /**
- * Convert float to g_d.
+ * Convert float to gs_d.
  */
-g_d f_to_g_d(float g)
+gs_d f_to_gs_d(float gs)
 {
-    return ((g_d) (g));
+    return ((gs_d) (gs));
 }
 
 /**
- * Convert float to g_f.
+ * Convert float to gs_f.
  */
-g_f f_to_g_f(float g)
+gs_f f_to_gs_f(float gs)
 {
-    return ((g_f) (g));
+    return ((gs_f) (gs));
 }
 
 /**
- * Convert float to g_t.
+ * Convert float to gs_t.
  */
-g_t f_to_g_t(float g)
+gs_t f_to_gs_t(float gs)
 {
-    return f_to_i(g);
+    return f_to_i64(gs);
 }
 
 /**
- * Convert float to g_u.
+ * Convert float to gs_u.
  */
-g_u f_to_g_u(float g)
+gs_u f_to_gs_u(float gs)
 {
-    return f_to_u(g);
+    return f_to_u64(gs);
 }
 
 /**
@@ -18484,7 +16560,7 @@ metresPerSecond2_f f_to_mps2_f(float metresPerSecond2)
  */
 metresPerSecond2_t f_to_mps2_t(float metresPerSecond2)
 {
-    return f_to_i(metresPerSecond2);
+    return f_to_i64(metresPerSecond2);
 }
 
 /**
@@ -18492,97 +16568,89 @@ metresPerSecond2_t f_to_mps2_t(float metresPerSecond2)
  */
 metresPerSecond2_u f_to_mps2_u(float metresPerSecond2)
 {
-    return f_to_u(metresPerSecond2);
+    return f_to_u64(metresPerSecond2);
 }
 
 /**
- * Convert g_d to double.
+ * Convert gs_d to double.
  */
-double g_d_to_d(g_d g)
+double gs_d_to_d(gs_d gs)
 {
-    return ((double) (g));
+    return ((double) (gs));
 }
 
 /**
- * Convert g_d to float.
+ * Convert gs_d to float.
  */
-float g_d_to_f(g_d g)
+float gs_d_to_f(gs_d gs)
 {
-    return d_to_f(((double) (g)));
+    return d_to_f(((double) (gs)));
 }
 
 /**
- * Convert g_d to g_f.
+ * Convert gs_d to gs_f.
  */
-g_f g_d_to_g_f(g_d g)
+gs_f gs_d_to_gs_f(gs_d gs)
 {
-    return ((g_f) (g < ((double) (FLT_MAX)) ? (g > ((double) (-FLT_MAX)) ? g : -FLT_MAX) : FLT_MAX));
+    return ((gs_f) (gs < ((double) (FLT_MAX)) ? (gs > ((double) (-FLT_MAX)) ? gs : -FLT_MAX) : FLT_MAX));
 }
 
 /**
- * Convert g_d to g_t.
+ * Convert gs_d to gs_t.
  */
-g_t g_d_to_g_t(g_d g)
+gs_t gs_d_to_gs_t(gs_d gs)
 {
-    return ((g_t) (round(((double) (g))) < ((double) (INT_MAX)) ? (round(((double) (g))) > ((double) (INT_MIN)) ? round(((double) (g))) : INT_MIN) : INT_MAX));
+    return ((gs_t) (round(((double) (gs))) < ((double) (9223372036854775807)) ? (round(((double) (gs))) > ((double) (-9223372036854775807 - 1)) ? ((gs_t) (round(((double) (gs))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
- * Convert g_d to g_u.
+ * Convert gs_d to gs_u.
  */
-g_u g_d_to_g_u(g_d g)
+gs_u gs_d_to_gs_u(gs_d gs)
 {
-    return ((g_u) (round(((double) (g))) < ((double) (UINT_MAX)) ? (round(((double) (g))) > ((double) (0)) ? round(((double) (g))) : 0) : UINT_MAX));
+    return ((gs_u) (round(((double) (gs))) < ((double) (18446744073709551615U)) ? (round(((double) (gs))) > ((double) (0)) ? ((gs_u) (round(((double) (gs))))) : 0) : 18446744073709551615U));
 }
 
 /**
- * Convert g_d to int.
+ * Convert gs_d to int16_t.
  */
-int g_d_to_i(g_d g)
+int16_t gs_d_to_i16(gs_d gs)
 {
-    return d_to_i(((double) (g)));
+    return d_to_i16(((double) (gs)));
 }
 
 /**
- * Convert g_d to int16_t.
+ * Convert gs_d to int32_t.
  */
-int16_t g_d_to_i16(g_d g)
+int32_t gs_d_to_i32(gs_d gs)
 {
-    return d_to_i16(((double) (g)));
+    return d_to_i32(((double) (gs)));
 }
 
 /**
- * Convert g_d to int32_t.
+ * Convert gs_d to int64_t.
  */
-int32_t g_d_to_i32(g_d g)
+int64_t gs_d_to_i64(gs_d gs)
 {
-    return d_to_i32(((double) (g)));
+    return d_to_i64(((double) (gs)));
 }
 
 /**
- * Convert g_d to int64_t.
+ * Convert gs_d to int8_t.
  */
-int64_t g_d_to_i64(g_d g)
+int8_t gs_d_to_i8(gs_d gs)
 {
-    return d_to_i64(((double) (g)));
+    return d_to_i8(((double) (gs)));
 }
 
 /**
- * Convert g_d to int8_t.
+ * Convert gs_d to metresPerSecond2_d.
  */
-int8_t g_d_to_i8(g_d g)
-{
-    return d_to_i8(((double) (g)));
-}
-
-/**
- * Convert g_d to metresPerSecond2_d.
- */
-metresPerSecond2_d g_d_to_mps2_d(g_d g)
+metresPerSecond2_d gs_d_to_mps2_d(gs_d gs)
 {
     const double maxValue = ((double) (DBL_MAX)) / 9.807;
     const double minValue = ((double) (-DBL_MAX)) / 9.807;
-    const double value = ((double) (g));
+    const double value = ((double) (gs));
     if (value > maxValue) {
         return DBL_MAX;
     }
@@ -18593,13 +16661,13 @@ metresPerSecond2_d g_d_to_mps2_d(g_d g)
 }
 
 /**
- * Convert g_d to metresPerSecond2_f.
+ * Convert gs_d to metresPerSecond2_f.
  */
-metresPerSecond2_f g_d_to_mps2_f(g_d g)
+metresPerSecond2_f gs_d_to_mps2_f(gs_d gs)
 {
     const double maxValue = ((double) (FLT_MAX)) / 9.807;
     const double minValue = ((double) (-FLT_MAX)) / 9.807;
-    const double value = ((double) (g));
+    const double value = ((double) (gs));
     if (value > maxValue) {
         return FLT_MAX;
     }
@@ -18610,32 +16678,32 @@ metresPerSecond2_f g_d_to_mps2_f(g_d g)
 }
 
 /**
- * Convert g_d to metresPerSecond2_t.
+ * Convert gs_d to metresPerSecond2_t.
  */
-metresPerSecond2_t g_d_to_mps2_t(g_d g)
+metresPerSecond2_t gs_d_to_mps2_t(gs_d gs)
 {
-    const double maxValue = ((double) (INT_MAX)) / 9.807;
-    const double minValue = ((double) (INT_MIN)) / 9.807;
-    const double value = ((double) (g));
+    const double maxValue = ((double) (9223372036854775807)) / 9.807;
+    const double minValue = ((double) (-9223372036854775807 - 1)) / 9.807;
+    const double value = ((double) (gs));
     if (value > maxValue) {
-        return INT_MAX;
+        return 9223372036854775807;
     }
     if (value < minValue) {
-        return INT_MIN;
+        return -9223372036854775807 - 1;
     }
     return ((metresPerSecond2_t) (round(value * 9.807)));
 }
 
 /**
- * Convert g_d to metresPerSecond2_u.
+ * Convert gs_d to metresPerSecond2_u.
  */
-metresPerSecond2_u g_d_to_mps2_u(g_d g)
+metresPerSecond2_u gs_d_to_mps2_u(gs_d gs)
 {
-    const double maxValue = ((double) (UINT_MAX)) / 9.807;
+    const double maxValue = ((double) (18446744073709551615U)) / 9.807;
     const double minValue = ((double) (0)) / 9.807;
-    const double value = ((double) (g));
+    const double value = ((double) (gs));
     if (value > maxValue) {
-        return UINT_MAX;
+        return 18446744073709551615U;
     }
     if (value < minValue) {
         return 0;
@@ -18644,141 +16712,125 @@ metresPerSecond2_u g_d_to_mps2_u(g_d g)
 }
 
 /**
- * Convert g_d to uint16_t.
+ * Convert gs_d to uint16_t.
  */
-uint16_t g_d_to_u16(g_d g)
+uint16_t gs_d_to_u16(gs_d gs)
 {
-    return d_to_u16(((double) (g)));
+    return d_to_u16(((double) (gs)));
 }
 
 /**
- * Convert g_d to uint32_t.
+ * Convert gs_d to uint32_t.
  */
-uint32_t g_d_to_u32(g_d g)
+uint32_t gs_d_to_u32(gs_d gs)
 {
-    return d_to_u32(((double) (g)));
+    return d_to_u32(((double) (gs)));
 }
 
 /**
- * Convert g_d to uint64_t.
+ * Convert gs_d to uint64_t.
  */
-uint64_t g_d_to_u64(g_d g)
+uint64_t gs_d_to_u64(gs_d gs)
 {
-    return d_to_u64(((double) (g)));
+    return d_to_u64(((double) (gs)));
 }
 
 /**
- * Convert g_d to uint8_t.
+ * Convert gs_d to uint8_t.
  */
-uint8_t g_d_to_u8(g_d g)
+uint8_t gs_d_to_u8(gs_d gs)
 {
-    return d_to_u8(((double) (g)));
+    return d_to_u8(((double) (gs)));
 }
 
 /**
- * Convert g_d to unsigned int.
+ * Convert gs_f to double.
  */
-unsigned int g_d_to_u(g_d g)
+double gs_f_to_d(gs_f gs)
 {
-    return d_to_u(((double) (g)));
+    return ((double) (gs));
 }
 
 /**
- * Convert g_f to double.
+ * Convert gs_f to float.
  */
-double g_f_to_d(g_f g)
+float gs_f_to_f(gs_f gs)
 {
-    return ((double) (g));
+    return ((float) (gs));
 }
 
 /**
- * Convert g_f to float.
+ * Convert gs_f to gs_d.
  */
-float g_f_to_f(g_f g)
+gs_d gs_f_to_gs_d(gs_f gs)
 {
-    return ((float) (g));
+    return ((gs_d) (gs));
 }
 
 /**
- * Convert g_f to g_d.
+ * Convert gs_f to gs_t.
  */
-g_d g_f_to_g_d(g_f g)
+gs_t gs_f_to_gs_t(gs_f gs)
 {
-    return ((g_d) (g));
+    return ((gs_t) (round(((double) (gs))) < ((double) (9223372036854775807)) ? (round(((double) (gs))) > ((double) (-9223372036854775807 - 1)) ? ((gs_t) (round(((double) (gs))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
- * Convert g_f to g_t.
+ * Convert gs_f to gs_u.
  */
-g_t g_f_to_g_t(g_f g)
+gs_u gs_f_to_gs_u(gs_f gs)
 {
-    return ((g_t) (round(((double) (g))) < ((double) (INT_MAX)) ? (round(((double) (g))) > ((double) (INT_MIN)) ? round(((double) (g))) : INT_MIN) : INT_MAX));
+    return ((gs_u) (round(((double) (gs))) < ((double) (18446744073709551615U)) ? (round(((double) (gs))) > ((double) (0)) ? ((gs_u) (round(((double) (gs))))) : 0) : 18446744073709551615U));
 }
 
 /**
- * Convert g_f to g_u.
+ * Convert gs_f to int16_t.
  */
-g_u g_f_to_g_u(g_f g)
+int16_t gs_f_to_i16(gs_f gs)
 {
-    return ((g_u) (round(((double) (g))) < ((double) (UINT_MAX)) ? (round(((double) (g))) > ((double) (0)) ? round(((double) (g))) : 0) : UINT_MAX));
+    return f_to_i16(((float) (gs)));
 }
 
 /**
- * Convert g_f to int.
+ * Convert gs_f to int32_t.
  */
-int g_f_to_i(g_f g)
+int32_t gs_f_to_i32(gs_f gs)
 {
-    return f_to_i(((float) (g)));
+    return f_to_i32(((float) (gs)));
 }
 
 /**
- * Convert g_f to int16_t.
+ * Convert gs_f to int64_t.
  */
-int16_t g_f_to_i16(g_f g)
+int64_t gs_f_to_i64(gs_f gs)
 {
-    return f_to_i16(((float) (g)));
+    return f_to_i64(((float) (gs)));
 }
 
 /**
- * Convert g_f to int32_t.
+ * Convert gs_f to int8_t.
  */
-int32_t g_f_to_i32(g_f g)
+int8_t gs_f_to_i8(gs_f gs)
 {
-    return f_to_i32(((float) (g)));
+    return f_to_i8(((float) (gs)));
 }
 
 /**
- * Convert g_f to int64_t.
+ * Convert gs_f to metresPerSecond2_d.
  */
-int64_t g_f_to_i64(g_f g)
+metresPerSecond2_d gs_f_to_mps2_d(gs_f gs)
 {
-    return f_to_i64(((float) (g)));
+    return ((metresPerSecond2_d) (((double) (gs)) * 9.807));
 }
 
 /**
- * Convert g_f to int8_t.
+ * Convert gs_f to metresPerSecond2_f.
  */
-int8_t g_f_to_i8(g_f g)
-{
-    return f_to_i8(((float) (g)));
-}
-
-/**
- * Convert g_f to metresPerSecond2_d.
- */
-metresPerSecond2_d g_f_to_mps2_d(g_f g)
-{
-    return ((metresPerSecond2_d) (((double) (g)) * 9.807));
-}
-
-/**
- * Convert g_f to metresPerSecond2_f.
- */
-metresPerSecond2_f g_f_to_mps2_f(g_f g)
+metresPerSecond2_f gs_f_to_mps2_f(gs_f gs)
 {
     const double maxValue = ((double) (FLT_MAX)) / 9.807;
     const double minValue = ((double) (-FLT_MAX)) / 9.807;
-    const double value = ((double) (g));
+    const double value = ((double) (gs));
     if (value > maxValue) {
         return FLT_MAX;
     }
@@ -18789,32 +16841,32 @@ metresPerSecond2_f g_f_to_mps2_f(g_f g)
 }
 
 /**
- * Convert g_f to metresPerSecond2_t.
+ * Convert gs_f to metresPerSecond2_t.
  */
-metresPerSecond2_t g_f_to_mps2_t(g_f g)
+metresPerSecond2_t gs_f_to_mps2_t(gs_f gs)
 {
-    const double maxValue = ((double) (INT_MAX)) / 9.807;
-    const double minValue = ((double) (INT_MIN)) / 9.807;
-    const double value = ((double) (g));
+    const double maxValue = ((double) (9223372036854775807)) / 9.807;
+    const double minValue = ((double) (-9223372036854775807 - 1)) / 9.807;
+    const double value = ((double) (gs));
     if (value > maxValue) {
-        return INT_MAX;
+        return 9223372036854775807;
     }
     if (value < minValue) {
-        return INT_MIN;
+        return -9223372036854775807 - 1;
     }
     return ((metresPerSecond2_t) (round(value * 9.807)));
 }
 
 /**
- * Convert g_f to metresPerSecond2_u.
+ * Convert gs_f to metresPerSecond2_u.
  */
-metresPerSecond2_u g_f_to_mps2_u(g_f g)
+metresPerSecond2_u gs_f_to_mps2_u(gs_f gs)
 {
-    const double maxValue = ((double) (UINT_MAX)) / 9.807;
+    const double maxValue = ((double) (18446744073709551615U)) / 9.807;
     const double minValue = ((double) (0)) / 9.807;
-    const double value = ((double) (g));
+    const double value = ((double) (gs));
     if (value > maxValue) {
-        return UINT_MAX;
+        return 18446744073709551615U;
     }
     if (value < minValue) {
         return 0;
@@ -18823,141 +16875,125 @@ metresPerSecond2_u g_f_to_mps2_u(g_f g)
 }
 
 /**
- * Convert g_f to uint16_t.
+ * Convert gs_f to uint16_t.
  */
-uint16_t g_f_to_u16(g_f g)
+uint16_t gs_f_to_u16(gs_f gs)
 {
-    return f_to_u16(((float) (g)));
+    return f_to_u16(((float) (gs)));
 }
 
 /**
- * Convert g_f to uint32_t.
+ * Convert gs_f to uint32_t.
  */
-uint32_t g_f_to_u32(g_f g)
+uint32_t gs_f_to_u32(gs_f gs)
 {
-    return f_to_u32(((float) (g)));
+    return f_to_u32(((float) (gs)));
 }
 
 /**
- * Convert g_f to uint64_t.
+ * Convert gs_f to uint64_t.
  */
-uint64_t g_f_to_u64(g_f g)
+uint64_t gs_f_to_u64(gs_f gs)
 {
-    return f_to_u64(((float) (g)));
+    return f_to_u64(((float) (gs)));
 }
 
 /**
- * Convert g_f to uint8_t.
+ * Convert gs_f to uint8_t.
  */
-uint8_t g_f_to_u8(g_f g)
+uint8_t gs_f_to_u8(gs_f gs)
 {
-    return f_to_u8(((float) (g)));
+    return f_to_u8(((float) (gs)));
 }
 
 /**
- * Convert g_f to unsigned int.
+ * Convert gs_t to double.
  */
-unsigned int g_f_to_u(g_f g)
+double gs_t_to_d(gs_t gs)
 {
-    return f_to_u(((float) (g)));
+    return ((double) (gs));
 }
 
 /**
- * Convert g_t to double.
+ * Convert gs_t to float.
  */
-double g_t_to_d(g_t g)
+float gs_t_to_f(gs_t gs)
 {
-    return ((double) (g));
+    return ((float) (gs));
 }
 
 /**
- * Convert g_t to float.
+ * Convert gs_t to gs_d.
  */
-float g_t_to_f(g_t g)
+gs_d gs_t_to_gs_d(gs_t gs)
 {
-    return ((float) (g));
+    return ((gs_d) (gs));
 }
 
 /**
- * Convert g_t to g_d.
+ * Convert gs_t to gs_f.
  */
-g_d g_t_to_g_d(g_t g)
+gs_f gs_t_to_gs_f(gs_t gs)
 {
-    return ((g_d) (g));
+    return ((gs_f) (gs));
 }
 
 /**
- * Convert g_t to g_f.
+ * Convert gs_t to gs_u.
  */
-g_f g_t_to_g_f(g_t g)
+gs_u gs_t_to_gs_u(gs_t gs)
 {
-    return ((g_f) (g));
+    return ((gs_u) ((gs) < 0 ? 0 : gs));
 }
 
 /**
- * Convert g_t to g_u.
+ * Convert gs_t to int16_t.
  */
-g_u g_t_to_g_u(g_t g)
+int16_t gs_t_to_i16(gs_t gs)
 {
-    return ((g_u) ((g) < 0 ? 0 : g));
+    return ((int16_t) (MIN(((gs_t) (32767)), MAX(((gs_t) (-32768)), gs))));
 }
 
 /**
- * Convert g_t to int.
+ * Convert gs_t to int32_t.
  */
-int g_t_to_i(g_t g)
+int32_t gs_t_to_i32(gs_t gs)
 {
-    return ((int) (g));
+    return ((int32_t) (MIN(((gs_t) (2147483647)), MAX(((gs_t) (-2147483648)), gs))));
 }
 
 /**
- * Convert g_t to int16_t.
+ * Convert gs_t to int64_t.
  */
-int16_t g_t_to_i16(g_t g)
+int64_t gs_t_to_i64(gs_t gs)
 {
-    return ((int16_t) (MIN(((g_t) (32767)), MAX(((g_t) (-32768)), g))));
+    return ((int64_t) (gs));
 }
 
 /**
- * Convert g_t to int32_t.
+ * Convert gs_t to int8_t.
  */
-int32_t g_t_to_i32(g_t g)
+int8_t gs_t_to_i8(gs_t gs)
 {
-    return ((int32_t) (MIN(((g_t) (2147483647)), MAX(((g_t) (-2147483648)), g))));
+    return ((int8_t) (MIN(((gs_t) (127)), MAX(((gs_t) (-128)), gs))));
 }
 
 /**
- * Convert g_t to int64_t.
+ * Convert gs_t to metresPerSecond2_d.
  */
-int64_t g_t_to_i64(g_t g)
+metresPerSecond2_d gs_t_to_mps2_d(gs_t gs)
 {
-    return ((int64_t) (g));
+    return ((metresPerSecond2_d) (((double) (gs)) * 9.807));
 }
 
 /**
- * Convert g_t to int8_t.
+ * Convert gs_t to metresPerSecond2_f.
  */
-int8_t g_t_to_i8(g_t g)
-{
-    return ((int8_t) (MIN(((g_t) (127)), MAX(((g_t) (-128)), g))));
-}
-
-/**
- * Convert g_t to metresPerSecond2_d.
- */
-metresPerSecond2_d g_t_to_mps2_d(g_t g)
-{
-    return ((metresPerSecond2_d) (((double) (g)) * 9.807));
-}
-
-/**
- * Convert g_t to metresPerSecond2_f.
- */
-metresPerSecond2_f g_t_to_mps2_f(g_t g)
+metresPerSecond2_f gs_t_to_mps2_f(gs_t gs)
 {
     const double maxValue = ((double) (FLT_MAX)) / 9.807;
     const double minValue = ((double) (-FLT_MAX)) / 9.807;
-    const double value = ((double) (g));
+    const double value = ((double) (gs));
     if (value > maxValue) {
         return FLT_MAX;
     }
@@ -18968,32 +17004,32 @@ metresPerSecond2_f g_t_to_mps2_f(g_t g)
 }
 
 /**
- * Convert g_t to metresPerSecond2_t.
+ * Convert gs_t to metresPerSecond2_t.
  */
-metresPerSecond2_t g_t_to_mps2_t(g_t g)
+metresPerSecond2_t gs_t_to_mps2_t(gs_t gs)
 {
-    const double maxValue = ((double) (INT_MAX)) / 9.807;
-    const double minValue = ((double) (INT_MIN)) / 9.807;
-    const double value = ((double) (g));
+    const double maxValue = ((double) (9223372036854775807)) / 9.807;
+    const double minValue = ((double) (-9223372036854775807 - 1)) / 9.807;
+    const double value = ((double) (gs));
     if (value > maxValue) {
-        return INT_MAX;
+        return 9223372036854775807;
     }
     if (value < minValue) {
-        return INT_MIN;
+        return -9223372036854775807 - 1;
     }
     return ((metresPerSecond2_t) (round(value * 9.807)));
 }
 
 /**
- * Convert g_t to metresPerSecond2_u.
+ * Convert gs_t to metresPerSecond2_u.
  */
-metresPerSecond2_u g_t_to_mps2_u(g_t g)
+metresPerSecond2_u gs_t_to_mps2_u(gs_t gs)
 {
-    const double maxValue = ((double) (UINT_MAX)) / 9.807;
+    const double maxValue = ((double) (18446744073709551615U)) / 9.807;
     const double minValue = ((double) (0)) / 9.807;
-    const double value = ((double) (g));
+    const double value = ((double) (gs));
     if (value > maxValue) {
-        return UINT_MAX;
+        return 18446744073709551615U;
     }
     if (value < minValue) {
         return 0;
@@ -19002,141 +17038,125 @@ metresPerSecond2_u g_t_to_mps2_u(g_t g)
 }
 
 /**
- * Convert g_t to uint16_t.
+ * Convert gs_t to uint16_t.
  */
-uint16_t g_t_to_u16(g_t g)
+uint16_t gs_t_to_u16(gs_t gs)
 {
-    return ((uint16_t) (MAX(((g_t) (0)), g)));
+    return ((uint16_t) (MAX(((gs_t) (0)), gs)));
 }
 
 /**
- * Convert g_t to uint32_t.
+ * Convert gs_t to uint32_t.
  */
-uint32_t g_t_to_u32(g_t g)
+uint32_t gs_t_to_u32(gs_t gs)
 {
-    return ((uint32_t) (MAX(((g_t) (0)), g)));
+    return ((uint32_t) (MAX(((gs_t) (0)), gs)));
 }
 
 /**
- * Convert g_t to uint64_t.
+ * Convert gs_t to uint64_t.
  */
-uint64_t g_t_to_u64(g_t g)
+uint64_t gs_t_to_u64(gs_t gs)
 {
-    return ((uint64_t) (MAX(((g_t) (0)), g)));
+    return ((uint64_t) (MAX(((gs_t) (0)), gs)));
 }
 
 /**
- * Convert g_t to uint8_t.
+ * Convert gs_t to uint8_t.
  */
-uint8_t g_t_to_u8(g_t g)
+uint8_t gs_t_to_u8(gs_t gs)
 {
-    return ((uint8_t) (MAX(((g_t) (0)), g)));
+    return ((uint8_t) (MAX(((gs_t) (0)), gs)));
 }
 
 /**
- * Convert g_t to unsigned int.
+ * Convert gs_u to double.
  */
-unsigned int g_t_to_u(g_t g)
+double gs_u_to_d(gs_u gs)
 {
-    return ((unsigned int) (MAX(((g_t) (0)), g)));
+    return ((double) (gs));
 }
 
 /**
- * Convert g_u to double.
+ * Convert gs_u to float.
  */
-double g_u_to_d(g_u g)
+float gs_u_to_f(gs_u gs)
 {
-    return ((double) (g));
+    return ((float) (gs));
 }
 
 /**
- * Convert g_u to float.
+ * Convert gs_u to gs_d.
  */
-float g_u_to_f(g_u g)
+gs_d gs_u_to_gs_d(gs_u gs)
 {
-    return ((float) (g));
+    return ((gs_d) (gs));
 }
 
 /**
- * Convert g_u to g_d.
+ * Convert gs_u to gs_f.
  */
-g_d g_u_to_g_d(g_u g)
+gs_f gs_u_to_gs_f(gs_u gs)
 {
-    return ((g_d) (g));
+    return ((gs_f) (gs));
 }
 
 /**
- * Convert g_u to g_f.
+ * Convert gs_u to gs_t.
  */
-g_f g_u_to_g_f(g_u g)
+gs_t gs_u_to_gs_t(gs_u gs)
 {
-    return ((g_f) (g));
+    return ((gs_t) ((gs) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : gs));
 }
 
 /**
- * Convert g_u to g_t.
+ * Convert gs_u to int16_t.
  */
-g_t g_u_to_g_t(g_u g)
+int16_t gs_u_to_i16(gs_u gs)
 {
-    return ((g_t) ((g) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : g));
+    return ((int16_t) (MIN(((gs_u) (32767)), gs)));
 }
 
 /**
- * Convert g_u to int.
+ * Convert gs_u to int32_t.
  */
-int g_u_to_i(g_u g)
+int32_t gs_u_to_i32(gs_u gs)
 {
-    return ((int) (MIN(((g_u) (INT_MAX)), g)));
+    return ((int32_t) (MIN(((gs_u) (2147483647)), gs)));
 }
 
 /**
- * Convert g_u to int16_t.
+ * Convert gs_u to int64_t.
  */
-int16_t g_u_to_i16(g_u g)
+int64_t gs_u_to_i64(gs_u gs)
 {
-    return ((int16_t) (MIN(((g_u) (32767)), g)));
+    return ((int64_t) (MIN(((gs_u) (9223372036854775807)), gs)));
 }
 
 /**
- * Convert g_u to int32_t.
+ * Convert gs_u to int8_t.
  */
-int32_t g_u_to_i32(g_u g)
+int8_t gs_u_to_i8(gs_u gs)
 {
-    return ((int32_t) (MIN(((g_u) (2147483647)), g)));
+    return ((int8_t) (MIN(((gs_u) (127)), gs)));
 }
 
 /**
- * Convert g_u to int64_t.
+ * Convert gs_u to metresPerSecond2_d.
  */
-int64_t g_u_to_i64(g_u g)
+metresPerSecond2_d gs_u_to_mps2_d(gs_u gs)
 {
-    return ((int64_t) (g));
+    return ((metresPerSecond2_d) (((double) (gs)) * 9.807));
 }
 
 /**
- * Convert g_u to int8_t.
+ * Convert gs_u to metresPerSecond2_f.
  */
-int8_t g_u_to_i8(g_u g)
-{
-    return ((int8_t) (MIN(((g_u) (127)), g)));
-}
-
-/**
- * Convert g_u to metresPerSecond2_d.
- */
-metresPerSecond2_d g_u_to_mps2_d(g_u g)
-{
-    return ((metresPerSecond2_d) (((double) (g)) * 9.807));
-}
-
-/**
- * Convert g_u to metresPerSecond2_f.
- */
-metresPerSecond2_f g_u_to_mps2_f(g_u g)
+metresPerSecond2_f gs_u_to_mps2_f(gs_u gs)
 {
     const double maxValue = ((double) (FLT_MAX)) / 9.807;
     const double minValue = ((double) (-FLT_MAX)) / 9.807;
-    const double value = ((double) (g));
+    const double value = ((double) (gs));
     if (value > maxValue) {
         return FLT_MAX;
     }
@@ -19147,32 +17167,32 @@ metresPerSecond2_f g_u_to_mps2_f(g_u g)
 }
 
 /**
- * Convert g_u to metresPerSecond2_t.
+ * Convert gs_u to metresPerSecond2_t.
  */
-metresPerSecond2_t g_u_to_mps2_t(g_u g)
+metresPerSecond2_t gs_u_to_mps2_t(gs_u gs)
 {
-    const double maxValue = ((double) (INT_MAX)) / 9.807;
-    const double minValue = ((double) (INT_MIN)) / 9.807;
-    const double value = ((double) (g));
+    const double maxValue = ((double) (9223372036854775807)) / 9.807;
+    const double minValue = ((double) (-9223372036854775807 - 1)) / 9.807;
+    const double value = ((double) (gs));
     if (value > maxValue) {
-        return INT_MAX;
+        return 9223372036854775807;
     }
     if (value < minValue) {
-        return INT_MIN;
+        return -9223372036854775807 - 1;
     }
     return ((metresPerSecond2_t) (round(value * 9.807)));
 }
 
 /**
- * Convert g_u to metresPerSecond2_u.
+ * Convert gs_u to metresPerSecond2_u.
  */
-metresPerSecond2_u g_u_to_mps2_u(g_u g)
+metresPerSecond2_u gs_u_to_mps2_u(gs_u gs)
 {
-    const double maxValue = ((double) (UINT_MAX)) / 9.807;
+    const double maxValue = ((double) (18446744073709551615U)) / 9.807;
     const double minValue = ((double) (0)) / 9.807;
-    const double value = ((double) (g));
+    const double value = ((double) (gs));
     if (value > maxValue) {
-        return UINT_MAX;
+        return 18446744073709551615U;
     }
     if (value < minValue) {
         return 0;
@@ -19181,75 +17201,67 @@ metresPerSecond2_u g_u_to_mps2_u(g_u g)
 }
 
 /**
- * Convert g_u to uint16_t.
+ * Convert gs_u to uint16_t.
  */
-uint16_t g_u_to_u16(g_u g)
+uint16_t gs_u_to_u16(gs_u gs)
 {
-    return ((uint16_t) (MIN(((g_u) (65535)), MAX(((g_u) (0)), g))));
+    return ((uint16_t) (MIN(((gs_u) (65535)), MAX(((gs_u) (0)), gs))));
 }
 
 /**
- * Convert g_u to uint32_t.
+ * Convert gs_u to uint32_t.
  */
-uint32_t g_u_to_u32(g_u g)
+uint32_t gs_u_to_u32(gs_u gs)
 {
-    return ((uint32_t) (MIN(((g_u) (4294967295U)), MAX(((g_u) (0)), g))));
+    return ((uint32_t) (MIN(((gs_u) (4294967295U)), MAX(((gs_u) (0)), gs))));
 }
 
 /**
- * Convert g_u to uint64_t.
+ * Convert gs_u to uint64_t.
  */
-uint64_t g_u_to_u64(g_u g)
+uint64_t gs_u_to_u64(gs_u gs)
 {
-    return ((uint64_t) (g));
+    return ((uint64_t) (gs));
 }
 
 /**
- * Convert g_u to uint8_t.
+ * Convert gs_u to uint8_t.
  */
-uint8_t g_u_to_u8(g_u g)
+uint8_t gs_u_to_u8(gs_u gs)
 {
-    return ((uint8_t) (MIN(((g_u) (255)), MAX(((g_u) (0)), g))));
+    return ((uint8_t) (MIN(((gs_u) (255)), MAX(((gs_u) (0)), gs))));
 }
 
 /**
- * Convert g_u to unsigned int.
+ * Convert int16_t to gs_d.
  */
-unsigned int g_u_to_u(g_u g)
+gs_d i16_to_gs_d(int16_t gs)
 {
-    return ((unsigned int) (g));
+    return ((gs_d) (gs));
 }
 
 /**
- * Convert int16_t to g_d.
+ * Convert int16_t to gs_f.
  */
-g_d i16_to_g_d(int16_t g)
+gs_f i16_to_gs_f(int16_t gs)
 {
-    return ((g_d) (g));
+    return ((gs_f) (gs));
 }
 
 /**
- * Convert int16_t to g_f.
+ * Convert int16_t to gs_t.
  */
-g_f i16_to_g_f(int16_t g)
+gs_t i16_to_gs_t(int16_t gs)
 {
-    return ((g_f) (g));
+    return ((gs_t) (gs));
 }
 
 /**
- * Convert int16_t to g_t.
+ * Convert int16_t to gs_u.
  */
-g_t i16_to_g_t(int16_t g)
+gs_u i16_to_gs_u(int16_t gs)
 {
-    return ((g_t) (g));
-}
-
-/**
- * Convert int16_t to g_u.
- */
-g_u i16_to_g_u(int16_t g)
-{
-    return ((g_u) (MAX(((int16_t) (0)), g)));
+    return ((gs_u) (MAX(((int16_t) (0)), gs)));
 }
 
 /**
@@ -19285,35 +17297,35 @@ metresPerSecond2_u i16_to_mps2_u(int16_t metresPerSecond2)
 }
 
 /**
- * Convert int32_t to g_d.
+ * Convert int32_t to gs_d.
  */
-g_d i32_to_g_d(int32_t g)
+gs_d i32_to_gs_d(int32_t gs)
 {
-    return ((g_d) (g));
+    return ((gs_d) (gs));
 }
 
 /**
- * Convert int32_t to g_f.
+ * Convert int32_t to gs_f.
  */
-g_f i32_to_g_f(int32_t g)
+gs_f i32_to_gs_f(int32_t gs)
 {
-    return ((g_f) (g));
+    return ((gs_f) (gs));
 }
 
 /**
- * Convert int32_t to g_t.
+ * Convert int32_t to gs_t.
  */
-g_t i32_to_g_t(int32_t g)
+gs_t i32_to_gs_t(int32_t gs)
 {
-    return ((g_t) (MIN(((int32_t) (INT_MAX)), MAX(((int32_t) (INT_MIN)), g))));
+    return ((gs_t) (gs));
 }
 
 /**
- * Convert int32_t to g_u.
+ * Convert int32_t to gs_u.
  */
-g_u i32_to_g_u(int32_t g)
+gs_u i32_to_gs_u(int32_t gs)
 {
-    return ((g_u) (MAX(((int32_t) (0)), g)));
+    return ((gs_u) (MAX(((int32_t) (0)), gs)));
 }
 
 /**
@@ -19337,7 +17349,7 @@ metresPerSecond2_f i32_to_mps2_f(int32_t metresPerSecond2)
  */
 metresPerSecond2_t i32_to_mps2_t(int32_t metresPerSecond2)
 {
-    return ((metresPerSecond2_t) (MIN(((int32_t) (INT_MAX)), MAX(((int32_t) (INT_MIN)), metresPerSecond2))));
+    return ((metresPerSecond2_t) (metresPerSecond2));
 }
 
 /**
@@ -19349,35 +17361,35 @@ metresPerSecond2_u i32_to_mps2_u(int32_t metresPerSecond2)
 }
 
 /**
- * Convert int64_t to g_d.
+ * Convert int64_t to gs_d.
  */
-g_d i64_to_g_d(int64_t g)
+gs_d i64_to_gs_d(int64_t gs)
 {
-    return ((g_d) (g));
+    return ((gs_d) (gs));
 }
 
 /**
- * Convert int64_t to g_f.
+ * Convert int64_t to gs_f.
  */
-g_f i64_to_g_f(int64_t g)
+gs_f i64_to_gs_f(int64_t gs)
 {
-    return ((g_f) (g));
+    return ((gs_f) (gs));
 }
 
 /**
- * Convert int64_t to g_t.
+ * Convert int64_t to gs_t.
  */
-g_t i64_to_g_t(int64_t g)
+gs_t i64_to_gs_t(int64_t gs)
 {
-    return ((g_t) (MIN(((int64_t) (INT_MAX)), MAX(((int64_t) (INT_MIN)), g))));
+    return ((gs_t) (gs));
 }
 
 /**
- * Convert int64_t to g_u.
+ * Convert int64_t to gs_u.
  */
-g_u i64_to_g_u(int64_t g)
+gs_u i64_to_gs_u(int64_t gs)
 {
-    return ((g_u) (MAX(((int64_t) (0)), g)));
+    return ((gs_u) (MAX(((int64_t) (0)), gs)));
 }
 
 /**
@@ -19401,7 +17413,7 @@ metresPerSecond2_f i64_to_mps2_f(int64_t metresPerSecond2)
  */
 metresPerSecond2_t i64_to_mps2_t(int64_t metresPerSecond2)
 {
-    return ((metresPerSecond2_t) (MIN(((int64_t) (INT_MAX)), MAX(((int64_t) (INT_MIN)), metresPerSecond2))));
+    return ((metresPerSecond2_t) (metresPerSecond2));
 }
 
 /**
@@ -19413,35 +17425,35 @@ metresPerSecond2_u i64_to_mps2_u(int64_t metresPerSecond2)
 }
 
 /**
- * Convert int8_t to g_d.
+ * Convert int8_t to gs_d.
  */
-g_d i8_to_g_d(int8_t g)
+gs_d i8_to_gs_d(int8_t gs)
 {
-    return ((g_d) (g));
+    return ((gs_d) (gs));
 }
 
 /**
- * Convert int8_t to g_f.
+ * Convert int8_t to gs_f.
  */
-g_f i8_to_g_f(int8_t g)
+gs_f i8_to_gs_f(int8_t gs)
 {
-    return ((g_f) (g));
+    return ((gs_f) (gs));
 }
 
 /**
- * Convert int8_t to g_t.
+ * Convert int8_t to gs_t.
  */
-g_t i8_to_g_t(int8_t g)
+gs_t i8_to_gs_t(int8_t gs)
 {
-    return ((g_t) (g));
+    return ((gs_t) (gs));
 }
 
 /**
- * Convert int8_t to g_u.
+ * Convert int8_t to gs_u.
  */
-g_u i8_to_g_u(int8_t g)
+gs_u i8_to_gs_u(int8_t gs)
 {
-    return ((g_u) (MAX(((int8_t) (0)), g)));
+    return ((gs_u) (MAX(((int8_t) (0)), gs)));
 }
 
 /**
@@ -19477,70 +17489,6 @@ metresPerSecond2_u i8_to_mps2_u(int8_t metresPerSecond2)
 }
 
 /**
- * Convert int to g_d.
- */
-g_d i_to_g_d(int g)
-{
-    return ((g_d) (g));
-}
-
-/**
- * Convert int to g_f.
- */
-g_f i_to_g_f(int g)
-{
-    return ((g_f) (g));
-}
-
-/**
- * Convert int to g_t.
- */
-g_t i_to_g_t(int g)
-{
-    return ((g_t) (g));
-}
-
-/**
- * Convert int to g_u.
- */
-g_u i_to_g_u(int g)
-{
-    return ((g_u) (MAX(((int) (0)), g)));
-}
-
-/**
- * Convert int to metresPerSecond2_d.
- */
-metresPerSecond2_d i_to_mps2_d(int metresPerSecond2)
-{
-    return ((metresPerSecond2_d) (metresPerSecond2));
-}
-
-/**
- * Convert int to metresPerSecond2_f.
- */
-metresPerSecond2_f i_to_mps2_f(int metresPerSecond2)
-{
-    return ((metresPerSecond2_f) (metresPerSecond2));
-}
-
-/**
- * Convert int to metresPerSecond2_t.
- */
-metresPerSecond2_t i_to_mps2_t(int metresPerSecond2)
-{
-    return ((metresPerSecond2_t) (metresPerSecond2));
-}
-
-/**
- * Convert int to metresPerSecond2_u.
- */
-metresPerSecond2_u i_to_mps2_u(int metresPerSecond2)
-{
-    return ((metresPerSecond2_u) (MAX(((int) (0)), metresPerSecond2)));
-}
-
-/**
  * Convert metresPerSecond2_d to double.
  */
 double mps2_d_to_d(metresPerSecond2_d metresPerSecond2)
@@ -19557,17 +17505,17 @@ float mps2_d_to_f(metresPerSecond2_d metresPerSecond2)
 }
 
 /**
- * Convert metresPerSecond2_d to g_d.
+ * Convert metresPerSecond2_d to gs_d.
  */
-g_d mps2_d_to_g_d(metresPerSecond2_d metresPerSecond2)
+gs_d mps2_d_to_gs_d(metresPerSecond2_d metresPerSecond2)
 {
-    return ((g_d) (((double) (metresPerSecond2)) / 9.807));
+    return ((gs_d) (((double) (metresPerSecond2)) / 9.807));
 }
 
 /**
- * Convert metresPerSecond2_d to g_f.
+ * Convert metresPerSecond2_d to gs_f.
  */
-g_f mps2_d_to_g_f(metresPerSecond2_d metresPerSecond2)
+gs_f mps2_d_to_gs_f(metresPerSecond2_d metresPerSecond2)
 {
     const double maxValue = ((double) (FLT_MAX)) * 9.807;
     const double minValue = ((double) (-FLT_MAX)) * 9.807;
@@ -19578,49 +17526,41 @@ g_f mps2_d_to_g_f(metresPerSecond2_d metresPerSecond2)
     if (value < minValue) {
         return -FLT_MAX;
     }
-    return ((g_f) (value / 9.807));
+    return ((gs_f) (value / 9.807));
 }
 
 /**
- * Convert metresPerSecond2_d to g_t.
+ * Convert metresPerSecond2_d to gs_t.
  */
-g_t mps2_d_to_g_t(metresPerSecond2_d metresPerSecond2)
+gs_t mps2_d_to_gs_t(metresPerSecond2_d metresPerSecond2)
 {
-    const double maxValue = ((double) (INT_MAX)) * 9.807;
-    const double minValue = ((double) (INT_MIN)) * 9.807;
+    const double maxValue = ((double) (9223372036854775807)) * 9.807;
+    const double minValue = ((double) (-9223372036854775807 - 1)) * 9.807;
     const double value = ((double) (metresPerSecond2));
     if (value > maxValue) {
-        return INT_MAX;
+        return 9223372036854775807;
     }
     if (value < minValue) {
-        return INT_MIN;
+        return -9223372036854775807 - 1;
     }
-    return ((g_t) (round(value / 9.807)));
+    return ((gs_t) (round(value / 9.807)));
 }
 
 /**
- * Convert metresPerSecond2_d to g_u.
+ * Convert metresPerSecond2_d to gs_u.
  */
-g_u mps2_d_to_g_u(metresPerSecond2_d metresPerSecond2)
+gs_u mps2_d_to_gs_u(metresPerSecond2_d metresPerSecond2)
 {
-    const double maxValue = ((double) (UINT_MAX)) * 9.807;
+    const double maxValue = ((double) (18446744073709551615U)) * 9.807;
     const double minValue = ((double) (0)) * 9.807;
     const double value = ((double) (metresPerSecond2));
     if (value > maxValue) {
-        return UINT_MAX;
+        return 18446744073709551615U;
     }
     if (value < minValue) {
         return 0;
     }
-    return ((g_u) (round(value / 9.807)));
-}
-
-/**
- * Convert metresPerSecond2_d to int.
- */
-int mps2_d_to_i(metresPerSecond2_d metresPerSecond2)
-{
-    return d_to_i(((double) (metresPerSecond2)));
+    return ((gs_u) (round(value / 9.807)));
 }
 
 /**
@@ -19668,7 +17608,7 @@ metresPerSecond2_f mps2_d_to_mps2_f(metresPerSecond2_d metresPerSecond2)
  */
 metresPerSecond2_t mps2_d_to_mps2_t(metresPerSecond2_d metresPerSecond2)
 {
-    return ((metresPerSecond2_t) (round(((double) (metresPerSecond2))) < ((double) (INT_MAX)) ? (round(((double) (metresPerSecond2))) > ((double) (INT_MIN)) ? round(((double) (metresPerSecond2))) : INT_MIN) : INT_MAX));
+    return ((metresPerSecond2_t) (round(((double) (metresPerSecond2))) < ((double) (9223372036854775807)) ? (round(((double) (metresPerSecond2))) > ((double) (-9223372036854775807 - 1)) ? ((metresPerSecond2_t) (round(((double) (metresPerSecond2))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -19676,7 +17616,7 @@ metresPerSecond2_t mps2_d_to_mps2_t(metresPerSecond2_d metresPerSecond2)
  */
 metresPerSecond2_u mps2_d_to_mps2_u(metresPerSecond2_d metresPerSecond2)
 {
-    return ((metresPerSecond2_u) (round(((double) (metresPerSecond2))) < ((double) (UINT_MAX)) ? (round(((double) (metresPerSecond2))) > ((double) (0)) ? round(((double) (metresPerSecond2))) : 0) : UINT_MAX));
+    return ((metresPerSecond2_u) (round(((double) (metresPerSecond2))) < ((double) (18446744073709551615U)) ? (round(((double) (metresPerSecond2))) > ((double) (0)) ? ((metresPerSecond2_u) (round(((double) (metresPerSecond2))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -19712,14 +17652,6 @@ uint8_t mps2_d_to_u8(metresPerSecond2_d metresPerSecond2)
 }
 
 /**
- * Convert metresPerSecond2_d to unsigned int.
- */
-unsigned int mps2_d_to_u(metresPerSecond2_d metresPerSecond2)
-{
-    return d_to_u(((double) (metresPerSecond2)));
-}
-
-/**
  * Convert metresPerSecond2_f to double.
  */
 double mps2_f_to_d(metresPerSecond2_f metresPerSecond2)
@@ -19736,17 +17668,17 @@ float mps2_f_to_f(metresPerSecond2_f metresPerSecond2)
 }
 
 /**
- * Convert metresPerSecond2_f to g_d.
+ * Convert metresPerSecond2_f to gs_d.
  */
-g_d mps2_f_to_g_d(metresPerSecond2_f metresPerSecond2)
+gs_d mps2_f_to_gs_d(metresPerSecond2_f metresPerSecond2)
 {
-    return ((g_d) (((double) (metresPerSecond2)) / 9.807));
+    return ((gs_d) (((double) (metresPerSecond2)) / 9.807));
 }
 
 /**
- * Convert metresPerSecond2_f to g_f.
+ * Convert metresPerSecond2_f to gs_f.
  */
-g_f mps2_f_to_g_f(metresPerSecond2_f metresPerSecond2)
+gs_f mps2_f_to_gs_f(metresPerSecond2_f metresPerSecond2)
 {
     const double maxValue = ((double) (FLT_MAX)) * 9.807;
     const double minValue = ((double) (-FLT_MAX)) * 9.807;
@@ -19757,49 +17689,41 @@ g_f mps2_f_to_g_f(metresPerSecond2_f metresPerSecond2)
     if (value < minValue) {
         return -FLT_MAX;
     }
-    return ((g_f) (value / 9.807));
+    return ((gs_f) (value / 9.807));
 }
 
 /**
- * Convert metresPerSecond2_f to g_t.
+ * Convert metresPerSecond2_f to gs_t.
  */
-g_t mps2_f_to_g_t(metresPerSecond2_f metresPerSecond2)
+gs_t mps2_f_to_gs_t(metresPerSecond2_f metresPerSecond2)
 {
-    const double maxValue = ((double) (INT_MAX)) * 9.807;
-    const double minValue = ((double) (INT_MIN)) * 9.807;
+    const double maxValue = ((double) (9223372036854775807)) * 9.807;
+    const double minValue = ((double) (-9223372036854775807 - 1)) * 9.807;
     const double value = ((double) (metresPerSecond2));
     if (value > maxValue) {
-        return INT_MAX;
+        return 9223372036854775807;
     }
     if (value < minValue) {
-        return INT_MIN;
+        return -9223372036854775807 - 1;
     }
-    return ((g_t) (round(value / 9.807)));
+    return ((gs_t) (round(value / 9.807)));
 }
 
 /**
- * Convert metresPerSecond2_f to g_u.
+ * Convert metresPerSecond2_f to gs_u.
  */
-g_u mps2_f_to_g_u(metresPerSecond2_f metresPerSecond2)
+gs_u mps2_f_to_gs_u(metresPerSecond2_f metresPerSecond2)
 {
-    const double maxValue = ((double) (UINT_MAX)) * 9.807;
+    const double maxValue = ((double) (18446744073709551615U)) * 9.807;
     const double minValue = ((double) (0)) * 9.807;
     const double value = ((double) (metresPerSecond2));
     if (value > maxValue) {
-        return UINT_MAX;
+        return 18446744073709551615U;
     }
     if (value < minValue) {
         return 0;
     }
-    return ((g_u) (round(value / 9.807)));
-}
-
-/**
- * Convert metresPerSecond2_f to int.
- */
-int mps2_f_to_i(metresPerSecond2_f metresPerSecond2)
-{
-    return f_to_i(((float) (metresPerSecond2)));
+    return ((gs_u) (round(value / 9.807)));
 }
 
 /**
@@ -19847,7 +17771,7 @@ metresPerSecond2_d mps2_f_to_mps2_d(metresPerSecond2_f metresPerSecond2)
  */
 metresPerSecond2_t mps2_f_to_mps2_t(metresPerSecond2_f metresPerSecond2)
 {
-    return ((metresPerSecond2_t) (round(((double) (metresPerSecond2))) < ((double) (INT_MAX)) ? (round(((double) (metresPerSecond2))) > ((double) (INT_MIN)) ? round(((double) (metresPerSecond2))) : INT_MIN) : INT_MAX));
+    return ((metresPerSecond2_t) (round(((double) (metresPerSecond2))) < ((double) (9223372036854775807)) ? (round(((double) (metresPerSecond2))) > ((double) (-9223372036854775807 - 1)) ? ((metresPerSecond2_t) (round(((double) (metresPerSecond2))))) : -9223372036854775807 - 1) : 9223372036854775807));
 }
 
 /**
@@ -19855,7 +17779,7 @@ metresPerSecond2_t mps2_f_to_mps2_t(metresPerSecond2_f metresPerSecond2)
  */
 metresPerSecond2_u mps2_f_to_mps2_u(metresPerSecond2_f metresPerSecond2)
 {
-    return ((metresPerSecond2_u) (round(((double) (metresPerSecond2))) < ((double) (UINT_MAX)) ? (round(((double) (metresPerSecond2))) > ((double) (0)) ? round(((double) (metresPerSecond2))) : 0) : UINT_MAX));
+    return ((metresPerSecond2_u) (round(((double) (metresPerSecond2))) < ((double) (18446744073709551615U)) ? (round(((double) (metresPerSecond2))) > ((double) (0)) ? ((metresPerSecond2_u) (round(((double) (metresPerSecond2))))) : 0) : 18446744073709551615U));
 }
 
 /**
@@ -19891,14 +17815,6 @@ uint8_t mps2_f_to_u8(metresPerSecond2_f metresPerSecond2)
 }
 
 /**
- * Convert metresPerSecond2_f to unsigned int.
- */
-unsigned int mps2_f_to_u(metresPerSecond2_f metresPerSecond2)
-{
-    return f_to_u(((float) (metresPerSecond2)));
-}
-
-/**
  * Convert metresPerSecond2_t to double.
  */
 double mps2_t_to_d(metresPerSecond2_t metresPerSecond2)
@@ -19915,17 +17831,17 @@ float mps2_t_to_f(metresPerSecond2_t metresPerSecond2)
 }
 
 /**
- * Convert metresPerSecond2_t to g_d.
+ * Convert metresPerSecond2_t to gs_d.
  */
-g_d mps2_t_to_g_d(metresPerSecond2_t metresPerSecond2)
+gs_d mps2_t_to_gs_d(metresPerSecond2_t metresPerSecond2)
 {
-    return ((g_d) (((double) (metresPerSecond2)) / 9.807));
+    return ((gs_d) (((double) (metresPerSecond2)) / 9.807));
 }
 
 /**
- * Convert metresPerSecond2_t to g_f.
+ * Convert metresPerSecond2_t to gs_f.
  */
-g_f mps2_t_to_g_f(metresPerSecond2_t metresPerSecond2)
+gs_f mps2_t_to_gs_f(metresPerSecond2_t metresPerSecond2)
 {
     const double maxValue = ((double) (FLT_MAX)) * 9.807;
     const double minValue = ((double) (-FLT_MAX)) * 9.807;
@@ -19936,49 +17852,41 @@ g_f mps2_t_to_g_f(metresPerSecond2_t metresPerSecond2)
     if (value < minValue) {
         return -FLT_MAX;
     }
-    return ((g_f) (value / 9.807));
+    return ((gs_f) (value / 9.807));
 }
 
 /**
- * Convert metresPerSecond2_t to g_t.
+ * Convert metresPerSecond2_t to gs_t.
  */
-g_t mps2_t_to_g_t(metresPerSecond2_t metresPerSecond2)
+gs_t mps2_t_to_gs_t(metresPerSecond2_t metresPerSecond2)
 {
-    const double maxValue = ((double) (INT_MAX)) * 9.807;
-    const double minValue = ((double) (INT_MIN)) * 9.807;
+    const double maxValue = ((double) (9223372036854775807)) * 9.807;
+    const double minValue = ((double) (-9223372036854775807 - 1)) * 9.807;
     const double value = ((double) (metresPerSecond2));
     if (value > maxValue) {
-        return INT_MAX;
+        return 9223372036854775807;
     }
     if (value < minValue) {
-        return INT_MIN;
+        return -9223372036854775807 - 1;
     }
-    return ((g_t) (round(value / 9.807)));
+    return ((gs_t) (round(value / 9.807)));
 }
 
 /**
- * Convert metresPerSecond2_t to g_u.
+ * Convert metresPerSecond2_t to gs_u.
  */
-g_u mps2_t_to_g_u(metresPerSecond2_t metresPerSecond2)
+gs_u mps2_t_to_gs_u(metresPerSecond2_t metresPerSecond2)
 {
-    const double maxValue = ((double) (UINT_MAX)) * 9.807;
+    const double maxValue = ((double) (18446744073709551615U)) * 9.807;
     const double minValue = ((double) (0)) * 9.807;
     const double value = ((double) (metresPerSecond2));
     if (value > maxValue) {
-        return UINT_MAX;
+        return 18446744073709551615U;
     }
     if (value < minValue) {
         return 0;
     }
-    return ((g_u) (round(value / 9.807)));
-}
-
-/**
- * Convert metresPerSecond2_t to int.
- */
-int mps2_t_to_i(metresPerSecond2_t metresPerSecond2)
-{
-    return ((int) (metresPerSecond2));
+    return ((gs_u) (round(value / 9.807)));
 }
 
 /**
@@ -20070,14 +17978,6 @@ uint8_t mps2_t_to_u8(metresPerSecond2_t metresPerSecond2)
 }
 
 /**
- * Convert metresPerSecond2_t to unsigned int.
- */
-unsigned int mps2_t_to_u(metresPerSecond2_t metresPerSecond2)
-{
-    return ((unsigned int) (MAX(((metresPerSecond2_t) (0)), metresPerSecond2)));
-}
-
-/**
  * Convert metresPerSecond2_u to double.
  */
 double mps2_u_to_d(metresPerSecond2_u metresPerSecond2)
@@ -20094,17 +17994,17 @@ float mps2_u_to_f(metresPerSecond2_u metresPerSecond2)
 }
 
 /**
- * Convert metresPerSecond2_u to g_d.
+ * Convert metresPerSecond2_u to gs_d.
  */
-g_d mps2_u_to_g_d(metresPerSecond2_u metresPerSecond2)
+gs_d mps2_u_to_gs_d(metresPerSecond2_u metresPerSecond2)
 {
-    return ((g_d) (((double) (metresPerSecond2)) / 9.807));
+    return ((gs_d) (((double) (metresPerSecond2)) / 9.807));
 }
 
 /**
- * Convert metresPerSecond2_u to g_f.
+ * Convert metresPerSecond2_u to gs_f.
  */
-g_f mps2_u_to_g_f(metresPerSecond2_u metresPerSecond2)
+gs_f mps2_u_to_gs_f(metresPerSecond2_u metresPerSecond2)
 {
     const double maxValue = ((double) (FLT_MAX)) * 9.807;
     const double minValue = ((double) (-FLT_MAX)) * 9.807;
@@ -20115,49 +18015,41 @@ g_f mps2_u_to_g_f(metresPerSecond2_u metresPerSecond2)
     if (value < minValue) {
         return -FLT_MAX;
     }
-    return ((g_f) (value / 9.807));
+    return ((gs_f) (value / 9.807));
 }
 
 /**
- * Convert metresPerSecond2_u to g_t.
+ * Convert metresPerSecond2_u to gs_t.
  */
-g_t mps2_u_to_g_t(metresPerSecond2_u metresPerSecond2)
+gs_t mps2_u_to_gs_t(metresPerSecond2_u metresPerSecond2)
 {
-    const double maxValue = ((double) (INT_MAX)) * 9.807;
-    const double minValue = ((double) (INT_MIN)) * 9.807;
+    const double maxValue = ((double) (9223372036854775807)) * 9.807;
+    const double minValue = ((double) (-9223372036854775807 - 1)) * 9.807;
     const double value = ((double) (metresPerSecond2));
     if (value > maxValue) {
-        return INT_MAX;
+        return 9223372036854775807;
     }
     if (value < minValue) {
-        return INT_MIN;
+        return -9223372036854775807 - 1;
     }
-    return ((g_t) (round(value / 9.807)));
+    return ((gs_t) (round(value / 9.807)));
 }
 
 /**
- * Convert metresPerSecond2_u to g_u.
+ * Convert metresPerSecond2_u to gs_u.
  */
-g_u mps2_u_to_g_u(metresPerSecond2_u metresPerSecond2)
+gs_u mps2_u_to_gs_u(metresPerSecond2_u metresPerSecond2)
 {
-    const double maxValue = ((double) (UINT_MAX)) * 9.807;
+    const double maxValue = ((double) (18446744073709551615U)) * 9.807;
     const double minValue = ((double) (0)) * 9.807;
     const double value = ((double) (metresPerSecond2));
     if (value > maxValue) {
-        return UINT_MAX;
+        return 18446744073709551615U;
     }
     if (value < minValue) {
         return 0;
     }
-    return ((g_u) (round(value / 9.807)));
-}
-
-/**
- * Convert metresPerSecond2_u to int.
- */
-int mps2_u_to_i(metresPerSecond2_u metresPerSecond2)
-{
-    return ((int) (MIN(((metresPerSecond2_u) (INT_MAX)), metresPerSecond2)));
+    return ((gs_u) (round(value / 9.807)));
 }
 
 /**
@@ -20181,7 +18073,7 @@ int32_t mps2_u_to_i32(metresPerSecond2_u metresPerSecond2)
  */
 int64_t mps2_u_to_i64(metresPerSecond2_u metresPerSecond2)
 {
-    return ((int64_t) (metresPerSecond2));
+    return ((int64_t) (MIN(((metresPerSecond2_u) (9223372036854775807)), metresPerSecond2)));
 }
 
 /**
@@ -20213,7 +18105,7 @@ metresPerSecond2_f mps2_u_to_mps2_f(metresPerSecond2_u metresPerSecond2)
  */
 metresPerSecond2_t mps2_u_to_mps2_t(metresPerSecond2_u metresPerSecond2)
 {
-    return ((metresPerSecond2_t) ((metresPerSecond2) > ((unsigned int) (INT_MAX)) ? ((unsigned int) (INT_MAX)) : metresPerSecond2));
+    return ((metresPerSecond2_t) ((metresPerSecond2) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : metresPerSecond2));
 }
 
 /**
@@ -20249,43 +18141,35 @@ uint8_t mps2_u_to_u8(metresPerSecond2_u metresPerSecond2)
 }
 
 /**
- * Convert metresPerSecond2_u to unsigned int.
+ * Convert uint16_t to gs_d.
  */
-unsigned int mps2_u_to_u(metresPerSecond2_u metresPerSecond2)
+gs_d u16_to_gs_d(uint16_t gs)
 {
-    return ((unsigned int) (metresPerSecond2));
+    return ((gs_d) (gs));
 }
 
 /**
- * Convert uint16_t to g_d.
+ * Convert uint16_t to gs_f.
  */
-g_d u16_to_g_d(uint16_t g)
+gs_f u16_to_gs_f(uint16_t gs)
 {
-    return ((g_d) (g));
+    return ((gs_f) (gs));
 }
 
 /**
- * Convert uint16_t to g_f.
+ * Convert uint16_t to gs_t.
  */
-g_f u16_to_g_f(uint16_t g)
+gs_t u16_to_gs_t(uint16_t gs)
 {
-    return ((g_f) (g));
+    return ((gs_t) (gs));
 }
 
 /**
- * Convert uint16_t to g_t.
+ * Convert uint16_t to gs_u.
  */
-g_t u16_to_g_t(uint16_t g)
+gs_u u16_to_gs_u(uint16_t gs)
 {
-    return ((g_t) (g));
-}
-
-/**
- * Convert uint16_t to g_u.
- */
-g_u u16_to_g_u(uint16_t g)
-{
-    return ((g_u) (g));
+    return ((gs_u) (gs));
 }
 
 /**
@@ -20321,35 +18205,35 @@ metresPerSecond2_u u16_to_mps2_u(uint16_t metresPerSecond2)
 }
 
 /**
- * Convert uint32_t to g_d.
+ * Convert uint32_t to gs_d.
  */
-g_d u32_to_g_d(uint32_t g)
+gs_d u32_to_gs_d(uint32_t gs)
 {
-    return ((g_d) (g));
+    return ((gs_d) (gs));
 }
 
 /**
- * Convert uint32_t to g_f.
+ * Convert uint32_t to gs_f.
  */
-g_f u32_to_g_f(uint32_t g)
+gs_f u32_to_gs_f(uint32_t gs)
 {
-    return ((g_f) (g));
+    return ((gs_f) (gs));
 }
 
 /**
- * Convert uint32_t to g_t.
+ * Convert uint32_t to gs_t.
  */
-g_t u32_to_g_t(uint32_t g)
+gs_t u32_to_gs_t(uint32_t gs)
 {
-    return ((g_t) (MIN(((uint32_t) (INT_MAX)), g)));
+    return ((gs_t) (gs));
 }
 
 /**
- * Convert uint32_t to g_u.
+ * Convert uint32_t to gs_u.
  */
-g_u u32_to_g_u(uint32_t g)
+gs_u u32_to_gs_u(uint32_t gs)
 {
-    return ((g_u) (MIN(((uint32_t) (UINT_MAX)), MAX(((uint32_t) (0)), g))));
+    return ((gs_u) (gs));
 }
 
 /**
@@ -20373,7 +18257,7 @@ metresPerSecond2_f u32_to_mps2_f(uint32_t metresPerSecond2)
  */
 metresPerSecond2_t u32_to_mps2_t(uint32_t metresPerSecond2)
 {
-    return ((metresPerSecond2_t) (MIN(((uint32_t) (INT_MAX)), metresPerSecond2)));
+    return ((metresPerSecond2_t) (metresPerSecond2));
 }
 
 /**
@@ -20381,39 +18265,39 @@ metresPerSecond2_t u32_to_mps2_t(uint32_t metresPerSecond2)
  */
 metresPerSecond2_u u32_to_mps2_u(uint32_t metresPerSecond2)
 {
-    return ((metresPerSecond2_u) (MIN(((uint32_t) (UINT_MAX)), MAX(((uint32_t) (0)), metresPerSecond2))));
+    return ((metresPerSecond2_u) (metresPerSecond2));
 }
 
 /**
- * Convert uint64_t to g_d.
+ * Convert uint64_t to gs_d.
  */
-g_d u64_to_g_d(uint64_t g)
+gs_d u64_to_gs_d(uint64_t gs)
 {
-    return ((g_d) (g));
+    return ((gs_d) (gs));
 }
 
 /**
- * Convert uint64_t to g_f.
+ * Convert uint64_t to gs_f.
  */
-g_f u64_to_g_f(uint64_t g)
+gs_f u64_to_gs_f(uint64_t gs)
 {
-    return ((g_f) (g));
+    return ((gs_f) (gs));
 }
 
 /**
- * Convert uint64_t to g_t.
+ * Convert uint64_t to gs_t.
  */
-g_t u64_to_g_t(uint64_t g)
+gs_t u64_to_gs_t(uint64_t gs)
 {
-    return ((g_t) (MIN(((uint64_t) (INT_MAX)), g)));
+    return ((gs_t) (MIN(((uint64_t) (9223372036854775807)), gs)));
 }
 
 /**
- * Convert uint64_t to g_u.
+ * Convert uint64_t to gs_u.
  */
-g_u u64_to_g_u(uint64_t g)
+gs_u u64_to_gs_u(uint64_t gs)
 {
-    return ((g_u) (MIN(((uint64_t) (UINT_MAX)), MAX(((uint64_t) (0)), g))));
+    return ((gs_u) (gs));
 }
 
 /**
@@ -20437,7 +18321,7 @@ metresPerSecond2_f u64_to_mps2_f(uint64_t metresPerSecond2)
  */
 metresPerSecond2_t u64_to_mps2_t(uint64_t metresPerSecond2)
 {
-    return ((metresPerSecond2_t) (MIN(((uint64_t) (INT_MAX)), metresPerSecond2)));
+    return ((metresPerSecond2_t) (MIN(((uint64_t) (9223372036854775807)), metresPerSecond2)));
 }
 
 /**
@@ -20445,39 +18329,39 @@ metresPerSecond2_t u64_to_mps2_t(uint64_t metresPerSecond2)
  */
 metresPerSecond2_u u64_to_mps2_u(uint64_t metresPerSecond2)
 {
-    return ((metresPerSecond2_u) (MIN(((uint64_t) (UINT_MAX)), MAX(((uint64_t) (0)), metresPerSecond2))));
+    return ((metresPerSecond2_u) (metresPerSecond2));
 }
 
 /**
- * Convert uint8_t to g_d.
+ * Convert uint8_t to gs_d.
  */
-g_d u8_to_g_d(uint8_t g)
+gs_d u8_to_gs_d(uint8_t gs)
 {
-    return ((g_d) (g));
+    return ((gs_d) (gs));
 }
 
 /**
- * Convert uint8_t to g_f.
+ * Convert uint8_t to gs_f.
  */
-g_f u8_to_g_f(uint8_t g)
+gs_f u8_to_gs_f(uint8_t gs)
 {
-    return ((g_f) (g));
+    return ((gs_f) (gs));
 }
 
 /**
- * Convert uint8_t to g_t.
+ * Convert uint8_t to gs_t.
  */
-g_t u8_to_g_t(uint8_t g)
+gs_t u8_to_gs_t(uint8_t gs)
 {
-    return ((g_t) (g));
+    return ((gs_t) (gs));
 }
 
 /**
- * Convert uint8_t to g_u.
+ * Convert uint8_t to gs_u.
  */
-g_u u8_to_g_u(uint8_t g)
+gs_u u8_to_gs_u(uint8_t gs)
 {
-    return ((g_u) (g));
+    return ((gs_u) (gs));
 }
 
 /**
@@ -20513,80 +18397,6943 @@ metresPerSecond2_u u8_to_mps2_u(uint8_t metresPerSecond2)
 }
 
 /**
- * Convert unsigned int to g_d.
+ * Convert double to gram_d.
  */
-g_d u_to_g_d(unsigned int g)
+gram_d d_to_g_d(double gram)
 {
-    return ((g_d) (g));
+    return ((gram_d) (gram));
 }
 
 /**
- * Convert unsigned int to g_f.
+ * Convert double to gram_f.
  */
-g_f u_to_g_f(unsigned int g)
+gram_f d_to_g_f(double gram)
 {
-    return ((g_f) (g));
+    return ((gram_f) (d_to_f(gram)));
 }
 
 /**
- * Convert unsigned int to g_t.
+ * Convert double to gram_t.
  */
-g_t u_to_g_t(unsigned int g)
+gram_t d_to_g_t(double gram)
 {
-    return ((g_t) (MIN(((unsigned int) (INT_MAX)), g)));
+    return d_to_i64(gram);
 }
 
 /**
- * Convert unsigned int to g_u.
+ * Convert double to gram_u.
  */
-g_u u_to_g_u(unsigned int g)
+gram_u d_to_g_u(double gram)
 {
-    return ((g_u) (g));
+    return d_to_u64(gram);
 }
 
 /**
- * Convert unsigned int to metresPerSecond2_d.
+ * Convert double to kilogram_d.
  */
-metresPerSecond2_d u_to_mps2_d(unsigned int metresPerSecond2)
+kilogram_d d_to_kg_d(double kilogram)
 {
-    return ((metresPerSecond2_d) (metresPerSecond2));
+    return ((kilogram_d) (kilogram));
 }
 
 /**
- * Convert unsigned int to metresPerSecond2_f.
+ * Convert double to kilogram_f.
  */
-metresPerSecond2_f u_to_mps2_f(unsigned int metresPerSecond2)
+kilogram_f d_to_kg_f(double kilogram)
 {
-    return ((metresPerSecond2_f) (metresPerSecond2));
+    return ((kilogram_f) (d_to_f(kilogram)));
 }
 
 /**
- * Convert unsigned int to metresPerSecond2_t.
+ * Convert double to kilogram_t.
  */
-metresPerSecond2_t u_to_mps2_t(unsigned int metresPerSecond2)
+kilogram_t d_to_kg_t(double kilogram)
 {
-    return ((metresPerSecond2_t) (MIN(((unsigned int) (INT_MAX)), metresPerSecond2)));
+    return d_to_i64(kilogram);
 }
 
 /**
- * Convert unsigned int to metresPerSecond2_u.
+ * Convert double to kilogram_u.
  */
-metresPerSecond2_u u_to_mps2_u(unsigned int metresPerSecond2)
+kilogram_u d_to_kg_u(double kilogram)
 {
-    return ((metresPerSecond2_u) (metresPerSecond2));
+    return d_to_u64(kilogram);
 }
 
-int d_to_i(double doubleVal) {
-    const double roundedValue = round(doubleVal);
-    const double maxValue = nexttoward(((double) (INT_MAX)), 0.0);
-    const double minValue = nexttoward(((double) (INT_MIN)), 0.0);
-    if (roundedValue > maxValue) {
-        return INT_MAX;
-    } else if (roundedValue < minValue) {
-        return INT_MIN;
-    } else {
-        return ((int) (roundedValue));
+/**
+ * Convert double to megagram_d.
+ */
+megagram_d d_to_Mg_d(double megagram)
+{
+    return ((megagram_d) (megagram));
+}
+
+/**
+ * Convert double to megagram_f.
+ */
+megagram_f d_to_Mg_f(double megagram)
+{
+    return ((megagram_f) (d_to_f(megagram)));
+}
+
+/**
+ * Convert double to megagram_t.
+ */
+megagram_t d_to_Mg_t(double megagram)
+{
+    return d_to_i64(megagram);
+}
+
+/**
+ * Convert double to megagram_u.
+ */
+megagram_u d_to_Mg_u(double megagram)
+{
+    return d_to_u64(megagram);
+}
+
+/**
+ * Convert double to microgram_d.
+ */
+microgram_d d_to_ug_d(double microgram)
+{
+    return ((microgram_d) (microgram));
+}
+
+/**
+ * Convert double to microgram_f.
+ */
+microgram_f d_to_ug_f(double microgram)
+{
+    return ((microgram_f) (d_to_f(microgram)));
+}
+
+/**
+ * Convert double to microgram_t.
+ */
+microgram_t d_to_ug_t(double microgram)
+{
+    return d_to_i64(microgram);
+}
+
+/**
+ * Convert double to microgram_u.
+ */
+microgram_u d_to_ug_u(double microgram)
+{
+    return d_to_u64(microgram);
+}
+
+/**
+ * Convert double to milligram_d.
+ */
+milligram_d d_to_mg_d(double milligram)
+{
+    return ((milligram_d) (milligram));
+}
+
+/**
+ * Convert double to milligram_f.
+ */
+milligram_f d_to_mg_f(double milligram)
+{
+    return ((milligram_f) (d_to_f(milligram)));
+}
+
+/**
+ * Convert double to milligram_t.
+ */
+milligram_t d_to_mg_t(double milligram)
+{
+    return d_to_i64(milligram);
+}
+
+/**
+ * Convert double to milligram_u.
+ */
+milligram_u d_to_mg_u(double milligram)
+{
+    return d_to_u64(milligram);
+}
+
+/**
+ * Convert float to gram_d.
+ */
+gram_d f_to_g_d(float gram)
+{
+    return ((gram_d) (gram));
+}
+
+/**
+ * Convert float to gram_f.
+ */
+gram_f f_to_g_f(float gram)
+{
+    return ((gram_f) (gram));
+}
+
+/**
+ * Convert float to gram_t.
+ */
+gram_t f_to_g_t(float gram)
+{
+    return f_to_i64(gram);
+}
+
+/**
+ * Convert float to gram_u.
+ */
+gram_u f_to_g_u(float gram)
+{
+    return f_to_u64(gram);
+}
+
+/**
+ * Convert float to kilogram_d.
+ */
+kilogram_d f_to_kg_d(float kilogram)
+{
+    return ((kilogram_d) (kilogram));
+}
+
+/**
+ * Convert float to kilogram_f.
+ */
+kilogram_f f_to_kg_f(float kilogram)
+{
+    return ((kilogram_f) (kilogram));
+}
+
+/**
+ * Convert float to kilogram_t.
+ */
+kilogram_t f_to_kg_t(float kilogram)
+{
+    return f_to_i64(kilogram);
+}
+
+/**
+ * Convert float to kilogram_u.
+ */
+kilogram_u f_to_kg_u(float kilogram)
+{
+    return f_to_u64(kilogram);
+}
+
+/**
+ * Convert float to megagram_d.
+ */
+megagram_d f_to_Mg_d(float megagram)
+{
+    return ((megagram_d) (megagram));
+}
+
+/**
+ * Convert float to megagram_f.
+ */
+megagram_f f_to_Mg_f(float megagram)
+{
+    return ((megagram_f) (megagram));
+}
+
+/**
+ * Convert float to megagram_t.
+ */
+megagram_t f_to_Mg_t(float megagram)
+{
+    return f_to_i64(megagram);
+}
+
+/**
+ * Convert float to megagram_u.
+ */
+megagram_u f_to_Mg_u(float megagram)
+{
+    return f_to_u64(megagram);
+}
+
+/**
+ * Convert float to microgram_d.
+ */
+microgram_d f_to_ug_d(float microgram)
+{
+    return ((microgram_d) (microgram));
+}
+
+/**
+ * Convert float to microgram_f.
+ */
+microgram_f f_to_ug_f(float microgram)
+{
+    return ((microgram_f) (microgram));
+}
+
+/**
+ * Convert float to microgram_t.
+ */
+microgram_t f_to_ug_t(float microgram)
+{
+    return f_to_i64(microgram);
+}
+
+/**
+ * Convert float to microgram_u.
+ */
+microgram_u f_to_ug_u(float microgram)
+{
+    return f_to_u64(microgram);
+}
+
+/**
+ * Convert float to milligram_d.
+ */
+milligram_d f_to_mg_d(float milligram)
+{
+    return ((milligram_d) (milligram));
+}
+
+/**
+ * Convert float to milligram_f.
+ */
+milligram_f f_to_mg_f(float milligram)
+{
+    return ((milligram_f) (milligram));
+}
+
+/**
+ * Convert float to milligram_t.
+ */
+milligram_t f_to_mg_t(float milligram)
+{
+    return f_to_i64(milligram);
+}
+
+/**
+ * Convert float to milligram_u.
+ */
+milligram_u f_to_mg_u(float milligram)
+{
+    return f_to_u64(milligram);
+}
+
+/**
+ * Convert gram_d to double.
+ */
+double g_d_to_d(gram_d gram)
+{
+    return ((double) (gram));
+}
+
+/**
+ * Convert gram_d to float.
+ */
+float g_d_to_f(gram_d gram)
+{
+    return d_to_f(((double) (gram)));
+}
+
+/**
+ * Convert gram_d to gram_f.
+ */
+gram_f g_d_to_g_f(gram_d gram)
+{
+    return ((gram_f) (gram < ((double) (FLT_MAX)) ? (gram > ((double) (-FLT_MAX)) ? gram : -FLT_MAX) : FLT_MAX));
+}
+
+/**
+ * Convert gram_d to gram_t.
+ */
+gram_t g_d_to_g_t(gram_d gram)
+{
+    return ((gram_t) (round(((double) (gram))) < ((double) (9223372036854775807)) ? (round(((double) (gram))) > ((double) (-9223372036854775807 - 1)) ? ((gram_t) (round(((double) (gram))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert gram_d to gram_u.
+ */
+gram_u g_d_to_g_u(gram_d gram)
+{
+    return ((gram_u) (round(((double) (gram))) < ((double) (18446744073709551615U)) ? (round(((double) (gram))) > ((double) (0)) ? ((gram_u) (round(((double) (gram))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert gram_d to int16_t.
+ */
+int16_t g_d_to_i16(gram_d gram)
+{
+    return d_to_i16(((double) (gram)));
+}
+
+/**
+ * Convert gram_d to int32_t.
+ */
+int32_t g_d_to_i32(gram_d gram)
+{
+    return d_to_i32(((double) (gram)));
+}
+
+/**
+ * Convert gram_d to int64_t.
+ */
+int64_t g_d_to_i64(gram_d gram)
+{
+    return d_to_i64(((double) (gram)));
+}
+
+/**
+ * Convert gram_d to int8_t.
+ */
+int8_t g_d_to_i8(gram_d gram)
+{
+    return d_to_i8(((double) (gram)));
+}
+
+/**
+ * Convert gram_d to kilogram_d.
+ */
+kilogram_d g_d_to_kg_d(gram_d gram)
+{
+    return ((kilogram_d) (gram / 1000.0));
+}
+
+/**
+ * Convert gram_d to kilogram_f.
+ */
+kilogram_f g_d_to_kg_f(gram_d gram)
+{
+    const gram_d conversion = gram / 1000.0;
+    return ((kilogram_f) (conversion < ((double) (FLT_MAX)) ? (conversion > ((double) (-FLT_MAX)) ? conversion : -FLT_MAX) : FLT_MAX));
+}
+
+/**
+ * Convert gram_d to kilogram_t.
+ */
+kilogram_t g_d_to_kg_t(gram_d gram)
+{
+    const gram_d conversion = gram / 1000.0;
+    return ((kilogram_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((kilogram_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert gram_d to kilogram_u.
+ */
+kilogram_u g_d_to_kg_u(gram_d gram)
+{
+    const gram_d conversion = gram / 1000.0;
+    return ((kilogram_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((kilogram_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert gram_d to megagram_d.
+ */
+megagram_d g_d_to_Mg_d(gram_d gram)
+{
+    return ((megagram_d) (gram / 1000000.0));
+}
+
+/**
+ * Convert gram_d to megagram_f.
+ */
+megagram_f g_d_to_Mg_f(gram_d gram)
+{
+    const gram_d conversion = gram / 1000000.0;
+    return ((megagram_f) (conversion < ((double) (FLT_MAX)) ? (conversion > ((double) (-FLT_MAX)) ? conversion : -FLT_MAX) : FLT_MAX));
+}
+
+/**
+ * Convert gram_d to megagram_t.
+ */
+megagram_t g_d_to_Mg_t(gram_d gram)
+{
+    const gram_d conversion = gram / 1000000.0;
+    return ((megagram_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((megagram_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert gram_d to megagram_u.
+ */
+megagram_u g_d_to_Mg_u(gram_d gram)
+{
+    const gram_d conversion = gram / 1000000.0;
+    return ((megagram_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((megagram_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert gram_d to microgram_d.
+ */
+microgram_d g_d_to_ug_d(gram_d gram)
+{
+    if (gram < -DBL_MAX / 1000000.0) {
+        return -DBL_MAX;
     }
+    if (gram > DBL_MAX / 1000000.0) {
+        return DBL_MAX;
+    }
+    return ((microgram_d) (gram)) * 1000000.0;
+}
+
+/**
+ * Convert gram_d to microgram_f.
+ */
+microgram_f g_d_to_ug_f(gram_d gram)
+{
+    if (gram > ((gram_d) (FLT_MAX)) / 1000000.0) {
+        return FLT_MAX;
+    }
+    if (gram < ((gram_d) (-FLT_MAX)) / 1000000.0) {
+        return -FLT_MAX;
+    }
+    return ((microgram_f) (gram * 1000000.0));
+}
+
+/**
+ * Convert gram_d to microgram_t.
+ */
+microgram_t g_d_to_ug_t(gram_d gram)
+{
+    if (gram > ((gram_d) (9223372036854775807)) / 1000000.0) {
+        return 9223372036854775807;
+    }
+    if (gram < ((gram_d) (-9223372036854775807 - 1)) / 1000000.0) {
+        return -9223372036854775807 - 1;
+    }
+    return ((microgram_t) (gram * 1000000.0));
+}
+
+/**
+ * Convert gram_d to microgram_u.
+ */
+microgram_u g_d_to_ug_u(gram_d gram)
+{
+    if (gram > ((gram_d) (18446744073709551615U)) / 1000000.0) {
+        return 18446744073709551615U;
+    }
+    if (gram < ((gram_d) (0)) / 1000000.0) {
+        return 0;
+    }
+    return ((microgram_u) (gram * 1000000.0));
+}
+
+/**
+ * Convert gram_d to milligram_d.
+ */
+milligram_d g_d_to_mg_d(gram_d gram)
+{
+    if (gram < -DBL_MAX / 1000.0) {
+        return -DBL_MAX;
+    }
+    if (gram > DBL_MAX / 1000.0) {
+        return DBL_MAX;
+    }
+    return ((milligram_d) (gram)) * 1000.0;
+}
+
+/**
+ * Convert gram_d to milligram_f.
+ */
+milligram_f g_d_to_mg_f(gram_d gram)
+{
+    if (gram > ((gram_d) (FLT_MAX)) / 1000.0) {
+        return FLT_MAX;
+    }
+    if (gram < ((gram_d) (-FLT_MAX)) / 1000.0) {
+        return -FLT_MAX;
+    }
+    return ((milligram_f) (gram * 1000.0));
+}
+
+/**
+ * Convert gram_d to milligram_t.
+ */
+milligram_t g_d_to_mg_t(gram_d gram)
+{
+    if (gram > ((gram_d) (9223372036854775807)) / 1000.0) {
+        return 9223372036854775807;
+    }
+    if (gram < ((gram_d) (-9223372036854775807 - 1)) / 1000.0) {
+        return -9223372036854775807 - 1;
+    }
+    return ((milligram_t) (gram * 1000.0));
+}
+
+/**
+ * Convert gram_d to milligram_u.
+ */
+milligram_u g_d_to_mg_u(gram_d gram)
+{
+    if (gram > ((gram_d) (18446744073709551615U)) / 1000.0) {
+        return 18446744073709551615U;
+    }
+    if (gram < ((gram_d) (0)) / 1000.0) {
+        return 0;
+    }
+    return ((milligram_u) (gram * 1000.0));
+}
+
+/**
+ * Convert gram_d to uint16_t.
+ */
+uint16_t g_d_to_u16(gram_d gram)
+{
+    return d_to_u16(((double) (gram)));
+}
+
+/**
+ * Convert gram_d to uint32_t.
+ */
+uint32_t g_d_to_u32(gram_d gram)
+{
+    return d_to_u32(((double) (gram)));
+}
+
+/**
+ * Convert gram_d to uint64_t.
+ */
+uint64_t g_d_to_u64(gram_d gram)
+{
+    return d_to_u64(((double) (gram)));
+}
+
+/**
+ * Convert gram_d to uint8_t.
+ */
+uint8_t g_d_to_u8(gram_d gram)
+{
+    return d_to_u8(((double) (gram)));
+}
+
+/**
+ * Convert gram_f to double.
+ */
+double g_f_to_d(gram_f gram)
+{
+    return ((double) (gram));
+}
+
+/**
+ * Convert gram_f to float.
+ */
+float g_f_to_f(gram_f gram)
+{
+    return ((float) (gram));
+}
+
+/**
+ * Convert gram_f to gram_d.
+ */
+gram_d g_f_to_g_d(gram_f gram)
+{
+    return ((gram_d) (gram));
+}
+
+/**
+ * Convert gram_f to gram_t.
+ */
+gram_t g_f_to_g_t(gram_f gram)
+{
+    return ((gram_t) (round(((double) (gram))) < ((double) (9223372036854775807)) ? (round(((double) (gram))) > ((double) (-9223372036854775807 - 1)) ? ((gram_t) (round(((double) (gram))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert gram_f to gram_u.
+ */
+gram_u g_f_to_g_u(gram_f gram)
+{
+    return ((gram_u) (round(((double) (gram))) < ((double) (18446744073709551615U)) ? (round(((double) (gram))) > ((double) (0)) ? ((gram_u) (round(((double) (gram))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert gram_f to int16_t.
+ */
+int16_t g_f_to_i16(gram_f gram)
+{
+    return f_to_i16(((float) (gram)));
+}
+
+/**
+ * Convert gram_f to int32_t.
+ */
+int32_t g_f_to_i32(gram_f gram)
+{
+    return f_to_i32(((float) (gram)));
+}
+
+/**
+ * Convert gram_f to int64_t.
+ */
+int64_t g_f_to_i64(gram_f gram)
+{
+    return f_to_i64(((float) (gram)));
+}
+
+/**
+ * Convert gram_f to int8_t.
+ */
+int8_t g_f_to_i8(gram_f gram)
+{
+    return f_to_i8(((float) (gram)));
+}
+
+/**
+ * Convert gram_f to kilogram_d.
+ */
+kilogram_d g_f_to_kg_d(gram_f gram)
+{
+    return (((kilogram_d) (gram)) / 1000.0);
+}
+
+/**
+ * Convert gram_f to kilogram_f.
+ */
+kilogram_f g_f_to_kg_f(gram_f gram)
+{
+    return ((kilogram_f) (gram / 1000.0f));
+}
+
+/**
+ * Convert gram_f to kilogram_t.
+ */
+kilogram_t g_f_to_kg_t(gram_f gram)
+{
+    const gram_f conversion = gram / 1000.0f;
+    return ((kilogram_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((kilogram_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert gram_f to kilogram_u.
+ */
+kilogram_u g_f_to_kg_u(gram_f gram)
+{
+    const gram_f conversion = gram / 1000.0f;
+    return ((kilogram_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((kilogram_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert gram_f to megagram_d.
+ */
+megagram_d g_f_to_Mg_d(gram_f gram)
+{
+    return (((megagram_d) (gram)) / 1000000.0);
+}
+
+/**
+ * Convert gram_f to megagram_f.
+ */
+megagram_f g_f_to_Mg_f(gram_f gram)
+{
+    return ((megagram_f) (gram / 1000000.0f));
+}
+
+/**
+ * Convert gram_f to megagram_t.
+ */
+megagram_t g_f_to_Mg_t(gram_f gram)
+{
+    const gram_f conversion = gram / 1000000.0f;
+    return ((megagram_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((megagram_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert gram_f to megagram_u.
+ */
+megagram_u g_f_to_Mg_u(gram_f gram)
+{
+    const gram_f conversion = gram / 1000000.0f;
+    return ((megagram_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((megagram_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert gram_f to microgram_d.
+ */
+microgram_d g_f_to_ug_d(gram_f gram)
+{
+    return ((microgram_d) (gram)) * 1000000.0;
+}
+
+/**
+ * Convert gram_f to microgram_f.
+ */
+microgram_f g_f_to_ug_f(gram_f gram)
+{
+    if (gram < -FLT_MAX / 1000000.0f) {
+        return -FLT_MAX;
+    }
+    if (gram > FLT_MAX / 1000000.0f) {
+        return FLT_MAX;
+    }
+    return ((microgram_f) (gram)) * 1000000.0f;
+}
+
+/**
+ * Convert gram_f to microgram_t.
+ */
+microgram_t g_f_to_ug_t(gram_f gram)
+{
+    if (gram > ((gram_f) (9223372036854775807)) / 1000000.0f) {
+        return 9223372036854775807;
+    }
+    if (gram < ((gram_f) (-9223372036854775807 - 1)) / 1000000.0f) {
+        return -9223372036854775807 - 1;
+    }
+    return ((microgram_t) (gram * 1000000.0f));
+}
+
+/**
+ * Convert gram_f to microgram_u.
+ */
+microgram_u g_f_to_ug_u(gram_f gram)
+{
+    if (gram > ((gram_f) (18446744073709551615U)) / 1000000.0f) {
+        return 18446744073709551615U;
+    }
+    if (gram < ((gram_f) (0)) / 1000000.0f) {
+        return 0;
+    }
+    return ((microgram_u) (gram * 1000000.0f));
+}
+
+/**
+ * Convert gram_f to milligram_d.
+ */
+milligram_d g_f_to_mg_d(gram_f gram)
+{
+    return ((milligram_d) (gram)) * 1000.0;
+}
+
+/**
+ * Convert gram_f to milligram_f.
+ */
+milligram_f g_f_to_mg_f(gram_f gram)
+{
+    if (gram < -FLT_MAX / 1000.0f) {
+        return -FLT_MAX;
+    }
+    if (gram > FLT_MAX / 1000.0f) {
+        return FLT_MAX;
+    }
+    return ((milligram_f) (gram)) * 1000.0f;
+}
+
+/**
+ * Convert gram_f to milligram_t.
+ */
+milligram_t g_f_to_mg_t(gram_f gram)
+{
+    if (gram > ((gram_f) (9223372036854775807)) / 1000.0f) {
+        return 9223372036854775807;
+    }
+    if (gram < ((gram_f) (-9223372036854775807 - 1)) / 1000.0f) {
+        return -9223372036854775807 - 1;
+    }
+    return ((milligram_t) (gram * 1000.0f));
+}
+
+/**
+ * Convert gram_f to milligram_u.
+ */
+milligram_u g_f_to_mg_u(gram_f gram)
+{
+    if (gram > ((gram_f) (18446744073709551615U)) / 1000.0f) {
+        return 18446744073709551615U;
+    }
+    if (gram < ((gram_f) (0)) / 1000.0f) {
+        return 0;
+    }
+    return ((milligram_u) (gram * 1000.0f));
+}
+
+/**
+ * Convert gram_f to uint16_t.
+ */
+uint16_t g_f_to_u16(gram_f gram)
+{
+    return f_to_u16(((float) (gram)));
+}
+
+/**
+ * Convert gram_f to uint32_t.
+ */
+uint32_t g_f_to_u32(gram_f gram)
+{
+    return f_to_u32(((float) (gram)));
+}
+
+/**
+ * Convert gram_f to uint64_t.
+ */
+uint64_t g_f_to_u64(gram_f gram)
+{
+    return f_to_u64(((float) (gram)));
+}
+
+/**
+ * Convert gram_f to uint8_t.
+ */
+uint8_t g_f_to_u8(gram_f gram)
+{
+    return f_to_u8(((float) (gram)));
+}
+
+/**
+ * Convert gram_t to double.
+ */
+double g_t_to_d(gram_t gram)
+{
+    return ((double) (gram));
+}
+
+/**
+ * Convert gram_t to float.
+ */
+float g_t_to_f(gram_t gram)
+{
+    return ((float) (gram));
+}
+
+/**
+ * Convert gram_t to gram_d.
+ */
+gram_d g_t_to_g_d(gram_t gram)
+{
+    return ((gram_d) (gram));
+}
+
+/**
+ * Convert gram_t to gram_f.
+ */
+gram_f g_t_to_g_f(gram_t gram)
+{
+    return ((gram_f) (gram));
+}
+
+/**
+ * Convert gram_t to gram_u.
+ */
+gram_u g_t_to_g_u(gram_t gram)
+{
+    return ((gram_u) ((gram) < 0 ? 0 : gram));
+}
+
+/**
+ * Convert gram_t to int16_t.
+ */
+int16_t g_t_to_i16(gram_t gram)
+{
+    return ((int16_t) (MIN(((gram_t) (32767)), MAX(((gram_t) (-32768)), gram))));
+}
+
+/**
+ * Convert gram_t to int32_t.
+ */
+int32_t g_t_to_i32(gram_t gram)
+{
+    return ((int32_t) (MIN(((gram_t) (2147483647)), MAX(((gram_t) (-2147483648)), gram))));
+}
+
+/**
+ * Convert gram_t to int64_t.
+ */
+int64_t g_t_to_i64(gram_t gram)
+{
+    return ((int64_t) (gram));
+}
+
+/**
+ * Convert gram_t to int8_t.
+ */
+int8_t g_t_to_i8(gram_t gram)
+{
+    return ((int8_t) (MIN(((gram_t) (127)), MAX(((gram_t) (-128)), gram))));
+}
+
+/**
+ * Convert gram_t to kilogram_d.
+ */
+kilogram_d g_t_to_kg_d(gram_t gram)
+{
+    return ((kilogram_d) (gram / 1000));
+}
+
+/**
+ * Convert gram_t to kilogram_f.
+ */
+kilogram_f g_t_to_kg_f(gram_t gram)
+{
+    return ((kilogram_f) (gram / 1000));
+}
+
+/**
+ * Convert gram_t to kilogram_t.
+ */
+kilogram_t g_t_to_kg_t(gram_t gram)
+{
+    return ((kilogram_t) (gram / 1000));
+}
+
+/**
+ * Convert gram_t to kilogram_u.
+ */
+kilogram_u g_t_to_kg_u(gram_t gram)
+{
+    if (gram < 0) {
+        return 0;
+    }
+    return ((kilogram_u) (gram / 1000));
+}
+
+/**
+ * Convert gram_t to megagram_d.
+ */
+megagram_d g_t_to_Mg_d(gram_t gram)
+{
+    return ((megagram_d) (gram / 1000000));
+}
+
+/**
+ * Convert gram_t to megagram_f.
+ */
+megagram_f g_t_to_Mg_f(gram_t gram)
+{
+    return ((megagram_f) (gram / 1000000));
+}
+
+/**
+ * Convert gram_t to megagram_t.
+ */
+megagram_t g_t_to_Mg_t(gram_t gram)
+{
+    return ((megagram_t) (gram / 1000000));
+}
+
+/**
+ * Convert gram_t to megagram_u.
+ */
+megagram_u g_t_to_Mg_u(gram_t gram)
+{
+    if (gram < 0) {
+        return 0;
+    }
+    return ((megagram_u) (gram / 1000000));
+}
+
+/**
+ * Convert gram_t to microgram_d.
+ */
+microgram_d g_t_to_ug_d(gram_t gram)
+{
+    return ((microgram_d) (gram)) * 1000000.0;
+}
+
+/**
+ * Convert gram_t to microgram_f.
+ */
+microgram_f g_t_to_ug_f(gram_t gram)
+{
+    return ((microgram_f) (gram)) * 1000000.0f;
+}
+
+/**
+ * Convert gram_t to microgram_t.
+ */
+microgram_t g_t_to_ug_t(gram_t gram)
+{
+    if (gram < -9223372036854775807 - 1 / 1000000) {
+        return -9223372036854775807 - 1;
+    }
+    if (gram > 9223372036854775807 / 1000000) {
+        return 9223372036854775807;
+    }
+    return ((microgram_t) (gram)) * 1000000;
+}
+
+/**
+ * Convert gram_t to microgram_u.
+ */
+microgram_u g_t_to_ug_u(gram_t gram)
+{
+    if (gram < 0) {
+        return 0;
+    }
+    const microgram_u otherGram = ((microgram_u) (gram));
+    if (otherGram > 18446744073709551615U / 1000000) {
+        return 18446744073709551615U;
+    }
+    return otherGram * 1000000;
+}
+
+/**
+ * Convert gram_t to milligram_d.
+ */
+milligram_d g_t_to_mg_d(gram_t gram)
+{
+    return ((milligram_d) (gram)) * 1000.0;
+}
+
+/**
+ * Convert gram_t to milligram_f.
+ */
+milligram_f g_t_to_mg_f(gram_t gram)
+{
+    return ((milligram_f) (gram)) * 1000.0f;
+}
+
+/**
+ * Convert gram_t to milligram_t.
+ */
+milligram_t g_t_to_mg_t(gram_t gram)
+{
+    if (gram < -9223372036854775807 - 1 / 1000) {
+        return -9223372036854775807 - 1;
+    }
+    if (gram > 9223372036854775807 / 1000) {
+        return 9223372036854775807;
+    }
+    return ((milligram_t) (gram)) * 1000;
+}
+
+/**
+ * Convert gram_t to milligram_u.
+ */
+milligram_u g_t_to_mg_u(gram_t gram)
+{
+    if (gram < 0) {
+        return 0;
+    }
+    const milligram_u otherGram = ((milligram_u) (gram));
+    if (otherGram > 18446744073709551615U / 1000) {
+        return 18446744073709551615U;
+    }
+    return otherGram * 1000;
+}
+
+/**
+ * Convert gram_t to uint16_t.
+ */
+uint16_t g_t_to_u16(gram_t gram)
+{
+    return ((uint16_t) (MAX(((gram_t) (0)), gram)));
+}
+
+/**
+ * Convert gram_t to uint32_t.
+ */
+uint32_t g_t_to_u32(gram_t gram)
+{
+    return ((uint32_t) (MAX(((gram_t) (0)), gram)));
+}
+
+/**
+ * Convert gram_t to uint64_t.
+ */
+uint64_t g_t_to_u64(gram_t gram)
+{
+    return ((uint64_t) (MAX(((gram_t) (0)), gram)));
+}
+
+/**
+ * Convert gram_t to uint8_t.
+ */
+uint8_t g_t_to_u8(gram_t gram)
+{
+    return ((uint8_t) (MAX(((gram_t) (0)), gram)));
+}
+
+/**
+ * Convert gram_u to double.
+ */
+double g_u_to_d(gram_u gram)
+{
+    return ((double) (gram));
+}
+
+/**
+ * Convert gram_u to float.
+ */
+float g_u_to_f(gram_u gram)
+{
+    return ((float) (gram));
+}
+
+/**
+ * Convert gram_u to gram_d.
+ */
+gram_d g_u_to_g_d(gram_u gram)
+{
+    return ((gram_d) (gram));
+}
+
+/**
+ * Convert gram_u to gram_f.
+ */
+gram_f g_u_to_g_f(gram_u gram)
+{
+    return ((gram_f) (gram));
+}
+
+/**
+ * Convert gram_u to gram_t.
+ */
+gram_t g_u_to_g_t(gram_u gram)
+{
+    return ((gram_t) ((gram) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : gram));
+}
+
+/**
+ * Convert gram_u to int16_t.
+ */
+int16_t g_u_to_i16(gram_u gram)
+{
+    return ((int16_t) (MIN(((gram_u) (32767)), gram)));
+}
+
+/**
+ * Convert gram_u to int32_t.
+ */
+int32_t g_u_to_i32(gram_u gram)
+{
+    return ((int32_t) (MIN(((gram_u) (2147483647)), gram)));
+}
+
+/**
+ * Convert gram_u to int64_t.
+ */
+int64_t g_u_to_i64(gram_u gram)
+{
+    return ((int64_t) (MIN(((gram_u) (9223372036854775807)), gram)));
+}
+
+/**
+ * Convert gram_u to int8_t.
+ */
+int8_t g_u_to_i8(gram_u gram)
+{
+    return ((int8_t) (MIN(((gram_u) (127)), gram)));
+}
+
+/**
+ * Convert gram_u to kilogram_d.
+ */
+kilogram_d g_u_to_kg_d(gram_u gram)
+{
+    return ((kilogram_d) (gram / 1000));
+}
+
+/**
+ * Convert gram_u to kilogram_f.
+ */
+kilogram_f g_u_to_kg_f(gram_u gram)
+{
+    return ((kilogram_f) (gram / 1000));
+}
+
+/**
+ * Convert gram_u to kilogram_t.
+ */
+kilogram_t g_u_to_kg_t(gram_u gram)
+{
+    const gram_u conversion = gram / 1000;
+    return ((kilogram_t) ((conversion) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : conversion));
+}
+
+/**
+ * Convert gram_u to kilogram_u.
+ */
+kilogram_u g_u_to_kg_u(gram_u gram)
+{
+    return ((kilogram_u) (gram / 1000));
+}
+
+/**
+ * Convert gram_u to megagram_d.
+ */
+megagram_d g_u_to_Mg_d(gram_u gram)
+{
+    return ((megagram_d) (gram / 1000000));
+}
+
+/**
+ * Convert gram_u to megagram_f.
+ */
+megagram_f g_u_to_Mg_f(gram_u gram)
+{
+    return ((megagram_f) (gram / 1000000));
+}
+
+/**
+ * Convert gram_u to megagram_t.
+ */
+megagram_t g_u_to_Mg_t(gram_u gram)
+{
+    const gram_u conversion = gram / 1000000;
+    return ((megagram_t) ((conversion) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : conversion));
+}
+
+/**
+ * Convert gram_u to megagram_u.
+ */
+megagram_u g_u_to_Mg_u(gram_u gram)
+{
+    return ((megagram_u) (gram / 1000000));
+}
+
+/**
+ * Convert gram_u to microgram_d.
+ */
+microgram_d g_u_to_ug_d(gram_u gram)
+{
+    return ((microgram_d) (gram)) * 1000000.0;
+}
+
+/**
+ * Convert gram_u to microgram_f.
+ */
+microgram_f g_u_to_ug_f(gram_u gram)
+{
+    return ((microgram_f) (gram)) * 1000000.0f;
+}
+
+/**
+ * Convert gram_u to microgram_t.
+ */
+microgram_t g_u_to_ug_t(gram_u gram)
+{
+    if (gram > ((gram_u) (9223372036854775807 / 1000000))) {
+        return 9223372036854775807;
+    }
+    return ((microgram_t) (gram * 1000000));
+}
+
+/**
+ * Convert gram_u to microgram_u.
+ */
+microgram_u g_u_to_ug_u(gram_u gram)
+{
+    if (gram > 18446744073709551615U / 1000000) {
+        return 18446744073709551615U;
+    }
+    return ((microgram_u) (gram)) * 1000000;
+}
+
+/**
+ * Convert gram_u to milligram_d.
+ */
+milligram_d g_u_to_mg_d(gram_u gram)
+{
+    return ((milligram_d) (gram)) * 1000.0;
+}
+
+/**
+ * Convert gram_u to milligram_f.
+ */
+milligram_f g_u_to_mg_f(gram_u gram)
+{
+    return ((milligram_f) (gram)) * 1000.0f;
+}
+
+/**
+ * Convert gram_u to milligram_t.
+ */
+milligram_t g_u_to_mg_t(gram_u gram)
+{
+    if (gram > ((gram_u) (9223372036854775807 / 1000))) {
+        return 9223372036854775807;
+    }
+    return ((milligram_t) (gram * 1000));
+}
+
+/**
+ * Convert gram_u to milligram_u.
+ */
+milligram_u g_u_to_mg_u(gram_u gram)
+{
+    if (gram > 18446744073709551615U / 1000) {
+        return 18446744073709551615U;
+    }
+    return ((milligram_u) (gram)) * 1000;
+}
+
+/**
+ * Convert gram_u to uint16_t.
+ */
+uint16_t g_u_to_u16(gram_u gram)
+{
+    return ((uint16_t) (MIN(((gram_u) (65535)), MAX(((gram_u) (0)), gram))));
+}
+
+/**
+ * Convert gram_u to uint32_t.
+ */
+uint32_t g_u_to_u32(gram_u gram)
+{
+    return ((uint32_t) (MIN(((gram_u) (4294967295U)), MAX(((gram_u) (0)), gram))));
+}
+
+/**
+ * Convert gram_u to uint64_t.
+ */
+uint64_t g_u_to_u64(gram_u gram)
+{
+    return ((uint64_t) (gram));
+}
+
+/**
+ * Convert gram_u to uint8_t.
+ */
+uint8_t g_u_to_u8(gram_u gram)
+{
+    return ((uint8_t) (MIN(((gram_u) (255)), MAX(((gram_u) (0)), gram))));
+}
+
+/**
+ * Convert int16_t to gram_d.
+ */
+gram_d i16_to_g_d(int16_t gram)
+{
+    return ((gram_d) (gram));
+}
+
+/**
+ * Convert int16_t to gram_f.
+ */
+gram_f i16_to_g_f(int16_t gram)
+{
+    return ((gram_f) (gram));
+}
+
+/**
+ * Convert int16_t to gram_t.
+ */
+gram_t i16_to_g_t(int16_t gram)
+{
+    return ((gram_t) (gram));
+}
+
+/**
+ * Convert int16_t to gram_u.
+ */
+gram_u i16_to_g_u(int16_t gram)
+{
+    return ((gram_u) (MAX(((int16_t) (0)), gram)));
+}
+
+/**
+ * Convert int16_t to kilogram_d.
+ */
+kilogram_d i16_to_kg_d(int16_t kilogram)
+{
+    return ((kilogram_d) (kilogram));
+}
+
+/**
+ * Convert int16_t to kilogram_f.
+ */
+kilogram_f i16_to_kg_f(int16_t kilogram)
+{
+    return ((kilogram_f) (kilogram));
+}
+
+/**
+ * Convert int16_t to kilogram_t.
+ */
+kilogram_t i16_to_kg_t(int16_t kilogram)
+{
+    return ((kilogram_t) (kilogram));
+}
+
+/**
+ * Convert int16_t to kilogram_u.
+ */
+kilogram_u i16_to_kg_u(int16_t kilogram)
+{
+    return ((kilogram_u) (MAX(((int16_t) (0)), kilogram)));
+}
+
+/**
+ * Convert int16_t to megagram_d.
+ */
+megagram_d i16_to_Mg_d(int16_t megagram)
+{
+    return ((megagram_d) (megagram));
+}
+
+/**
+ * Convert int16_t to megagram_f.
+ */
+megagram_f i16_to_Mg_f(int16_t megagram)
+{
+    return ((megagram_f) (megagram));
+}
+
+/**
+ * Convert int16_t to megagram_t.
+ */
+megagram_t i16_to_Mg_t(int16_t megagram)
+{
+    return ((megagram_t) (megagram));
+}
+
+/**
+ * Convert int16_t to megagram_u.
+ */
+megagram_u i16_to_Mg_u(int16_t megagram)
+{
+    return ((megagram_u) (MAX(((int16_t) (0)), megagram)));
+}
+
+/**
+ * Convert int16_t to microgram_d.
+ */
+microgram_d i16_to_ug_d(int16_t microgram)
+{
+    return ((microgram_d) (microgram));
+}
+
+/**
+ * Convert int16_t to microgram_f.
+ */
+microgram_f i16_to_ug_f(int16_t microgram)
+{
+    return ((microgram_f) (microgram));
+}
+
+/**
+ * Convert int16_t to microgram_t.
+ */
+microgram_t i16_to_ug_t(int16_t microgram)
+{
+    return ((microgram_t) (microgram));
+}
+
+/**
+ * Convert int16_t to microgram_u.
+ */
+microgram_u i16_to_ug_u(int16_t microgram)
+{
+    return ((microgram_u) (MAX(((int16_t) (0)), microgram)));
+}
+
+/**
+ * Convert int16_t to milligram_d.
+ */
+milligram_d i16_to_mg_d(int16_t milligram)
+{
+    return ((milligram_d) (milligram));
+}
+
+/**
+ * Convert int16_t to milligram_f.
+ */
+milligram_f i16_to_mg_f(int16_t milligram)
+{
+    return ((milligram_f) (milligram));
+}
+
+/**
+ * Convert int16_t to milligram_t.
+ */
+milligram_t i16_to_mg_t(int16_t milligram)
+{
+    return ((milligram_t) (milligram));
+}
+
+/**
+ * Convert int16_t to milligram_u.
+ */
+milligram_u i16_to_mg_u(int16_t milligram)
+{
+    return ((milligram_u) (MAX(((int16_t) (0)), milligram)));
+}
+
+/**
+ * Convert int32_t to gram_d.
+ */
+gram_d i32_to_g_d(int32_t gram)
+{
+    return ((gram_d) (gram));
+}
+
+/**
+ * Convert int32_t to gram_f.
+ */
+gram_f i32_to_g_f(int32_t gram)
+{
+    return ((gram_f) (gram));
+}
+
+/**
+ * Convert int32_t to gram_t.
+ */
+gram_t i32_to_g_t(int32_t gram)
+{
+    return ((gram_t) (gram));
+}
+
+/**
+ * Convert int32_t to gram_u.
+ */
+gram_u i32_to_g_u(int32_t gram)
+{
+    return ((gram_u) (MAX(((int32_t) (0)), gram)));
+}
+
+/**
+ * Convert int32_t to kilogram_d.
+ */
+kilogram_d i32_to_kg_d(int32_t kilogram)
+{
+    return ((kilogram_d) (kilogram));
+}
+
+/**
+ * Convert int32_t to kilogram_f.
+ */
+kilogram_f i32_to_kg_f(int32_t kilogram)
+{
+    return ((kilogram_f) (kilogram));
+}
+
+/**
+ * Convert int32_t to kilogram_t.
+ */
+kilogram_t i32_to_kg_t(int32_t kilogram)
+{
+    return ((kilogram_t) (kilogram));
+}
+
+/**
+ * Convert int32_t to kilogram_u.
+ */
+kilogram_u i32_to_kg_u(int32_t kilogram)
+{
+    return ((kilogram_u) (MAX(((int32_t) (0)), kilogram)));
+}
+
+/**
+ * Convert int32_t to megagram_d.
+ */
+megagram_d i32_to_Mg_d(int32_t megagram)
+{
+    return ((megagram_d) (megagram));
+}
+
+/**
+ * Convert int32_t to megagram_f.
+ */
+megagram_f i32_to_Mg_f(int32_t megagram)
+{
+    return ((megagram_f) (megagram));
+}
+
+/**
+ * Convert int32_t to megagram_t.
+ */
+megagram_t i32_to_Mg_t(int32_t megagram)
+{
+    return ((megagram_t) (megagram));
+}
+
+/**
+ * Convert int32_t to megagram_u.
+ */
+megagram_u i32_to_Mg_u(int32_t megagram)
+{
+    return ((megagram_u) (MAX(((int32_t) (0)), megagram)));
+}
+
+/**
+ * Convert int32_t to microgram_d.
+ */
+microgram_d i32_to_ug_d(int32_t microgram)
+{
+    return ((microgram_d) (microgram));
+}
+
+/**
+ * Convert int32_t to microgram_f.
+ */
+microgram_f i32_to_ug_f(int32_t microgram)
+{
+    return ((microgram_f) (microgram));
+}
+
+/**
+ * Convert int32_t to microgram_t.
+ */
+microgram_t i32_to_ug_t(int32_t microgram)
+{
+    return ((microgram_t) (microgram));
+}
+
+/**
+ * Convert int32_t to microgram_u.
+ */
+microgram_u i32_to_ug_u(int32_t microgram)
+{
+    return ((microgram_u) (MAX(((int32_t) (0)), microgram)));
+}
+
+/**
+ * Convert int32_t to milligram_d.
+ */
+milligram_d i32_to_mg_d(int32_t milligram)
+{
+    return ((milligram_d) (milligram));
+}
+
+/**
+ * Convert int32_t to milligram_f.
+ */
+milligram_f i32_to_mg_f(int32_t milligram)
+{
+    return ((milligram_f) (milligram));
+}
+
+/**
+ * Convert int32_t to milligram_t.
+ */
+milligram_t i32_to_mg_t(int32_t milligram)
+{
+    return ((milligram_t) (milligram));
+}
+
+/**
+ * Convert int32_t to milligram_u.
+ */
+milligram_u i32_to_mg_u(int32_t milligram)
+{
+    return ((milligram_u) (MAX(((int32_t) (0)), milligram)));
+}
+
+/**
+ * Convert int64_t to gram_d.
+ */
+gram_d i64_to_g_d(int64_t gram)
+{
+    return ((gram_d) (gram));
+}
+
+/**
+ * Convert int64_t to gram_f.
+ */
+gram_f i64_to_g_f(int64_t gram)
+{
+    return ((gram_f) (gram));
+}
+
+/**
+ * Convert int64_t to gram_t.
+ */
+gram_t i64_to_g_t(int64_t gram)
+{
+    return ((gram_t) (gram));
+}
+
+/**
+ * Convert int64_t to gram_u.
+ */
+gram_u i64_to_g_u(int64_t gram)
+{
+    return ((gram_u) (MAX(((int64_t) (0)), gram)));
+}
+
+/**
+ * Convert int64_t to kilogram_d.
+ */
+kilogram_d i64_to_kg_d(int64_t kilogram)
+{
+    return ((kilogram_d) (kilogram));
+}
+
+/**
+ * Convert int64_t to kilogram_f.
+ */
+kilogram_f i64_to_kg_f(int64_t kilogram)
+{
+    return ((kilogram_f) (kilogram));
+}
+
+/**
+ * Convert int64_t to kilogram_t.
+ */
+kilogram_t i64_to_kg_t(int64_t kilogram)
+{
+    return ((kilogram_t) (kilogram));
+}
+
+/**
+ * Convert int64_t to kilogram_u.
+ */
+kilogram_u i64_to_kg_u(int64_t kilogram)
+{
+    return ((kilogram_u) (MAX(((int64_t) (0)), kilogram)));
+}
+
+/**
+ * Convert int64_t to megagram_d.
+ */
+megagram_d i64_to_Mg_d(int64_t megagram)
+{
+    return ((megagram_d) (megagram));
+}
+
+/**
+ * Convert int64_t to megagram_f.
+ */
+megagram_f i64_to_Mg_f(int64_t megagram)
+{
+    return ((megagram_f) (megagram));
+}
+
+/**
+ * Convert int64_t to megagram_t.
+ */
+megagram_t i64_to_Mg_t(int64_t megagram)
+{
+    return ((megagram_t) (megagram));
+}
+
+/**
+ * Convert int64_t to megagram_u.
+ */
+megagram_u i64_to_Mg_u(int64_t megagram)
+{
+    return ((megagram_u) (MAX(((int64_t) (0)), megagram)));
+}
+
+/**
+ * Convert int64_t to microgram_d.
+ */
+microgram_d i64_to_ug_d(int64_t microgram)
+{
+    return ((microgram_d) (microgram));
+}
+
+/**
+ * Convert int64_t to microgram_f.
+ */
+microgram_f i64_to_ug_f(int64_t microgram)
+{
+    return ((microgram_f) (microgram));
+}
+
+/**
+ * Convert int64_t to microgram_t.
+ */
+microgram_t i64_to_ug_t(int64_t microgram)
+{
+    return ((microgram_t) (microgram));
+}
+
+/**
+ * Convert int64_t to microgram_u.
+ */
+microgram_u i64_to_ug_u(int64_t microgram)
+{
+    return ((microgram_u) (MAX(((int64_t) (0)), microgram)));
+}
+
+/**
+ * Convert int64_t to milligram_d.
+ */
+milligram_d i64_to_mg_d(int64_t milligram)
+{
+    return ((milligram_d) (milligram));
+}
+
+/**
+ * Convert int64_t to milligram_f.
+ */
+milligram_f i64_to_mg_f(int64_t milligram)
+{
+    return ((milligram_f) (milligram));
+}
+
+/**
+ * Convert int64_t to milligram_t.
+ */
+milligram_t i64_to_mg_t(int64_t milligram)
+{
+    return ((milligram_t) (milligram));
+}
+
+/**
+ * Convert int64_t to milligram_u.
+ */
+milligram_u i64_to_mg_u(int64_t milligram)
+{
+    return ((milligram_u) (MAX(((int64_t) (0)), milligram)));
+}
+
+/**
+ * Convert int8_t to gram_d.
+ */
+gram_d i8_to_g_d(int8_t gram)
+{
+    return ((gram_d) (gram));
+}
+
+/**
+ * Convert int8_t to gram_f.
+ */
+gram_f i8_to_g_f(int8_t gram)
+{
+    return ((gram_f) (gram));
+}
+
+/**
+ * Convert int8_t to gram_t.
+ */
+gram_t i8_to_g_t(int8_t gram)
+{
+    return ((gram_t) (gram));
+}
+
+/**
+ * Convert int8_t to gram_u.
+ */
+gram_u i8_to_g_u(int8_t gram)
+{
+    return ((gram_u) (MAX(((int8_t) (0)), gram)));
+}
+
+/**
+ * Convert int8_t to kilogram_d.
+ */
+kilogram_d i8_to_kg_d(int8_t kilogram)
+{
+    return ((kilogram_d) (kilogram));
+}
+
+/**
+ * Convert int8_t to kilogram_f.
+ */
+kilogram_f i8_to_kg_f(int8_t kilogram)
+{
+    return ((kilogram_f) (kilogram));
+}
+
+/**
+ * Convert int8_t to kilogram_t.
+ */
+kilogram_t i8_to_kg_t(int8_t kilogram)
+{
+    return ((kilogram_t) (kilogram));
+}
+
+/**
+ * Convert int8_t to kilogram_u.
+ */
+kilogram_u i8_to_kg_u(int8_t kilogram)
+{
+    return ((kilogram_u) (MAX(((int8_t) (0)), kilogram)));
+}
+
+/**
+ * Convert int8_t to megagram_d.
+ */
+megagram_d i8_to_Mg_d(int8_t megagram)
+{
+    return ((megagram_d) (megagram));
+}
+
+/**
+ * Convert int8_t to megagram_f.
+ */
+megagram_f i8_to_Mg_f(int8_t megagram)
+{
+    return ((megagram_f) (megagram));
+}
+
+/**
+ * Convert int8_t to megagram_t.
+ */
+megagram_t i8_to_Mg_t(int8_t megagram)
+{
+    return ((megagram_t) (megagram));
+}
+
+/**
+ * Convert int8_t to megagram_u.
+ */
+megagram_u i8_to_Mg_u(int8_t megagram)
+{
+    return ((megagram_u) (MAX(((int8_t) (0)), megagram)));
+}
+
+/**
+ * Convert int8_t to microgram_d.
+ */
+microgram_d i8_to_ug_d(int8_t microgram)
+{
+    return ((microgram_d) (microgram));
+}
+
+/**
+ * Convert int8_t to microgram_f.
+ */
+microgram_f i8_to_ug_f(int8_t microgram)
+{
+    return ((microgram_f) (microgram));
+}
+
+/**
+ * Convert int8_t to microgram_t.
+ */
+microgram_t i8_to_ug_t(int8_t microgram)
+{
+    return ((microgram_t) (microgram));
+}
+
+/**
+ * Convert int8_t to microgram_u.
+ */
+microgram_u i8_to_ug_u(int8_t microgram)
+{
+    return ((microgram_u) (MAX(((int8_t) (0)), microgram)));
+}
+
+/**
+ * Convert int8_t to milligram_d.
+ */
+milligram_d i8_to_mg_d(int8_t milligram)
+{
+    return ((milligram_d) (milligram));
+}
+
+/**
+ * Convert int8_t to milligram_f.
+ */
+milligram_f i8_to_mg_f(int8_t milligram)
+{
+    return ((milligram_f) (milligram));
+}
+
+/**
+ * Convert int8_t to milligram_t.
+ */
+milligram_t i8_to_mg_t(int8_t milligram)
+{
+    return ((milligram_t) (milligram));
+}
+
+/**
+ * Convert int8_t to milligram_u.
+ */
+milligram_u i8_to_mg_u(int8_t milligram)
+{
+    return ((milligram_u) (MAX(((int8_t) (0)), milligram)));
+}
+
+/**
+ * Convert kilogram_d to double.
+ */
+double kg_d_to_d(kilogram_d kilogram)
+{
+    return ((double) (kilogram));
+}
+
+/**
+ * Convert kilogram_d to float.
+ */
+float kg_d_to_f(kilogram_d kilogram)
+{
+    return d_to_f(((double) (kilogram)));
+}
+
+/**
+ * Convert kilogram_d to gram_d.
+ */
+gram_d kg_d_to_g_d(kilogram_d kilogram)
+{
+    if (kilogram < -DBL_MAX / 1000.0) {
+        return -DBL_MAX;
+    }
+    if (kilogram > DBL_MAX / 1000.0) {
+        return DBL_MAX;
+    }
+    return ((gram_d) (kilogram)) * 1000.0;
+}
+
+/**
+ * Convert kilogram_d to gram_f.
+ */
+gram_f kg_d_to_g_f(kilogram_d kilogram)
+{
+    if (kilogram > ((kilogram_d) (FLT_MAX)) / 1000.0) {
+        return FLT_MAX;
+    }
+    if (kilogram < ((kilogram_d) (-FLT_MAX)) / 1000.0) {
+        return -FLT_MAX;
+    }
+    return ((gram_f) (kilogram * 1000.0));
+}
+
+/**
+ * Convert kilogram_d to gram_t.
+ */
+gram_t kg_d_to_g_t(kilogram_d kilogram)
+{
+    if (kilogram > ((kilogram_d) (9223372036854775807)) / 1000.0) {
+        return 9223372036854775807;
+    }
+    if (kilogram < ((kilogram_d) (-9223372036854775807 - 1)) / 1000.0) {
+        return -9223372036854775807 - 1;
+    }
+    return ((gram_t) (kilogram * 1000.0));
+}
+
+/**
+ * Convert kilogram_d to gram_u.
+ */
+gram_u kg_d_to_g_u(kilogram_d kilogram)
+{
+    if (kilogram > ((kilogram_d) (18446744073709551615U)) / 1000.0) {
+        return 18446744073709551615U;
+    }
+    if (kilogram < ((kilogram_d) (0)) / 1000.0) {
+        return 0;
+    }
+    return ((gram_u) (kilogram * 1000.0));
+}
+
+/**
+ * Convert kilogram_d to int16_t.
+ */
+int16_t kg_d_to_i16(kilogram_d kilogram)
+{
+    return d_to_i16(((double) (kilogram)));
+}
+
+/**
+ * Convert kilogram_d to int32_t.
+ */
+int32_t kg_d_to_i32(kilogram_d kilogram)
+{
+    return d_to_i32(((double) (kilogram)));
+}
+
+/**
+ * Convert kilogram_d to int64_t.
+ */
+int64_t kg_d_to_i64(kilogram_d kilogram)
+{
+    return d_to_i64(((double) (kilogram)));
+}
+
+/**
+ * Convert kilogram_d to int8_t.
+ */
+int8_t kg_d_to_i8(kilogram_d kilogram)
+{
+    return d_to_i8(((double) (kilogram)));
+}
+
+/**
+ * Convert kilogram_d to kilogram_f.
+ */
+kilogram_f kg_d_to_kg_f(kilogram_d kilogram)
+{
+    return ((kilogram_f) (kilogram < ((double) (FLT_MAX)) ? (kilogram > ((double) (-FLT_MAX)) ? kilogram : -FLT_MAX) : FLT_MAX));
+}
+
+/**
+ * Convert kilogram_d to kilogram_t.
+ */
+kilogram_t kg_d_to_kg_t(kilogram_d kilogram)
+{
+    return ((kilogram_t) (round(((double) (kilogram))) < ((double) (9223372036854775807)) ? (round(((double) (kilogram))) > ((double) (-9223372036854775807 - 1)) ? ((kilogram_t) (round(((double) (kilogram))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert kilogram_d to kilogram_u.
+ */
+kilogram_u kg_d_to_kg_u(kilogram_d kilogram)
+{
+    return ((kilogram_u) (round(((double) (kilogram))) < ((double) (18446744073709551615U)) ? (round(((double) (kilogram))) > ((double) (0)) ? ((kilogram_u) (round(((double) (kilogram))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert kilogram_d to megagram_d.
+ */
+megagram_d kg_d_to_Mg_d(kilogram_d kilogram)
+{
+    return ((megagram_d) (kilogram / 1000.0));
+}
+
+/**
+ * Convert kilogram_d to megagram_f.
+ */
+megagram_f kg_d_to_Mg_f(kilogram_d kilogram)
+{
+    const kilogram_d conversion = kilogram / 1000.0;
+    return ((megagram_f) (conversion < ((double) (FLT_MAX)) ? (conversion > ((double) (-FLT_MAX)) ? conversion : -FLT_MAX) : FLT_MAX));
+}
+
+/**
+ * Convert kilogram_d to megagram_t.
+ */
+megagram_t kg_d_to_Mg_t(kilogram_d kilogram)
+{
+    const kilogram_d conversion = kilogram / 1000.0;
+    return ((megagram_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((megagram_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert kilogram_d to megagram_u.
+ */
+megagram_u kg_d_to_Mg_u(kilogram_d kilogram)
+{
+    const kilogram_d conversion = kilogram / 1000.0;
+    return ((megagram_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((megagram_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert kilogram_d to microgram_d.
+ */
+microgram_d kg_d_to_ug_d(kilogram_d kilogram)
+{
+    if (kilogram < -DBL_MAX / 1000000000.0) {
+        return -DBL_MAX;
+    }
+    if (kilogram > DBL_MAX / 1000000000.0) {
+        return DBL_MAX;
+    }
+    return ((microgram_d) (kilogram)) * 1000000000.0;
+}
+
+/**
+ * Convert kilogram_d to microgram_f.
+ */
+microgram_f kg_d_to_ug_f(kilogram_d kilogram)
+{
+    if (kilogram > ((kilogram_d) (FLT_MAX)) / 1000000000.0) {
+        return FLT_MAX;
+    }
+    if (kilogram < ((kilogram_d) (-FLT_MAX)) / 1000000000.0) {
+        return -FLT_MAX;
+    }
+    return ((microgram_f) (kilogram * 1000000000.0));
+}
+
+/**
+ * Convert kilogram_d to microgram_t.
+ */
+microgram_t kg_d_to_ug_t(kilogram_d kilogram)
+{
+    if (kilogram > ((kilogram_d) (9223372036854775807)) / 1000000000.0) {
+        return 9223372036854775807;
+    }
+    if (kilogram < ((kilogram_d) (-9223372036854775807 - 1)) / 1000000000.0) {
+        return -9223372036854775807 - 1;
+    }
+    return ((microgram_t) (kilogram * 1000000000.0));
+}
+
+/**
+ * Convert kilogram_d to microgram_u.
+ */
+microgram_u kg_d_to_ug_u(kilogram_d kilogram)
+{
+    if (kilogram > ((kilogram_d) (18446744073709551615U)) / 1000000000.0) {
+        return 18446744073709551615U;
+    }
+    if (kilogram < ((kilogram_d) (0)) / 1000000000.0) {
+        return 0;
+    }
+    return ((microgram_u) (kilogram * 1000000000.0));
+}
+
+/**
+ * Convert kilogram_d to milligram_d.
+ */
+milligram_d kg_d_to_mg_d(kilogram_d kilogram)
+{
+    if (kilogram < -DBL_MAX / 1000000.0) {
+        return -DBL_MAX;
+    }
+    if (kilogram > DBL_MAX / 1000000.0) {
+        return DBL_MAX;
+    }
+    return ((milligram_d) (kilogram)) * 1000000.0;
+}
+
+/**
+ * Convert kilogram_d to milligram_f.
+ */
+milligram_f kg_d_to_mg_f(kilogram_d kilogram)
+{
+    if (kilogram > ((kilogram_d) (FLT_MAX)) / 1000000.0) {
+        return FLT_MAX;
+    }
+    if (kilogram < ((kilogram_d) (-FLT_MAX)) / 1000000.0) {
+        return -FLT_MAX;
+    }
+    return ((milligram_f) (kilogram * 1000000.0));
+}
+
+/**
+ * Convert kilogram_d to milligram_t.
+ */
+milligram_t kg_d_to_mg_t(kilogram_d kilogram)
+{
+    if (kilogram > ((kilogram_d) (9223372036854775807)) / 1000000.0) {
+        return 9223372036854775807;
+    }
+    if (kilogram < ((kilogram_d) (-9223372036854775807 - 1)) / 1000000.0) {
+        return -9223372036854775807 - 1;
+    }
+    return ((milligram_t) (kilogram * 1000000.0));
+}
+
+/**
+ * Convert kilogram_d to milligram_u.
+ */
+milligram_u kg_d_to_mg_u(kilogram_d kilogram)
+{
+    if (kilogram > ((kilogram_d) (18446744073709551615U)) / 1000000.0) {
+        return 18446744073709551615U;
+    }
+    if (kilogram < ((kilogram_d) (0)) / 1000000.0) {
+        return 0;
+    }
+    return ((milligram_u) (kilogram * 1000000.0));
+}
+
+/**
+ * Convert kilogram_d to uint16_t.
+ */
+uint16_t kg_d_to_u16(kilogram_d kilogram)
+{
+    return d_to_u16(((double) (kilogram)));
+}
+
+/**
+ * Convert kilogram_d to uint32_t.
+ */
+uint32_t kg_d_to_u32(kilogram_d kilogram)
+{
+    return d_to_u32(((double) (kilogram)));
+}
+
+/**
+ * Convert kilogram_d to uint64_t.
+ */
+uint64_t kg_d_to_u64(kilogram_d kilogram)
+{
+    return d_to_u64(((double) (kilogram)));
+}
+
+/**
+ * Convert kilogram_d to uint8_t.
+ */
+uint8_t kg_d_to_u8(kilogram_d kilogram)
+{
+    return d_to_u8(((double) (kilogram)));
+}
+
+/**
+ * Convert kilogram_f to double.
+ */
+double kg_f_to_d(kilogram_f kilogram)
+{
+    return ((double) (kilogram));
+}
+
+/**
+ * Convert kilogram_f to float.
+ */
+float kg_f_to_f(kilogram_f kilogram)
+{
+    return ((float) (kilogram));
+}
+
+/**
+ * Convert kilogram_f to gram_d.
+ */
+gram_d kg_f_to_g_d(kilogram_f kilogram)
+{
+    return ((gram_d) (kilogram)) * 1000.0;
+}
+
+/**
+ * Convert kilogram_f to gram_f.
+ */
+gram_f kg_f_to_g_f(kilogram_f kilogram)
+{
+    if (kilogram < -FLT_MAX / 1000.0f) {
+        return -FLT_MAX;
+    }
+    if (kilogram > FLT_MAX / 1000.0f) {
+        return FLT_MAX;
+    }
+    return ((gram_f) (kilogram)) * 1000.0f;
+}
+
+/**
+ * Convert kilogram_f to gram_t.
+ */
+gram_t kg_f_to_g_t(kilogram_f kilogram)
+{
+    if (kilogram > ((kilogram_f) (9223372036854775807)) / 1000.0f) {
+        return 9223372036854775807;
+    }
+    if (kilogram < ((kilogram_f) (-9223372036854775807 - 1)) / 1000.0f) {
+        return -9223372036854775807 - 1;
+    }
+    return ((gram_t) (kilogram * 1000.0f));
+}
+
+/**
+ * Convert kilogram_f to gram_u.
+ */
+gram_u kg_f_to_g_u(kilogram_f kilogram)
+{
+    if (kilogram > ((kilogram_f) (18446744073709551615U)) / 1000.0f) {
+        return 18446744073709551615U;
+    }
+    if (kilogram < ((kilogram_f) (0)) / 1000.0f) {
+        return 0;
+    }
+    return ((gram_u) (kilogram * 1000.0f));
+}
+
+/**
+ * Convert kilogram_f to int16_t.
+ */
+int16_t kg_f_to_i16(kilogram_f kilogram)
+{
+    return f_to_i16(((float) (kilogram)));
+}
+
+/**
+ * Convert kilogram_f to int32_t.
+ */
+int32_t kg_f_to_i32(kilogram_f kilogram)
+{
+    return f_to_i32(((float) (kilogram)));
+}
+
+/**
+ * Convert kilogram_f to int64_t.
+ */
+int64_t kg_f_to_i64(kilogram_f kilogram)
+{
+    return f_to_i64(((float) (kilogram)));
+}
+
+/**
+ * Convert kilogram_f to int8_t.
+ */
+int8_t kg_f_to_i8(kilogram_f kilogram)
+{
+    return f_to_i8(((float) (kilogram)));
+}
+
+/**
+ * Convert kilogram_f to kilogram_d.
+ */
+kilogram_d kg_f_to_kg_d(kilogram_f kilogram)
+{
+    return ((kilogram_d) (kilogram));
+}
+
+/**
+ * Convert kilogram_f to kilogram_t.
+ */
+kilogram_t kg_f_to_kg_t(kilogram_f kilogram)
+{
+    return ((kilogram_t) (round(((double) (kilogram))) < ((double) (9223372036854775807)) ? (round(((double) (kilogram))) > ((double) (-9223372036854775807 - 1)) ? ((kilogram_t) (round(((double) (kilogram))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert kilogram_f to kilogram_u.
+ */
+kilogram_u kg_f_to_kg_u(kilogram_f kilogram)
+{
+    return ((kilogram_u) (round(((double) (kilogram))) < ((double) (18446744073709551615U)) ? (round(((double) (kilogram))) > ((double) (0)) ? ((kilogram_u) (round(((double) (kilogram))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert kilogram_f to megagram_d.
+ */
+megagram_d kg_f_to_Mg_d(kilogram_f kilogram)
+{
+    return (((megagram_d) (kilogram)) / 1000.0);
+}
+
+/**
+ * Convert kilogram_f to megagram_f.
+ */
+megagram_f kg_f_to_Mg_f(kilogram_f kilogram)
+{
+    return ((megagram_f) (kilogram / 1000.0f));
+}
+
+/**
+ * Convert kilogram_f to megagram_t.
+ */
+megagram_t kg_f_to_Mg_t(kilogram_f kilogram)
+{
+    const kilogram_f conversion = kilogram / 1000.0f;
+    return ((megagram_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((megagram_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert kilogram_f to megagram_u.
+ */
+megagram_u kg_f_to_Mg_u(kilogram_f kilogram)
+{
+    const kilogram_f conversion = kilogram / 1000.0f;
+    return ((megagram_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((megagram_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert kilogram_f to microgram_d.
+ */
+microgram_d kg_f_to_ug_d(kilogram_f kilogram)
+{
+    return ((microgram_d) (kilogram)) * 1000000000.0;
+}
+
+/**
+ * Convert kilogram_f to microgram_f.
+ */
+microgram_f kg_f_to_ug_f(kilogram_f kilogram)
+{
+    if (kilogram < -FLT_MAX / 1000000000.0f) {
+        return -FLT_MAX;
+    }
+    if (kilogram > FLT_MAX / 1000000000.0f) {
+        return FLT_MAX;
+    }
+    return ((microgram_f) (kilogram)) * 1000000000.0f;
+}
+
+/**
+ * Convert kilogram_f to microgram_t.
+ */
+microgram_t kg_f_to_ug_t(kilogram_f kilogram)
+{
+    if (kilogram > ((kilogram_f) (9223372036854775807)) / 1000000000.0f) {
+        return 9223372036854775807;
+    }
+    if (kilogram < ((kilogram_f) (-9223372036854775807 - 1)) / 1000000000.0f) {
+        return -9223372036854775807 - 1;
+    }
+    return ((microgram_t) (kilogram * 1000000000.0f));
+}
+
+/**
+ * Convert kilogram_f to microgram_u.
+ */
+microgram_u kg_f_to_ug_u(kilogram_f kilogram)
+{
+    if (kilogram > ((kilogram_f) (18446744073709551615U)) / 1000000000.0f) {
+        return 18446744073709551615U;
+    }
+    if (kilogram < ((kilogram_f) (0)) / 1000000000.0f) {
+        return 0;
+    }
+    return ((microgram_u) (kilogram * 1000000000.0f));
+}
+
+/**
+ * Convert kilogram_f to milligram_d.
+ */
+milligram_d kg_f_to_mg_d(kilogram_f kilogram)
+{
+    return ((milligram_d) (kilogram)) * 1000000.0;
+}
+
+/**
+ * Convert kilogram_f to milligram_f.
+ */
+milligram_f kg_f_to_mg_f(kilogram_f kilogram)
+{
+    if (kilogram < -FLT_MAX / 1000000.0f) {
+        return -FLT_MAX;
+    }
+    if (kilogram > FLT_MAX / 1000000.0f) {
+        return FLT_MAX;
+    }
+    return ((milligram_f) (kilogram)) * 1000000.0f;
+}
+
+/**
+ * Convert kilogram_f to milligram_t.
+ */
+milligram_t kg_f_to_mg_t(kilogram_f kilogram)
+{
+    if (kilogram > ((kilogram_f) (9223372036854775807)) / 1000000.0f) {
+        return 9223372036854775807;
+    }
+    if (kilogram < ((kilogram_f) (-9223372036854775807 - 1)) / 1000000.0f) {
+        return -9223372036854775807 - 1;
+    }
+    return ((milligram_t) (kilogram * 1000000.0f));
+}
+
+/**
+ * Convert kilogram_f to milligram_u.
+ */
+milligram_u kg_f_to_mg_u(kilogram_f kilogram)
+{
+    if (kilogram > ((kilogram_f) (18446744073709551615U)) / 1000000.0f) {
+        return 18446744073709551615U;
+    }
+    if (kilogram < ((kilogram_f) (0)) / 1000000.0f) {
+        return 0;
+    }
+    return ((milligram_u) (kilogram * 1000000.0f));
+}
+
+/**
+ * Convert kilogram_f to uint16_t.
+ */
+uint16_t kg_f_to_u16(kilogram_f kilogram)
+{
+    return f_to_u16(((float) (kilogram)));
+}
+
+/**
+ * Convert kilogram_f to uint32_t.
+ */
+uint32_t kg_f_to_u32(kilogram_f kilogram)
+{
+    return f_to_u32(((float) (kilogram)));
+}
+
+/**
+ * Convert kilogram_f to uint64_t.
+ */
+uint64_t kg_f_to_u64(kilogram_f kilogram)
+{
+    return f_to_u64(((float) (kilogram)));
+}
+
+/**
+ * Convert kilogram_f to uint8_t.
+ */
+uint8_t kg_f_to_u8(kilogram_f kilogram)
+{
+    return f_to_u8(((float) (kilogram)));
+}
+
+/**
+ * Convert kilogram_t to double.
+ */
+double kg_t_to_d(kilogram_t kilogram)
+{
+    return ((double) (kilogram));
+}
+
+/**
+ * Convert kilogram_t to float.
+ */
+float kg_t_to_f(kilogram_t kilogram)
+{
+    return ((float) (kilogram));
+}
+
+/**
+ * Convert kilogram_t to gram_d.
+ */
+gram_d kg_t_to_g_d(kilogram_t kilogram)
+{
+    return ((gram_d) (kilogram)) * 1000.0;
+}
+
+/**
+ * Convert kilogram_t to gram_f.
+ */
+gram_f kg_t_to_g_f(kilogram_t kilogram)
+{
+    return ((gram_f) (kilogram)) * 1000.0f;
+}
+
+/**
+ * Convert kilogram_t to gram_t.
+ */
+gram_t kg_t_to_g_t(kilogram_t kilogram)
+{
+    if (kilogram < -9223372036854775807 - 1 / 1000) {
+        return -9223372036854775807 - 1;
+    }
+    if (kilogram > 9223372036854775807 / 1000) {
+        return 9223372036854775807;
+    }
+    return ((gram_t) (kilogram)) * 1000;
+}
+
+/**
+ * Convert kilogram_t to gram_u.
+ */
+gram_u kg_t_to_g_u(kilogram_t kilogram)
+{
+    if (kilogram < 0) {
+        return 0;
+    }
+    const gram_u otherKilogram = ((gram_u) (kilogram));
+    if (otherKilogram > 18446744073709551615U / 1000) {
+        return 18446744073709551615U;
+    }
+    return otherKilogram * 1000;
+}
+
+/**
+ * Convert kilogram_t to int16_t.
+ */
+int16_t kg_t_to_i16(kilogram_t kilogram)
+{
+    return ((int16_t) (MIN(((kilogram_t) (32767)), MAX(((kilogram_t) (-32768)), kilogram))));
+}
+
+/**
+ * Convert kilogram_t to int32_t.
+ */
+int32_t kg_t_to_i32(kilogram_t kilogram)
+{
+    return ((int32_t) (MIN(((kilogram_t) (2147483647)), MAX(((kilogram_t) (-2147483648)), kilogram))));
+}
+
+/**
+ * Convert kilogram_t to int64_t.
+ */
+int64_t kg_t_to_i64(kilogram_t kilogram)
+{
+    return ((int64_t) (kilogram));
+}
+
+/**
+ * Convert kilogram_t to int8_t.
+ */
+int8_t kg_t_to_i8(kilogram_t kilogram)
+{
+    return ((int8_t) (MIN(((kilogram_t) (127)), MAX(((kilogram_t) (-128)), kilogram))));
+}
+
+/**
+ * Convert kilogram_t to kilogram_d.
+ */
+kilogram_d kg_t_to_kg_d(kilogram_t kilogram)
+{
+    return ((kilogram_d) (kilogram));
+}
+
+/**
+ * Convert kilogram_t to kilogram_f.
+ */
+kilogram_f kg_t_to_kg_f(kilogram_t kilogram)
+{
+    return ((kilogram_f) (kilogram));
+}
+
+/**
+ * Convert kilogram_t to kilogram_u.
+ */
+kilogram_u kg_t_to_kg_u(kilogram_t kilogram)
+{
+    return ((kilogram_u) ((kilogram) < 0 ? 0 : kilogram));
+}
+
+/**
+ * Convert kilogram_t to megagram_d.
+ */
+megagram_d kg_t_to_Mg_d(kilogram_t kilogram)
+{
+    return ((megagram_d) (kilogram / 1000));
+}
+
+/**
+ * Convert kilogram_t to megagram_f.
+ */
+megagram_f kg_t_to_Mg_f(kilogram_t kilogram)
+{
+    return ((megagram_f) (kilogram / 1000));
+}
+
+/**
+ * Convert kilogram_t to megagram_t.
+ */
+megagram_t kg_t_to_Mg_t(kilogram_t kilogram)
+{
+    return ((megagram_t) (kilogram / 1000));
+}
+
+/**
+ * Convert kilogram_t to megagram_u.
+ */
+megagram_u kg_t_to_Mg_u(kilogram_t kilogram)
+{
+    if (kilogram < 0) {
+        return 0;
+    }
+    return ((megagram_u) (kilogram / 1000));
+}
+
+/**
+ * Convert kilogram_t to microgram_d.
+ */
+microgram_d kg_t_to_ug_d(kilogram_t kilogram)
+{
+    return ((microgram_d) (kilogram)) * 1000000000.0;
+}
+
+/**
+ * Convert kilogram_t to microgram_f.
+ */
+microgram_f kg_t_to_ug_f(kilogram_t kilogram)
+{
+    return ((microgram_f) (kilogram)) * 1000000000.0f;
+}
+
+/**
+ * Convert kilogram_t to microgram_t.
+ */
+microgram_t kg_t_to_ug_t(kilogram_t kilogram)
+{
+    if (kilogram < -9223372036854775807 - 1 / 1000000000) {
+        return -9223372036854775807 - 1;
+    }
+    if (kilogram > 9223372036854775807 / 1000000000) {
+        return 9223372036854775807;
+    }
+    return ((microgram_t) (kilogram)) * 1000000000;
+}
+
+/**
+ * Convert kilogram_t to microgram_u.
+ */
+microgram_u kg_t_to_ug_u(kilogram_t kilogram)
+{
+    if (kilogram < 0) {
+        return 0;
+    }
+    const microgram_u otherKilogram = ((microgram_u) (kilogram));
+    if (otherKilogram > 18446744073709551615U / 1000000000) {
+        return 18446744073709551615U;
+    }
+    return otherKilogram * 1000000000;
+}
+
+/**
+ * Convert kilogram_t to milligram_d.
+ */
+milligram_d kg_t_to_mg_d(kilogram_t kilogram)
+{
+    return ((milligram_d) (kilogram)) * 1000000.0;
+}
+
+/**
+ * Convert kilogram_t to milligram_f.
+ */
+milligram_f kg_t_to_mg_f(kilogram_t kilogram)
+{
+    return ((milligram_f) (kilogram)) * 1000000.0f;
+}
+
+/**
+ * Convert kilogram_t to milligram_t.
+ */
+milligram_t kg_t_to_mg_t(kilogram_t kilogram)
+{
+    if (kilogram < -9223372036854775807 - 1 / 1000000) {
+        return -9223372036854775807 - 1;
+    }
+    if (kilogram > 9223372036854775807 / 1000000) {
+        return 9223372036854775807;
+    }
+    return ((milligram_t) (kilogram)) * 1000000;
+}
+
+/**
+ * Convert kilogram_t to milligram_u.
+ */
+milligram_u kg_t_to_mg_u(kilogram_t kilogram)
+{
+    if (kilogram < 0) {
+        return 0;
+    }
+    const milligram_u otherKilogram = ((milligram_u) (kilogram));
+    if (otherKilogram > 18446744073709551615U / 1000000) {
+        return 18446744073709551615U;
+    }
+    return otherKilogram * 1000000;
+}
+
+/**
+ * Convert kilogram_t to uint16_t.
+ */
+uint16_t kg_t_to_u16(kilogram_t kilogram)
+{
+    return ((uint16_t) (MAX(((kilogram_t) (0)), kilogram)));
+}
+
+/**
+ * Convert kilogram_t to uint32_t.
+ */
+uint32_t kg_t_to_u32(kilogram_t kilogram)
+{
+    return ((uint32_t) (MAX(((kilogram_t) (0)), kilogram)));
+}
+
+/**
+ * Convert kilogram_t to uint64_t.
+ */
+uint64_t kg_t_to_u64(kilogram_t kilogram)
+{
+    return ((uint64_t) (MAX(((kilogram_t) (0)), kilogram)));
+}
+
+/**
+ * Convert kilogram_t to uint8_t.
+ */
+uint8_t kg_t_to_u8(kilogram_t kilogram)
+{
+    return ((uint8_t) (MAX(((kilogram_t) (0)), kilogram)));
+}
+
+/**
+ * Convert kilogram_u to double.
+ */
+double kg_u_to_d(kilogram_u kilogram)
+{
+    return ((double) (kilogram));
+}
+
+/**
+ * Convert kilogram_u to float.
+ */
+float kg_u_to_f(kilogram_u kilogram)
+{
+    return ((float) (kilogram));
+}
+
+/**
+ * Convert kilogram_u to gram_d.
+ */
+gram_d kg_u_to_g_d(kilogram_u kilogram)
+{
+    return ((gram_d) (kilogram)) * 1000.0;
+}
+
+/**
+ * Convert kilogram_u to gram_f.
+ */
+gram_f kg_u_to_g_f(kilogram_u kilogram)
+{
+    return ((gram_f) (kilogram)) * 1000.0f;
+}
+
+/**
+ * Convert kilogram_u to gram_t.
+ */
+gram_t kg_u_to_g_t(kilogram_u kilogram)
+{
+    if (kilogram > ((kilogram_u) (9223372036854775807 / 1000))) {
+        return 9223372036854775807;
+    }
+    return ((gram_t) (kilogram * 1000));
+}
+
+/**
+ * Convert kilogram_u to gram_u.
+ */
+gram_u kg_u_to_g_u(kilogram_u kilogram)
+{
+    if (kilogram > 18446744073709551615U / 1000) {
+        return 18446744073709551615U;
+    }
+    return ((gram_u) (kilogram)) * 1000;
+}
+
+/**
+ * Convert kilogram_u to int16_t.
+ */
+int16_t kg_u_to_i16(kilogram_u kilogram)
+{
+    return ((int16_t) (MIN(((kilogram_u) (32767)), kilogram)));
+}
+
+/**
+ * Convert kilogram_u to int32_t.
+ */
+int32_t kg_u_to_i32(kilogram_u kilogram)
+{
+    return ((int32_t) (MIN(((kilogram_u) (2147483647)), kilogram)));
+}
+
+/**
+ * Convert kilogram_u to int64_t.
+ */
+int64_t kg_u_to_i64(kilogram_u kilogram)
+{
+    return ((int64_t) (MIN(((kilogram_u) (9223372036854775807)), kilogram)));
+}
+
+/**
+ * Convert kilogram_u to int8_t.
+ */
+int8_t kg_u_to_i8(kilogram_u kilogram)
+{
+    return ((int8_t) (MIN(((kilogram_u) (127)), kilogram)));
+}
+
+/**
+ * Convert kilogram_u to kilogram_d.
+ */
+kilogram_d kg_u_to_kg_d(kilogram_u kilogram)
+{
+    return ((kilogram_d) (kilogram));
+}
+
+/**
+ * Convert kilogram_u to kilogram_f.
+ */
+kilogram_f kg_u_to_kg_f(kilogram_u kilogram)
+{
+    return ((kilogram_f) (kilogram));
+}
+
+/**
+ * Convert kilogram_u to kilogram_t.
+ */
+kilogram_t kg_u_to_kg_t(kilogram_u kilogram)
+{
+    return ((kilogram_t) ((kilogram) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : kilogram));
+}
+
+/**
+ * Convert kilogram_u to megagram_d.
+ */
+megagram_d kg_u_to_Mg_d(kilogram_u kilogram)
+{
+    return ((megagram_d) (kilogram / 1000));
+}
+
+/**
+ * Convert kilogram_u to megagram_f.
+ */
+megagram_f kg_u_to_Mg_f(kilogram_u kilogram)
+{
+    return ((megagram_f) (kilogram / 1000));
+}
+
+/**
+ * Convert kilogram_u to megagram_t.
+ */
+megagram_t kg_u_to_Mg_t(kilogram_u kilogram)
+{
+    const kilogram_u conversion = kilogram / 1000;
+    return ((megagram_t) ((conversion) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : conversion));
+}
+
+/**
+ * Convert kilogram_u to megagram_u.
+ */
+megagram_u kg_u_to_Mg_u(kilogram_u kilogram)
+{
+    return ((megagram_u) (kilogram / 1000));
+}
+
+/**
+ * Convert kilogram_u to microgram_d.
+ */
+microgram_d kg_u_to_ug_d(kilogram_u kilogram)
+{
+    return ((microgram_d) (kilogram)) * 1000000000.0;
+}
+
+/**
+ * Convert kilogram_u to microgram_f.
+ */
+microgram_f kg_u_to_ug_f(kilogram_u kilogram)
+{
+    return ((microgram_f) (kilogram)) * 1000000000.0f;
+}
+
+/**
+ * Convert kilogram_u to microgram_t.
+ */
+microgram_t kg_u_to_ug_t(kilogram_u kilogram)
+{
+    if (kilogram > ((kilogram_u) (9223372036854775807 / 1000000000))) {
+        return 9223372036854775807;
+    }
+    return ((microgram_t) (kilogram * 1000000000));
+}
+
+/**
+ * Convert kilogram_u to microgram_u.
+ */
+microgram_u kg_u_to_ug_u(kilogram_u kilogram)
+{
+    if (kilogram > 18446744073709551615U / 1000000000) {
+        return 18446744073709551615U;
+    }
+    return ((microgram_u) (kilogram)) * 1000000000;
+}
+
+/**
+ * Convert kilogram_u to milligram_d.
+ */
+milligram_d kg_u_to_mg_d(kilogram_u kilogram)
+{
+    return ((milligram_d) (kilogram)) * 1000000.0;
+}
+
+/**
+ * Convert kilogram_u to milligram_f.
+ */
+milligram_f kg_u_to_mg_f(kilogram_u kilogram)
+{
+    return ((milligram_f) (kilogram)) * 1000000.0f;
+}
+
+/**
+ * Convert kilogram_u to milligram_t.
+ */
+milligram_t kg_u_to_mg_t(kilogram_u kilogram)
+{
+    if (kilogram > ((kilogram_u) (9223372036854775807 / 1000000))) {
+        return 9223372036854775807;
+    }
+    return ((milligram_t) (kilogram * 1000000));
+}
+
+/**
+ * Convert kilogram_u to milligram_u.
+ */
+milligram_u kg_u_to_mg_u(kilogram_u kilogram)
+{
+    if (kilogram > 18446744073709551615U / 1000000) {
+        return 18446744073709551615U;
+    }
+    return ((milligram_u) (kilogram)) * 1000000;
+}
+
+/**
+ * Convert kilogram_u to uint16_t.
+ */
+uint16_t kg_u_to_u16(kilogram_u kilogram)
+{
+    return ((uint16_t) (MIN(((kilogram_u) (65535)), MAX(((kilogram_u) (0)), kilogram))));
+}
+
+/**
+ * Convert kilogram_u to uint32_t.
+ */
+uint32_t kg_u_to_u32(kilogram_u kilogram)
+{
+    return ((uint32_t) (MIN(((kilogram_u) (4294967295U)), MAX(((kilogram_u) (0)), kilogram))));
+}
+
+/**
+ * Convert kilogram_u to uint64_t.
+ */
+uint64_t kg_u_to_u64(kilogram_u kilogram)
+{
+    return ((uint64_t) (kilogram));
+}
+
+/**
+ * Convert kilogram_u to uint8_t.
+ */
+uint8_t kg_u_to_u8(kilogram_u kilogram)
+{
+    return ((uint8_t) (MIN(((kilogram_u) (255)), MAX(((kilogram_u) (0)), kilogram))));
+}
+
+/**
+ * Convert megagram_d to double.
+ */
+double Mg_d_to_d(megagram_d megagram)
+{
+    return ((double) (megagram));
+}
+
+/**
+ * Convert megagram_d to float.
+ */
+float Mg_d_to_f(megagram_d megagram)
+{
+    return d_to_f(((double) (megagram)));
+}
+
+/**
+ * Convert megagram_d to gram_d.
+ */
+gram_d Mg_d_to_g_d(megagram_d megagram)
+{
+    if (megagram < -DBL_MAX / 1000000.0) {
+        return -DBL_MAX;
+    }
+    if (megagram > DBL_MAX / 1000000.0) {
+        return DBL_MAX;
+    }
+    return ((gram_d) (megagram)) * 1000000.0;
+}
+
+/**
+ * Convert megagram_d to gram_f.
+ */
+gram_f Mg_d_to_g_f(megagram_d megagram)
+{
+    if (megagram > ((megagram_d) (FLT_MAX)) / 1000000.0) {
+        return FLT_MAX;
+    }
+    if (megagram < ((megagram_d) (-FLT_MAX)) / 1000000.0) {
+        return -FLT_MAX;
+    }
+    return ((gram_f) (megagram * 1000000.0));
+}
+
+/**
+ * Convert megagram_d to gram_t.
+ */
+gram_t Mg_d_to_g_t(megagram_d megagram)
+{
+    if (megagram > ((megagram_d) (9223372036854775807)) / 1000000.0) {
+        return 9223372036854775807;
+    }
+    if (megagram < ((megagram_d) (-9223372036854775807 - 1)) / 1000000.0) {
+        return -9223372036854775807 - 1;
+    }
+    return ((gram_t) (megagram * 1000000.0));
+}
+
+/**
+ * Convert megagram_d to gram_u.
+ */
+gram_u Mg_d_to_g_u(megagram_d megagram)
+{
+    if (megagram > ((megagram_d) (18446744073709551615U)) / 1000000.0) {
+        return 18446744073709551615U;
+    }
+    if (megagram < ((megagram_d) (0)) / 1000000.0) {
+        return 0;
+    }
+    return ((gram_u) (megagram * 1000000.0));
+}
+
+/**
+ * Convert megagram_d to int16_t.
+ */
+int16_t Mg_d_to_i16(megagram_d megagram)
+{
+    return d_to_i16(((double) (megagram)));
+}
+
+/**
+ * Convert megagram_d to int32_t.
+ */
+int32_t Mg_d_to_i32(megagram_d megagram)
+{
+    return d_to_i32(((double) (megagram)));
+}
+
+/**
+ * Convert megagram_d to int64_t.
+ */
+int64_t Mg_d_to_i64(megagram_d megagram)
+{
+    return d_to_i64(((double) (megagram)));
+}
+
+/**
+ * Convert megagram_d to int8_t.
+ */
+int8_t Mg_d_to_i8(megagram_d megagram)
+{
+    return d_to_i8(((double) (megagram)));
+}
+
+/**
+ * Convert megagram_d to kilogram_d.
+ */
+kilogram_d Mg_d_to_kg_d(megagram_d megagram)
+{
+    if (megagram < -DBL_MAX / 1000.0) {
+        return -DBL_MAX;
+    }
+    if (megagram > DBL_MAX / 1000.0) {
+        return DBL_MAX;
+    }
+    return ((kilogram_d) (megagram)) * 1000.0;
+}
+
+/**
+ * Convert megagram_d to kilogram_f.
+ */
+kilogram_f Mg_d_to_kg_f(megagram_d megagram)
+{
+    if (megagram > ((megagram_d) (FLT_MAX)) / 1000.0) {
+        return FLT_MAX;
+    }
+    if (megagram < ((megagram_d) (-FLT_MAX)) / 1000.0) {
+        return -FLT_MAX;
+    }
+    return ((kilogram_f) (megagram * 1000.0));
+}
+
+/**
+ * Convert megagram_d to kilogram_t.
+ */
+kilogram_t Mg_d_to_kg_t(megagram_d megagram)
+{
+    if (megagram > ((megagram_d) (9223372036854775807)) / 1000.0) {
+        return 9223372036854775807;
+    }
+    if (megagram < ((megagram_d) (-9223372036854775807 - 1)) / 1000.0) {
+        return -9223372036854775807 - 1;
+    }
+    return ((kilogram_t) (megagram * 1000.0));
+}
+
+/**
+ * Convert megagram_d to kilogram_u.
+ */
+kilogram_u Mg_d_to_kg_u(megagram_d megagram)
+{
+    if (megagram > ((megagram_d) (18446744073709551615U)) / 1000.0) {
+        return 18446744073709551615U;
+    }
+    if (megagram < ((megagram_d) (0)) / 1000.0) {
+        return 0;
+    }
+    return ((kilogram_u) (megagram * 1000.0));
+}
+
+/**
+ * Convert megagram_d to megagram_f.
+ */
+megagram_f Mg_d_to_Mg_f(megagram_d megagram)
+{
+    return ((megagram_f) (megagram < ((double) (FLT_MAX)) ? (megagram > ((double) (-FLT_MAX)) ? megagram : -FLT_MAX) : FLT_MAX));
+}
+
+/**
+ * Convert megagram_d to megagram_t.
+ */
+megagram_t Mg_d_to_Mg_t(megagram_d megagram)
+{
+    return ((megagram_t) (round(((double) (megagram))) < ((double) (9223372036854775807)) ? (round(((double) (megagram))) > ((double) (-9223372036854775807 - 1)) ? ((megagram_t) (round(((double) (megagram))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert megagram_d to megagram_u.
+ */
+megagram_u Mg_d_to_Mg_u(megagram_d megagram)
+{
+    return ((megagram_u) (round(((double) (megagram))) < ((double) (18446744073709551615U)) ? (round(((double) (megagram))) > ((double) (0)) ? ((megagram_u) (round(((double) (megagram))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert megagram_d to microgram_d.
+ */
+microgram_d Mg_d_to_ug_d(megagram_d megagram)
+{
+    if (megagram < -DBL_MAX / 1000000000000.0) {
+        return -DBL_MAX;
+    }
+    if (megagram > DBL_MAX / 1000000000000.0) {
+        return DBL_MAX;
+    }
+    return ((microgram_d) (megagram)) * 1000000000000.0;
+}
+
+/**
+ * Convert megagram_d to microgram_f.
+ */
+microgram_f Mg_d_to_ug_f(megagram_d megagram)
+{
+    if (megagram > ((megagram_d) (FLT_MAX)) / 1000000000000.0) {
+        return FLT_MAX;
+    }
+    if (megagram < ((megagram_d) (-FLT_MAX)) / 1000000000000.0) {
+        return -FLT_MAX;
+    }
+    return ((microgram_f) (megagram * 1000000000000.0));
+}
+
+/**
+ * Convert megagram_d to microgram_t.
+ */
+microgram_t Mg_d_to_ug_t(megagram_d megagram)
+{
+    if (megagram > ((megagram_d) (9223372036854775807)) / 1000000000000.0) {
+        return 9223372036854775807;
+    }
+    if (megagram < ((megagram_d) (-9223372036854775807 - 1)) / 1000000000000.0) {
+        return -9223372036854775807 - 1;
+    }
+    return ((microgram_t) (megagram * 1000000000000.0));
+}
+
+/**
+ * Convert megagram_d to microgram_u.
+ */
+microgram_u Mg_d_to_ug_u(megagram_d megagram)
+{
+    if (megagram > ((megagram_d) (18446744073709551615U)) / 1000000000000.0) {
+        return 18446744073709551615U;
+    }
+    if (megagram < ((megagram_d) (0)) / 1000000000000.0) {
+        return 0;
+    }
+    return ((microgram_u) (megagram * 1000000000000.0));
+}
+
+/**
+ * Convert megagram_d to milligram_d.
+ */
+milligram_d Mg_d_to_mg_d(megagram_d megagram)
+{
+    if (megagram < -DBL_MAX / 1000000000.0) {
+        return -DBL_MAX;
+    }
+    if (megagram > DBL_MAX / 1000000000.0) {
+        return DBL_MAX;
+    }
+    return ((milligram_d) (megagram)) * 1000000000.0;
+}
+
+/**
+ * Convert megagram_d to milligram_f.
+ */
+milligram_f Mg_d_to_mg_f(megagram_d megagram)
+{
+    if (megagram > ((megagram_d) (FLT_MAX)) / 1000000000.0) {
+        return FLT_MAX;
+    }
+    if (megagram < ((megagram_d) (-FLT_MAX)) / 1000000000.0) {
+        return -FLT_MAX;
+    }
+    return ((milligram_f) (megagram * 1000000000.0));
+}
+
+/**
+ * Convert megagram_d to milligram_t.
+ */
+milligram_t Mg_d_to_mg_t(megagram_d megagram)
+{
+    if (megagram > ((megagram_d) (9223372036854775807)) / 1000000000.0) {
+        return 9223372036854775807;
+    }
+    if (megagram < ((megagram_d) (-9223372036854775807 - 1)) / 1000000000.0) {
+        return -9223372036854775807 - 1;
+    }
+    return ((milligram_t) (megagram * 1000000000.0));
+}
+
+/**
+ * Convert megagram_d to milligram_u.
+ */
+milligram_u Mg_d_to_mg_u(megagram_d megagram)
+{
+    if (megagram > ((megagram_d) (18446744073709551615U)) / 1000000000.0) {
+        return 18446744073709551615U;
+    }
+    if (megagram < ((megagram_d) (0)) / 1000000000.0) {
+        return 0;
+    }
+    return ((milligram_u) (megagram * 1000000000.0));
+}
+
+/**
+ * Convert megagram_d to uint16_t.
+ */
+uint16_t Mg_d_to_u16(megagram_d megagram)
+{
+    return d_to_u16(((double) (megagram)));
+}
+
+/**
+ * Convert megagram_d to uint32_t.
+ */
+uint32_t Mg_d_to_u32(megagram_d megagram)
+{
+    return d_to_u32(((double) (megagram)));
+}
+
+/**
+ * Convert megagram_d to uint64_t.
+ */
+uint64_t Mg_d_to_u64(megagram_d megagram)
+{
+    return d_to_u64(((double) (megagram)));
+}
+
+/**
+ * Convert megagram_d to uint8_t.
+ */
+uint8_t Mg_d_to_u8(megagram_d megagram)
+{
+    return d_to_u8(((double) (megagram)));
+}
+
+/**
+ * Convert megagram_f to double.
+ */
+double Mg_f_to_d(megagram_f megagram)
+{
+    return ((double) (megagram));
+}
+
+/**
+ * Convert megagram_f to float.
+ */
+float Mg_f_to_f(megagram_f megagram)
+{
+    return ((float) (megagram));
+}
+
+/**
+ * Convert megagram_f to gram_d.
+ */
+gram_d Mg_f_to_g_d(megagram_f megagram)
+{
+    return ((gram_d) (megagram)) * 1000000.0;
+}
+
+/**
+ * Convert megagram_f to gram_f.
+ */
+gram_f Mg_f_to_g_f(megagram_f megagram)
+{
+    if (megagram < -FLT_MAX / 1000000.0f) {
+        return -FLT_MAX;
+    }
+    if (megagram > FLT_MAX / 1000000.0f) {
+        return FLT_MAX;
+    }
+    return ((gram_f) (megagram)) * 1000000.0f;
+}
+
+/**
+ * Convert megagram_f to gram_t.
+ */
+gram_t Mg_f_to_g_t(megagram_f megagram)
+{
+    if (megagram > ((megagram_f) (9223372036854775807)) / 1000000.0f) {
+        return 9223372036854775807;
+    }
+    if (megagram < ((megagram_f) (-9223372036854775807 - 1)) / 1000000.0f) {
+        return -9223372036854775807 - 1;
+    }
+    return ((gram_t) (megagram * 1000000.0f));
+}
+
+/**
+ * Convert megagram_f to gram_u.
+ */
+gram_u Mg_f_to_g_u(megagram_f megagram)
+{
+    if (megagram > ((megagram_f) (18446744073709551615U)) / 1000000.0f) {
+        return 18446744073709551615U;
+    }
+    if (megagram < ((megagram_f) (0)) / 1000000.0f) {
+        return 0;
+    }
+    return ((gram_u) (megagram * 1000000.0f));
+}
+
+/**
+ * Convert megagram_f to int16_t.
+ */
+int16_t Mg_f_to_i16(megagram_f megagram)
+{
+    return f_to_i16(((float) (megagram)));
+}
+
+/**
+ * Convert megagram_f to int32_t.
+ */
+int32_t Mg_f_to_i32(megagram_f megagram)
+{
+    return f_to_i32(((float) (megagram)));
+}
+
+/**
+ * Convert megagram_f to int64_t.
+ */
+int64_t Mg_f_to_i64(megagram_f megagram)
+{
+    return f_to_i64(((float) (megagram)));
+}
+
+/**
+ * Convert megagram_f to int8_t.
+ */
+int8_t Mg_f_to_i8(megagram_f megagram)
+{
+    return f_to_i8(((float) (megagram)));
+}
+
+/**
+ * Convert megagram_f to kilogram_d.
+ */
+kilogram_d Mg_f_to_kg_d(megagram_f megagram)
+{
+    return ((kilogram_d) (megagram)) * 1000.0;
+}
+
+/**
+ * Convert megagram_f to kilogram_f.
+ */
+kilogram_f Mg_f_to_kg_f(megagram_f megagram)
+{
+    if (megagram < -FLT_MAX / 1000.0f) {
+        return -FLT_MAX;
+    }
+    if (megagram > FLT_MAX / 1000.0f) {
+        return FLT_MAX;
+    }
+    return ((kilogram_f) (megagram)) * 1000.0f;
+}
+
+/**
+ * Convert megagram_f to kilogram_t.
+ */
+kilogram_t Mg_f_to_kg_t(megagram_f megagram)
+{
+    if (megagram > ((megagram_f) (9223372036854775807)) / 1000.0f) {
+        return 9223372036854775807;
+    }
+    if (megagram < ((megagram_f) (-9223372036854775807 - 1)) / 1000.0f) {
+        return -9223372036854775807 - 1;
+    }
+    return ((kilogram_t) (megagram * 1000.0f));
+}
+
+/**
+ * Convert megagram_f to kilogram_u.
+ */
+kilogram_u Mg_f_to_kg_u(megagram_f megagram)
+{
+    if (megagram > ((megagram_f) (18446744073709551615U)) / 1000.0f) {
+        return 18446744073709551615U;
+    }
+    if (megagram < ((megagram_f) (0)) / 1000.0f) {
+        return 0;
+    }
+    return ((kilogram_u) (megagram * 1000.0f));
+}
+
+/**
+ * Convert megagram_f to megagram_d.
+ */
+megagram_d Mg_f_to_Mg_d(megagram_f megagram)
+{
+    return ((megagram_d) (megagram));
+}
+
+/**
+ * Convert megagram_f to megagram_t.
+ */
+megagram_t Mg_f_to_Mg_t(megagram_f megagram)
+{
+    return ((megagram_t) (round(((double) (megagram))) < ((double) (9223372036854775807)) ? (round(((double) (megagram))) > ((double) (-9223372036854775807 - 1)) ? ((megagram_t) (round(((double) (megagram))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert megagram_f to megagram_u.
+ */
+megagram_u Mg_f_to_Mg_u(megagram_f megagram)
+{
+    return ((megagram_u) (round(((double) (megagram))) < ((double) (18446744073709551615U)) ? (round(((double) (megagram))) > ((double) (0)) ? ((megagram_u) (round(((double) (megagram))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert megagram_f to microgram_d.
+ */
+microgram_d Mg_f_to_ug_d(megagram_f megagram)
+{
+    return ((microgram_d) (megagram)) * 1000000000000.0;
+}
+
+/**
+ * Convert megagram_f to microgram_f.
+ */
+microgram_f Mg_f_to_ug_f(megagram_f megagram)
+{
+    if (megagram < -FLT_MAX / 1000000000000.0f) {
+        return -FLT_MAX;
+    }
+    if (megagram > FLT_MAX / 1000000000000.0f) {
+        return FLT_MAX;
+    }
+    return ((microgram_f) (megagram)) * 1000000000000.0f;
+}
+
+/**
+ * Convert megagram_f to microgram_t.
+ */
+microgram_t Mg_f_to_ug_t(megagram_f megagram)
+{
+    if (megagram > ((megagram_f) (9223372036854775807)) / 1000000000000.0f) {
+        return 9223372036854775807;
+    }
+    if (megagram < ((megagram_f) (-9223372036854775807 - 1)) / 1000000000000.0f) {
+        return -9223372036854775807 - 1;
+    }
+    return ((microgram_t) (megagram * 1000000000000.0f));
+}
+
+/**
+ * Convert megagram_f to microgram_u.
+ */
+microgram_u Mg_f_to_ug_u(megagram_f megagram)
+{
+    if (megagram > ((megagram_f) (18446744073709551615U)) / 1000000000000.0f) {
+        return 18446744073709551615U;
+    }
+    if (megagram < ((megagram_f) (0)) / 1000000000000.0f) {
+        return 0;
+    }
+    return ((microgram_u) (megagram * 1000000000000.0f));
+}
+
+/**
+ * Convert megagram_f to milligram_d.
+ */
+milligram_d Mg_f_to_mg_d(megagram_f megagram)
+{
+    return ((milligram_d) (megagram)) * 1000000000.0;
+}
+
+/**
+ * Convert megagram_f to milligram_f.
+ */
+milligram_f Mg_f_to_mg_f(megagram_f megagram)
+{
+    if (megagram < -FLT_MAX / 1000000000.0f) {
+        return -FLT_MAX;
+    }
+    if (megagram > FLT_MAX / 1000000000.0f) {
+        return FLT_MAX;
+    }
+    return ((milligram_f) (megagram)) * 1000000000.0f;
+}
+
+/**
+ * Convert megagram_f to milligram_t.
+ */
+milligram_t Mg_f_to_mg_t(megagram_f megagram)
+{
+    if (megagram > ((megagram_f) (9223372036854775807)) / 1000000000.0f) {
+        return 9223372036854775807;
+    }
+    if (megagram < ((megagram_f) (-9223372036854775807 - 1)) / 1000000000.0f) {
+        return -9223372036854775807 - 1;
+    }
+    return ((milligram_t) (megagram * 1000000000.0f));
+}
+
+/**
+ * Convert megagram_f to milligram_u.
+ */
+milligram_u Mg_f_to_mg_u(megagram_f megagram)
+{
+    if (megagram > ((megagram_f) (18446744073709551615U)) / 1000000000.0f) {
+        return 18446744073709551615U;
+    }
+    if (megagram < ((megagram_f) (0)) / 1000000000.0f) {
+        return 0;
+    }
+    return ((milligram_u) (megagram * 1000000000.0f));
+}
+
+/**
+ * Convert megagram_f to uint16_t.
+ */
+uint16_t Mg_f_to_u16(megagram_f megagram)
+{
+    return f_to_u16(((float) (megagram)));
+}
+
+/**
+ * Convert megagram_f to uint32_t.
+ */
+uint32_t Mg_f_to_u32(megagram_f megagram)
+{
+    return f_to_u32(((float) (megagram)));
+}
+
+/**
+ * Convert megagram_f to uint64_t.
+ */
+uint64_t Mg_f_to_u64(megagram_f megagram)
+{
+    return f_to_u64(((float) (megagram)));
+}
+
+/**
+ * Convert megagram_f to uint8_t.
+ */
+uint8_t Mg_f_to_u8(megagram_f megagram)
+{
+    return f_to_u8(((float) (megagram)));
+}
+
+/**
+ * Convert megagram_t to double.
+ */
+double Mg_t_to_d(megagram_t megagram)
+{
+    return ((double) (megagram));
+}
+
+/**
+ * Convert megagram_t to float.
+ */
+float Mg_t_to_f(megagram_t megagram)
+{
+    return ((float) (megagram));
+}
+
+/**
+ * Convert megagram_t to gram_d.
+ */
+gram_d Mg_t_to_g_d(megagram_t megagram)
+{
+    return ((gram_d) (megagram)) * 1000000.0;
+}
+
+/**
+ * Convert megagram_t to gram_f.
+ */
+gram_f Mg_t_to_g_f(megagram_t megagram)
+{
+    return ((gram_f) (megagram)) * 1000000.0f;
+}
+
+/**
+ * Convert megagram_t to gram_t.
+ */
+gram_t Mg_t_to_g_t(megagram_t megagram)
+{
+    if (megagram < -9223372036854775807 - 1 / 1000000) {
+        return -9223372036854775807 - 1;
+    }
+    if (megagram > 9223372036854775807 / 1000000) {
+        return 9223372036854775807;
+    }
+    return ((gram_t) (megagram)) * 1000000;
+}
+
+/**
+ * Convert megagram_t to gram_u.
+ */
+gram_u Mg_t_to_g_u(megagram_t megagram)
+{
+    if (megagram < 0) {
+        return 0;
+    }
+    const gram_u otherMegagram = ((gram_u) (megagram));
+    if (otherMegagram > 18446744073709551615U / 1000000) {
+        return 18446744073709551615U;
+    }
+    return otherMegagram * 1000000;
+}
+
+/**
+ * Convert megagram_t to int16_t.
+ */
+int16_t Mg_t_to_i16(megagram_t megagram)
+{
+    return ((int16_t) (MIN(((megagram_t) (32767)), MAX(((megagram_t) (-32768)), megagram))));
+}
+
+/**
+ * Convert megagram_t to int32_t.
+ */
+int32_t Mg_t_to_i32(megagram_t megagram)
+{
+    return ((int32_t) (MIN(((megagram_t) (2147483647)), MAX(((megagram_t) (-2147483648)), megagram))));
+}
+
+/**
+ * Convert megagram_t to int64_t.
+ */
+int64_t Mg_t_to_i64(megagram_t megagram)
+{
+    return ((int64_t) (megagram));
+}
+
+/**
+ * Convert megagram_t to int8_t.
+ */
+int8_t Mg_t_to_i8(megagram_t megagram)
+{
+    return ((int8_t) (MIN(((megagram_t) (127)), MAX(((megagram_t) (-128)), megagram))));
+}
+
+/**
+ * Convert megagram_t to kilogram_d.
+ */
+kilogram_d Mg_t_to_kg_d(megagram_t megagram)
+{
+    return ((kilogram_d) (megagram)) * 1000.0;
+}
+
+/**
+ * Convert megagram_t to kilogram_f.
+ */
+kilogram_f Mg_t_to_kg_f(megagram_t megagram)
+{
+    return ((kilogram_f) (megagram)) * 1000.0f;
+}
+
+/**
+ * Convert megagram_t to kilogram_t.
+ */
+kilogram_t Mg_t_to_kg_t(megagram_t megagram)
+{
+    if (megagram < -9223372036854775807 - 1 / 1000) {
+        return -9223372036854775807 - 1;
+    }
+    if (megagram > 9223372036854775807 / 1000) {
+        return 9223372036854775807;
+    }
+    return ((kilogram_t) (megagram)) * 1000;
+}
+
+/**
+ * Convert megagram_t to kilogram_u.
+ */
+kilogram_u Mg_t_to_kg_u(megagram_t megagram)
+{
+    if (megagram < 0) {
+        return 0;
+    }
+    const kilogram_u otherMegagram = ((kilogram_u) (megagram));
+    if (otherMegagram > 18446744073709551615U / 1000) {
+        return 18446744073709551615U;
+    }
+    return otherMegagram * 1000;
+}
+
+/**
+ * Convert megagram_t to megagram_d.
+ */
+megagram_d Mg_t_to_Mg_d(megagram_t megagram)
+{
+    return ((megagram_d) (megagram));
+}
+
+/**
+ * Convert megagram_t to megagram_f.
+ */
+megagram_f Mg_t_to_Mg_f(megagram_t megagram)
+{
+    return ((megagram_f) (megagram));
+}
+
+/**
+ * Convert megagram_t to megagram_u.
+ */
+megagram_u Mg_t_to_Mg_u(megagram_t megagram)
+{
+    return ((megagram_u) ((megagram) < 0 ? 0 : megagram));
+}
+
+/**
+ * Convert megagram_t to microgram_d.
+ */
+microgram_d Mg_t_to_ug_d(megagram_t megagram)
+{
+    return ((microgram_d) (megagram)) * 1000000000000.0;
+}
+
+/**
+ * Convert megagram_t to microgram_f.
+ */
+microgram_f Mg_t_to_ug_f(megagram_t megagram)
+{
+    return ((microgram_f) (megagram)) * 1000000000000.0f;
+}
+
+/**
+ * Convert megagram_t to microgram_t.
+ */
+microgram_t Mg_t_to_ug_t(megagram_t megagram)
+{
+    if (megagram < -9223372036854775807 - 1 / 1000000000000) {
+        return -9223372036854775807 - 1;
+    }
+    if (megagram > 9223372036854775807 / 1000000000000) {
+        return 9223372036854775807;
+    }
+    return ((microgram_t) (megagram)) * 1000000000000;
+}
+
+/**
+ * Convert megagram_t to microgram_u.
+ */
+microgram_u Mg_t_to_ug_u(megagram_t megagram)
+{
+    if (megagram < 0) {
+        return 0;
+    }
+    const microgram_u otherMegagram = ((microgram_u) (megagram));
+    if (otherMegagram > 18446744073709551615U / 1000000000000) {
+        return 18446744073709551615U;
+    }
+    return otherMegagram * 1000000000000;
+}
+
+/**
+ * Convert megagram_t to milligram_d.
+ */
+milligram_d Mg_t_to_mg_d(megagram_t megagram)
+{
+    return ((milligram_d) (megagram)) * 1000000000.0;
+}
+
+/**
+ * Convert megagram_t to milligram_f.
+ */
+milligram_f Mg_t_to_mg_f(megagram_t megagram)
+{
+    return ((milligram_f) (megagram)) * 1000000000.0f;
+}
+
+/**
+ * Convert megagram_t to milligram_t.
+ */
+milligram_t Mg_t_to_mg_t(megagram_t megagram)
+{
+    if (megagram < -9223372036854775807 - 1 / 1000000000) {
+        return -9223372036854775807 - 1;
+    }
+    if (megagram > 9223372036854775807 / 1000000000) {
+        return 9223372036854775807;
+    }
+    return ((milligram_t) (megagram)) * 1000000000;
+}
+
+/**
+ * Convert megagram_t to milligram_u.
+ */
+milligram_u Mg_t_to_mg_u(megagram_t megagram)
+{
+    if (megagram < 0) {
+        return 0;
+    }
+    const milligram_u otherMegagram = ((milligram_u) (megagram));
+    if (otherMegagram > 18446744073709551615U / 1000000000) {
+        return 18446744073709551615U;
+    }
+    return otherMegagram * 1000000000;
+}
+
+/**
+ * Convert megagram_t to uint16_t.
+ */
+uint16_t Mg_t_to_u16(megagram_t megagram)
+{
+    return ((uint16_t) (MAX(((megagram_t) (0)), megagram)));
+}
+
+/**
+ * Convert megagram_t to uint32_t.
+ */
+uint32_t Mg_t_to_u32(megagram_t megagram)
+{
+    return ((uint32_t) (MAX(((megagram_t) (0)), megagram)));
+}
+
+/**
+ * Convert megagram_t to uint64_t.
+ */
+uint64_t Mg_t_to_u64(megagram_t megagram)
+{
+    return ((uint64_t) (MAX(((megagram_t) (0)), megagram)));
+}
+
+/**
+ * Convert megagram_t to uint8_t.
+ */
+uint8_t Mg_t_to_u8(megagram_t megagram)
+{
+    return ((uint8_t) (MAX(((megagram_t) (0)), megagram)));
+}
+
+/**
+ * Convert megagram_u to double.
+ */
+double Mg_u_to_d(megagram_u megagram)
+{
+    return ((double) (megagram));
+}
+
+/**
+ * Convert megagram_u to float.
+ */
+float Mg_u_to_f(megagram_u megagram)
+{
+    return ((float) (megagram));
+}
+
+/**
+ * Convert megagram_u to gram_d.
+ */
+gram_d Mg_u_to_g_d(megagram_u megagram)
+{
+    return ((gram_d) (megagram)) * 1000000.0;
+}
+
+/**
+ * Convert megagram_u to gram_f.
+ */
+gram_f Mg_u_to_g_f(megagram_u megagram)
+{
+    return ((gram_f) (megagram)) * 1000000.0f;
+}
+
+/**
+ * Convert megagram_u to gram_t.
+ */
+gram_t Mg_u_to_g_t(megagram_u megagram)
+{
+    if (megagram > ((megagram_u) (9223372036854775807 / 1000000))) {
+        return 9223372036854775807;
+    }
+    return ((gram_t) (megagram * 1000000));
+}
+
+/**
+ * Convert megagram_u to gram_u.
+ */
+gram_u Mg_u_to_g_u(megagram_u megagram)
+{
+    if (megagram > 18446744073709551615U / 1000000) {
+        return 18446744073709551615U;
+    }
+    return ((gram_u) (megagram)) * 1000000;
+}
+
+/**
+ * Convert megagram_u to int16_t.
+ */
+int16_t Mg_u_to_i16(megagram_u megagram)
+{
+    return ((int16_t) (MIN(((megagram_u) (32767)), megagram)));
+}
+
+/**
+ * Convert megagram_u to int32_t.
+ */
+int32_t Mg_u_to_i32(megagram_u megagram)
+{
+    return ((int32_t) (MIN(((megagram_u) (2147483647)), megagram)));
+}
+
+/**
+ * Convert megagram_u to int64_t.
+ */
+int64_t Mg_u_to_i64(megagram_u megagram)
+{
+    return ((int64_t) (MIN(((megagram_u) (9223372036854775807)), megagram)));
+}
+
+/**
+ * Convert megagram_u to int8_t.
+ */
+int8_t Mg_u_to_i8(megagram_u megagram)
+{
+    return ((int8_t) (MIN(((megagram_u) (127)), megagram)));
+}
+
+/**
+ * Convert megagram_u to kilogram_d.
+ */
+kilogram_d Mg_u_to_kg_d(megagram_u megagram)
+{
+    return ((kilogram_d) (megagram)) * 1000.0;
+}
+
+/**
+ * Convert megagram_u to kilogram_f.
+ */
+kilogram_f Mg_u_to_kg_f(megagram_u megagram)
+{
+    return ((kilogram_f) (megagram)) * 1000.0f;
+}
+
+/**
+ * Convert megagram_u to kilogram_t.
+ */
+kilogram_t Mg_u_to_kg_t(megagram_u megagram)
+{
+    if (megagram > ((megagram_u) (9223372036854775807 / 1000))) {
+        return 9223372036854775807;
+    }
+    return ((kilogram_t) (megagram * 1000));
+}
+
+/**
+ * Convert megagram_u to kilogram_u.
+ */
+kilogram_u Mg_u_to_kg_u(megagram_u megagram)
+{
+    if (megagram > 18446744073709551615U / 1000) {
+        return 18446744073709551615U;
+    }
+    return ((kilogram_u) (megagram)) * 1000;
+}
+
+/**
+ * Convert megagram_u to megagram_d.
+ */
+megagram_d Mg_u_to_Mg_d(megagram_u megagram)
+{
+    return ((megagram_d) (megagram));
+}
+
+/**
+ * Convert megagram_u to megagram_f.
+ */
+megagram_f Mg_u_to_Mg_f(megagram_u megagram)
+{
+    return ((megagram_f) (megagram));
+}
+
+/**
+ * Convert megagram_u to megagram_t.
+ */
+megagram_t Mg_u_to_Mg_t(megagram_u megagram)
+{
+    return ((megagram_t) ((megagram) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : megagram));
+}
+
+/**
+ * Convert megagram_u to microgram_d.
+ */
+microgram_d Mg_u_to_ug_d(megagram_u megagram)
+{
+    return ((microgram_d) (megagram)) * 1000000000000.0;
+}
+
+/**
+ * Convert megagram_u to microgram_f.
+ */
+microgram_f Mg_u_to_ug_f(megagram_u megagram)
+{
+    return ((microgram_f) (megagram)) * 1000000000000.0f;
+}
+
+/**
+ * Convert megagram_u to microgram_t.
+ */
+microgram_t Mg_u_to_ug_t(megagram_u megagram)
+{
+    if (megagram > ((megagram_u) (9223372036854775807 / 1000000000000))) {
+        return 9223372036854775807;
+    }
+    return ((microgram_t) (megagram * 1000000000000));
+}
+
+/**
+ * Convert megagram_u to microgram_u.
+ */
+microgram_u Mg_u_to_ug_u(megagram_u megagram)
+{
+    if (megagram > 18446744073709551615U / 1000000000000) {
+        return 18446744073709551615U;
+    }
+    return ((microgram_u) (megagram)) * 1000000000000;
+}
+
+/**
+ * Convert megagram_u to milligram_d.
+ */
+milligram_d Mg_u_to_mg_d(megagram_u megagram)
+{
+    return ((milligram_d) (megagram)) * 1000000000.0;
+}
+
+/**
+ * Convert megagram_u to milligram_f.
+ */
+milligram_f Mg_u_to_mg_f(megagram_u megagram)
+{
+    return ((milligram_f) (megagram)) * 1000000000.0f;
+}
+
+/**
+ * Convert megagram_u to milligram_t.
+ */
+milligram_t Mg_u_to_mg_t(megagram_u megagram)
+{
+    if (megagram > ((megagram_u) (9223372036854775807 / 1000000000))) {
+        return 9223372036854775807;
+    }
+    return ((milligram_t) (megagram * 1000000000));
+}
+
+/**
+ * Convert megagram_u to milligram_u.
+ */
+milligram_u Mg_u_to_mg_u(megagram_u megagram)
+{
+    if (megagram > 18446744073709551615U / 1000000000) {
+        return 18446744073709551615U;
+    }
+    return ((milligram_u) (megagram)) * 1000000000;
+}
+
+/**
+ * Convert megagram_u to uint16_t.
+ */
+uint16_t Mg_u_to_u16(megagram_u megagram)
+{
+    return ((uint16_t) (MIN(((megagram_u) (65535)), MAX(((megagram_u) (0)), megagram))));
+}
+
+/**
+ * Convert megagram_u to uint32_t.
+ */
+uint32_t Mg_u_to_u32(megagram_u megagram)
+{
+    return ((uint32_t) (MIN(((megagram_u) (4294967295U)), MAX(((megagram_u) (0)), megagram))));
+}
+
+/**
+ * Convert megagram_u to uint64_t.
+ */
+uint64_t Mg_u_to_u64(megagram_u megagram)
+{
+    return ((uint64_t) (megagram));
+}
+
+/**
+ * Convert megagram_u to uint8_t.
+ */
+uint8_t Mg_u_to_u8(megagram_u megagram)
+{
+    return ((uint8_t) (MIN(((megagram_u) (255)), MAX(((megagram_u) (0)), megagram))));
+}
+
+/**
+ * Convert microgram_d to double.
+ */
+double ug_d_to_d(microgram_d microgram)
+{
+    return ((double) (microgram));
+}
+
+/**
+ * Convert microgram_d to float.
+ */
+float ug_d_to_f(microgram_d microgram)
+{
+    return d_to_f(((double) (microgram)));
+}
+
+/**
+ * Convert microgram_d to gram_d.
+ */
+gram_d ug_d_to_g_d(microgram_d microgram)
+{
+    return ((gram_d) (microgram / 1000000.0));
+}
+
+/**
+ * Convert microgram_d to gram_f.
+ */
+gram_f ug_d_to_g_f(microgram_d microgram)
+{
+    const microgram_d conversion = microgram / 1000000.0;
+    return ((gram_f) (conversion < ((double) (FLT_MAX)) ? (conversion > ((double) (-FLT_MAX)) ? conversion : -FLT_MAX) : FLT_MAX));
+}
+
+/**
+ * Convert microgram_d to gram_t.
+ */
+gram_t ug_d_to_g_t(microgram_d microgram)
+{
+    const microgram_d conversion = microgram / 1000000.0;
+    return ((gram_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((gram_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert microgram_d to gram_u.
+ */
+gram_u ug_d_to_g_u(microgram_d microgram)
+{
+    const microgram_d conversion = microgram / 1000000.0;
+    return ((gram_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((gram_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert microgram_d to int16_t.
+ */
+int16_t ug_d_to_i16(microgram_d microgram)
+{
+    return d_to_i16(((double) (microgram)));
+}
+
+/**
+ * Convert microgram_d to int32_t.
+ */
+int32_t ug_d_to_i32(microgram_d microgram)
+{
+    return d_to_i32(((double) (microgram)));
+}
+
+/**
+ * Convert microgram_d to int64_t.
+ */
+int64_t ug_d_to_i64(microgram_d microgram)
+{
+    return d_to_i64(((double) (microgram)));
+}
+
+/**
+ * Convert microgram_d to int8_t.
+ */
+int8_t ug_d_to_i8(microgram_d microgram)
+{
+    return d_to_i8(((double) (microgram)));
+}
+
+/**
+ * Convert microgram_d to kilogram_d.
+ */
+kilogram_d ug_d_to_kg_d(microgram_d microgram)
+{
+    return ((kilogram_d) (microgram / 1000000000.0));
+}
+
+/**
+ * Convert microgram_d to kilogram_f.
+ */
+kilogram_f ug_d_to_kg_f(microgram_d microgram)
+{
+    const microgram_d conversion = microgram / 1000000000.0;
+    return ((kilogram_f) (conversion < ((double) (FLT_MAX)) ? (conversion > ((double) (-FLT_MAX)) ? conversion : -FLT_MAX) : FLT_MAX));
+}
+
+/**
+ * Convert microgram_d to kilogram_t.
+ */
+kilogram_t ug_d_to_kg_t(microgram_d microgram)
+{
+    const microgram_d conversion = microgram / 1000000000.0;
+    return ((kilogram_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((kilogram_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert microgram_d to kilogram_u.
+ */
+kilogram_u ug_d_to_kg_u(microgram_d microgram)
+{
+    const microgram_d conversion = microgram / 1000000000.0;
+    return ((kilogram_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((kilogram_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert microgram_d to megagram_d.
+ */
+megagram_d ug_d_to_Mg_d(microgram_d microgram)
+{
+    return ((megagram_d) (microgram / 1000000000000.0));
+}
+
+/**
+ * Convert microgram_d to megagram_f.
+ */
+megagram_f ug_d_to_Mg_f(microgram_d microgram)
+{
+    const microgram_d conversion = microgram / 1000000000000.0;
+    return ((megagram_f) (conversion < ((double) (FLT_MAX)) ? (conversion > ((double) (-FLT_MAX)) ? conversion : -FLT_MAX) : FLT_MAX));
+}
+
+/**
+ * Convert microgram_d to megagram_t.
+ */
+megagram_t ug_d_to_Mg_t(microgram_d microgram)
+{
+    const microgram_d conversion = microgram / 1000000000000.0;
+    return ((megagram_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((megagram_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert microgram_d to megagram_u.
+ */
+megagram_u ug_d_to_Mg_u(microgram_d microgram)
+{
+    const microgram_d conversion = microgram / 1000000000000.0;
+    return ((megagram_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((megagram_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert microgram_d to microgram_f.
+ */
+microgram_f ug_d_to_ug_f(microgram_d microgram)
+{
+    return ((microgram_f) (microgram < ((double) (FLT_MAX)) ? (microgram > ((double) (-FLT_MAX)) ? microgram : -FLT_MAX) : FLT_MAX));
+}
+
+/**
+ * Convert microgram_d to microgram_t.
+ */
+microgram_t ug_d_to_ug_t(microgram_d microgram)
+{
+    return ((microgram_t) (round(((double) (microgram))) < ((double) (9223372036854775807)) ? (round(((double) (microgram))) > ((double) (-9223372036854775807 - 1)) ? ((microgram_t) (round(((double) (microgram))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert microgram_d to microgram_u.
+ */
+microgram_u ug_d_to_ug_u(microgram_d microgram)
+{
+    return ((microgram_u) (round(((double) (microgram))) < ((double) (18446744073709551615U)) ? (round(((double) (microgram))) > ((double) (0)) ? ((microgram_u) (round(((double) (microgram))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert microgram_d to milligram_d.
+ */
+milligram_d ug_d_to_mg_d(microgram_d microgram)
+{
+    return ((milligram_d) (microgram / 1000.0));
+}
+
+/**
+ * Convert microgram_d to milligram_f.
+ */
+milligram_f ug_d_to_mg_f(microgram_d microgram)
+{
+    const microgram_d conversion = microgram / 1000.0;
+    return ((milligram_f) (conversion < ((double) (FLT_MAX)) ? (conversion > ((double) (-FLT_MAX)) ? conversion : -FLT_MAX) : FLT_MAX));
+}
+
+/**
+ * Convert microgram_d to milligram_t.
+ */
+milligram_t ug_d_to_mg_t(microgram_d microgram)
+{
+    const microgram_d conversion = microgram / 1000.0;
+    return ((milligram_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((milligram_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert microgram_d to milligram_u.
+ */
+milligram_u ug_d_to_mg_u(microgram_d microgram)
+{
+    const microgram_d conversion = microgram / 1000.0;
+    return ((milligram_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((milligram_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert microgram_d to uint16_t.
+ */
+uint16_t ug_d_to_u16(microgram_d microgram)
+{
+    return d_to_u16(((double) (microgram)));
+}
+
+/**
+ * Convert microgram_d to uint32_t.
+ */
+uint32_t ug_d_to_u32(microgram_d microgram)
+{
+    return d_to_u32(((double) (microgram)));
+}
+
+/**
+ * Convert microgram_d to uint64_t.
+ */
+uint64_t ug_d_to_u64(microgram_d microgram)
+{
+    return d_to_u64(((double) (microgram)));
+}
+
+/**
+ * Convert microgram_d to uint8_t.
+ */
+uint8_t ug_d_to_u8(microgram_d microgram)
+{
+    return d_to_u8(((double) (microgram)));
+}
+
+/**
+ * Convert microgram_f to double.
+ */
+double ug_f_to_d(microgram_f microgram)
+{
+    return ((double) (microgram));
+}
+
+/**
+ * Convert microgram_f to float.
+ */
+float ug_f_to_f(microgram_f microgram)
+{
+    return ((float) (microgram));
+}
+
+/**
+ * Convert microgram_f to gram_d.
+ */
+gram_d ug_f_to_g_d(microgram_f microgram)
+{
+    return (((gram_d) (microgram)) / 1000000.0);
+}
+
+/**
+ * Convert microgram_f to gram_f.
+ */
+gram_f ug_f_to_g_f(microgram_f microgram)
+{
+    return ((gram_f) (microgram / 1000000.0f));
+}
+
+/**
+ * Convert microgram_f to gram_t.
+ */
+gram_t ug_f_to_g_t(microgram_f microgram)
+{
+    const microgram_f conversion = microgram / 1000000.0f;
+    return ((gram_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((gram_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert microgram_f to gram_u.
+ */
+gram_u ug_f_to_g_u(microgram_f microgram)
+{
+    const microgram_f conversion = microgram / 1000000.0f;
+    return ((gram_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((gram_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert microgram_f to int16_t.
+ */
+int16_t ug_f_to_i16(microgram_f microgram)
+{
+    return f_to_i16(((float) (microgram)));
+}
+
+/**
+ * Convert microgram_f to int32_t.
+ */
+int32_t ug_f_to_i32(microgram_f microgram)
+{
+    return f_to_i32(((float) (microgram)));
+}
+
+/**
+ * Convert microgram_f to int64_t.
+ */
+int64_t ug_f_to_i64(microgram_f microgram)
+{
+    return f_to_i64(((float) (microgram)));
+}
+
+/**
+ * Convert microgram_f to int8_t.
+ */
+int8_t ug_f_to_i8(microgram_f microgram)
+{
+    return f_to_i8(((float) (microgram)));
+}
+
+/**
+ * Convert microgram_f to kilogram_d.
+ */
+kilogram_d ug_f_to_kg_d(microgram_f microgram)
+{
+    return (((kilogram_d) (microgram)) / 1000000000.0);
+}
+
+/**
+ * Convert microgram_f to kilogram_f.
+ */
+kilogram_f ug_f_to_kg_f(microgram_f microgram)
+{
+    return ((kilogram_f) (microgram / 1000000000.0f));
+}
+
+/**
+ * Convert microgram_f to kilogram_t.
+ */
+kilogram_t ug_f_to_kg_t(microgram_f microgram)
+{
+    const microgram_f conversion = microgram / 1000000000.0f;
+    return ((kilogram_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((kilogram_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert microgram_f to kilogram_u.
+ */
+kilogram_u ug_f_to_kg_u(microgram_f microgram)
+{
+    const microgram_f conversion = microgram / 1000000000.0f;
+    return ((kilogram_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((kilogram_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert microgram_f to megagram_d.
+ */
+megagram_d ug_f_to_Mg_d(microgram_f microgram)
+{
+    return (((megagram_d) (microgram)) / 1000000000000.0);
+}
+
+/**
+ * Convert microgram_f to megagram_f.
+ */
+megagram_f ug_f_to_Mg_f(microgram_f microgram)
+{
+    return ((megagram_f) (microgram / 1000000000000.0f));
+}
+
+/**
+ * Convert microgram_f to megagram_t.
+ */
+megagram_t ug_f_to_Mg_t(microgram_f microgram)
+{
+    const microgram_f conversion = microgram / 1000000000000.0f;
+    return ((megagram_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((megagram_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert microgram_f to megagram_u.
+ */
+megagram_u ug_f_to_Mg_u(microgram_f microgram)
+{
+    const microgram_f conversion = microgram / 1000000000000.0f;
+    return ((megagram_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((megagram_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert microgram_f to microgram_d.
+ */
+microgram_d ug_f_to_ug_d(microgram_f microgram)
+{
+    return ((microgram_d) (microgram));
+}
+
+/**
+ * Convert microgram_f to microgram_t.
+ */
+microgram_t ug_f_to_ug_t(microgram_f microgram)
+{
+    return ((microgram_t) (round(((double) (microgram))) < ((double) (9223372036854775807)) ? (round(((double) (microgram))) > ((double) (-9223372036854775807 - 1)) ? ((microgram_t) (round(((double) (microgram))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert microgram_f to microgram_u.
+ */
+microgram_u ug_f_to_ug_u(microgram_f microgram)
+{
+    return ((microgram_u) (round(((double) (microgram))) < ((double) (18446744073709551615U)) ? (round(((double) (microgram))) > ((double) (0)) ? ((microgram_u) (round(((double) (microgram))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert microgram_f to milligram_d.
+ */
+milligram_d ug_f_to_mg_d(microgram_f microgram)
+{
+    return (((milligram_d) (microgram)) / 1000.0);
+}
+
+/**
+ * Convert microgram_f to milligram_f.
+ */
+milligram_f ug_f_to_mg_f(microgram_f microgram)
+{
+    return ((milligram_f) (microgram / 1000.0f));
+}
+
+/**
+ * Convert microgram_f to milligram_t.
+ */
+milligram_t ug_f_to_mg_t(microgram_f microgram)
+{
+    const microgram_f conversion = microgram / 1000.0f;
+    return ((milligram_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((milligram_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert microgram_f to milligram_u.
+ */
+milligram_u ug_f_to_mg_u(microgram_f microgram)
+{
+    const microgram_f conversion = microgram / 1000.0f;
+    return ((milligram_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((milligram_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert microgram_f to uint16_t.
+ */
+uint16_t ug_f_to_u16(microgram_f microgram)
+{
+    return f_to_u16(((float) (microgram)));
+}
+
+/**
+ * Convert microgram_f to uint32_t.
+ */
+uint32_t ug_f_to_u32(microgram_f microgram)
+{
+    return f_to_u32(((float) (microgram)));
+}
+
+/**
+ * Convert microgram_f to uint64_t.
+ */
+uint64_t ug_f_to_u64(microgram_f microgram)
+{
+    return f_to_u64(((float) (microgram)));
+}
+
+/**
+ * Convert microgram_f to uint8_t.
+ */
+uint8_t ug_f_to_u8(microgram_f microgram)
+{
+    return f_to_u8(((float) (microgram)));
+}
+
+/**
+ * Convert microgram_t to double.
+ */
+double ug_t_to_d(microgram_t microgram)
+{
+    return ((double) (microgram));
+}
+
+/**
+ * Convert microgram_t to float.
+ */
+float ug_t_to_f(microgram_t microgram)
+{
+    return ((float) (microgram));
+}
+
+/**
+ * Convert microgram_t to gram_d.
+ */
+gram_d ug_t_to_g_d(microgram_t microgram)
+{
+    return ((gram_d) (microgram / 1000000));
+}
+
+/**
+ * Convert microgram_t to gram_f.
+ */
+gram_f ug_t_to_g_f(microgram_t microgram)
+{
+    return ((gram_f) (microgram / 1000000));
+}
+
+/**
+ * Convert microgram_t to gram_t.
+ */
+gram_t ug_t_to_g_t(microgram_t microgram)
+{
+    return ((gram_t) (microgram / 1000000));
+}
+
+/**
+ * Convert microgram_t to gram_u.
+ */
+gram_u ug_t_to_g_u(microgram_t microgram)
+{
+    if (microgram < 0) {
+        return 0;
+    }
+    return ((gram_u) (microgram / 1000000));
+}
+
+/**
+ * Convert microgram_t to int16_t.
+ */
+int16_t ug_t_to_i16(microgram_t microgram)
+{
+    return ((int16_t) (MIN(((microgram_t) (32767)), MAX(((microgram_t) (-32768)), microgram))));
+}
+
+/**
+ * Convert microgram_t to int32_t.
+ */
+int32_t ug_t_to_i32(microgram_t microgram)
+{
+    return ((int32_t) (MIN(((microgram_t) (2147483647)), MAX(((microgram_t) (-2147483648)), microgram))));
+}
+
+/**
+ * Convert microgram_t to int64_t.
+ */
+int64_t ug_t_to_i64(microgram_t microgram)
+{
+    return ((int64_t) (microgram));
+}
+
+/**
+ * Convert microgram_t to int8_t.
+ */
+int8_t ug_t_to_i8(microgram_t microgram)
+{
+    return ((int8_t) (MIN(((microgram_t) (127)), MAX(((microgram_t) (-128)), microgram))));
+}
+
+/**
+ * Convert microgram_t to kilogram_d.
+ */
+kilogram_d ug_t_to_kg_d(microgram_t microgram)
+{
+    return ((kilogram_d) (microgram / 1000000000));
+}
+
+/**
+ * Convert microgram_t to kilogram_f.
+ */
+kilogram_f ug_t_to_kg_f(microgram_t microgram)
+{
+    return ((kilogram_f) (microgram / 1000000000));
+}
+
+/**
+ * Convert microgram_t to kilogram_t.
+ */
+kilogram_t ug_t_to_kg_t(microgram_t microgram)
+{
+    return ((kilogram_t) (microgram / 1000000000));
+}
+
+/**
+ * Convert microgram_t to kilogram_u.
+ */
+kilogram_u ug_t_to_kg_u(microgram_t microgram)
+{
+    if (microgram < 0) {
+        return 0;
+    }
+    return ((kilogram_u) (microgram / 1000000000));
+}
+
+/**
+ * Convert microgram_t to megagram_d.
+ */
+megagram_d ug_t_to_Mg_d(microgram_t microgram)
+{
+    return ((megagram_d) (microgram / 1000000000000));
+}
+
+/**
+ * Convert microgram_t to megagram_f.
+ */
+megagram_f ug_t_to_Mg_f(microgram_t microgram)
+{
+    return ((megagram_f) (microgram / 1000000000000));
+}
+
+/**
+ * Convert microgram_t to megagram_t.
+ */
+megagram_t ug_t_to_Mg_t(microgram_t microgram)
+{
+    return ((megagram_t) (microgram / 1000000000000));
+}
+
+/**
+ * Convert microgram_t to megagram_u.
+ */
+megagram_u ug_t_to_Mg_u(microgram_t microgram)
+{
+    if (microgram < 0) {
+        return 0;
+    }
+    return ((megagram_u) (microgram / 1000000000000));
+}
+
+/**
+ * Convert microgram_t to microgram_d.
+ */
+microgram_d ug_t_to_ug_d(microgram_t microgram)
+{
+    return ((microgram_d) (microgram));
+}
+
+/**
+ * Convert microgram_t to microgram_f.
+ */
+microgram_f ug_t_to_ug_f(microgram_t microgram)
+{
+    return ((microgram_f) (microgram));
+}
+
+/**
+ * Convert microgram_t to microgram_u.
+ */
+microgram_u ug_t_to_ug_u(microgram_t microgram)
+{
+    return ((microgram_u) ((microgram) < 0 ? 0 : microgram));
+}
+
+/**
+ * Convert microgram_t to milligram_d.
+ */
+milligram_d ug_t_to_mg_d(microgram_t microgram)
+{
+    return ((milligram_d) (microgram / 1000));
+}
+
+/**
+ * Convert microgram_t to milligram_f.
+ */
+milligram_f ug_t_to_mg_f(microgram_t microgram)
+{
+    return ((milligram_f) (microgram / 1000));
+}
+
+/**
+ * Convert microgram_t to milligram_t.
+ */
+milligram_t ug_t_to_mg_t(microgram_t microgram)
+{
+    return ((milligram_t) (microgram / 1000));
+}
+
+/**
+ * Convert microgram_t to milligram_u.
+ */
+milligram_u ug_t_to_mg_u(microgram_t microgram)
+{
+    if (microgram < 0) {
+        return 0;
+    }
+    return ((milligram_u) (microgram / 1000));
+}
+
+/**
+ * Convert microgram_t to uint16_t.
+ */
+uint16_t ug_t_to_u16(microgram_t microgram)
+{
+    return ((uint16_t) (MAX(((microgram_t) (0)), microgram)));
+}
+
+/**
+ * Convert microgram_t to uint32_t.
+ */
+uint32_t ug_t_to_u32(microgram_t microgram)
+{
+    return ((uint32_t) (MAX(((microgram_t) (0)), microgram)));
+}
+
+/**
+ * Convert microgram_t to uint64_t.
+ */
+uint64_t ug_t_to_u64(microgram_t microgram)
+{
+    return ((uint64_t) (MAX(((microgram_t) (0)), microgram)));
+}
+
+/**
+ * Convert microgram_t to uint8_t.
+ */
+uint8_t ug_t_to_u8(microgram_t microgram)
+{
+    return ((uint8_t) (MAX(((microgram_t) (0)), microgram)));
+}
+
+/**
+ * Convert microgram_u to double.
+ */
+double ug_u_to_d(microgram_u microgram)
+{
+    return ((double) (microgram));
+}
+
+/**
+ * Convert microgram_u to float.
+ */
+float ug_u_to_f(microgram_u microgram)
+{
+    return ((float) (microgram));
+}
+
+/**
+ * Convert microgram_u to gram_d.
+ */
+gram_d ug_u_to_g_d(microgram_u microgram)
+{
+    return ((gram_d) (microgram / 1000000));
+}
+
+/**
+ * Convert microgram_u to gram_f.
+ */
+gram_f ug_u_to_g_f(microgram_u microgram)
+{
+    return ((gram_f) (microgram / 1000000));
+}
+
+/**
+ * Convert microgram_u to gram_t.
+ */
+gram_t ug_u_to_g_t(microgram_u microgram)
+{
+    const microgram_u conversion = microgram / 1000000;
+    return ((gram_t) ((conversion) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : conversion));
+}
+
+/**
+ * Convert microgram_u to gram_u.
+ */
+gram_u ug_u_to_g_u(microgram_u microgram)
+{
+    return ((gram_u) (microgram / 1000000));
+}
+
+/**
+ * Convert microgram_u to int16_t.
+ */
+int16_t ug_u_to_i16(microgram_u microgram)
+{
+    return ((int16_t) (MIN(((microgram_u) (32767)), microgram)));
+}
+
+/**
+ * Convert microgram_u to int32_t.
+ */
+int32_t ug_u_to_i32(microgram_u microgram)
+{
+    return ((int32_t) (MIN(((microgram_u) (2147483647)), microgram)));
+}
+
+/**
+ * Convert microgram_u to int64_t.
+ */
+int64_t ug_u_to_i64(microgram_u microgram)
+{
+    return ((int64_t) (MIN(((microgram_u) (9223372036854775807)), microgram)));
+}
+
+/**
+ * Convert microgram_u to int8_t.
+ */
+int8_t ug_u_to_i8(microgram_u microgram)
+{
+    return ((int8_t) (MIN(((microgram_u) (127)), microgram)));
+}
+
+/**
+ * Convert microgram_u to kilogram_d.
+ */
+kilogram_d ug_u_to_kg_d(microgram_u microgram)
+{
+    return ((kilogram_d) (microgram / 1000000000));
+}
+
+/**
+ * Convert microgram_u to kilogram_f.
+ */
+kilogram_f ug_u_to_kg_f(microgram_u microgram)
+{
+    return ((kilogram_f) (microgram / 1000000000));
+}
+
+/**
+ * Convert microgram_u to kilogram_t.
+ */
+kilogram_t ug_u_to_kg_t(microgram_u microgram)
+{
+    const microgram_u conversion = microgram / 1000000000;
+    return ((kilogram_t) ((conversion) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : conversion));
+}
+
+/**
+ * Convert microgram_u to kilogram_u.
+ */
+kilogram_u ug_u_to_kg_u(microgram_u microgram)
+{
+    return ((kilogram_u) (microgram / 1000000000));
+}
+
+/**
+ * Convert microgram_u to megagram_d.
+ */
+megagram_d ug_u_to_Mg_d(microgram_u microgram)
+{
+    return ((megagram_d) (microgram / 1000000000000));
+}
+
+/**
+ * Convert microgram_u to megagram_f.
+ */
+megagram_f ug_u_to_Mg_f(microgram_u microgram)
+{
+    return ((megagram_f) (microgram / 1000000000000));
+}
+
+/**
+ * Convert microgram_u to megagram_t.
+ */
+megagram_t ug_u_to_Mg_t(microgram_u microgram)
+{
+    const microgram_u conversion = microgram / 1000000000000;
+    return ((megagram_t) ((conversion) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : conversion));
+}
+
+/**
+ * Convert microgram_u to megagram_u.
+ */
+megagram_u ug_u_to_Mg_u(microgram_u microgram)
+{
+    return ((megagram_u) (microgram / 1000000000000));
+}
+
+/**
+ * Convert microgram_u to microgram_d.
+ */
+microgram_d ug_u_to_ug_d(microgram_u microgram)
+{
+    return ((microgram_d) (microgram));
+}
+
+/**
+ * Convert microgram_u to microgram_f.
+ */
+microgram_f ug_u_to_ug_f(microgram_u microgram)
+{
+    return ((microgram_f) (microgram));
+}
+
+/**
+ * Convert microgram_u to microgram_t.
+ */
+microgram_t ug_u_to_ug_t(microgram_u microgram)
+{
+    return ((microgram_t) ((microgram) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : microgram));
+}
+
+/**
+ * Convert microgram_u to milligram_d.
+ */
+milligram_d ug_u_to_mg_d(microgram_u microgram)
+{
+    return ((milligram_d) (microgram / 1000));
+}
+
+/**
+ * Convert microgram_u to milligram_f.
+ */
+milligram_f ug_u_to_mg_f(microgram_u microgram)
+{
+    return ((milligram_f) (microgram / 1000));
+}
+
+/**
+ * Convert microgram_u to milligram_t.
+ */
+milligram_t ug_u_to_mg_t(microgram_u microgram)
+{
+    const microgram_u conversion = microgram / 1000;
+    return ((milligram_t) ((conversion) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : conversion));
+}
+
+/**
+ * Convert microgram_u to milligram_u.
+ */
+milligram_u ug_u_to_mg_u(microgram_u microgram)
+{
+    return ((milligram_u) (microgram / 1000));
+}
+
+/**
+ * Convert microgram_u to uint16_t.
+ */
+uint16_t ug_u_to_u16(microgram_u microgram)
+{
+    return ((uint16_t) (MIN(((microgram_u) (65535)), MAX(((microgram_u) (0)), microgram))));
+}
+
+/**
+ * Convert microgram_u to uint32_t.
+ */
+uint32_t ug_u_to_u32(microgram_u microgram)
+{
+    return ((uint32_t) (MIN(((microgram_u) (4294967295U)), MAX(((microgram_u) (0)), microgram))));
+}
+
+/**
+ * Convert microgram_u to uint64_t.
+ */
+uint64_t ug_u_to_u64(microgram_u microgram)
+{
+    return ((uint64_t) (microgram));
+}
+
+/**
+ * Convert microgram_u to uint8_t.
+ */
+uint8_t ug_u_to_u8(microgram_u microgram)
+{
+    return ((uint8_t) (MIN(((microgram_u) (255)), MAX(((microgram_u) (0)), microgram))));
+}
+
+/**
+ * Convert milligram_d to double.
+ */
+double mg_d_to_d(milligram_d milligram)
+{
+    return ((double) (milligram));
+}
+
+/**
+ * Convert milligram_d to float.
+ */
+float mg_d_to_f(milligram_d milligram)
+{
+    return d_to_f(((double) (milligram)));
+}
+
+/**
+ * Convert milligram_d to gram_d.
+ */
+gram_d mg_d_to_g_d(milligram_d milligram)
+{
+    return ((gram_d) (milligram / 1000.0));
+}
+
+/**
+ * Convert milligram_d to gram_f.
+ */
+gram_f mg_d_to_g_f(milligram_d milligram)
+{
+    const milligram_d conversion = milligram / 1000.0;
+    return ((gram_f) (conversion < ((double) (FLT_MAX)) ? (conversion > ((double) (-FLT_MAX)) ? conversion : -FLT_MAX) : FLT_MAX));
+}
+
+/**
+ * Convert milligram_d to gram_t.
+ */
+gram_t mg_d_to_g_t(milligram_d milligram)
+{
+    const milligram_d conversion = milligram / 1000.0;
+    return ((gram_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((gram_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert milligram_d to gram_u.
+ */
+gram_u mg_d_to_g_u(milligram_d milligram)
+{
+    const milligram_d conversion = milligram / 1000.0;
+    return ((gram_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((gram_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert milligram_d to int16_t.
+ */
+int16_t mg_d_to_i16(milligram_d milligram)
+{
+    return d_to_i16(((double) (milligram)));
+}
+
+/**
+ * Convert milligram_d to int32_t.
+ */
+int32_t mg_d_to_i32(milligram_d milligram)
+{
+    return d_to_i32(((double) (milligram)));
+}
+
+/**
+ * Convert milligram_d to int64_t.
+ */
+int64_t mg_d_to_i64(milligram_d milligram)
+{
+    return d_to_i64(((double) (milligram)));
+}
+
+/**
+ * Convert milligram_d to int8_t.
+ */
+int8_t mg_d_to_i8(milligram_d milligram)
+{
+    return d_to_i8(((double) (milligram)));
+}
+
+/**
+ * Convert milligram_d to kilogram_d.
+ */
+kilogram_d mg_d_to_kg_d(milligram_d milligram)
+{
+    return ((kilogram_d) (milligram / 1000000.0));
+}
+
+/**
+ * Convert milligram_d to kilogram_f.
+ */
+kilogram_f mg_d_to_kg_f(milligram_d milligram)
+{
+    const milligram_d conversion = milligram / 1000000.0;
+    return ((kilogram_f) (conversion < ((double) (FLT_MAX)) ? (conversion > ((double) (-FLT_MAX)) ? conversion : -FLT_MAX) : FLT_MAX));
+}
+
+/**
+ * Convert milligram_d to kilogram_t.
+ */
+kilogram_t mg_d_to_kg_t(milligram_d milligram)
+{
+    const milligram_d conversion = milligram / 1000000.0;
+    return ((kilogram_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((kilogram_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert milligram_d to kilogram_u.
+ */
+kilogram_u mg_d_to_kg_u(milligram_d milligram)
+{
+    const milligram_d conversion = milligram / 1000000.0;
+    return ((kilogram_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((kilogram_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert milligram_d to megagram_d.
+ */
+megagram_d mg_d_to_Mg_d(milligram_d milligram)
+{
+    return ((megagram_d) (milligram / 1000000000.0));
+}
+
+/**
+ * Convert milligram_d to megagram_f.
+ */
+megagram_f mg_d_to_Mg_f(milligram_d milligram)
+{
+    const milligram_d conversion = milligram / 1000000000.0;
+    return ((megagram_f) (conversion < ((double) (FLT_MAX)) ? (conversion > ((double) (-FLT_MAX)) ? conversion : -FLT_MAX) : FLT_MAX));
+}
+
+/**
+ * Convert milligram_d to megagram_t.
+ */
+megagram_t mg_d_to_Mg_t(milligram_d milligram)
+{
+    const milligram_d conversion = milligram / 1000000000.0;
+    return ((megagram_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((megagram_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert milligram_d to megagram_u.
+ */
+megagram_u mg_d_to_Mg_u(milligram_d milligram)
+{
+    const milligram_d conversion = milligram / 1000000000.0;
+    return ((megagram_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((megagram_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert milligram_d to microgram_d.
+ */
+microgram_d mg_d_to_ug_d(milligram_d milligram)
+{
+    if (milligram < -DBL_MAX / 1000.0) {
+        return -DBL_MAX;
+    }
+    if (milligram > DBL_MAX / 1000.0) {
+        return DBL_MAX;
+    }
+    return ((microgram_d) (milligram)) * 1000.0;
+}
+
+/**
+ * Convert milligram_d to microgram_f.
+ */
+microgram_f mg_d_to_ug_f(milligram_d milligram)
+{
+    if (milligram > ((milligram_d) (FLT_MAX)) / 1000.0) {
+        return FLT_MAX;
+    }
+    if (milligram < ((milligram_d) (-FLT_MAX)) / 1000.0) {
+        return -FLT_MAX;
+    }
+    return ((microgram_f) (milligram * 1000.0));
+}
+
+/**
+ * Convert milligram_d to microgram_t.
+ */
+microgram_t mg_d_to_ug_t(milligram_d milligram)
+{
+    if (milligram > ((milligram_d) (9223372036854775807)) / 1000.0) {
+        return 9223372036854775807;
+    }
+    if (milligram < ((milligram_d) (-9223372036854775807 - 1)) / 1000.0) {
+        return -9223372036854775807 - 1;
+    }
+    return ((microgram_t) (milligram * 1000.0));
+}
+
+/**
+ * Convert milligram_d to microgram_u.
+ */
+microgram_u mg_d_to_ug_u(milligram_d milligram)
+{
+    if (milligram > ((milligram_d) (18446744073709551615U)) / 1000.0) {
+        return 18446744073709551615U;
+    }
+    if (milligram < ((milligram_d) (0)) / 1000.0) {
+        return 0;
+    }
+    return ((microgram_u) (milligram * 1000.0));
+}
+
+/**
+ * Convert milligram_d to milligram_f.
+ */
+milligram_f mg_d_to_mg_f(milligram_d milligram)
+{
+    return ((milligram_f) (milligram < ((double) (FLT_MAX)) ? (milligram > ((double) (-FLT_MAX)) ? milligram : -FLT_MAX) : FLT_MAX));
+}
+
+/**
+ * Convert milligram_d to milligram_t.
+ */
+milligram_t mg_d_to_mg_t(milligram_d milligram)
+{
+    return ((milligram_t) (round(((double) (milligram))) < ((double) (9223372036854775807)) ? (round(((double) (milligram))) > ((double) (-9223372036854775807 - 1)) ? ((milligram_t) (round(((double) (milligram))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert milligram_d to milligram_u.
+ */
+milligram_u mg_d_to_mg_u(milligram_d milligram)
+{
+    return ((milligram_u) (round(((double) (milligram))) < ((double) (18446744073709551615U)) ? (round(((double) (milligram))) > ((double) (0)) ? ((milligram_u) (round(((double) (milligram))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert milligram_d to uint16_t.
+ */
+uint16_t mg_d_to_u16(milligram_d milligram)
+{
+    return d_to_u16(((double) (milligram)));
+}
+
+/**
+ * Convert milligram_d to uint32_t.
+ */
+uint32_t mg_d_to_u32(milligram_d milligram)
+{
+    return d_to_u32(((double) (milligram)));
+}
+
+/**
+ * Convert milligram_d to uint64_t.
+ */
+uint64_t mg_d_to_u64(milligram_d milligram)
+{
+    return d_to_u64(((double) (milligram)));
+}
+
+/**
+ * Convert milligram_d to uint8_t.
+ */
+uint8_t mg_d_to_u8(milligram_d milligram)
+{
+    return d_to_u8(((double) (milligram)));
+}
+
+/**
+ * Convert milligram_f to double.
+ */
+double mg_f_to_d(milligram_f milligram)
+{
+    return ((double) (milligram));
+}
+
+/**
+ * Convert milligram_f to float.
+ */
+float mg_f_to_f(milligram_f milligram)
+{
+    return ((float) (milligram));
+}
+
+/**
+ * Convert milligram_f to gram_d.
+ */
+gram_d mg_f_to_g_d(milligram_f milligram)
+{
+    return (((gram_d) (milligram)) / 1000.0);
+}
+
+/**
+ * Convert milligram_f to gram_f.
+ */
+gram_f mg_f_to_g_f(milligram_f milligram)
+{
+    return ((gram_f) (milligram / 1000.0f));
+}
+
+/**
+ * Convert milligram_f to gram_t.
+ */
+gram_t mg_f_to_g_t(milligram_f milligram)
+{
+    const milligram_f conversion = milligram / 1000.0f;
+    return ((gram_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((gram_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert milligram_f to gram_u.
+ */
+gram_u mg_f_to_g_u(milligram_f milligram)
+{
+    const milligram_f conversion = milligram / 1000.0f;
+    return ((gram_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((gram_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert milligram_f to int16_t.
+ */
+int16_t mg_f_to_i16(milligram_f milligram)
+{
+    return f_to_i16(((float) (milligram)));
+}
+
+/**
+ * Convert milligram_f to int32_t.
+ */
+int32_t mg_f_to_i32(milligram_f milligram)
+{
+    return f_to_i32(((float) (milligram)));
+}
+
+/**
+ * Convert milligram_f to int64_t.
+ */
+int64_t mg_f_to_i64(milligram_f milligram)
+{
+    return f_to_i64(((float) (milligram)));
+}
+
+/**
+ * Convert milligram_f to int8_t.
+ */
+int8_t mg_f_to_i8(milligram_f milligram)
+{
+    return f_to_i8(((float) (milligram)));
+}
+
+/**
+ * Convert milligram_f to kilogram_d.
+ */
+kilogram_d mg_f_to_kg_d(milligram_f milligram)
+{
+    return (((kilogram_d) (milligram)) / 1000000.0);
+}
+
+/**
+ * Convert milligram_f to kilogram_f.
+ */
+kilogram_f mg_f_to_kg_f(milligram_f milligram)
+{
+    return ((kilogram_f) (milligram / 1000000.0f));
+}
+
+/**
+ * Convert milligram_f to kilogram_t.
+ */
+kilogram_t mg_f_to_kg_t(milligram_f milligram)
+{
+    const milligram_f conversion = milligram / 1000000.0f;
+    return ((kilogram_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((kilogram_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert milligram_f to kilogram_u.
+ */
+kilogram_u mg_f_to_kg_u(milligram_f milligram)
+{
+    const milligram_f conversion = milligram / 1000000.0f;
+    return ((kilogram_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((kilogram_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert milligram_f to megagram_d.
+ */
+megagram_d mg_f_to_Mg_d(milligram_f milligram)
+{
+    return (((megagram_d) (milligram)) / 1000000000.0);
+}
+
+/**
+ * Convert milligram_f to megagram_f.
+ */
+megagram_f mg_f_to_Mg_f(milligram_f milligram)
+{
+    return ((megagram_f) (milligram / 1000000000.0f));
+}
+
+/**
+ * Convert milligram_f to megagram_t.
+ */
+megagram_t mg_f_to_Mg_t(milligram_f milligram)
+{
+    const milligram_f conversion = milligram / 1000000000.0f;
+    return ((megagram_t) (round(((double) (conversion))) < ((double) (9223372036854775807)) ? (round(((double) (conversion))) > ((double) (-9223372036854775807 - 1)) ? ((megagram_t) (round(((double) (conversion))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert milligram_f to megagram_u.
+ */
+megagram_u mg_f_to_Mg_u(milligram_f milligram)
+{
+    const milligram_f conversion = milligram / 1000000000.0f;
+    return ((megagram_u) (round(((double) (conversion))) < ((double) (18446744073709551615U)) ? (round(((double) (conversion))) > ((double) (0)) ? ((megagram_u) (round(((double) (conversion))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert milligram_f to microgram_d.
+ */
+microgram_d mg_f_to_ug_d(milligram_f milligram)
+{
+    return ((microgram_d) (milligram)) * 1000.0;
+}
+
+/**
+ * Convert milligram_f to microgram_f.
+ */
+microgram_f mg_f_to_ug_f(milligram_f milligram)
+{
+    if (milligram < -FLT_MAX / 1000.0f) {
+        return -FLT_MAX;
+    }
+    if (milligram > FLT_MAX / 1000.0f) {
+        return FLT_MAX;
+    }
+    return ((microgram_f) (milligram)) * 1000.0f;
+}
+
+/**
+ * Convert milligram_f to microgram_t.
+ */
+microgram_t mg_f_to_ug_t(milligram_f milligram)
+{
+    if (milligram > ((milligram_f) (9223372036854775807)) / 1000.0f) {
+        return 9223372036854775807;
+    }
+    if (milligram < ((milligram_f) (-9223372036854775807 - 1)) / 1000.0f) {
+        return -9223372036854775807 - 1;
+    }
+    return ((microgram_t) (milligram * 1000.0f));
+}
+
+/**
+ * Convert milligram_f to microgram_u.
+ */
+microgram_u mg_f_to_ug_u(milligram_f milligram)
+{
+    if (milligram > ((milligram_f) (18446744073709551615U)) / 1000.0f) {
+        return 18446744073709551615U;
+    }
+    if (milligram < ((milligram_f) (0)) / 1000.0f) {
+        return 0;
+    }
+    return ((microgram_u) (milligram * 1000.0f));
+}
+
+/**
+ * Convert milligram_f to milligram_d.
+ */
+milligram_d mg_f_to_mg_d(milligram_f milligram)
+{
+    return ((milligram_d) (milligram));
+}
+
+/**
+ * Convert milligram_f to milligram_t.
+ */
+milligram_t mg_f_to_mg_t(milligram_f milligram)
+{
+    return ((milligram_t) (round(((double) (milligram))) < ((double) (9223372036854775807)) ? (round(((double) (milligram))) > ((double) (-9223372036854775807 - 1)) ? ((milligram_t) (round(((double) (milligram))))) : -9223372036854775807 - 1) : 9223372036854775807));
+}
+
+/**
+ * Convert milligram_f to milligram_u.
+ */
+milligram_u mg_f_to_mg_u(milligram_f milligram)
+{
+    return ((milligram_u) (round(((double) (milligram))) < ((double) (18446744073709551615U)) ? (round(((double) (milligram))) > ((double) (0)) ? ((milligram_u) (round(((double) (milligram))))) : 0) : 18446744073709551615U));
+}
+
+/**
+ * Convert milligram_f to uint16_t.
+ */
+uint16_t mg_f_to_u16(milligram_f milligram)
+{
+    return f_to_u16(((float) (milligram)));
+}
+
+/**
+ * Convert milligram_f to uint32_t.
+ */
+uint32_t mg_f_to_u32(milligram_f milligram)
+{
+    return f_to_u32(((float) (milligram)));
+}
+
+/**
+ * Convert milligram_f to uint64_t.
+ */
+uint64_t mg_f_to_u64(milligram_f milligram)
+{
+    return f_to_u64(((float) (milligram)));
+}
+
+/**
+ * Convert milligram_f to uint8_t.
+ */
+uint8_t mg_f_to_u8(milligram_f milligram)
+{
+    return f_to_u8(((float) (milligram)));
+}
+
+/**
+ * Convert milligram_t to double.
+ */
+double mg_t_to_d(milligram_t milligram)
+{
+    return ((double) (milligram));
+}
+
+/**
+ * Convert milligram_t to float.
+ */
+float mg_t_to_f(milligram_t milligram)
+{
+    return ((float) (milligram));
+}
+
+/**
+ * Convert milligram_t to gram_d.
+ */
+gram_d mg_t_to_g_d(milligram_t milligram)
+{
+    return ((gram_d) (milligram / 1000));
+}
+
+/**
+ * Convert milligram_t to gram_f.
+ */
+gram_f mg_t_to_g_f(milligram_t milligram)
+{
+    return ((gram_f) (milligram / 1000));
+}
+
+/**
+ * Convert milligram_t to gram_t.
+ */
+gram_t mg_t_to_g_t(milligram_t milligram)
+{
+    return ((gram_t) (milligram / 1000));
+}
+
+/**
+ * Convert milligram_t to gram_u.
+ */
+gram_u mg_t_to_g_u(milligram_t milligram)
+{
+    if (milligram < 0) {
+        return 0;
+    }
+    return ((gram_u) (milligram / 1000));
+}
+
+/**
+ * Convert milligram_t to int16_t.
+ */
+int16_t mg_t_to_i16(milligram_t milligram)
+{
+    return ((int16_t) (MIN(((milligram_t) (32767)), MAX(((milligram_t) (-32768)), milligram))));
+}
+
+/**
+ * Convert milligram_t to int32_t.
+ */
+int32_t mg_t_to_i32(milligram_t milligram)
+{
+    return ((int32_t) (MIN(((milligram_t) (2147483647)), MAX(((milligram_t) (-2147483648)), milligram))));
+}
+
+/**
+ * Convert milligram_t to int64_t.
+ */
+int64_t mg_t_to_i64(milligram_t milligram)
+{
+    return ((int64_t) (milligram));
+}
+
+/**
+ * Convert milligram_t to int8_t.
+ */
+int8_t mg_t_to_i8(milligram_t milligram)
+{
+    return ((int8_t) (MIN(((milligram_t) (127)), MAX(((milligram_t) (-128)), milligram))));
+}
+
+/**
+ * Convert milligram_t to kilogram_d.
+ */
+kilogram_d mg_t_to_kg_d(milligram_t milligram)
+{
+    return ((kilogram_d) (milligram / 1000000));
+}
+
+/**
+ * Convert milligram_t to kilogram_f.
+ */
+kilogram_f mg_t_to_kg_f(milligram_t milligram)
+{
+    return ((kilogram_f) (milligram / 1000000));
+}
+
+/**
+ * Convert milligram_t to kilogram_t.
+ */
+kilogram_t mg_t_to_kg_t(milligram_t milligram)
+{
+    return ((kilogram_t) (milligram / 1000000));
+}
+
+/**
+ * Convert milligram_t to kilogram_u.
+ */
+kilogram_u mg_t_to_kg_u(milligram_t milligram)
+{
+    if (milligram < 0) {
+        return 0;
+    }
+    return ((kilogram_u) (milligram / 1000000));
+}
+
+/**
+ * Convert milligram_t to megagram_d.
+ */
+megagram_d mg_t_to_Mg_d(milligram_t milligram)
+{
+    return ((megagram_d) (milligram / 1000000000));
+}
+
+/**
+ * Convert milligram_t to megagram_f.
+ */
+megagram_f mg_t_to_Mg_f(milligram_t milligram)
+{
+    return ((megagram_f) (milligram / 1000000000));
+}
+
+/**
+ * Convert milligram_t to megagram_t.
+ */
+megagram_t mg_t_to_Mg_t(milligram_t milligram)
+{
+    return ((megagram_t) (milligram / 1000000000));
+}
+
+/**
+ * Convert milligram_t to megagram_u.
+ */
+megagram_u mg_t_to_Mg_u(milligram_t milligram)
+{
+    if (milligram < 0) {
+        return 0;
+    }
+    return ((megagram_u) (milligram / 1000000000));
+}
+
+/**
+ * Convert milligram_t to microgram_d.
+ */
+microgram_d mg_t_to_ug_d(milligram_t milligram)
+{
+    return ((microgram_d) (milligram)) * 1000.0;
+}
+
+/**
+ * Convert milligram_t to microgram_f.
+ */
+microgram_f mg_t_to_ug_f(milligram_t milligram)
+{
+    return ((microgram_f) (milligram)) * 1000.0f;
+}
+
+/**
+ * Convert milligram_t to microgram_t.
+ */
+microgram_t mg_t_to_ug_t(milligram_t milligram)
+{
+    if (milligram < -9223372036854775807 - 1 / 1000) {
+        return -9223372036854775807 - 1;
+    }
+    if (milligram > 9223372036854775807 / 1000) {
+        return 9223372036854775807;
+    }
+    return ((microgram_t) (milligram)) * 1000;
+}
+
+/**
+ * Convert milligram_t to microgram_u.
+ */
+microgram_u mg_t_to_ug_u(milligram_t milligram)
+{
+    if (milligram < 0) {
+        return 0;
+    }
+    const microgram_u otherMilligram = ((microgram_u) (milligram));
+    if (otherMilligram > 18446744073709551615U / 1000) {
+        return 18446744073709551615U;
+    }
+    return otherMilligram * 1000;
+}
+
+/**
+ * Convert milligram_t to milligram_d.
+ */
+milligram_d mg_t_to_mg_d(milligram_t milligram)
+{
+    return ((milligram_d) (milligram));
+}
+
+/**
+ * Convert milligram_t to milligram_f.
+ */
+milligram_f mg_t_to_mg_f(milligram_t milligram)
+{
+    return ((milligram_f) (milligram));
+}
+
+/**
+ * Convert milligram_t to milligram_u.
+ */
+milligram_u mg_t_to_mg_u(milligram_t milligram)
+{
+    return ((milligram_u) ((milligram) < 0 ? 0 : milligram));
+}
+
+/**
+ * Convert milligram_t to uint16_t.
+ */
+uint16_t mg_t_to_u16(milligram_t milligram)
+{
+    return ((uint16_t) (MAX(((milligram_t) (0)), milligram)));
+}
+
+/**
+ * Convert milligram_t to uint32_t.
+ */
+uint32_t mg_t_to_u32(milligram_t milligram)
+{
+    return ((uint32_t) (MAX(((milligram_t) (0)), milligram)));
+}
+
+/**
+ * Convert milligram_t to uint64_t.
+ */
+uint64_t mg_t_to_u64(milligram_t milligram)
+{
+    return ((uint64_t) (MAX(((milligram_t) (0)), milligram)));
+}
+
+/**
+ * Convert milligram_t to uint8_t.
+ */
+uint8_t mg_t_to_u8(milligram_t milligram)
+{
+    return ((uint8_t) (MAX(((milligram_t) (0)), milligram)));
+}
+
+/**
+ * Convert milligram_u to double.
+ */
+double mg_u_to_d(milligram_u milligram)
+{
+    return ((double) (milligram));
+}
+
+/**
+ * Convert milligram_u to float.
+ */
+float mg_u_to_f(milligram_u milligram)
+{
+    return ((float) (milligram));
+}
+
+/**
+ * Convert milligram_u to gram_d.
+ */
+gram_d mg_u_to_g_d(milligram_u milligram)
+{
+    return ((gram_d) (milligram / 1000));
+}
+
+/**
+ * Convert milligram_u to gram_f.
+ */
+gram_f mg_u_to_g_f(milligram_u milligram)
+{
+    return ((gram_f) (milligram / 1000));
+}
+
+/**
+ * Convert milligram_u to gram_t.
+ */
+gram_t mg_u_to_g_t(milligram_u milligram)
+{
+    const milligram_u conversion = milligram / 1000;
+    return ((gram_t) ((conversion) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : conversion));
+}
+
+/**
+ * Convert milligram_u to gram_u.
+ */
+gram_u mg_u_to_g_u(milligram_u milligram)
+{
+    return ((gram_u) (milligram / 1000));
+}
+
+/**
+ * Convert milligram_u to int16_t.
+ */
+int16_t mg_u_to_i16(milligram_u milligram)
+{
+    return ((int16_t) (MIN(((milligram_u) (32767)), milligram)));
+}
+
+/**
+ * Convert milligram_u to int32_t.
+ */
+int32_t mg_u_to_i32(milligram_u milligram)
+{
+    return ((int32_t) (MIN(((milligram_u) (2147483647)), milligram)));
+}
+
+/**
+ * Convert milligram_u to int64_t.
+ */
+int64_t mg_u_to_i64(milligram_u milligram)
+{
+    return ((int64_t) (MIN(((milligram_u) (9223372036854775807)), milligram)));
+}
+
+/**
+ * Convert milligram_u to int8_t.
+ */
+int8_t mg_u_to_i8(milligram_u milligram)
+{
+    return ((int8_t) (MIN(((milligram_u) (127)), milligram)));
+}
+
+/**
+ * Convert milligram_u to kilogram_d.
+ */
+kilogram_d mg_u_to_kg_d(milligram_u milligram)
+{
+    return ((kilogram_d) (milligram / 1000000));
+}
+
+/**
+ * Convert milligram_u to kilogram_f.
+ */
+kilogram_f mg_u_to_kg_f(milligram_u milligram)
+{
+    return ((kilogram_f) (milligram / 1000000));
+}
+
+/**
+ * Convert milligram_u to kilogram_t.
+ */
+kilogram_t mg_u_to_kg_t(milligram_u milligram)
+{
+    const milligram_u conversion = milligram / 1000000;
+    return ((kilogram_t) ((conversion) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : conversion));
+}
+
+/**
+ * Convert milligram_u to kilogram_u.
+ */
+kilogram_u mg_u_to_kg_u(milligram_u milligram)
+{
+    return ((kilogram_u) (milligram / 1000000));
+}
+
+/**
+ * Convert milligram_u to megagram_d.
+ */
+megagram_d mg_u_to_Mg_d(milligram_u milligram)
+{
+    return ((megagram_d) (milligram / 1000000000));
+}
+
+/**
+ * Convert milligram_u to megagram_f.
+ */
+megagram_f mg_u_to_Mg_f(milligram_u milligram)
+{
+    return ((megagram_f) (milligram / 1000000000));
+}
+
+/**
+ * Convert milligram_u to megagram_t.
+ */
+megagram_t mg_u_to_Mg_t(milligram_u milligram)
+{
+    const milligram_u conversion = milligram / 1000000000;
+    return ((megagram_t) ((conversion) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : conversion));
+}
+
+/**
+ * Convert milligram_u to megagram_u.
+ */
+megagram_u mg_u_to_Mg_u(milligram_u milligram)
+{
+    return ((megagram_u) (milligram / 1000000000));
+}
+
+/**
+ * Convert milligram_u to microgram_d.
+ */
+microgram_d mg_u_to_ug_d(milligram_u milligram)
+{
+    return ((microgram_d) (milligram)) * 1000.0;
+}
+
+/**
+ * Convert milligram_u to microgram_f.
+ */
+microgram_f mg_u_to_ug_f(milligram_u milligram)
+{
+    return ((microgram_f) (milligram)) * 1000.0f;
+}
+
+/**
+ * Convert milligram_u to microgram_t.
+ */
+microgram_t mg_u_to_ug_t(milligram_u milligram)
+{
+    if (milligram > ((milligram_u) (9223372036854775807 / 1000))) {
+        return 9223372036854775807;
+    }
+    return ((microgram_t) (milligram * 1000));
+}
+
+/**
+ * Convert milligram_u to microgram_u.
+ */
+microgram_u mg_u_to_ug_u(milligram_u milligram)
+{
+    if (milligram > 18446744073709551615U / 1000) {
+        return 18446744073709551615U;
+    }
+    return ((microgram_u) (milligram)) * 1000;
+}
+
+/**
+ * Convert milligram_u to milligram_d.
+ */
+milligram_d mg_u_to_mg_d(milligram_u milligram)
+{
+    return ((milligram_d) (milligram));
+}
+
+/**
+ * Convert milligram_u to milligram_f.
+ */
+milligram_f mg_u_to_mg_f(milligram_u milligram)
+{
+    return ((milligram_f) (milligram));
+}
+
+/**
+ * Convert milligram_u to milligram_t.
+ */
+milligram_t mg_u_to_mg_t(milligram_u milligram)
+{
+    return ((milligram_t) ((milligram) > ((uint64_t) (9223372036854775807)) ? ((uint64_t) (9223372036854775807)) : milligram));
+}
+
+/**
+ * Convert milligram_u to uint16_t.
+ */
+uint16_t mg_u_to_u16(milligram_u milligram)
+{
+    return ((uint16_t) (MIN(((milligram_u) (65535)), MAX(((milligram_u) (0)), milligram))));
+}
+
+/**
+ * Convert milligram_u to uint32_t.
+ */
+uint32_t mg_u_to_u32(milligram_u milligram)
+{
+    return ((uint32_t) (MIN(((milligram_u) (4294967295U)), MAX(((milligram_u) (0)), milligram))));
+}
+
+/**
+ * Convert milligram_u to uint64_t.
+ */
+uint64_t mg_u_to_u64(milligram_u milligram)
+{
+    return ((uint64_t) (milligram));
+}
+
+/**
+ * Convert milligram_u to uint8_t.
+ */
+uint8_t mg_u_to_u8(milligram_u milligram)
+{
+    return ((uint8_t) (MIN(((milligram_u) (255)), MAX(((milligram_u) (0)), milligram))));
+}
+
+/**
+ * Convert uint16_t to gram_d.
+ */
+gram_d u16_to_g_d(uint16_t gram)
+{
+    return ((gram_d) (gram));
+}
+
+/**
+ * Convert uint16_t to gram_f.
+ */
+gram_f u16_to_g_f(uint16_t gram)
+{
+    return ((gram_f) (gram));
+}
+
+/**
+ * Convert uint16_t to gram_t.
+ */
+gram_t u16_to_g_t(uint16_t gram)
+{
+    return ((gram_t) (gram));
+}
+
+/**
+ * Convert uint16_t to gram_u.
+ */
+gram_u u16_to_g_u(uint16_t gram)
+{
+    return ((gram_u) (gram));
+}
+
+/**
+ * Convert uint16_t to kilogram_d.
+ */
+kilogram_d u16_to_kg_d(uint16_t kilogram)
+{
+    return ((kilogram_d) (kilogram));
+}
+
+/**
+ * Convert uint16_t to kilogram_f.
+ */
+kilogram_f u16_to_kg_f(uint16_t kilogram)
+{
+    return ((kilogram_f) (kilogram));
+}
+
+/**
+ * Convert uint16_t to kilogram_t.
+ */
+kilogram_t u16_to_kg_t(uint16_t kilogram)
+{
+    return ((kilogram_t) (kilogram));
+}
+
+/**
+ * Convert uint16_t to kilogram_u.
+ */
+kilogram_u u16_to_kg_u(uint16_t kilogram)
+{
+    return ((kilogram_u) (kilogram));
+}
+
+/**
+ * Convert uint16_t to megagram_d.
+ */
+megagram_d u16_to_Mg_d(uint16_t megagram)
+{
+    return ((megagram_d) (megagram));
+}
+
+/**
+ * Convert uint16_t to megagram_f.
+ */
+megagram_f u16_to_Mg_f(uint16_t megagram)
+{
+    return ((megagram_f) (megagram));
+}
+
+/**
+ * Convert uint16_t to megagram_t.
+ */
+megagram_t u16_to_Mg_t(uint16_t megagram)
+{
+    return ((megagram_t) (megagram));
+}
+
+/**
+ * Convert uint16_t to megagram_u.
+ */
+megagram_u u16_to_Mg_u(uint16_t megagram)
+{
+    return ((megagram_u) (megagram));
+}
+
+/**
+ * Convert uint16_t to microgram_d.
+ */
+microgram_d u16_to_ug_d(uint16_t microgram)
+{
+    return ((microgram_d) (microgram));
+}
+
+/**
+ * Convert uint16_t to microgram_f.
+ */
+microgram_f u16_to_ug_f(uint16_t microgram)
+{
+    return ((microgram_f) (microgram));
+}
+
+/**
+ * Convert uint16_t to microgram_t.
+ */
+microgram_t u16_to_ug_t(uint16_t microgram)
+{
+    return ((microgram_t) (microgram));
+}
+
+/**
+ * Convert uint16_t to microgram_u.
+ */
+microgram_u u16_to_ug_u(uint16_t microgram)
+{
+    return ((microgram_u) (microgram));
+}
+
+/**
+ * Convert uint16_t to milligram_d.
+ */
+milligram_d u16_to_mg_d(uint16_t milligram)
+{
+    return ((milligram_d) (milligram));
+}
+
+/**
+ * Convert uint16_t to milligram_f.
+ */
+milligram_f u16_to_mg_f(uint16_t milligram)
+{
+    return ((milligram_f) (milligram));
+}
+
+/**
+ * Convert uint16_t to milligram_t.
+ */
+milligram_t u16_to_mg_t(uint16_t milligram)
+{
+    return ((milligram_t) (milligram));
+}
+
+/**
+ * Convert uint16_t to milligram_u.
+ */
+milligram_u u16_to_mg_u(uint16_t milligram)
+{
+    return ((milligram_u) (milligram));
+}
+
+/**
+ * Convert uint32_t to gram_d.
+ */
+gram_d u32_to_g_d(uint32_t gram)
+{
+    return ((gram_d) (gram));
+}
+
+/**
+ * Convert uint32_t to gram_f.
+ */
+gram_f u32_to_g_f(uint32_t gram)
+{
+    return ((gram_f) (gram));
+}
+
+/**
+ * Convert uint32_t to gram_t.
+ */
+gram_t u32_to_g_t(uint32_t gram)
+{
+    return ((gram_t) (gram));
+}
+
+/**
+ * Convert uint32_t to gram_u.
+ */
+gram_u u32_to_g_u(uint32_t gram)
+{
+    return ((gram_u) (gram));
+}
+
+/**
+ * Convert uint32_t to kilogram_d.
+ */
+kilogram_d u32_to_kg_d(uint32_t kilogram)
+{
+    return ((kilogram_d) (kilogram));
+}
+
+/**
+ * Convert uint32_t to kilogram_f.
+ */
+kilogram_f u32_to_kg_f(uint32_t kilogram)
+{
+    return ((kilogram_f) (kilogram));
+}
+
+/**
+ * Convert uint32_t to kilogram_t.
+ */
+kilogram_t u32_to_kg_t(uint32_t kilogram)
+{
+    return ((kilogram_t) (kilogram));
+}
+
+/**
+ * Convert uint32_t to kilogram_u.
+ */
+kilogram_u u32_to_kg_u(uint32_t kilogram)
+{
+    return ((kilogram_u) (kilogram));
+}
+
+/**
+ * Convert uint32_t to megagram_d.
+ */
+megagram_d u32_to_Mg_d(uint32_t megagram)
+{
+    return ((megagram_d) (megagram));
+}
+
+/**
+ * Convert uint32_t to megagram_f.
+ */
+megagram_f u32_to_Mg_f(uint32_t megagram)
+{
+    return ((megagram_f) (megagram));
+}
+
+/**
+ * Convert uint32_t to megagram_t.
+ */
+megagram_t u32_to_Mg_t(uint32_t megagram)
+{
+    return ((megagram_t) (megagram));
+}
+
+/**
+ * Convert uint32_t to megagram_u.
+ */
+megagram_u u32_to_Mg_u(uint32_t megagram)
+{
+    return ((megagram_u) (megagram));
+}
+
+/**
+ * Convert uint32_t to microgram_d.
+ */
+microgram_d u32_to_ug_d(uint32_t microgram)
+{
+    return ((microgram_d) (microgram));
+}
+
+/**
+ * Convert uint32_t to microgram_f.
+ */
+microgram_f u32_to_ug_f(uint32_t microgram)
+{
+    return ((microgram_f) (microgram));
+}
+
+/**
+ * Convert uint32_t to microgram_t.
+ */
+microgram_t u32_to_ug_t(uint32_t microgram)
+{
+    return ((microgram_t) (microgram));
+}
+
+/**
+ * Convert uint32_t to microgram_u.
+ */
+microgram_u u32_to_ug_u(uint32_t microgram)
+{
+    return ((microgram_u) (microgram));
+}
+
+/**
+ * Convert uint32_t to milligram_d.
+ */
+milligram_d u32_to_mg_d(uint32_t milligram)
+{
+    return ((milligram_d) (milligram));
+}
+
+/**
+ * Convert uint32_t to milligram_f.
+ */
+milligram_f u32_to_mg_f(uint32_t milligram)
+{
+    return ((milligram_f) (milligram));
+}
+
+/**
+ * Convert uint32_t to milligram_t.
+ */
+milligram_t u32_to_mg_t(uint32_t milligram)
+{
+    return ((milligram_t) (milligram));
+}
+
+/**
+ * Convert uint32_t to milligram_u.
+ */
+milligram_u u32_to_mg_u(uint32_t milligram)
+{
+    return ((milligram_u) (milligram));
+}
+
+/**
+ * Convert uint64_t to gram_d.
+ */
+gram_d u64_to_g_d(uint64_t gram)
+{
+    return ((gram_d) (gram));
+}
+
+/**
+ * Convert uint64_t to gram_f.
+ */
+gram_f u64_to_g_f(uint64_t gram)
+{
+    return ((gram_f) (gram));
+}
+
+/**
+ * Convert uint64_t to gram_t.
+ */
+gram_t u64_to_g_t(uint64_t gram)
+{
+    return ((gram_t) (MIN(((uint64_t) (9223372036854775807)), gram)));
+}
+
+/**
+ * Convert uint64_t to gram_u.
+ */
+gram_u u64_to_g_u(uint64_t gram)
+{
+    return ((gram_u) (gram));
+}
+
+/**
+ * Convert uint64_t to kilogram_d.
+ */
+kilogram_d u64_to_kg_d(uint64_t kilogram)
+{
+    return ((kilogram_d) (kilogram));
+}
+
+/**
+ * Convert uint64_t to kilogram_f.
+ */
+kilogram_f u64_to_kg_f(uint64_t kilogram)
+{
+    return ((kilogram_f) (kilogram));
+}
+
+/**
+ * Convert uint64_t to kilogram_t.
+ */
+kilogram_t u64_to_kg_t(uint64_t kilogram)
+{
+    return ((kilogram_t) (MIN(((uint64_t) (9223372036854775807)), kilogram)));
+}
+
+/**
+ * Convert uint64_t to kilogram_u.
+ */
+kilogram_u u64_to_kg_u(uint64_t kilogram)
+{
+    return ((kilogram_u) (kilogram));
+}
+
+/**
+ * Convert uint64_t to megagram_d.
+ */
+megagram_d u64_to_Mg_d(uint64_t megagram)
+{
+    return ((megagram_d) (megagram));
+}
+
+/**
+ * Convert uint64_t to megagram_f.
+ */
+megagram_f u64_to_Mg_f(uint64_t megagram)
+{
+    return ((megagram_f) (megagram));
+}
+
+/**
+ * Convert uint64_t to megagram_t.
+ */
+megagram_t u64_to_Mg_t(uint64_t megagram)
+{
+    return ((megagram_t) (MIN(((uint64_t) (9223372036854775807)), megagram)));
+}
+
+/**
+ * Convert uint64_t to megagram_u.
+ */
+megagram_u u64_to_Mg_u(uint64_t megagram)
+{
+    return ((megagram_u) (megagram));
+}
+
+/**
+ * Convert uint64_t to microgram_d.
+ */
+microgram_d u64_to_ug_d(uint64_t microgram)
+{
+    return ((microgram_d) (microgram));
+}
+
+/**
+ * Convert uint64_t to microgram_f.
+ */
+microgram_f u64_to_ug_f(uint64_t microgram)
+{
+    return ((microgram_f) (microgram));
+}
+
+/**
+ * Convert uint64_t to microgram_t.
+ */
+microgram_t u64_to_ug_t(uint64_t microgram)
+{
+    return ((microgram_t) (MIN(((uint64_t) (9223372036854775807)), microgram)));
+}
+
+/**
+ * Convert uint64_t to microgram_u.
+ */
+microgram_u u64_to_ug_u(uint64_t microgram)
+{
+    return ((microgram_u) (microgram));
+}
+
+/**
+ * Convert uint64_t to milligram_d.
+ */
+milligram_d u64_to_mg_d(uint64_t milligram)
+{
+    return ((milligram_d) (milligram));
+}
+
+/**
+ * Convert uint64_t to milligram_f.
+ */
+milligram_f u64_to_mg_f(uint64_t milligram)
+{
+    return ((milligram_f) (milligram));
+}
+
+/**
+ * Convert uint64_t to milligram_t.
+ */
+milligram_t u64_to_mg_t(uint64_t milligram)
+{
+    return ((milligram_t) (MIN(((uint64_t) (9223372036854775807)), milligram)));
+}
+
+/**
+ * Convert uint64_t to milligram_u.
+ */
+milligram_u u64_to_mg_u(uint64_t milligram)
+{
+    return ((milligram_u) (milligram));
+}
+
+/**
+ * Convert uint8_t to gram_d.
+ */
+gram_d u8_to_g_d(uint8_t gram)
+{
+    return ((gram_d) (gram));
+}
+
+/**
+ * Convert uint8_t to gram_f.
+ */
+gram_f u8_to_g_f(uint8_t gram)
+{
+    return ((gram_f) (gram));
+}
+
+/**
+ * Convert uint8_t to gram_t.
+ */
+gram_t u8_to_g_t(uint8_t gram)
+{
+    return ((gram_t) (gram));
+}
+
+/**
+ * Convert uint8_t to gram_u.
+ */
+gram_u u8_to_g_u(uint8_t gram)
+{
+    return ((gram_u) (gram));
+}
+
+/**
+ * Convert uint8_t to kilogram_d.
+ */
+kilogram_d u8_to_kg_d(uint8_t kilogram)
+{
+    return ((kilogram_d) (kilogram));
+}
+
+/**
+ * Convert uint8_t to kilogram_f.
+ */
+kilogram_f u8_to_kg_f(uint8_t kilogram)
+{
+    return ((kilogram_f) (kilogram));
+}
+
+/**
+ * Convert uint8_t to kilogram_t.
+ */
+kilogram_t u8_to_kg_t(uint8_t kilogram)
+{
+    return ((kilogram_t) (kilogram));
+}
+
+/**
+ * Convert uint8_t to kilogram_u.
+ */
+kilogram_u u8_to_kg_u(uint8_t kilogram)
+{
+    return ((kilogram_u) (kilogram));
+}
+
+/**
+ * Convert uint8_t to megagram_d.
+ */
+megagram_d u8_to_Mg_d(uint8_t megagram)
+{
+    return ((megagram_d) (megagram));
+}
+
+/**
+ * Convert uint8_t to megagram_f.
+ */
+megagram_f u8_to_Mg_f(uint8_t megagram)
+{
+    return ((megagram_f) (megagram));
+}
+
+/**
+ * Convert uint8_t to megagram_t.
+ */
+megagram_t u8_to_Mg_t(uint8_t megagram)
+{
+    return ((megagram_t) (megagram));
+}
+
+/**
+ * Convert uint8_t to megagram_u.
+ */
+megagram_u u8_to_Mg_u(uint8_t megagram)
+{
+    return ((megagram_u) (megagram));
+}
+
+/**
+ * Convert uint8_t to microgram_d.
+ */
+microgram_d u8_to_ug_d(uint8_t microgram)
+{
+    return ((microgram_d) (microgram));
+}
+
+/**
+ * Convert uint8_t to microgram_f.
+ */
+microgram_f u8_to_ug_f(uint8_t microgram)
+{
+    return ((microgram_f) (microgram));
+}
+
+/**
+ * Convert uint8_t to microgram_t.
+ */
+microgram_t u8_to_ug_t(uint8_t microgram)
+{
+    return ((microgram_t) (microgram));
+}
+
+/**
+ * Convert uint8_t to microgram_u.
+ */
+microgram_u u8_to_ug_u(uint8_t microgram)
+{
+    return ((microgram_u) (microgram));
+}
+
+/**
+ * Convert uint8_t to milligram_d.
+ */
+milligram_d u8_to_mg_d(uint8_t milligram)
+{
+    return ((milligram_d) (milligram));
+}
+
+/**
+ * Convert uint8_t to milligram_f.
+ */
+milligram_f u8_to_mg_f(uint8_t milligram)
+{
+    return ((milligram_f) (milligram));
+}
+
+/**
+ * Convert uint8_t to milligram_t.
+ */
+milligram_t u8_to_mg_t(uint8_t milligram)
+{
+    return ((milligram_t) (milligram));
+}
+
+/**
+ * Convert uint8_t to milligram_u.
+ */
+milligram_u u8_to_mg_u(uint8_t milligram)
+{
+    return ((milligram_u) (milligram));
 }
 
 int8_t d_to_i8(double doubleVal) {
@@ -20638,19 +25385,6 @@ int64_t d_to_i64(double doubleVal) {
         return -9223372036854775807 - 1;
     } else {
         return ((int64_t) (roundedValue));
-    }
-}
-
-unsigned int d_to_u(double doubleVal) {
-    const double roundedValue = round(doubleVal);
-    const double maxValue = nexttoward(((double) (UINT_MAX)), 0.0);
-    const double minValue = nexttoward(((double) (0.0)), 0.0);
-    if (roundedValue > maxValue) {
-        return UINT_MAX;
-    } else if (roundedValue < minValue) {
-        return 0;
-    } else {
-        return ((unsigned int) (roundedValue));
     }
 }
 
@@ -20718,19 +25452,6 @@ float d_to_f(double doubleVal) {
     }
 }
 
-int f_to_i(float floatVal) {
-    const float roundedValue = roundf(floatVal);
-    const float maxValue = nexttowardf(((float) (INT_MAX)), 0.0);
-    const float minValue = nexttowardf(((float) (INT_MIN)), 0.0);
-    if (roundedValue > maxValue) {
-        return INT_MAX;
-    } else if (roundedValue < minValue) {
-        return INT_MIN;
-    } else {
-        return ((int) (roundedValue));
-    }
-}
-
 int8_t f_to_i8(float floatVal) {
     const float roundedValue = roundf(floatVal);
     const float maxValue = nexttowardf(((float) (127.0f)), 0.0);
@@ -20780,19 +25501,6 @@ int64_t f_to_i64(float floatVal) {
         return -9223372036854775807 - 1;
     } else {
         return ((int64_t) (roundedValue));
-    }
-}
-
-unsigned int f_to_u(float floatVal) {
-    const float roundedValue = roundf(floatVal);
-    const float maxValue = nexttowardf(((float) (UINT_MAX)), 0.0);
-    const float minValue = nexttowardf(((float) (0.0f)), 0.0);
-    if (roundedValue > maxValue) {
-        return UINT_MAX;
-    } else if (roundedValue < minValue) {
-        return 0;
-    } else {
-        return ((unsigned int) (roundedValue));
     }
 }
 

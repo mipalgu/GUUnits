@@ -1,0 +1,246 @@
+/*
+* AccelerationTests.swift
+* GUUnitsTests
+*
+* Created by Callum McColl on 05/06/2019.
+* Copyright © 2019 Callum McColl. All rights reserved.
+*
+* Redistribution and use in source and binary forms, with or without
+* modification, are permitted provided that the following conditions
+* are met:
+*
+* 1. Redistributions of source code must retain the above copyright
+*    notice, this list of conditions and the following disclaimer.
+*
+* 2. Redistributions in binary form must reproduce the above
+*    copyright notice, this list of conditions and the following
+*    disclaimer in the documentation and/or other materials
+*    provided with the distribution.
+*
+* 3. All advertising materials mentioning features or use of this
+*    software must display the following acknowledgement:
+*
+*        This product includes software developed by Callum McColl.
+*
+* 4. Neither the name of the author nor the names of contributors
+*    may be used to endorse or promote products derived from this
+*    software without specific prior written permission.
+*
+* THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+* "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+* LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+* A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER
+* OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+* EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+* PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+* PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+* LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+* NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+* SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*
+* -----------------------------------------------------------------------
+* This program is free software; you can redistribute it and/or
+* modify it under the above terms or under the terms of the GNU
+* General Public License as published by the Free Software Foundation;
+* either version 2 of the License, or (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program; if not, see http://www.gnu.org/licenses/
+* or write to the Free Software Foundation, Inc., 51 Franklin Street,
+* Fifth Floor, Boston, MA  02110-1301, USA.
+*
+*/
+
+import CGUUnits
+@testable import GUUnits
+import XCTest
+
+/// Provides gs_t unit tests.
+final class Gs_tTests4: XCTestCase {
+
+    func testgs_tToint32_tUsing0Expecting0() {
+        let expected = gs_t_to_i32(0)
+        let result = Int32(Gs_t(0))
+        XCTAssertEqual(expected, result)
+    }
+
+    func testgs_tToint32_tUsing5Expecting5() {
+        let expected = gs_t_to_i32(5)
+        let result = Int32(Gs_t(5))
+        XCTAssertEqual(expected, result)
+    }
+
+    func testgs_tToint32_tUsinggs_tInt64_minExpectingInt32Int32_min() {
+        let expected = gs_t_to_i32(gs_t(Int64.min))
+        let result = Int32(Gs_t(gs_t(Int64.min)))
+        XCTAssertEqual(expected, result)
+    }
+
+    func testgs_tToint32_tUsinggs_tInt64_maxExpectingInt32Int32_max() {
+        let expected = gs_t_to_i32(gs_t(Int64.max))
+        let result = Int32(Gs_t(gs_t(Int64.max)))
+        XCTAssertEqual(expected, result)
+    }
+
+    func testint32_tTogs_tUsing0Expecting0() {
+        let expected = i32_to_gs_t(0)
+        let result = Gs_t(Int32(0)).rawValue
+        XCTAssertEqual(expected, result)
+    }
+
+    func testint32_tTogs_tUsing5Expecting5() {
+        let expected = i32_to_gs_t(5)
+        let result = Gs_t(Int32(5)).rawValue
+        XCTAssertEqual(expected, result)
+    }
+
+    func testint32_tTogs_tUsingInt32Int32_minExpectinggs_tInt32_min() {
+        let expected = i32_to_gs_t(Int32(Int32.min))
+        let result = Gs_t(Int32(Int32(Int32.min))).rawValue
+        XCTAssertEqual(expected, result)
+    }
+
+    func testint32_tTogs_tUsingInt32Int32_maxExpectinggs_tInt32_max() {
+        let expected = i32_to_gs_t(Int32(Int32.max))
+        let result = Gs_t(Int32(Int32(Int32.max))).rawValue
+        XCTAssertEqual(expected, result)
+    }
+
+    func testgs_tToint64_tUsing0Expecting0() {
+        let expected = gs_t_to_i64(0)
+        let result = Int64(Gs_t(0))
+        XCTAssertEqual(expected, result)
+    }
+
+    func testgs_tToint64_tUsing5Expecting5() {
+        let expected = gs_t_to_i64(5)
+        let result = Int64(Gs_t(5))
+        XCTAssertEqual(expected, result)
+    }
+
+    func testgs_tToint64_tUsinggs_tInt64_minExpectingInt64Int64_min() {
+        let expected = gs_t_to_i64(gs_t(Int64.min))
+        let result = Int64(Gs_t(gs_t(Int64.min)))
+        XCTAssertEqual(expected, result)
+    }
+
+    func testgs_tToint64_tUsinggs_tInt64_maxExpectingInt64Int64_max() {
+        let expected = gs_t_to_i64(gs_t(Int64.max))
+        let result = Int64(Gs_t(gs_t(Int64.max)))
+        XCTAssertEqual(expected, result)
+    }
+
+    func testint64_tTogs_tUsing0Expecting0() {
+        let expected = i64_to_gs_t(0)
+        let result = Gs_t(Int64(0)).rawValue
+        XCTAssertEqual(expected, result)
+    }
+
+    func testint64_tTogs_tUsing5Expecting5() {
+        let expected = i64_to_gs_t(5)
+        let result = Gs_t(Int64(5)).rawValue
+        XCTAssertEqual(expected, result)
+    }
+
+    func testint64_tTogs_tUsingInt64Int64_minExpectinggs_tInt64_min() {
+        let expected = i64_to_gs_t(Int64(Int64.min))
+        let result = Gs_t(Int64(Int64(Int64.min))).rawValue
+        XCTAssertEqual(expected, result)
+    }
+
+    func testint64_tTogs_tUsingInt64Int64_maxExpectinggs_tInt64_max() {
+        let expected = i64_to_gs_t(Int64(Int64.max))
+        let result = Gs_t(Int64(Int64(Int64.max))).rawValue
+        XCTAssertEqual(expected, result)
+    }
+
+    func testgs_tTouint8_tUsing0Expecting0() {
+        let expected = gs_t_to_u8(0)
+        let result = UInt8(Gs_t(0))
+        XCTAssertEqual(expected, result)
+    }
+
+    func testgs_tTouint8_tUsing5Expecting5() {
+        let expected = gs_t_to_u8(5)
+        let result = UInt8(Gs_t(5))
+        XCTAssertEqual(expected, result)
+    }
+
+    func testgs_tTouint8_tUsinggs_tInt64_minExpectingUInt8UInt8_min() {
+        let expected = gs_t_to_u8(gs_t(Int64.min))
+        let result = UInt8(Gs_t(gs_t(Int64.min)))
+        XCTAssertEqual(expected, result)
+    }
+
+    func testgs_tTouint8_tUsinggs_tInt64_maxExpectingUInt8UInt8_max() {
+        let expected = gs_t_to_u8(gs_t(Int64.max))
+        let result = UInt8(Gs_t(gs_t(Int64.max)))
+        XCTAssertEqual(expected, result)
+    }
+
+    func testuint8_tTogs_tUsing0Expecting0() {
+        let expected = u8_to_gs_t(0)
+        let result = Gs_t(UInt8(0)).rawValue
+        XCTAssertEqual(expected, result)
+    }
+
+    func testuint8_tTogs_tUsing5Expecting5() {
+        let expected = u8_to_gs_t(5)
+        let result = Gs_t(UInt8(5)).rawValue
+        XCTAssertEqual(expected, result)
+    }
+
+    func testuint8_tTogs_tUsingUInt8UInt8_minExpectinggs_tUInt8_min() {
+        let expected = u8_to_gs_t(UInt8(UInt8.min))
+        let result = Gs_t(UInt8(UInt8(UInt8.min))).rawValue
+        XCTAssertEqual(expected, result)
+    }
+
+    func testuint8_tTogs_tUsingUInt8UInt8_maxExpectinggs_tUInt8_max() {
+        let expected = u8_to_gs_t(UInt8(UInt8.max))
+        let result = Gs_t(UInt8(UInt8(UInt8.max))).rawValue
+        XCTAssertEqual(expected, result)
+    }
+
+    func testgs_tTouint16_tUsing0Expecting0() {
+        let expected = gs_t_to_u16(0)
+        let result = UInt16(Gs_t(0))
+        XCTAssertEqual(expected, result)
+    }
+
+    func testgs_tTouint16_tUsing5Expecting5() {
+        let expected = gs_t_to_u16(5)
+        let result = UInt16(Gs_t(5))
+        XCTAssertEqual(expected, result)
+    }
+
+    func testgs_tTouint16_tUsinggs_tInt64_minExpectingUInt16UInt16_min() {
+        let expected = gs_t_to_u16(gs_t(Int64.min))
+        let result = UInt16(Gs_t(gs_t(Int64.min)))
+        XCTAssertEqual(expected, result)
+    }
+
+    func testgs_tTouint16_tUsinggs_tInt64_maxExpectingUInt16UInt16_max() {
+        let expected = gs_t_to_u16(gs_t(Int64.max))
+        let result = UInt16(Gs_t(gs_t(Int64.max)))
+        XCTAssertEqual(expected, result)
+    }
+
+    func testuint16_tTogs_tUsing0Expecting0() {
+        let expected = u16_to_gs_t(0)
+        let result = Gs_t(UInt16(0)).rawValue
+        XCTAssertEqual(expected, result)
+    }
+
+    func testuint16_tTogs_tUsing5Expecting5() {
+        let expected = u16_to_gs_t(5)
+        let result = Gs_t(UInt16(5)).rawValue
+        XCTAssertEqual(expected, result)
+    }
+
+}
