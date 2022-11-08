@@ -5,6 +5,7 @@ GUUnits is a library providing type-safe unit types and conversions.
 ![Ubuntu 20.04 Debug](https://github.com/mipalgu/GUUnits/actions/workflows/ci-linux-debug.yml/badge.svg)
 ![Ubuntu 20.04 Release](https://github.com/mipalgu/GUUnits/actions/workflows/ci-linux-release.yml/badge.svg)
 ![MacOS 12 Debug](https://github.com/mipalgu/GUUnits/actions/workflows/ci-macOS-debug.yml/badge.svg)
+![MacOS 12 Release](https://github.com/mipalgu/GUUnits/actions/workflows/ci-macOS-release.yml/badge.svg)
 ![Coverage](https://github.com/mipalgu/GUUnits/actions/workflows/cov.yml/badge.svg)
 
 ## Overview
