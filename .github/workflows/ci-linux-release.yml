@@ -35,6 +35,3 @@ jobs:
       - name: Release build
         run: swift build -c release
 
-      - name: Release Test
-        run: swift test -c release -Xswiftc -DRELEASE_BUILD
-

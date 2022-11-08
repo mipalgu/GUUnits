@@ -36,5 +36,5 @@ jobs:
         run: swift build -c debug
 
       - name: Debug Test
-        run: swift test --enable-code-coverage
+        run: swift test
 
