@@ -49,10 +49,10 @@ let package = Package(name: "MyPackage",
 - ``Metrespersecond2_u``
 - ``Metrespersecond2_f``
 - ``Metrespersecond2_d``
-- ``G_t``
-- ``G_u``
-- ``G_f``
-- ``G_d``
+- ``Gs_t``
+- ``Gs_u``
+- ``Gs_f``
+- ``Gs_d``
 
 ### Angles
 
@@ -145,3 +145,27 @@ let package = Package(name: "MyPackage",
 - ``Seconds_u``
 - ``Seconds_f``
 - ``Seconds_d``
+
+### Mass
+
+- ``Mass``
+- ``Gram_t``
+- ``Gram_u``
+- ``Gram_f``
+- ``Gram_d``
+- ``Kilogram_t``
+- ``Kilogram_u``
+- ``Kilogram_f``
+- ``Kilogram_d``
+- ``Megagram_t``
+- ``Megagram_u``
+- ``Megagram_f``
+- ``Megagram_d``
+- ``Microgram_t``
+- ``Microgram_u``
+- ``Microgram_f``
+- ``Microgram_d``
+- ``Milligram_t``
+- ``Milligram_u``
+- ``Milligram_f``
+- ``Milligram_d``
