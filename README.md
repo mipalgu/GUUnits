@@ -2,11 +2,11 @@
 
 GUUnits is a library providing type-safe unit types and conversions.
 
-![Ubuntu 20.04 Debug](https://github.com/mipalgu/GUUnits/actions/workflows/ci-linux-debug.yml/badge.svg)
-![Ubuntu 20.04 Release](https://github.com/mipalgu/GUUnits/actions/workflows/ci-linux-release.yml/badge.svg)
-![MacOS 12 Debug](https://github.com/mipalgu/GUUnits/actions/workflows/ci-macOS-debug.yml/badge.svg)
-![MacOS 12 Release](https://github.com/mipalgu/GUUnits/actions/workflows/ci-macOS-release.yml/badge.svg)
-![Coverage](https://github.com/mipalgu/GUUnits/actions/workflows/cov.yml/badge.svg)
+[![Ubuntu 20.04 Swift Debug CI](https://github.com/mipalgu/GUUnits/actions/workflows/ci-linux-debug.yml/badge.svg)](https://github.com/mipalgu/GUUnits/actions/workflows/ci-linux-debug.yml)
+[![Ubuntu 20.04 Swift Release CI](https://github.com/mipalgu/GUUnits/actions/workflows/ci-linux-release.yml/badge.svg)](https://github.com/mipalgu/GUUnits/actions/workflows/ci-linux-release.yml)
+[![MacOS Monterey Swift Debug CI](https://github.com/mipalgu/GUUnits/actions/workflows/ci-macOS-debug.yml/badge.svg)](https://github.com/mipalgu/GUUnits/actions/workflows/ci-macOS-debug.yml)
+[![MacOS Monterey Swift Release CI](https://github.com/mipalgu/GUUnits/actions/workflows/ci-macOS-release.yml/badge.svg)](https://github.com/mipalgu/GUUnits/actions/workflows/ci-macOS-release.yml)
+[![Swift Coverage Test](https://github.com/mipalgu/GUUnits/actions/workflows/cov.yml/badge.svg)](https://github.com/mipalgu/GUUnits/actions/workflows/cov.yml)
 
 ## Overview
 
