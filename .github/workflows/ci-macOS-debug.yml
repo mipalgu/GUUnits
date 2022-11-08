@@ -14,7 +14,10 @@ jobs:
     steps:
       - uses: swift-actions/setup-swift@v1
         with:
-          swift-version: "5.6"
+          swift-version: "5.7"
+
+      #- name: Install guunits
+      #  uses: mipalgu/install-guunits@main
 
       - name: Setup SSH Key
         uses: webfactory/ssh-agent@v0.5.4
@@ -31,5 +34,7 @@ jobs:
         run: swift build -c debug
 
       - name: Debug Test
-        run: swift test
+        run: |
+          ulimit -n 65000
+          swift test
 
