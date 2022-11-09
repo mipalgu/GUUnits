@@ -62,51 +62,69 @@ import XCTest
 
 final class AccelerationRelationTests2: XCTestCase {
 
-    func testcm_per_s_sq_f_to_gs_dUsingNeg5000000() {
-        let result = Earthg_d(Centimetres_Per_Seconds_Sq_f(-5000000))
-        let expected = cm_per_s_sq_f_to_gs_d(-5000000)
+    func testm_per_us_sq_t_to_gs_tUsingNeg5000000() {
+        let result = Earthg_t(Metres_Per_Microseconds_Sq_t(-5000000))
+        let expected = m_per_us_sq_t_to_gs_t(-5000000)
         XCTAssertEqual(result.rawValue, expected)
     }
 
-    func testcm_per_s_sq_f_to_gs_dUsing0() {
-        let result = Earthg_d(Centimetres_Per_Seconds_Sq_f(0))
-        let expected = cm_per_s_sq_f_to_gs_d(0)
+    func testm_per_us_sq_t_to_gs_tUsing0() {
+        let result = Earthg_t(Metres_Per_Microseconds_Sq_t(0))
+        let expected = m_per_us_sq_t_to_gs_t(0)
         XCTAssertEqual(result.rawValue, expected)
     }
 
-    func testcm_per_s_sq_f_to_gs_dUsing5000000() {
-        let result = Earthg_d(Centimetres_Per_Seconds_Sq_f(5000000))
-        let expected = cm_per_s_sq_f_to_gs_d(5000000)
+    func testm_per_us_sq_t_to_gs_tUsing5000000() {
+        let result = Earthg_t(Metres_Per_Microseconds_Sq_t(5000000))
+        let expected = m_per_us_sq_t_to_gs_t(5000000)
         XCTAssertEqual(result.rawValue, expected)
     }
 
-    func testmm_per_us_sq_u_to_gs_fUsing0() {
-        let result = Earthg_f(Millimetres_Per_Microseconds_Sq_u(0))
-        let expected = mm_per_us_sq_u_to_gs_f(0)
+    func testcm_per_ms_sq_u_to_gs_tUsing0() {
+        let result = Earthg_t(Centimetres_Per_Milliseconds_Sq_u(0))
+        let expected = cm_per_ms_sq_u_to_gs_t(0)
         XCTAssertEqual(result.rawValue, expected)
     }
 
-    func testmm_per_us_sq_u_to_gs_fUsing5000000() {
-        let result = Earthg_f(Millimetres_Per_Microseconds_Sq_u(5000000))
-        let expected = mm_per_us_sq_u_to_gs_f(5000000)
+    func testcm_per_ms_sq_u_to_gs_tUsing5000000() {
+        let result = Earthg_t(Centimetres_Per_Milliseconds_Sq_u(5000000))
+        let expected = cm_per_ms_sq_u_to_gs_t(5000000)
         XCTAssertEqual(result.rawValue, expected)
     }
 
-    func testcm_per_ms_sq_d_to_gs_uUsingNeg5000000() {
-        let result = Earthg_u(Centimetres_Per_Milliseconds_Sq_d(-5000000))
-        let expected = cm_per_ms_sq_d_to_gs_u(-5000000)
+    func testcm_per_ms_sq_f_to_gs_fUsingNeg5000000() {
+        let result = Earthg_f(Centimetres_Per_Milliseconds_Sq_f(-5000000))
+        let expected = cm_per_ms_sq_f_to_gs_f(-5000000)
         XCTAssertEqual(result.rawValue, expected)
     }
 
-    func testcm_per_ms_sq_d_to_gs_uUsing0() {
-        let result = Earthg_u(Centimetres_Per_Milliseconds_Sq_d(0))
-        let expected = cm_per_ms_sq_d_to_gs_u(0)
+    func testcm_per_ms_sq_f_to_gs_fUsing0() {
+        let result = Earthg_f(Centimetres_Per_Milliseconds_Sq_f(0))
+        let expected = cm_per_ms_sq_f_to_gs_f(0)
         XCTAssertEqual(result.rawValue, expected)
     }
 
-    func testcm_per_ms_sq_d_to_gs_uUsing5000000() {
-        let result = Earthg_u(Centimetres_Per_Milliseconds_Sq_d(5000000))
-        let expected = cm_per_ms_sq_d_to_gs_u(5000000)
+    func testcm_per_ms_sq_f_to_gs_fUsing5000000() {
+        let result = Earthg_f(Centimetres_Per_Milliseconds_Sq_f(5000000))
+        let expected = cm_per_ms_sq_f_to_gs_f(5000000)
+        XCTAssertEqual(result.rawValue, expected)
+    }
+
+    func testm_per_us_sq_f_to_gs_dUsingNeg5000000() {
+        let result = Earthg_d(Metres_Per_Microseconds_Sq_f(-5000000))
+        let expected = m_per_us_sq_f_to_gs_d(-5000000)
+        XCTAssertEqual(result.rawValue, expected)
+    }
+
+    func testm_per_us_sq_f_to_gs_dUsing0() {
+        let result = Earthg_d(Metres_Per_Microseconds_Sq_f(0))
+        let expected = m_per_us_sq_f_to_gs_d(0)
+        XCTAssertEqual(result.rawValue, expected)
+    }
+
+    func testm_per_us_sq_f_to_gs_dUsing5000000() {
+        let result = Earthg_d(Metres_Per_Microseconds_Sq_f(5000000))
+        let expected = m_per_us_sq_f_to_gs_d(5000000)
         XCTAssertEqual(result.rawValue, expected)
     }
 
@@ -122,123 +140,105 @@ final class AccelerationRelationTests2: XCTestCase {
         XCTAssertEqual(result.rawValue, expected)
     }
 
-    func testcm_per_ms_sq_t_to_gs_uUsingNeg5000000() {
-        let result = Earthg_u(Centimetres_Per_Milliseconds_Sq_t(-5000000))
-        let expected = cm_per_ms_sq_t_to_gs_u(-5000000)
+    func testcm_per_ms_sq_t_to_gs_tUsingNeg5000000() {
+        let result = Earthg_t(Centimetres_Per_Milliseconds_Sq_t(-5000000))
+        let expected = cm_per_ms_sq_t_to_gs_t(-5000000)
         XCTAssertEqual(result.rawValue, expected)
     }
 
-    func testcm_per_ms_sq_t_to_gs_uUsing0() {
-        let result = Earthg_u(Centimetres_Per_Milliseconds_Sq_t(0))
-        let expected = cm_per_ms_sq_t_to_gs_u(0)
+    func testcm_per_ms_sq_t_to_gs_tUsing0() {
+        let result = Earthg_t(Centimetres_Per_Milliseconds_Sq_t(0))
+        let expected = cm_per_ms_sq_t_to_gs_t(0)
         XCTAssertEqual(result.rawValue, expected)
     }
 
-    func testcm_per_ms_sq_t_to_gs_uUsing5000000() {
-        let result = Earthg_u(Centimetres_Per_Milliseconds_Sq_t(5000000))
-        let expected = cm_per_ms_sq_t_to_gs_u(5000000)
+    func testcm_per_ms_sq_t_to_gs_tUsing5000000() {
+        let result = Earthg_t(Centimetres_Per_Milliseconds_Sq_t(5000000))
+        let expected = cm_per_ms_sq_t_to_gs_t(5000000)
         XCTAssertEqual(result.rawValue, expected)
     }
 
-    func testm_per_us_sq_d_to_gs_uUsingNeg5000000() {
-        let result = Earthg_u(Metres_Per_Microseconds_Sq_d(-5000000))
-        let expected = m_per_us_sq_d_to_gs_u(-5000000)
+    func testmm_per_s_sq_u_to_gs_dUsing0() {
+        let result = Earthg_d(Millimetres_Per_Seconds_Sq_u(0))
+        let expected = mm_per_s_sq_u_to_gs_d(0)
         XCTAssertEqual(result.rawValue, expected)
     }
 
-    func testm_per_us_sq_d_to_gs_uUsing0() {
-        let result = Earthg_u(Metres_Per_Microseconds_Sq_d(0))
-        let expected = m_per_us_sq_d_to_gs_u(0)
+    func testmm_per_s_sq_u_to_gs_dUsing5000000() {
+        let result = Earthg_d(Millimetres_Per_Seconds_Sq_u(5000000))
+        let expected = mm_per_s_sq_u_to_gs_d(5000000)
         XCTAssertEqual(result.rawValue, expected)
     }
 
-    func testm_per_us_sq_d_to_gs_uUsing5000000() {
-        let result = Earthg_u(Metres_Per_Microseconds_Sq_d(5000000))
-        let expected = m_per_us_sq_d_to_gs_u(5000000)
+    func testcm_per_s_sq_u_to_gs_tUsing0() {
+        let result = Earthg_t(Centimetres_Per_Seconds_Sq_u(0))
+        let expected = cm_per_s_sq_u_to_gs_t(0)
         XCTAssertEqual(result.rawValue, expected)
     }
 
-    func testcm_per_ms_sq_d_to_gs_fUsingNeg5000000() {
-        let result = Earthg_f(Centimetres_Per_Milliseconds_Sq_d(-5000000))
-        let expected = cm_per_ms_sq_d_to_gs_f(-5000000)
+    func testcm_per_s_sq_u_to_gs_tUsing5000000() {
+        let result = Earthg_t(Centimetres_Per_Seconds_Sq_u(5000000))
+        let expected = cm_per_s_sq_u_to_gs_t(5000000)
         XCTAssertEqual(result.rawValue, expected)
     }
 
-    func testcm_per_ms_sq_d_to_gs_fUsing0() {
-        let result = Earthg_f(Centimetres_Per_Milliseconds_Sq_d(0))
-        let expected = cm_per_ms_sq_d_to_gs_f(0)
+    func testm_per_us_sq_u_to_gs_tUsing0() {
+        let result = Earthg_t(Metres_Per_Microseconds_Sq_u(0))
+        let expected = m_per_us_sq_u_to_gs_t(0)
         XCTAssertEqual(result.rawValue, expected)
     }
 
-    func testcm_per_ms_sq_d_to_gs_fUsing5000000() {
-        let result = Earthg_f(Centimetres_Per_Milliseconds_Sq_d(5000000))
-        let expected = cm_per_ms_sq_d_to_gs_f(5000000)
+    func testm_per_us_sq_u_to_gs_tUsing5000000() {
+        let result = Earthg_t(Metres_Per_Microseconds_Sq_u(5000000))
+        let expected = m_per_us_sq_u_to_gs_t(5000000)
         XCTAssertEqual(result.rawValue, expected)
     }
 
-    func testcm_per_us_sq_t_to_gs_tUsingNeg5000000() {
-        let result = Earthg_t(Centimetres_Per_Microseconds_Sq_t(-5000000))
-        let expected = cm_per_us_sq_t_to_gs_t(-5000000)
+    func testm_per_ms_sq_u_to_gs_uUsing0() {
+        let result = Earthg_u(Metres_Per_Milliseconds_Sq_u(0))
+        let expected = m_per_ms_sq_u_to_gs_u(0)
         XCTAssertEqual(result.rawValue, expected)
     }
 
-    func testcm_per_us_sq_t_to_gs_tUsing0() {
-        let result = Earthg_t(Centimetres_Per_Microseconds_Sq_t(0))
-        let expected = cm_per_us_sq_t_to_gs_t(0)
+    func testm_per_ms_sq_u_to_gs_uUsing5000000() {
+        let result = Earthg_u(Metres_Per_Milliseconds_Sq_u(5000000))
+        let expected = m_per_ms_sq_u_to_gs_u(5000000)
         XCTAssertEqual(result.rawValue, expected)
     }
 
-    func testcm_per_us_sq_t_to_gs_tUsing5000000() {
-        let result = Earthg_t(Centimetres_Per_Microseconds_Sq_t(5000000))
-        let expected = cm_per_us_sq_t_to_gs_t(5000000)
+    func testmm_per_s_sq_d_to_gs_uUsingNeg5000000() {
+        let result = Earthg_u(Millimetres_Per_Seconds_Sq_d(-5000000))
+        let expected = mm_per_s_sq_d_to_gs_u(-5000000)
         XCTAssertEqual(result.rawValue, expected)
     }
 
-    func testmm_per_us_sq_f_to_gs_tUsingNeg5000000() {
-        let result = Earthg_t(Millimetres_Per_Microseconds_Sq_f(-5000000))
-        let expected = mm_per_us_sq_f_to_gs_t(-5000000)
+    func testmm_per_s_sq_d_to_gs_uUsing0() {
+        let result = Earthg_u(Millimetres_Per_Seconds_Sq_d(0))
+        let expected = mm_per_s_sq_d_to_gs_u(0)
         XCTAssertEqual(result.rawValue, expected)
     }
 
-    func testmm_per_us_sq_f_to_gs_tUsing0() {
-        let result = Earthg_t(Millimetres_Per_Microseconds_Sq_f(0))
-        let expected = mm_per_us_sq_f_to_gs_t(0)
+    func testmm_per_s_sq_d_to_gs_uUsing5000000() {
+        let result = Earthg_u(Millimetres_Per_Seconds_Sq_d(5000000))
+        let expected = mm_per_s_sq_d_to_gs_u(5000000)
         XCTAssertEqual(result.rawValue, expected)
     }
 
-    func testmm_per_us_sq_f_to_gs_tUsing5000000() {
-        let result = Earthg_t(Millimetres_Per_Microseconds_Sq_f(5000000))
-        let expected = mm_per_us_sq_f_to_gs_t(5000000)
+    func testcm_per_us_sq_u_to_gs_tUsing0() {
+        let result = Earthg_t(Centimetres_Per_Microseconds_Sq_u(0))
+        let expected = cm_per_us_sq_u_to_gs_t(0)
         XCTAssertEqual(result.rawValue, expected)
     }
 
-    func testmm_per_s_sq_u_to_gs_tUsing0() {
-        let result = Earthg_t(Millimetres_Per_Seconds_Sq_u(0))
-        let expected = mm_per_s_sq_u_to_gs_t(0)
+    func testcm_per_us_sq_u_to_gs_tUsing5000000() {
+        let result = Earthg_t(Centimetres_Per_Microseconds_Sq_u(5000000))
+        let expected = cm_per_us_sq_u_to_gs_t(5000000)
         XCTAssertEqual(result.rawValue, expected)
     }
 
-    func testmm_per_s_sq_u_to_gs_tUsing5000000() {
-        let result = Earthg_t(Millimetres_Per_Seconds_Sq_u(5000000))
-        let expected = mm_per_s_sq_u_to_gs_t(5000000)
-        XCTAssertEqual(result.rawValue, expected)
-    }
-
-    func testmm_per_ms_sq_t_to_gs_dUsingNeg5000000() {
-        let result = Earthg_d(Millimetres_Per_Milliseconds_Sq_t(-5000000))
-        let expected = mm_per_ms_sq_t_to_gs_d(-5000000)
-        XCTAssertEqual(result.rawValue, expected)
-    }
-
-    func testmm_per_ms_sq_t_to_gs_dUsing0() {
-        let result = Earthg_d(Millimetres_Per_Milliseconds_Sq_t(0))
-        let expected = mm_per_ms_sq_t_to_gs_d(0)
-        XCTAssertEqual(result.rawValue, expected)
-    }
-
-    func testmm_per_ms_sq_t_to_gs_dUsing5000000() {
-        let result = Earthg_d(Millimetres_Per_Milliseconds_Sq_t(5000000))
-        let expected = mm_per_ms_sq_t_to_gs_d(5000000)
+    func testmm_per_ms_sq_u_to_gs_fUsing0() {
+        let result = Earthg_f(Millimetres_Per_Milliseconds_Sq_u(0))
+        let expected = mm_per_ms_sq_u_to_gs_f(0)
         XCTAssertEqual(result.rawValue, expected)
     }
 
