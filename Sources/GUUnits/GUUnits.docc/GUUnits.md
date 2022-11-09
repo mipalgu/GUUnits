@@ -46,14 +46,42 @@ let package = Package(name: "MyPackage",
 ### Acceleration
 
 - ``Acceleration``
-- ``Metrespersecond2_t``
-- ``Metrespersecond2_u``
-- ``Metrespersecond2_f``
-- ``Metrespersecond2_d``
-- ``Gs_t``
-- ``Gs_u``
-- ``Gs_f``
-- ``Gs_d``
+- ``Centimetres_Per_Microseconds_Sq_t``
+- ``Centimetres_Per_Microseconds_Sq_u``
+- ``Centimetres_Per_Microseconds_Sq_f``
+- ``Centimetres_Per_Microseconds_Sq_d``
+- ``Centimetres_Per_Milliseconds_Sq_t``
+- ``Centimetres_Per_Milliseconds_Sq_u``
+- ``Centimetres_Per_Milliseconds_Sq_f``
+- ``Centimetres_Per_Milliseconds_Sq_d``
+- ``Centimetres_Per_Seconds_Sq_t``
+- ``Centimetres_Per_Seconds_Sq_u``
+- ``Centimetres_Per_Seconds_Sq_f``
+- ``Centimetres_Per_Seconds_Sq_d``
+- ``Millimetres_Per_Microseconds_Sq_t``
+- ``Millimetres_Per_Microseconds_Sq_u``
+- ``Millimetres_Per_Microseconds_Sq_f``
+- ``Millimetres_Per_Microseconds_Sq_d``
+- ``Millimetres_Per_Milliseconds_Sq_t``
+- ``Millimetres_Per_Milliseconds_Sq_u``
+- ``Millimetres_Per_Milliseconds_Sq_f``
+- ``Millimetres_Per_Milliseconds_Sq_d``
+- ``Millimetres_Per_Seconds_Sq_t``
+- ``Millimetres_Per_Seconds_Sq_u``
+- ``Millimetres_Per_Seconds_Sq_f``
+- ``Millimetres_Per_Seconds_Sq_d``
+- ``Metres_Per_Microseconds_Sq_t``
+- ``Metres_Per_Microseconds_Sq_u``
+- ``Metres_Per_Microseconds_Sq_f``
+- ``Metres_Per_Microseconds_Sq_d``
+- ``Metres_Per_Milliseconds_Sq_t``
+- ``Metres_Per_Milliseconds_Sq_u``
+- ``Metres_Per_Milliseconds_Sq_f``
+- ``Metres_Per_Milliseconds_Sq_d``
+- ``Metres_Per_Seconds_Sq_t``
+- ``Metres_Per_Seconds_Sq_u``
+- ``Metres_Per_Seconds_Sq_f``
+- ``Metres_Per_Seconds_Sq_d``
 
 ### Angles
 
@@ -115,6 +143,14 @@ let package = Package(name: "MyPackage",
 - ``Pixels_f``
 - ``Pixels_d``
 
+### Reference Acceleration
+
+- ``ReferenceAcceleration``
+- ``Earthg_t``
+- ``Earthg_u``
+- ``Earthg_f``
+- ``Earthg_d``
+
 ### Temperatures
 
 - ``Temperature``
@@ -170,3 +206,43 @@ let package = Package(name: "MyPackage",
 - ``Milligram_u``
 - ``Milligram_f``
 - ``Milligram_d``
+
+### Velocity
+
+- ``Velocity``
+- ``Centimetres_Per_Microseconds_t``
+- ``Centimetres_Per_Microseconds_u``
+- ``Centimetres_Per_Microseconds_f``
+- ``Centimetres_Per_Microseconds_d``
+- ``Centimetres_Per_Milliseconds_t``
+- ``Centimetres_Per_Milliseconds_u``
+- ``Centimetres_Per_Milliseconds_f``
+- ``Centimetres_Per_Milliseconds_d``
+- ``Centimetres_Per_Seconds_t``
+- ``Centimetres_Per_Seconds_u``
+- ``Centimetres_Per_Seconds_f``
+- ``Centimetres_Per_Seconds_d``
+- ``Millimetres_Per_Microseconds_t``
+- ``Millimetres_Per_Microseconds_u``
+- ``Millimetres_Per_Microseconds_f``
+- ``Millimetres_Per_Microseconds_d``
+- ``Millimetres_Per_Milliseconds_t``
+- ``Millimetres_Per_Milliseconds_u``
+- ``Millimetres_Per_Milliseconds_f``
+- ``Millimetres_Per_Milliseconds_d``
+- ``Millimetres_Per_Seconds_t``
+- ``Millimetres_Per_Seconds_u``
+- ``Millimetres_Per_Seconds_f``
+- ``Millimetres_Per_Seconds_d``
+- ``Metres_Per_Microseconds_t``
+- ``Metres_Per_Microseconds_u``
+- ``Metres_Per_Microseconds_f``
+- ``Metres_Per_Microseconds_d``
+- ``Metres_Per_Milliseconds_t``
+- ``Metres_Per_Milliseconds_u``
+- ``Metres_Per_Milliseconds_f``
+- ``Metres_Per_Milliseconds_d``
+- ``Metres_Per_Seconds_t``
+- ``Metres_Per_Seconds_u``
+- ``Metres_Per_Seconds_f``
+- ``Metres_Per_Seconds_d``
