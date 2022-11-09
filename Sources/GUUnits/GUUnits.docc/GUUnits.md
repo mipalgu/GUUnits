@@ -95,6 +95,34 @@ let package = Package(name: "MyPackage",
 - ``Radians_f``
 - ``Radians_d``
 
+### Angular Velocity
+
+- ``AngularVelocity``
+- ``Degrees_Per_Microseconds_t``
+- ``Degrees_Per_Microseconds_u``
+- ``Degrees_Per_Microseconds_f``
+- ``Degrees_Per_Microseconds_d``
+- ``Degrees_Per_Milliseconds_t``
+- ``Degrees_Per_Milliseconds_u``
+- ``Degrees_Per_Milliseconds_f``
+- ``Degrees_Per_Milliseconds_d``
+- ``Degrees_Per_Seconds_t``
+- ``Degrees_Per_Seconds_u``
+- ``Degrees_Per_Seconds_f``
+- ``Degrees_Per_Seconds_d``
+- ``Radians_Per_Microseconds_t``
+- ``Radians_Per_Microseconds_u``
+- ``Radians_Per_Microseconds_f``
+- ``Radians_Per_Microseconds_d``
+- ``Radians_Per_Milliseconds_t``
+- ``Radians_Per_Milliseconds_u``
+- ``Radians_Per_Milliseconds_f``
+- ``Radians_Per_Milliseconds_d``
+- ``Radians_Per_Seconds_t``
+- ``Radians_Per_Seconds_u``
+- ``Radians_Per_Seconds_f``
+- ``Radians_Per_Seconds_d``
+
 ### Current
 
 - ``Current``
