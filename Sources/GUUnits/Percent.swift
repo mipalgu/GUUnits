@@ -168,28 +168,28 @@ public struct Percent: Sendable, Hashable, Codable {
     ///
     /// - Parameter value: A `Percent_t` value to convert to a `Percent`.
     public init(_ value: Percent_t) {
-        self.rawValue = .percent_t(value)
+        self.rawValue = PercentTypes.percent_t(value)
     }
 
     /// Create a `Percent` by converting a `Percent_u`.
     ///
     /// - Parameter value: A `Percent_u` value to convert to a `Percent`.
     public init(_ value: Percent_u) {
-        self.rawValue = .percent_u(value)
+        self.rawValue = PercentTypes.percent_u(value)
     }
 
     /// Create a `Percent` by converting a `Percent_f`.
     ///
     /// - Parameter value: A `Percent_f` value to convert to a `Percent`.
     public init(_ value: Percent_f) {
-        self.rawValue = .percent_f(value)
+        self.rawValue = PercentTypes.percent_f(value)
     }
 
     /// Create a `Percent` by converting a `Percent_d`.
     ///
     /// - Parameter value: A `Percent_d` value to convert to a `Percent`.
     public init(_ value: Percent_d) {
-        self.rawValue = .percent_d(value)
+        self.rawValue = PercentTypes.percent_d(value)
     }
 
 // MARK: - Converting From Swift Numeric Types
@@ -287,84 +287,84 @@ public struct Percent: Sendable, Hashable, Codable {
     ///
     /// - Parameter value: A `Double` percent value to convert to a `Percent`.
     public init(percent value: Double) {
-        self.rawValue = .percent_d(Percent_d(value))
+        self.rawValue = PercentTypes.percent_d(Percent_d(value))
     }
 
     /// Create a `Percent` by converting a `Float` percent value.
     ///
     /// - Parameter value: A `Float` percent value to convert to a `Percent`.
     public init(percent value: Float) {
-        self.rawValue = .percent_f(Percent_f(value))
+        self.rawValue = PercentTypes.percent_f(Percent_f(value))
     }
 
     /// Create a `Percent` by converting a `Int` percent value.
     ///
     /// - Parameter value: A `Int` percent value to convert to a `Percent`.
     public init(percent value: Int) {
-        self.rawValue = .percent_t(Percent_t(value))
+        self.rawValue = PercentTypes.percent_t(Percent_t(value))
     }
 
     /// Create a `Percent` by converting a `Int16` percent value.
     ///
     /// - Parameter value: A `Int16` percent value to convert to a `Percent`.
     public init(percent value: Int16) {
-        self.rawValue = .percent_t(Percent_t(value))
+        self.rawValue = PercentTypes.percent_t(Percent_t(value))
     }
 
     /// Create a `Percent` by converting a `Int32` percent value.
     ///
     /// - Parameter value: A `Int32` percent value to convert to a `Percent`.
     public init(percent value: Int32) {
-        self.rawValue = .percent_t(Percent_t(value))
+        self.rawValue = PercentTypes.percent_t(Percent_t(value))
     }
 
     /// Create a `Percent` by converting a `Int64` percent value.
     ///
     /// - Parameter value: A `Int64` percent value to convert to a `Percent`.
     public init(percent value: Int64) {
-        self.rawValue = .percent_d(Percent_d(value))
+        self.rawValue = PercentTypes.percent_d(Percent_d(value))
     }
 
     /// Create a `Percent` by converting a `Int8` percent value.
     ///
     /// - Parameter value: A `Int8` percent value to convert to a `Percent`.
     public init(percent value: Int8) {
-        self.rawValue = .percent_t(Percent_t(value))
+        self.rawValue = PercentTypes.percent_t(Percent_t(value))
     }
 
     /// Create a `Percent` by converting a `UInt` percent value.
     ///
     /// - Parameter value: A `UInt` percent value to convert to a `Percent`.
     public init(percent value: UInt) {
-        self.rawValue = .percent_u(Percent_u(value))
+        self.rawValue = PercentTypes.percent_u(Percent_u(value))
     }
 
     /// Create a `Percent` by converting a `UInt16` percent value.
     ///
     /// - Parameter value: A `UInt16` percent value to convert to a `Percent`.
     public init(percent value: UInt16) {
-        self.rawValue = .percent_u(Percent_u(value))
+        self.rawValue = PercentTypes.percent_u(Percent_u(value))
     }
 
     /// Create a `Percent` by converting a `UInt32` percent value.
     ///
     /// - Parameter value: A `UInt32` percent value to convert to a `Percent`.
     public init(percent value: UInt32) {
-        self.rawValue = .percent_u(Percent_u(value))
+        self.rawValue = PercentTypes.percent_u(Percent_u(value))
     }
 
     /// Create a `Percent` by converting a `UInt64` percent value.
     ///
     /// - Parameter value: A `UInt64` percent value to convert to a `Percent`.
     public init(percent value: UInt64) {
-        self.rawValue = .percent_d(Percent_d(value))
+        self.rawValue = PercentTypes.percent_d(Percent_d(value))
     }
 
     /// Create a `Percent` by converting a `UInt8` percent value.
     ///
     /// - Parameter value: A `UInt8` percent value to convert to a `Percent`.
     public init(percent value: UInt8) {
-        self.rawValue = .percent_u(Percent_u(value))
+        self.rawValue = PercentTypes.percent_u(Percent_u(value))
     }
 
 }

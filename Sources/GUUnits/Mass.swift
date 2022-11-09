@@ -1064,140 +1064,140 @@ public struct Mass: Sendable, Hashable, Codable {
     ///
     /// - Parameter value: A `Microgram_t` value to convert to a `Mass`.
     public init(_ value: Microgram_t) {
-        self.rawValue = .microgram_t(value)
+        self.rawValue = MassTypes.microgram_t(value)
     }
 
     /// Create a `Mass` by converting a `Microgram_u`.
     ///
     /// - Parameter value: A `Microgram_u` value to convert to a `Mass`.
     public init(_ value: Microgram_u) {
-        self.rawValue = .microgram_u(value)
+        self.rawValue = MassTypes.microgram_u(value)
     }
 
     /// Create a `Mass` by converting a `Microgram_f`.
     ///
     /// - Parameter value: A `Microgram_f` value to convert to a `Mass`.
     public init(_ value: Microgram_f) {
-        self.rawValue = .microgram_f(value)
+        self.rawValue = MassTypes.microgram_f(value)
     }
 
     /// Create a `Mass` by converting a `Microgram_d`.
     ///
     /// - Parameter value: A `Microgram_d` value to convert to a `Mass`.
     public init(_ value: Microgram_d) {
-        self.rawValue = .microgram_d(value)
+        self.rawValue = MassTypes.microgram_d(value)
     }
 
     /// Create a `Mass` by converting a `Milligram_t`.
     ///
     /// - Parameter value: A `Milligram_t` value to convert to a `Mass`.
     public init(_ value: Milligram_t) {
-        self.rawValue = .milligram_t(value)
+        self.rawValue = MassTypes.milligram_t(value)
     }
 
     /// Create a `Mass` by converting a `Milligram_u`.
     ///
     /// - Parameter value: A `Milligram_u` value to convert to a `Mass`.
     public init(_ value: Milligram_u) {
-        self.rawValue = .milligram_u(value)
+        self.rawValue = MassTypes.milligram_u(value)
     }
 
     /// Create a `Mass` by converting a `Milligram_f`.
     ///
     /// - Parameter value: A `Milligram_f` value to convert to a `Mass`.
     public init(_ value: Milligram_f) {
-        self.rawValue = .milligram_f(value)
+        self.rawValue = MassTypes.milligram_f(value)
     }
 
     /// Create a `Mass` by converting a `Milligram_d`.
     ///
     /// - Parameter value: A `Milligram_d` value to convert to a `Mass`.
     public init(_ value: Milligram_d) {
-        self.rawValue = .milligram_d(value)
+        self.rawValue = MassTypes.milligram_d(value)
     }
 
     /// Create a `Mass` by converting a `Gram_t`.
     ///
     /// - Parameter value: A `Gram_t` value to convert to a `Mass`.
     public init(_ value: Gram_t) {
-        self.rawValue = .gram_t(value)
+        self.rawValue = MassTypes.gram_t(value)
     }
 
     /// Create a `Mass` by converting a `Gram_u`.
     ///
     /// - Parameter value: A `Gram_u` value to convert to a `Mass`.
     public init(_ value: Gram_u) {
-        self.rawValue = .gram_u(value)
+        self.rawValue = MassTypes.gram_u(value)
     }
 
     /// Create a `Mass` by converting a `Gram_f`.
     ///
     /// - Parameter value: A `Gram_f` value to convert to a `Mass`.
     public init(_ value: Gram_f) {
-        self.rawValue = .gram_f(value)
+        self.rawValue = MassTypes.gram_f(value)
     }
 
     /// Create a `Mass` by converting a `Gram_d`.
     ///
     /// - Parameter value: A `Gram_d` value to convert to a `Mass`.
     public init(_ value: Gram_d) {
-        self.rawValue = .gram_d(value)
+        self.rawValue = MassTypes.gram_d(value)
     }
 
     /// Create a `Mass` by converting a `Kilogram_t`.
     ///
     /// - Parameter value: A `Kilogram_t` value to convert to a `Mass`.
     public init(_ value: Kilogram_t) {
-        self.rawValue = .kilogram_t(value)
+        self.rawValue = MassTypes.kilogram_t(value)
     }
 
     /// Create a `Mass` by converting a `Kilogram_u`.
     ///
     /// - Parameter value: A `Kilogram_u` value to convert to a `Mass`.
     public init(_ value: Kilogram_u) {
-        self.rawValue = .kilogram_u(value)
+        self.rawValue = MassTypes.kilogram_u(value)
     }
 
     /// Create a `Mass` by converting a `Kilogram_f`.
     ///
     /// - Parameter value: A `Kilogram_f` value to convert to a `Mass`.
     public init(_ value: Kilogram_f) {
-        self.rawValue = .kilogram_f(value)
+        self.rawValue = MassTypes.kilogram_f(value)
     }
 
     /// Create a `Mass` by converting a `Kilogram_d`.
     ///
     /// - Parameter value: A `Kilogram_d` value to convert to a `Mass`.
     public init(_ value: Kilogram_d) {
-        self.rawValue = .kilogram_d(value)
+        self.rawValue = MassTypes.kilogram_d(value)
     }
 
     /// Create a `Mass` by converting a `Megagram_t`.
     ///
     /// - Parameter value: A `Megagram_t` value to convert to a `Mass`.
     public init(_ value: Megagram_t) {
-        self.rawValue = .megagram_t(value)
+        self.rawValue = MassTypes.megagram_t(value)
     }
 
     /// Create a `Mass` by converting a `Megagram_u`.
     ///
     /// - Parameter value: A `Megagram_u` value to convert to a `Mass`.
     public init(_ value: Megagram_u) {
-        self.rawValue = .megagram_u(value)
+        self.rawValue = MassTypes.megagram_u(value)
     }
 
     /// Create a `Mass` by converting a `Megagram_f`.
     ///
     /// - Parameter value: A `Megagram_f` value to convert to a `Mass`.
     public init(_ value: Megagram_f) {
-        self.rawValue = .megagram_f(value)
+        self.rawValue = MassTypes.megagram_f(value)
     }
 
     /// Create a `Mass` by converting a `Megagram_d`.
     ///
     /// - Parameter value: A `Megagram_d` value to convert to a `Mass`.
     public init(_ value: Megagram_d) {
-        self.rawValue = .megagram_d(value)
+        self.rawValue = MassTypes.megagram_d(value)
     }
 
 // MARK: - Converting From Swift Numeric Types
@@ -1631,420 +1631,420 @@ public struct Mass: Sendable, Hashable, Codable {
     ///
     /// - Parameter value: A `Double` microgram value to convert to a `Mass`.
     public init(microgram value: Double) {
-        self.rawValue = .microgram_d(Microgram_d(value))
+        self.rawValue = MassTypes.microgram_d(Microgram_d(value))
     }
 
     /// Create a `Mass` by converting a `Double` milligram value.
     ///
     /// - Parameter value: A `Double` milligram value to convert to a `Mass`.
     public init(milligram value: Double) {
-        self.rawValue = .milligram_d(Milligram_d(value))
+        self.rawValue = MassTypes.milligram_d(Milligram_d(value))
     }
 
     /// Create a `Mass` by converting a `Double` gram value.
     ///
     /// - Parameter value: A `Double` gram value to convert to a `Mass`.
     public init(gram value: Double) {
-        self.rawValue = .gram_d(Gram_d(value))
+        self.rawValue = MassTypes.gram_d(Gram_d(value))
     }
 
     /// Create a `Mass` by converting a `Double` kilogram value.
     ///
     /// - Parameter value: A `Double` kilogram value to convert to a `Mass`.
     public init(kilogram value: Double) {
-        self.rawValue = .kilogram_d(Kilogram_d(value))
+        self.rawValue = MassTypes.kilogram_d(Kilogram_d(value))
     }
 
     /// Create a `Mass` by converting a `Double` megagram value.
     ///
     /// - Parameter value: A `Double` megagram value to convert to a `Mass`.
     public init(megagram value: Double) {
-        self.rawValue = .megagram_d(Megagram_d(value))
+        self.rawValue = MassTypes.megagram_d(Megagram_d(value))
     }
 
     /// Create a `Mass` by converting a `Float` microgram value.
     ///
     /// - Parameter value: A `Float` microgram value to convert to a `Mass`.
     public init(microgram value: Float) {
-        self.rawValue = .microgram_f(Microgram_f(value))
+        self.rawValue = MassTypes.microgram_f(Microgram_f(value))
     }
 
     /// Create a `Mass` by converting a `Float` milligram value.
     ///
     /// - Parameter value: A `Float` milligram value to convert to a `Mass`.
     public init(milligram value: Float) {
-        self.rawValue = .milligram_f(Milligram_f(value))
+        self.rawValue = MassTypes.milligram_f(Milligram_f(value))
     }
 
     /// Create a `Mass` by converting a `Float` gram value.
     ///
     /// - Parameter value: A `Float` gram value to convert to a `Mass`.
     public init(gram value: Float) {
-        self.rawValue = .gram_f(Gram_f(value))
+        self.rawValue = MassTypes.gram_f(Gram_f(value))
     }
 
     /// Create a `Mass` by converting a `Float` kilogram value.
     ///
     /// - Parameter value: A `Float` kilogram value to convert to a `Mass`.
     public init(kilogram value: Float) {
-        self.rawValue = .kilogram_f(Kilogram_f(value))
+        self.rawValue = MassTypes.kilogram_f(Kilogram_f(value))
     }
 
     /// Create a `Mass` by converting a `Float` megagram value.
     ///
     /// - Parameter value: A `Float` megagram value to convert to a `Mass`.
     public init(megagram value: Float) {
-        self.rawValue = .megagram_f(Megagram_f(value))
+        self.rawValue = MassTypes.megagram_f(Megagram_f(value))
     }
 
     /// Create a `Mass` by converting a `Int` microgram value.
     ///
     /// - Parameter value: A `Int` microgram value to convert to a `Mass`.
     public init(microgram value: Int) {
-        self.rawValue = .microgram_t(Microgram_t(value))
+        self.rawValue = MassTypes.microgram_t(Microgram_t(value))
     }
 
     /// Create a `Mass` by converting a `Int` milligram value.
     ///
     /// - Parameter value: A `Int` milligram value to convert to a `Mass`.
     public init(milligram value: Int) {
-        self.rawValue = .milligram_t(Milligram_t(value))
+        self.rawValue = MassTypes.milligram_t(Milligram_t(value))
     }
 
     /// Create a `Mass` by converting a `Int` gram value.
     ///
     /// - Parameter value: A `Int` gram value to convert to a `Mass`.
     public init(gram value: Int) {
-        self.rawValue = .gram_t(Gram_t(value))
+        self.rawValue = MassTypes.gram_t(Gram_t(value))
     }
 
     /// Create a `Mass` by converting a `Int` kilogram value.
     ///
     /// - Parameter value: A `Int` kilogram value to convert to a `Mass`.
     public init(kilogram value: Int) {
-        self.rawValue = .kilogram_t(Kilogram_t(value))
+        self.rawValue = MassTypes.kilogram_t(Kilogram_t(value))
     }
 
     /// Create a `Mass` by converting a `Int` megagram value.
     ///
     /// - Parameter value: A `Int` megagram value to convert to a `Mass`.
     public init(megagram value: Int) {
-        self.rawValue = .megagram_t(Megagram_t(value))
+        self.rawValue = MassTypes.megagram_t(Megagram_t(value))
     }
 
     /// Create a `Mass` by converting a `Int16` microgram value.
     ///
     /// - Parameter value: A `Int16` microgram value to convert to a `Mass`.
     public init(microgram value: Int16) {
-        self.rawValue = .microgram_t(Microgram_t(value))
+        self.rawValue = MassTypes.microgram_t(Microgram_t(value))
     }
 
     /// Create a `Mass` by converting a `Int16` milligram value.
     ///
     /// - Parameter value: A `Int16` milligram value to convert to a `Mass`.
     public init(milligram value: Int16) {
-        self.rawValue = .milligram_t(Milligram_t(value))
+        self.rawValue = MassTypes.milligram_t(Milligram_t(value))
     }
 
     /// Create a `Mass` by converting a `Int16` gram value.
     ///
     /// - Parameter value: A `Int16` gram value to convert to a `Mass`.
     public init(gram value: Int16) {
-        self.rawValue = .gram_t(Gram_t(value))
+        self.rawValue = MassTypes.gram_t(Gram_t(value))
     }
 
     /// Create a `Mass` by converting a `Int16` kilogram value.
     ///
     /// - Parameter value: A `Int16` kilogram value to convert to a `Mass`.
     public init(kilogram value: Int16) {
-        self.rawValue = .kilogram_t(Kilogram_t(value))
+        self.rawValue = MassTypes.kilogram_t(Kilogram_t(value))
     }
 
     /// Create a `Mass` by converting a `Int16` megagram value.
     ///
     /// - Parameter value: A `Int16` megagram value to convert to a `Mass`.
     public init(megagram value: Int16) {
-        self.rawValue = .megagram_t(Megagram_t(value))
+        self.rawValue = MassTypes.megagram_t(Megagram_t(value))
     }
 
     /// Create a `Mass` by converting a `Int32` microgram value.
     ///
     /// - Parameter value: A `Int32` microgram value to convert to a `Mass`.
     public init(microgram value: Int32) {
-        self.rawValue = .microgram_t(Microgram_t(value))
+        self.rawValue = MassTypes.microgram_t(Microgram_t(value))
     }
 
     /// Create a `Mass` by converting a `Int32` milligram value.
     ///
     /// - Parameter value: A `Int32` milligram value to convert to a `Mass`.
     public init(milligram value: Int32) {
-        self.rawValue = .milligram_t(Milligram_t(value))
+        self.rawValue = MassTypes.milligram_t(Milligram_t(value))
     }
 
     /// Create a `Mass` by converting a `Int32` gram value.
     ///
     /// - Parameter value: A `Int32` gram value to convert to a `Mass`.
     public init(gram value: Int32) {
-        self.rawValue = .gram_t(Gram_t(value))
+        self.rawValue = MassTypes.gram_t(Gram_t(value))
     }
 
     /// Create a `Mass` by converting a `Int32` kilogram value.
     ///
     /// - Parameter value: A `Int32` kilogram value to convert to a `Mass`.
     public init(kilogram value: Int32) {
-        self.rawValue = .kilogram_t(Kilogram_t(value))
+        self.rawValue = MassTypes.kilogram_t(Kilogram_t(value))
     }
 
     /// Create a `Mass` by converting a `Int32` megagram value.
     ///
     /// - Parameter value: A `Int32` megagram value to convert to a `Mass`.
     public init(megagram value: Int32) {
-        self.rawValue = .megagram_t(Megagram_t(value))
+        self.rawValue = MassTypes.megagram_t(Megagram_t(value))
     }
 
     /// Create a `Mass` by converting a `Int64` microgram value.
     ///
     /// - Parameter value: A `Int64` microgram value to convert to a `Mass`.
     public init(microgram value: Int64) {
-        self.rawValue = .microgram_d(Microgram_d(value))
+        self.rawValue = MassTypes.microgram_d(Microgram_d(value))
     }
 
     /// Create a `Mass` by converting a `Int64` milligram value.
     ///
     /// - Parameter value: A `Int64` milligram value to convert to a `Mass`.
     public init(milligram value: Int64) {
-        self.rawValue = .milligram_d(Milligram_d(value))
+        self.rawValue = MassTypes.milligram_d(Milligram_d(value))
     }
 
     /// Create a `Mass` by converting a `Int64` gram value.
     ///
     /// - Parameter value: A `Int64` gram value to convert to a `Mass`.
     public init(gram value: Int64) {
-        self.rawValue = .gram_d(Gram_d(value))
+        self.rawValue = MassTypes.gram_d(Gram_d(value))
     }
 
     /// Create a `Mass` by converting a `Int64` kilogram value.
     ///
     /// - Parameter value: A `Int64` kilogram value to convert to a `Mass`.
     public init(kilogram value: Int64) {
-        self.rawValue = .kilogram_d(Kilogram_d(value))
+        self.rawValue = MassTypes.kilogram_d(Kilogram_d(value))
     }
 
     /// Create a `Mass` by converting a `Int64` megagram value.
     ///
     /// - Parameter value: A `Int64` megagram value to convert to a `Mass`.
     public init(megagram value: Int64) {
-        self.rawValue = .megagram_d(Megagram_d(value))
+        self.rawValue = MassTypes.megagram_d(Megagram_d(value))
     }
 
     /// Create a `Mass` by converting a `Int8` microgram value.
     ///
     /// - Parameter value: A `Int8` microgram value to convert to a `Mass`.
     public init(microgram value: Int8) {
-        self.rawValue = .microgram_t(Microgram_t(value))
+        self.rawValue = MassTypes.microgram_t(Microgram_t(value))
     }
 
     /// Create a `Mass` by converting a `Int8` milligram value.
     ///
     /// - Parameter value: A `Int8` milligram value to convert to a `Mass`.
     public init(milligram value: Int8) {
-        self.rawValue = .milligram_t(Milligram_t(value))
+        self.rawValue = MassTypes.milligram_t(Milligram_t(value))
     }
 
     /// Create a `Mass` by converting a `Int8` gram value.
     ///
     /// - Parameter value: A `Int8` gram value to convert to a `Mass`.
     public init(gram value: Int8) {
-        self.rawValue = .gram_t(Gram_t(value))
+        self.rawValue = MassTypes.gram_t(Gram_t(value))
     }
 
     /// Create a `Mass` by converting a `Int8` kilogram value.
     ///
     /// - Parameter value: A `Int8` kilogram value to convert to a `Mass`.
     public init(kilogram value: Int8) {
-        self.rawValue = .kilogram_t(Kilogram_t(value))
+        self.rawValue = MassTypes.kilogram_t(Kilogram_t(value))
     }
 
     /// Create a `Mass` by converting a `Int8` megagram value.
     ///
     /// - Parameter value: A `Int8` megagram value to convert to a `Mass`.
     public init(megagram value: Int8) {
-        self.rawValue = .megagram_t(Megagram_t(value))
+        self.rawValue = MassTypes.megagram_t(Megagram_t(value))
     }
 
     /// Create a `Mass` by converting a `UInt` microgram value.
     ///
     /// - Parameter value: A `UInt` microgram value to convert to a `Mass`.
     public init(microgram value: UInt) {
-        self.rawValue = .microgram_u(Microgram_u(value))
+        self.rawValue = MassTypes.microgram_u(Microgram_u(value))
     }
 
     /// Create a `Mass` by converting a `UInt` milligram value.
     ///
     /// - Parameter value: A `UInt` milligram value to convert to a `Mass`.
     public init(milligram value: UInt) {
-        self.rawValue = .milligram_u(Milligram_u(value))
+        self.rawValue = MassTypes.milligram_u(Milligram_u(value))
     }
 
     /// Create a `Mass` by converting a `UInt` gram value.
     ///
     /// - Parameter value: A `UInt` gram value to convert to a `Mass`.
     public init(gram value: UInt) {
-        self.rawValue = .gram_u(Gram_u(value))
+        self.rawValue = MassTypes.gram_u(Gram_u(value))
     }
 
     /// Create a `Mass` by converting a `UInt` kilogram value.
     ///
     /// - Parameter value: A `UInt` kilogram value to convert to a `Mass`.
     public init(kilogram value: UInt) {
-        self.rawValue = .kilogram_u(Kilogram_u(value))
+        self.rawValue = MassTypes.kilogram_u(Kilogram_u(value))
     }
 
     /// Create a `Mass` by converting a `UInt` megagram value.
     ///
     /// - Parameter value: A `UInt` megagram value to convert to a `Mass`.
     public init(megagram value: UInt) {
-        self.rawValue = .megagram_u(Megagram_u(value))
+        self.rawValue = MassTypes.megagram_u(Megagram_u(value))
     }
 
     /// Create a `Mass` by converting a `UInt16` microgram value.
     ///
     /// - Parameter value: A `UInt16` microgram value to convert to a `Mass`.
     public init(microgram value: UInt16) {
-        self.rawValue = .microgram_u(Microgram_u(value))
+        self.rawValue = MassTypes.microgram_u(Microgram_u(value))
     }
 
     /// Create a `Mass` by converting a `UInt16` milligram value.
     ///
     /// - Parameter value: A `UInt16` milligram value to convert to a `Mass`.
     public init(milligram value: UInt16) {
-        self.rawValue = .milligram_u(Milligram_u(value))
+        self.rawValue = MassTypes.milligram_u(Milligram_u(value))
     }
 
     /// Create a `Mass` by converting a `UInt16` gram value.
     ///
     /// - Parameter value: A `UInt16` gram value to convert to a `Mass`.
     public init(gram value: UInt16) {
-        self.rawValue = .gram_u(Gram_u(value))
+        self.rawValue = MassTypes.gram_u(Gram_u(value))
     }
 
     /// Create a `Mass` by converting a `UInt16` kilogram value.
     ///
     /// - Parameter value: A `UInt16` kilogram value to convert to a `Mass`.
     public init(kilogram value: UInt16) {
-        self.rawValue = .kilogram_u(Kilogram_u(value))
+        self.rawValue = MassTypes.kilogram_u(Kilogram_u(value))
     }
 
     /// Create a `Mass` by converting a `UInt16` megagram value.
     ///
     /// - Parameter value: A `UInt16` megagram value to convert to a `Mass`.
     public init(megagram value: UInt16) {
-        self.rawValue = .megagram_u(Megagram_u(value))
+        self.rawValue = MassTypes.megagram_u(Megagram_u(value))
     }
 
     /// Create a `Mass` by converting a `UInt32` microgram value.
     ///
     /// - Parameter value: A `UInt32` microgram value to convert to a `Mass`.
     public init(microgram value: UInt32) {
-        self.rawValue = .microgram_u(Microgram_u(value))
+        self.rawValue = MassTypes.microgram_u(Microgram_u(value))
     }
 
     /// Create a `Mass` by converting a `UInt32` milligram value.
     ///
     /// - Parameter value: A `UInt32` milligram value to convert to a `Mass`.
     public init(milligram value: UInt32) {
-        self.rawValue = .milligram_u(Milligram_u(value))
+        self.rawValue = MassTypes.milligram_u(Milligram_u(value))
     }
 
     /// Create a `Mass` by converting a `UInt32` gram value.
     ///
     /// - Parameter value: A `UInt32` gram value to convert to a `Mass`.
     public init(gram value: UInt32) {
-        self.rawValue = .gram_u(Gram_u(value))
+        self.rawValue = MassTypes.gram_u(Gram_u(value))
     }
 
     /// Create a `Mass` by converting a `UInt32` kilogram value.
     ///
     /// - Parameter value: A `UInt32` kilogram value to convert to a `Mass`.
     public init(kilogram value: UInt32) {
-        self.rawValue = .kilogram_u(Kilogram_u(value))
+        self.rawValue = MassTypes.kilogram_u(Kilogram_u(value))
     }
 
     /// Create a `Mass` by converting a `UInt32` megagram value.
     ///
     /// - Parameter value: A `UInt32` megagram value to convert to a `Mass`.
     public init(megagram value: UInt32) {
-        self.rawValue = .megagram_u(Megagram_u(value))
+        self.rawValue = MassTypes.megagram_u(Megagram_u(value))
     }
 
     /// Create a `Mass` by converting a `UInt64` microgram value.
     ///
     /// - Parameter value: A `UInt64` microgram value to convert to a `Mass`.
     public init(microgram value: UInt64) {
-        self.rawValue = .microgram_d(Microgram_d(value))
+        self.rawValue = MassTypes.microgram_d(Microgram_d(value))
     }
 
     /// Create a `Mass` by converting a `UInt64` milligram value.
     ///
     /// - Parameter value: A `UInt64` milligram value to convert to a `Mass`.
     public init(milligram value: UInt64) {
-        self.rawValue = .milligram_d(Milligram_d(value))
+        self.rawValue = MassTypes.milligram_d(Milligram_d(value))
     }
 
     /// Create a `Mass` by converting a `UInt64` gram value.
     ///
     /// - Parameter value: A `UInt64` gram value to convert to a `Mass`.
     public init(gram value: UInt64) {
-        self.rawValue = .gram_d(Gram_d(value))
+        self.rawValue = MassTypes.gram_d(Gram_d(value))
     }
 
     /// Create a `Mass` by converting a `UInt64` kilogram value.
     ///
     /// - Parameter value: A `UInt64` kilogram value to convert to a `Mass`.
     public init(kilogram value: UInt64) {
-        self.rawValue = .kilogram_d(Kilogram_d(value))
+        self.rawValue = MassTypes.kilogram_d(Kilogram_d(value))
     }
 
     /// Create a `Mass` by converting a `UInt64` megagram value.
     ///
     /// - Parameter value: A `UInt64` megagram value to convert to a `Mass`.
     public init(megagram value: UInt64) {
-        self.rawValue = .megagram_d(Megagram_d(value))
+        self.rawValue = MassTypes.megagram_d(Megagram_d(value))
     }
 
     /// Create a `Mass` by converting a `UInt8` microgram value.
     ///
     /// - Parameter value: A `UInt8` microgram value to convert to a `Mass`.
     public init(microgram value: UInt8) {
-        self.rawValue = .microgram_u(Microgram_u(value))
+        self.rawValue = MassTypes.microgram_u(Microgram_u(value))
     }
 
     /// Create a `Mass` by converting a `UInt8` milligram value.
     ///
     /// - Parameter value: A `UInt8` milligram value to convert to a `Mass`.
     public init(milligram value: UInt8) {
-        self.rawValue = .milligram_u(Milligram_u(value))
+        self.rawValue = MassTypes.milligram_u(Milligram_u(value))
     }
 
     /// Create a `Mass` by converting a `UInt8` gram value.
     ///
     /// - Parameter value: A `UInt8` gram value to convert to a `Mass`.
     public init(gram value: UInt8) {
-        self.rawValue = .gram_u(Gram_u(value))
+        self.rawValue = MassTypes.gram_u(Gram_u(value))
     }
 
     /// Create a `Mass` by converting a `UInt8` kilogram value.
     ///
     /// - Parameter value: A `UInt8` kilogram value to convert to a `Mass`.
     public init(kilogram value: UInt8) {
-        self.rawValue = .kilogram_u(Kilogram_u(value))
+        self.rawValue = MassTypes.kilogram_u(Kilogram_u(value))
     }
 
     /// Create a `Mass` by converting a `UInt8` megagram value.
     ///
     /// - Parameter value: A `UInt8` megagram value to convert to a `Mass`.
     public init(megagram value: UInt8) {
-        self.rawValue = .megagram_u(Megagram_u(value))
+        self.rawValue = MassTypes.megagram_u(Megagram_u(value))
     }
 
 }

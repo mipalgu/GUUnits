@@ -488,84 +488,84 @@ public struct Distance: Sendable, Hashable, Codable {
     ///
     /// - Parameter value: A `Millimetres_t` value to convert to a `Distance`.
     public init(_ value: Millimetres_t) {
-        self.rawValue = .millimetres_t(value)
+        self.rawValue = DistanceTypes.millimetres_t(value)
     }
 
     /// Create a `Distance` by converting a `Millimetres_u`.
     ///
     /// - Parameter value: A `Millimetres_u` value to convert to a `Distance`.
     public init(_ value: Millimetres_u) {
-        self.rawValue = .millimetres_u(value)
+        self.rawValue = DistanceTypes.millimetres_u(value)
     }
 
     /// Create a `Distance` by converting a `Millimetres_f`.
     ///
     /// - Parameter value: A `Millimetres_f` value to convert to a `Distance`.
     public init(_ value: Millimetres_f) {
-        self.rawValue = .millimetres_f(value)
+        self.rawValue = DistanceTypes.millimetres_f(value)
     }
 
     /// Create a `Distance` by converting a `Millimetres_d`.
     ///
     /// - Parameter value: A `Millimetres_d` value to convert to a `Distance`.
     public init(_ value: Millimetres_d) {
-        self.rawValue = .millimetres_d(value)
+        self.rawValue = DistanceTypes.millimetres_d(value)
     }
 
     /// Create a `Distance` by converting a `Centimetres_t`.
     ///
     /// - Parameter value: A `Centimetres_t` value to convert to a `Distance`.
     public init(_ value: Centimetres_t) {
-        self.rawValue = .centimetres_t(value)
+        self.rawValue = DistanceTypes.centimetres_t(value)
     }
 
     /// Create a `Distance` by converting a `Centimetres_u`.
     ///
     /// - Parameter value: A `Centimetres_u` value to convert to a `Distance`.
     public init(_ value: Centimetres_u) {
-        self.rawValue = .centimetres_u(value)
+        self.rawValue = DistanceTypes.centimetres_u(value)
     }
 
     /// Create a `Distance` by converting a `Centimetres_f`.
     ///
     /// - Parameter value: A `Centimetres_f` value to convert to a `Distance`.
     public init(_ value: Centimetres_f) {
-        self.rawValue = .centimetres_f(value)
+        self.rawValue = DistanceTypes.centimetres_f(value)
     }
 
     /// Create a `Distance` by converting a `Centimetres_d`.
     ///
     /// - Parameter value: A `Centimetres_d` value to convert to a `Distance`.
     public init(_ value: Centimetres_d) {
-        self.rawValue = .centimetres_d(value)
+        self.rawValue = DistanceTypes.centimetres_d(value)
     }
 
     /// Create a `Distance` by converting a `Metres_t`.
     ///
     /// - Parameter value: A `Metres_t` value to convert to a `Distance`.
     public init(_ value: Metres_t) {
-        self.rawValue = .metres_t(value)
+        self.rawValue = DistanceTypes.metres_t(value)
     }
 
     /// Create a `Distance` by converting a `Metres_u`.
     ///
     /// - Parameter value: A `Metres_u` value to convert to a `Distance`.
     public init(_ value: Metres_u) {
-        self.rawValue = .metres_u(value)
+        self.rawValue = DistanceTypes.metres_u(value)
     }
 
     /// Create a `Distance` by converting a `Metres_f`.
     ///
     /// - Parameter value: A `Metres_f` value to convert to a `Distance`.
     public init(_ value: Metres_f) {
-        self.rawValue = .metres_f(value)
+        self.rawValue = DistanceTypes.metres_f(value)
     }
 
     /// Create a `Distance` by converting a `Metres_d`.
     ///
     /// - Parameter value: A `Metres_d` value to convert to a `Distance`.
     public init(_ value: Metres_d) {
-        self.rawValue = .metres_d(value)
+        self.rawValue = DistanceTypes.metres_d(value)
     }
 
 // MARK: - Converting From Swift Numeric Types
@@ -831,252 +831,252 @@ public struct Distance: Sendable, Hashable, Codable {
     ///
     /// - Parameter value: A `Double` millimetres value to convert to a `Distance`.
     public init(millimetres value: Double) {
-        self.rawValue = .millimetres_d(Millimetres_d(value))
+        self.rawValue = DistanceTypes.millimetres_d(Millimetres_d(value))
     }
 
     /// Create a `Distance` by converting a `Double` centimetres value.
     ///
     /// - Parameter value: A `Double` centimetres value to convert to a `Distance`.
     public init(centimetres value: Double) {
-        self.rawValue = .centimetres_d(Centimetres_d(value))
+        self.rawValue = DistanceTypes.centimetres_d(Centimetres_d(value))
     }
 
     /// Create a `Distance` by converting a `Double` metres value.
     ///
     /// - Parameter value: A `Double` metres value to convert to a `Distance`.
     public init(metres value: Double) {
-        self.rawValue = .metres_d(Metres_d(value))
+        self.rawValue = DistanceTypes.metres_d(Metres_d(value))
     }
 
     /// Create a `Distance` by converting a `Float` millimetres value.
     ///
     /// - Parameter value: A `Float` millimetres value to convert to a `Distance`.
     public init(millimetres value: Float) {
-        self.rawValue = .millimetres_f(Millimetres_f(value))
+        self.rawValue = DistanceTypes.millimetres_f(Millimetres_f(value))
     }
 
     /// Create a `Distance` by converting a `Float` centimetres value.
     ///
     /// - Parameter value: A `Float` centimetres value to convert to a `Distance`.
     public init(centimetres value: Float) {
-        self.rawValue = .centimetres_f(Centimetres_f(value))
+        self.rawValue = DistanceTypes.centimetres_f(Centimetres_f(value))
     }
 
     /// Create a `Distance` by converting a `Float` metres value.
     ///
     /// - Parameter value: A `Float` metres value to convert to a `Distance`.
     public init(metres value: Float) {
-        self.rawValue = .metres_f(Metres_f(value))
+        self.rawValue = DistanceTypes.metres_f(Metres_f(value))
     }
 
     /// Create a `Distance` by converting a `Int` millimetres value.
     ///
     /// - Parameter value: A `Int` millimetres value to convert to a `Distance`.
     public init(millimetres value: Int) {
-        self.rawValue = .millimetres_t(Millimetres_t(value))
+        self.rawValue = DistanceTypes.millimetres_t(Millimetres_t(value))
     }
 
     /// Create a `Distance` by converting a `Int` centimetres value.
     ///
     /// - Parameter value: A `Int` centimetres value to convert to a `Distance`.
     public init(centimetres value: Int) {
-        self.rawValue = .centimetres_t(Centimetres_t(value))
+        self.rawValue = DistanceTypes.centimetres_t(Centimetres_t(value))
     }
 
     /// Create a `Distance` by converting a `Int` metres value.
     ///
     /// - Parameter value: A `Int` metres value to convert to a `Distance`.
     public init(metres value: Int) {
-        self.rawValue = .metres_t(Metres_t(value))
+        self.rawValue = DistanceTypes.metres_t(Metres_t(value))
     }
 
     /// Create a `Distance` by converting a `Int16` millimetres value.
     ///
     /// - Parameter value: A `Int16` millimetres value to convert to a `Distance`.
     public init(millimetres value: Int16) {
-        self.rawValue = .millimetres_t(Millimetres_t(value))
+        self.rawValue = DistanceTypes.millimetres_t(Millimetres_t(value))
     }
 
     /// Create a `Distance` by converting a `Int16` centimetres value.
     ///
     /// - Parameter value: A `Int16` centimetres value to convert to a `Distance`.
     public init(centimetres value: Int16) {
-        self.rawValue = .centimetres_t(Centimetres_t(value))
+        self.rawValue = DistanceTypes.centimetres_t(Centimetres_t(value))
     }
 
     /// Create a `Distance` by converting a `Int16` metres value.
     ///
     /// - Parameter value: A `Int16` metres value to convert to a `Distance`.
     public init(metres value: Int16) {
-        self.rawValue = .metres_t(Metres_t(value))
+        self.rawValue = DistanceTypes.metres_t(Metres_t(value))
     }
 
     /// Create a `Distance` by converting a `Int32` millimetres value.
     ///
     /// - Parameter value: A `Int32` millimetres value to convert to a `Distance`.
     public init(millimetres value: Int32) {
-        self.rawValue = .millimetres_t(Millimetres_t(value))
+        self.rawValue = DistanceTypes.millimetres_t(Millimetres_t(value))
     }
 
     /// Create a `Distance` by converting a `Int32` centimetres value.
     ///
     /// - Parameter value: A `Int32` centimetres value to convert to a `Distance`.
     public init(centimetres value: Int32) {
-        self.rawValue = .centimetres_t(Centimetres_t(value))
+        self.rawValue = DistanceTypes.centimetres_t(Centimetres_t(value))
     }
 
     /// Create a `Distance` by converting a `Int32` metres value.
     ///
     /// - Parameter value: A `Int32` metres value to convert to a `Distance`.
     public init(metres value: Int32) {
-        self.rawValue = .metres_t(Metres_t(value))
+        self.rawValue = DistanceTypes.metres_t(Metres_t(value))
     }
 
     /// Create a `Distance` by converting a `Int64` millimetres value.
     ///
     /// - Parameter value: A `Int64` millimetres value to convert to a `Distance`.
     public init(millimetres value: Int64) {
-        self.rawValue = .millimetres_d(Millimetres_d(value))
+        self.rawValue = DistanceTypes.millimetres_d(Millimetres_d(value))
     }
 
     /// Create a `Distance` by converting a `Int64` centimetres value.
     ///
     /// - Parameter value: A `Int64` centimetres value to convert to a `Distance`.
     public init(centimetres value: Int64) {
-        self.rawValue = .centimetres_d(Centimetres_d(value))
+        self.rawValue = DistanceTypes.centimetres_d(Centimetres_d(value))
     }
 
     /// Create a `Distance` by converting a `Int64` metres value.
     ///
     /// - Parameter value: A `Int64` metres value to convert to a `Distance`.
     public init(metres value: Int64) {
-        self.rawValue = .metres_d(Metres_d(value))
+        self.rawValue = DistanceTypes.metres_d(Metres_d(value))
     }
 
     /// Create a `Distance` by converting a `Int8` millimetres value.
     ///
     /// - Parameter value: A `Int8` millimetres value to convert to a `Distance`.
     public init(millimetres value: Int8) {
-        self.rawValue = .millimetres_t(Millimetres_t(value))
+        self.rawValue = DistanceTypes.millimetres_t(Millimetres_t(value))
     }
 
     /// Create a `Distance` by converting a `Int8` centimetres value.
     ///
     /// - Parameter value: A `Int8` centimetres value to convert to a `Distance`.
     public init(centimetres value: Int8) {
-        self.rawValue = .centimetres_t(Centimetres_t(value))
+        self.rawValue = DistanceTypes.centimetres_t(Centimetres_t(value))
     }
 
     /// Create a `Distance` by converting a `Int8` metres value.
     ///
     /// - Parameter value: A `Int8` metres value to convert to a `Distance`.
     public init(metres value: Int8) {
-        self.rawValue = .metres_t(Metres_t(value))
+        self.rawValue = DistanceTypes.metres_t(Metres_t(value))
     }
 
     /// Create a `Distance` by converting a `UInt` millimetres value.
     ///
     /// - Parameter value: A `UInt` millimetres value to convert to a `Distance`.
     public init(millimetres value: UInt) {
-        self.rawValue = .millimetres_u(Millimetres_u(value))
+        self.rawValue = DistanceTypes.millimetres_u(Millimetres_u(value))
     }
 
     /// Create a `Distance` by converting a `UInt` centimetres value.
     ///
     /// - Parameter value: A `UInt` centimetres value to convert to a `Distance`.
     public init(centimetres value: UInt) {
-        self.rawValue = .centimetres_u(Centimetres_u(value))
+        self.rawValue = DistanceTypes.centimetres_u(Centimetres_u(value))
     }
 
     /// Create a `Distance` by converting a `UInt` metres value.
     ///
     /// - Parameter value: A `UInt` metres value to convert to a `Distance`.
     public init(metres value: UInt) {
-        self.rawValue = .metres_u(Metres_u(value))
+        self.rawValue = DistanceTypes.metres_u(Metres_u(value))
     }
 
     /// Create a `Distance` by converting a `UInt16` millimetres value.
     ///
     /// - Parameter value: A `UInt16` millimetres value to convert to a `Distance`.
     public init(millimetres value: UInt16) {
-        self.rawValue = .millimetres_u(Millimetres_u(value))
+        self.rawValue = DistanceTypes.millimetres_u(Millimetres_u(value))
     }
 
     /// Create a `Distance` by converting a `UInt16` centimetres value.
     ///
     /// - Parameter value: A `UInt16` centimetres value to convert to a `Distance`.
     public init(centimetres value: UInt16) {
-        self.rawValue = .centimetres_u(Centimetres_u(value))
+        self.rawValue = DistanceTypes.centimetres_u(Centimetres_u(value))
     }
 
     /// Create a `Distance` by converting a `UInt16` metres value.
     ///
     /// - Parameter value: A `UInt16` metres value to convert to a `Distance`.
     public init(metres value: UInt16) {
-        self.rawValue = .metres_u(Metres_u(value))
+        self.rawValue = DistanceTypes.metres_u(Metres_u(value))
     }
 
     /// Create a `Distance` by converting a `UInt32` millimetres value.
     ///
     /// - Parameter value: A `UInt32` millimetres value to convert to a `Distance`.
     public init(millimetres value: UInt32) {
-        self.rawValue = .millimetres_u(Millimetres_u(value))
+        self.rawValue = DistanceTypes.millimetres_u(Millimetres_u(value))
     }
 
     /// Create a `Distance` by converting a `UInt32` centimetres value.
     ///
     /// - Parameter value: A `UInt32` centimetres value to convert to a `Distance`.
     public init(centimetres value: UInt32) {
-        self.rawValue = .centimetres_u(Centimetres_u(value))
+        self.rawValue = DistanceTypes.centimetres_u(Centimetres_u(value))
     }
 
     /// Create a `Distance` by converting a `UInt32` metres value.
     ///
     /// - Parameter value: A `UInt32` metres value to convert to a `Distance`.
     public init(metres value: UInt32) {
-        self.rawValue = .metres_u(Metres_u(value))
+        self.rawValue = DistanceTypes.metres_u(Metres_u(value))
     }
 
     /// Create a `Distance` by converting a `UInt64` millimetres value.
     ///
     /// - Parameter value: A `UInt64` millimetres value to convert to a `Distance`.
     public init(millimetres value: UInt64) {
-        self.rawValue = .millimetres_d(Millimetres_d(value))
+        self.rawValue = DistanceTypes.millimetres_d(Millimetres_d(value))
     }
 
     /// Create a `Distance` by converting a `UInt64` centimetres value.
     ///
     /// - Parameter value: A `UInt64` centimetres value to convert to a `Distance`.
     public init(centimetres value: UInt64) {
-        self.rawValue = .centimetres_d(Centimetres_d(value))
+        self.rawValue = DistanceTypes.centimetres_d(Centimetres_d(value))
     }
 
     /// Create a `Distance` by converting a `UInt64` metres value.
     ///
     /// - Parameter value: A `UInt64` metres value to convert to a `Distance`.
     public init(metres value: UInt64) {
-        self.rawValue = .metres_d(Metres_d(value))
+        self.rawValue = DistanceTypes.metres_d(Metres_d(value))
     }
 
     /// Create a `Distance` by converting a `UInt8` millimetres value.
     ///
     /// - Parameter value: A `UInt8` millimetres value to convert to a `Distance`.
     public init(millimetres value: UInt8) {
-        self.rawValue = .millimetres_u(Millimetres_u(value))
+        self.rawValue = DistanceTypes.millimetres_u(Millimetres_u(value))
     }
 
     /// Create a `Distance` by converting a `UInt8` centimetres value.
     ///
     /// - Parameter value: A `UInt8` centimetres value to convert to a `Distance`.
     public init(centimetres value: UInt8) {
-        self.rawValue = .centimetres_u(Centimetres_u(value))
+        self.rawValue = DistanceTypes.centimetres_u(Centimetres_u(value))
     }
 
     /// Create a `Distance` by converting a `UInt8` metres value.
     ///
     /// - Parameter value: A `UInt8` metres value to convert to a `Distance`.
     public init(metres value: UInt8) {
-        self.rawValue = .metres_u(Metres_u(value))
+        self.rawValue = DistanceTypes.metres_u(Metres_u(value))
     }
 
 }

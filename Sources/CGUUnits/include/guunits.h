@@ -147,14 +147,48 @@ typedef float kelvin_f;
 typedef double kelvin_d;
 
 // Acceleration Units.
-typedef int64_t metresPerSecond2_t;
-typedef uint64_t metresPerSecond2_u;
-typedef float metresPerSecond2_f;
-typedef double metresPerSecond2_d;
-typedef int64_t gs_t;
-typedef uint64_t gs_u;
-typedef float gs_f;
-typedef double gs_d;
+typedef int64_t millimetres_per_microseconds_sq_t;
+typedef uint64_t millimetres_per_microseconds_sq_u;
+typedef float millimetres_per_microseconds_sq_f;
+typedef double millimetres_per_microseconds_sq_d;
+typedef int64_t millimetres_per_milliseconds_sq_t;
+typedef uint64_t millimetres_per_milliseconds_sq_u;
+typedef float millimetres_per_milliseconds_sq_f;
+typedef double millimetres_per_milliseconds_sq_d;
+typedef int64_t millimetres_per_seconds_sq_t;
+typedef uint64_t millimetres_per_seconds_sq_u;
+typedef float millimetres_per_seconds_sq_f;
+typedef double millimetres_per_seconds_sq_d;
+typedef int64_t centimetres_per_microseconds_sq_t;
+typedef uint64_t centimetres_per_microseconds_sq_u;
+typedef float centimetres_per_microseconds_sq_f;
+typedef double centimetres_per_microseconds_sq_d;
+typedef int64_t centimetres_per_milliseconds_sq_t;
+typedef uint64_t centimetres_per_milliseconds_sq_u;
+typedef float centimetres_per_milliseconds_sq_f;
+typedef double centimetres_per_milliseconds_sq_d;
+typedef int64_t centimetres_per_seconds_sq_t;
+typedef uint64_t centimetres_per_seconds_sq_u;
+typedef float centimetres_per_seconds_sq_f;
+typedef double centimetres_per_seconds_sq_d;
+typedef int64_t metres_per_microseconds_sq_t;
+typedef uint64_t metres_per_microseconds_sq_u;
+typedef float metres_per_microseconds_sq_f;
+typedef double metres_per_microseconds_sq_d;
+typedef int64_t metres_per_milliseconds_sq_t;
+typedef uint64_t metres_per_milliseconds_sq_u;
+typedef float metres_per_milliseconds_sq_f;
+typedef double metres_per_milliseconds_sq_d;
+typedef int64_t metres_per_seconds_sq_t;
+typedef uint64_t metres_per_seconds_sq_u;
+typedef float metres_per_seconds_sq_f;
+typedef double metres_per_seconds_sq_d;
+
+// Reference Acceleration Units
+typedef int64_t earthG_t;
+typedef uint64_t earthG_u;
+typedef float earthG_f;
+typedef double earthG_d;
 
 // Mass Units.
 typedef int64_t microgram_t;
@@ -177,6 +211,70 @@ typedef int64_t megagram_t;
 typedef uint64_t megagram_u;
 typedef float megagram_f;
 typedef double megagram_d;
+
+// Velocity Units.
+typedef int64_t millimetres_per_microseconds_t;
+typedef uint64_t millimetres_per_microseconds_u;
+typedef float millimetres_per_microseconds_f;
+typedef double millimetres_per_microseconds_d;
+typedef int64_t millimetres_per_milliseconds_t;
+typedef uint64_t millimetres_per_milliseconds_u;
+typedef float millimetres_per_milliseconds_f;
+typedef double millimetres_per_milliseconds_d;
+typedef int64_t millimetres_per_seconds_t;
+typedef uint64_t millimetres_per_seconds_u;
+typedef float millimetres_per_seconds_f;
+typedef double millimetres_per_seconds_d;
+typedef int64_t centimetres_per_microseconds_t;
+typedef uint64_t centimetres_per_microseconds_u;
+typedef float centimetres_per_microseconds_f;
+typedef double centimetres_per_microseconds_d;
+typedef int64_t centimetres_per_milliseconds_t;
+typedef uint64_t centimetres_per_milliseconds_u;
+typedef float centimetres_per_milliseconds_f;
+typedef double centimetres_per_milliseconds_d;
+typedef int64_t centimetres_per_seconds_t;
+typedef uint64_t centimetres_per_seconds_u;
+typedef float centimetres_per_seconds_f;
+typedef double centimetres_per_seconds_d;
+typedef int64_t metres_per_microseconds_t;
+typedef uint64_t metres_per_microseconds_u;
+typedef float metres_per_microseconds_f;
+typedef double metres_per_microseconds_d;
+typedef int64_t metres_per_milliseconds_t;
+typedef uint64_t metres_per_milliseconds_u;
+typedef float metres_per_milliseconds_f;
+typedef double metres_per_milliseconds_d;
+typedef int64_t metres_per_seconds_t;
+typedef uint64_t metres_per_seconds_u;
+typedef float metres_per_seconds_f;
+typedef double metres_per_seconds_d;
+
+// Angular Velocity Units.
+typedef int64_t degrees_per_microseconds_t;
+typedef uint64_t degrees_per_microseconds_u;
+typedef float degrees_per_microseconds_f;
+typedef double degrees_per_microseconds_d;
+typedef int64_t degrees_per_milliseconds_t;
+typedef uint64_t degrees_per_milliseconds_u;
+typedef float degrees_per_milliseconds_f;
+typedef double degrees_per_milliseconds_d;
+typedef int64_t degrees_per_seconds_t;
+typedef uint64_t degrees_per_seconds_u;
+typedef float degrees_per_seconds_f;
+typedef double degrees_per_seconds_d;
+typedef int64_t radians_per_microseconds_t;
+typedef uint64_t radians_per_microseconds_u;
+typedef float radians_per_microseconds_f;
+typedef double radians_per_microseconds_d;
+typedef int64_t radians_per_milliseconds_t;
+typedef uint64_t radians_per_milliseconds_u;
+typedef float radians_per_milliseconds_f;
+typedef double radians_per_milliseconds_d;
+typedef int64_t radians_per_seconds_t;
+typedef uint64_t radians_per_seconds_u;
+typedef float radians_per_seconds_f;
+typedef double radians_per_seconds_d;
 
 /**
  * Convert centimetres_d to centimetres_f.
@@ -9619,1084 +9717,11804 @@ kelvin_t u8_to_K_t(uint8_t kelvin);
 kelvin_u u8_to_K_u(uint8_t kelvin);
 
 /**
- * Convert double to gs_d.
+ * Convert centimetres_per_microseconds_sq_d to centimetres_per_microseconds_sq_f.
  */
-gs_d d_to_gs_d(double gs);
+centimetres_per_microseconds_sq_f cm_per_us_sq_d_to_cm_per_us_sq_f(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert double to gs_f.
+ * Convert centimetres_per_microseconds_sq_d to centimetres_per_microseconds_sq_t.
  */
-gs_f d_to_gs_f(double gs);
+centimetres_per_microseconds_sq_t cm_per_us_sq_d_to_cm_per_us_sq_t(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert double to gs_t.
+ * Convert centimetres_per_microseconds_sq_d to centimetres_per_microseconds_sq_u.
  */
-gs_t d_to_gs_t(double gs);
+centimetres_per_microseconds_sq_u cm_per_us_sq_d_to_cm_per_us_sq_u(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert double to gs_u.
+ * Convert centimetres_per_microseconds_sq_d to centimetres_per_milliseconds_sq_d.
  */
-gs_u d_to_gs_u(double gs);
+centimetres_per_milliseconds_sq_d cm_per_us_sq_d_to_cm_per_ms_sq_d(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert double to metresPerSecond2_d.
+ * Convert centimetres_per_microseconds_sq_d to centimetres_per_milliseconds_sq_f.
  */
-metresPerSecond2_d d_to_mps2_d(double metresPerSecond2);
+centimetres_per_milliseconds_sq_f cm_per_us_sq_d_to_cm_per_ms_sq_f(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert double to metresPerSecond2_f.
+ * Convert centimetres_per_microseconds_sq_d to centimetres_per_milliseconds_sq_t.
  */
-metresPerSecond2_f d_to_mps2_f(double metresPerSecond2);
+centimetres_per_milliseconds_sq_t cm_per_us_sq_d_to_cm_per_ms_sq_t(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert double to metresPerSecond2_t.
+ * Convert centimetres_per_microseconds_sq_d to centimetres_per_milliseconds_sq_u.
  */
-metresPerSecond2_t d_to_mps2_t(double metresPerSecond2);
+centimetres_per_milliseconds_sq_u cm_per_us_sq_d_to_cm_per_ms_sq_u(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert double to metresPerSecond2_u.
+ * Convert centimetres_per_microseconds_sq_d to centimetres_per_seconds_sq_d.
  */
-metresPerSecond2_u d_to_mps2_u(double metresPerSecond2);
+centimetres_per_seconds_sq_d cm_per_us_sq_d_to_cm_per_s_sq_d(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert float to gs_d.
+ * Convert centimetres_per_microseconds_sq_d to centimetres_per_seconds_sq_f.
  */
-gs_d f_to_gs_d(float gs);
+centimetres_per_seconds_sq_f cm_per_us_sq_d_to_cm_per_s_sq_f(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert float to gs_f.
+ * Convert centimetres_per_microseconds_sq_d to centimetres_per_seconds_sq_t.
  */
-gs_f f_to_gs_f(float gs);
+centimetres_per_seconds_sq_t cm_per_us_sq_d_to_cm_per_s_sq_t(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert float to gs_t.
+ * Convert centimetres_per_microseconds_sq_d to centimetres_per_seconds_sq_u.
  */
-gs_t f_to_gs_t(float gs);
+centimetres_per_seconds_sq_u cm_per_us_sq_d_to_cm_per_s_sq_u(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert float to gs_u.
+ * Convert centimetres_per_microseconds_sq_d to double.
  */
-gs_u f_to_gs_u(float gs);
+double cm_per_us_sq_d_to_d(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert float to metresPerSecond2_d.
+ * Convert centimetres_per_microseconds_sq_d to float.
  */
-metresPerSecond2_d f_to_mps2_d(float metresPerSecond2);
+float cm_per_us_sq_d_to_f(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert float to metresPerSecond2_f.
+ * Convert centimetres_per_microseconds_sq_d to int16_t.
  */
-metresPerSecond2_f f_to_mps2_f(float metresPerSecond2);
+int16_t cm_per_us_sq_d_to_i16(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert float to metresPerSecond2_t.
+ * Convert centimetres_per_microseconds_sq_d to int32_t.
  */
-metresPerSecond2_t f_to_mps2_t(float metresPerSecond2);
+int32_t cm_per_us_sq_d_to_i32(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert float to metresPerSecond2_u.
+ * Convert centimetres_per_microseconds_sq_d to int64_t.
  */
-metresPerSecond2_u f_to_mps2_u(float metresPerSecond2);
+int64_t cm_per_us_sq_d_to_i64(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_d to double.
+ * Convert centimetres_per_microseconds_sq_d to int8_t.
  */
-double gs_d_to_d(gs_d gs);
+int8_t cm_per_us_sq_d_to_i8(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_d to float.
+ * Convert centimetres_per_microseconds_sq_d to metres_per_microseconds_sq_d.
  */
-float gs_d_to_f(gs_d gs);
+metres_per_microseconds_sq_d cm_per_us_sq_d_to_m_per_us_sq_d(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_d to gs_f.
+ * Convert centimetres_per_microseconds_sq_d to metres_per_microseconds_sq_f.
  */
-gs_f gs_d_to_gs_f(gs_d gs);
+metres_per_microseconds_sq_f cm_per_us_sq_d_to_m_per_us_sq_f(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_d to gs_t.
+ * Convert centimetres_per_microseconds_sq_d to metres_per_microseconds_sq_t.
  */
-gs_t gs_d_to_gs_t(gs_d gs);
+metres_per_microseconds_sq_t cm_per_us_sq_d_to_m_per_us_sq_t(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_d to gs_u.
+ * Convert centimetres_per_microseconds_sq_d to metres_per_microseconds_sq_u.
  */
-gs_u gs_d_to_gs_u(gs_d gs);
+metres_per_microseconds_sq_u cm_per_us_sq_d_to_m_per_us_sq_u(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_d to int16_t.
+ * Convert centimetres_per_microseconds_sq_d to metres_per_milliseconds_sq_d.
  */
-int16_t gs_d_to_i16(gs_d gs);
+metres_per_milliseconds_sq_d cm_per_us_sq_d_to_m_per_ms_sq_d(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_d to int32_t.
+ * Convert centimetres_per_microseconds_sq_d to metres_per_milliseconds_sq_f.
  */
-int32_t gs_d_to_i32(gs_d gs);
+metres_per_milliseconds_sq_f cm_per_us_sq_d_to_m_per_ms_sq_f(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_d to int64_t.
+ * Convert centimetres_per_microseconds_sq_d to metres_per_milliseconds_sq_t.
  */
-int64_t gs_d_to_i64(gs_d gs);
+metres_per_milliseconds_sq_t cm_per_us_sq_d_to_m_per_ms_sq_t(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_d to int8_t.
+ * Convert centimetres_per_microseconds_sq_d to metres_per_milliseconds_sq_u.
  */
-int8_t gs_d_to_i8(gs_d gs);
+metres_per_milliseconds_sq_u cm_per_us_sq_d_to_m_per_ms_sq_u(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_d to metresPerSecond2_d.
+ * Convert centimetres_per_microseconds_sq_d to metres_per_seconds_sq_d.
  */
-metresPerSecond2_d gs_d_to_mps2_d(gs_d gs);
+metres_per_seconds_sq_d cm_per_us_sq_d_to_m_per_s_sq_d(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_d to metresPerSecond2_f.
+ * Convert centimetres_per_microseconds_sq_d to metres_per_seconds_sq_f.
  */
-metresPerSecond2_f gs_d_to_mps2_f(gs_d gs);
+metres_per_seconds_sq_f cm_per_us_sq_d_to_m_per_s_sq_f(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_d to metresPerSecond2_t.
+ * Convert centimetres_per_microseconds_sq_d to metres_per_seconds_sq_t.
  */
-metresPerSecond2_t gs_d_to_mps2_t(gs_d gs);
+metres_per_seconds_sq_t cm_per_us_sq_d_to_m_per_s_sq_t(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_d to metresPerSecond2_u.
+ * Convert centimetres_per_microseconds_sq_d to metres_per_seconds_sq_u.
  */
-metresPerSecond2_u gs_d_to_mps2_u(gs_d gs);
+metres_per_seconds_sq_u cm_per_us_sq_d_to_m_per_s_sq_u(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_d to uint16_t.
+ * Convert centimetres_per_microseconds_sq_d to millimetres_per_microseconds_sq_d.
  */
-uint16_t gs_d_to_u16(gs_d gs);
+millimetres_per_microseconds_sq_d cm_per_us_sq_d_to_mm_per_us_sq_d(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_d to uint32_t.
+ * Convert centimetres_per_microseconds_sq_d to millimetres_per_microseconds_sq_f.
  */
-uint32_t gs_d_to_u32(gs_d gs);
+millimetres_per_microseconds_sq_f cm_per_us_sq_d_to_mm_per_us_sq_f(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_d to uint64_t.
+ * Convert centimetres_per_microseconds_sq_d to millimetres_per_microseconds_sq_t.
  */
-uint64_t gs_d_to_u64(gs_d gs);
+millimetres_per_microseconds_sq_t cm_per_us_sq_d_to_mm_per_us_sq_t(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_d to uint8_t.
+ * Convert centimetres_per_microseconds_sq_d to millimetres_per_microseconds_sq_u.
  */
-uint8_t gs_d_to_u8(gs_d gs);
+millimetres_per_microseconds_sq_u cm_per_us_sq_d_to_mm_per_us_sq_u(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_f to double.
+ * Convert centimetres_per_microseconds_sq_d to millimetres_per_milliseconds_sq_d.
  */
-double gs_f_to_d(gs_f gs);
+millimetres_per_milliseconds_sq_d cm_per_us_sq_d_to_mm_per_ms_sq_d(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_f to float.
+ * Convert centimetres_per_microseconds_sq_d to millimetres_per_milliseconds_sq_f.
  */
-float gs_f_to_f(gs_f gs);
+millimetres_per_milliseconds_sq_f cm_per_us_sq_d_to_mm_per_ms_sq_f(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_f to gs_d.
+ * Convert centimetres_per_microseconds_sq_d to millimetres_per_milliseconds_sq_t.
  */
-gs_d gs_f_to_gs_d(gs_f gs);
+millimetres_per_milliseconds_sq_t cm_per_us_sq_d_to_mm_per_ms_sq_t(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_f to gs_t.
+ * Convert centimetres_per_microseconds_sq_d to millimetres_per_milliseconds_sq_u.
  */
-gs_t gs_f_to_gs_t(gs_f gs);
+millimetres_per_milliseconds_sq_u cm_per_us_sq_d_to_mm_per_ms_sq_u(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_f to gs_u.
+ * Convert centimetres_per_microseconds_sq_d to millimetres_per_seconds_sq_d.
  */
-gs_u gs_f_to_gs_u(gs_f gs);
+millimetres_per_seconds_sq_d cm_per_us_sq_d_to_mm_per_s_sq_d(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_f to int16_t.
+ * Convert centimetres_per_microseconds_sq_d to millimetres_per_seconds_sq_f.
  */
-int16_t gs_f_to_i16(gs_f gs);
+millimetres_per_seconds_sq_f cm_per_us_sq_d_to_mm_per_s_sq_f(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_f to int32_t.
+ * Convert centimetres_per_microseconds_sq_d to millimetres_per_seconds_sq_t.
  */
-int32_t gs_f_to_i32(gs_f gs);
+millimetres_per_seconds_sq_t cm_per_us_sq_d_to_mm_per_s_sq_t(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_f to int64_t.
+ * Convert centimetres_per_microseconds_sq_d to millimetres_per_seconds_sq_u.
  */
-int64_t gs_f_to_i64(gs_f gs);
+millimetres_per_seconds_sq_u cm_per_us_sq_d_to_mm_per_s_sq_u(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_f to int8_t.
+ * Convert centimetres_per_microseconds_sq_d to uint16_t.
  */
-int8_t gs_f_to_i8(gs_f gs);
+uint16_t cm_per_us_sq_d_to_u16(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_f to metresPerSecond2_d.
+ * Convert centimetres_per_microseconds_sq_d to uint32_t.
  */
-metresPerSecond2_d gs_f_to_mps2_d(gs_f gs);
+uint32_t cm_per_us_sq_d_to_u32(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_f to metresPerSecond2_f.
+ * Convert centimetres_per_microseconds_sq_d to uint64_t.
  */
-metresPerSecond2_f gs_f_to_mps2_f(gs_f gs);
+uint64_t cm_per_us_sq_d_to_u64(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_f to metresPerSecond2_t.
+ * Convert centimetres_per_microseconds_sq_d to uint8_t.
  */
-metresPerSecond2_t gs_f_to_mps2_t(gs_f gs);
+uint8_t cm_per_us_sq_d_to_u8(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_f to metresPerSecond2_u.
+ * Convert centimetres_per_microseconds_sq_f to centimetres_per_microseconds_sq_d.
  */
-metresPerSecond2_u gs_f_to_mps2_u(gs_f gs);
+centimetres_per_microseconds_sq_d cm_per_us_sq_f_to_cm_per_us_sq_d(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_f to uint16_t.
+ * Convert centimetres_per_microseconds_sq_f to centimetres_per_microseconds_sq_t.
  */
-uint16_t gs_f_to_u16(gs_f gs);
+centimetres_per_microseconds_sq_t cm_per_us_sq_f_to_cm_per_us_sq_t(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_f to uint32_t.
+ * Convert centimetres_per_microseconds_sq_f to centimetres_per_microseconds_sq_u.
  */
-uint32_t gs_f_to_u32(gs_f gs);
+centimetres_per_microseconds_sq_u cm_per_us_sq_f_to_cm_per_us_sq_u(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_f to uint64_t.
+ * Convert centimetres_per_microseconds_sq_f to centimetres_per_milliseconds_sq_d.
  */
-uint64_t gs_f_to_u64(gs_f gs);
+centimetres_per_milliseconds_sq_d cm_per_us_sq_f_to_cm_per_ms_sq_d(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_f to uint8_t.
+ * Convert centimetres_per_microseconds_sq_f to centimetres_per_milliseconds_sq_f.
  */
-uint8_t gs_f_to_u8(gs_f gs);
+centimetres_per_milliseconds_sq_f cm_per_us_sq_f_to_cm_per_ms_sq_f(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_t to double.
+ * Convert centimetres_per_microseconds_sq_f to centimetres_per_milliseconds_sq_t.
  */
-double gs_t_to_d(gs_t gs);
+centimetres_per_milliseconds_sq_t cm_per_us_sq_f_to_cm_per_ms_sq_t(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_t to float.
+ * Convert centimetres_per_microseconds_sq_f to centimetres_per_milliseconds_sq_u.
  */
-float gs_t_to_f(gs_t gs);
+centimetres_per_milliseconds_sq_u cm_per_us_sq_f_to_cm_per_ms_sq_u(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_t to gs_d.
+ * Convert centimetres_per_microseconds_sq_f to centimetres_per_seconds_sq_d.
  */
-gs_d gs_t_to_gs_d(gs_t gs);
+centimetres_per_seconds_sq_d cm_per_us_sq_f_to_cm_per_s_sq_d(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_t to gs_f.
+ * Convert centimetres_per_microseconds_sq_f to centimetres_per_seconds_sq_f.
  */
-gs_f gs_t_to_gs_f(gs_t gs);
+centimetres_per_seconds_sq_f cm_per_us_sq_f_to_cm_per_s_sq_f(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_t to gs_u.
+ * Convert centimetres_per_microseconds_sq_f to centimetres_per_seconds_sq_t.
  */
-gs_u gs_t_to_gs_u(gs_t gs);
+centimetres_per_seconds_sq_t cm_per_us_sq_f_to_cm_per_s_sq_t(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_t to int16_t.
+ * Convert centimetres_per_microseconds_sq_f to centimetres_per_seconds_sq_u.
  */
-int16_t gs_t_to_i16(gs_t gs);
+centimetres_per_seconds_sq_u cm_per_us_sq_f_to_cm_per_s_sq_u(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_t to int32_t.
+ * Convert centimetres_per_microseconds_sq_f to double.
  */
-int32_t gs_t_to_i32(gs_t gs);
+double cm_per_us_sq_f_to_d(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_t to int64_t.
+ * Convert centimetres_per_microseconds_sq_f to float.
  */
-int64_t gs_t_to_i64(gs_t gs);
+float cm_per_us_sq_f_to_f(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_t to int8_t.
+ * Convert centimetres_per_microseconds_sq_f to int16_t.
  */
-int8_t gs_t_to_i8(gs_t gs);
+int16_t cm_per_us_sq_f_to_i16(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_t to metresPerSecond2_d.
+ * Convert centimetres_per_microseconds_sq_f to int32_t.
  */
-metresPerSecond2_d gs_t_to_mps2_d(gs_t gs);
+int32_t cm_per_us_sq_f_to_i32(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_t to metresPerSecond2_f.
+ * Convert centimetres_per_microseconds_sq_f to int64_t.
  */
-metresPerSecond2_f gs_t_to_mps2_f(gs_t gs);
+int64_t cm_per_us_sq_f_to_i64(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_t to metresPerSecond2_t.
+ * Convert centimetres_per_microseconds_sq_f to int8_t.
  */
-metresPerSecond2_t gs_t_to_mps2_t(gs_t gs);
+int8_t cm_per_us_sq_f_to_i8(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_t to metresPerSecond2_u.
+ * Convert centimetres_per_microseconds_sq_f to metres_per_microseconds_sq_d.
  */
-metresPerSecond2_u gs_t_to_mps2_u(gs_t gs);
+metres_per_microseconds_sq_d cm_per_us_sq_f_to_m_per_us_sq_d(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_t to uint16_t.
+ * Convert centimetres_per_microseconds_sq_f to metres_per_microseconds_sq_f.
  */
-uint16_t gs_t_to_u16(gs_t gs);
+metres_per_microseconds_sq_f cm_per_us_sq_f_to_m_per_us_sq_f(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_t to uint32_t.
+ * Convert centimetres_per_microseconds_sq_f to metres_per_microseconds_sq_t.
  */
-uint32_t gs_t_to_u32(gs_t gs);
+metres_per_microseconds_sq_t cm_per_us_sq_f_to_m_per_us_sq_t(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_t to uint64_t.
+ * Convert centimetres_per_microseconds_sq_f to metres_per_microseconds_sq_u.
  */
-uint64_t gs_t_to_u64(gs_t gs);
+metres_per_microseconds_sq_u cm_per_us_sq_f_to_m_per_us_sq_u(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_t to uint8_t.
+ * Convert centimetres_per_microseconds_sq_f to metres_per_milliseconds_sq_d.
  */
-uint8_t gs_t_to_u8(gs_t gs);
+metres_per_milliseconds_sq_d cm_per_us_sq_f_to_m_per_ms_sq_d(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_u to double.
+ * Convert centimetres_per_microseconds_sq_f to metres_per_milliseconds_sq_f.
  */
-double gs_u_to_d(gs_u gs);
+metres_per_milliseconds_sq_f cm_per_us_sq_f_to_m_per_ms_sq_f(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_u to float.
+ * Convert centimetres_per_microseconds_sq_f to metres_per_milliseconds_sq_t.
  */
-float gs_u_to_f(gs_u gs);
+metres_per_milliseconds_sq_t cm_per_us_sq_f_to_m_per_ms_sq_t(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_u to gs_d.
+ * Convert centimetres_per_microseconds_sq_f to metres_per_milliseconds_sq_u.
  */
-gs_d gs_u_to_gs_d(gs_u gs);
+metres_per_milliseconds_sq_u cm_per_us_sq_f_to_m_per_ms_sq_u(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_u to gs_f.
+ * Convert centimetres_per_microseconds_sq_f to metres_per_seconds_sq_d.
  */
-gs_f gs_u_to_gs_f(gs_u gs);
+metres_per_seconds_sq_d cm_per_us_sq_f_to_m_per_s_sq_d(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_u to gs_t.
+ * Convert centimetres_per_microseconds_sq_f to metres_per_seconds_sq_f.
  */
-gs_t gs_u_to_gs_t(gs_u gs);
+metres_per_seconds_sq_f cm_per_us_sq_f_to_m_per_s_sq_f(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_u to int16_t.
+ * Convert centimetres_per_microseconds_sq_f to metres_per_seconds_sq_t.
  */
-int16_t gs_u_to_i16(gs_u gs);
+metres_per_seconds_sq_t cm_per_us_sq_f_to_m_per_s_sq_t(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_u to int32_t.
+ * Convert centimetres_per_microseconds_sq_f to metres_per_seconds_sq_u.
  */
-int32_t gs_u_to_i32(gs_u gs);
+metres_per_seconds_sq_u cm_per_us_sq_f_to_m_per_s_sq_u(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_u to int64_t.
+ * Convert centimetres_per_microseconds_sq_f to millimetres_per_microseconds_sq_d.
  */
-int64_t gs_u_to_i64(gs_u gs);
+millimetres_per_microseconds_sq_d cm_per_us_sq_f_to_mm_per_us_sq_d(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_u to int8_t.
+ * Convert centimetres_per_microseconds_sq_f to millimetres_per_microseconds_sq_f.
  */
-int8_t gs_u_to_i8(gs_u gs);
+millimetres_per_microseconds_sq_f cm_per_us_sq_f_to_mm_per_us_sq_f(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_u to metresPerSecond2_d.
+ * Convert centimetres_per_microseconds_sq_f to millimetres_per_microseconds_sq_t.
  */
-metresPerSecond2_d gs_u_to_mps2_d(gs_u gs);
+millimetres_per_microseconds_sq_t cm_per_us_sq_f_to_mm_per_us_sq_t(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_u to metresPerSecond2_f.
+ * Convert centimetres_per_microseconds_sq_f to millimetres_per_microseconds_sq_u.
  */
-metresPerSecond2_f gs_u_to_mps2_f(gs_u gs);
+millimetres_per_microseconds_sq_u cm_per_us_sq_f_to_mm_per_us_sq_u(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_u to metresPerSecond2_t.
+ * Convert centimetres_per_microseconds_sq_f to millimetres_per_milliseconds_sq_d.
  */
-metresPerSecond2_t gs_u_to_mps2_t(gs_u gs);
+millimetres_per_milliseconds_sq_d cm_per_us_sq_f_to_mm_per_ms_sq_d(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_u to metresPerSecond2_u.
+ * Convert centimetres_per_microseconds_sq_f to millimetres_per_milliseconds_sq_f.
  */
-metresPerSecond2_u gs_u_to_mps2_u(gs_u gs);
+millimetres_per_milliseconds_sq_f cm_per_us_sq_f_to_mm_per_ms_sq_f(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_u to uint16_t.
+ * Convert centimetres_per_microseconds_sq_f to millimetres_per_milliseconds_sq_t.
  */
-uint16_t gs_u_to_u16(gs_u gs);
+millimetres_per_milliseconds_sq_t cm_per_us_sq_f_to_mm_per_ms_sq_t(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_u to uint32_t.
+ * Convert centimetres_per_microseconds_sq_f to millimetres_per_milliseconds_sq_u.
  */
-uint32_t gs_u_to_u32(gs_u gs);
+millimetres_per_milliseconds_sq_u cm_per_us_sq_f_to_mm_per_ms_sq_u(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_u to uint64_t.
+ * Convert centimetres_per_microseconds_sq_f to millimetres_per_seconds_sq_d.
  */
-uint64_t gs_u_to_u64(gs_u gs);
+millimetres_per_seconds_sq_d cm_per_us_sq_f_to_mm_per_s_sq_d(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert gs_u to uint8_t.
+ * Convert centimetres_per_microseconds_sq_f to millimetres_per_seconds_sq_f.
  */
-uint8_t gs_u_to_u8(gs_u gs);
+millimetres_per_seconds_sq_f cm_per_us_sq_f_to_mm_per_s_sq_f(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert int16_t to gs_d.
+ * Convert centimetres_per_microseconds_sq_f to millimetres_per_seconds_sq_t.
  */
-gs_d i16_to_gs_d(int16_t gs);
+millimetres_per_seconds_sq_t cm_per_us_sq_f_to_mm_per_s_sq_t(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert int16_t to gs_f.
+ * Convert centimetres_per_microseconds_sq_f to millimetres_per_seconds_sq_u.
  */
-gs_f i16_to_gs_f(int16_t gs);
+millimetres_per_seconds_sq_u cm_per_us_sq_f_to_mm_per_s_sq_u(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert int16_t to gs_t.
+ * Convert centimetres_per_microseconds_sq_f to uint16_t.
  */
-gs_t i16_to_gs_t(int16_t gs);
+uint16_t cm_per_us_sq_f_to_u16(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert int16_t to gs_u.
+ * Convert centimetres_per_microseconds_sq_f to uint32_t.
  */
-gs_u i16_to_gs_u(int16_t gs);
+uint32_t cm_per_us_sq_f_to_u32(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert int16_t to metresPerSecond2_d.
+ * Convert centimetres_per_microseconds_sq_f to uint64_t.
  */
-metresPerSecond2_d i16_to_mps2_d(int16_t metresPerSecond2);
+uint64_t cm_per_us_sq_f_to_u64(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert int16_t to metresPerSecond2_f.
+ * Convert centimetres_per_microseconds_sq_f to uint8_t.
  */
-metresPerSecond2_f i16_to_mps2_f(int16_t metresPerSecond2);
+uint8_t cm_per_us_sq_f_to_u8(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
 
 /**
- * Convert int16_t to metresPerSecond2_t.
+ * Convert centimetres_per_microseconds_sq_t to centimetres_per_microseconds_sq_d.
  */
-metresPerSecond2_t i16_to_mps2_t(int16_t metresPerSecond2);
+centimetres_per_microseconds_sq_d cm_per_us_sq_t_to_cm_per_us_sq_d(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert int16_t to metresPerSecond2_u.
+ * Convert centimetres_per_microseconds_sq_t to centimetres_per_microseconds_sq_f.
  */
-metresPerSecond2_u i16_to_mps2_u(int16_t metresPerSecond2);
+centimetres_per_microseconds_sq_f cm_per_us_sq_t_to_cm_per_us_sq_f(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert int32_t to gs_d.
+ * Convert centimetres_per_microseconds_sq_t to centimetres_per_microseconds_sq_u.
  */
-gs_d i32_to_gs_d(int32_t gs);
+centimetres_per_microseconds_sq_u cm_per_us_sq_t_to_cm_per_us_sq_u(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert int32_t to gs_f.
+ * Convert centimetres_per_microseconds_sq_t to centimetres_per_milliseconds_sq_d.
  */
-gs_f i32_to_gs_f(int32_t gs);
+centimetres_per_milliseconds_sq_d cm_per_us_sq_t_to_cm_per_ms_sq_d(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert int32_t to gs_t.
+ * Convert centimetres_per_microseconds_sq_t to centimetres_per_milliseconds_sq_f.
  */
-gs_t i32_to_gs_t(int32_t gs);
+centimetres_per_milliseconds_sq_f cm_per_us_sq_t_to_cm_per_ms_sq_f(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert int32_t to gs_u.
+ * Convert centimetres_per_microseconds_sq_t to centimetres_per_milliseconds_sq_t.
  */
-gs_u i32_to_gs_u(int32_t gs);
+centimetres_per_milliseconds_sq_t cm_per_us_sq_t_to_cm_per_ms_sq_t(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert int32_t to metresPerSecond2_d.
+ * Convert centimetres_per_microseconds_sq_t to centimetres_per_milliseconds_sq_u.
  */
-metresPerSecond2_d i32_to_mps2_d(int32_t metresPerSecond2);
+centimetres_per_milliseconds_sq_u cm_per_us_sq_t_to_cm_per_ms_sq_u(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert int32_t to metresPerSecond2_f.
+ * Convert centimetres_per_microseconds_sq_t to centimetres_per_seconds_sq_d.
  */
-metresPerSecond2_f i32_to_mps2_f(int32_t metresPerSecond2);
+centimetres_per_seconds_sq_d cm_per_us_sq_t_to_cm_per_s_sq_d(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert int32_t to metresPerSecond2_t.
+ * Convert centimetres_per_microseconds_sq_t to centimetres_per_seconds_sq_f.
  */
-metresPerSecond2_t i32_to_mps2_t(int32_t metresPerSecond2);
+centimetres_per_seconds_sq_f cm_per_us_sq_t_to_cm_per_s_sq_f(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert int32_t to metresPerSecond2_u.
+ * Convert centimetres_per_microseconds_sq_t to centimetres_per_seconds_sq_t.
  */
-metresPerSecond2_u i32_to_mps2_u(int32_t metresPerSecond2);
+centimetres_per_seconds_sq_t cm_per_us_sq_t_to_cm_per_s_sq_t(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert int64_t to gs_d.
+ * Convert centimetres_per_microseconds_sq_t to centimetres_per_seconds_sq_u.
  */
-gs_d i64_to_gs_d(int64_t gs);
+centimetres_per_seconds_sq_u cm_per_us_sq_t_to_cm_per_s_sq_u(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert int64_t to gs_f.
+ * Convert centimetres_per_microseconds_sq_t to double.
  */
-gs_f i64_to_gs_f(int64_t gs);
+double cm_per_us_sq_t_to_d(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert int64_t to gs_t.
+ * Convert centimetres_per_microseconds_sq_t to float.
  */
-gs_t i64_to_gs_t(int64_t gs);
+float cm_per_us_sq_t_to_f(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert int64_t to gs_u.
+ * Convert centimetres_per_microseconds_sq_t to int16_t.
  */
-gs_u i64_to_gs_u(int64_t gs);
+int16_t cm_per_us_sq_t_to_i16(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert int64_t to metresPerSecond2_d.
+ * Convert centimetres_per_microseconds_sq_t to int32_t.
  */
-metresPerSecond2_d i64_to_mps2_d(int64_t metresPerSecond2);
+int32_t cm_per_us_sq_t_to_i32(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert int64_t to metresPerSecond2_f.
+ * Convert centimetres_per_microseconds_sq_t to int64_t.
  */
-metresPerSecond2_f i64_to_mps2_f(int64_t metresPerSecond2);
+int64_t cm_per_us_sq_t_to_i64(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert int64_t to metresPerSecond2_t.
+ * Convert centimetres_per_microseconds_sq_t to int8_t.
  */
-metresPerSecond2_t i64_to_mps2_t(int64_t metresPerSecond2);
+int8_t cm_per_us_sq_t_to_i8(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert int64_t to metresPerSecond2_u.
+ * Convert centimetres_per_microseconds_sq_t to metres_per_microseconds_sq_d.
  */
-metresPerSecond2_u i64_to_mps2_u(int64_t metresPerSecond2);
+metres_per_microseconds_sq_d cm_per_us_sq_t_to_m_per_us_sq_d(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert int8_t to gs_d.
+ * Convert centimetres_per_microseconds_sq_t to metres_per_microseconds_sq_f.
  */
-gs_d i8_to_gs_d(int8_t gs);
+metres_per_microseconds_sq_f cm_per_us_sq_t_to_m_per_us_sq_f(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert int8_t to gs_f.
+ * Convert centimetres_per_microseconds_sq_t to metres_per_microseconds_sq_t.
  */
-gs_f i8_to_gs_f(int8_t gs);
+metres_per_microseconds_sq_t cm_per_us_sq_t_to_m_per_us_sq_t(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert int8_t to gs_t.
+ * Convert centimetres_per_microseconds_sq_t to metres_per_microseconds_sq_u.
  */
-gs_t i8_to_gs_t(int8_t gs);
+metres_per_microseconds_sq_u cm_per_us_sq_t_to_m_per_us_sq_u(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert int8_t to gs_u.
+ * Convert centimetres_per_microseconds_sq_t to metres_per_milliseconds_sq_d.
  */
-gs_u i8_to_gs_u(int8_t gs);
+metres_per_milliseconds_sq_d cm_per_us_sq_t_to_m_per_ms_sq_d(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert int8_t to metresPerSecond2_d.
+ * Convert centimetres_per_microseconds_sq_t to metres_per_milliseconds_sq_f.
  */
-metresPerSecond2_d i8_to_mps2_d(int8_t metresPerSecond2);
+metres_per_milliseconds_sq_f cm_per_us_sq_t_to_m_per_ms_sq_f(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert int8_t to metresPerSecond2_f.
+ * Convert centimetres_per_microseconds_sq_t to metres_per_milliseconds_sq_t.
  */
-metresPerSecond2_f i8_to_mps2_f(int8_t metresPerSecond2);
+metres_per_milliseconds_sq_t cm_per_us_sq_t_to_m_per_ms_sq_t(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert int8_t to metresPerSecond2_t.
+ * Convert centimetres_per_microseconds_sq_t to metres_per_milliseconds_sq_u.
  */
-metresPerSecond2_t i8_to_mps2_t(int8_t metresPerSecond2);
+metres_per_milliseconds_sq_u cm_per_us_sq_t_to_m_per_ms_sq_u(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert int8_t to metresPerSecond2_u.
+ * Convert centimetres_per_microseconds_sq_t to metres_per_seconds_sq_d.
  */
-metresPerSecond2_u i8_to_mps2_u(int8_t metresPerSecond2);
+metres_per_seconds_sq_d cm_per_us_sq_t_to_m_per_s_sq_d(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_d to double.
+ * Convert centimetres_per_microseconds_sq_t to metres_per_seconds_sq_f.
  */
-double mps2_d_to_d(metresPerSecond2_d metresPerSecond2);
+metres_per_seconds_sq_f cm_per_us_sq_t_to_m_per_s_sq_f(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_d to float.
+ * Convert centimetres_per_microseconds_sq_t to metres_per_seconds_sq_t.
  */
-float mps2_d_to_f(metresPerSecond2_d metresPerSecond2);
+metres_per_seconds_sq_t cm_per_us_sq_t_to_m_per_s_sq_t(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_d to gs_d.
+ * Convert centimetres_per_microseconds_sq_t to metres_per_seconds_sq_u.
  */
-gs_d mps2_d_to_gs_d(metresPerSecond2_d metresPerSecond2);
+metres_per_seconds_sq_u cm_per_us_sq_t_to_m_per_s_sq_u(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_d to gs_f.
+ * Convert centimetres_per_microseconds_sq_t to millimetres_per_microseconds_sq_d.
  */
-gs_f mps2_d_to_gs_f(metresPerSecond2_d metresPerSecond2);
+millimetres_per_microseconds_sq_d cm_per_us_sq_t_to_mm_per_us_sq_d(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_d to gs_t.
+ * Convert centimetres_per_microseconds_sq_t to millimetres_per_microseconds_sq_f.
  */
-gs_t mps2_d_to_gs_t(metresPerSecond2_d metresPerSecond2);
+millimetres_per_microseconds_sq_f cm_per_us_sq_t_to_mm_per_us_sq_f(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_d to gs_u.
+ * Convert centimetres_per_microseconds_sq_t to millimetres_per_microseconds_sq_t.
  */
-gs_u mps2_d_to_gs_u(metresPerSecond2_d metresPerSecond2);
+millimetres_per_microseconds_sq_t cm_per_us_sq_t_to_mm_per_us_sq_t(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_d to int16_t.
+ * Convert centimetres_per_microseconds_sq_t to millimetres_per_microseconds_sq_u.
  */
-int16_t mps2_d_to_i16(metresPerSecond2_d metresPerSecond2);
+millimetres_per_microseconds_sq_u cm_per_us_sq_t_to_mm_per_us_sq_u(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_d to int32_t.
+ * Convert centimetres_per_microseconds_sq_t to millimetres_per_milliseconds_sq_d.
  */
-int32_t mps2_d_to_i32(metresPerSecond2_d metresPerSecond2);
+millimetres_per_milliseconds_sq_d cm_per_us_sq_t_to_mm_per_ms_sq_d(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_d to int64_t.
+ * Convert centimetres_per_microseconds_sq_t to millimetres_per_milliseconds_sq_f.
  */
-int64_t mps2_d_to_i64(metresPerSecond2_d metresPerSecond2);
+millimetres_per_milliseconds_sq_f cm_per_us_sq_t_to_mm_per_ms_sq_f(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_d to int8_t.
+ * Convert centimetres_per_microseconds_sq_t to millimetres_per_milliseconds_sq_t.
  */
-int8_t mps2_d_to_i8(metresPerSecond2_d metresPerSecond2);
+millimetres_per_milliseconds_sq_t cm_per_us_sq_t_to_mm_per_ms_sq_t(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_d to metresPerSecond2_f.
+ * Convert centimetres_per_microseconds_sq_t to millimetres_per_milliseconds_sq_u.
  */
-metresPerSecond2_f mps2_d_to_mps2_f(metresPerSecond2_d metresPerSecond2);
+millimetres_per_milliseconds_sq_u cm_per_us_sq_t_to_mm_per_ms_sq_u(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_d to metresPerSecond2_t.
+ * Convert centimetres_per_microseconds_sq_t to millimetres_per_seconds_sq_d.
  */
-metresPerSecond2_t mps2_d_to_mps2_t(metresPerSecond2_d metresPerSecond2);
+millimetres_per_seconds_sq_d cm_per_us_sq_t_to_mm_per_s_sq_d(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_d to metresPerSecond2_u.
+ * Convert centimetres_per_microseconds_sq_t to millimetres_per_seconds_sq_f.
  */
-metresPerSecond2_u mps2_d_to_mps2_u(metresPerSecond2_d metresPerSecond2);
+millimetres_per_seconds_sq_f cm_per_us_sq_t_to_mm_per_s_sq_f(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_d to uint16_t.
+ * Convert centimetres_per_microseconds_sq_t to millimetres_per_seconds_sq_t.
  */
-uint16_t mps2_d_to_u16(metresPerSecond2_d metresPerSecond2);
+millimetres_per_seconds_sq_t cm_per_us_sq_t_to_mm_per_s_sq_t(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_d to uint32_t.
+ * Convert centimetres_per_microseconds_sq_t to millimetres_per_seconds_sq_u.
  */
-uint32_t mps2_d_to_u32(metresPerSecond2_d metresPerSecond2);
+millimetres_per_seconds_sq_u cm_per_us_sq_t_to_mm_per_s_sq_u(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_d to uint64_t.
+ * Convert centimetres_per_microseconds_sq_t to uint16_t.
  */
-uint64_t mps2_d_to_u64(metresPerSecond2_d metresPerSecond2);
+uint16_t cm_per_us_sq_t_to_u16(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_d to uint8_t.
+ * Convert centimetres_per_microseconds_sq_t to uint32_t.
  */
-uint8_t mps2_d_to_u8(metresPerSecond2_d metresPerSecond2);
+uint32_t cm_per_us_sq_t_to_u32(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_f to double.
+ * Convert centimetres_per_microseconds_sq_t to uint64_t.
  */
-double mps2_f_to_d(metresPerSecond2_f metresPerSecond2);
+uint64_t cm_per_us_sq_t_to_u64(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_f to float.
+ * Convert centimetres_per_microseconds_sq_t to uint8_t.
  */
-float mps2_f_to_f(metresPerSecond2_f metresPerSecond2);
+uint8_t cm_per_us_sq_t_to_u8(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_f to gs_d.
+ * Convert centimetres_per_microseconds_sq_u to centimetres_per_microseconds_sq_d.
  */
-gs_d mps2_f_to_gs_d(metresPerSecond2_f metresPerSecond2);
+centimetres_per_microseconds_sq_d cm_per_us_sq_u_to_cm_per_us_sq_d(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_f to gs_f.
+ * Convert centimetres_per_microseconds_sq_u to centimetres_per_microseconds_sq_f.
  */
-gs_f mps2_f_to_gs_f(metresPerSecond2_f metresPerSecond2);
+centimetres_per_microseconds_sq_f cm_per_us_sq_u_to_cm_per_us_sq_f(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_f to gs_t.
+ * Convert centimetres_per_microseconds_sq_u to centimetres_per_microseconds_sq_t.
  */
-gs_t mps2_f_to_gs_t(metresPerSecond2_f metresPerSecond2);
+centimetres_per_microseconds_sq_t cm_per_us_sq_u_to_cm_per_us_sq_t(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_f to gs_u.
+ * Convert centimetres_per_microseconds_sq_u to centimetres_per_milliseconds_sq_d.
  */
-gs_u mps2_f_to_gs_u(metresPerSecond2_f metresPerSecond2);
+centimetres_per_milliseconds_sq_d cm_per_us_sq_u_to_cm_per_ms_sq_d(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_f to int16_t.
+ * Convert centimetres_per_microseconds_sq_u to centimetres_per_milliseconds_sq_f.
  */
-int16_t mps2_f_to_i16(metresPerSecond2_f metresPerSecond2);
+centimetres_per_milliseconds_sq_f cm_per_us_sq_u_to_cm_per_ms_sq_f(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_f to int32_t.
+ * Convert centimetres_per_microseconds_sq_u to centimetres_per_milliseconds_sq_t.
  */
-int32_t mps2_f_to_i32(metresPerSecond2_f metresPerSecond2);
+centimetres_per_milliseconds_sq_t cm_per_us_sq_u_to_cm_per_ms_sq_t(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_f to int64_t.
+ * Convert centimetres_per_microseconds_sq_u to centimetres_per_milliseconds_sq_u.
  */
-int64_t mps2_f_to_i64(metresPerSecond2_f metresPerSecond2);
+centimetres_per_milliseconds_sq_u cm_per_us_sq_u_to_cm_per_ms_sq_u(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_f to int8_t.
+ * Convert centimetres_per_microseconds_sq_u to centimetres_per_seconds_sq_d.
  */
-int8_t mps2_f_to_i8(metresPerSecond2_f metresPerSecond2);
+centimetres_per_seconds_sq_d cm_per_us_sq_u_to_cm_per_s_sq_d(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_f to metresPerSecond2_d.
+ * Convert centimetres_per_microseconds_sq_u to centimetres_per_seconds_sq_f.
  */
-metresPerSecond2_d mps2_f_to_mps2_d(metresPerSecond2_f metresPerSecond2);
+centimetres_per_seconds_sq_f cm_per_us_sq_u_to_cm_per_s_sq_f(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_f to metresPerSecond2_t.
+ * Convert centimetres_per_microseconds_sq_u to centimetres_per_seconds_sq_t.
  */
-metresPerSecond2_t mps2_f_to_mps2_t(metresPerSecond2_f metresPerSecond2);
+centimetres_per_seconds_sq_t cm_per_us_sq_u_to_cm_per_s_sq_t(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_f to metresPerSecond2_u.
+ * Convert centimetres_per_microseconds_sq_u to centimetres_per_seconds_sq_u.
  */
-metresPerSecond2_u mps2_f_to_mps2_u(metresPerSecond2_f metresPerSecond2);
+centimetres_per_seconds_sq_u cm_per_us_sq_u_to_cm_per_s_sq_u(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_f to uint16_t.
+ * Convert centimetres_per_microseconds_sq_u to double.
  */
-uint16_t mps2_f_to_u16(metresPerSecond2_f metresPerSecond2);
+double cm_per_us_sq_u_to_d(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_f to uint32_t.
+ * Convert centimetres_per_microseconds_sq_u to float.
  */
-uint32_t mps2_f_to_u32(metresPerSecond2_f metresPerSecond2);
+float cm_per_us_sq_u_to_f(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_f to uint64_t.
+ * Convert centimetres_per_microseconds_sq_u to int16_t.
  */
-uint64_t mps2_f_to_u64(metresPerSecond2_f metresPerSecond2);
+int16_t cm_per_us_sq_u_to_i16(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_f to uint8_t.
+ * Convert centimetres_per_microseconds_sq_u to int32_t.
  */
-uint8_t mps2_f_to_u8(metresPerSecond2_f metresPerSecond2);
+int32_t cm_per_us_sq_u_to_i32(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_t to double.
+ * Convert centimetres_per_microseconds_sq_u to int64_t.
  */
-double mps2_t_to_d(metresPerSecond2_t metresPerSecond2);
+int64_t cm_per_us_sq_u_to_i64(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_t to float.
+ * Convert centimetres_per_microseconds_sq_u to int8_t.
  */
-float mps2_t_to_f(metresPerSecond2_t metresPerSecond2);
+int8_t cm_per_us_sq_u_to_i8(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_t to gs_d.
+ * Convert centimetres_per_microseconds_sq_u to metres_per_microseconds_sq_d.
  */
-gs_d mps2_t_to_gs_d(metresPerSecond2_t metresPerSecond2);
+metres_per_microseconds_sq_d cm_per_us_sq_u_to_m_per_us_sq_d(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_t to gs_f.
+ * Convert centimetres_per_microseconds_sq_u to metres_per_microseconds_sq_f.
  */
-gs_f mps2_t_to_gs_f(metresPerSecond2_t metresPerSecond2);
+metres_per_microseconds_sq_f cm_per_us_sq_u_to_m_per_us_sq_f(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_t to gs_t.
+ * Convert centimetres_per_microseconds_sq_u to metres_per_microseconds_sq_t.
  */
-gs_t mps2_t_to_gs_t(metresPerSecond2_t metresPerSecond2);
+metres_per_microseconds_sq_t cm_per_us_sq_u_to_m_per_us_sq_t(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_t to gs_u.
+ * Convert centimetres_per_microseconds_sq_u to metres_per_microseconds_sq_u.
  */
-gs_u mps2_t_to_gs_u(metresPerSecond2_t metresPerSecond2);
+metres_per_microseconds_sq_u cm_per_us_sq_u_to_m_per_us_sq_u(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_t to int16_t.
+ * Convert centimetres_per_microseconds_sq_u to metres_per_milliseconds_sq_d.
  */
-int16_t mps2_t_to_i16(metresPerSecond2_t metresPerSecond2);
+metres_per_milliseconds_sq_d cm_per_us_sq_u_to_m_per_ms_sq_d(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_t to int32_t.
+ * Convert centimetres_per_microseconds_sq_u to metres_per_milliseconds_sq_f.
  */
-int32_t mps2_t_to_i32(metresPerSecond2_t metresPerSecond2);
+metres_per_milliseconds_sq_f cm_per_us_sq_u_to_m_per_ms_sq_f(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_t to int64_t.
+ * Convert centimetres_per_microseconds_sq_u to metres_per_milliseconds_sq_t.
  */
-int64_t mps2_t_to_i64(metresPerSecond2_t metresPerSecond2);
+metres_per_milliseconds_sq_t cm_per_us_sq_u_to_m_per_ms_sq_t(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_t to int8_t.
+ * Convert centimetres_per_microseconds_sq_u to metres_per_milliseconds_sq_u.
  */
-int8_t mps2_t_to_i8(metresPerSecond2_t metresPerSecond2);
+metres_per_milliseconds_sq_u cm_per_us_sq_u_to_m_per_ms_sq_u(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_t to metresPerSecond2_d.
+ * Convert centimetres_per_microseconds_sq_u to metres_per_seconds_sq_d.
  */
-metresPerSecond2_d mps2_t_to_mps2_d(metresPerSecond2_t metresPerSecond2);
+metres_per_seconds_sq_d cm_per_us_sq_u_to_m_per_s_sq_d(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_t to metresPerSecond2_f.
+ * Convert centimetres_per_microseconds_sq_u to metres_per_seconds_sq_f.
  */
-metresPerSecond2_f mps2_t_to_mps2_f(metresPerSecond2_t metresPerSecond2);
+metres_per_seconds_sq_f cm_per_us_sq_u_to_m_per_s_sq_f(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_t to metresPerSecond2_u.
+ * Convert centimetres_per_microseconds_sq_u to metres_per_seconds_sq_t.
  */
-metresPerSecond2_u mps2_t_to_mps2_u(metresPerSecond2_t metresPerSecond2);
+metres_per_seconds_sq_t cm_per_us_sq_u_to_m_per_s_sq_t(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_t to uint16_t.
+ * Convert centimetres_per_microseconds_sq_u to metres_per_seconds_sq_u.
  */
-uint16_t mps2_t_to_u16(metresPerSecond2_t metresPerSecond2);
+metres_per_seconds_sq_u cm_per_us_sq_u_to_m_per_s_sq_u(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_t to uint32_t.
+ * Convert centimetres_per_microseconds_sq_u to millimetres_per_microseconds_sq_d.
  */
-uint32_t mps2_t_to_u32(metresPerSecond2_t metresPerSecond2);
+millimetres_per_microseconds_sq_d cm_per_us_sq_u_to_mm_per_us_sq_d(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_t to uint64_t.
+ * Convert centimetres_per_microseconds_sq_u to millimetres_per_microseconds_sq_f.
  */
-uint64_t mps2_t_to_u64(metresPerSecond2_t metresPerSecond2);
+millimetres_per_microseconds_sq_f cm_per_us_sq_u_to_mm_per_us_sq_f(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_t to uint8_t.
+ * Convert centimetres_per_microseconds_sq_u to millimetres_per_microseconds_sq_t.
  */
-uint8_t mps2_t_to_u8(metresPerSecond2_t metresPerSecond2);
+millimetres_per_microseconds_sq_t cm_per_us_sq_u_to_mm_per_us_sq_t(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_u to double.
+ * Convert centimetres_per_microseconds_sq_u to millimetres_per_microseconds_sq_u.
  */
-double mps2_u_to_d(metresPerSecond2_u metresPerSecond2);
+millimetres_per_microseconds_sq_u cm_per_us_sq_u_to_mm_per_us_sq_u(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_u to float.
+ * Convert centimetres_per_microseconds_sq_u to millimetres_per_milliseconds_sq_d.
  */
-float mps2_u_to_f(metresPerSecond2_u metresPerSecond2);
+millimetres_per_milliseconds_sq_d cm_per_us_sq_u_to_mm_per_ms_sq_d(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_u to gs_d.
+ * Convert centimetres_per_microseconds_sq_u to millimetres_per_milliseconds_sq_f.
  */
-gs_d mps2_u_to_gs_d(metresPerSecond2_u metresPerSecond2);
+millimetres_per_milliseconds_sq_f cm_per_us_sq_u_to_mm_per_ms_sq_f(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_u to gs_f.
+ * Convert centimetres_per_microseconds_sq_u to millimetres_per_milliseconds_sq_t.
  */
-gs_f mps2_u_to_gs_f(metresPerSecond2_u metresPerSecond2);
+millimetres_per_milliseconds_sq_t cm_per_us_sq_u_to_mm_per_ms_sq_t(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_u to gs_t.
+ * Convert centimetres_per_microseconds_sq_u to millimetres_per_milliseconds_sq_u.
  */
-gs_t mps2_u_to_gs_t(metresPerSecond2_u metresPerSecond2);
+millimetres_per_milliseconds_sq_u cm_per_us_sq_u_to_mm_per_ms_sq_u(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_u to gs_u.
+ * Convert centimetres_per_microseconds_sq_u to millimetres_per_seconds_sq_d.
  */
-gs_u mps2_u_to_gs_u(metresPerSecond2_u metresPerSecond2);
+millimetres_per_seconds_sq_d cm_per_us_sq_u_to_mm_per_s_sq_d(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_u to int16_t.
+ * Convert centimetres_per_microseconds_sq_u to millimetres_per_seconds_sq_f.
  */
-int16_t mps2_u_to_i16(metresPerSecond2_u metresPerSecond2);
+millimetres_per_seconds_sq_f cm_per_us_sq_u_to_mm_per_s_sq_f(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_u to int32_t.
+ * Convert centimetres_per_microseconds_sq_u to millimetres_per_seconds_sq_t.
  */
-int32_t mps2_u_to_i32(metresPerSecond2_u metresPerSecond2);
+millimetres_per_seconds_sq_t cm_per_us_sq_u_to_mm_per_s_sq_t(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_u to int64_t.
+ * Convert centimetres_per_microseconds_sq_u to millimetres_per_seconds_sq_u.
  */
-int64_t mps2_u_to_i64(metresPerSecond2_u metresPerSecond2);
+millimetres_per_seconds_sq_u cm_per_us_sq_u_to_mm_per_s_sq_u(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_u to int8_t.
+ * Convert centimetres_per_microseconds_sq_u to uint16_t.
  */
-int8_t mps2_u_to_i8(metresPerSecond2_u metresPerSecond2);
+uint16_t cm_per_us_sq_u_to_u16(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_u to metresPerSecond2_d.
+ * Convert centimetres_per_microseconds_sq_u to uint32_t.
  */
-metresPerSecond2_d mps2_u_to_mps2_d(metresPerSecond2_u metresPerSecond2);
+uint32_t cm_per_us_sq_u_to_u32(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_u to metresPerSecond2_f.
+ * Convert centimetres_per_microseconds_sq_u to uint64_t.
  */
-metresPerSecond2_f mps2_u_to_mps2_f(metresPerSecond2_u metresPerSecond2);
+uint64_t cm_per_us_sq_u_to_u64(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_u to metresPerSecond2_t.
+ * Convert centimetres_per_microseconds_sq_u to uint8_t.
  */
-metresPerSecond2_t mps2_u_to_mps2_t(metresPerSecond2_u metresPerSecond2);
+uint8_t cm_per_us_sq_u_to_u8(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
 
 /**
- * Convert metresPerSecond2_u to uint16_t.
+ * Convert centimetres_per_milliseconds_sq_d to centimetres_per_microseconds_sq_d.
  */
-uint16_t mps2_u_to_u16(metresPerSecond2_u metresPerSecond2);
+centimetres_per_microseconds_sq_d cm_per_ms_sq_d_to_cm_per_us_sq_d(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert metresPerSecond2_u to uint32_t.
+ * Convert centimetres_per_milliseconds_sq_d to centimetres_per_microseconds_sq_f.
  */
-uint32_t mps2_u_to_u32(metresPerSecond2_u metresPerSecond2);
+centimetres_per_microseconds_sq_f cm_per_ms_sq_d_to_cm_per_us_sq_f(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert metresPerSecond2_u to uint64_t.
+ * Convert centimetres_per_milliseconds_sq_d to centimetres_per_microseconds_sq_t.
  */
-uint64_t mps2_u_to_u64(metresPerSecond2_u metresPerSecond2);
+centimetres_per_microseconds_sq_t cm_per_ms_sq_d_to_cm_per_us_sq_t(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert metresPerSecond2_u to uint8_t.
+ * Convert centimetres_per_milliseconds_sq_d to centimetres_per_microseconds_sq_u.
  */
-uint8_t mps2_u_to_u8(metresPerSecond2_u metresPerSecond2);
+centimetres_per_microseconds_sq_u cm_per_ms_sq_d_to_cm_per_us_sq_u(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint16_t to gs_d.
+ * Convert centimetres_per_milliseconds_sq_d to centimetres_per_milliseconds_sq_f.
  */
-gs_d u16_to_gs_d(uint16_t gs);
+centimetres_per_milliseconds_sq_f cm_per_ms_sq_d_to_cm_per_ms_sq_f(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint16_t to gs_f.
+ * Convert centimetres_per_milliseconds_sq_d to centimetres_per_milliseconds_sq_t.
  */
-gs_f u16_to_gs_f(uint16_t gs);
+centimetres_per_milliseconds_sq_t cm_per_ms_sq_d_to_cm_per_ms_sq_t(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint16_t to gs_t.
+ * Convert centimetres_per_milliseconds_sq_d to centimetres_per_milliseconds_sq_u.
  */
-gs_t u16_to_gs_t(uint16_t gs);
+centimetres_per_milliseconds_sq_u cm_per_ms_sq_d_to_cm_per_ms_sq_u(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint16_t to gs_u.
+ * Convert centimetres_per_milliseconds_sq_d to centimetres_per_seconds_sq_d.
  */
-gs_u u16_to_gs_u(uint16_t gs);
+centimetres_per_seconds_sq_d cm_per_ms_sq_d_to_cm_per_s_sq_d(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint16_t to metresPerSecond2_d.
+ * Convert centimetres_per_milliseconds_sq_d to centimetres_per_seconds_sq_f.
  */
-metresPerSecond2_d u16_to_mps2_d(uint16_t metresPerSecond2);
+centimetres_per_seconds_sq_f cm_per_ms_sq_d_to_cm_per_s_sq_f(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint16_t to metresPerSecond2_f.
+ * Convert centimetres_per_milliseconds_sq_d to centimetres_per_seconds_sq_t.
  */
-metresPerSecond2_f u16_to_mps2_f(uint16_t metresPerSecond2);
+centimetres_per_seconds_sq_t cm_per_ms_sq_d_to_cm_per_s_sq_t(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint16_t to metresPerSecond2_t.
+ * Convert centimetres_per_milliseconds_sq_d to centimetres_per_seconds_sq_u.
  */
-metresPerSecond2_t u16_to_mps2_t(uint16_t metresPerSecond2);
+centimetres_per_seconds_sq_u cm_per_ms_sq_d_to_cm_per_s_sq_u(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint16_t to metresPerSecond2_u.
+ * Convert centimetres_per_milliseconds_sq_d to double.
  */
-metresPerSecond2_u u16_to_mps2_u(uint16_t metresPerSecond2);
+double cm_per_ms_sq_d_to_d(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint32_t to gs_d.
+ * Convert centimetres_per_milliseconds_sq_d to float.
  */
-gs_d u32_to_gs_d(uint32_t gs);
+float cm_per_ms_sq_d_to_f(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint32_t to gs_f.
+ * Convert centimetres_per_milliseconds_sq_d to int16_t.
  */
-gs_f u32_to_gs_f(uint32_t gs);
+int16_t cm_per_ms_sq_d_to_i16(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint32_t to gs_t.
+ * Convert centimetres_per_milliseconds_sq_d to int32_t.
  */
-gs_t u32_to_gs_t(uint32_t gs);
+int32_t cm_per_ms_sq_d_to_i32(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint32_t to gs_u.
+ * Convert centimetres_per_milliseconds_sq_d to int64_t.
  */
-gs_u u32_to_gs_u(uint32_t gs);
+int64_t cm_per_ms_sq_d_to_i64(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint32_t to metresPerSecond2_d.
+ * Convert centimetres_per_milliseconds_sq_d to int8_t.
  */
-metresPerSecond2_d u32_to_mps2_d(uint32_t metresPerSecond2);
+int8_t cm_per_ms_sq_d_to_i8(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint32_t to metresPerSecond2_f.
+ * Convert centimetres_per_milliseconds_sq_d to metres_per_microseconds_sq_d.
  */
-metresPerSecond2_f u32_to_mps2_f(uint32_t metresPerSecond2);
+metres_per_microseconds_sq_d cm_per_ms_sq_d_to_m_per_us_sq_d(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint32_t to metresPerSecond2_t.
+ * Convert centimetres_per_milliseconds_sq_d to metres_per_microseconds_sq_f.
  */
-metresPerSecond2_t u32_to_mps2_t(uint32_t metresPerSecond2);
+metres_per_microseconds_sq_f cm_per_ms_sq_d_to_m_per_us_sq_f(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint32_t to metresPerSecond2_u.
+ * Convert centimetres_per_milliseconds_sq_d to metres_per_microseconds_sq_t.
  */
-metresPerSecond2_u u32_to_mps2_u(uint32_t metresPerSecond2);
+metres_per_microseconds_sq_t cm_per_ms_sq_d_to_m_per_us_sq_t(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint64_t to gs_d.
+ * Convert centimetres_per_milliseconds_sq_d to metres_per_microseconds_sq_u.
  */
-gs_d u64_to_gs_d(uint64_t gs);
+metres_per_microseconds_sq_u cm_per_ms_sq_d_to_m_per_us_sq_u(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint64_t to gs_f.
+ * Convert centimetres_per_milliseconds_sq_d to metres_per_milliseconds_sq_d.
  */
-gs_f u64_to_gs_f(uint64_t gs);
+metres_per_milliseconds_sq_d cm_per_ms_sq_d_to_m_per_ms_sq_d(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint64_t to gs_t.
+ * Convert centimetres_per_milliseconds_sq_d to metres_per_milliseconds_sq_f.
  */
-gs_t u64_to_gs_t(uint64_t gs);
+metres_per_milliseconds_sq_f cm_per_ms_sq_d_to_m_per_ms_sq_f(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint64_t to gs_u.
+ * Convert centimetres_per_milliseconds_sq_d to metres_per_milliseconds_sq_t.
  */
-gs_u u64_to_gs_u(uint64_t gs);
+metres_per_milliseconds_sq_t cm_per_ms_sq_d_to_m_per_ms_sq_t(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint64_t to metresPerSecond2_d.
+ * Convert centimetres_per_milliseconds_sq_d to metres_per_milliseconds_sq_u.
  */
-metresPerSecond2_d u64_to_mps2_d(uint64_t metresPerSecond2);
+metres_per_milliseconds_sq_u cm_per_ms_sq_d_to_m_per_ms_sq_u(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint64_t to metresPerSecond2_f.
+ * Convert centimetres_per_milliseconds_sq_d to metres_per_seconds_sq_d.
  */
-metresPerSecond2_f u64_to_mps2_f(uint64_t metresPerSecond2);
+metres_per_seconds_sq_d cm_per_ms_sq_d_to_m_per_s_sq_d(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint64_t to metresPerSecond2_t.
+ * Convert centimetres_per_milliseconds_sq_d to metres_per_seconds_sq_f.
  */
-metresPerSecond2_t u64_to_mps2_t(uint64_t metresPerSecond2);
+metres_per_seconds_sq_f cm_per_ms_sq_d_to_m_per_s_sq_f(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint64_t to metresPerSecond2_u.
+ * Convert centimetres_per_milliseconds_sq_d to metres_per_seconds_sq_t.
  */
-metresPerSecond2_u u64_to_mps2_u(uint64_t metresPerSecond2);
+metres_per_seconds_sq_t cm_per_ms_sq_d_to_m_per_s_sq_t(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint8_t to gs_d.
+ * Convert centimetres_per_milliseconds_sq_d to metres_per_seconds_sq_u.
  */
-gs_d u8_to_gs_d(uint8_t gs);
+metres_per_seconds_sq_u cm_per_ms_sq_d_to_m_per_s_sq_u(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint8_t to gs_f.
+ * Convert centimetres_per_milliseconds_sq_d to millimetres_per_microseconds_sq_d.
  */
-gs_f u8_to_gs_f(uint8_t gs);
+millimetres_per_microseconds_sq_d cm_per_ms_sq_d_to_mm_per_us_sq_d(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint8_t to gs_t.
+ * Convert centimetres_per_milliseconds_sq_d to millimetres_per_microseconds_sq_f.
  */
-gs_t u8_to_gs_t(uint8_t gs);
+millimetres_per_microseconds_sq_f cm_per_ms_sq_d_to_mm_per_us_sq_f(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint8_t to gs_u.
+ * Convert centimetres_per_milliseconds_sq_d to millimetres_per_microseconds_sq_t.
  */
-gs_u u8_to_gs_u(uint8_t gs);
+millimetres_per_microseconds_sq_t cm_per_ms_sq_d_to_mm_per_us_sq_t(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint8_t to metresPerSecond2_d.
+ * Convert centimetres_per_milliseconds_sq_d to millimetres_per_microseconds_sq_u.
  */
-metresPerSecond2_d u8_to_mps2_d(uint8_t metresPerSecond2);
+millimetres_per_microseconds_sq_u cm_per_ms_sq_d_to_mm_per_us_sq_u(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint8_t to metresPerSecond2_f.
+ * Convert centimetres_per_milliseconds_sq_d to millimetres_per_milliseconds_sq_d.
  */
-metresPerSecond2_f u8_to_mps2_f(uint8_t metresPerSecond2);
+millimetres_per_milliseconds_sq_d cm_per_ms_sq_d_to_mm_per_ms_sq_d(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint8_t to metresPerSecond2_t.
+ * Convert centimetres_per_milliseconds_sq_d to millimetres_per_milliseconds_sq_f.
  */
-metresPerSecond2_t u8_to_mps2_t(uint8_t metresPerSecond2);
+millimetres_per_milliseconds_sq_f cm_per_ms_sq_d_to_mm_per_ms_sq_f(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
 
 /**
- * Convert uint8_t to metresPerSecond2_u.
+ * Convert centimetres_per_milliseconds_sq_d to millimetres_per_milliseconds_sq_t.
  */
-metresPerSecond2_u u8_to_mps2_u(uint8_t metresPerSecond2);
+millimetres_per_milliseconds_sq_t cm_per_ms_sq_d_to_mm_per_ms_sq_t(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_d to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u cm_per_ms_sq_d_to_mm_per_ms_sq_u(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_d to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d cm_per_ms_sq_d_to_mm_per_s_sq_d(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_d to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f cm_per_ms_sq_d_to_mm_per_s_sq_f(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_d to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t cm_per_ms_sq_d_to_mm_per_s_sq_t(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_d to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u cm_per_ms_sq_d_to_mm_per_s_sq_u(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_d to uint16_t.
+ */
+uint16_t cm_per_ms_sq_d_to_u16(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_d to uint32_t.
+ */
+uint32_t cm_per_ms_sq_d_to_u32(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_d to uint64_t.
+ */
+uint64_t cm_per_ms_sq_d_to_u64(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_d to uint8_t.
+ */
+uint8_t cm_per_ms_sq_d_to_u8(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d cm_per_ms_sq_f_to_cm_per_us_sq_d(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f cm_per_ms_sq_f_to_cm_per_us_sq_f(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t cm_per_ms_sq_f_to_cm_per_us_sq_t(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u cm_per_ms_sq_f_to_cm_per_us_sq_u(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d cm_per_ms_sq_f_to_cm_per_ms_sq_d(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t cm_per_ms_sq_f_to_cm_per_ms_sq_t(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u cm_per_ms_sq_f_to_cm_per_ms_sq_u(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d cm_per_ms_sq_f_to_cm_per_s_sq_d(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f cm_per_ms_sq_f_to_cm_per_s_sq_f(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t cm_per_ms_sq_f_to_cm_per_s_sq_t(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u cm_per_ms_sq_f_to_cm_per_s_sq_u(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to double.
+ */
+double cm_per_ms_sq_f_to_d(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to float.
+ */
+float cm_per_ms_sq_f_to_f(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to int16_t.
+ */
+int16_t cm_per_ms_sq_f_to_i16(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to int32_t.
+ */
+int32_t cm_per_ms_sq_f_to_i32(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to int64_t.
+ */
+int64_t cm_per_ms_sq_f_to_i64(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to int8_t.
+ */
+int8_t cm_per_ms_sq_f_to_i8(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d cm_per_ms_sq_f_to_m_per_us_sq_d(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f cm_per_ms_sq_f_to_m_per_us_sq_f(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t cm_per_ms_sq_f_to_m_per_us_sq_t(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u cm_per_ms_sq_f_to_m_per_us_sq_u(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d cm_per_ms_sq_f_to_m_per_ms_sq_d(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f cm_per_ms_sq_f_to_m_per_ms_sq_f(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t cm_per_ms_sq_f_to_m_per_ms_sq_t(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u cm_per_ms_sq_f_to_m_per_ms_sq_u(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d cm_per_ms_sq_f_to_m_per_s_sq_d(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f cm_per_ms_sq_f_to_m_per_s_sq_f(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t cm_per_ms_sq_f_to_m_per_s_sq_t(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u cm_per_ms_sq_f_to_m_per_s_sq_u(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d cm_per_ms_sq_f_to_mm_per_us_sq_d(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f cm_per_ms_sq_f_to_mm_per_us_sq_f(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t cm_per_ms_sq_f_to_mm_per_us_sq_t(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u cm_per_ms_sq_f_to_mm_per_us_sq_u(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d cm_per_ms_sq_f_to_mm_per_ms_sq_d(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f cm_per_ms_sq_f_to_mm_per_ms_sq_f(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t cm_per_ms_sq_f_to_mm_per_ms_sq_t(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u cm_per_ms_sq_f_to_mm_per_ms_sq_u(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d cm_per_ms_sq_f_to_mm_per_s_sq_d(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f cm_per_ms_sq_f_to_mm_per_s_sq_f(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t cm_per_ms_sq_f_to_mm_per_s_sq_t(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u cm_per_ms_sq_f_to_mm_per_s_sq_u(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to uint16_t.
+ */
+uint16_t cm_per_ms_sq_f_to_u16(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to uint32_t.
+ */
+uint32_t cm_per_ms_sq_f_to_u32(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to uint64_t.
+ */
+uint64_t cm_per_ms_sq_f_to_u64(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_f to uint8_t.
+ */
+uint8_t cm_per_ms_sq_f_to_u8(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d cm_per_ms_sq_t_to_cm_per_us_sq_d(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f cm_per_ms_sq_t_to_cm_per_us_sq_f(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t cm_per_ms_sq_t_to_cm_per_us_sq_t(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u cm_per_ms_sq_t_to_cm_per_us_sq_u(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d cm_per_ms_sq_t_to_cm_per_ms_sq_d(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f cm_per_ms_sq_t_to_cm_per_ms_sq_f(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u cm_per_ms_sq_t_to_cm_per_ms_sq_u(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d cm_per_ms_sq_t_to_cm_per_s_sq_d(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f cm_per_ms_sq_t_to_cm_per_s_sq_f(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t cm_per_ms_sq_t_to_cm_per_s_sq_t(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u cm_per_ms_sq_t_to_cm_per_s_sq_u(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to double.
+ */
+double cm_per_ms_sq_t_to_d(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to float.
+ */
+float cm_per_ms_sq_t_to_f(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to int16_t.
+ */
+int16_t cm_per_ms_sq_t_to_i16(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to int32_t.
+ */
+int32_t cm_per_ms_sq_t_to_i32(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to int64_t.
+ */
+int64_t cm_per_ms_sq_t_to_i64(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to int8_t.
+ */
+int8_t cm_per_ms_sq_t_to_i8(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d cm_per_ms_sq_t_to_m_per_us_sq_d(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f cm_per_ms_sq_t_to_m_per_us_sq_f(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t cm_per_ms_sq_t_to_m_per_us_sq_t(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u cm_per_ms_sq_t_to_m_per_us_sq_u(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d cm_per_ms_sq_t_to_m_per_ms_sq_d(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f cm_per_ms_sq_t_to_m_per_ms_sq_f(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t cm_per_ms_sq_t_to_m_per_ms_sq_t(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u cm_per_ms_sq_t_to_m_per_ms_sq_u(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d cm_per_ms_sq_t_to_m_per_s_sq_d(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f cm_per_ms_sq_t_to_m_per_s_sq_f(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t cm_per_ms_sq_t_to_m_per_s_sq_t(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u cm_per_ms_sq_t_to_m_per_s_sq_u(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d cm_per_ms_sq_t_to_mm_per_us_sq_d(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f cm_per_ms_sq_t_to_mm_per_us_sq_f(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t cm_per_ms_sq_t_to_mm_per_us_sq_t(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u cm_per_ms_sq_t_to_mm_per_us_sq_u(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d cm_per_ms_sq_t_to_mm_per_ms_sq_d(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f cm_per_ms_sq_t_to_mm_per_ms_sq_f(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t cm_per_ms_sq_t_to_mm_per_ms_sq_t(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u cm_per_ms_sq_t_to_mm_per_ms_sq_u(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d cm_per_ms_sq_t_to_mm_per_s_sq_d(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f cm_per_ms_sq_t_to_mm_per_s_sq_f(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t cm_per_ms_sq_t_to_mm_per_s_sq_t(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u cm_per_ms_sq_t_to_mm_per_s_sq_u(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to uint16_t.
+ */
+uint16_t cm_per_ms_sq_t_to_u16(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to uint32_t.
+ */
+uint32_t cm_per_ms_sq_t_to_u32(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to uint64_t.
+ */
+uint64_t cm_per_ms_sq_t_to_u64(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_t to uint8_t.
+ */
+uint8_t cm_per_ms_sq_t_to_u8(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d cm_per_ms_sq_u_to_cm_per_us_sq_d(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f cm_per_ms_sq_u_to_cm_per_us_sq_f(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t cm_per_ms_sq_u_to_cm_per_us_sq_t(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u cm_per_ms_sq_u_to_cm_per_us_sq_u(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d cm_per_ms_sq_u_to_cm_per_ms_sq_d(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f cm_per_ms_sq_u_to_cm_per_ms_sq_f(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t cm_per_ms_sq_u_to_cm_per_ms_sq_t(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d cm_per_ms_sq_u_to_cm_per_s_sq_d(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f cm_per_ms_sq_u_to_cm_per_s_sq_f(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t cm_per_ms_sq_u_to_cm_per_s_sq_t(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u cm_per_ms_sq_u_to_cm_per_s_sq_u(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to double.
+ */
+double cm_per_ms_sq_u_to_d(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to float.
+ */
+float cm_per_ms_sq_u_to_f(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to int16_t.
+ */
+int16_t cm_per_ms_sq_u_to_i16(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to int32_t.
+ */
+int32_t cm_per_ms_sq_u_to_i32(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to int64_t.
+ */
+int64_t cm_per_ms_sq_u_to_i64(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to int8_t.
+ */
+int8_t cm_per_ms_sq_u_to_i8(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d cm_per_ms_sq_u_to_m_per_us_sq_d(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f cm_per_ms_sq_u_to_m_per_us_sq_f(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t cm_per_ms_sq_u_to_m_per_us_sq_t(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u cm_per_ms_sq_u_to_m_per_us_sq_u(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d cm_per_ms_sq_u_to_m_per_ms_sq_d(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f cm_per_ms_sq_u_to_m_per_ms_sq_f(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t cm_per_ms_sq_u_to_m_per_ms_sq_t(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u cm_per_ms_sq_u_to_m_per_ms_sq_u(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d cm_per_ms_sq_u_to_m_per_s_sq_d(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f cm_per_ms_sq_u_to_m_per_s_sq_f(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t cm_per_ms_sq_u_to_m_per_s_sq_t(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u cm_per_ms_sq_u_to_m_per_s_sq_u(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d cm_per_ms_sq_u_to_mm_per_us_sq_d(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f cm_per_ms_sq_u_to_mm_per_us_sq_f(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t cm_per_ms_sq_u_to_mm_per_us_sq_t(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u cm_per_ms_sq_u_to_mm_per_us_sq_u(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d cm_per_ms_sq_u_to_mm_per_ms_sq_d(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f cm_per_ms_sq_u_to_mm_per_ms_sq_f(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t cm_per_ms_sq_u_to_mm_per_ms_sq_t(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u cm_per_ms_sq_u_to_mm_per_ms_sq_u(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d cm_per_ms_sq_u_to_mm_per_s_sq_d(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f cm_per_ms_sq_u_to_mm_per_s_sq_f(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t cm_per_ms_sq_u_to_mm_per_s_sq_t(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u cm_per_ms_sq_u_to_mm_per_s_sq_u(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to uint16_t.
+ */
+uint16_t cm_per_ms_sq_u_to_u16(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to uint32_t.
+ */
+uint32_t cm_per_ms_sq_u_to_u32(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to uint64_t.
+ */
+uint64_t cm_per_ms_sq_u_to_u64(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_milliseconds_sq_u to uint8_t.
+ */
+uint8_t cm_per_ms_sq_u_to_u8(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d cm_per_s_sq_d_to_cm_per_us_sq_d(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f cm_per_s_sq_d_to_cm_per_us_sq_f(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t cm_per_s_sq_d_to_cm_per_us_sq_t(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u cm_per_s_sq_d_to_cm_per_us_sq_u(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d cm_per_s_sq_d_to_cm_per_ms_sq_d(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f cm_per_s_sq_d_to_cm_per_ms_sq_f(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t cm_per_s_sq_d_to_cm_per_ms_sq_t(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u cm_per_s_sq_d_to_cm_per_ms_sq_u(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f cm_per_s_sq_d_to_cm_per_s_sq_f(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t cm_per_s_sq_d_to_cm_per_s_sq_t(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u cm_per_s_sq_d_to_cm_per_s_sq_u(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to double.
+ */
+double cm_per_s_sq_d_to_d(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to float.
+ */
+float cm_per_s_sq_d_to_f(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to int16_t.
+ */
+int16_t cm_per_s_sq_d_to_i16(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to int32_t.
+ */
+int32_t cm_per_s_sq_d_to_i32(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to int64_t.
+ */
+int64_t cm_per_s_sq_d_to_i64(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to int8_t.
+ */
+int8_t cm_per_s_sq_d_to_i8(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d cm_per_s_sq_d_to_m_per_us_sq_d(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f cm_per_s_sq_d_to_m_per_us_sq_f(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t cm_per_s_sq_d_to_m_per_us_sq_t(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u cm_per_s_sq_d_to_m_per_us_sq_u(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d cm_per_s_sq_d_to_m_per_ms_sq_d(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f cm_per_s_sq_d_to_m_per_ms_sq_f(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t cm_per_s_sq_d_to_m_per_ms_sq_t(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u cm_per_s_sq_d_to_m_per_ms_sq_u(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d cm_per_s_sq_d_to_m_per_s_sq_d(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f cm_per_s_sq_d_to_m_per_s_sq_f(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t cm_per_s_sq_d_to_m_per_s_sq_t(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u cm_per_s_sq_d_to_m_per_s_sq_u(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d cm_per_s_sq_d_to_mm_per_us_sq_d(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f cm_per_s_sq_d_to_mm_per_us_sq_f(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t cm_per_s_sq_d_to_mm_per_us_sq_t(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u cm_per_s_sq_d_to_mm_per_us_sq_u(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d cm_per_s_sq_d_to_mm_per_ms_sq_d(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f cm_per_s_sq_d_to_mm_per_ms_sq_f(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t cm_per_s_sq_d_to_mm_per_ms_sq_t(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u cm_per_s_sq_d_to_mm_per_ms_sq_u(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d cm_per_s_sq_d_to_mm_per_s_sq_d(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f cm_per_s_sq_d_to_mm_per_s_sq_f(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t cm_per_s_sq_d_to_mm_per_s_sq_t(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u cm_per_s_sq_d_to_mm_per_s_sq_u(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to uint16_t.
+ */
+uint16_t cm_per_s_sq_d_to_u16(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to uint32_t.
+ */
+uint32_t cm_per_s_sq_d_to_u32(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to uint64_t.
+ */
+uint64_t cm_per_s_sq_d_to_u64(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_d to uint8_t.
+ */
+uint8_t cm_per_s_sq_d_to_u8(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d cm_per_s_sq_f_to_cm_per_us_sq_d(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f cm_per_s_sq_f_to_cm_per_us_sq_f(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t cm_per_s_sq_f_to_cm_per_us_sq_t(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u cm_per_s_sq_f_to_cm_per_us_sq_u(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d cm_per_s_sq_f_to_cm_per_ms_sq_d(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f cm_per_s_sq_f_to_cm_per_ms_sq_f(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t cm_per_s_sq_f_to_cm_per_ms_sq_t(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u cm_per_s_sq_f_to_cm_per_ms_sq_u(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d cm_per_s_sq_f_to_cm_per_s_sq_d(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t cm_per_s_sq_f_to_cm_per_s_sq_t(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u cm_per_s_sq_f_to_cm_per_s_sq_u(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to double.
+ */
+double cm_per_s_sq_f_to_d(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to float.
+ */
+float cm_per_s_sq_f_to_f(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to int16_t.
+ */
+int16_t cm_per_s_sq_f_to_i16(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to int32_t.
+ */
+int32_t cm_per_s_sq_f_to_i32(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to int64_t.
+ */
+int64_t cm_per_s_sq_f_to_i64(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to int8_t.
+ */
+int8_t cm_per_s_sq_f_to_i8(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d cm_per_s_sq_f_to_m_per_us_sq_d(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f cm_per_s_sq_f_to_m_per_us_sq_f(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t cm_per_s_sq_f_to_m_per_us_sq_t(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u cm_per_s_sq_f_to_m_per_us_sq_u(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d cm_per_s_sq_f_to_m_per_ms_sq_d(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f cm_per_s_sq_f_to_m_per_ms_sq_f(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t cm_per_s_sq_f_to_m_per_ms_sq_t(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u cm_per_s_sq_f_to_m_per_ms_sq_u(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d cm_per_s_sq_f_to_m_per_s_sq_d(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f cm_per_s_sq_f_to_m_per_s_sq_f(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t cm_per_s_sq_f_to_m_per_s_sq_t(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u cm_per_s_sq_f_to_m_per_s_sq_u(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d cm_per_s_sq_f_to_mm_per_us_sq_d(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f cm_per_s_sq_f_to_mm_per_us_sq_f(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t cm_per_s_sq_f_to_mm_per_us_sq_t(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u cm_per_s_sq_f_to_mm_per_us_sq_u(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d cm_per_s_sq_f_to_mm_per_ms_sq_d(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f cm_per_s_sq_f_to_mm_per_ms_sq_f(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t cm_per_s_sq_f_to_mm_per_ms_sq_t(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u cm_per_s_sq_f_to_mm_per_ms_sq_u(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d cm_per_s_sq_f_to_mm_per_s_sq_d(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f cm_per_s_sq_f_to_mm_per_s_sq_f(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t cm_per_s_sq_f_to_mm_per_s_sq_t(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u cm_per_s_sq_f_to_mm_per_s_sq_u(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to uint16_t.
+ */
+uint16_t cm_per_s_sq_f_to_u16(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to uint32_t.
+ */
+uint32_t cm_per_s_sq_f_to_u32(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to uint64_t.
+ */
+uint64_t cm_per_s_sq_f_to_u64(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_f to uint8_t.
+ */
+uint8_t cm_per_s_sq_f_to_u8(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d cm_per_s_sq_t_to_cm_per_us_sq_d(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f cm_per_s_sq_t_to_cm_per_us_sq_f(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t cm_per_s_sq_t_to_cm_per_us_sq_t(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u cm_per_s_sq_t_to_cm_per_us_sq_u(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d cm_per_s_sq_t_to_cm_per_ms_sq_d(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f cm_per_s_sq_t_to_cm_per_ms_sq_f(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t cm_per_s_sq_t_to_cm_per_ms_sq_t(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u cm_per_s_sq_t_to_cm_per_ms_sq_u(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d cm_per_s_sq_t_to_cm_per_s_sq_d(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f cm_per_s_sq_t_to_cm_per_s_sq_f(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u cm_per_s_sq_t_to_cm_per_s_sq_u(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to double.
+ */
+double cm_per_s_sq_t_to_d(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to float.
+ */
+float cm_per_s_sq_t_to_f(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to int16_t.
+ */
+int16_t cm_per_s_sq_t_to_i16(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to int32_t.
+ */
+int32_t cm_per_s_sq_t_to_i32(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to int64_t.
+ */
+int64_t cm_per_s_sq_t_to_i64(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to int8_t.
+ */
+int8_t cm_per_s_sq_t_to_i8(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d cm_per_s_sq_t_to_m_per_us_sq_d(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f cm_per_s_sq_t_to_m_per_us_sq_f(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t cm_per_s_sq_t_to_m_per_us_sq_t(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u cm_per_s_sq_t_to_m_per_us_sq_u(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d cm_per_s_sq_t_to_m_per_ms_sq_d(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f cm_per_s_sq_t_to_m_per_ms_sq_f(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t cm_per_s_sq_t_to_m_per_ms_sq_t(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u cm_per_s_sq_t_to_m_per_ms_sq_u(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d cm_per_s_sq_t_to_m_per_s_sq_d(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f cm_per_s_sq_t_to_m_per_s_sq_f(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t cm_per_s_sq_t_to_m_per_s_sq_t(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u cm_per_s_sq_t_to_m_per_s_sq_u(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d cm_per_s_sq_t_to_mm_per_us_sq_d(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f cm_per_s_sq_t_to_mm_per_us_sq_f(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t cm_per_s_sq_t_to_mm_per_us_sq_t(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u cm_per_s_sq_t_to_mm_per_us_sq_u(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d cm_per_s_sq_t_to_mm_per_ms_sq_d(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f cm_per_s_sq_t_to_mm_per_ms_sq_f(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t cm_per_s_sq_t_to_mm_per_ms_sq_t(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u cm_per_s_sq_t_to_mm_per_ms_sq_u(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d cm_per_s_sq_t_to_mm_per_s_sq_d(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f cm_per_s_sq_t_to_mm_per_s_sq_f(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t cm_per_s_sq_t_to_mm_per_s_sq_t(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u cm_per_s_sq_t_to_mm_per_s_sq_u(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to uint16_t.
+ */
+uint16_t cm_per_s_sq_t_to_u16(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to uint32_t.
+ */
+uint32_t cm_per_s_sq_t_to_u32(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to uint64_t.
+ */
+uint64_t cm_per_s_sq_t_to_u64(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_t to uint8_t.
+ */
+uint8_t cm_per_s_sq_t_to_u8(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d cm_per_s_sq_u_to_cm_per_us_sq_d(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f cm_per_s_sq_u_to_cm_per_us_sq_f(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t cm_per_s_sq_u_to_cm_per_us_sq_t(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u cm_per_s_sq_u_to_cm_per_us_sq_u(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d cm_per_s_sq_u_to_cm_per_ms_sq_d(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f cm_per_s_sq_u_to_cm_per_ms_sq_f(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t cm_per_s_sq_u_to_cm_per_ms_sq_t(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u cm_per_s_sq_u_to_cm_per_ms_sq_u(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d cm_per_s_sq_u_to_cm_per_s_sq_d(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f cm_per_s_sq_u_to_cm_per_s_sq_f(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t cm_per_s_sq_u_to_cm_per_s_sq_t(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to double.
+ */
+double cm_per_s_sq_u_to_d(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to float.
+ */
+float cm_per_s_sq_u_to_f(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to int16_t.
+ */
+int16_t cm_per_s_sq_u_to_i16(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to int32_t.
+ */
+int32_t cm_per_s_sq_u_to_i32(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to int64_t.
+ */
+int64_t cm_per_s_sq_u_to_i64(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to int8_t.
+ */
+int8_t cm_per_s_sq_u_to_i8(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d cm_per_s_sq_u_to_m_per_us_sq_d(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f cm_per_s_sq_u_to_m_per_us_sq_f(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t cm_per_s_sq_u_to_m_per_us_sq_t(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u cm_per_s_sq_u_to_m_per_us_sq_u(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d cm_per_s_sq_u_to_m_per_ms_sq_d(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f cm_per_s_sq_u_to_m_per_ms_sq_f(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t cm_per_s_sq_u_to_m_per_ms_sq_t(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u cm_per_s_sq_u_to_m_per_ms_sq_u(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d cm_per_s_sq_u_to_m_per_s_sq_d(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f cm_per_s_sq_u_to_m_per_s_sq_f(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t cm_per_s_sq_u_to_m_per_s_sq_t(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u cm_per_s_sq_u_to_m_per_s_sq_u(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d cm_per_s_sq_u_to_mm_per_us_sq_d(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f cm_per_s_sq_u_to_mm_per_us_sq_f(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t cm_per_s_sq_u_to_mm_per_us_sq_t(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u cm_per_s_sq_u_to_mm_per_us_sq_u(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d cm_per_s_sq_u_to_mm_per_ms_sq_d(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f cm_per_s_sq_u_to_mm_per_ms_sq_f(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t cm_per_s_sq_u_to_mm_per_ms_sq_t(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u cm_per_s_sq_u_to_mm_per_ms_sq_u(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d cm_per_s_sq_u_to_mm_per_s_sq_d(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f cm_per_s_sq_u_to_mm_per_s_sq_f(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t cm_per_s_sq_u_to_mm_per_s_sq_t(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u cm_per_s_sq_u_to_mm_per_s_sq_u(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to uint16_t.
+ */
+uint16_t cm_per_s_sq_u_to_u16(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to uint32_t.
+ */
+uint32_t cm_per_s_sq_u_to_u32(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to uint64_t.
+ */
+uint64_t cm_per_s_sq_u_to_u64(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert centimetres_per_seconds_sq_u to uint8_t.
+ */
+uint8_t cm_per_s_sq_u_to_u8(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+ * Convert double to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d d_to_cm_per_us_sq_d(double centimetres_per_microseconds_sq);
+
+/**
+ * Convert double to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f d_to_cm_per_us_sq_f(double centimetres_per_microseconds_sq);
+
+/**
+ * Convert double to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t d_to_cm_per_us_sq_t(double centimetres_per_microseconds_sq);
+
+/**
+ * Convert double to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u d_to_cm_per_us_sq_u(double centimetres_per_microseconds_sq);
+
+/**
+ * Convert double to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d d_to_cm_per_ms_sq_d(double centimetres_per_milliseconds_sq);
+
+/**
+ * Convert double to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f d_to_cm_per_ms_sq_f(double centimetres_per_milliseconds_sq);
+
+/**
+ * Convert double to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t d_to_cm_per_ms_sq_t(double centimetres_per_milliseconds_sq);
+
+/**
+ * Convert double to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u d_to_cm_per_ms_sq_u(double centimetres_per_milliseconds_sq);
+
+/**
+ * Convert double to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d d_to_cm_per_s_sq_d(double centimetres_per_seconds_sq);
+
+/**
+ * Convert double to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f d_to_cm_per_s_sq_f(double centimetres_per_seconds_sq);
+
+/**
+ * Convert double to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t d_to_cm_per_s_sq_t(double centimetres_per_seconds_sq);
+
+/**
+ * Convert double to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u d_to_cm_per_s_sq_u(double centimetres_per_seconds_sq);
+
+/**
+ * Convert double to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d d_to_m_per_us_sq_d(double metres_per_microseconds_sq);
+
+/**
+ * Convert double to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f d_to_m_per_us_sq_f(double metres_per_microseconds_sq);
+
+/**
+ * Convert double to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t d_to_m_per_us_sq_t(double metres_per_microseconds_sq);
+
+/**
+ * Convert double to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u d_to_m_per_us_sq_u(double metres_per_microseconds_sq);
+
+/**
+ * Convert double to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d d_to_m_per_ms_sq_d(double metres_per_milliseconds_sq);
+
+/**
+ * Convert double to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f d_to_m_per_ms_sq_f(double metres_per_milliseconds_sq);
+
+/**
+ * Convert double to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t d_to_m_per_ms_sq_t(double metres_per_milliseconds_sq);
+
+/**
+ * Convert double to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u d_to_m_per_ms_sq_u(double metres_per_milliseconds_sq);
+
+/**
+ * Convert double to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d d_to_m_per_s_sq_d(double metres_per_seconds_sq);
+
+/**
+ * Convert double to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f d_to_m_per_s_sq_f(double metres_per_seconds_sq);
+
+/**
+ * Convert double to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t d_to_m_per_s_sq_t(double metres_per_seconds_sq);
+
+/**
+ * Convert double to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u d_to_m_per_s_sq_u(double metres_per_seconds_sq);
+
+/**
+ * Convert double to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d d_to_mm_per_us_sq_d(double millimetres_per_microseconds_sq);
+
+/**
+ * Convert double to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f d_to_mm_per_us_sq_f(double millimetres_per_microseconds_sq);
+
+/**
+ * Convert double to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t d_to_mm_per_us_sq_t(double millimetres_per_microseconds_sq);
+
+/**
+ * Convert double to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u d_to_mm_per_us_sq_u(double millimetres_per_microseconds_sq);
+
+/**
+ * Convert double to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d d_to_mm_per_ms_sq_d(double millimetres_per_milliseconds_sq);
+
+/**
+ * Convert double to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f d_to_mm_per_ms_sq_f(double millimetres_per_milliseconds_sq);
+
+/**
+ * Convert double to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t d_to_mm_per_ms_sq_t(double millimetres_per_milliseconds_sq);
+
+/**
+ * Convert double to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u d_to_mm_per_ms_sq_u(double millimetres_per_milliseconds_sq);
+
+/**
+ * Convert double to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d d_to_mm_per_s_sq_d(double millimetres_per_seconds_sq);
+
+/**
+ * Convert double to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f d_to_mm_per_s_sq_f(double millimetres_per_seconds_sq);
+
+/**
+ * Convert double to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t d_to_mm_per_s_sq_t(double millimetres_per_seconds_sq);
+
+/**
+ * Convert double to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u d_to_mm_per_s_sq_u(double millimetres_per_seconds_sq);
+
+/**
+ * Convert float to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d f_to_cm_per_us_sq_d(float centimetres_per_microseconds_sq);
+
+/**
+ * Convert float to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f f_to_cm_per_us_sq_f(float centimetres_per_microseconds_sq);
+
+/**
+ * Convert float to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t f_to_cm_per_us_sq_t(float centimetres_per_microseconds_sq);
+
+/**
+ * Convert float to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u f_to_cm_per_us_sq_u(float centimetres_per_microseconds_sq);
+
+/**
+ * Convert float to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d f_to_cm_per_ms_sq_d(float centimetres_per_milliseconds_sq);
+
+/**
+ * Convert float to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f f_to_cm_per_ms_sq_f(float centimetres_per_milliseconds_sq);
+
+/**
+ * Convert float to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t f_to_cm_per_ms_sq_t(float centimetres_per_milliseconds_sq);
+
+/**
+ * Convert float to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u f_to_cm_per_ms_sq_u(float centimetres_per_milliseconds_sq);
+
+/**
+ * Convert float to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d f_to_cm_per_s_sq_d(float centimetres_per_seconds_sq);
+
+/**
+ * Convert float to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f f_to_cm_per_s_sq_f(float centimetres_per_seconds_sq);
+
+/**
+ * Convert float to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t f_to_cm_per_s_sq_t(float centimetres_per_seconds_sq);
+
+/**
+ * Convert float to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u f_to_cm_per_s_sq_u(float centimetres_per_seconds_sq);
+
+/**
+ * Convert float to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d f_to_m_per_us_sq_d(float metres_per_microseconds_sq);
+
+/**
+ * Convert float to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f f_to_m_per_us_sq_f(float metres_per_microseconds_sq);
+
+/**
+ * Convert float to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t f_to_m_per_us_sq_t(float metres_per_microseconds_sq);
+
+/**
+ * Convert float to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u f_to_m_per_us_sq_u(float metres_per_microseconds_sq);
+
+/**
+ * Convert float to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d f_to_m_per_ms_sq_d(float metres_per_milliseconds_sq);
+
+/**
+ * Convert float to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f f_to_m_per_ms_sq_f(float metres_per_milliseconds_sq);
+
+/**
+ * Convert float to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t f_to_m_per_ms_sq_t(float metres_per_milliseconds_sq);
+
+/**
+ * Convert float to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u f_to_m_per_ms_sq_u(float metres_per_milliseconds_sq);
+
+/**
+ * Convert float to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d f_to_m_per_s_sq_d(float metres_per_seconds_sq);
+
+/**
+ * Convert float to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f f_to_m_per_s_sq_f(float metres_per_seconds_sq);
+
+/**
+ * Convert float to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t f_to_m_per_s_sq_t(float metres_per_seconds_sq);
+
+/**
+ * Convert float to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u f_to_m_per_s_sq_u(float metres_per_seconds_sq);
+
+/**
+ * Convert float to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d f_to_mm_per_us_sq_d(float millimetres_per_microseconds_sq);
+
+/**
+ * Convert float to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f f_to_mm_per_us_sq_f(float millimetres_per_microseconds_sq);
+
+/**
+ * Convert float to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t f_to_mm_per_us_sq_t(float millimetres_per_microseconds_sq);
+
+/**
+ * Convert float to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u f_to_mm_per_us_sq_u(float millimetres_per_microseconds_sq);
+
+/**
+ * Convert float to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d f_to_mm_per_ms_sq_d(float millimetres_per_milliseconds_sq);
+
+/**
+ * Convert float to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f f_to_mm_per_ms_sq_f(float millimetres_per_milliseconds_sq);
+
+/**
+ * Convert float to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t f_to_mm_per_ms_sq_t(float millimetres_per_milliseconds_sq);
+
+/**
+ * Convert float to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u f_to_mm_per_ms_sq_u(float millimetres_per_milliseconds_sq);
+
+/**
+ * Convert float to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d f_to_mm_per_s_sq_d(float millimetres_per_seconds_sq);
+
+/**
+ * Convert float to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f f_to_mm_per_s_sq_f(float millimetres_per_seconds_sq);
+
+/**
+ * Convert float to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t f_to_mm_per_s_sq_t(float millimetres_per_seconds_sq);
+
+/**
+ * Convert float to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u f_to_mm_per_s_sq_u(float millimetres_per_seconds_sq);
+
+/**
+ * Convert int16_t to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d i16_to_cm_per_us_sq_d(int16_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert int16_t to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f i16_to_cm_per_us_sq_f(int16_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert int16_t to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t i16_to_cm_per_us_sq_t(int16_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert int16_t to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u i16_to_cm_per_us_sq_u(int16_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert int16_t to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d i16_to_cm_per_ms_sq_d(int16_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert int16_t to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f i16_to_cm_per_ms_sq_f(int16_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert int16_t to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t i16_to_cm_per_ms_sq_t(int16_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert int16_t to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u i16_to_cm_per_ms_sq_u(int16_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert int16_t to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d i16_to_cm_per_s_sq_d(int16_t centimetres_per_seconds_sq);
+
+/**
+ * Convert int16_t to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f i16_to_cm_per_s_sq_f(int16_t centimetres_per_seconds_sq);
+
+/**
+ * Convert int16_t to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t i16_to_cm_per_s_sq_t(int16_t centimetres_per_seconds_sq);
+
+/**
+ * Convert int16_t to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u i16_to_cm_per_s_sq_u(int16_t centimetres_per_seconds_sq);
+
+/**
+ * Convert int16_t to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d i16_to_m_per_us_sq_d(int16_t metres_per_microseconds_sq);
+
+/**
+ * Convert int16_t to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f i16_to_m_per_us_sq_f(int16_t metres_per_microseconds_sq);
+
+/**
+ * Convert int16_t to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t i16_to_m_per_us_sq_t(int16_t metres_per_microseconds_sq);
+
+/**
+ * Convert int16_t to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u i16_to_m_per_us_sq_u(int16_t metres_per_microseconds_sq);
+
+/**
+ * Convert int16_t to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d i16_to_m_per_ms_sq_d(int16_t metres_per_milliseconds_sq);
+
+/**
+ * Convert int16_t to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f i16_to_m_per_ms_sq_f(int16_t metres_per_milliseconds_sq);
+
+/**
+ * Convert int16_t to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t i16_to_m_per_ms_sq_t(int16_t metres_per_milliseconds_sq);
+
+/**
+ * Convert int16_t to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u i16_to_m_per_ms_sq_u(int16_t metres_per_milliseconds_sq);
+
+/**
+ * Convert int16_t to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d i16_to_m_per_s_sq_d(int16_t metres_per_seconds_sq);
+
+/**
+ * Convert int16_t to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f i16_to_m_per_s_sq_f(int16_t metres_per_seconds_sq);
+
+/**
+ * Convert int16_t to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t i16_to_m_per_s_sq_t(int16_t metres_per_seconds_sq);
+
+/**
+ * Convert int16_t to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u i16_to_m_per_s_sq_u(int16_t metres_per_seconds_sq);
+
+/**
+ * Convert int16_t to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d i16_to_mm_per_us_sq_d(int16_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert int16_t to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f i16_to_mm_per_us_sq_f(int16_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert int16_t to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t i16_to_mm_per_us_sq_t(int16_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert int16_t to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u i16_to_mm_per_us_sq_u(int16_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert int16_t to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d i16_to_mm_per_ms_sq_d(int16_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert int16_t to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f i16_to_mm_per_ms_sq_f(int16_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert int16_t to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t i16_to_mm_per_ms_sq_t(int16_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert int16_t to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u i16_to_mm_per_ms_sq_u(int16_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert int16_t to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d i16_to_mm_per_s_sq_d(int16_t millimetres_per_seconds_sq);
+
+/**
+ * Convert int16_t to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f i16_to_mm_per_s_sq_f(int16_t millimetres_per_seconds_sq);
+
+/**
+ * Convert int16_t to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t i16_to_mm_per_s_sq_t(int16_t millimetres_per_seconds_sq);
+
+/**
+ * Convert int16_t to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u i16_to_mm_per_s_sq_u(int16_t millimetres_per_seconds_sq);
+
+/**
+ * Convert int32_t to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d i32_to_cm_per_us_sq_d(int32_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert int32_t to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f i32_to_cm_per_us_sq_f(int32_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert int32_t to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t i32_to_cm_per_us_sq_t(int32_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert int32_t to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u i32_to_cm_per_us_sq_u(int32_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert int32_t to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d i32_to_cm_per_ms_sq_d(int32_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert int32_t to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f i32_to_cm_per_ms_sq_f(int32_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert int32_t to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t i32_to_cm_per_ms_sq_t(int32_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert int32_t to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u i32_to_cm_per_ms_sq_u(int32_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert int32_t to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d i32_to_cm_per_s_sq_d(int32_t centimetres_per_seconds_sq);
+
+/**
+ * Convert int32_t to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f i32_to_cm_per_s_sq_f(int32_t centimetres_per_seconds_sq);
+
+/**
+ * Convert int32_t to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t i32_to_cm_per_s_sq_t(int32_t centimetres_per_seconds_sq);
+
+/**
+ * Convert int32_t to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u i32_to_cm_per_s_sq_u(int32_t centimetres_per_seconds_sq);
+
+/**
+ * Convert int32_t to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d i32_to_m_per_us_sq_d(int32_t metres_per_microseconds_sq);
+
+/**
+ * Convert int32_t to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f i32_to_m_per_us_sq_f(int32_t metres_per_microseconds_sq);
+
+/**
+ * Convert int32_t to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t i32_to_m_per_us_sq_t(int32_t metres_per_microseconds_sq);
+
+/**
+ * Convert int32_t to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u i32_to_m_per_us_sq_u(int32_t metres_per_microseconds_sq);
+
+/**
+ * Convert int32_t to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d i32_to_m_per_ms_sq_d(int32_t metres_per_milliseconds_sq);
+
+/**
+ * Convert int32_t to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f i32_to_m_per_ms_sq_f(int32_t metres_per_milliseconds_sq);
+
+/**
+ * Convert int32_t to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t i32_to_m_per_ms_sq_t(int32_t metres_per_milliseconds_sq);
+
+/**
+ * Convert int32_t to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u i32_to_m_per_ms_sq_u(int32_t metres_per_milliseconds_sq);
+
+/**
+ * Convert int32_t to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d i32_to_m_per_s_sq_d(int32_t metres_per_seconds_sq);
+
+/**
+ * Convert int32_t to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f i32_to_m_per_s_sq_f(int32_t metres_per_seconds_sq);
+
+/**
+ * Convert int32_t to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t i32_to_m_per_s_sq_t(int32_t metres_per_seconds_sq);
+
+/**
+ * Convert int32_t to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u i32_to_m_per_s_sq_u(int32_t metres_per_seconds_sq);
+
+/**
+ * Convert int32_t to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d i32_to_mm_per_us_sq_d(int32_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert int32_t to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f i32_to_mm_per_us_sq_f(int32_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert int32_t to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t i32_to_mm_per_us_sq_t(int32_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert int32_t to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u i32_to_mm_per_us_sq_u(int32_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert int32_t to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d i32_to_mm_per_ms_sq_d(int32_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert int32_t to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f i32_to_mm_per_ms_sq_f(int32_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert int32_t to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t i32_to_mm_per_ms_sq_t(int32_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert int32_t to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u i32_to_mm_per_ms_sq_u(int32_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert int32_t to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d i32_to_mm_per_s_sq_d(int32_t millimetres_per_seconds_sq);
+
+/**
+ * Convert int32_t to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f i32_to_mm_per_s_sq_f(int32_t millimetres_per_seconds_sq);
+
+/**
+ * Convert int32_t to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t i32_to_mm_per_s_sq_t(int32_t millimetres_per_seconds_sq);
+
+/**
+ * Convert int32_t to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u i32_to_mm_per_s_sq_u(int32_t millimetres_per_seconds_sq);
+
+/**
+ * Convert int64_t to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d i64_to_cm_per_us_sq_d(int64_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert int64_t to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f i64_to_cm_per_us_sq_f(int64_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert int64_t to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t i64_to_cm_per_us_sq_t(int64_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert int64_t to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u i64_to_cm_per_us_sq_u(int64_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert int64_t to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d i64_to_cm_per_ms_sq_d(int64_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert int64_t to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f i64_to_cm_per_ms_sq_f(int64_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert int64_t to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t i64_to_cm_per_ms_sq_t(int64_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert int64_t to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u i64_to_cm_per_ms_sq_u(int64_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert int64_t to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d i64_to_cm_per_s_sq_d(int64_t centimetres_per_seconds_sq);
+
+/**
+ * Convert int64_t to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f i64_to_cm_per_s_sq_f(int64_t centimetres_per_seconds_sq);
+
+/**
+ * Convert int64_t to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t i64_to_cm_per_s_sq_t(int64_t centimetres_per_seconds_sq);
+
+/**
+ * Convert int64_t to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u i64_to_cm_per_s_sq_u(int64_t centimetres_per_seconds_sq);
+
+/**
+ * Convert int64_t to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d i64_to_m_per_us_sq_d(int64_t metres_per_microseconds_sq);
+
+/**
+ * Convert int64_t to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f i64_to_m_per_us_sq_f(int64_t metres_per_microseconds_sq);
+
+/**
+ * Convert int64_t to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t i64_to_m_per_us_sq_t(int64_t metres_per_microseconds_sq);
+
+/**
+ * Convert int64_t to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u i64_to_m_per_us_sq_u(int64_t metres_per_microseconds_sq);
+
+/**
+ * Convert int64_t to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d i64_to_m_per_ms_sq_d(int64_t metres_per_milliseconds_sq);
+
+/**
+ * Convert int64_t to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f i64_to_m_per_ms_sq_f(int64_t metres_per_milliseconds_sq);
+
+/**
+ * Convert int64_t to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t i64_to_m_per_ms_sq_t(int64_t metres_per_milliseconds_sq);
+
+/**
+ * Convert int64_t to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u i64_to_m_per_ms_sq_u(int64_t metres_per_milliseconds_sq);
+
+/**
+ * Convert int64_t to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d i64_to_m_per_s_sq_d(int64_t metres_per_seconds_sq);
+
+/**
+ * Convert int64_t to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f i64_to_m_per_s_sq_f(int64_t metres_per_seconds_sq);
+
+/**
+ * Convert int64_t to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t i64_to_m_per_s_sq_t(int64_t metres_per_seconds_sq);
+
+/**
+ * Convert int64_t to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u i64_to_m_per_s_sq_u(int64_t metres_per_seconds_sq);
+
+/**
+ * Convert int64_t to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d i64_to_mm_per_us_sq_d(int64_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert int64_t to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f i64_to_mm_per_us_sq_f(int64_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert int64_t to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t i64_to_mm_per_us_sq_t(int64_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert int64_t to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u i64_to_mm_per_us_sq_u(int64_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert int64_t to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d i64_to_mm_per_ms_sq_d(int64_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert int64_t to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f i64_to_mm_per_ms_sq_f(int64_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert int64_t to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t i64_to_mm_per_ms_sq_t(int64_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert int64_t to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u i64_to_mm_per_ms_sq_u(int64_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert int64_t to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d i64_to_mm_per_s_sq_d(int64_t millimetres_per_seconds_sq);
+
+/**
+ * Convert int64_t to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f i64_to_mm_per_s_sq_f(int64_t millimetres_per_seconds_sq);
+
+/**
+ * Convert int64_t to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t i64_to_mm_per_s_sq_t(int64_t millimetres_per_seconds_sq);
+
+/**
+ * Convert int64_t to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u i64_to_mm_per_s_sq_u(int64_t millimetres_per_seconds_sq);
+
+/**
+ * Convert int8_t to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d i8_to_cm_per_us_sq_d(int8_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert int8_t to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f i8_to_cm_per_us_sq_f(int8_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert int8_t to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t i8_to_cm_per_us_sq_t(int8_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert int8_t to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u i8_to_cm_per_us_sq_u(int8_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert int8_t to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d i8_to_cm_per_ms_sq_d(int8_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert int8_t to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f i8_to_cm_per_ms_sq_f(int8_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert int8_t to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t i8_to_cm_per_ms_sq_t(int8_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert int8_t to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u i8_to_cm_per_ms_sq_u(int8_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert int8_t to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d i8_to_cm_per_s_sq_d(int8_t centimetres_per_seconds_sq);
+
+/**
+ * Convert int8_t to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f i8_to_cm_per_s_sq_f(int8_t centimetres_per_seconds_sq);
+
+/**
+ * Convert int8_t to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t i8_to_cm_per_s_sq_t(int8_t centimetres_per_seconds_sq);
+
+/**
+ * Convert int8_t to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u i8_to_cm_per_s_sq_u(int8_t centimetres_per_seconds_sq);
+
+/**
+ * Convert int8_t to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d i8_to_m_per_us_sq_d(int8_t metres_per_microseconds_sq);
+
+/**
+ * Convert int8_t to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f i8_to_m_per_us_sq_f(int8_t metres_per_microseconds_sq);
+
+/**
+ * Convert int8_t to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t i8_to_m_per_us_sq_t(int8_t metres_per_microseconds_sq);
+
+/**
+ * Convert int8_t to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u i8_to_m_per_us_sq_u(int8_t metres_per_microseconds_sq);
+
+/**
+ * Convert int8_t to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d i8_to_m_per_ms_sq_d(int8_t metres_per_milliseconds_sq);
+
+/**
+ * Convert int8_t to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f i8_to_m_per_ms_sq_f(int8_t metres_per_milliseconds_sq);
+
+/**
+ * Convert int8_t to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t i8_to_m_per_ms_sq_t(int8_t metres_per_milliseconds_sq);
+
+/**
+ * Convert int8_t to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u i8_to_m_per_ms_sq_u(int8_t metres_per_milliseconds_sq);
+
+/**
+ * Convert int8_t to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d i8_to_m_per_s_sq_d(int8_t metres_per_seconds_sq);
+
+/**
+ * Convert int8_t to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f i8_to_m_per_s_sq_f(int8_t metres_per_seconds_sq);
+
+/**
+ * Convert int8_t to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t i8_to_m_per_s_sq_t(int8_t metres_per_seconds_sq);
+
+/**
+ * Convert int8_t to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u i8_to_m_per_s_sq_u(int8_t metres_per_seconds_sq);
+
+/**
+ * Convert int8_t to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d i8_to_mm_per_us_sq_d(int8_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert int8_t to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f i8_to_mm_per_us_sq_f(int8_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert int8_t to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t i8_to_mm_per_us_sq_t(int8_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert int8_t to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u i8_to_mm_per_us_sq_u(int8_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert int8_t to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d i8_to_mm_per_ms_sq_d(int8_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert int8_t to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f i8_to_mm_per_ms_sq_f(int8_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert int8_t to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t i8_to_mm_per_ms_sq_t(int8_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert int8_t to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u i8_to_mm_per_ms_sq_u(int8_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert int8_t to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d i8_to_mm_per_s_sq_d(int8_t millimetres_per_seconds_sq);
+
+/**
+ * Convert int8_t to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f i8_to_mm_per_s_sq_f(int8_t millimetres_per_seconds_sq);
+
+/**
+ * Convert int8_t to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t i8_to_mm_per_s_sq_t(int8_t millimetres_per_seconds_sq);
+
+/**
+ * Convert int8_t to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u i8_to_mm_per_s_sq_u(int8_t millimetres_per_seconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d m_per_us_sq_d_to_cm_per_us_sq_d(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f m_per_us_sq_d_to_cm_per_us_sq_f(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t m_per_us_sq_d_to_cm_per_us_sq_t(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u m_per_us_sq_d_to_cm_per_us_sq_u(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d m_per_us_sq_d_to_cm_per_ms_sq_d(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f m_per_us_sq_d_to_cm_per_ms_sq_f(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t m_per_us_sq_d_to_cm_per_ms_sq_t(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u m_per_us_sq_d_to_cm_per_ms_sq_u(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d m_per_us_sq_d_to_cm_per_s_sq_d(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f m_per_us_sq_d_to_cm_per_s_sq_f(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t m_per_us_sq_d_to_cm_per_s_sq_t(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u m_per_us_sq_d_to_cm_per_s_sq_u(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to double.
+ */
+double m_per_us_sq_d_to_d(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to float.
+ */
+float m_per_us_sq_d_to_f(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to int16_t.
+ */
+int16_t m_per_us_sq_d_to_i16(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to int32_t.
+ */
+int32_t m_per_us_sq_d_to_i32(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to int64_t.
+ */
+int64_t m_per_us_sq_d_to_i64(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to int8_t.
+ */
+int8_t m_per_us_sq_d_to_i8(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f m_per_us_sq_d_to_m_per_us_sq_f(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t m_per_us_sq_d_to_m_per_us_sq_t(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u m_per_us_sq_d_to_m_per_us_sq_u(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d m_per_us_sq_d_to_m_per_ms_sq_d(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f m_per_us_sq_d_to_m_per_ms_sq_f(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t m_per_us_sq_d_to_m_per_ms_sq_t(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u m_per_us_sq_d_to_m_per_ms_sq_u(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d m_per_us_sq_d_to_m_per_s_sq_d(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f m_per_us_sq_d_to_m_per_s_sq_f(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t m_per_us_sq_d_to_m_per_s_sq_t(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u m_per_us_sq_d_to_m_per_s_sq_u(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d m_per_us_sq_d_to_mm_per_us_sq_d(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f m_per_us_sq_d_to_mm_per_us_sq_f(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t m_per_us_sq_d_to_mm_per_us_sq_t(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u m_per_us_sq_d_to_mm_per_us_sq_u(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d m_per_us_sq_d_to_mm_per_ms_sq_d(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f m_per_us_sq_d_to_mm_per_ms_sq_f(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t m_per_us_sq_d_to_mm_per_ms_sq_t(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u m_per_us_sq_d_to_mm_per_ms_sq_u(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d m_per_us_sq_d_to_mm_per_s_sq_d(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f m_per_us_sq_d_to_mm_per_s_sq_f(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t m_per_us_sq_d_to_mm_per_s_sq_t(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u m_per_us_sq_d_to_mm_per_s_sq_u(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to uint16_t.
+ */
+uint16_t m_per_us_sq_d_to_u16(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to uint32_t.
+ */
+uint32_t m_per_us_sq_d_to_u32(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to uint64_t.
+ */
+uint64_t m_per_us_sq_d_to_u64(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_d to uint8_t.
+ */
+uint8_t m_per_us_sq_d_to_u8(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d m_per_us_sq_f_to_cm_per_us_sq_d(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f m_per_us_sq_f_to_cm_per_us_sq_f(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t m_per_us_sq_f_to_cm_per_us_sq_t(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u m_per_us_sq_f_to_cm_per_us_sq_u(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d m_per_us_sq_f_to_cm_per_ms_sq_d(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f m_per_us_sq_f_to_cm_per_ms_sq_f(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t m_per_us_sq_f_to_cm_per_ms_sq_t(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u m_per_us_sq_f_to_cm_per_ms_sq_u(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d m_per_us_sq_f_to_cm_per_s_sq_d(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f m_per_us_sq_f_to_cm_per_s_sq_f(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t m_per_us_sq_f_to_cm_per_s_sq_t(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u m_per_us_sq_f_to_cm_per_s_sq_u(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to double.
+ */
+double m_per_us_sq_f_to_d(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to float.
+ */
+float m_per_us_sq_f_to_f(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to int16_t.
+ */
+int16_t m_per_us_sq_f_to_i16(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to int32_t.
+ */
+int32_t m_per_us_sq_f_to_i32(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to int64_t.
+ */
+int64_t m_per_us_sq_f_to_i64(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to int8_t.
+ */
+int8_t m_per_us_sq_f_to_i8(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d m_per_us_sq_f_to_m_per_us_sq_d(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t m_per_us_sq_f_to_m_per_us_sq_t(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u m_per_us_sq_f_to_m_per_us_sq_u(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d m_per_us_sq_f_to_m_per_ms_sq_d(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f m_per_us_sq_f_to_m_per_ms_sq_f(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t m_per_us_sq_f_to_m_per_ms_sq_t(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u m_per_us_sq_f_to_m_per_ms_sq_u(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d m_per_us_sq_f_to_m_per_s_sq_d(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f m_per_us_sq_f_to_m_per_s_sq_f(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t m_per_us_sq_f_to_m_per_s_sq_t(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u m_per_us_sq_f_to_m_per_s_sq_u(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d m_per_us_sq_f_to_mm_per_us_sq_d(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f m_per_us_sq_f_to_mm_per_us_sq_f(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t m_per_us_sq_f_to_mm_per_us_sq_t(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u m_per_us_sq_f_to_mm_per_us_sq_u(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d m_per_us_sq_f_to_mm_per_ms_sq_d(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f m_per_us_sq_f_to_mm_per_ms_sq_f(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t m_per_us_sq_f_to_mm_per_ms_sq_t(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u m_per_us_sq_f_to_mm_per_ms_sq_u(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d m_per_us_sq_f_to_mm_per_s_sq_d(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f m_per_us_sq_f_to_mm_per_s_sq_f(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t m_per_us_sq_f_to_mm_per_s_sq_t(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u m_per_us_sq_f_to_mm_per_s_sq_u(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to uint16_t.
+ */
+uint16_t m_per_us_sq_f_to_u16(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to uint32_t.
+ */
+uint32_t m_per_us_sq_f_to_u32(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to uint64_t.
+ */
+uint64_t m_per_us_sq_f_to_u64(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_f to uint8_t.
+ */
+uint8_t m_per_us_sq_f_to_u8(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d m_per_us_sq_t_to_cm_per_us_sq_d(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f m_per_us_sq_t_to_cm_per_us_sq_f(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t m_per_us_sq_t_to_cm_per_us_sq_t(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u m_per_us_sq_t_to_cm_per_us_sq_u(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d m_per_us_sq_t_to_cm_per_ms_sq_d(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f m_per_us_sq_t_to_cm_per_ms_sq_f(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t m_per_us_sq_t_to_cm_per_ms_sq_t(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u m_per_us_sq_t_to_cm_per_ms_sq_u(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d m_per_us_sq_t_to_cm_per_s_sq_d(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f m_per_us_sq_t_to_cm_per_s_sq_f(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t m_per_us_sq_t_to_cm_per_s_sq_t(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u m_per_us_sq_t_to_cm_per_s_sq_u(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to double.
+ */
+double m_per_us_sq_t_to_d(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to float.
+ */
+float m_per_us_sq_t_to_f(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to int16_t.
+ */
+int16_t m_per_us_sq_t_to_i16(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to int32_t.
+ */
+int32_t m_per_us_sq_t_to_i32(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to int64_t.
+ */
+int64_t m_per_us_sq_t_to_i64(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to int8_t.
+ */
+int8_t m_per_us_sq_t_to_i8(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d m_per_us_sq_t_to_m_per_us_sq_d(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f m_per_us_sq_t_to_m_per_us_sq_f(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u m_per_us_sq_t_to_m_per_us_sq_u(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d m_per_us_sq_t_to_m_per_ms_sq_d(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f m_per_us_sq_t_to_m_per_ms_sq_f(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t m_per_us_sq_t_to_m_per_ms_sq_t(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u m_per_us_sq_t_to_m_per_ms_sq_u(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d m_per_us_sq_t_to_m_per_s_sq_d(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f m_per_us_sq_t_to_m_per_s_sq_f(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t m_per_us_sq_t_to_m_per_s_sq_t(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u m_per_us_sq_t_to_m_per_s_sq_u(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d m_per_us_sq_t_to_mm_per_us_sq_d(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f m_per_us_sq_t_to_mm_per_us_sq_f(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t m_per_us_sq_t_to_mm_per_us_sq_t(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u m_per_us_sq_t_to_mm_per_us_sq_u(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d m_per_us_sq_t_to_mm_per_ms_sq_d(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f m_per_us_sq_t_to_mm_per_ms_sq_f(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t m_per_us_sq_t_to_mm_per_ms_sq_t(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u m_per_us_sq_t_to_mm_per_ms_sq_u(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d m_per_us_sq_t_to_mm_per_s_sq_d(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f m_per_us_sq_t_to_mm_per_s_sq_f(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t m_per_us_sq_t_to_mm_per_s_sq_t(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u m_per_us_sq_t_to_mm_per_s_sq_u(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to uint16_t.
+ */
+uint16_t m_per_us_sq_t_to_u16(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to uint32_t.
+ */
+uint32_t m_per_us_sq_t_to_u32(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to uint64_t.
+ */
+uint64_t m_per_us_sq_t_to_u64(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_t to uint8_t.
+ */
+uint8_t m_per_us_sq_t_to_u8(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d m_per_us_sq_u_to_cm_per_us_sq_d(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f m_per_us_sq_u_to_cm_per_us_sq_f(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t m_per_us_sq_u_to_cm_per_us_sq_t(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u m_per_us_sq_u_to_cm_per_us_sq_u(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d m_per_us_sq_u_to_cm_per_ms_sq_d(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f m_per_us_sq_u_to_cm_per_ms_sq_f(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t m_per_us_sq_u_to_cm_per_ms_sq_t(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u m_per_us_sq_u_to_cm_per_ms_sq_u(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d m_per_us_sq_u_to_cm_per_s_sq_d(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f m_per_us_sq_u_to_cm_per_s_sq_f(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t m_per_us_sq_u_to_cm_per_s_sq_t(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u m_per_us_sq_u_to_cm_per_s_sq_u(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to double.
+ */
+double m_per_us_sq_u_to_d(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to float.
+ */
+float m_per_us_sq_u_to_f(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to int16_t.
+ */
+int16_t m_per_us_sq_u_to_i16(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to int32_t.
+ */
+int32_t m_per_us_sq_u_to_i32(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to int64_t.
+ */
+int64_t m_per_us_sq_u_to_i64(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to int8_t.
+ */
+int8_t m_per_us_sq_u_to_i8(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d m_per_us_sq_u_to_m_per_us_sq_d(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f m_per_us_sq_u_to_m_per_us_sq_f(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t m_per_us_sq_u_to_m_per_us_sq_t(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d m_per_us_sq_u_to_m_per_ms_sq_d(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f m_per_us_sq_u_to_m_per_ms_sq_f(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t m_per_us_sq_u_to_m_per_ms_sq_t(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u m_per_us_sq_u_to_m_per_ms_sq_u(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d m_per_us_sq_u_to_m_per_s_sq_d(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f m_per_us_sq_u_to_m_per_s_sq_f(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t m_per_us_sq_u_to_m_per_s_sq_t(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u m_per_us_sq_u_to_m_per_s_sq_u(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d m_per_us_sq_u_to_mm_per_us_sq_d(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f m_per_us_sq_u_to_mm_per_us_sq_f(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t m_per_us_sq_u_to_mm_per_us_sq_t(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u m_per_us_sq_u_to_mm_per_us_sq_u(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d m_per_us_sq_u_to_mm_per_ms_sq_d(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f m_per_us_sq_u_to_mm_per_ms_sq_f(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t m_per_us_sq_u_to_mm_per_ms_sq_t(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u m_per_us_sq_u_to_mm_per_ms_sq_u(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d m_per_us_sq_u_to_mm_per_s_sq_d(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f m_per_us_sq_u_to_mm_per_s_sq_f(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t m_per_us_sq_u_to_mm_per_s_sq_t(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u m_per_us_sq_u_to_mm_per_s_sq_u(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to uint16_t.
+ */
+uint16_t m_per_us_sq_u_to_u16(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to uint32_t.
+ */
+uint32_t m_per_us_sq_u_to_u32(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to uint64_t.
+ */
+uint64_t m_per_us_sq_u_to_u64(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_microseconds_sq_u to uint8_t.
+ */
+uint8_t m_per_us_sq_u_to_u8(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d m_per_ms_sq_d_to_cm_per_us_sq_d(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f m_per_ms_sq_d_to_cm_per_us_sq_f(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t m_per_ms_sq_d_to_cm_per_us_sq_t(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u m_per_ms_sq_d_to_cm_per_us_sq_u(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d m_per_ms_sq_d_to_cm_per_ms_sq_d(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f m_per_ms_sq_d_to_cm_per_ms_sq_f(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t m_per_ms_sq_d_to_cm_per_ms_sq_t(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u m_per_ms_sq_d_to_cm_per_ms_sq_u(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d m_per_ms_sq_d_to_cm_per_s_sq_d(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f m_per_ms_sq_d_to_cm_per_s_sq_f(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t m_per_ms_sq_d_to_cm_per_s_sq_t(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u m_per_ms_sq_d_to_cm_per_s_sq_u(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to double.
+ */
+double m_per_ms_sq_d_to_d(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to float.
+ */
+float m_per_ms_sq_d_to_f(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to int16_t.
+ */
+int16_t m_per_ms_sq_d_to_i16(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to int32_t.
+ */
+int32_t m_per_ms_sq_d_to_i32(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to int64_t.
+ */
+int64_t m_per_ms_sq_d_to_i64(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to int8_t.
+ */
+int8_t m_per_ms_sq_d_to_i8(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d m_per_ms_sq_d_to_m_per_us_sq_d(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f m_per_ms_sq_d_to_m_per_us_sq_f(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t m_per_ms_sq_d_to_m_per_us_sq_t(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u m_per_ms_sq_d_to_m_per_us_sq_u(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f m_per_ms_sq_d_to_m_per_ms_sq_f(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t m_per_ms_sq_d_to_m_per_ms_sq_t(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u m_per_ms_sq_d_to_m_per_ms_sq_u(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d m_per_ms_sq_d_to_m_per_s_sq_d(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f m_per_ms_sq_d_to_m_per_s_sq_f(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t m_per_ms_sq_d_to_m_per_s_sq_t(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u m_per_ms_sq_d_to_m_per_s_sq_u(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d m_per_ms_sq_d_to_mm_per_us_sq_d(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f m_per_ms_sq_d_to_mm_per_us_sq_f(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t m_per_ms_sq_d_to_mm_per_us_sq_t(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u m_per_ms_sq_d_to_mm_per_us_sq_u(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d m_per_ms_sq_d_to_mm_per_ms_sq_d(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f m_per_ms_sq_d_to_mm_per_ms_sq_f(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t m_per_ms_sq_d_to_mm_per_ms_sq_t(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u m_per_ms_sq_d_to_mm_per_ms_sq_u(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d m_per_ms_sq_d_to_mm_per_s_sq_d(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f m_per_ms_sq_d_to_mm_per_s_sq_f(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t m_per_ms_sq_d_to_mm_per_s_sq_t(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u m_per_ms_sq_d_to_mm_per_s_sq_u(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to uint16_t.
+ */
+uint16_t m_per_ms_sq_d_to_u16(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to uint32_t.
+ */
+uint32_t m_per_ms_sq_d_to_u32(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to uint64_t.
+ */
+uint64_t m_per_ms_sq_d_to_u64(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_d to uint8_t.
+ */
+uint8_t m_per_ms_sq_d_to_u8(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d m_per_ms_sq_f_to_cm_per_us_sq_d(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f m_per_ms_sq_f_to_cm_per_us_sq_f(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t m_per_ms_sq_f_to_cm_per_us_sq_t(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u m_per_ms_sq_f_to_cm_per_us_sq_u(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d m_per_ms_sq_f_to_cm_per_ms_sq_d(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f m_per_ms_sq_f_to_cm_per_ms_sq_f(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t m_per_ms_sq_f_to_cm_per_ms_sq_t(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u m_per_ms_sq_f_to_cm_per_ms_sq_u(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d m_per_ms_sq_f_to_cm_per_s_sq_d(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f m_per_ms_sq_f_to_cm_per_s_sq_f(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t m_per_ms_sq_f_to_cm_per_s_sq_t(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u m_per_ms_sq_f_to_cm_per_s_sq_u(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to double.
+ */
+double m_per_ms_sq_f_to_d(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to float.
+ */
+float m_per_ms_sq_f_to_f(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to int16_t.
+ */
+int16_t m_per_ms_sq_f_to_i16(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to int32_t.
+ */
+int32_t m_per_ms_sq_f_to_i32(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to int64_t.
+ */
+int64_t m_per_ms_sq_f_to_i64(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to int8_t.
+ */
+int8_t m_per_ms_sq_f_to_i8(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d m_per_ms_sq_f_to_m_per_us_sq_d(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f m_per_ms_sq_f_to_m_per_us_sq_f(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t m_per_ms_sq_f_to_m_per_us_sq_t(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u m_per_ms_sq_f_to_m_per_us_sq_u(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d m_per_ms_sq_f_to_m_per_ms_sq_d(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t m_per_ms_sq_f_to_m_per_ms_sq_t(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u m_per_ms_sq_f_to_m_per_ms_sq_u(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d m_per_ms_sq_f_to_m_per_s_sq_d(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f m_per_ms_sq_f_to_m_per_s_sq_f(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t m_per_ms_sq_f_to_m_per_s_sq_t(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u m_per_ms_sq_f_to_m_per_s_sq_u(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d m_per_ms_sq_f_to_mm_per_us_sq_d(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f m_per_ms_sq_f_to_mm_per_us_sq_f(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t m_per_ms_sq_f_to_mm_per_us_sq_t(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u m_per_ms_sq_f_to_mm_per_us_sq_u(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d m_per_ms_sq_f_to_mm_per_ms_sq_d(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f m_per_ms_sq_f_to_mm_per_ms_sq_f(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t m_per_ms_sq_f_to_mm_per_ms_sq_t(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u m_per_ms_sq_f_to_mm_per_ms_sq_u(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d m_per_ms_sq_f_to_mm_per_s_sq_d(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f m_per_ms_sq_f_to_mm_per_s_sq_f(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t m_per_ms_sq_f_to_mm_per_s_sq_t(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u m_per_ms_sq_f_to_mm_per_s_sq_u(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to uint16_t.
+ */
+uint16_t m_per_ms_sq_f_to_u16(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to uint32_t.
+ */
+uint32_t m_per_ms_sq_f_to_u32(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to uint64_t.
+ */
+uint64_t m_per_ms_sq_f_to_u64(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_f to uint8_t.
+ */
+uint8_t m_per_ms_sq_f_to_u8(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d m_per_ms_sq_t_to_cm_per_us_sq_d(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f m_per_ms_sq_t_to_cm_per_us_sq_f(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t m_per_ms_sq_t_to_cm_per_us_sq_t(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u m_per_ms_sq_t_to_cm_per_us_sq_u(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d m_per_ms_sq_t_to_cm_per_ms_sq_d(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f m_per_ms_sq_t_to_cm_per_ms_sq_f(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t m_per_ms_sq_t_to_cm_per_ms_sq_t(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u m_per_ms_sq_t_to_cm_per_ms_sq_u(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d m_per_ms_sq_t_to_cm_per_s_sq_d(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f m_per_ms_sq_t_to_cm_per_s_sq_f(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t m_per_ms_sq_t_to_cm_per_s_sq_t(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u m_per_ms_sq_t_to_cm_per_s_sq_u(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to double.
+ */
+double m_per_ms_sq_t_to_d(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to float.
+ */
+float m_per_ms_sq_t_to_f(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to int16_t.
+ */
+int16_t m_per_ms_sq_t_to_i16(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to int32_t.
+ */
+int32_t m_per_ms_sq_t_to_i32(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to int64_t.
+ */
+int64_t m_per_ms_sq_t_to_i64(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to int8_t.
+ */
+int8_t m_per_ms_sq_t_to_i8(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d m_per_ms_sq_t_to_m_per_us_sq_d(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f m_per_ms_sq_t_to_m_per_us_sq_f(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t m_per_ms_sq_t_to_m_per_us_sq_t(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u m_per_ms_sq_t_to_m_per_us_sq_u(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d m_per_ms_sq_t_to_m_per_ms_sq_d(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f m_per_ms_sq_t_to_m_per_ms_sq_f(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u m_per_ms_sq_t_to_m_per_ms_sq_u(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d m_per_ms_sq_t_to_m_per_s_sq_d(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f m_per_ms_sq_t_to_m_per_s_sq_f(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t m_per_ms_sq_t_to_m_per_s_sq_t(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u m_per_ms_sq_t_to_m_per_s_sq_u(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d m_per_ms_sq_t_to_mm_per_us_sq_d(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f m_per_ms_sq_t_to_mm_per_us_sq_f(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t m_per_ms_sq_t_to_mm_per_us_sq_t(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u m_per_ms_sq_t_to_mm_per_us_sq_u(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d m_per_ms_sq_t_to_mm_per_ms_sq_d(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f m_per_ms_sq_t_to_mm_per_ms_sq_f(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t m_per_ms_sq_t_to_mm_per_ms_sq_t(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u m_per_ms_sq_t_to_mm_per_ms_sq_u(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d m_per_ms_sq_t_to_mm_per_s_sq_d(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f m_per_ms_sq_t_to_mm_per_s_sq_f(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t m_per_ms_sq_t_to_mm_per_s_sq_t(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u m_per_ms_sq_t_to_mm_per_s_sq_u(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to uint16_t.
+ */
+uint16_t m_per_ms_sq_t_to_u16(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to uint32_t.
+ */
+uint32_t m_per_ms_sq_t_to_u32(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to uint64_t.
+ */
+uint64_t m_per_ms_sq_t_to_u64(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_t to uint8_t.
+ */
+uint8_t m_per_ms_sq_t_to_u8(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d m_per_ms_sq_u_to_cm_per_us_sq_d(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f m_per_ms_sq_u_to_cm_per_us_sq_f(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t m_per_ms_sq_u_to_cm_per_us_sq_t(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u m_per_ms_sq_u_to_cm_per_us_sq_u(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d m_per_ms_sq_u_to_cm_per_ms_sq_d(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f m_per_ms_sq_u_to_cm_per_ms_sq_f(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t m_per_ms_sq_u_to_cm_per_ms_sq_t(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u m_per_ms_sq_u_to_cm_per_ms_sq_u(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d m_per_ms_sq_u_to_cm_per_s_sq_d(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f m_per_ms_sq_u_to_cm_per_s_sq_f(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t m_per_ms_sq_u_to_cm_per_s_sq_t(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u m_per_ms_sq_u_to_cm_per_s_sq_u(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to double.
+ */
+double m_per_ms_sq_u_to_d(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to float.
+ */
+float m_per_ms_sq_u_to_f(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to int16_t.
+ */
+int16_t m_per_ms_sq_u_to_i16(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to int32_t.
+ */
+int32_t m_per_ms_sq_u_to_i32(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to int64_t.
+ */
+int64_t m_per_ms_sq_u_to_i64(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to int8_t.
+ */
+int8_t m_per_ms_sq_u_to_i8(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d m_per_ms_sq_u_to_m_per_us_sq_d(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f m_per_ms_sq_u_to_m_per_us_sq_f(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t m_per_ms_sq_u_to_m_per_us_sq_t(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u m_per_ms_sq_u_to_m_per_us_sq_u(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d m_per_ms_sq_u_to_m_per_ms_sq_d(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f m_per_ms_sq_u_to_m_per_ms_sq_f(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t m_per_ms_sq_u_to_m_per_ms_sq_t(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d m_per_ms_sq_u_to_m_per_s_sq_d(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f m_per_ms_sq_u_to_m_per_s_sq_f(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t m_per_ms_sq_u_to_m_per_s_sq_t(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u m_per_ms_sq_u_to_m_per_s_sq_u(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d m_per_ms_sq_u_to_mm_per_us_sq_d(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f m_per_ms_sq_u_to_mm_per_us_sq_f(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t m_per_ms_sq_u_to_mm_per_us_sq_t(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u m_per_ms_sq_u_to_mm_per_us_sq_u(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d m_per_ms_sq_u_to_mm_per_ms_sq_d(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f m_per_ms_sq_u_to_mm_per_ms_sq_f(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t m_per_ms_sq_u_to_mm_per_ms_sq_t(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u m_per_ms_sq_u_to_mm_per_ms_sq_u(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d m_per_ms_sq_u_to_mm_per_s_sq_d(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f m_per_ms_sq_u_to_mm_per_s_sq_f(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t m_per_ms_sq_u_to_mm_per_s_sq_t(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u m_per_ms_sq_u_to_mm_per_s_sq_u(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to uint16_t.
+ */
+uint16_t m_per_ms_sq_u_to_u16(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to uint32_t.
+ */
+uint32_t m_per_ms_sq_u_to_u32(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to uint64_t.
+ */
+uint64_t m_per_ms_sq_u_to_u64(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_milliseconds_sq_u to uint8_t.
+ */
+uint8_t m_per_ms_sq_u_to_u8(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d m_per_s_sq_d_to_cm_per_us_sq_d(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f m_per_s_sq_d_to_cm_per_us_sq_f(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t m_per_s_sq_d_to_cm_per_us_sq_t(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u m_per_s_sq_d_to_cm_per_us_sq_u(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d m_per_s_sq_d_to_cm_per_ms_sq_d(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f m_per_s_sq_d_to_cm_per_ms_sq_f(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t m_per_s_sq_d_to_cm_per_ms_sq_t(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u m_per_s_sq_d_to_cm_per_ms_sq_u(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d m_per_s_sq_d_to_cm_per_s_sq_d(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f m_per_s_sq_d_to_cm_per_s_sq_f(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t m_per_s_sq_d_to_cm_per_s_sq_t(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u m_per_s_sq_d_to_cm_per_s_sq_u(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to double.
+ */
+double m_per_s_sq_d_to_d(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to float.
+ */
+float m_per_s_sq_d_to_f(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to int16_t.
+ */
+int16_t m_per_s_sq_d_to_i16(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to int32_t.
+ */
+int32_t m_per_s_sq_d_to_i32(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to int64_t.
+ */
+int64_t m_per_s_sq_d_to_i64(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to int8_t.
+ */
+int8_t m_per_s_sq_d_to_i8(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d m_per_s_sq_d_to_m_per_us_sq_d(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f m_per_s_sq_d_to_m_per_us_sq_f(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t m_per_s_sq_d_to_m_per_us_sq_t(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u m_per_s_sq_d_to_m_per_us_sq_u(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d m_per_s_sq_d_to_m_per_ms_sq_d(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f m_per_s_sq_d_to_m_per_ms_sq_f(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t m_per_s_sq_d_to_m_per_ms_sq_t(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u m_per_s_sq_d_to_m_per_ms_sq_u(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f m_per_s_sq_d_to_m_per_s_sq_f(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t m_per_s_sq_d_to_m_per_s_sq_t(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u m_per_s_sq_d_to_m_per_s_sq_u(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d m_per_s_sq_d_to_mm_per_us_sq_d(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f m_per_s_sq_d_to_mm_per_us_sq_f(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t m_per_s_sq_d_to_mm_per_us_sq_t(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u m_per_s_sq_d_to_mm_per_us_sq_u(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d m_per_s_sq_d_to_mm_per_ms_sq_d(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f m_per_s_sq_d_to_mm_per_ms_sq_f(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t m_per_s_sq_d_to_mm_per_ms_sq_t(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u m_per_s_sq_d_to_mm_per_ms_sq_u(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d m_per_s_sq_d_to_mm_per_s_sq_d(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f m_per_s_sq_d_to_mm_per_s_sq_f(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t m_per_s_sq_d_to_mm_per_s_sq_t(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u m_per_s_sq_d_to_mm_per_s_sq_u(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to uint16_t.
+ */
+uint16_t m_per_s_sq_d_to_u16(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to uint32_t.
+ */
+uint32_t m_per_s_sq_d_to_u32(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to uint64_t.
+ */
+uint64_t m_per_s_sq_d_to_u64(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_d to uint8_t.
+ */
+uint8_t m_per_s_sq_d_to_u8(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d m_per_s_sq_f_to_cm_per_us_sq_d(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f m_per_s_sq_f_to_cm_per_us_sq_f(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t m_per_s_sq_f_to_cm_per_us_sq_t(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u m_per_s_sq_f_to_cm_per_us_sq_u(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d m_per_s_sq_f_to_cm_per_ms_sq_d(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f m_per_s_sq_f_to_cm_per_ms_sq_f(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t m_per_s_sq_f_to_cm_per_ms_sq_t(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u m_per_s_sq_f_to_cm_per_ms_sq_u(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d m_per_s_sq_f_to_cm_per_s_sq_d(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f m_per_s_sq_f_to_cm_per_s_sq_f(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t m_per_s_sq_f_to_cm_per_s_sq_t(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u m_per_s_sq_f_to_cm_per_s_sq_u(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to double.
+ */
+double m_per_s_sq_f_to_d(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to float.
+ */
+float m_per_s_sq_f_to_f(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to int16_t.
+ */
+int16_t m_per_s_sq_f_to_i16(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to int32_t.
+ */
+int32_t m_per_s_sq_f_to_i32(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to int64_t.
+ */
+int64_t m_per_s_sq_f_to_i64(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to int8_t.
+ */
+int8_t m_per_s_sq_f_to_i8(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d m_per_s_sq_f_to_m_per_us_sq_d(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f m_per_s_sq_f_to_m_per_us_sq_f(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t m_per_s_sq_f_to_m_per_us_sq_t(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u m_per_s_sq_f_to_m_per_us_sq_u(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d m_per_s_sq_f_to_m_per_ms_sq_d(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f m_per_s_sq_f_to_m_per_ms_sq_f(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t m_per_s_sq_f_to_m_per_ms_sq_t(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u m_per_s_sq_f_to_m_per_ms_sq_u(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d m_per_s_sq_f_to_m_per_s_sq_d(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t m_per_s_sq_f_to_m_per_s_sq_t(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u m_per_s_sq_f_to_m_per_s_sq_u(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d m_per_s_sq_f_to_mm_per_us_sq_d(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f m_per_s_sq_f_to_mm_per_us_sq_f(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t m_per_s_sq_f_to_mm_per_us_sq_t(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u m_per_s_sq_f_to_mm_per_us_sq_u(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d m_per_s_sq_f_to_mm_per_ms_sq_d(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f m_per_s_sq_f_to_mm_per_ms_sq_f(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t m_per_s_sq_f_to_mm_per_ms_sq_t(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u m_per_s_sq_f_to_mm_per_ms_sq_u(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d m_per_s_sq_f_to_mm_per_s_sq_d(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f m_per_s_sq_f_to_mm_per_s_sq_f(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t m_per_s_sq_f_to_mm_per_s_sq_t(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u m_per_s_sq_f_to_mm_per_s_sq_u(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to uint16_t.
+ */
+uint16_t m_per_s_sq_f_to_u16(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to uint32_t.
+ */
+uint32_t m_per_s_sq_f_to_u32(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to uint64_t.
+ */
+uint64_t m_per_s_sq_f_to_u64(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_f to uint8_t.
+ */
+uint8_t m_per_s_sq_f_to_u8(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d m_per_s_sq_t_to_cm_per_us_sq_d(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f m_per_s_sq_t_to_cm_per_us_sq_f(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t m_per_s_sq_t_to_cm_per_us_sq_t(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u m_per_s_sq_t_to_cm_per_us_sq_u(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d m_per_s_sq_t_to_cm_per_ms_sq_d(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f m_per_s_sq_t_to_cm_per_ms_sq_f(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t m_per_s_sq_t_to_cm_per_ms_sq_t(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u m_per_s_sq_t_to_cm_per_ms_sq_u(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d m_per_s_sq_t_to_cm_per_s_sq_d(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f m_per_s_sq_t_to_cm_per_s_sq_f(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t m_per_s_sq_t_to_cm_per_s_sq_t(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u m_per_s_sq_t_to_cm_per_s_sq_u(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to double.
+ */
+double m_per_s_sq_t_to_d(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to float.
+ */
+float m_per_s_sq_t_to_f(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to int16_t.
+ */
+int16_t m_per_s_sq_t_to_i16(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to int32_t.
+ */
+int32_t m_per_s_sq_t_to_i32(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to int64_t.
+ */
+int64_t m_per_s_sq_t_to_i64(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to int8_t.
+ */
+int8_t m_per_s_sq_t_to_i8(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d m_per_s_sq_t_to_m_per_us_sq_d(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f m_per_s_sq_t_to_m_per_us_sq_f(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t m_per_s_sq_t_to_m_per_us_sq_t(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u m_per_s_sq_t_to_m_per_us_sq_u(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d m_per_s_sq_t_to_m_per_ms_sq_d(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f m_per_s_sq_t_to_m_per_ms_sq_f(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t m_per_s_sq_t_to_m_per_ms_sq_t(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u m_per_s_sq_t_to_m_per_ms_sq_u(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d m_per_s_sq_t_to_m_per_s_sq_d(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f m_per_s_sq_t_to_m_per_s_sq_f(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u m_per_s_sq_t_to_m_per_s_sq_u(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d m_per_s_sq_t_to_mm_per_us_sq_d(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f m_per_s_sq_t_to_mm_per_us_sq_f(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t m_per_s_sq_t_to_mm_per_us_sq_t(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u m_per_s_sq_t_to_mm_per_us_sq_u(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d m_per_s_sq_t_to_mm_per_ms_sq_d(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f m_per_s_sq_t_to_mm_per_ms_sq_f(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t m_per_s_sq_t_to_mm_per_ms_sq_t(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u m_per_s_sq_t_to_mm_per_ms_sq_u(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d m_per_s_sq_t_to_mm_per_s_sq_d(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f m_per_s_sq_t_to_mm_per_s_sq_f(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t m_per_s_sq_t_to_mm_per_s_sq_t(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u m_per_s_sq_t_to_mm_per_s_sq_u(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to uint16_t.
+ */
+uint16_t m_per_s_sq_t_to_u16(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to uint32_t.
+ */
+uint32_t m_per_s_sq_t_to_u32(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to uint64_t.
+ */
+uint64_t m_per_s_sq_t_to_u64(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_t to uint8_t.
+ */
+uint8_t m_per_s_sq_t_to_u8(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d m_per_s_sq_u_to_cm_per_us_sq_d(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f m_per_s_sq_u_to_cm_per_us_sq_f(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t m_per_s_sq_u_to_cm_per_us_sq_t(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u m_per_s_sq_u_to_cm_per_us_sq_u(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d m_per_s_sq_u_to_cm_per_ms_sq_d(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f m_per_s_sq_u_to_cm_per_ms_sq_f(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t m_per_s_sq_u_to_cm_per_ms_sq_t(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u m_per_s_sq_u_to_cm_per_ms_sq_u(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d m_per_s_sq_u_to_cm_per_s_sq_d(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f m_per_s_sq_u_to_cm_per_s_sq_f(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t m_per_s_sq_u_to_cm_per_s_sq_t(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u m_per_s_sq_u_to_cm_per_s_sq_u(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to double.
+ */
+double m_per_s_sq_u_to_d(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to float.
+ */
+float m_per_s_sq_u_to_f(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to int16_t.
+ */
+int16_t m_per_s_sq_u_to_i16(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to int32_t.
+ */
+int32_t m_per_s_sq_u_to_i32(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to int64_t.
+ */
+int64_t m_per_s_sq_u_to_i64(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to int8_t.
+ */
+int8_t m_per_s_sq_u_to_i8(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d m_per_s_sq_u_to_m_per_us_sq_d(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f m_per_s_sq_u_to_m_per_us_sq_f(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t m_per_s_sq_u_to_m_per_us_sq_t(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u m_per_s_sq_u_to_m_per_us_sq_u(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d m_per_s_sq_u_to_m_per_ms_sq_d(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f m_per_s_sq_u_to_m_per_ms_sq_f(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t m_per_s_sq_u_to_m_per_ms_sq_t(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u m_per_s_sq_u_to_m_per_ms_sq_u(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d m_per_s_sq_u_to_m_per_s_sq_d(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f m_per_s_sq_u_to_m_per_s_sq_f(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t m_per_s_sq_u_to_m_per_s_sq_t(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d m_per_s_sq_u_to_mm_per_us_sq_d(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f m_per_s_sq_u_to_mm_per_us_sq_f(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t m_per_s_sq_u_to_mm_per_us_sq_t(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u m_per_s_sq_u_to_mm_per_us_sq_u(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d m_per_s_sq_u_to_mm_per_ms_sq_d(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f m_per_s_sq_u_to_mm_per_ms_sq_f(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t m_per_s_sq_u_to_mm_per_ms_sq_t(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u m_per_s_sq_u_to_mm_per_ms_sq_u(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d m_per_s_sq_u_to_mm_per_s_sq_d(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f m_per_s_sq_u_to_mm_per_s_sq_f(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t m_per_s_sq_u_to_mm_per_s_sq_t(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u m_per_s_sq_u_to_mm_per_s_sq_u(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to uint16_t.
+ */
+uint16_t m_per_s_sq_u_to_u16(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to uint32_t.
+ */
+uint32_t m_per_s_sq_u_to_u32(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to uint64_t.
+ */
+uint64_t m_per_s_sq_u_to_u64(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert metres_per_seconds_sq_u to uint8_t.
+ */
+uint8_t m_per_s_sq_u_to_u8(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d mm_per_us_sq_d_to_cm_per_us_sq_d(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f mm_per_us_sq_d_to_cm_per_us_sq_f(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t mm_per_us_sq_d_to_cm_per_us_sq_t(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u mm_per_us_sq_d_to_cm_per_us_sq_u(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d mm_per_us_sq_d_to_cm_per_ms_sq_d(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f mm_per_us_sq_d_to_cm_per_ms_sq_f(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t mm_per_us_sq_d_to_cm_per_ms_sq_t(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u mm_per_us_sq_d_to_cm_per_ms_sq_u(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d mm_per_us_sq_d_to_cm_per_s_sq_d(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f mm_per_us_sq_d_to_cm_per_s_sq_f(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t mm_per_us_sq_d_to_cm_per_s_sq_t(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u mm_per_us_sq_d_to_cm_per_s_sq_u(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to double.
+ */
+double mm_per_us_sq_d_to_d(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to float.
+ */
+float mm_per_us_sq_d_to_f(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to int16_t.
+ */
+int16_t mm_per_us_sq_d_to_i16(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to int32_t.
+ */
+int32_t mm_per_us_sq_d_to_i32(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to int64_t.
+ */
+int64_t mm_per_us_sq_d_to_i64(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to int8_t.
+ */
+int8_t mm_per_us_sq_d_to_i8(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d mm_per_us_sq_d_to_m_per_us_sq_d(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f mm_per_us_sq_d_to_m_per_us_sq_f(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t mm_per_us_sq_d_to_m_per_us_sq_t(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u mm_per_us_sq_d_to_m_per_us_sq_u(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d mm_per_us_sq_d_to_m_per_ms_sq_d(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f mm_per_us_sq_d_to_m_per_ms_sq_f(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t mm_per_us_sq_d_to_m_per_ms_sq_t(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u mm_per_us_sq_d_to_m_per_ms_sq_u(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d mm_per_us_sq_d_to_m_per_s_sq_d(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f mm_per_us_sq_d_to_m_per_s_sq_f(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t mm_per_us_sq_d_to_m_per_s_sq_t(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u mm_per_us_sq_d_to_m_per_s_sq_u(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f mm_per_us_sq_d_to_mm_per_us_sq_f(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t mm_per_us_sq_d_to_mm_per_us_sq_t(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u mm_per_us_sq_d_to_mm_per_us_sq_u(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d mm_per_us_sq_d_to_mm_per_ms_sq_d(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f mm_per_us_sq_d_to_mm_per_ms_sq_f(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t mm_per_us_sq_d_to_mm_per_ms_sq_t(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u mm_per_us_sq_d_to_mm_per_ms_sq_u(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d mm_per_us_sq_d_to_mm_per_s_sq_d(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f mm_per_us_sq_d_to_mm_per_s_sq_f(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t mm_per_us_sq_d_to_mm_per_s_sq_t(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u mm_per_us_sq_d_to_mm_per_s_sq_u(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to uint16_t.
+ */
+uint16_t mm_per_us_sq_d_to_u16(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to uint32_t.
+ */
+uint32_t mm_per_us_sq_d_to_u32(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to uint64_t.
+ */
+uint64_t mm_per_us_sq_d_to_u64(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_d to uint8_t.
+ */
+uint8_t mm_per_us_sq_d_to_u8(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d mm_per_us_sq_f_to_cm_per_us_sq_d(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f mm_per_us_sq_f_to_cm_per_us_sq_f(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t mm_per_us_sq_f_to_cm_per_us_sq_t(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u mm_per_us_sq_f_to_cm_per_us_sq_u(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d mm_per_us_sq_f_to_cm_per_ms_sq_d(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f mm_per_us_sq_f_to_cm_per_ms_sq_f(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t mm_per_us_sq_f_to_cm_per_ms_sq_t(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u mm_per_us_sq_f_to_cm_per_ms_sq_u(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d mm_per_us_sq_f_to_cm_per_s_sq_d(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f mm_per_us_sq_f_to_cm_per_s_sq_f(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t mm_per_us_sq_f_to_cm_per_s_sq_t(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u mm_per_us_sq_f_to_cm_per_s_sq_u(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to double.
+ */
+double mm_per_us_sq_f_to_d(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to float.
+ */
+float mm_per_us_sq_f_to_f(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to int16_t.
+ */
+int16_t mm_per_us_sq_f_to_i16(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to int32_t.
+ */
+int32_t mm_per_us_sq_f_to_i32(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to int64_t.
+ */
+int64_t mm_per_us_sq_f_to_i64(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to int8_t.
+ */
+int8_t mm_per_us_sq_f_to_i8(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d mm_per_us_sq_f_to_m_per_us_sq_d(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f mm_per_us_sq_f_to_m_per_us_sq_f(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t mm_per_us_sq_f_to_m_per_us_sq_t(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u mm_per_us_sq_f_to_m_per_us_sq_u(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d mm_per_us_sq_f_to_m_per_ms_sq_d(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f mm_per_us_sq_f_to_m_per_ms_sq_f(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t mm_per_us_sq_f_to_m_per_ms_sq_t(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u mm_per_us_sq_f_to_m_per_ms_sq_u(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d mm_per_us_sq_f_to_m_per_s_sq_d(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f mm_per_us_sq_f_to_m_per_s_sq_f(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t mm_per_us_sq_f_to_m_per_s_sq_t(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u mm_per_us_sq_f_to_m_per_s_sq_u(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d mm_per_us_sq_f_to_mm_per_us_sq_d(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t mm_per_us_sq_f_to_mm_per_us_sq_t(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u mm_per_us_sq_f_to_mm_per_us_sq_u(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d mm_per_us_sq_f_to_mm_per_ms_sq_d(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f mm_per_us_sq_f_to_mm_per_ms_sq_f(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t mm_per_us_sq_f_to_mm_per_ms_sq_t(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u mm_per_us_sq_f_to_mm_per_ms_sq_u(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d mm_per_us_sq_f_to_mm_per_s_sq_d(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f mm_per_us_sq_f_to_mm_per_s_sq_f(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t mm_per_us_sq_f_to_mm_per_s_sq_t(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u mm_per_us_sq_f_to_mm_per_s_sq_u(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to uint16_t.
+ */
+uint16_t mm_per_us_sq_f_to_u16(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to uint32_t.
+ */
+uint32_t mm_per_us_sq_f_to_u32(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to uint64_t.
+ */
+uint64_t mm_per_us_sq_f_to_u64(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_f to uint8_t.
+ */
+uint8_t mm_per_us_sq_f_to_u8(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d mm_per_us_sq_t_to_cm_per_us_sq_d(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f mm_per_us_sq_t_to_cm_per_us_sq_f(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t mm_per_us_sq_t_to_cm_per_us_sq_t(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u mm_per_us_sq_t_to_cm_per_us_sq_u(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d mm_per_us_sq_t_to_cm_per_ms_sq_d(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f mm_per_us_sq_t_to_cm_per_ms_sq_f(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t mm_per_us_sq_t_to_cm_per_ms_sq_t(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u mm_per_us_sq_t_to_cm_per_ms_sq_u(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d mm_per_us_sq_t_to_cm_per_s_sq_d(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f mm_per_us_sq_t_to_cm_per_s_sq_f(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t mm_per_us_sq_t_to_cm_per_s_sq_t(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u mm_per_us_sq_t_to_cm_per_s_sq_u(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to double.
+ */
+double mm_per_us_sq_t_to_d(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to float.
+ */
+float mm_per_us_sq_t_to_f(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to int16_t.
+ */
+int16_t mm_per_us_sq_t_to_i16(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to int32_t.
+ */
+int32_t mm_per_us_sq_t_to_i32(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to int64_t.
+ */
+int64_t mm_per_us_sq_t_to_i64(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to int8_t.
+ */
+int8_t mm_per_us_sq_t_to_i8(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d mm_per_us_sq_t_to_m_per_us_sq_d(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f mm_per_us_sq_t_to_m_per_us_sq_f(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t mm_per_us_sq_t_to_m_per_us_sq_t(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u mm_per_us_sq_t_to_m_per_us_sq_u(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d mm_per_us_sq_t_to_m_per_ms_sq_d(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f mm_per_us_sq_t_to_m_per_ms_sq_f(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t mm_per_us_sq_t_to_m_per_ms_sq_t(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u mm_per_us_sq_t_to_m_per_ms_sq_u(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d mm_per_us_sq_t_to_m_per_s_sq_d(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f mm_per_us_sq_t_to_m_per_s_sq_f(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t mm_per_us_sq_t_to_m_per_s_sq_t(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u mm_per_us_sq_t_to_m_per_s_sq_u(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d mm_per_us_sq_t_to_mm_per_us_sq_d(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f mm_per_us_sq_t_to_mm_per_us_sq_f(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u mm_per_us_sq_t_to_mm_per_us_sq_u(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d mm_per_us_sq_t_to_mm_per_ms_sq_d(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f mm_per_us_sq_t_to_mm_per_ms_sq_f(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t mm_per_us_sq_t_to_mm_per_ms_sq_t(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u mm_per_us_sq_t_to_mm_per_ms_sq_u(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d mm_per_us_sq_t_to_mm_per_s_sq_d(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f mm_per_us_sq_t_to_mm_per_s_sq_f(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t mm_per_us_sq_t_to_mm_per_s_sq_t(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u mm_per_us_sq_t_to_mm_per_s_sq_u(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to uint16_t.
+ */
+uint16_t mm_per_us_sq_t_to_u16(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to uint32_t.
+ */
+uint32_t mm_per_us_sq_t_to_u32(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to uint64_t.
+ */
+uint64_t mm_per_us_sq_t_to_u64(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_t to uint8_t.
+ */
+uint8_t mm_per_us_sq_t_to_u8(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d mm_per_us_sq_u_to_cm_per_us_sq_d(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f mm_per_us_sq_u_to_cm_per_us_sq_f(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t mm_per_us_sq_u_to_cm_per_us_sq_t(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u mm_per_us_sq_u_to_cm_per_us_sq_u(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d mm_per_us_sq_u_to_cm_per_ms_sq_d(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f mm_per_us_sq_u_to_cm_per_ms_sq_f(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t mm_per_us_sq_u_to_cm_per_ms_sq_t(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u mm_per_us_sq_u_to_cm_per_ms_sq_u(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d mm_per_us_sq_u_to_cm_per_s_sq_d(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f mm_per_us_sq_u_to_cm_per_s_sq_f(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t mm_per_us_sq_u_to_cm_per_s_sq_t(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u mm_per_us_sq_u_to_cm_per_s_sq_u(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to double.
+ */
+double mm_per_us_sq_u_to_d(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to float.
+ */
+float mm_per_us_sq_u_to_f(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to int16_t.
+ */
+int16_t mm_per_us_sq_u_to_i16(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to int32_t.
+ */
+int32_t mm_per_us_sq_u_to_i32(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to int64_t.
+ */
+int64_t mm_per_us_sq_u_to_i64(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to int8_t.
+ */
+int8_t mm_per_us_sq_u_to_i8(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d mm_per_us_sq_u_to_m_per_us_sq_d(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f mm_per_us_sq_u_to_m_per_us_sq_f(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t mm_per_us_sq_u_to_m_per_us_sq_t(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u mm_per_us_sq_u_to_m_per_us_sq_u(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d mm_per_us_sq_u_to_m_per_ms_sq_d(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f mm_per_us_sq_u_to_m_per_ms_sq_f(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t mm_per_us_sq_u_to_m_per_ms_sq_t(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u mm_per_us_sq_u_to_m_per_ms_sq_u(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d mm_per_us_sq_u_to_m_per_s_sq_d(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f mm_per_us_sq_u_to_m_per_s_sq_f(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t mm_per_us_sq_u_to_m_per_s_sq_t(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u mm_per_us_sq_u_to_m_per_s_sq_u(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d mm_per_us_sq_u_to_mm_per_us_sq_d(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f mm_per_us_sq_u_to_mm_per_us_sq_f(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t mm_per_us_sq_u_to_mm_per_us_sq_t(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d mm_per_us_sq_u_to_mm_per_ms_sq_d(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f mm_per_us_sq_u_to_mm_per_ms_sq_f(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t mm_per_us_sq_u_to_mm_per_ms_sq_t(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u mm_per_us_sq_u_to_mm_per_ms_sq_u(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d mm_per_us_sq_u_to_mm_per_s_sq_d(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f mm_per_us_sq_u_to_mm_per_s_sq_f(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t mm_per_us_sq_u_to_mm_per_s_sq_t(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u mm_per_us_sq_u_to_mm_per_s_sq_u(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to uint16_t.
+ */
+uint16_t mm_per_us_sq_u_to_u16(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to uint32_t.
+ */
+uint32_t mm_per_us_sq_u_to_u32(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to uint64_t.
+ */
+uint64_t mm_per_us_sq_u_to_u64(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_microseconds_sq_u to uint8_t.
+ */
+uint8_t mm_per_us_sq_u_to_u8(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d mm_per_ms_sq_d_to_cm_per_us_sq_d(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f mm_per_ms_sq_d_to_cm_per_us_sq_f(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t mm_per_ms_sq_d_to_cm_per_us_sq_t(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u mm_per_ms_sq_d_to_cm_per_us_sq_u(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d mm_per_ms_sq_d_to_cm_per_ms_sq_d(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f mm_per_ms_sq_d_to_cm_per_ms_sq_f(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t mm_per_ms_sq_d_to_cm_per_ms_sq_t(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u mm_per_ms_sq_d_to_cm_per_ms_sq_u(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d mm_per_ms_sq_d_to_cm_per_s_sq_d(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f mm_per_ms_sq_d_to_cm_per_s_sq_f(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t mm_per_ms_sq_d_to_cm_per_s_sq_t(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u mm_per_ms_sq_d_to_cm_per_s_sq_u(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to double.
+ */
+double mm_per_ms_sq_d_to_d(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to float.
+ */
+float mm_per_ms_sq_d_to_f(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to int16_t.
+ */
+int16_t mm_per_ms_sq_d_to_i16(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to int32_t.
+ */
+int32_t mm_per_ms_sq_d_to_i32(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to int64_t.
+ */
+int64_t mm_per_ms_sq_d_to_i64(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to int8_t.
+ */
+int8_t mm_per_ms_sq_d_to_i8(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d mm_per_ms_sq_d_to_m_per_us_sq_d(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f mm_per_ms_sq_d_to_m_per_us_sq_f(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t mm_per_ms_sq_d_to_m_per_us_sq_t(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u mm_per_ms_sq_d_to_m_per_us_sq_u(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d mm_per_ms_sq_d_to_m_per_ms_sq_d(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f mm_per_ms_sq_d_to_m_per_ms_sq_f(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t mm_per_ms_sq_d_to_m_per_ms_sq_t(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u mm_per_ms_sq_d_to_m_per_ms_sq_u(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d mm_per_ms_sq_d_to_m_per_s_sq_d(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f mm_per_ms_sq_d_to_m_per_s_sq_f(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t mm_per_ms_sq_d_to_m_per_s_sq_t(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u mm_per_ms_sq_d_to_m_per_s_sq_u(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d mm_per_ms_sq_d_to_mm_per_us_sq_d(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f mm_per_ms_sq_d_to_mm_per_us_sq_f(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t mm_per_ms_sq_d_to_mm_per_us_sq_t(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u mm_per_ms_sq_d_to_mm_per_us_sq_u(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f mm_per_ms_sq_d_to_mm_per_ms_sq_f(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t mm_per_ms_sq_d_to_mm_per_ms_sq_t(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u mm_per_ms_sq_d_to_mm_per_ms_sq_u(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d mm_per_ms_sq_d_to_mm_per_s_sq_d(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f mm_per_ms_sq_d_to_mm_per_s_sq_f(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t mm_per_ms_sq_d_to_mm_per_s_sq_t(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u mm_per_ms_sq_d_to_mm_per_s_sq_u(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to uint16_t.
+ */
+uint16_t mm_per_ms_sq_d_to_u16(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to uint32_t.
+ */
+uint32_t mm_per_ms_sq_d_to_u32(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to uint64_t.
+ */
+uint64_t mm_per_ms_sq_d_to_u64(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_d to uint8_t.
+ */
+uint8_t mm_per_ms_sq_d_to_u8(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d mm_per_ms_sq_f_to_cm_per_us_sq_d(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f mm_per_ms_sq_f_to_cm_per_us_sq_f(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t mm_per_ms_sq_f_to_cm_per_us_sq_t(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u mm_per_ms_sq_f_to_cm_per_us_sq_u(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d mm_per_ms_sq_f_to_cm_per_ms_sq_d(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f mm_per_ms_sq_f_to_cm_per_ms_sq_f(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t mm_per_ms_sq_f_to_cm_per_ms_sq_t(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u mm_per_ms_sq_f_to_cm_per_ms_sq_u(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d mm_per_ms_sq_f_to_cm_per_s_sq_d(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f mm_per_ms_sq_f_to_cm_per_s_sq_f(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t mm_per_ms_sq_f_to_cm_per_s_sq_t(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u mm_per_ms_sq_f_to_cm_per_s_sq_u(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to double.
+ */
+double mm_per_ms_sq_f_to_d(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to float.
+ */
+float mm_per_ms_sq_f_to_f(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to int16_t.
+ */
+int16_t mm_per_ms_sq_f_to_i16(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to int32_t.
+ */
+int32_t mm_per_ms_sq_f_to_i32(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to int64_t.
+ */
+int64_t mm_per_ms_sq_f_to_i64(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to int8_t.
+ */
+int8_t mm_per_ms_sq_f_to_i8(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d mm_per_ms_sq_f_to_m_per_us_sq_d(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f mm_per_ms_sq_f_to_m_per_us_sq_f(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t mm_per_ms_sq_f_to_m_per_us_sq_t(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u mm_per_ms_sq_f_to_m_per_us_sq_u(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d mm_per_ms_sq_f_to_m_per_ms_sq_d(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f mm_per_ms_sq_f_to_m_per_ms_sq_f(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t mm_per_ms_sq_f_to_m_per_ms_sq_t(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u mm_per_ms_sq_f_to_m_per_ms_sq_u(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d mm_per_ms_sq_f_to_m_per_s_sq_d(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f mm_per_ms_sq_f_to_m_per_s_sq_f(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t mm_per_ms_sq_f_to_m_per_s_sq_t(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u mm_per_ms_sq_f_to_m_per_s_sq_u(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d mm_per_ms_sq_f_to_mm_per_us_sq_d(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f mm_per_ms_sq_f_to_mm_per_us_sq_f(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t mm_per_ms_sq_f_to_mm_per_us_sq_t(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u mm_per_ms_sq_f_to_mm_per_us_sq_u(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d mm_per_ms_sq_f_to_mm_per_ms_sq_d(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t mm_per_ms_sq_f_to_mm_per_ms_sq_t(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u mm_per_ms_sq_f_to_mm_per_ms_sq_u(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d mm_per_ms_sq_f_to_mm_per_s_sq_d(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f mm_per_ms_sq_f_to_mm_per_s_sq_f(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t mm_per_ms_sq_f_to_mm_per_s_sq_t(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u mm_per_ms_sq_f_to_mm_per_s_sq_u(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to uint16_t.
+ */
+uint16_t mm_per_ms_sq_f_to_u16(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to uint32_t.
+ */
+uint32_t mm_per_ms_sq_f_to_u32(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to uint64_t.
+ */
+uint64_t mm_per_ms_sq_f_to_u64(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_f to uint8_t.
+ */
+uint8_t mm_per_ms_sq_f_to_u8(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d mm_per_ms_sq_t_to_cm_per_us_sq_d(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f mm_per_ms_sq_t_to_cm_per_us_sq_f(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t mm_per_ms_sq_t_to_cm_per_us_sq_t(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u mm_per_ms_sq_t_to_cm_per_us_sq_u(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d mm_per_ms_sq_t_to_cm_per_ms_sq_d(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f mm_per_ms_sq_t_to_cm_per_ms_sq_f(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t mm_per_ms_sq_t_to_cm_per_ms_sq_t(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u mm_per_ms_sq_t_to_cm_per_ms_sq_u(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d mm_per_ms_sq_t_to_cm_per_s_sq_d(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f mm_per_ms_sq_t_to_cm_per_s_sq_f(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t mm_per_ms_sq_t_to_cm_per_s_sq_t(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u mm_per_ms_sq_t_to_cm_per_s_sq_u(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to double.
+ */
+double mm_per_ms_sq_t_to_d(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to float.
+ */
+float mm_per_ms_sq_t_to_f(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to int16_t.
+ */
+int16_t mm_per_ms_sq_t_to_i16(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to int32_t.
+ */
+int32_t mm_per_ms_sq_t_to_i32(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to int64_t.
+ */
+int64_t mm_per_ms_sq_t_to_i64(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to int8_t.
+ */
+int8_t mm_per_ms_sq_t_to_i8(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d mm_per_ms_sq_t_to_m_per_us_sq_d(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f mm_per_ms_sq_t_to_m_per_us_sq_f(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t mm_per_ms_sq_t_to_m_per_us_sq_t(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u mm_per_ms_sq_t_to_m_per_us_sq_u(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d mm_per_ms_sq_t_to_m_per_ms_sq_d(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f mm_per_ms_sq_t_to_m_per_ms_sq_f(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t mm_per_ms_sq_t_to_m_per_ms_sq_t(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u mm_per_ms_sq_t_to_m_per_ms_sq_u(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d mm_per_ms_sq_t_to_m_per_s_sq_d(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f mm_per_ms_sq_t_to_m_per_s_sq_f(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t mm_per_ms_sq_t_to_m_per_s_sq_t(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u mm_per_ms_sq_t_to_m_per_s_sq_u(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d mm_per_ms_sq_t_to_mm_per_us_sq_d(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f mm_per_ms_sq_t_to_mm_per_us_sq_f(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t mm_per_ms_sq_t_to_mm_per_us_sq_t(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u mm_per_ms_sq_t_to_mm_per_us_sq_u(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d mm_per_ms_sq_t_to_mm_per_ms_sq_d(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f mm_per_ms_sq_t_to_mm_per_ms_sq_f(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u mm_per_ms_sq_t_to_mm_per_ms_sq_u(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d mm_per_ms_sq_t_to_mm_per_s_sq_d(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f mm_per_ms_sq_t_to_mm_per_s_sq_f(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t mm_per_ms_sq_t_to_mm_per_s_sq_t(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u mm_per_ms_sq_t_to_mm_per_s_sq_u(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to uint16_t.
+ */
+uint16_t mm_per_ms_sq_t_to_u16(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to uint32_t.
+ */
+uint32_t mm_per_ms_sq_t_to_u32(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to uint64_t.
+ */
+uint64_t mm_per_ms_sq_t_to_u64(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_t to uint8_t.
+ */
+uint8_t mm_per_ms_sq_t_to_u8(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d mm_per_ms_sq_u_to_cm_per_us_sq_d(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f mm_per_ms_sq_u_to_cm_per_us_sq_f(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t mm_per_ms_sq_u_to_cm_per_us_sq_t(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u mm_per_ms_sq_u_to_cm_per_us_sq_u(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d mm_per_ms_sq_u_to_cm_per_ms_sq_d(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f mm_per_ms_sq_u_to_cm_per_ms_sq_f(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t mm_per_ms_sq_u_to_cm_per_ms_sq_t(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u mm_per_ms_sq_u_to_cm_per_ms_sq_u(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d mm_per_ms_sq_u_to_cm_per_s_sq_d(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f mm_per_ms_sq_u_to_cm_per_s_sq_f(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t mm_per_ms_sq_u_to_cm_per_s_sq_t(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u mm_per_ms_sq_u_to_cm_per_s_sq_u(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to double.
+ */
+double mm_per_ms_sq_u_to_d(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to float.
+ */
+float mm_per_ms_sq_u_to_f(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to int16_t.
+ */
+int16_t mm_per_ms_sq_u_to_i16(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to int32_t.
+ */
+int32_t mm_per_ms_sq_u_to_i32(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to int64_t.
+ */
+int64_t mm_per_ms_sq_u_to_i64(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to int8_t.
+ */
+int8_t mm_per_ms_sq_u_to_i8(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d mm_per_ms_sq_u_to_m_per_us_sq_d(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f mm_per_ms_sq_u_to_m_per_us_sq_f(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t mm_per_ms_sq_u_to_m_per_us_sq_t(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u mm_per_ms_sq_u_to_m_per_us_sq_u(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d mm_per_ms_sq_u_to_m_per_ms_sq_d(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f mm_per_ms_sq_u_to_m_per_ms_sq_f(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t mm_per_ms_sq_u_to_m_per_ms_sq_t(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u mm_per_ms_sq_u_to_m_per_ms_sq_u(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d mm_per_ms_sq_u_to_m_per_s_sq_d(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f mm_per_ms_sq_u_to_m_per_s_sq_f(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t mm_per_ms_sq_u_to_m_per_s_sq_t(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u mm_per_ms_sq_u_to_m_per_s_sq_u(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d mm_per_ms_sq_u_to_mm_per_us_sq_d(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f mm_per_ms_sq_u_to_mm_per_us_sq_f(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t mm_per_ms_sq_u_to_mm_per_us_sq_t(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u mm_per_ms_sq_u_to_mm_per_us_sq_u(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d mm_per_ms_sq_u_to_mm_per_ms_sq_d(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f mm_per_ms_sq_u_to_mm_per_ms_sq_f(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t mm_per_ms_sq_u_to_mm_per_ms_sq_t(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d mm_per_ms_sq_u_to_mm_per_s_sq_d(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f mm_per_ms_sq_u_to_mm_per_s_sq_f(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t mm_per_ms_sq_u_to_mm_per_s_sq_t(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u mm_per_ms_sq_u_to_mm_per_s_sq_u(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to uint16_t.
+ */
+uint16_t mm_per_ms_sq_u_to_u16(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to uint32_t.
+ */
+uint32_t mm_per_ms_sq_u_to_u32(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to uint64_t.
+ */
+uint64_t mm_per_ms_sq_u_to_u64(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_milliseconds_sq_u to uint8_t.
+ */
+uint8_t mm_per_ms_sq_u_to_u8(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d mm_per_s_sq_d_to_cm_per_us_sq_d(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f mm_per_s_sq_d_to_cm_per_us_sq_f(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t mm_per_s_sq_d_to_cm_per_us_sq_t(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u mm_per_s_sq_d_to_cm_per_us_sq_u(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d mm_per_s_sq_d_to_cm_per_ms_sq_d(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f mm_per_s_sq_d_to_cm_per_ms_sq_f(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t mm_per_s_sq_d_to_cm_per_ms_sq_t(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u mm_per_s_sq_d_to_cm_per_ms_sq_u(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d mm_per_s_sq_d_to_cm_per_s_sq_d(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f mm_per_s_sq_d_to_cm_per_s_sq_f(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t mm_per_s_sq_d_to_cm_per_s_sq_t(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u mm_per_s_sq_d_to_cm_per_s_sq_u(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to double.
+ */
+double mm_per_s_sq_d_to_d(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to float.
+ */
+float mm_per_s_sq_d_to_f(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to int16_t.
+ */
+int16_t mm_per_s_sq_d_to_i16(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to int32_t.
+ */
+int32_t mm_per_s_sq_d_to_i32(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to int64_t.
+ */
+int64_t mm_per_s_sq_d_to_i64(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to int8_t.
+ */
+int8_t mm_per_s_sq_d_to_i8(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d mm_per_s_sq_d_to_m_per_us_sq_d(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f mm_per_s_sq_d_to_m_per_us_sq_f(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t mm_per_s_sq_d_to_m_per_us_sq_t(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u mm_per_s_sq_d_to_m_per_us_sq_u(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d mm_per_s_sq_d_to_m_per_ms_sq_d(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f mm_per_s_sq_d_to_m_per_ms_sq_f(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t mm_per_s_sq_d_to_m_per_ms_sq_t(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u mm_per_s_sq_d_to_m_per_ms_sq_u(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d mm_per_s_sq_d_to_m_per_s_sq_d(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f mm_per_s_sq_d_to_m_per_s_sq_f(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t mm_per_s_sq_d_to_m_per_s_sq_t(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u mm_per_s_sq_d_to_m_per_s_sq_u(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d mm_per_s_sq_d_to_mm_per_us_sq_d(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f mm_per_s_sq_d_to_mm_per_us_sq_f(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t mm_per_s_sq_d_to_mm_per_us_sq_t(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u mm_per_s_sq_d_to_mm_per_us_sq_u(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d mm_per_s_sq_d_to_mm_per_ms_sq_d(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f mm_per_s_sq_d_to_mm_per_ms_sq_f(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t mm_per_s_sq_d_to_mm_per_ms_sq_t(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u mm_per_s_sq_d_to_mm_per_ms_sq_u(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f mm_per_s_sq_d_to_mm_per_s_sq_f(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t mm_per_s_sq_d_to_mm_per_s_sq_t(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u mm_per_s_sq_d_to_mm_per_s_sq_u(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to uint16_t.
+ */
+uint16_t mm_per_s_sq_d_to_u16(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to uint32_t.
+ */
+uint32_t mm_per_s_sq_d_to_u32(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to uint64_t.
+ */
+uint64_t mm_per_s_sq_d_to_u64(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_d to uint8_t.
+ */
+uint8_t mm_per_s_sq_d_to_u8(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d mm_per_s_sq_f_to_cm_per_us_sq_d(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f mm_per_s_sq_f_to_cm_per_us_sq_f(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t mm_per_s_sq_f_to_cm_per_us_sq_t(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u mm_per_s_sq_f_to_cm_per_us_sq_u(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d mm_per_s_sq_f_to_cm_per_ms_sq_d(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f mm_per_s_sq_f_to_cm_per_ms_sq_f(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t mm_per_s_sq_f_to_cm_per_ms_sq_t(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u mm_per_s_sq_f_to_cm_per_ms_sq_u(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d mm_per_s_sq_f_to_cm_per_s_sq_d(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f mm_per_s_sq_f_to_cm_per_s_sq_f(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t mm_per_s_sq_f_to_cm_per_s_sq_t(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u mm_per_s_sq_f_to_cm_per_s_sq_u(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to double.
+ */
+double mm_per_s_sq_f_to_d(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to float.
+ */
+float mm_per_s_sq_f_to_f(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to int16_t.
+ */
+int16_t mm_per_s_sq_f_to_i16(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to int32_t.
+ */
+int32_t mm_per_s_sq_f_to_i32(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to int64_t.
+ */
+int64_t mm_per_s_sq_f_to_i64(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to int8_t.
+ */
+int8_t mm_per_s_sq_f_to_i8(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d mm_per_s_sq_f_to_m_per_us_sq_d(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f mm_per_s_sq_f_to_m_per_us_sq_f(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t mm_per_s_sq_f_to_m_per_us_sq_t(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u mm_per_s_sq_f_to_m_per_us_sq_u(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d mm_per_s_sq_f_to_m_per_ms_sq_d(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f mm_per_s_sq_f_to_m_per_ms_sq_f(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t mm_per_s_sq_f_to_m_per_ms_sq_t(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u mm_per_s_sq_f_to_m_per_ms_sq_u(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d mm_per_s_sq_f_to_m_per_s_sq_d(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f mm_per_s_sq_f_to_m_per_s_sq_f(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t mm_per_s_sq_f_to_m_per_s_sq_t(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u mm_per_s_sq_f_to_m_per_s_sq_u(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d mm_per_s_sq_f_to_mm_per_us_sq_d(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f mm_per_s_sq_f_to_mm_per_us_sq_f(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t mm_per_s_sq_f_to_mm_per_us_sq_t(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u mm_per_s_sq_f_to_mm_per_us_sq_u(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d mm_per_s_sq_f_to_mm_per_ms_sq_d(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f mm_per_s_sq_f_to_mm_per_ms_sq_f(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t mm_per_s_sq_f_to_mm_per_ms_sq_t(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u mm_per_s_sq_f_to_mm_per_ms_sq_u(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d mm_per_s_sq_f_to_mm_per_s_sq_d(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t mm_per_s_sq_f_to_mm_per_s_sq_t(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u mm_per_s_sq_f_to_mm_per_s_sq_u(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to uint16_t.
+ */
+uint16_t mm_per_s_sq_f_to_u16(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to uint32_t.
+ */
+uint32_t mm_per_s_sq_f_to_u32(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to uint64_t.
+ */
+uint64_t mm_per_s_sq_f_to_u64(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_f to uint8_t.
+ */
+uint8_t mm_per_s_sq_f_to_u8(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d mm_per_s_sq_t_to_cm_per_us_sq_d(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f mm_per_s_sq_t_to_cm_per_us_sq_f(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t mm_per_s_sq_t_to_cm_per_us_sq_t(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u mm_per_s_sq_t_to_cm_per_us_sq_u(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d mm_per_s_sq_t_to_cm_per_ms_sq_d(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f mm_per_s_sq_t_to_cm_per_ms_sq_f(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t mm_per_s_sq_t_to_cm_per_ms_sq_t(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u mm_per_s_sq_t_to_cm_per_ms_sq_u(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d mm_per_s_sq_t_to_cm_per_s_sq_d(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f mm_per_s_sq_t_to_cm_per_s_sq_f(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t mm_per_s_sq_t_to_cm_per_s_sq_t(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u mm_per_s_sq_t_to_cm_per_s_sq_u(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to double.
+ */
+double mm_per_s_sq_t_to_d(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to float.
+ */
+float mm_per_s_sq_t_to_f(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to int16_t.
+ */
+int16_t mm_per_s_sq_t_to_i16(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to int32_t.
+ */
+int32_t mm_per_s_sq_t_to_i32(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to int64_t.
+ */
+int64_t mm_per_s_sq_t_to_i64(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to int8_t.
+ */
+int8_t mm_per_s_sq_t_to_i8(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d mm_per_s_sq_t_to_m_per_us_sq_d(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f mm_per_s_sq_t_to_m_per_us_sq_f(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t mm_per_s_sq_t_to_m_per_us_sq_t(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u mm_per_s_sq_t_to_m_per_us_sq_u(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d mm_per_s_sq_t_to_m_per_ms_sq_d(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f mm_per_s_sq_t_to_m_per_ms_sq_f(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t mm_per_s_sq_t_to_m_per_ms_sq_t(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u mm_per_s_sq_t_to_m_per_ms_sq_u(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d mm_per_s_sq_t_to_m_per_s_sq_d(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f mm_per_s_sq_t_to_m_per_s_sq_f(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t mm_per_s_sq_t_to_m_per_s_sq_t(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u mm_per_s_sq_t_to_m_per_s_sq_u(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d mm_per_s_sq_t_to_mm_per_us_sq_d(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f mm_per_s_sq_t_to_mm_per_us_sq_f(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t mm_per_s_sq_t_to_mm_per_us_sq_t(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u mm_per_s_sq_t_to_mm_per_us_sq_u(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d mm_per_s_sq_t_to_mm_per_ms_sq_d(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f mm_per_s_sq_t_to_mm_per_ms_sq_f(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t mm_per_s_sq_t_to_mm_per_ms_sq_t(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u mm_per_s_sq_t_to_mm_per_ms_sq_u(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d mm_per_s_sq_t_to_mm_per_s_sq_d(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f mm_per_s_sq_t_to_mm_per_s_sq_f(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u mm_per_s_sq_t_to_mm_per_s_sq_u(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to uint16_t.
+ */
+uint16_t mm_per_s_sq_t_to_u16(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to uint32_t.
+ */
+uint32_t mm_per_s_sq_t_to_u32(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to uint64_t.
+ */
+uint64_t mm_per_s_sq_t_to_u64(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_t to uint8_t.
+ */
+uint8_t mm_per_s_sq_t_to_u8(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d mm_per_s_sq_u_to_cm_per_us_sq_d(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f mm_per_s_sq_u_to_cm_per_us_sq_f(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t mm_per_s_sq_u_to_cm_per_us_sq_t(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u mm_per_s_sq_u_to_cm_per_us_sq_u(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d mm_per_s_sq_u_to_cm_per_ms_sq_d(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f mm_per_s_sq_u_to_cm_per_ms_sq_f(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t mm_per_s_sq_u_to_cm_per_ms_sq_t(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u mm_per_s_sq_u_to_cm_per_ms_sq_u(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d mm_per_s_sq_u_to_cm_per_s_sq_d(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f mm_per_s_sq_u_to_cm_per_s_sq_f(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t mm_per_s_sq_u_to_cm_per_s_sq_t(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u mm_per_s_sq_u_to_cm_per_s_sq_u(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to double.
+ */
+double mm_per_s_sq_u_to_d(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to float.
+ */
+float mm_per_s_sq_u_to_f(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to int16_t.
+ */
+int16_t mm_per_s_sq_u_to_i16(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to int32_t.
+ */
+int32_t mm_per_s_sq_u_to_i32(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to int64_t.
+ */
+int64_t mm_per_s_sq_u_to_i64(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to int8_t.
+ */
+int8_t mm_per_s_sq_u_to_i8(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d mm_per_s_sq_u_to_m_per_us_sq_d(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f mm_per_s_sq_u_to_m_per_us_sq_f(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t mm_per_s_sq_u_to_m_per_us_sq_t(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u mm_per_s_sq_u_to_m_per_us_sq_u(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d mm_per_s_sq_u_to_m_per_ms_sq_d(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f mm_per_s_sq_u_to_m_per_ms_sq_f(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t mm_per_s_sq_u_to_m_per_ms_sq_t(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u mm_per_s_sq_u_to_m_per_ms_sq_u(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d mm_per_s_sq_u_to_m_per_s_sq_d(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f mm_per_s_sq_u_to_m_per_s_sq_f(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t mm_per_s_sq_u_to_m_per_s_sq_t(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u mm_per_s_sq_u_to_m_per_s_sq_u(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d mm_per_s_sq_u_to_mm_per_us_sq_d(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f mm_per_s_sq_u_to_mm_per_us_sq_f(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t mm_per_s_sq_u_to_mm_per_us_sq_t(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u mm_per_s_sq_u_to_mm_per_us_sq_u(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d mm_per_s_sq_u_to_mm_per_ms_sq_d(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f mm_per_s_sq_u_to_mm_per_ms_sq_f(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t mm_per_s_sq_u_to_mm_per_ms_sq_t(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u mm_per_s_sq_u_to_mm_per_ms_sq_u(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d mm_per_s_sq_u_to_mm_per_s_sq_d(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f mm_per_s_sq_u_to_mm_per_s_sq_f(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t mm_per_s_sq_u_to_mm_per_s_sq_t(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to uint16_t.
+ */
+uint16_t mm_per_s_sq_u_to_u16(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to uint32_t.
+ */
+uint32_t mm_per_s_sq_u_to_u32(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to uint64_t.
+ */
+uint64_t mm_per_s_sq_u_to_u64(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert millimetres_per_seconds_sq_u to uint8_t.
+ */
+uint8_t mm_per_s_sq_u_to_u8(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+ * Convert uint16_t to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d u16_to_cm_per_us_sq_d(uint16_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert uint16_t to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f u16_to_cm_per_us_sq_f(uint16_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert uint16_t to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t u16_to_cm_per_us_sq_t(uint16_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert uint16_t to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u u16_to_cm_per_us_sq_u(uint16_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert uint16_t to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d u16_to_cm_per_ms_sq_d(uint16_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint16_t to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f u16_to_cm_per_ms_sq_f(uint16_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint16_t to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t u16_to_cm_per_ms_sq_t(uint16_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint16_t to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u u16_to_cm_per_ms_sq_u(uint16_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint16_t to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d u16_to_cm_per_s_sq_d(uint16_t centimetres_per_seconds_sq);
+
+/**
+ * Convert uint16_t to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f u16_to_cm_per_s_sq_f(uint16_t centimetres_per_seconds_sq);
+
+/**
+ * Convert uint16_t to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t u16_to_cm_per_s_sq_t(uint16_t centimetres_per_seconds_sq);
+
+/**
+ * Convert uint16_t to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u u16_to_cm_per_s_sq_u(uint16_t centimetres_per_seconds_sq);
+
+/**
+ * Convert uint16_t to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d u16_to_m_per_us_sq_d(uint16_t metres_per_microseconds_sq);
+
+/**
+ * Convert uint16_t to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f u16_to_m_per_us_sq_f(uint16_t metres_per_microseconds_sq);
+
+/**
+ * Convert uint16_t to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t u16_to_m_per_us_sq_t(uint16_t metres_per_microseconds_sq);
+
+/**
+ * Convert uint16_t to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u u16_to_m_per_us_sq_u(uint16_t metres_per_microseconds_sq);
+
+/**
+ * Convert uint16_t to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d u16_to_m_per_ms_sq_d(uint16_t metres_per_milliseconds_sq);
+
+/**
+ * Convert uint16_t to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f u16_to_m_per_ms_sq_f(uint16_t metres_per_milliseconds_sq);
+
+/**
+ * Convert uint16_t to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t u16_to_m_per_ms_sq_t(uint16_t metres_per_milliseconds_sq);
+
+/**
+ * Convert uint16_t to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u u16_to_m_per_ms_sq_u(uint16_t metres_per_milliseconds_sq);
+
+/**
+ * Convert uint16_t to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d u16_to_m_per_s_sq_d(uint16_t metres_per_seconds_sq);
+
+/**
+ * Convert uint16_t to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f u16_to_m_per_s_sq_f(uint16_t metres_per_seconds_sq);
+
+/**
+ * Convert uint16_t to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t u16_to_m_per_s_sq_t(uint16_t metres_per_seconds_sq);
+
+/**
+ * Convert uint16_t to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u u16_to_m_per_s_sq_u(uint16_t metres_per_seconds_sq);
+
+/**
+ * Convert uint16_t to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d u16_to_mm_per_us_sq_d(uint16_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert uint16_t to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f u16_to_mm_per_us_sq_f(uint16_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert uint16_t to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t u16_to_mm_per_us_sq_t(uint16_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert uint16_t to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u u16_to_mm_per_us_sq_u(uint16_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert uint16_t to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d u16_to_mm_per_ms_sq_d(uint16_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint16_t to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f u16_to_mm_per_ms_sq_f(uint16_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint16_t to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t u16_to_mm_per_ms_sq_t(uint16_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint16_t to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u u16_to_mm_per_ms_sq_u(uint16_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint16_t to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d u16_to_mm_per_s_sq_d(uint16_t millimetres_per_seconds_sq);
+
+/**
+ * Convert uint16_t to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f u16_to_mm_per_s_sq_f(uint16_t millimetres_per_seconds_sq);
+
+/**
+ * Convert uint16_t to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t u16_to_mm_per_s_sq_t(uint16_t millimetres_per_seconds_sq);
+
+/**
+ * Convert uint16_t to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u u16_to_mm_per_s_sq_u(uint16_t millimetres_per_seconds_sq);
+
+/**
+ * Convert uint32_t to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d u32_to_cm_per_us_sq_d(uint32_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert uint32_t to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f u32_to_cm_per_us_sq_f(uint32_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert uint32_t to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t u32_to_cm_per_us_sq_t(uint32_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert uint32_t to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u u32_to_cm_per_us_sq_u(uint32_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert uint32_t to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d u32_to_cm_per_ms_sq_d(uint32_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint32_t to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f u32_to_cm_per_ms_sq_f(uint32_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint32_t to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t u32_to_cm_per_ms_sq_t(uint32_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint32_t to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u u32_to_cm_per_ms_sq_u(uint32_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint32_t to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d u32_to_cm_per_s_sq_d(uint32_t centimetres_per_seconds_sq);
+
+/**
+ * Convert uint32_t to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f u32_to_cm_per_s_sq_f(uint32_t centimetres_per_seconds_sq);
+
+/**
+ * Convert uint32_t to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t u32_to_cm_per_s_sq_t(uint32_t centimetres_per_seconds_sq);
+
+/**
+ * Convert uint32_t to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u u32_to_cm_per_s_sq_u(uint32_t centimetres_per_seconds_sq);
+
+/**
+ * Convert uint32_t to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d u32_to_m_per_us_sq_d(uint32_t metres_per_microseconds_sq);
+
+/**
+ * Convert uint32_t to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f u32_to_m_per_us_sq_f(uint32_t metres_per_microseconds_sq);
+
+/**
+ * Convert uint32_t to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t u32_to_m_per_us_sq_t(uint32_t metres_per_microseconds_sq);
+
+/**
+ * Convert uint32_t to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u u32_to_m_per_us_sq_u(uint32_t metres_per_microseconds_sq);
+
+/**
+ * Convert uint32_t to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d u32_to_m_per_ms_sq_d(uint32_t metres_per_milliseconds_sq);
+
+/**
+ * Convert uint32_t to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f u32_to_m_per_ms_sq_f(uint32_t metres_per_milliseconds_sq);
+
+/**
+ * Convert uint32_t to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t u32_to_m_per_ms_sq_t(uint32_t metres_per_milliseconds_sq);
+
+/**
+ * Convert uint32_t to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u u32_to_m_per_ms_sq_u(uint32_t metres_per_milliseconds_sq);
+
+/**
+ * Convert uint32_t to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d u32_to_m_per_s_sq_d(uint32_t metres_per_seconds_sq);
+
+/**
+ * Convert uint32_t to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f u32_to_m_per_s_sq_f(uint32_t metres_per_seconds_sq);
+
+/**
+ * Convert uint32_t to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t u32_to_m_per_s_sq_t(uint32_t metres_per_seconds_sq);
+
+/**
+ * Convert uint32_t to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u u32_to_m_per_s_sq_u(uint32_t metres_per_seconds_sq);
+
+/**
+ * Convert uint32_t to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d u32_to_mm_per_us_sq_d(uint32_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert uint32_t to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f u32_to_mm_per_us_sq_f(uint32_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert uint32_t to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t u32_to_mm_per_us_sq_t(uint32_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert uint32_t to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u u32_to_mm_per_us_sq_u(uint32_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert uint32_t to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d u32_to_mm_per_ms_sq_d(uint32_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint32_t to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f u32_to_mm_per_ms_sq_f(uint32_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint32_t to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t u32_to_mm_per_ms_sq_t(uint32_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint32_t to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u u32_to_mm_per_ms_sq_u(uint32_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint32_t to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d u32_to_mm_per_s_sq_d(uint32_t millimetres_per_seconds_sq);
+
+/**
+ * Convert uint32_t to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f u32_to_mm_per_s_sq_f(uint32_t millimetres_per_seconds_sq);
+
+/**
+ * Convert uint32_t to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t u32_to_mm_per_s_sq_t(uint32_t millimetres_per_seconds_sq);
+
+/**
+ * Convert uint32_t to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u u32_to_mm_per_s_sq_u(uint32_t millimetres_per_seconds_sq);
+
+/**
+ * Convert uint64_t to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d u64_to_cm_per_us_sq_d(uint64_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert uint64_t to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f u64_to_cm_per_us_sq_f(uint64_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert uint64_t to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t u64_to_cm_per_us_sq_t(uint64_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert uint64_t to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u u64_to_cm_per_us_sq_u(uint64_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert uint64_t to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d u64_to_cm_per_ms_sq_d(uint64_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint64_t to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f u64_to_cm_per_ms_sq_f(uint64_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint64_t to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t u64_to_cm_per_ms_sq_t(uint64_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint64_t to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u u64_to_cm_per_ms_sq_u(uint64_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint64_t to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d u64_to_cm_per_s_sq_d(uint64_t centimetres_per_seconds_sq);
+
+/**
+ * Convert uint64_t to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f u64_to_cm_per_s_sq_f(uint64_t centimetres_per_seconds_sq);
+
+/**
+ * Convert uint64_t to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t u64_to_cm_per_s_sq_t(uint64_t centimetres_per_seconds_sq);
+
+/**
+ * Convert uint64_t to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u u64_to_cm_per_s_sq_u(uint64_t centimetres_per_seconds_sq);
+
+/**
+ * Convert uint64_t to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d u64_to_m_per_us_sq_d(uint64_t metres_per_microseconds_sq);
+
+/**
+ * Convert uint64_t to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f u64_to_m_per_us_sq_f(uint64_t metres_per_microseconds_sq);
+
+/**
+ * Convert uint64_t to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t u64_to_m_per_us_sq_t(uint64_t metres_per_microseconds_sq);
+
+/**
+ * Convert uint64_t to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u u64_to_m_per_us_sq_u(uint64_t metres_per_microseconds_sq);
+
+/**
+ * Convert uint64_t to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d u64_to_m_per_ms_sq_d(uint64_t metres_per_milliseconds_sq);
+
+/**
+ * Convert uint64_t to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f u64_to_m_per_ms_sq_f(uint64_t metres_per_milliseconds_sq);
+
+/**
+ * Convert uint64_t to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t u64_to_m_per_ms_sq_t(uint64_t metres_per_milliseconds_sq);
+
+/**
+ * Convert uint64_t to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u u64_to_m_per_ms_sq_u(uint64_t metres_per_milliseconds_sq);
+
+/**
+ * Convert uint64_t to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d u64_to_m_per_s_sq_d(uint64_t metres_per_seconds_sq);
+
+/**
+ * Convert uint64_t to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f u64_to_m_per_s_sq_f(uint64_t metres_per_seconds_sq);
+
+/**
+ * Convert uint64_t to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t u64_to_m_per_s_sq_t(uint64_t metres_per_seconds_sq);
+
+/**
+ * Convert uint64_t to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u u64_to_m_per_s_sq_u(uint64_t metres_per_seconds_sq);
+
+/**
+ * Convert uint64_t to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d u64_to_mm_per_us_sq_d(uint64_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert uint64_t to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f u64_to_mm_per_us_sq_f(uint64_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert uint64_t to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t u64_to_mm_per_us_sq_t(uint64_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert uint64_t to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u u64_to_mm_per_us_sq_u(uint64_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert uint64_t to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d u64_to_mm_per_ms_sq_d(uint64_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint64_t to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f u64_to_mm_per_ms_sq_f(uint64_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint64_t to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t u64_to_mm_per_ms_sq_t(uint64_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint64_t to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u u64_to_mm_per_ms_sq_u(uint64_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint64_t to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d u64_to_mm_per_s_sq_d(uint64_t millimetres_per_seconds_sq);
+
+/**
+ * Convert uint64_t to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f u64_to_mm_per_s_sq_f(uint64_t millimetres_per_seconds_sq);
+
+/**
+ * Convert uint64_t to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t u64_to_mm_per_s_sq_t(uint64_t millimetres_per_seconds_sq);
+
+/**
+ * Convert uint64_t to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u u64_to_mm_per_s_sq_u(uint64_t millimetres_per_seconds_sq);
+
+/**
+ * Convert uint8_t to centimetres_per_microseconds_sq_d.
+ */
+centimetres_per_microseconds_sq_d u8_to_cm_per_us_sq_d(uint8_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert uint8_t to centimetres_per_microseconds_sq_f.
+ */
+centimetres_per_microseconds_sq_f u8_to_cm_per_us_sq_f(uint8_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert uint8_t to centimetres_per_microseconds_sq_t.
+ */
+centimetres_per_microseconds_sq_t u8_to_cm_per_us_sq_t(uint8_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert uint8_t to centimetres_per_microseconds_sq_u.
+ */
+centimetres_per_microseconds_sq_u u8_to_cm_per_us_sq_u(uint8_t centimetres_per_microseconds_sq);
+
+/**
+ * Convert uint8_t to centimetres_per_milliseconds_sq_d.
+ */
+centimetres_per_milliseconds_sq_d u8_to_cm_per_ms_sq_d(uint8_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint8_t to centimetres_per_milliseconds_sq_f.
+ */
+centimetres_per_milliseconds_sq_f u8_to_cm_per_ms_sq_f(uint8_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint8_t to centimetres_per_milliseconds_sq_t.
+ */
+centimetres_per_milliseconds_sq_t u8_to_cm_per_ms_sq_t(uint8_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint8_t to centimetres_per_milliseconds_sq_u.
+ */
+centimetres_per_milliseconds_sq_u u8_to_cm_per_ms_sq_u(uint8_t centimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint8_t to centimetres_per_seconds_sq_d.
+ */
+centimetres_per_seconds_sq_d u8_to_cm_per_s_sq_d(uint8_t centimetres_per_seconds_sq);
+
+/**
+ * Convert uint8_t to centimetres_per_seconds_sq_f.
+ */
+centimetres_per_seconds_sq_f u8_to_cm_per_s_sq_f(uint8_t centimetres_per_seconds_sq);
+
+/**
+ * Convert uint8_t to centimetres_per_seconds_sq_t.
+ */
+centimetres_per_seconds_sq_t u8_to_cm_per_s_sq_t(uint8_t centimetres_per_seconds_sq);
+
+/**
+ * Convert uint8_t to centimetres_per_seconds_sq_u.
+ */
+centimetres_per_seconds_sq_u u8_to_cm_per_s_sq_u(uint8_t centimetres_per_seconds_sq);
+
+/**
+ * Convert uint8_t to metres_per_microseconds_sq_d.
+ */
+metres_per_microseconds_sq_d u8_to_m_per_us_sq_d(uint8_t metres_per_microseconds_sq);
+
+/**
+ * Convert uint8_t to metres_per_microseconds_sq_f.
+ */
+metres_per_microseconds_sq_f u8_to_m_per_us_sq_f(uint8_t metres_per_microseconds_sq);
+
+/**
+ * Convert uint8_t to metres_per_microseconds_sq_t.
+ */
+metres_per_microseconds_sq_t u8_to_m_per_us_sq_t(uint8_t metres_per_microseconds_sq);
+
+/**
+ * Convert uint8_t to metres_per_microseconds_sq_u.
+ */
+metres_per_microseconds_sq_u u8_to_m_per_us_sq_u(uint8_t metres_per_microseconds_sq);
+
+/**
+ * Convert uint8_t to metres_per_milliseconds_sq_d.
+ */
+metres_per_milliseconds_sq_d u8_to_m_per_ms_sq_d(uint8_t metres_per_milliseconds_sq);
+
+/**
+ * Convert uint8_t to metres_per_milliseconds_sq_f.
+ */
+metres_per_milliseconds_sq_f u8_to_m_per_ms_sq_f(uint8_t metres_per_milliseconds_sq);
+
+/**
+ * Convert uint8_t to metres_per_milliseconds_sq_t.
+ */
+metres_per_milliseconds_sq_t u8_to_m_per_ms_sq_t(uint8_t metres_per_milliseconds_sq);
+
+/**
+ * Convert uint8_t to metres_per_milliseconds_sq_u.
+ */
+metres_per_milliseconds_sq_u u8_to_m_per_ms_sq_u(uint8_t metres_per_milliseconds_sq);
+
+/**
+ * Convert uint8_t to metres_per_seconds_sq_d.
+ */
+metres_per_seconds_sq_d u8_to_m_per_s_sq_d(uint8_t metres_per_seconds_sq);
+
+/**
+ * Convert uint8_t to metres_per_seconds_sq_f.
+ */
+metres_per_seconds_sq_f u8_to_m_per_s_sq_f(uint8_t metres_per_seconds_sq);
+
+/**
+ * Convert uint8_t to metres_per_seconds_sq_t.
+ */
+metres_per_seconds_sq_t u8_to_m_per_s_sq_t(uint8_t metres_per_seconds_sq);
+
+/**
+ * Convert uint8_t to metres_per_seconds_sq_u.
+ */
+metres_per_seconds_sq_u u8_to_m_per_s_sq_u(uint8_t metres_per_seconds_sq);
+
+/**
+ * Convert uint8_t to millimetres_per_microseconds_sq_d.
+ */
+millimetres_per_microseconds_sq_d u8_to_mm_per_us_sq_d(uint8_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert uint8_t to millimetres_per_microseconds_sq_f.
+ */
+millimetres_per_microseconds_sq_f u8_to_mm_per_us_sq_f(uint8_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert uint8_t to millimetres_per_microseconds_sq_t.
+ */
+millimetres_per_microseconds_sq_t u8_to_mm_per_us_sq_t(uint8_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert uint8_t to millimetres_per_microseconds_sq_u.
+ */
+millimetres_per_microseconds_sq_u u8_to_mm_per_us_sq_u(uint8_t millimetres_per_microseconds_sq);
+
+/**
+ * Convert uint8_t to millimetres_per_milliseconds_sq_d.
+ */
+millimetres_per_milliseconds_sq_d u8_to_mm_per_ms_sq_d(uint8_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint8_t to millimetres_per_milliseconds_sq_f.
+ */
+millimetres_per_milliseconds_sq_f u8_to_mm_per_ms_sq_f(uint8_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint8_t to millimetres_per_milliseconds_sq_t.
+ */
+millimetres_per_milliseconds_sq_t u8_to_mm_per_ms_sq_t(uint8_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint8_t to millimetres_per_milliseconds_sq_u.
+ */
+millimetres_per_milliseconds_sq_u u8_to_mm_per_ms_sq_u(uint8_t millimetres_per_milliseconds_sq);
+
+/**
+ * Convert uint8_t to millimetres_per_seconds_sq_d.
+ */
+millimetres_per_seconds_sq_d u8_to_mm_per_s_sq_d(uint8_t millimetres_per_seconds_sq);
+
+/**
+ * Convert uint8_t to millimetres_per_seconds_sq_f.
+ */
+millimetres_per_seconds_sq_f u8_to_mm_per_s_sq_f(uint8_t millimetres_per_seconds_sq);
+
+/**
+ * Convert uint8_t to millimetres_per_seconds_sq_t.
+ */
+millimetres_per_seconds_sq_t u8_to_mm_per_s_sq_t(uint8_t millimetres_per_seconds_sq);
+
+/**
+ * Convert uint8_t to millimetres_per_seconds_sq_u.
+ */
+millimetres_per_seconds_sq_u u8_to_mm_per_s_sq_u(uint8_t millimetres_per_seconds_sq);
+
+/**
+* Convert millimetres_per_microseconds_sq_t to earthG_t.
+*/
+earthG_t mm_per_us_sq_t_to_gs_t(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+* Convert millimetres_per_microseconds_sq_t to earthG_u.
+*/
+earthG_u mm_per_us_sq_t_to_gs_u(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+* Convert millimetres_per_microseconds_sq_t to earthG_f.
+*/
+earthG_f mm_per_us_sq_t_to_gs_f(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+* Convert millimetres_per_microseconds_sq_t to earthG_d.
+*/
+earthG_d mm_per_us_sq_t_to_gs_d(millimetres_per_microseconds_sq_t millimetres_per_microseconds_sq);
+
+/**
+* Convert millimetres_per_microseconds_sq_u to earthG_t.
+*/
+earthG_t mm_per_us_sq_u_to_gs_t(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+* Convert millimetres_per_microseconds_sq_u to earthG_u.
+*/
+earthG_u mm_per_us_sq_u_to_gs_u(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+* Convert millimetres_per_microseconds_sq_u to earthG_f.
+*/
+earthG_f mm_per_us_sq_u_to_gs_f(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+* Convert millimetres_per_microseconds_sq_u to earthG_d.
+*/
+earthG_d mm_per_us_sq_u_to_gs_d(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq);
+
+/**
+* Convert millimetres_per_microseconds_sq_f to earthG_t.
+*/
+earthG_t mm_per_us_sq_f_to_gs_t(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+* Convert millimetres_per_microseconds_sq_f to earthG_u.
+*/
+earthG_u mm_per_us_sq_f_to_gs_u(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+* Convert millimetres_per_microseconds_sq_f to earthG_f.
+*/
+earthG_f mm_per_us_sq_f_to_gs_f(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+* Convert millimetres_per_microseconds_sq_f to earthG_d.
+*/
+earthG_d mm_per_us_sq_f_to_gs_d(millimetres_per_microseconds_sq_f millimetres_per_microseconds_sq);
+
+/**
+* Convert millimetres_per_microseconds_sq_d to earthG_t.
+*/
+earthG_t mm_per_us_sq_d_to_gs_t(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+* Convert millimetres_per_microseconds_sq_d to earthG_u.
+*/
+earthG_u mm_per_us_sq_d_to_gs_u(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+* Convert millimetres_per_microseconds_sq_d to earthG_f.
+*/
+earthG_f mm_per_us_sq_d_to_gs_f(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+* Convert millimetres_per_microseconds_sq_d to earthG_d.
+*/
+earthG_d mm_per_us_sq_d_to_gs_d(millimetres_per_microseconds_sq_d millimetres_per_microseconds_sq);
+
+/**
+* Convert millimetres_per_milliseconds_sq_t to earthG_t.
+*/
+earthG_t mm_per_ms_sq_t_to_gs_t(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+* Convert millimetres_per_milliseconds_sq_t to earthG_u.
+*/
+earthG_u mm_per_ms_sq_t_to_gs_u(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+* Convert millimetres_per_milliseconds_sq_t to earthG_f.
+*/
+earthG_f mm_per_ms_sq_t_to_gs_f(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+* Convert millimetres_per_milliseconds_sq_t to earthG_d.
+*/
+earthG_d mm_per_ms_sq_t_to_gs_d(millimetres_per_milliseconds_sq_t millimetres_per_milliseconds_sq);
+
+/**
+* Convert millimetres_per_milliseconds_sq_u to earthG_t.
+*/
+earthG_t mm_per_ms_sq_u_to_gs_t(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+* Convert millimetres_per_milliseconds_sq_u to earthG_u.
+*/
+earthG_u mm_per_ms_sq_u_to_gs_u(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+* Convert millimetres_per_milliseconds_sq_u to earthG_f.
+*/
+earthG_f mm_per_ms_sq_u_to_gs_f(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+* Convert millimetres_per_milliseconds_sq_u to earthG_d.
+*/
+earthG_d mm_per_ms_sq_u_to_gs_d(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq);
+
+/**
+* Convert millimetres_per_milliseconds_sq_f to earthG_t.
+*/
+earthG_t mm_per_ms_sq_f_to_gs_t(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+* Convert millimetres_per_milliseconds_sq_f to earthG_u.
+*/
+earthG_u mm_per_ms_sq_f_to_gs_u(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+* Convert millimetres_per_milliseconds_sq_f to earthG_f.
+*/
+earthG_f mm_per_ms_sq_f_to_gs_f(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+* Convert millimetres_per_milliseconds_sq_f to earthG_d.
+*/
+earthG_d mm_per_ms_sq_f_to_gs_d(millimetres_per_milliseconds_sq_f millimetres_per_milliseconds_sq);
+
+/**
+* Convert millimetres_per_milliseconds_sq_d to earthG_t.
+*/
+earthG_t mm_per_ms_sq_d_to_gs_t(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+* Convert millimetres_per_milliseconds_sq_d to earthG_u.
+*/
+earthG_u mm_per_ms_sq_d_to_gs_u(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+* Convert millimetres_per_milliseconds_sq_d to earthG_f.
+*/
+earthG_f mm_per_ms_sq_d_to_gs_f(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+* Convert millimetres_per_milliseconds_sq_d to earthG_d.
+*/
+earthG_d mm_per_ms_sq_d_to_gs_d(millimetres_per_milliseconds_sq_d millimetres_per_milliseconds_sq);
+
+/**
+* Convert millimetres_per_seconds_sq_t to earthG_t.
+*/
+earthG_t mm_per_s_sq_t_to_gs_t(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+* Convert millimetres_per_seconds_sq_t to earthG_u.
+*/
+earthG_u mm_per_s_sq_t_to_gs_u(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+* Convert millimetres_per_seconds_sq_t to earthG_f.
+*/
+earthG_f mm_per_s_sq_t_to_gs_f(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+* Convert millimetres_per_seconds_sq_t to earthG_d.
+*/
+earthG_d mm_per_s_sq_t_to_gs_d(millimetres_per_seconds_sq_t millimetres_per_seconds_sq);
+
+/**
+* Convert millimetres_per_seconds_sq_u to earthG_t.
+*/
+earthG_t mm_per_s_sq_u_to_gs_t(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+* Convert millimetres_per_seconds_sq_u to earthG_u.
+*/
+earthG_u mm_per_s_sq_u_to_gs_u(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+* Convert millimetres_per_seconds_sq_u to earthG_f.
+*/
+earthG_f mm_per_s_sq_u_to_gs_f(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+* Convert millimetres_per_seconds_sq_u to earthG_d.
+*/
+earthG_d mm_per_s_sq_u_to_gs_d(millimetres_per_seconds_sq_u millimetres_per_seconds_sq);
+
+/**
+* Convert millimetres_per_seconds_sq_f to earthG_t.
+*/
+earthG_t mm_per_s_sq_f_to_gs_t(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+* Convert millimetres_per_seconds_sq_f to earthG_u.
+*/
+earthG_u mm_per_s_sq_f_to_gs_u(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+* Convert millimetres_per_seconds_sq_f to earthG_f.
+*/
+earthG_f mm_per_s_sq_f_to_gs_f(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+* Convert millimetres_per_seconds_sq_f to earthG_d.
+*/
+earthG_d mm_per_s_sq_f_to_gs_d(millimetres_per_seconds_sq_f millimetres_per_seconds_sq);
+
+/**
+* Convert millimetres_per_seconds_sq_d to earthG_t.
+*/
+earthG_t mm_per_s_sq_d_to_gs_t(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+* Convert millimetres_per_seconds_sq_d to earthG_u.
+*/
+earthG_u mm_per_s_sq_d_to_gs_u(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+* Convert millimetres_per_seconds_sq_d to earthG_f.
+*/
+earthG_f mm_per_s_sq_d_to_gs_f(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+* Convert millimetres_per_seconds_sq_d to earthG_d.
+*/
+earthG_d mm_per_s_sq_d_to_gs_d(millimetres_per_seconds_sq_d millimetres_per_seconds_sq);
+
+/**
+* Convert centimetres_per_microseconds_sq_t to earthG_t.
+*/
+earthG_t cm_per_us_sq_t_to_gs_t(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
+
+/**
+* Convert centimetres_per_microseconds_sq_t to earthG_u.
+*/
+earthG_u cm_per_us_sq_t_to_gs_u(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
+
+/**
+* Convert centimetres_per_microseconds_sq_t to earthG_f.
+*/
+earthG_f cm_per_us_sq_t_to_gs_f(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
+
+/**
+* Convert centimetres_per_microseconds_sq_t to earthG_d.
+*/
+earthG_d cm_per_us_sq_t_to_gs_d(centimetres_per_microseconds_sq_t centimetres_per_microseconds_sq);
+
+/**
+* Convert centimetres_per_microseconds_sq_u to earthG_t.
+*/
+earthG_t cm_per_us_sq_u_to_gs_t(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
+
+/**
+* Convert centimetres_per_microseconds_sq_u to earthG_u.
+*/
+earthG_u cm_per_us_sq_u_to_gs_u(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
+
+/**
+* Convert centimetres_per_microseconds_sq_u to earthG_f.
+*/
+earthG_f cm_per_us_sq_u_to_gs_f(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
+
+/**
+* Convert centimetres_per_microseconds_sq_u to earthG_d.
+*/
+earthG_d cm_per_us_sq_u_to_gs_d(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq);
+
+/**
+* Convert centimetres_per_microseconds_sq_f to earthG_t.
+*/
+earthG_t cm_per_us_sq_f_to_gs_t(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
+
+/**
+* Convert centimetres_per_microseconds_sq_f to earthG_u.
+*/
+earthG_u cm_per_us_sq_f_to_gs_u(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
+
+/**
+* Convert centimetres_per_microseconds_sq_f to earthG_f.
+*/
+earthG_f cm_per_us_sq_f_to_gs_f(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
+
+/**
+* Convert centimetres_per_microseconds_sq_f to earthG_d.
+*/
+earthG_d cm_per_us_sq_f_to_gs_d(centimetres_per_microseconds_sq_f centimetres_per_microseconds_sq);
+
+/**
+* Convert centimetres_per_microseconds_sq_d to earthG_t.
+*/
+earthG_t cm_per_us_sq_d_to_gs_t(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
+
+/**
+* Convert centimetres_per_microseconds_sq_d to earthG_u.
+*/
+earthG_u cm_per_us_sq_d_to_gs_u(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
+
+/**
+* Convert centimetres_per_microseconds_sq_d to earthG_f.
+*/
+earthG_f cm_per_us_sq_d_to_gs_f(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
+
+/**
+* Convert centimetres_per_microseconds_sq_d to earthG_d.
+*/
+earthG_d cm_per_us_sq_d_to_gs_d(centimetres_per_microseconds_sq_d centimetres_per_microseconds_sq);
+
+/**
+* Convert centimetres_per_milliseconds_sq_t to earthG_t.
+*/
+earthG_t cm_per_ms_sq_t_to_gs_t(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+* Convert centimetres_per_milliseconds_sq_t to earthG_u.
+*/
+earthG_u cm_per_ms_sq_t_to_gs_u(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+* Convert centimetres_per_milliseconds_sq_t to earthG_f.
+*/
+earthG_f cm_per_ms_sq_t_to_gs_f(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+* Convert centimetres_per_milliseconds_sq_t to earthG_d.
+*/
+earthG_d cm_per_ms_sq_t_to_gs_d(centimetres_per_milliseconds_sq_t centimetres_per_milliseconds_sq);
+
+/**
+* Convert centimetres_per_milliseconds_sq_u to earthG_t.
+*/
+earthG_t cm_per_ms_sq_u_to_gs_t(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+* Convert centimetres_per_milliseconds_sq_u to earthG_u.
+*/
+earthG_u cm_per_ms_sq_u_to_gs_u(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+* Convert centimetres_per_milliseconds_sq_u to earthG_f.
+*/
+earthG_f cm_per_ms_sq_u_to_gs_f(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+* Convert centimetres_per_milliseconds_sq_u to earthG_d.
+*/
+earthG_d cm_per_ms_sq_u_to_gs_d(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq);
+
+/**
+* Convert centimetres_per_milliseconds_sq_f to earthG_t.
+*/
+earthG_t cm_per_ms_sq_f_to_gs_t(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+* Convert centimetres_per_milliseconds_sq_f to earthG_u.
+*/
+earthG_u cm_per_ms_sq_f_to_gs_u(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+* Convert centimetres_per_milliseconds_sq_f to earthG_f.
+*/
+earthG_f cm_per_ms_sq_f_to_gs_f(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+* Convert centimetres_per_milliseconds_sq_f to earthG_d.
+*/
+earthG_d cm_per_ms_sq_f_to_gs_d(centimetres_per_milliseconds_sq_f centimetres_per_milliseconds_sq);
+
+/**
+* Convert centimetres_per_milliseconds_sq_d to earthG_t.
+*/
+earthG_t cm_per_ms_sq_d_to_gs_t(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
+
+/**
+* Convert centimetres_per_milliseconds_sq_d to earthG_u.
+*/
+earthG_u cm_per_ms_sq_d_to_gs_u(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
+
+/**
+* Convert centimetres_per_milliseconds_sq_d to earthG_f.
+*/
+earthG_f cm_per_ms_sq_d_to_gs_f(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
+
+/**
+* Convert centimetres_per_milliseconds_sq_d to earthG_d.
+*/
+earthG_d cm_per_ms_sq_d_to_gs_d(centimetres_per_milliseconds_sq_d centimetres_per_milliseconds_sq);
+
+/**
+* Convert centimetres_per_seconds_sq_t to earthG_t.
+*/
+earthG_t cm_per_s_sq_t_to_gs_t(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+* Convert centimetres_per_seconds_sq_t to earthG_u.
+*/
+earthG_u cm_per_s_sq_t_to_gs_u(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+* Convert centimetres_per_seconds_sq_t to earthG_f.
+*/
+earthG_f cm_per_s_sq_t_to_gs_f(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+* Convert centimetres_per_seconds_sq_t to earthG_d.
+*/
+earthG_d cm_per_s_sq_t_to_gs_d(centimetres_per_seconds_sq_t centimetres_per_seconds_sq);
+
+/**
+* Convert centimetres_per_seconds_sq_u to earthG_t.
+*/
+earthG_t cm_per_s_sq_u_to_gs_t(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+* Convert centimetres_per_seconds_sq_u to earthG_u.
+*/
+earthG_u cm_per_s_sq_u_to_gs_u(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+* Convert centimetres_per_seconds_sq_u to earthG_f.
+*/
+earthG_f cm_per_s_sq_u_to_gs_f(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+* Convert centimetres_per_seconds_sq_u to earthG_d.
+*/
+earthG_d cm_per_s_sq_u_to_gs_d(centimetres_per_seconds_sq_u centimetres_per_seconds_sq);
+
+/**
+* Convert centimetres_per_seconds_sq_f to earthG_t.
+*/
+earthG_t cm_per_s_sq_f_to_gs_t(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+* Convert centimetres_per_seconds_sq_f to earthG_u.
+*/
+earthG_u cm_per_s_sq_f_to_gs_u(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+* Convert centimetres_per_seconds_sq_f to earthG_f.
+*/
+earthG_f cm_per_s_sq_f_to_gs_f(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+* Convert centimetres_per_seconds_sq_f to earthG_d.
+*/
+earthG_d cm_per_s_sq_f_to_gs_d(centimetres_per_seconds_sq_f centimetres_per_seconds_sq);
+
+/**
+* Convert centimetres_per_seconds_sq_d to earthG_t.
+*/
+earthG_t cm_per_s_sq_d_to_gs_t(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+* Convert centimetres_per_seconds_sq_d to earthG_u.
+*/
+earthG_u cm_per_s_sq_d_to_gs_u(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+* Convert centimetres_per_seconds_sq_d to earthG_f.
+*/
+earthG_f cm_per_s_sq_d_to_gs_f(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+* Convert centimetres_per_seconds_sq_d to earthG_d.
+*/
+earthG_d cm_per_s_sq_d_to_gs_d(centimetres_per_seconds_sq_d centimetres_per_seconds_sq);
+
+/**
+* Convert metres_per_microseconds_sq_t to earthG_t.
+*/
+earthG_t m_per_us_sq_t_to_gs_t(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+* Convert metres_per_microseconds_sq_t to earthG_u.
+*/
+earthG_u m_per_us_sq_t_to_gs_u(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+* Convert metres_per_microseconds_sq_t to earthG_f.
+*/
+earthG_f m_per_us_sq_t_to_gs_f(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+* Convert metres_per_microseconds_sq_t to earthG_d.
+*/
+earthG_d m_per_us_sq_t_to_gs_d(metres_per_microseconds_sq_t metres_per_microseconds_sq);
+
+/**
+* Convert metres_per_microseconds_sq_u to earthG_t.
+*/
+earthG_t m_per_us_sq_u_to_gs_t(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+* Convert metres_per_microseconds_sq_u to earthG_u.
+*/
+earthG_u m_per_us_sq_u_to_gs_u(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+* Convert metres_per_microseconds_sq_u to earthG_f.
+*/
+earthG_f m_per_us_sq_u_to_gs_f(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+* Convert metres_per_microseconds_sq_u to earthG_d.
+*/
+earthG_d m_per_us_sq_u_to_gs_d(metres_per_microseconds_sq_u metres_per_microseconds_sq);
+
+/**
+* Convert metres_per_microseconds_sq_f to earthG_t.
+*/
+earthG_t m_per_us_sq_f_to_gs_t(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+* Convert metres_per_microseconds_sq_f to earthG_u.
+*/
+earthG_u m_per_us_sq_f_to_gs_u(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+* Convert metres_per_microseconds_sq_f to earthG_f.
+*/
+earthG_f m_per_us_sq_f_to_gs_f(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+* Convert metres_per_microseconds_sq_f to earthG_d.
+*/
+earthG_d m_per_us_sq_f_to_gs_d(metres_per_microseconds_sq_f metres_per_microseconds_sq);
+
+/**
+* Convert metres_per_microseconds_sq_d to earthG_t.
+*/
+earthG_t m_per_us_sq_d_to_gs_t(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+* Convert metres_per_microseconds_sq_d to earthG_u.
+*/
+earthG_u m_per_us_sq_d_to_gs_u(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+* Convert metres_per_microseconds_sq_d to earthG_f.
+*/
+earthG_f m_per_us_sq_d_to_gs_f(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+* Convert metres_per_microseconds_sq_d to earthG_d.
+*/
+earthG_d m_per_us_sq_d_to_gs_d(metres_per_microseconds_sq_d metres_per_microseconds_sq);
+
+/**
+* Convert metres_per_milliseconds_sq_t to earthG_t.
+*/
+earthG_t m_per_ms_sq_t_to_gs_t(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+* Convert metres_per_milliseconds_sq_t to earthG_u.
+*/
+earthG_u m_per_ms_sq_t_to_gs_u(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+* Convert metres_per_milliseconds_sq_t to earthG_f.
+*/
+earthG_f m_per_ms_sq_t_to_gs_f(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+* Convert metres_per_milliseconds_sq_t to earthG_d.
+*/
+earthG_d m_per_ms_sq_t_to_gs_d(metres_per_milliseconds_sq_t metres_per_milliseconds_sq);
+
+/**
+* Convert metres_per_milliseconds_sq_u to earthG_t.
+*/
+earthG_t m_per_ms_sq_u_to_gs_t(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+* Convert metres_per_milliseconds_sq_u to earthG_u.
+*/
+earthG_u m_per_ms_sq_u_to_gs_u(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+* Convert metres_per_milliseconds_sq_u to earthG_f.
+*/
+earthG_f m_per_ms_sq_u_to_gs_f(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+* Convert metres_per_milliseconds_sq_u to earthG_d.
+*/
+earthG_d m_per_ms_sq_u_to_gs_d(metres_per_milliseconds_sq_u metres_per_milliseconds_sq);
+
+/**
+* Convert metres_per_milliseconds_sq_f to earthG_t.
+*/
+earthG_t m_per_ms_sq_f_to_gs_t(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+* Convert metres_per_milliseconds_sq_f to earthG_u.
+*/
+earthG_u m_per_ms_sq_f_to_gs_u(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+* Convert metres_per_milliseconds_sq_f to earthG_f.
+*/
+earthG_f m_per_ms_sq_f_to_gs_f(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+* Convert metres_per_milliseconds_sq_f to earthG_d.
+*/
+earthG_d m_per_ms_sq_f_to_gs_d(metres_per_milliseconds_sq_f metres_per_milliseconds_sq);
+
+/**
+* Convert metres_per_milliseconds_sq_d to earthG_t.
+*/
+earthG_t m_per_ms_sq_d_to_gs_t(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+* Convert metres_per_milliseconds_sq_d to earthG_u.
+*/
+earthG_u m_per_ms_sq_d_to_gs_u(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+* Convert metres_per_milliseconds_sq_d to earthG_f.
+*/
+earthG_f m_per_ms_sq_d_to_gs_f(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+* Convert metres_per_milliseconds_sq_d to earthG_d.
+*/
+earthG_d m_per_ms_sq_d_to_gs_d(metres_per_milliseconds_sq_d metres_per_milliseconds_sq);
+
+/**
+* Convert metres_per_seconds_sq_t to earthG_t.
+*/
+earthG_t m_per_s_sq_t_to_gs_t(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+* Convert metres_per_seconds_sq_t to earthG_u.
+*/
+earthG_u m_per_s_sq_t_to_gs_u(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+* Convert metres_per_seconds_sq_t to earthG_f.
+*/
+earthG_f m_per_s_sq_t_to_gs_f(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+* Convert metres_per_seconds_sq_t to earthG_d.
+*/
+earthG_d m_per_s_sq_t_to_gs_d(metres_per_seconds_sq_t metres_per_seconds_sq);
+
+/**
+* Convert metres_per_seconds_sq_u to earthG_t.
+*/
+earthG_t m_per_s_sq_u_to_gs_t(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+* Convert metres_per_seconds_sq_u to earthG_u.
+*/
+earthG_u m_per_s_sq_u_to_gs_u(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+* Convert metres_per_seconds_sq_u to earthG_f.
+*/
+earthG_f m_per_s_sq_u_to_gs_f(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+* Convert metres_per_seconds_sq_u to earthG_d.
+*/
+earthG_d m_per_s_sq_u_to_gs_d(metres_per_seconds_sq_u metres_per_seconds_sq);
+
+/**
+* Convert metres_per_seconds_sq_f to earthG_t.
+*/
+earthG_t m_per_s_sq_f_to_gs_t(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+* Convert metres_per_seconds_sq_f to earthG_u.
+*/
+earthG_u m_per_s_sq_f_to_gs_u(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+* Convert metres_per_seconds_sq_f to earthG_f.
+*/
+earthG_f m_per_s_sq_f_to_gs_f(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+* Convert metres_per_seconds_sq_f to earthG_d.
+*/
+earthG_d m_per_s_sq_f_to_gs_d(metres_per_seconds_sq_f metres_per_seconds_sq);
+
+/**
+* Convert metres_per_seconds_sq_d to earthG_t.
+*/
+earthG_t m_per_s_sq_d_to_gs_t(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+* Convert metres_per_seconds_sq_d to earthG_u.
+*/
+earthG_u m_per_s_sq_d_to_gs_u(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+* Convert metres_per_seconds_sq_d to earthG_f.
+*/
+earthG_f m_per_s_sq_d_to_gs_f(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+* Convert metres_per_seconds_sq_d to earthG_d.
+*/
+earthG_d m_per_s_sq_d_to_gs_d(metres_per_seconds_sq_d metres_per_seconds_sq);
+
+/**
+ * Convert double to earthG_d.
+ */
+earthG_d d_to_gs_d(double earthG);
+
+/**
+ * Convert double to earthG_f.
+ */
+earthG_f d_to_gs_f(double earthG);
+
+/**
+ * Convert double to earthG_t.
+ */
+earthG_t d_to_gs_t(double earthG);
+
+/**
+ * Convert double to earthG_u.
+ */
+earthG_u d_to_gs_u(double earthG);
+
+/**
+ * Convert earthG_d to double.
+ */
+double gs_d_to_d(earthG_d earthG);
+
+/**
+ * Convert earthG_d to earthG_f.
+ */
+earthG_f gs_d_to_gs_f(earthG_d earthG);
+
+/**
+ * Convert earthG_d to earthG_t.
+ */
+earthG_t gs_d_to_gs_t(earthG_d earthG);
+
+/**
+ * Convert earthG_d to earthG_u.
+ */
+earthG_u gs_d_to_gs_u(earthG_d earthG);
+
+/**
+ * Convert earthG_d to float.
+ */
+float gs_d_to_f(earthG_d earthG);
+
+/**
+ * Convert earthG_d to int16_t.
+ */
+int16_t gs_d_to_i16(earthG_d earthG);
+
+/**
+ * Convert earthG_d to int32_t.
+ */
+int32_t gs_d_to_i32(earthG_d earthG);
+
+/**
+ * Convert earthG_d to int64_t.
+ */
+int64_t gs_d_to_i64(earthG_d earthG);
+
+/**
+ * Convert earthG_d to int8_t.
+ */
+int8_t gs_d_to_i8(earthG_d earthG);
+
+/**
+ * Convert earthG_d to uint16_t.
+ */
+uint16_t gs_d_to_u16(earthG_d earthG);
+
+/**
+ * Convert earthG_d to uint32_t.
+ */
+uint32_t gs_d_to_u32(earthG_d earthG);
+
+/**
+ * Convert earthG_d to uint64_t.
+ */
+uint64_t gs_d_to_u64(earthG_d earthG);
+
+/**
+ * Convert earthG_d to uint8_t.
+ */
+uint8_t gs_d_to_u8(earthG_d earthG);
+
+/**
+ * Convert earthG_f to double.
+ */
+double gs_f_to_d(earthG_f earthG);
+
+/**
+ * Convert earthG_f to earthG_d.
+ */
+earthG_d gs_f_to_gs_d(earthG_f earthG);
+
+/**
+ * Convert earthG_f to earthG_t.
+ */
+earthG_t gs_f_to_gs_t(earthG_f earthG);
+
+/**
+ * Convert earthG_f to earthG_u.
+ */
+earthG_u gs_f_to_gs_u(earthG_f earthG);
+
+/**
+ * Convert earthG_f to float.
+ */
+float gs_f_to_f(earthG_f earthG);
+
+/**
+ * Convert earthG_f to int16_t.
+ */
+int16_t gs_f_to_i16(earthG_f earthG);
+
+/**
+ * Convert earthG_f to int32_t.
+ */
+int32_t gs_f_to_i32(earthG_f earthG);
+
+/**
+ * Convert earthG_f to int64_t.
+ */
+int64_t gs_f_to_i64(earthG_f earthG);
+
+/**
+ * Convert earthG_f to int8_t.
+ */
+int8_t gs_f_to_i8(earthG_f earthG);
+
+/**
+ * Convert earthG_f to uint16_t.
+ */
+uint16_t gs_f_to_u16(earthG_f earthG);
+
+/**
+ * Convert earthG_f to uint32_t.
+ */
+uint32_t gs_f_to_u32(earthG_f earthG);
+
+/**
+ * Convert earthG_f to uint64_t.
+ */
+uint64_t gs_f_to_u64(earthG_f earthG);
+
+/**
+ * Convert earthG_f to uint8_t.
+ */
+uint8_t gs_f_to_u8(earthG_f earthG);
+
+/**
+ * Convert earthG_t to double.
+ */
+double gs_t_to_d(earthG_t earthG);
+
+/**
+ * Convert earthG_t to earthG_d.
+ */
+earthG_d gs_t_to_gs_d(earthG_t earthG);
+
+/**
+ * Convert earthG_t to earthG_f.
+ */
+earthG_f gs_t_to_gs_f(earthG_t earthG);
+
+/**
+ * Convert earthG_t to earthG_u.
+ */
+earthG_u gs_t_to_gs_u(earthG_t earthG);
+
+/**
+ * Convert earthG_t to float.
+ */
+float gs_t_to_f(earthG_t earthG);
+
+/**
+ * Convert earthG_t to int16_t.
+ */
+int16_t gs_t_to_i16(earthG_t earthG);
+
+/**
+ * Convert earthG_t to int32_t.
+ */
+int32_t gs_t_to_i32(earthG_t earthG);
+
+/**
+ * Convert earthG_t to int64_t.
+ */
+int64_t gs_t_to_i64(earthG_t earthG);
+
+/**
+ * Convert earthG_t to int8_t.
+ */
+int8_t gs_t_to_i8(earthG_t earthG);
+
+/**
+ * Convert earthG_t to uint16_t.
+ */
+uint16_t gs_t_to_u16(earthG_t earthG);
+
+/**
+ * Convert earthG_t to uint32_t.
+ */
+uint32_t gs_t_to_u32(earthG_t earthG);
+
+/**
+ * Convert earthG_t to uint64_t.
+ */
+uint64_t gs_t_to_u64(earthG_t earthG);
+
+/**
+ * Convert earthG_t to uint8_t.
+ */
+uint8_t gs_t_to_u8(earthG_t earthG);
+
+/**
+ * Convert earthG_u to double.
+ */
+double gs_u_to_d(earthG_u earthG);
+
+/**
+ * Convert earthG_u to earthG_d.
+ */
+earthG_d gs_u_to_gs_d(earthG_u earthG);
+
+/**
+ * Convert earthG_u to earthG_f.
+ */
+earthG_f gs_u_to_gs_f(earthG_u earthG);
+
+/**
+ * Convert earthG_u to earthG_t.
+ */
+earthG_t gs_u_to_gs_t(earthG_u earthG);
+
+/**
+ * Convert earthG_u to float.
+ */
+float gs_u_to_f(earthG_u earthG);
+
+/**
+ * Convert earthG_u to int16_t.
+ */
+int16_t gs_u_to_i16(earthG_u earthG);
+
+/**
+ * Convert earthG_u to int32_t.
+ */
+int32_t gs_u_to_i32(earthG_u earthG);
+
+/**
+ * Convert earthG_u to int64_t.
+ */
+int64_t gs_u_to_i64(earthG_u earthG);
+
+/**
+ * Convert earthG_u to int8_t.
+ */
+int8_t gs_u_to_i8(earthG_u earthG);
+
+/**
+ * Convert earthG_u to uint16_t.
+ */
+uint16_t gs_u_to_u16(earthG_u earthG);
+
+/**
+ * Convert earthG_u to uint32_t.
+ */
+uint32_t gs_u_to_u32(earthG_u earthG);
+
+/**
+ * Convert earthG_u to uint64_t.
+ */
+uint64_t gs_u_to_u64(earthG_u earthG);
+
+/**
+ * Convert earthG_u to uint8_t.
+ */
+uint8_t gs_u_to_u8(earthG_u earthG);
+
+/**
+ * Convert float to earthG_d.
+ */
+earthG_d f_to_gs_d(float earthG);
+
+/**
+ * Convert float to earthG_f.
+ */
+earthG_f f_to_gs_f(float earthG);
+
+/**
+ * Convert float to earthG_t.
+ */
+earthG_t f_to_gs_t(float earthG);
+
+/**
+ * Convert float to earthG_u.
+ */
+earthG_u f_to_gs_u(float earthG);
+
+/**
+ * Convert int16_t to earthG_d.
+ */
+earthG_d i16_to_gs_d(int16_t earthG);
+
+/**
+ * Convert int16_t to earthG_f.
+ */
+earthG_f i16_to_gs_f(int16_t earthG);
+
+/**
+ * Convert int16_t to earthG_t.
+ */
+earthG_t i16_to_gs_t(int16_t earthG);
+
+/**
+ * Convert int16_t to earthG_u.
+ */
+earthG_u i16_to_gs_u(int16_t earthG);
+
+/**
+ * Convert int32_t to earthG_d.
+ */
+earthG_d i32_to_gs_d(int32_t earthG);
+
+/**
+ * Convert int32_t to earthG_f.
+ */
+earthG_f i32_to_gs_f(int32_t earthG);
+
+/**
+ * Convert int32_t to earthG_t.
+ */
+earthG_t i32_to_gs_t(int32_t earthG);
+
+/**
+ * Convert int32_t to earthG_u.
+ */
+earthG_u i32_to_gs_u(int32_t earthG);
+
+/**
+ * Convert int64_t to earthG_d.
+ */
+earthG_d i64_to_gs_d(int64_t earthG);
+
+/**
+ * Convert int64_t to earthG_f.
+ */
+earthG_f i64_to_gs_f(int64_t earthG);
+
+/**
+ * Convert int64_t to earthG_t.
+ */
+earthG_t i64_to_gs_t(int64_t earthG);
+
+/**
+ * Convert int64_t to earthG_u.
+ */
+earthG_u i64_to_gs_u(int64_t earthG);
+
+/**
+ * Convert int8_t to earthG_d.
+ */
+earthG_d i8_to_gs_d(int8_t earthG);
+
+/**
+ * Convert int8_t to earthG_f.
+ */
+earthG_f i8_to_gs_f(int8_t earthG);
+
+/**
+ * Convert int8_t to earthG_t.
+ */
+earthG_t i8_to_gs_t(int8_t earthG);
+
+/**
+ * Convert int8_t to earthG_u.
+ */
+earthG_u i8_to_gs_u(int8_t earthG);
+
+/**
+ * Convert uint16_t to earthG_d.
+ */
+earthG_d u16_to_gs_d(uint16_t earthG);
+
+/**
+ * Convert uint16_t to earthG_f.
+ */
+earthG_f u16_to_gs_f(uint16_t earthG);
+
+/**
+ * Convert uint16_t to earthG_t.
+ */
+earthG_t u16_to_gs_t(uint16_t earthG);
+
+/**
+ * Convert uint16_t to earthG_u.
+ */
+earthG_u u16_to_gs_u(uint16_t earthG);
+
+/**
+ * Convert uint32_t to earthG_d.
+ */
+earthG_d u32_to_gs_d(uint32_t earthG);
+
+/**
+ * Convert uint32_t to earthG_f.
+ */
+earthG_f u32_to_gs_f(uint32_t earthG);
+
+/**
+ * Convert uint32_t to earthG_t.
+ */
+earthG_t u32_to_gs_t(uint32_t earthG);
+
+/**
+ * Convert uint32_t to earthG_u.
+ */
+earthG_u u32_to_gs_u(uint32_t earthG);
+
+/**
+ * Convert uint64_t to earthG_d.
+ */
+earthG_d u64_to_gs_d(uint64_t earthG);
+
+/**
+ * Convert uint64_t to earthG_f.
+ */
+earthG_f u64_to_gs_f(uint64_t earthG);
+
+/**
+ * Convert uint64_t to earthG_t.
+ */
+earthG_t u64_to_gs_t(uint64_t earthG);
+
+/**
+ * Convert uint64_t to earthG_u.
+ */
+earthG_u u64_to_gs_u(uint64_t earthG);
+
+/**
+ * Convert uint8_t to earthG_d.
+ */
+earthG_d u8_to_gs_d(uint8_t earthG);
+
+/**
+ * Convert uint8_t to earthG_f.
+ */
+earthG_f u8_to_gs_f(uint8_t earthG);
+
+/**
+ * Convert uint8_t to earthG_t.
+ */
+earthG_t u8_to_gs_t(uint8_t earthG);
+
+/**
+ * Convert uint8_t to earthG_u.
+ */
+earthG_u u8_to_gs_u(uint8_t earthG);
+
+/**
+* Convert earthG_t to millimetres_per_microseconds_sq_t.
+*/
+millimetres_per_microseconds_sq_t gs_t_to_mm_per_us_sq_t(earthG_t earthG);
+
+/**
+* Convert earthG_t to millimetres_per_microseconds_sq_u.
+*/
+millimetres_per_microseconds_sq_u gs_t_to_mm_per_us_sq_u(earthG_t earthG);
+
+/**
+* Convert earthG_t to millimetres_per_microseconds_sq_f.
+*/
+millimetres_per_microseconds_sq_f gs_t_to_mm_per_us_sq_f(earthG_t earthG);
+
+/**
+* Convert earthG_t to millimetres_per_microseconds_sq_d.
+*/
+millimetres_per_microseconds_sq_d gs_t_to_mm_per_us_sq_d(earthG_t earthG);
+
+/**
+* Convert earthG_u to millimetres_per_microseconds_sq_t.
+*/
+millimetres_per_microseconds_sq_t gs_u_to_mm_per_us_sq_t(earthG_u earthG);
+
+/**
+* Convert earthG_u to millimetres_per_microseconds_sq_u.
+*/
+millimetres_per_microseconds_sq_u gs_u_to_mm_per_us_sq_u(earthG_u earthG);
+
+/**
+* Convert earthG_u to millimetres_per_microseconds_sq_f.
+*/
+millimetres_per_microseconds_sq_f gs_u_to_mm_per_us_sq_f(earthG_u earthG);
+
+/**
+* Convert earthG_u to millimetres_per_microseconds_sq_d.
+*/
+millimetres_per_microseconds_sq_d gs_u_to_mm_per_us_sq_d(earthG_u earthG);
+
+/**
+* Convert earthG_f to millimetres_per_microseconds_sq_t.
+*/
+millimetres_per_microseconds_sq_t gs_f_to_mm_per_us_sq_t(earthG_f earthG);
+
+/**
+* Convert earthG_f to millimetres_per_microseconds_sq_u.
+*/
+millimetres_per_microseconds_sq_u gs_f_to_mm_per_us_sq_u(earthG_f earthG);
+
+/**
+* Convert earthG_f to millimetres_per_microseconds_sq_f.
+*/
+millimetres_per_microseconds_sq_f gs_f_to_mm_per_us_sq_f(earthG_f earthG);
+
+/**
+* Convert earthG_f to millimetres_per_microseconds_sq_d.
+*/
+millimetres_per_microseconds_sq_d gs_f_to_mm_per_us_sq_d(earthG_f earthG);
+
+/**
+* Convert earthG_d to millimetres_per_microseconds_sq_t.
+*/
+millimetres_per_microseconds_sq_t gs_d_to_mm_per_us_sq_t(earthG_d earthG);
+
+/**
+* Convert earthG_d to millimetres_per_microseconds_sq_u.
+*/
+millimetres_per_microseconds_sq_u gs_d_to_mm_per_us_sq_u(earthG_d earthG);
+
+/**
+* Convert earthG_d to millimetres_per_microseconds_sq_f.
+*/
+millimetres_per_microseconds_sq_f gs_d_to_mm_per_us_sq_f(earthG_d earthG);
+
+/**
+* Convert earthG_d to millimetres_per_microseconds_sq_d.
+*/
+millimetres_per_microseconds_sq_d gs_d_to_mm_per_us_sq_d(earthG_d earthG);
+
+/**
+* Convert earthG_t to millimetres_per_milliseconds_sq_t.
+*/
+millimetres_per_milliseconds_sq_t gs_t_to_mm_per_ms_sq_t(earthG_t earthG);
+
+/**
+* Convert earthG_t to millimetres_per_milliseconds_sq_u.
+*/
+millimetres_per_milliseconds_sq_u gs_t_to_mm_per_ms_sq_u(earthG_t earthG);
+
+/**
+* Convert earthG_t to millimetres_per_milliseconds_sq_f.
+*/
+millimetres_per_milliseconds_sq_f gs_t_to_mm_per_ms_sq_f(earthG_t earthG);
+
+/**
+* Convert earthG_t to millimetres_per_milliseconds_sq_d.
+*/
+millimetres_per_milliseconds_sq_d gs_t_to_mm_per_ms_sq_d(earthG_t earthG);
+
+/**
+* Convert earthG_u to millimetres_per_milliseconds_sq_t.
+*/
+millimetres_per_milliseconds_sq_t gs_u_to_mm_per_ms_sq_t(earthG_u earthG);
+
+/**
+* Convert earthG_u to millimetres_per_milliseconds_sq_u.
+*/
+millimetres_per_milliseconds_sq_u gs_u_to_mm_per_ms_sq_u(earthG_u earthG);
+
+/**
+* Convert earthG_u to millimetres_per_milliseconds_sq_f.
+*/
+millimetres_per_milliseconds_sq_f gs_u_to_mm_per_ms_sq_f(earthG_u earthG);
+
+/**
+* Convert earthG_u to millimetres_per_milliseconds_sq_d.
+*/
+millimetres_per_milliseconds_sq_d gs_u_to_mm_per_ms_sq_d(earthG_u earthG);
+
+/**
+* Convert earthG_f to millimetres_per_milliseconds_sq_t.
+*/
+millimetres_per_milliseconds_sq_t gs_f_to_mm_per_ms_sq_t(earthG_f earthG);
+
+/**
+* Convert earthG_f to millimetres_per_milliseconds_sq_u.
+*/
+millimetres_per_milliseconds_sq_u gs_f_to_mm_per_ms_sq_u(earthG_f earthG);
+
+/**
+* Convert earthG_f to millimetres_per_milliseconds_sq_f.
+*/
+millimetres_per_milliseconds_sq_f gs_f_to_mm_per_ms_sq_f(earthG_f earthG);
+
+/**
+* Convert earthG_f to millimetres_per_milliseconds_sq_d.
+*/
+millimetres_per_milliseconds_sq_d gs_f_to_mm_per_ms_sq_d(earthG_f earthG);
+
+/**
+* Convert earthG_d to millimetres_per_milliseconds_sq_t.
+*/
+millimetres_per_milliseconds_sq_t gs_d_to_mm_per_ms_sq_t(earthG_d earthG);
+
+/**
+* Convert earthG_d to millimetres_per_milliseconds_sq_u.
+*/
+millimetres_per_milliseconds_sq_u gs_d_to_mm_per_ms_sq_u(earthG_d earthG);
+
+/**
+* Convert earthG_d to millimetres_per_milliseconds_sq_f.
+*/
+millimetres_per_milliseconds_sq_f gs_d_to_mm_per_ms_sq_f(earthG_d earthG);
+
+/**
+* Convert earthG_d to millimetres_per_milliseconds_sq_d.
+*/
+millimetres_per_milliseconds_sq_d gs_d_to_mm_per_ms_sq_d(earthG_d earthG);
+
+/**
+* Convert earthG_t to millimetres_per_seconds_sq_t.
+*/
+millimetres_per_seconds_sq_t gs_t_to_mm_per_s_sq_t(earthG_t earthG);
+
+/**
+* Convert earthG_t to millimetres_per_seconds_sq_u.
+*/
+millimetres_per_seconds_sq_u gs_t_to_mm_per_s_sq_u(earthG_t earthG);
+
+/**
+* Convert earthG_t to millimetres_per_seconds_sq_f.
+*/
+millimetres_per_seconds_sq_f gs_t_to_mm_per_s_sq_f(earthG_t earthG);
+
+/**
+* Convert earthG_t to millimetres_per_seconds_sq_d.
+*/
+millimetres_per_seconds_sq_d gs_t_to_mm_per_s_sq_d(earthG_t earthG);
+
+/**
+* Convert earthG_u to millimetres_per_seconds_sq_t.
+*/
+millimetres_per_seconds_sq_t gs_u_to_mm_per_s_sq_t(earthG_u earthG);
+
+/**
+* Convert earthG_u to millimetres_per_seconds_sq_u.
+*/
+millimetres_per_seconds_sq_u gs_u_to_mm_per_s_sq_u(earthG_u earthG);
+
+/**
+* Convert earthG_u to millimetres_per_seconds_sq_f.
+*/
+millimetres_per_seconds_sq_f gs_u_to_mm_per_s_sq_f(earthG_u earthG);
+
+/**
+* Convert earthG_u to millimetres_per_seconds_sq_d.
+*/
+millimetres_per_seconds_sq_d gs_u_to_mm_per_s_sq_d(earthG_u earthG);
+
+/**
+* Convert earthG_f to millimetres_per_seconds_sq_t.
+*/
+millimetres_per_seconds_sq_t gs_f_to_mm_per_s_sq_t(earthG_f earthG);
+
+/**
+* Convert earthG_f to millimetres_per_seconds_sq_u.
+*/
+millimetres_per_seconds_sq_u gs_f_to_mm_per_s_sq_u(earthG_f earthG);
+
+/**
+* Convert earthG_f to millimetres_per_seconds_sq_f.
+*/
+millimetres_per_seconds_sq_f gs_f_to_mm_per_s_sq_f(earthG_f earthG);
+
+/**
+* Convert earthG_f to millimetres_per_seconds_sq_d.
+*/
+millimetres_per_seconds_sq_d gs_f_to_mm_per_s_sq_d(earthG_f earthG);
+
+/**
+* Convert earthG_d to millimetres_per_seconds_sq_t.
+*/
+millimetres_per_seconds_sq_t gs_d_to_mm_per_s_sq_t(earthG_d earthG);
+
+/**
+* Convert earthG_d to millimetres_per_seconds_sq_u.
+*/
+millimetres_per_seconds_sq_u gs_d_to_mm_per_s_sq_u(earthG_d earthG);
+
+/**
+* Convert earthG_d to millimetres_per_seconds_sq_f.
+*/
+millimetres_per_seconds_sq_f gs_d_to_mm_per_s_sq_f(earthG_d earthG);
+
+/**
+* Convert earthG_d to millimetres_per_seconds_sq_d.
+*/
+millimetres_per_seconds_sq_d gs_d_to_mm_per_s_sq_d(earthG_d earthG);
+
+/**
+* Convert earthG_t to centimetres_per_microseconds_sq_t.
+*/
+centimetres_per_microseconds_sq_t gs_t_to_cm_per_us_sq_t(earthG_t earthG);
+
+/**
+* Convert earthG_t to centimetres_per_microseconds_sq_u.
+*/
+centimetres_per_microseconds_sq_u gs_t_to_cm_per_us_sq_u(earthG_t earthG);
+
+/**
+* Convert earthG_t to centimetres_per_microseconds_sq_f.
+*/
+centimetres_per_microseconds_sq_f gs_t_to_cm_per_us_sq_f(earthG_t earthG);
+
+/**
+* Convert earthG_t to centimetres_per_microseconds_sq_d.
+*/
+centimetres_per_microseconds_sq_d gs_t_to_cm_per_us_sq_d(earthG_t earthG);
+
+/**
+* Convert earthG_u to centimetres_per_microseconds_sq_t.
+*/
+centimetres_per_microseconds_sq_t gs_u_to_cm_per_us_sq_t(earthG_u earthG);
+
+/**
+* Convert earthG_u to centimetres_per_microseconds_sq_u.
+*/
+centimetres_per_microseconds_sq_u gs_u_to_cm_per_us_sq_u(earthG_u earthG);
+
+/**
+* Convert earthG_u to centimetres_per_microseconds_sq_f.
+*/
+centimetres_per_microseconds_sq_f gs_u_to_cm_per_us_sq_f(earthG_u earthG);
+
+/**
+* Convert earthG_u to centimetres_per_microseconds_sq_d.
+*/
+centimetres_per_microseconds_sq_d gs_u_to_cm_per_us_sq_d(earthG_u earthG);
+
+/**
+* Convert earthG_f to centimetres_per_microseconds_sq_t.
+*/
+centimetres_per_microseconds_sq_t gs_f_to_cm_per_us_sq_t(earthG_f earthG);
+
+/**
+* Convert earthG_f to centimetres_per_microseconds_sq_u.
+*/
+centimetres_per_microseconds_sq_u gs_f_to_cm_per_us_sq_u(earthG_f earthG);
+
+/**
+* Convert earthG_f to centimetres_per_microseconds_sq_f.
+*/
+centimetres_per_microseconds_sq_f gs_f_to_cm_per_us_sq_f(earthG_f earthG);
+
+/**
+* Convert earthG_f to centimetres_per_microseconds_sq_d.
+*/
+centimetres_per_microseconds_sq_d gs_f_to_cm_per_us_sq_d(earthG_f earthG);
+
+/**
+* Convert earthG_d to centimetres_per_microseconds_sq_t.
+*/
+centimetres_per_microseconds_sq_t gs_d_to_cm_per_us_sq_t(earthG_d earthG);
+
+/**
+* Convert earthG_d to centimetres_per_microseconds_sq_u.
+*/
+centimetres_per_microseconds_sq_u gs_d_to_cm_per_us_sq_u(earthG_d earthG);
+
+/**
+* Convert earthG_d to centimetres_per_microseconds_sq_f.
+*/
+centimetres_per_microseconds_sq_f gs_d_to_cm_per_us_sq_f(earthG_d earthG);
+
+/**
+* Convert earthG_d to centimetres_per_microseconds_sq_d.
+*/
+centimetres_per_microseconds_sq_d gs_d_to_cm_per_us_sq_d(earthG_d earthG);
+
+/**
+* Convert earthG_t to centimetres_per_milliseconds_sq_t.
+*/
+centimetres_per_milliseconds_sq_t gs_t_to_cm_per_ms_sq_t(earthG_t earthG);
+
+/**
+* Convert earthG_t to centimetres_per_milliseconds_sq_u.
+*/
+centimetres_per_milliseconds_sq_u gs_t_to_cm_per_ms_sq_u(earthG_t earthG);
+
+/**
+* Convert earthG_t to centimetres_per_milliseconds_sq_f.
+*/
+centimetres_per_milliseconds_sq_f gs_t_to_cm_per_ms_sq_f(earthG_t earthG);
+
+/**
+* Convert earthG_t to centimetres_per_milliseconds_sq_d.
+*/
+centimetres_per_milliseconds_sq_d gs_t_to_cm_per_ms_sq_d(earthG_t earthG);
+
+/**
+* Convert earthG_u to centimetres_per_milliseconds_sq_t.
+*/
+centimetres_per_milliseconds_sq_t gs_u_to_cm_per_ms_sq_t(earthG_u earthG);
+
+/**
+* Convert earthG_u to centimetres_per_milliseconds_sq_u.
+*/
+centimetres_per_milliseconds_sq_u gs_u_to_cm_per_ms_sq_u(earthG_u earthG);
+
+/**
+* Convert earthG_u to centimetres_per_milliseconds_sq_f.
+*/
+centimetres_per_milliseconds_sq_f gs_u_to_cm_per_ms_sq_f(earthG_u earthG);
+
+/**
+* Convert earthG_u to centimetres_per_milliseconds_sq_d.
+*/
+centimetres_per_milliseconds_sq_d gs_u_to_cm_per_ms_sq_d(earthG_u earthG);
+
+/**
+* Convert earthG_f to centimetres_per_milliseconds_sq_t.
+*/
+centimetres_per_milliseconds_sq_t gs_f_to_cm_per_ms_sq_t(earthG_f earthG);
+
+/**
+* Convert earthG_f to centimetres_per_milliseconds_sq_u.
+*/
+centimetres_per_milliseconds_sq_u gs_f_to_cm_per_ms_sq_u(earthG_f earthG);
+
+/**
+* Convert earthG_f to centimetres_per_milliseconds_sq_f.
+*/
+centimetres_per_milliseconds_sq_f gs_f_to_cm_per_ms_sq_f(earthG_f earthG);
+
+/**
+* Convert earthG_f to centimetres_per_milliseconds_sq_d.
+*/
+centimetres_per_milliseconds_sq_d gs_f_to_cm_per_ms_sq_d(earthG_f earthG);
+
+/**
+* Convert earthG_d to centimetres_per_milliseconds_sq_t.
+*/
+centimetres_per_milliseconds_sq_t gs_d_to_cm_per_ms_sq_t(earthG_d earthG);
+
+/**
+* Convert earthG_d to centimetres_per_milliseconds_sq_u.
+*/
+centimetres_per_milliseconds_sq_u gs_d_to_cm_per_ms_sq_u(earthG_d earthG);
+
+/**
+* Convert earthG_d to centimetres_per_milliseconds_sq_f.
+*/
+centimetres_per_milliseconds_sq_f gs_d_to_cm_per_ms_sq_f(earthG_d earthG);
+
+/**
+* Convert earthG_d to centimetres_per_milliseconds_sq_d.
+*/
+centimetres_per_milliseconds_sq_d gs_d_to_cm_per_ms_sq_d(earthG_d earthG);
+
+/**
+* Convert earthG_t to centimetres_per_seconds_sq_t.
+*/
+centimetres_per_seconds_sq_t gs_t_to_cm_per_s_sq_t(earthG_t earthG);
+
+/**
+* Convert earthG_t to centimetres_per_seconds_sq_u.
+*/
+centimetres_per_seconds_sq_u gs_t_to_cm_per_s_sq_u(earthG_t earthG);
+
+/**
+* Convert earthG_t to centimetres_per_seconds_sq_f.
+*/
+centimetres_per_seconds_sq_f gs_t_to_cm_per_s_sq_f(earthG_t earthG);
+
+/**
+* Convert earthG_t to centimetres_per_seconds_sq_d.
+*/
+centimetres_per_seconds_sq_d gs_t_to_cm_per_s_sq_d(earthG_t earthG);
+
+/**
+* Convert earthG_u to centimetres_per_seconds_sq_t.
+*/
+centimetres_per_seconds_sq_t gs_u_to_cm_per_s_sq_t(earthG_u earthG);
+
+/**
+* Convert earthG_u to centimetres_per_seconds_sq_u.
+*/
+centimetres_per_seconds_sq_u gs_u_to_cm_per_s_sq_u(earthG_u earthG);
+
+/**
+* Convert earthG_u to centimetres_per_seconds_sq_f.
+*/
+centimetres_per_seconds_sq_f gs_u_to_cm_per_s_sq_f(earthG_u earthG);
+
+/**
+* Convert earthG_u to centimetres_per_seconds_sq_d.
+*/
+centimetres_per_seconds_sq_d gs_u_to_cm_per_s_sq_d(earthG_u earthG);
+
+/**
+* Convert earthG_f to centimetres_per_seconds_sq_t.
+*/
+centimetres_per_seconds_sq_t gs_f_to_cm_per_s_sq_t(earthG_f earthG);
+
+/**
+* Convert earthG_f to centimetres_per_seconds_sq_u.
+*/
+centimetres_per_seconds_sq_u gs_f_to_cm_per_s_sq_u(earthG_f earthG);
+
+/**
+* Convert earthG_f to centimetres_per_seconds_sq_f.
+*/
+centimetres_per_seconds_sq_f gs_f_to_cm_per_s_sq_f(earthG_f earthG);
+
+/**
+* Convert earthG_f to centimetres_per_seconds_sq_d.
+*/
+centimetres_per_seconds_sq_d gs_f_to_cm_per_s_sq_d(earthG_f earthG);
+
+/**
+* Convert earthG_d to centimetres_per_seconds_sq_t.
+*/
+centimetres_per_seconds_sq_t gs_d_to_cm_per_s_sq_t(earthG_d earthG);
+
+/**
+* Convert earthG_d to centimetres_per_seconds_sq_u.
+*/
+centimetres_per_seconds_sq_u gs_d_to_cm_per_s_sq_u(earthG_d earthG);
+
+/**
+* Convert earthG_d to centimetres_per_seconds_sq_f.
+*/
+centimetres_per_seconds_sq_f gs_d_to_cm_per_s_sq_f(earthG_d earthG);
+
+/**
+* Convert earthG_d to centimetres_per_seconds_sq_d.
+*/
+centimetres_per_seconds_sq_d gs_d_to_cm_per_s_sq_d(earthG_d earthG);
+
+/**
+* Convert earthG_t to metres_per_microseconds_sq_t.
+*/
+metres_per_microseconds_sq_t gs_t_to_m_per_us_sq_t(earthG_t earthG);
+
+/**
+* Convert earthG_t to metres_per_microseconds_sq_u.
+*/
+metres_per_microseconds_sq_u gs_t_to_m_per_us_sq_u(earthG_t earthG);
+
+/**
+* Convert earthG_t to metres_per_microseconds_sq_f.
+*/
+metres_per_microseconds_sq_f gs_t_to_m_per_us_sq_f(earthG_t earthG);
+
+/**
+* Convert earthG_t to metres_per_microseconds_sq_d.
+*/
+metres_per_microseconds_sq_d gs_t_to_m_per_us_sq_d(earthG_t earthG);
+
+/**
+* Convert earthG_u to metres_per_microseconds_sq_t.
+*/
+metres_per_microseconds_sq_t gs_u_to_m_per_us_sq_t(earthG_u earthG);
+
+/**
+* Convert earthG_u to metres_per_microseconds_sq_u.
+*/
+metres_per_microseconds_sq_u gs_u_to_m_per_us_sq_u(earthG_u earthG);
+
+/**
+* Convert earthG_u to metres_per_microseconds_sq_f.
+*/
+metres_per_microseconds_sq_f gs_u_to_m_per_us_sq_f(earthG_u earthG);
+
+/**
+* Convert earthG_u to metres_per_microseconds_sq_d.
+*/
+metres_per_microseconds_sq_d gs_u_to_m_per_us_sq_d(earthG_u earthG);
+
+/**
+* Convert earthG_f to metres_per_microseconds_sq_t.
+*/
+metres_per_microseconds_sq_t gs_f_to_m_per_us_sq_t(earthG_f earthG);
+
+/**
+* Convert earthG_f to metres_per_microseconds_sq_u.
+*/
+metres_per_microseconds_sq_u gs_f_to_m_per_us_sq_u(earthG_f earthG);
+
+/**
+* Convert earthG_f to metres_per_microseconds_sq_f.
+*/
+metres_per_microseconds_sq_f gs_f_to_m_per_us_sq_f(earthG_f earthG);
+
+/**
+* Convert earthG_f to metres_per_microseconds_sq_d.
+*/
+metres_per_microseconds_sq_d gs_f_to_m_per_us_sq_d(earthG_f earthG);
+
+/**
+* Convert earthG_d to metres_per_microseconds_sq_t.
+*/
+metres_per_microseconds_sq_t gs_d_to_m_per_us_sq_t(earthG_d earthG);
+
+/**
+* Convert earthG_d to metres_per_microseconds_sq_u.
+*/
+metres_per_microseconds_sq_u gs_d_to_m_per_us_sq_u(earthG_d earthG);
+
+/**
+* Convert earthG_d to metres_per_microseconds_sq_f.
+*/
+metres_per_microseconds_sq_f gs_d_to_m_per_us_sq_f(earthG_d earthG);
+
+/**
+* Convert earthG_d to metres_per_microseconds_sq_d.
+*/
+metres_per_microseconds_sq_d gs_d_to_m_per_us_sq_d(earthG_d earthG);
+
+/**
+* Convert earthG_t to metres_per_milliseconds_sq_t.
+*/
+metres_per_milliseconds_sq_t gs_t_to_m_per_ms_sq_t(earthG_t earthG);
+
+/**
+* Convert earthG_t to metres_per_milliseconds_sq_u.
+*/
+metres_per_milliseconds_sq_u gs_t_to_m_per_ms_sq_u(earthG_t earthG);
+
+/**
+* Convert earthG_t to metres_per_milliseconds_sq_f.
+*/
+metres_per_milliseconds_sq_f gs_t_to_m_per_ms_sq_f(earthG_t earthG);
+
+/**
+* Convert earthG_t to metres_per_milliseconds_sq_d.
+*/
+metres_per_milliseconds_sq_d gs_t_to_m_per_ms_sq_d(earthG_t earthG);
+
+/**
+* Convert earthG_u to metres_per_milliseconds_sq_t.
+*/
+metres_per_milliseconds_sq_t gs_u_to_m_per_ms_sq_t(earthG_u earthG);
+
+/**
+* Convert earthG_u to metres_per_milliseconds_sq_u.
+*/
+metres_per_milliseconds_sq_u gs_u_to_m_per_ms_sq_u(earthG_u earthG);
+
+/**
+* Convert earthG_u to metres_per_milliseconds_sq_f.
+*/
+metres_per_milliseconds_sq_f gs_u_to_m_per_ms_sq_f(earthG_u earthG);
+
+/**
+* Convert earthG_u to metres_per_milliseconds_sq_d.
+*/
+metres_per_milliseconds_sq_d gs_u_to_m_per_ms_sq_d(earthG_u earthG);
+
+/**
+* Convert earthG_f to metres_per_milliseconds_sq_t.
+*/
+metres_per_milliseconds_sq_t gs_f_to_m_per_ms_sq_t(earthG_f earthG);
+
+/**
+* Convert earthG_f to metres_per_milliseconds_sq_u.
+*/
+metres_per_milliseconds_sq_u gs_f_to_m_per_ms_sq_u(earthG_f earthG);
+
+/**
+* Convert earthG_f to metres_per_milliseconds_sq_f.
+*/
+metres_per_milliseconds_sq_f gs_f_to_m_per_ms_sq_f(earthG_f earthG);
+
+/**
+* Convert earthG_f to metres_per_milliseconds_sq_d.
+*/
+metres_per_milliseconds_sq_d gs_f_to_m_per_ms_sq_d(earthG_f earthG);
+
+/**
+* Convert earthG_d to metres_per_milliseconds_sq_t.
+*/
+metres_per_milliseconds_sq_t gs_d_to_m_per_ms_sq_t(earthG_d earthG);
+
+/**
+* Convert earthG_d to metres_per_milliseconds_sq_u.
+*/
+metres_per_milliseconds_sq_u gs_d_to_m_per_ms_sq_u(earthG_d earthG);
+
+/**
+* Convert earthG_d to metres_per_milliseconds_sq_f.
+*/
+metres_per_milliseconds_sq_f gs_d_to_m_per_ms_sq_f(earthG_d earthG);
+
+/**
+* Convert earthG_d to metres_per_milliseconds_sq_d.
+*/
+metres_per_milliseconds_sq_d gs_d_to_m_per_ms_sq_d(earthG_d earthG);
+
+/**
+* Convert earthG_t to metres_per_seconds_sq_t.
+*/
+metres_per_seconds_sq_t gs_t_to_m_per_s_sq_t(earthG_t earthG);
+
+/**
+* Convert earthG_t to metres_per_seconds_sq_u.
+*/
+metres_per_seconds_sq_u gs_t_to_m_per_s_sq_u(earthG_t earthG);
+
+/**
+* Convert earthG_t to metres_per_seconds_sq_f.
+*/
+metres_per_seconds_sq_f gs_t_to_m_per_s_sq_f(earthG_t earthG);
+
+/**
+* Convert earthG_t to metres_per_seconds_sq_d.
+*/
+metres_per_seconds_sq_d gs_t_to_m_per_s_sq_d(earthG_t earthG);
+
+/**
+* Convert earthG_u to metres_per_seconds_sq_t.
+*/
+metres_per_seconds_sq_t gs_u_to_m_per_s_sq_t(earthG_u earthG);
+
+/**
+* Convert earthG_u to metres_per_seconds_sq_u.
+*/
+metres_per_seconds_sq_u gs_u_to_m_per_s_sq_u(earthG_u earthG);
+
+/**
+* Convert earthG_u to metres_per_seconds_sq_f.
+*/
+metres_per_seconds_sq_f gs_u_to_m_per_s_sq_f(earthG_u earthG);
+
+/**
+* Convert earthG_u to metres_per_seconds_sq_d.
+*/
+metres_per_seconds_sq_d gs_u_to_m_per_s_sq_d(earthG_u earthG);
+
+/**
+* Convert earthG_f to metres_per_seconds_sq_t.
+*/
+metres_per_seconds_sq_t gs_f_to_m_per_s_sq_t(earthG_f earthG);
+
+/**
+* Convert earthG_f to metres_per_seconds_sq_u.
+*/
+metres_per_seconds_sq_u gs_f_to_m_per_s_sq_u(earthG_f earthG);
+
+/**
+* Convert earthG_f to metres_per_seconds_sq_f.
+*/
+metres_per_seconds_sq_f gs_f_to_m_per_s_sq_f(earthG_f earthG);
+
+/**
+* Convert earthG_f to metres_per_seconds_sq_d.
+*/
+metres_per_seconds_sq_d gs_f_to_m_per_s_sq_d(earthG_f earthG);
+
+/**
+* Convert earthG_d to metres_per_seconds_sq_t.
+*/
+metres_per_seconds_sq_t gs_d_to_m_per_s_sq_t(earthG_d earthG);
+
+/**
+* Convert earthG_d to metres_per_seconds_sq_u.
+*/
+metres_per_seconds_sq_u gs_d_to_m_per_s_sq_u(earthG_d earthG);
+
+/**
+* Convert earthG_d to metres_per_seconds_sq_f.
+*/
+metres_per_seconds_sq_f gs_d_to_m_per_s_sq_f(earthG_d earthG);
+
+/**
+* Convert earthG_d to metres_per_seconds_sq_d.
+*/
+metres_per_seconds_sq_d gs_d_to_m_per_s_sq_d(earthG_d earthG);
 
 /**
  * Convert double to gram_d.
@@ -14597,6 +25415,15066 @@ milligram_t u8_to_mg_t(uint8_t milligram);
  * Convert uint8_t to milligram_u.
  */
 milligram_u u8_to_mg_u(uint8_t milligram);
+
+/**
+ * Convert centimetres_per_microseconds_d to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f cm_per_us_d_to_cm_per_us_f(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t cm_per_us_d_to_cm_per_us_t(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u cm_per_us_d_to_cm_per_us_u(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d cm_per_us_d_to_cm_per_ms_d(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f cm_per_us_d_to_cm_per_ms_f(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t cm_per_us_d_to_cm_per_ms_t(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u cm_per_us_d_to_cm_per_ms_u(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d cm_per_us_d_to_cm_per_s_d(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f cm_per_us_d_to_cm_per_s_f(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t cm_per_us_d_to_cm_per_s_t(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u cm_per_us_d_to_cm_per_s_u(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to double.
+ */
+double cm_per_us_d_to_d(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to float.
+ */
+float cm_per_us_d_to_f(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to int16_t.
+ */
+int16_t cm_per_us_d_to_i16(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to int32_t.
+ */
+int32_t cm_per_us_d_to_i32(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to int64_t.
+ */
+int64_t cm_per_us_d_to_i64(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to int8_t.
+ */
+int8_t cm_per_us_d_to_i8(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d cm_per_us_d_to_m_per_us_d(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f cm_per_us_d_to_m_per_us_f(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t cm_per_us_d_to_m_per_us_t(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u cm_per_us_d_to_m_per_us_u(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d cm_per_us_d_to_m_per_ms_d(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f cm_per_us_d_to_m_per_ms_f(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t cm_per_us_d_to_m_per_ms_t(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u cm_per_us_d_to_m_per_ms_u(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to metres_per_seconds_d.
+ */
+metres_per_seconds_d cm_per_us_d_to_m_per_s_d(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to metres_per_seconds_f.
+ */
+metres_per_seconds_f cm_per_us_d_to_m_per_s_f(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to metres_per_seconds_t.
+ */
+metres_per_seconds_t cm_per_us_d_to_m_per_s_t(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to metres_per_seconds_u.
+ */
+metres_per_seconds_u cm_per_us_d_to_m_per_s_u(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d cm_per_us_d_to_mm_per_us_d(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f cm_per_us_d_to_mm_per_us_f(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t cm_per_us_d_to_mm_per_us_t(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u cm_per_us_d_to_mm_per_us_u(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d cm_per_us_d_to_mm_per_ms_d(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f cm_per_us_d_to_mm_per_ms_f(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t cm_per_us_d_to_mm_per_ms_t(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u cm_per_us_d_to_mm_per_ms_u(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d cm_per_us_d_to_mm_per_s_d(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f cm_per_us_d_to_mm_per_s_f(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t cm_per_us_d_to_mm_per_s_t(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u cm_per_us_d_to_mm_per_s_u(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to uint16_t.
+ */
+uint16_t cm_per_us_d_to_u16(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to uint32_t.
+ */
+uint32_t cm_per_us_d_to_u32(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to uint64_t.
+ */
+uint64_t cm_per_us_d_to_u64(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_d to uint8_t.
+ */
+uint8_t cm_per_us_d_to_u8(centimetres_per_microseconds_d centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d cm_per_us_f_to_cm_per_us_d(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t cm_per_us_f_to_cm_per_us_t(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u cm_per_us_f_to_cm_per_us_u(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d cm_per_us_f_to_cm_per_ms_d(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f cm_per_us_f_to_cm_per_ms_f(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t cm_per_us_f_to_cm_per_ms_t(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u cm_per_us_f_to_cm_per_ms_u(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d cm_per_us_f_to_cm_per_s_d(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f cm_per_us_f_to_cm_per_s_f(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t cm_per_us_f_to_cm_per_s_t(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u cm_per_us_f_to_cm_per_s_u(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to double.
+ */
+double cm_per_us_f_to_d(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to float.
+ */
+float cm_per_us_f_to_f(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to int16_t.
+ */
+int16_t cm_per_us_f_to_i16(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to int32_t.
+ */
+int32_t cm_per_us_f_to_i32(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to int64_t.
+ */
+int64_t cm_per_us_f_to_i64(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to int8_t.
+ */
+int8_t cm_per_us_f_to_i8(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d cm_per_us_f_to_m_per_us_d(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f cm_per_us_f_to_m_per_us_f(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t cm_per_us_f_to_m_per_us_t(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u cm_per_us_f_to_m_per_us_u(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d cm_per_us_f_to_m_per_ms_d(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f cm_per_us_f_to_m_per_ms_f(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t cm_per_us_f_to_m_per_ms_t(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u cm_per_us_f_to_m_per_ms_u(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to metres_per_seconds_d.
+ */
+metres_per_seconds_d cm_per_us_f_to_m_per_s_d(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to metres_per_seconds_f.
+ */
+metres_per_seconds_f cm_per_us_f_to_m_per_s_f(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to metres_per_seconds_t.
+ */
+metres_per_seconds_t cm_per_us_f_to_m_per_s_t(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to metres_per_seconds_u.
+ */
+metres_per_seconds_u cm_per_us_f_to_m_per_s_u(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d cm_per_us_f_to_mm_per_us_d(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f cm_per_us_f_to_mm_per_us_f(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t cm_per_us_f_to_mm_per_us_t(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u cm_per_us_f_to_mm_per_us_u(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d cm_per_us_f_to_mm_per_ms_d(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f cm_per_us_f_to_mm_per_ms_f(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t cm_per_us_f_to_mm_per_ms_t(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u cm_per_us_f_to_mm_per_ms_u(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d cm_per_us_f_to_mm_per_s_d(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f cm_per_us_f_to_mm_per_s_f(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t cm_per_us_f_to_mm_per_s_t(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u cm_per_us_f_to_mm_per_s_u(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to uint16_t.
+ */
+uint16_t cm_per_us_f_to_u16(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to uint32_t.
+ */
+uint32_t cm_per_us_f_to_u32(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to uint64_t.
+ */
+uint64_t cm_per_us_f_to_u64(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_f to uint8_t.
+ */
+uint8_t cm_per_us_f_to_u8(centimetres_per_microseconds_f centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d cm_per_us_t_to_cm_per_us_d(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f cm_per_us_t_to_cm_per_us_f(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u cm_per_us_t_to_cm_per_us_u(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d cm_per_us_t_to_cm_per_ms_d(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f cm_per_us_t_to_cm_per_ms_f(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t cm_per_us_t_to_cm_per_ms_t(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u cm_per_us_t_to_cm_per_ms_u(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d cm_per_us_t_to_cm_per_s_d(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f cm_per_us_t_to_cm_per_s_f(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t cm_per_us_t_to_cm_per_s_t(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u cm_per_us_t_to_cm_per_s_u(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to double.
+ */
+double cm_per_us_t_to_d(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to float.
+ */
+float cm_per_us_t_to_f(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to int16_t.
+ */
+int16_t cm_per_us_t_to_i16(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to int32_t.
+ */
+int32_t cm_per_us_t_to_i32(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to int64_t.
+ */
+int64_t cm_per_us_t_to_i64(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to int8_t.
+ */
+int8_t cm_per_us_t_to_i8(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d cm_per_us_t_to_m_per_us_d(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f cm_per_us_t_to_m_per_us_f(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t cm_per_us_t_to_m_per_us_t(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u cm_per_us_t_to_m_per_us_u(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d cm_per_us_t_to_m_per_ms_d(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f cm_per_us_t_to_m_per_ms_f(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t cm_per_us_t_to_m_per_ms_t(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u cm_per_us_t_to_m_per_ms_u(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to metres_per_seconds_d.
+ */
+metres_per_seconds_d cm_per_us_t_to_m_per_s_d(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to metres_per_seconds_f.
+ */
+metres_per_seconds_f cm_per_us_t_to_m_per_s_f(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to metres_per_seconds_t.
+ */
+metres_per_seconds_t cm_per_us_t_to_m_per_s_t(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to metres_per_seconds_u.
+ */
+metres_per_seconds_u cm_per_us_t_to_m_per_s_u(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d cm_per_us_t_to_mm_per_us_d(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f cm_per_us_t_to_mm_per_us_f(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t cm_per_us_t_to_mm_per_us_t(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u cm_per_us_t_to_mm_per_us_u(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d cm_per_us_t_to_mm_per_ms_d(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f cm_per_us_t_to_mm_per_ms_f(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t cm_per_us_t_to_mm_per_ms_t(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u cm_per_us_t_to_mm_per_ms_u(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d cm_per_us_t_to_mm_per_s_d(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f cm_per_us_t_to_mm_per_s_f(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t cm_per_us_t_to_mm_per_s_t(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u cm_per_us_t_to_mm_per_s_u(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to uint16_t.
+ */
+uint16_t cm_per_us_t_to_u16(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to uint32_t.
+ */
+uint32_t cm_per_us_t_to_u32(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to uint64_t.
+ */
+uint64_t cm_per_us_t_to_u64(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_t to uint8_t.
+ */
+uint8_t cm_per_us_t_to_u8(centimetres_per_microseconds_t centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d cm_per_us_u_to_cm_per_us_d(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f cm_per_us_u_to_cm_per_us_f(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t cm_per_us_u_to_cm_per_us_t(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d cm_per_us_u_to_cm_per_ms_d(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f cm_per_us_u_to_cm_per_ms_f(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t cm_per_us_u_to_cm_per_ms_t(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u cm_per_us_u_to_cm_per_ms_u(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d cm_per_us_u_to_cm_per_s_d(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f cm_per_us_u_to_cm_per_s_f(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t cm_per_us_u_to_cm_per_s_t(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u cm_per_us_u_to_cm_per_s_u(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to double.
+ */
+double cm_per_us_u_to_d(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to float.
+ */
+float cm_per_us_u_to_f(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to int16_t.
+ */
+int16_t cm_per_us_u_to_i16(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to int32_t.
+ */
+int32_t cm_per_us_u_to_i32(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to int64_t.
+ */
+int64_t cm_per_us_u_to_i64(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to int8_t.
+ */
+int8_t cm_per_us_u_to_i8(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d cm_per_us_u_to_m_per_us_d(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f cm_per_us_u_to_m_per_us_f(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t cm_per_us_u_to_m_per_us_t(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u cm_per_us_u_to_m_per_us_u(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d cm_per_us_u_to_m_per_ms_d(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f cm_per_us_u_to_m_per_ms_f(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t cm_per_us_u_to_m_per_ms_t(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u cm_per_us_u_to_m_per_ms_u(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to metres_per_seconds_d.
+ */
+metres_per_seconds_d cm_per_us_u_to_m_per_s_d(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to metres_per_seconds_f.
+ */
+metres_per_seconds_f cm_per_us_u_to_m_per_s_f(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to metres_per_seconds_t.
+ */
+metres_per_seconds_t cm_per_us_u_to_m_per_s_t(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to metres_per_seconds_u.
+ */
+metres_per_seconds_u cm_per_us_u_to_m_per_s_u(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d cm_per_us_u_to_mm_per_us_d(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f cm_per_us_u_to_mm_per_us_f(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t cm_per_us_u_to_mm_per_us_t(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u cm_per_us_u_to_mm_per_us_u(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d cm_per_us_u_to_mm_per_ms_d(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f cm_per_us_u_to_mm_per_ms_f(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t cm_per_us_u_to_mm_per_ms_t(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u cm_per_us_u_to_mm_per_ms_u(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d cm_per_us_u_to_mm_per_s_d(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f cm_per_us_u_to_mm_per_s_f(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t cm_per_us_u_to_mm_per_s_t(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u cm_per_us_u_to_mm_per_s_u(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to uint16_t.
+ */
+uint16_t cm_per_us_u_to_u16(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to uint32_t.
+ */
+uint32_t cm_per_us_u_to_u32(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to uint64_t.
+ */
+uint64_t cm_per_us_u_to_u64(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_microseconds_u to uint8_t.
+ */
+uint8_t cm_per_us_u_to_u8(centimetres_per_microseconds_u centimetres_per_microseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d cm_per_ms_d_to_cm_per_us_d(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f cm_per_ms_d_to_cm_per_us_f(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t cm_per_ms_d_to_cm_per_us_t(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u cm_per_ms_d_to_cm_per_us_u(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f cm_per_ms_d_to_cm_per_ms_f(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t cm_per_ms_d_to_cm_per_ms_t(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u cm_per_ms_d_to_cm_per_ms_u(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d cm_per_ms_d_to_cm_per_s_d(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f cm_per_ms_d_to_cm_per_s_f(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t cm_per_ms_d_to_cm_per_s_t(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u cm_per_ms_d_to_cm_per_s_u(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to double.
+ */
+double cm_per_ms_d_to_d(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to float.
+ */
+float cm_per_ms_d_to_f(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to int16_t.
+ */
+int16_t cm_per_ms_d_to_i16(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to int32_t.
+ */
+int32_t cm_per_ms_d_to_i32(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to int64_t.
+ */
+int64_t cm_per_ms_d_to_i64(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to int8_t.
+ */
+int8_t cm_per_ms_d_to_i8(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d cm_per_ms_d_to_m_per_us_d(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f cm_per_ms_d_to_m_per_us_f(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t cm_per_ms_d_to_m_per_us_t(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u cm_per_ms_d_to_m_per_us_u(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d cm_per_ms_d_to_m_per_ms_d(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f cm_per_ms_d_to_m_per_ms_f(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t cm_per_ms_d_to_m_per_ms_t(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u cm_per_ms_d_to_m_per_ms_u(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to metres_per_seconds_d.
+ */
+metres_per_seconds_d cm_per_ms_d_to_m_per_s_d(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to metres_per_seconds_f.
+ */
+metres_per_seconds_f cm_per_ms_d_to_m_per_s_f(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to metres_per_seconds_t.
+ */
+metres_per_seconds_t cm_per_ms_d_to_m_per_s_t(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to metres_per_seconds_u.
+ */
+metres_per_seconds_u cm_per_ms_d_to_m_per_s_u(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d cm_per_ms_d_to_mm_per_us_d(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f cm_per_ms_d_to_mm_per_us_f(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t cm_per_ms_d_to_mm_per_us_t(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u cm_per_ms_d_to_mm_per_us_u(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d cm_per_ms_d_to_mm_per_ms_d(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f cm_per_ms_d_to_mm_per_ms_f(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t cm_per_ms_d_to_mm_per_ms_t(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u cm_per_ms_d_to_mm_per_ms_u(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d cm_per_ms_d_to_mm_per_s_d(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f cm_per_ms_d_to_mm_per_s_f(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t cm_per_ms_d_to_mm_per_s_t(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u cm_per_ms_d_to_mm_per_s_u(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to uint16_t.
+ */
+uint16_t cm_per_ms_d_to_u16(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to uint32_t.
+ */
+uint32_t cm_per_ms_d_to_u32(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to uint64_t.
+ */
+uint64_t cm_per_ms_d_to_u64(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_d to uint8_t.
+ */
+uint8_t cm_per_ms_d_to_u8(centimetres_per_milliseconds_d centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d cm_per_ms_f_to_cm_per_us_d(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f cm_per_ms_f_to_cm_per_us_f(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t cm_per_ms_f_to_cm_per_us_t(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u cm_per_ms_f_to_cm_per_us_u(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d cm_per_ms_f_to_cm_per_ms_d(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t cm_per_ms_f_to_cm_per_ms_t(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u cm_per_ms_f_to_cm_per_ms_u(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d cm_per_ms_f_to_cm_per_s_d(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f cm_per_ms_f_to_cm_per_s_f(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t cm_per_ms_f_to_cm_per_s_t(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u cm_per_ms_f_to_cm_per_s_u(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to double.
+ */
+double cm_per_ms_f_to_d(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to float.
+ */
+float cm_per_ms_f_to_f(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to int16_t.
+ */
+int16_t cm_per_ms_f_to_i16(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to int32_t.
+ */
+int32_t cm_per_ms_f_to_i32(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to int64_t.
+ */
+int64_t cm_per_ms_f_to_i64(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to int8_t.
+ */
+int8_t cm_per_ms_f_to_i8(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d cm_per_ms_f_to_m_per_us_d(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f cm_per_ms_f_to_m_per_us_f(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t cm_per_ms_f_to_m_per_us_t(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u cm_per_ms_f_to_m_per_us_u(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d cm_per_ms_f_to_m_per_ms_d(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f cm_per_ms_f_to_m_per_ms_f(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t cm_per_ms_f_to_m_per_ms_t(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u cm_per_ms_f_to_m_per_ms_u(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to metres_per_seconds_d.
+ */
+metres_per_seconds_d cm_per_ms_f_to_m_per_s_d(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to metres_per_seconds_f.
+ */
+metres_per_seconds_f cm_per_ms_f_to_m_per_s_f(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to metres_per_seconds_t.
+ */
+metres_per_seconds_t cm_per_ms_f_to_m_per_s_t(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to metres_per_seconds_u.
+ */
+metres_per_seconds_u cm_per_ms_f_to_m_per_s_u(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d cm_per_ms_f_to_mm_per_us_d(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f cm_per_ms_f_to_mm_per_us_f(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t cm_per_ms_f_to_mm_per_us_t(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u cm_per_ms_f_to_mm_per_us_u(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d cm_per_ms_f_to_mm_per_ms_d(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f cm_per_ms_f_to_mm_per_ms_f(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t cm_per_ms_f_to_mm_per_ms_t(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u cm_per_ms_f_to_mm_per_ms_u(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d cm_per_ms_f_to_mm_per_s_d(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f cm_per_ms_f_to_mm_per_s_f(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t cm_per_ms_f_to_mm_per_s_t(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u cm_per_ms_f_to_mm_per_s_u(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to uint16_t.
+ */
+uint16_t cm_per_ms_f_to_u16(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to uint32_t.
+ */
+uint32_t cm_per_ms_f_to_u32(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to uint64_t.
+ */
+uint64_t cm_per_ms_f_to_u64(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_f to uint8_t.
+ */
+uint8_t cm_per_ms_f_to_u8(centimetres_per_milliseconds_f centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d cm_per_ms_t_to_cm_per_us_d(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f cm_per_ms_t_to_cm_per_us_f(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t cm_per_ms_t_to_cm_per_us_t(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u cm_per_ms_t_to_cm_per_us_u(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d cm_per_ms_t_to_cm_per_ms_d(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f cm_per_ms_t_to_cm_per_ms_f(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u cm_per_ms_t_to_cm_per_ms_u(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d cm_per_ms_t_to_cm_per_s_d(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f cm_per_ms_t_to_cm_per_s_f(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t cm_per_ms_t_to_cm_per_s_t(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u cm_per_ms_t_to_cm_per_s_u(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to double.
+ */
+double cm_per_ms_t_to_d(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to float.
+ */
+float cm_per_ms_t_to_f(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to int16_t.
+ */
+int16_t cm_per_ms_t_to_i16(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to int32_t.
+ */
+int32_t cm_per_ms_t_to_i32(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to int64_t.
+ */
+int64_t cm_per_ms_t_to_i64(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to int8_t.
+ */
+int8_t cm_per_ms_t_to_i8(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d cm_per_ms_t_to_m_per_us_d(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f cm_per_ms_t_to_m_per_us_f(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t cm_per_ms_t_to_m_per_us_t(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u cm_per_ms_t_to_m_per_us_u(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d cm_per_ms_t_to_m_per_ms_d(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f cm_per_ms_t_to_m_per_ms_f(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t cm_per_ms_t_to_m_per_ms_t(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u cm_per_ms_t_to_m_per_ms_u(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to metres_per_seconds_d.
+ */
+metres_per_seconds_d cm_per_ms_t_to_m_per_s_d(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to metres_per_seconds_f.
+ */
+metres_per_seconds_f cm_per_ms_t_to_m_per_s_f(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to metres_per_seconds_t.
+ */
+metres_per_seconds_t cm_per_ms_t_to_m_per_s_t(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to metres_per_seconds_u.
+ */
+metres_per_seconds_u cm_per_ms_t_to_m_per_s_u(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d cm_per_ms_t_to_mm_per_us_d(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f cm_per_ms_t_to_mm_per_us_f(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t cm_per_ms_t_to_mm_per_us_t(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u cm_per_ms_t_to_mm_per_us_u(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d cm_per_ms_t_to_mm_per_ms_d(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f cm_per_ms_t_to_mm_per_ms_f(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t cm_per_ms_t_to_mm_per_ms_t(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u cm_per_ms_t_to_mm_per_ms_u(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d cm_per_ms_t_to_mm_per_s_d(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f cm_per_ms_t_to_mm_per_s_f(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t cm_per_ms_t_to_mm_per_s_t(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u cm_per_ms_t_to_mm_per_s_u(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to uint16_t.
+ */
+uint16_t cm_per_ms_t_to_u16(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to uint32_t.
+ */
+uint32_t cm_per_ms_t_to_u32(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to uint64_t.
+ */
+uint64_t cm_per_ms_t_to_u64(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_t to uint8_t.
+ */
+uint8_t cm_per_ms_t_to_u8(centimetres_per_milliseconds_t centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d cm_per_ms_u_to_cm_per_us_d(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f cm_per_ms_u_to_cm_per_us_f(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t cm_per_ms_u_to_cm_per_us_t(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u cm_per_ms_u_to_cm_per_us_u(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d cm_per_ms_u_to_cm_per_ms_d(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f cm_per_ms_u_to_cm_per_ms_f(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t cm_per_ms_u_to_cm_per_ms_t(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d cm_per_ms_u_to_cm_per_s_d(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f cm_per_ms_u_to_cm_per_s_f(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t cm_per_ms_u_to_cm_per_s_t(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u cm_per_ms_u_to_cm_per_s_u(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to double.
+ */
+double cm_per_ms_u_to_d(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to float.
+ */
+float cm_per_ms_u_to_f(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to int16_t.
+ */
+int16_t cm_per_ms_u_to_i16(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to int32_t.
+ */
+int32_t cm_per_ms_u_to_i32(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to int64_t.
+ */
+int64_t cm_per_ms_u_to_i64(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to int8_t.
+ */
+int8_t cm_per_ms_u_to_i8(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d cm_per_ms_u_to_m_per_us_d(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f cm_per_ms_u_to_m_per_us_f(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t cm_per_ms_u_to_m_per_us_t(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u cm_per_ms_u_to_m_per_us_u(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d cm_per_ms_u_to_m_per_ms_d(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f cm_per_ms_u_to_m_per_ms_f(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t cm_per_ms_u_to_m_per_ms_t(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u cm_per_ms_u_to_m_per_ms_u(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to metres_per_seconds_d.
+ */
+metres_per_seconds_d cm_per_ms_u_to_m_per_s_d(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to metres_per_seconds_f.
+ */
+metres_per_seconds_f cm_per_ms_u_to_m_per_s_f(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to metres_per_seconds_t.
+ */
+metres_per_seconds_t cm_per_ms_u_to_m_per_s_t(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to metres_per_seconds_u.
+ */
+metres_per_seconds_u cm_per_ms_u_to_m_per_s_u(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d cm_per_ms_u_to_mm_per_us_d(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f cm_per_ms_u_to_mm_per_us_f(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t cm_per_ms_u_to_mm_per_us_t(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u cm_per_ms_u_to_mm_per_us_u(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d cm_per_ms_u_to_mm_per_ms_d(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f cm_per_ms_u_to_mm_per_ms_f(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t cm_per_ms_u_to_mm_per_ms_t(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u cm_per_ms_u_to_mm_per_ms_u(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d cm_per_ms_u_to_mm_per_s_d(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f cm_per_ms_u_to_mm_per_s_f(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t cm_per_ms_u_to_mm_per_s_t(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u cm_per_ms_u_to_mm_per_s_u(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to uint16_t.
+ */
+uint16_t cm_per_ms_u_to_u16(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to uint32_t.
+ */
+uint32_t cm_per_ms_u_to_u32(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to uint64_t.
+ */
+uint64_t cm_per_ms_u_to_u64(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_milliseconds_u to uint8_t.
+ */
+uint8_t cm_per_ms_u_to_u8(centimetres_per_milliseconds_u centimetres_per_milliseconds);
+
+/**
+ * Convert centimetres_per_seconds_d to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d cm_per_s_d_to_cm_per_us_d(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f cm_per_s_d_to_cm_per_us_f(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t cm_per_s_d_to_cm_per_us_t(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u cm_per_s_d_to_cm_per_us_u(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d cm_per_s_d_to_cm_per_ms_d(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f cm_per_s_d_to_cm_per_ms_f(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t cm_per_s_d_to_cm_per_ms_t(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u cm_per_s_d_to_cm_per_ms_u(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f cm_per_s_d_to_cm_per_s_f(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t cm_per_s_d_to_cm_per_s_t(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u cm_per_s_d_to_cm_per_s_u(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to double.
+ */
+double cm_per_s_d_to_d(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to float.
+ */
+float cm_per_s_d_to_f(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to int16_t.
+ */
+int16_t cm_per_s_d_to_i16(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to int32_t.
+ */
+int32_t cm_per_s_d_to_i32(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to int64_t.
+ */
+int64_t cm_per_s_d_to_i64(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to int8_t.
+ */
+int8_t cm_per_s_d_to_i8(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d cm_per_s_d_to_m_per_us_d(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f cm_per_s_d_to_m_per_us_f(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t cm_per_s_d_to_m_per_us_t(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u cm_per_s_d_to_m_per_us_u(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d cm_per_s_d_to_m_per_ms_d(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f cm_per_s_d_to_m_per_ms_f(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t cm_per_s_d_to_m_per_ms_t(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u cm_per_s_d_to_m_per_ms_u(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to metres_per_seconds_d.
+ */
+metres_per_seconds_d cm_per_s_d_to_m_per_s_d(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to metres_per_seconds_f.
+ */
+metres_per_seconds_f cm_per_s_d_to_m_per_s_f(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to metres_per_seconds_t.
+ */
+metres_per_seconds_t cm_per_s_d_to_m_per_s_t(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to metres_per_seconds_u.
+ */
+metres_per_seconds_u cm_per_s_d_to_m_per_s_u(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d cm_per_s_d_to_mm_per_us_d(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f cm_per_s_d_to_mm_per_us_f(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t cm_per_s_d_to_mm_per_us_t(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u cm_per_s_d_to_mm_per_us_u(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d cm_per_s_d_to_mm_per_ms_d(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f cm_per_s_d_to_mm_per_ms_f(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t cm_per_s_d_to_mm_per_ms_t(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u cm_per_s_d_to_mm_per_ms_u(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d cm_per_s_d_to_mm_per_s_d(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f cm_per_s_d_to_mm_per_s_f(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t cm_per_s_d_to_mm_per_s_t(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u cm_per_s_d_to_mm_per_s_u(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to uint16_t.
+ */
+uint16_t cm_per_s_d_to_u16(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to uint32_t.
+ */
+uint32_t cm_per_s_d_to_u32(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to uint64_t.
+ */
+uint64_t cm_per_s_d_to_u64(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_d to uint8_t.
+ */
+uint8_t cm_per_s_d_to_u8(centimetres_per_seconds_d centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d cm_per_s_f_to_cm_per_us_d(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f cm_per_s_f_to_cm_per_us_f(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t cm_per_s_f_to_cm_per_us_t(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u cm_per_s_f_to_cm_per_us_u(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d cm_per_s_f_to_cm_per_ms_d(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f cm_per_s_f_to_cm_per_ms_f(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t cm_per_s_f_to_cm_per_ms_t(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u cm_per_s_f_to_cm_per_ms_u(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d cm_per_s_f_to_cm_per_s_d(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t cm_per_s_f_to_cm_per_s_t(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u cm_per_s_f_to_cm_per_s_u(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to double.
+ */
+double cm_per_s_f_to_d(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to float.
+ */
+float cm_per_s_f_to_f(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to int16_t.
+ */
+int16_t cm_per_s_f_to_i16(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to int32_t.
+ */
+int32_t cm_per_s_f_to_i32(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to int64_t.
+ */
+int64_t cm_per_s_f_to_i64(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to int8_t.
+ */
+int8_t cm_per_s_f_to_i8(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d cm_per_s_f_to_m_per_us_d(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f cm_per_s_f_to_m_per_us_f(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t cm_per_s_f_to_m_per_us_t(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u cm_per_s_f_to_m_per_us_u(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d cm_per_s_f_to_m_per_ms_d(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f cm_per_s_f_to_m_per_ms_f(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t cm_per_s_f_to_m_per_ms_t(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u cm_per_s_f_to_m_per_ms_u(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to metres_per_seconds_d.
+ */
+metres_per_seconds_d cm_per_s_f_to_m_per_s_d(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to metres_per_seconds_f.
+ */
+metres_per_seconds_f cm_per_s_f_to_m_per_s_f(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to metres_per_seconds_t.
+ */
+metres_per_seconds_t cm_per_s_f_to_m_per_s_t(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to metres_per_seconds_u.
+ */
+metres_per_seconds_u cm_per_s_f_to_m_per_s_u(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d cm_per_s_f_to_mm_per_us_d(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f cm_per_s_f_to_mm_per_us_f(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t cm_per_s_f_to_mm_per_us_t(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u cm_per_s_f_to_mm_per_us_u(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d cm_per_s_f_to_mm_per_ms_d(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f cm_per_s_f_to_mm_per_ms_f(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t cm_per_s_f_to_mm_per_ms_t(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u cm_per_s_f_to_mm_per_ms_u(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d cm_per_s_f_to_mm_per_s_d(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f cm_per_s_f_to_mm_per_s_f(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t cm_per_s_f_to_mm_per_s_t(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u cm_per_s_f_to_mm_per_s_u(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to uint16_t.
+ */
+uint16_t cm_per_s_f_to_u16(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to uint32_t.
+ */
+uint32_t cm_per_s_f_to_u32(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to uint64_t.
+ */
+uint64_t cm_per_s_f_to_u64(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_f to uint8_t.
+ */
+uint8_t cm_per_s_f_to_u8(centimetres_per_seconds_f centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d cm_per_s_t_to_cm_per_us_d(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f cm_per_s_t_to_cm_per_us_f(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t cm_per_s_t_to_cm_per_us_t(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u cm_per_s_t_to_cm_per_us_u(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d cm_per_s_t_to_cm_per_ms_d(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f cm_per_s_t_to_cm_per_ms_f(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t cm_per_s_t_to_cm_per_ms_t(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u cm_per_s_t_to_cm_per_ms_u(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d cm_per_s_t_to_cm_per_s_d(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f cm_per_s_t_to_cm_per_s_f(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u cm_per_s_t_to_cm_per_s_u(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to double.
+ */
+double cm_per_s_t_to_d(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to float.
+ */
+float cm_per_s_t_to_f(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to int16_t.
+ */
+int16_t cm_per_s_t_to_i16(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to int32_t.
+ */
+int32_t cm_per_s_t_to_i32(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to int64_t.
+ */
+int64_t cm_per_s_t_to_i64(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to int8_t.
+ */
+int8_t cm_per_s_t_to_i8(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d cm_per_s_t_to_m_per_us_d(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f cm_per_s_t_to_m_per_us_f(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t cm_per_s_t_to_m_per_us_t(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u cm_per_s_t_to_m_per_us_u(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d cm_per_s_t_to_m_per_ms_d(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f cm_per_s_t_to_m_per_ms_f(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t cm_per_s_t_to_m_per_ms_t(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u cm_per_s_t_to_m_per_ms_u(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to metres_per_seconds_d.
+ */
+metres_per_seconds_d cm_per_s_t_to_m_per_s_d(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to metres_per_seconds_f.
+ */
+metres_per_seconds_f cm_per_s_t_to_m_per_s_f(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to metres_per_seconds_t.
+ */
+metres_per_seconds_t cm_per_s_t_to_m_per_s_t(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to metres_per_seconds_u.
+ */
+metres_per_seconds_u cm_per_s_t_to_m_per_s_u(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d cm_per_s_t_to_mm_per_us_d(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f cm_per_s_t_to_mm_per_us_f(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t cm_per_s_t_to_mm_per_us_t(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u cm_per_s_t_to_mm_per_us_u(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d cm_per_s_t_to_mm_per_ms_d(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f cm_per_s_t_to_mm_per_ms_f(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t cm_per_s_t_to_mm_per_ms_t(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u cm_per_s_t_to_mm_per_ms_u(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d cm_per_s_t_to_mm_per_s_d(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f cm_per_s_t_to_mm_per_s_f(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t cm_per_s_t_to_mm_per_s_t(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u cm_per_s_t_to_mm_per_s_u(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to uint16_t.
+ */
+uint16_t cm_per_s_t_to_u16(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to uint32_t.
+ */
+uint32_t cm_per_s_t_to_u32(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to uint64_t.
+ */
+uint64_t cm_per_s_t_to_u64(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_t to uint8_t.
+ */
+uint8_t cm_per_s_t_to_u8(centimetres_per_seconds_t centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d cm_per_s_u_to_cm_per_us_d(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f cm_per_s_u_to_cm_per_us_f(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t cm_per_s_u_to_cm_per_us_t(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u cm_per_s_u_to_cm_per_us_u(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d cm_per_s_u_to_cm_per_ms_d(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f cm_per_s_u_to_cm_per_ms_f(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t cm_per_s_u_to_cm_per_ms_t(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u cm_per_s_u_to_cm_per_ms_u(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d cm_per_s_u_to_cm_per_s_d(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f cm_per_s_u_to_cm_per_s_f(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t cm_per_s_u_to_cm_per_s_t(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to double.
+ */
+double cm_per_s_u_to_d(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to float.
+ */
+float cm_per_s_u_to_f(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to int16_t.
+ */
+int16_t cm_per_s_u_to_i16(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to int32_t.
+ */
+int32_t cm_per_s_u_to_i32(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to int64_t.
+ */
+int64_t cm_per_s_u_to_i64(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to int8_t.
+ */
+int8_t cm_per_s_u_to_i8(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d cm_per_s_u_to_m_per_us_d(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f cm_per_s_u_to_m_per_us_f(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t cm_per_s_u_to_m_per_us_t(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u cm_per_s_u_to_m_per_us_u(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d cm_per_s_u_to_m_per_ms_d(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f cm_per_s_u_to_m_per_ms_f(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t cm_per_s_u_to_m_per_ms_t(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u cm_per_s_u_to_m_per_ms_u(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to metres_per_seconds_d.
+ */
+metres_per_seconds_d cm_per_s_u_to_m_per_s_d(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to metres_per_seconds_f.
+ */
+metres_per_seconds_f cm_per_s_u_to_m_per_s_f(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to metres_per_seconds_t.
+ */
+metres_per_seconds_t cm_per_s_u_to_m_per_s_t(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to metres_per_seconds_u.
+ */
+metres_per_seconds_u cm_per_s_u_to_m_per_s_u(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d cm_per_s_u_to_mm_per_us_d(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f cm_per_s_u_to_mm_per_us_f(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t cm_per_s_u_to_mm_per_us_t(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u cm_per_s_u_to_mm_per_us_u(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d cm_per_s_u_to_mm_per_ms_d(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f cm_per_s_u_to_mm_per_ms_f(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t cm_per_s_u_to_mm_per_ms_t(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u cm_per_s_u_to_mm_per_ms_u(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d cm_per_s_u_to_mm_per_s_d(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f cm_per_s_u_to_mm_per_s_f(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t cm_per_s_u_to_mm_per_s_t(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u cm_per_s_u_to_mm_per_s_u(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to uint16_t.
+ */
+uint16_t cm_per_s_u_to_u16(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to uint32_t.
+ */
+uint32_t cm_per_s_u_to_u32(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to uint64_t.
+ */
+uint64_t cm_per_s_u_to_u64(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert centimetres_per_seconds_u to uint8_t.
+ */
+uint8_t cm_per_s_u_to_u8(centimetres_per_seconds_u centimetres_per_seconds);
+
+/**
+ * Convert double to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d d_to_cm_per_us_d(double centimetres_per_microseconds);
+
+/**
+ * Convert double to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f d_to_cm_per_us_f(double centimetres_per_microseconds);
+
+/**
+ * Convert double to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t d_to_cm_per_us_t(double centimetres_per_microseconds);
+
+/**
+ * Convert double to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u d_to_cm_per_us_u(double centimetres_per_microseconds);
+
+/**
+ * Convert double to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d d_to_cm_per_ms_d(double centimetres_per_milliseconds);
+
+/**
+ * Convert double to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f d_to_cm_per_ms_f(double centimetres_per_milliseconds);
+
+/**
+ * Convert double to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t d_to_cm_per_ms_t(double centimetres_per_milliseconds);
+
+/**
+ * Convert double to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u d_to_cm_per_ms_u(double centimetres_per_milliseconds);
+
+/**
+ * Convert double to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d d_to_cm_per_s_d(double centimetres_per_seconds);
+
+/**
+ * Convert double to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f d_to_cm_per_s_f(double centimetres_per_seconds);
+
+/**
+ * Convert double to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t d_to_cm_per_s_t(double centimetres_per_seconds);
+
+/**
+ * Convert double to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u d_to_cm_per_s_u(double centimetres_per_seconds);
+
+/**
+ * Convert double to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d d_to_m_per_us_d(double metres_per_microseconds);
+
+/**
+ * Convert double to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f d_to_m_per_us_f(double metres_per_microseconds);
+
+/**
+ * Convert double to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t d_to_m_per_us_t(double metres_per_microseconds);
+
+/**
+ * Convert double to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u d_to_m_per_us_u(double metres_per_microseconds);
+
+/**
+ * Convert double to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d d_to_m_per_ms_d(double metres_per_milliseconds);
+
+/**
+ * Convert double to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f d_to_m_per_ms_f(double metres_per_milliseconds);
+
+/**
+ * Convert double to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t d_to_m_per_ms_t(double metres_per_milliseconds);
+
+/**
+ * Convert double to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u d_to_m_per_ms_u(double metres_per_milliseconds);
+
+/**
+ * Convert double to metres_per_seconds_d.
+ */
+metres_per_seconds_d d_to_m_per_s_d(double metres_per_seconds);
+
+/**
+ * Convert double to metres_per_seconds_f.
+ */
+metres_per_seconds_f d_to_m_per_s_f(double metres_per_seconds);
+
+/**
+ * Convert double to metres_per_seconds_t.
+ */
+metres_per_seconds_t d_to_m_per_s_t(double metres_per_seconds);
+
+/**
+ * Convert double to metres_per_seconds_u.
+ */
+metres_per_seconds_u d_to_m_per_s_u(double metres_per_seconds);
+
+/**
+ * Convert double to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d d_to_mm_per_us_d(double millimetres_per_microseconds);
+
+/**
+ * Convert double to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f d_to_mm_per_us_f(double millimetres_per_microseconds);
+
+/**
+ * Convert double to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t d_to_mm_per_us_t(double millimetres_per_microseconds);
+
+/**
+ * Convert double to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u d_to_mm_per_us_u(double millimetres_per_microseconds);
+
+/**
+ * Convert double to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d d_to_mm_per_ms_d(double millimetres_per_milliseconds);
+
+/**
+ * Convert double to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f d_to_mm_per_ms_f(double millimetres_per_milliseconds);
+
+/**
+ * Convert double to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t d_to_mm_per_ms_t(double millimetres_per_milliseconds);
+
+/**
+ * Convert double to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u d_to_mm_per_ms_u(double millimetres_per_milliseconds);
+
+/**
+ * Convert double to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d d_to_mm_per_s_d(double millimetres_per_seconds);
+
+/**
+ * Convert double to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f d_to_mm_per_s_f(double millimetres_per_seconds);
+
+/**
+ * Convert double to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t d_to_mm_per_s_t(double millimetres_per_seconds);
+
+/**
+ * Convert double to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u d_to_mm_per_s_u(double millimetres_per_seconds);
+
+/**
+ * Convert float to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d f_to_cm_per_us_d(float centimetres_per_microseconds);
+
+/**
+ * Convert float to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f f_to_cm_per_us_f(float centimetres_per_microseconds);
+
+/**
+ * Convert float to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t f_to_cm_per_us_t(float centimetres_per_microseconds);
+
+/**
+ * Convert float to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u f_to_cm_per_us_u(float centimetres_per_microseconds);
+
+/**
+ * Convert float to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d f_to_cm_per_ms_d(float centimetres_per_milliseconds);
+
+/**
+ * Convert float to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f f_to_cm_per_ms_f(float centimetres_per_milliseconds);
+
+/**
+ * Convert float to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t f_to_cm_per_ms_t(float centimetres_per_milliseconds);
+
+/**
+ * Convert float to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u f_to_cm_per_ms_u(float centimetres_per_milliseconds);
+
+/**
+ * Convert float to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d f_to_cm_per_s_d(float centimetres_per_seconds);
+
+/**
+ * Convert float to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f f_to_cm_per_s_f(float centimetres_per_seconds);
+
+/**
+ * Convert float to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t f_to_cm_per_s_t(float centimetres_per_seconds);
+
+/**
+ * Convert float to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u f_to_cm_per_s_u(float centimetres_per_seconds);
+
+/**
+ * Convert float to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d f_to_m_per_us_d(float metres_per_microseconds);
+
+/**
+ * Convert float to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f f_to_m_per_us_f(float metres_per_microseconds);
+
+/**
+ * Convert float to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t f_to_m_per_us_t(float metres_per_microseconds);
+
+/**
+ * Convert float to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u f_to_m_per_us_u(float metres_per_microseconds);
+
+/**
+ * Convert float to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d f_to_m_per_ms_d(float metres_per_milliseconds);
+
+/**
+ * Convert float to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f f_to_m_per_ms_f(float metres_per_milliseconds);
+
+/**
+ * Convert float to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t f_to_m_per_ms_t(float metres_per_milliseconds);
+
+/**
+ * Convert float to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u f_to_m_per_ms_u(float metres_per_milliseconds);
+
+/**
+ * Convert float to metres_per_seconds_d.
+ */
+metres_per_seconds_d f_to_m_per_s_d(float metres_per_seconds);
+
+/**
+ * Convert float to metres_per_seconds_f.
+ */
+metres_per_seconds_f f_to_m_per_s_f(float metres_per_seconds);
+
+/**
+ * Convert float to metres_per_seconds_t.
+ */
+metres_per_seconds_t f_to_m_per_s_t(float metres_per_seconds);
+
+/**
+ * Convert float to metres_per_seconds_u.
+ */
+metres_per_seconds_u f_to_m_per_s_u(float metres_per_seconds);
+
+/**
+ * Convert float to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d f_to_mm_per_us_d(float millimetres_per_microseconds);
+
+/**
+ * Convert float to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f f_to_mm_per_us_f(float millimetres_per_microseconds);
+
+/**
+ * Convert float to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t f_to_mm_per_us_t(float millimetres_per_microseconds);
+
+/**
+ * Convert float to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u f_to_mm_per_us_u(float millimetres_per_microseconds);
+
+/**
+ * Convert float to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d f_to_mm_per_ms_d(float millimetres_per_milliseconds);
+
+/**
+ * Convert float to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f f_to_mm_per_ms_f(float millimetres_per_milliseconds);
+
+/**
+ * Convert float to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t f_to_mm_per_ms_t(float millimetres_per_milliseconds);
+
+/**
+ * Convert float to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u f_to_mm_per_ms_u(float millimetres_per_milliseconds);
+
+/**
+ * Convert float to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d f_to_mm_per_s_d(float millimetres_per_seconds);
+
+/**
+ * Convert float to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f f_to_mm_per_s_f(float millimetres_per_seconds);
+
+/**
+ * Convert float to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t f_to_mm_per_s_t(float millimetres_per_seconds);
+
+/**
+ * Convert float to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u f_to_mm_per_s_u(float millimetres_per_seconds);
+
+/**
+ * Convert int16_t to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d i16_to_cm_per_us_d(int16_t centimetres_per_microseconds);
+
+/**
+ * Convert int16_t to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f i16_to_cm_per_us_f(int16_t centimetres_per_microseconds);
+
+/**
+ * Convert int16_t to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t i16_to_cm_per_us_t(int16_t centimetres_per_microseconds);
+
+/**
+ * Convert int16_t to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u i16_to_cm_per_us_u(int16_t centimetres_per_microseconds);
+
+/**
+ * Convert int16_t to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d i16_to_cm_per_ms_d(int16_t centimetres_per_milliseconds);
+
+/**
+ * Convert int16_t to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f i16_to_cm_per_ms_f(int16_t centimetres_per_milliseconds);
+
+/**
+ * Convert int16_t to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t i16_to_cm_per_ms_t(int16_t centimetres_per_milliseconds);
+
+/**
+ * Convert int16_t to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u i16_to_cm_per_ms_u(int16_t centimetres_per_milliseconds);
+
+/**
+ * Convert int16_t to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d i16_to_cm_per_s_d(int16_t centimetres_per_seconds);
+
+/**
+ * Convert int16_t to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f i16_to_cm_per_s_f(int16_t centimetres_per_seconds);
+
+/**
+ * Convert int16_t to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t i16_to_cm_per_s_t(int16_t centimetres_per_seconds);
+
+/**
+ * Convert int16_t to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u i16_to_cm_per_s_u(int16_t centimetres_per_seconds);
+
+/**
+ * Convert int16_t to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d i16_to_m_per_us_d(int16_t metres_per_microseconds);
+
+/**
+ * Convert int16_t to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f i16_to_m_per_us_f(int16_t metres_per_microseconds);
+
+/**
+ * Convert int16_t to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t i16_to_m_per_us_t(int16_t metres_per_microseconds);
+
+/**
+ * Convert int16_t to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u i16_to_m_per_us_u(int16_t metres_per_microseconds);
+
+/**
+ * Convert int16_t to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d i16_to_m_per_ms_d(int16_t metres_per_milliseconds);
+
+/**
+ * Convert int16_t to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f i16_to_m_per_ms_f(int16_t metres_per_milliseconds);
+
+/**
+ * Convert int16_t to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t i16_to_m_per_ms_t(int16_t metres_per_milliseconds);
+
+/**
+ * Convert int16_t to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u i16_to_m_per_ms_u(int16_t metres_per_milliseconds);
+
+/**
+ * Convert int16_t to metres_per_seconds_d.
+ */
+metres_per_seconds_d i16_to_m_per_s_d(int16_t metres_per_seconds);
+
+/**
+ * Convert int16_t to metres_per_seconds_f.
+ */
+metres_per_seconds_f i16_to_m_per_s_f(int16_t metres_per_seconds);
+
+/**
+ * Convert int16_t to metres_per_seconds_t.
+ */
+metres_per_seconds_t i16_to_m_per_s_t(int16_t metres_per_seconds);
+
+/**
+ * Convert int16_t to metres_per_seconds_u.
+ */
+metres_per_seconds_u i16_to_m_per_s_u(int16_t metres_per_seconds);
+
+/**
+ * Convert int16_t to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d i16_to_mm_per_us_d(int16_t millimetres_per_microseconds);
+
+/**
+ * Convert int16_t to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f i16_to_mm_per_us_f(int16_t millimetres_per_microseconds);
+
+/**
+ * Convert int16_t to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t i16_to_mm_per_us_t(int16_t millimetres_per_microseconds);
+
+/**
+ * Convert int16_t to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u i16_to_mm_per_us_u(int16_t millimetres_per_microseconds);
+
+/**
+ * Convert int16_t to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d i16_to_mm_per_ms_d(int16_t millimetres_per_milliseconds);
+
+/**
+ * Convert int16_t to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f i16_to_mm_per_ms_f(int16_t millimetres_per_milliseconds);
+
+/**
+ * Convert int16_t to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t i16_to_mm_per_ms_t(int16_t millimetres_per_milliseconds);
+
+/**
+ * Convert int16_t to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u i16_to_mm_per_ms_u(int16_t millimetres_per_milliseconds);
+
+/**
+ * Convert int16_t to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d i16_to_mm_per_s_d(int16_t millimetres_per_seconds);
+
+/**
+ * Convert int16_t to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f i16_to_mm_per_s_f(int16_t millimetres_per_seconds);
+
+/**
+ * Convert int16_t to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t i16_to_mm_per_s_t(int16_t millimetres_per_seconds);
+
+/**
+ * Convert int16_t to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u i16_to_mm_per_s_u(int16_t millimetres_per_seconds);
+
+/**
+ * Convert int32_t to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d i32_to_cm_per_us_d(int32_t centimetres_per_microseconds);
+
+/**
+ * Convert int32_t to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f i32_to_cm_per_us_f(int32_t centimetres_per_microseconds);
+
+/**
+ * Convert int32_t to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t i32_to_cm_per_us_t(int32_t centimetres_per_microseconds);
+
+/**
+ * Convert int32_t to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u i32_to_cm_per_us_u(int32_t centimetres_per_microseconds);
+
+/**
+ * Convert int32_t to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d i32_to_cm_per_ms_d(int32_t centimetres_per_milliseconds);
+
+/**
+ * Convert int32_t to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f i32_to_cm_per_ms_f(int32_t centimetres_per_milliseconds);
+
+/**
+ * Convert int32_t to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t i32_to_cm_per_ms_t(int32_t centimetres_per_milliseconds);
+
+/**
+ * Convert int32_t to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u i32_to_cm_per_ms_u(int32_t centimetres_per_milliseconds);
+
+/**
+ * Convert int32_t to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d i32_to_cm_per_s_d(int32_t centimetres_per_seconds);
+
+/**
+ * Convert int32_t to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f i32_to_cm_per_s_f(int32_t centimetres_per_seconds);
+
+/**
+ * Convert int32_t to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t i32_to_cm_per_s_t(int32_t centimetres_per_seconds);
+
+/**
+ * Convert int32_t to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u i32_to_cm_per_s_u(int32_t centimetres_per_seconds);
+
+/**
+ * Convert int32_t to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d i32_to_m_per_us_d(int32_t metres_per_microseconds);
+
+/**
+ * Convert int32_t to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f i32_to_m_per_us_f(int32_t metres_per_microseconds);
+
+/**
+ * Convert int32_t to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t i32_to_m_per_us_t(int32_t metres_per_microseconds);
+
+/**
+ * Convert int32_t to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u i32_to_m_per_us_u(int32_t metres_per_microseconds);
+
+/**
+ * Convert int32_t to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d i32_to_m_per_ms_d(int32_t metres_per_milliseconds);
+
+/**
+ * Convert int32_t to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f i32_to_m_per_ms_f(int32_t metres_per_milliseconds);
+
+/**
+ * Convert int32_t to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t i32_to_m_per_ms_t(int32_t metres_per_milliseconds);
+
+/**
+ * Convert int32_t to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u i32_to_m_per_ms_u(int32_t metres_per_milliseconds);
+
+/**
+ * Convert int32_t to metres_per_seconds_d.
+ */
+metres_per_seconds_d i32_to_m_per_s_d(int32_t metres_per_seconds);
+
+/**
+ * Convert int32_t to metres_per_seconds_f.
+ */
+metres_per_seconds_f i32_to_m_per_s_f(int32_t metres_per_seconds);
+
+/**
+ * Convert int32_t to metres_per_seconds_t.
+ */
+metres_per_seconds_t i32_to_m_per_s_t(int32_t metres_per_seconds);
+
+/**
+ * Convert int32_t to metres_per_seconds_u.
+ */
+metres_per_seconds_u i32_to_m_per_s_u(int32_t metres_per_seconds);
+
+/**
+ * Convert int32_t to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d i32_to_mm_per_us_d(int32_t millimetres_per_microseconds);
+
+/**
+ * Convert int32_t to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f i32_to_mm_per_us_f(int32_t millimetres_per_microseconds);
+
+/**
+ * Convert int32_t to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t i32_to_mm_per_us_t(int32_t millimetres_per_microseconds);
+
+/**
+ * Convert int32_t to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u i32_to_mm_per_us_u(int32_t millimetres_per_microseconds);
+
+/**
+ * Convert int32_t to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d i32_to_mm_per_ms_d(int32_t millimetres_per_milliseconds);
+
+/**
+ * Convert int32_t to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f i32_to_mm_per_ms_f(int32_t millimetres_per_milliseconds);
+
+/**
+ * Convert int32_t to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t i32_to_mm_per_ms_t(int32_t millimetres_per_milliseconds);
+
+/**
+ * Convert int32_t to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u i32_to_mm_per_ms_u(int32_t millimetres_per_milliseconds);
+
+/**
+ * Convert int32_t to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d i32_to_mm_per_s_d(int32_t millimetres_per_seconds);
+
+/**
+ * Convert int32_t to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f i32_to_mm_per_s_f(int32_t millimetres_per_seconds);
+
+/**
+ * Convert int32_t to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t i32_to_mm_per_s_t(int32_t millimetres_per_seconds);
+
+/**
+ * Convert int32_t to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u i32_to_mm_per_s_u(int32_t millimetres_per_seconds);
+
+/**
+ * Convert int64_t to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d i64_to_cm_per_us_d(int64_t centimetres_per_microseconds);
+
+/**
+ * Convert int64_t to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f i64_to_cm_per_us_f(int64_t centimetres_per_microseconds);
+
+/**
+ * Convert int64_t to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t i64_to_cm_per_us_t(int64_t centimetres_per_microseconds);
+
+/**
+ * Convert int64_t to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u i64_to_cm_per_us_u(int64_t centimetres_per_microseconds);
+
+/**
+ * Convert int64_t to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d i64_to_cm_per_ms_d(int64_t centimetres_per_milliseconds);
+
+/**
+ * Convert int64_t to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f i64_to_cm_per_ms_f(int64_t centimetres_per_milliseconds);
+
+/**
+ * Convert int64_t to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t i64_to_cm_per_ms_t(int64_t centimetres_per_milliseconds);
+
+/**
+ * Convert int64_t to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u i64_to_cm_per_ms_u(int64_t centimetres_per_milliseconds);
+
+/**
+ * Convert int64_t to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d i64_to_cm_per_s_d(int64_t centimetres_per_seconds);
+
+/**
+ * Convert int64_t to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f i64_to_cm_per_s_f(int64_t centimetres_per_seconds);
+
+/**
+ * Convert int64_t to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t i64_to_cm_per_s_t(int64_t centimetres_per_seconds);
+
+/**
+ * Convert int64_t to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u i64_to_cm_per_s_u(int64_t centimetres_per_seconds);
+
+/**
+ * Convert int64_t to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d i64_to_m_per_us_d(int64_t metres_per_microseconds);
+
+/**
+ * Convert int64_t to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f i64_to_m_per_us_f(int64_t metres_per_microseconds);
+
+/**
+ * Convert int64_t to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t i64_to_m_per_us_t(int64_t metres_per_microseconds);
+
+/**
+ * Convert int64_t to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u i64_to_m_per_us_u(int64_t metres_per_microseconds);
+
+/**
+ * Convert int64_t to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d i64_to_m_per_ms_d(int64_t metres_per_milliseconds);
+
+/**
+ * Convert int64_t to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f i64_to_m_per_ms_f(int64_t metres_per_milliseconds);
+
+/**
+ * Convert int64_t to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t i64_to_m_per_ms_t(int64_t metres_per_milliseconds);
+
+/**
+ * Convert int64_t to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u i64_to_m_per_ms_u(int64_t metres_per_milliseconds);
+
+/**
+ * Convert int64_t to metres_per_seconds_d.
+ */
+metres_per_seconds_d i64_to_m_per_s_d(int64_t metres_per_seconds);
+
+/**
+ * Convert int64_t to metres_per_seconds_f.
+ */
+metres_per_seconds_f i64_to_m_per_s_f(int64_t metres_per_seconds);
+
+/**
+ * Convert int64_t to metres_per_seconds_t.
+ */
+metres_per_seconds_t i64_to_m_per_s_t(int64_t metres_per_seconds);
+
+/**
+ * Convert int64_t to metres_per_seconds_u.
+ */
+metres_per_seconds_u i64_to_m_per_s_u(int64_t metres_per_seconds);
+
+/**
+ * Convert int64_t to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d i64_to_mm_per_us_d(int64_t millimetres_per_microseconds);
+
+/**
+ * Convert int64_t to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f i64_to_mm_per_us_f(int64_t millimetres_per_microseconds);
+
+/**
+ * Convert int64_t to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t i64_to_mm_per_us_t(int64_t millimetres_per_microseconds);
+
+/**
+ * Convert int64_t to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u i64_to_mm_per_us_u(int64_t millimetres_per_microseconds);
+
+/**
+ * Convert int64_t to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d i64_to_mm_per_ms_d(int64_t millimetres_per_milliseconds);
+
+/**
+ * Convert int64_t to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f i64_to_mm_per_ms_f(int64_t millimetres_per_milliseconds);
+
+/**
+ * Convert int64_t to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t i64_to_mm_per_ms_t(int64_t millimetres_per_milliseconds);
+
+/**
+ * Convert int64_t to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u i64_to_mm_per_ms_u(int64_t millimetres_per_milliseconds);
+
+/**
+ * Convert int64_t to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d i64_to_mm_per_s_d(int64_t millimetres_per_seconds);
+
+/**
+ * Convert int64_t to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f i64_to_mm_per_s_f(int64_t millimetres_per_seconds);
+
+/**
+ * Convert int64_t to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t i64_to_mm_per_s_t(int64_t millimetres_per_seconds);
+
+/**
+ * Convert int64_t to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u i64_to_mm_per_s_u(int64_t millimetres_per_seconds);
+
+/**
+ * Convert int8_t to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d i8_to_cm_per_us_d(int8_t centimetres_per_microseconds);
+
+/**
+ * Convert int8_t to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f i8_to_cm_per_us_f(int8_t centimetres_per_microseconds);
+
+/**
+ * Convert int8_t to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t i8_to_cm_per_us_t(int8_t centimetres_per_microseconds);
+
+/**
+ * Convert int8_t to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u i8_to_cm_per_us_u(int8_t centimetres_per_microseconds);
+
+/**
+ * Convert int8_t to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d i8_to_cm_per_ms_d(int8_t centimetres_per_milliseconds);
+
+/**
+ * Convert int8_t to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f i8_to_cm_per_ms_f(int8_t centimetres_per_milliseconds);
+
+/**
+ * Convert int8_t to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t i8_to_cm_per_ms_t(int8_t centimetres_per_milliseconds);
+
+/**
+ * Convert int8_t to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u i8_to_cm_per_ms_u(int8_t centimetres_per_milliseconds);
+
+/**
+ * Convert int8_t to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d i8_to_cm_per_s_d(int8_t centimetres_per_seconds);
+
+/**
+ * Convert int8_t to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f i8_to_cm_per_s_f(int8_t centimetres_per_seconds);
+
+/**
+ * Convert int8_t to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t i8_to_cm_per_s_t(int8_t centimetres_per_seconds);
+
+/**
+ * Convert int8_t to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u i8_to_cm_per_s_u(int8_t centimetres_per_seconds);
+
+/**
+ * Convert int8_t to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d i8_to_m_per_us_d(int8_t metres_per_microseconds);
+
+/**
+ * Convert int8_t to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f i8_to_m_per_us_f(int8_t metres_per_microseconds);
+
+/**
+ * Convert int8_t to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t i8_to_m_per_us_t(int8_t metres_per_microseconds);
+
+/**
+ * Convert int8_t to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u i8_to_m_per_us_u(int8_t metres_per_microseconds);
+
+/**
+ * Convert int8_t to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d i8_to_m_per_ms_d(int8_t metres_per_milliseconds);
+
+/**
+ * Convert int8_t to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f i8_to_m_per_ms_f(int8_t metres_per_milliseconds);
+
+/**
+ * Convert int8_t to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t i8_to_m_per_ms_t(int8_t metres_per_milliseconds);
+
+/**
+ * Convert int8_t to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u i8_to_m_per_ms_u(int8_t metres_per_milliseconds);
+
+/**
+ * Convert int8_t to metres_per_seconds_d.
+ */
+metres_per_seconds_d i8_to_m_per_s_d(int8_t metres_per_seconds);
+
+/**
+ * Convert int8_t to metres_per_seconds_f.
+ */
+metres_per_seconds_f i8_to_m_per_s_f(int8_t metres_per_seconds);
+
+/**
+ * Convert int8_t to metres_per_seconds_t.
+ */
+metres_per_seconds_t i8_to_m_per_s_t(int8_t metres_per_seconds);
+
+/**
+ * Convert int8_t to metres_per_seconds_u.
+ */
+metres_per_seconds_u i8_to_m_per_s_u(int8_t metres_per_seconds);
+
+/**
+ * Convert int8_t to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d i8_to_mm_per_us_d(int8_t millimetres_per_microseconds);
+
+/**
+ * Convert int8_t to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f i8_to_mm_per_us_f(int8_t millimetres_per_microseconds);
+
+/**
+ * Convert int8_t to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t i8_to_mm_per_us_t(int8_t millimetres_per_microseconds);
+
+/**
+ * Convert int8_t to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u i8_to_mm_per_us_u(int8_t millimetres_per_microseconds);
+
+/**
+ * Convert int8_t to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d i8_to_mm_per_ms_d(int8_t millimetres_per_milliseconds);
+
+/**
+ * Convert int8_t to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f i8_to_mm_per_ms_f(int8_t millimetres_per_milliseconds);
+
+/**
+ * Convert int8_t to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t i8_to_mm_per_ms_t(int8_t millimetres_per_milliseconds);
+
+/**
+ * Convert int8_t to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u i8_to_mm_per_ms_u(int8_t millimetres_per_milliseconds);
+
+/**
+ * Convert int8_t to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d i8_to_mm_per_s_d(int8_t millimetres_per_seconds);
+
+/**
+ * Convert int8_t to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f i8_to_mm_per_s_f(int8_t millimetres_per_seconds);
+
+/**
+ * Convert int8_t to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t i8_to_mm_per_s_t(int8_t millimetres_per_seconds);
+
+/**
+ * Convert int8_t to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u i8_to_mm_per_s_u(int8_t millimetres_per_seconds);
+
+/**
+ * Convert metres_per_microseconds_d to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d m_per_us_d_to_cm_per_us_d(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f m_per_us_d_to_cm_per_us_f(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t m_per_us_d_to_cm_per_us_t(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u m_per_us_d_to_cm_per_us_u(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d m_per_us_d_to_cm_per_ms_d(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f m_per_us_d_to_cm_per_ms_f(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t m_per_us_d_to_cm_per_ms_t(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u m_per_us_d_to_cm_per_ms_u(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d m_per_us_d_to_cm_per_s_d(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f m_per_us_d_to_cm_per_s_f(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t m_per_us_d_to_cm_per_s_t(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u m_per_us_d_to_cm_per_s_u(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to double.
+ */
+double m_per_us_d_to_d(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to float.
+ */
+float m_per_us_d_to_f(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to int16_t.
+ */
+int16_t m_per_us_d_to_i16(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to int32_t.
+ */
+int32_t m_per_us_d_to_i32(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to int64_t.
+ */
+int64_t m_per_us_d_to_i64(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to int8_t.
+ */
+int8_t m_per_us_d_to_i8(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f m_per_us_d_to_m_per_us_f(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t m_per_us_d_to_m_per_us_t(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u m_per_us_d_to_m_per_us_u(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d m_per_us_d_to_m_per_ms_d(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f m_per_us_d_to_m_per_ms_f(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t m_per_us_d_to_m_per_ms_t(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u m_per_us_d_to_m_per_ms_u(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to metres_per_seconds_d.
+ */
+metres_per_seconds_d m_per_us_d_to_m_per_s_d(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to metres_per_seconds_f.
+ */
+metres_per_seconds_f m_per_us_d_to_m_per_s_f(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to metres_per_seconds_t.
+ */
+metres_per_seconds_t m_per_us_d_to_m_per_s_t(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to metres_per_seconds_u.
+ */
+metres_per_seconds_u m_per_us_d_to_m_per_s_u(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d m_per_us_d_to_mm_per_us_d(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f m_per_us_d_to_mm_per_us_f(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t m_per_us_d_to_mm_per_us_t(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u m_per_us_d_to_mm_per_us_u(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d m_per_us_d_to_mm_per_ms_d(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f m_per_us_d_to_mm_per_ms_f(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t m_per_us_d_to_mm_per_ms_t(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u m_per_us_d_to_mm_per_ms_u(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d m_per_us_d_to_mm_per_s_d(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f m_per_us_d_to_mm_per_s_f(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t m_per_us_d_to_mm_per_s_t(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u m_per_us_d_to_mm_per_s_u(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to uint16_t.
+ */
+uint16_t m_per_us_d_to_u16(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to uint32_t.
+ */
+uint32_t m_per_us_d_to_u32(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to uint64_t.
+ */
+uint64_t m_per_us_d_to_u64(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_d to uint8_t.
+ */
+uint8_t m_per_us_d_to_u8(metres_per_microseconds_d metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d m_per_us_f_to_cm_per_us_d(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f m_per_us_f_to_cm_per_us_f(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t m_per_us_f_to_cm_per_us_t(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u m_per_us_f_to_cm_per_us_u(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d m_per_us_f_to_cm_per_ms_d(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f m_per_us_f_to_cm_per_ms_f(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t m_per_us_f_to_cm_per_ms_t(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u m_per_us_f_to_cm_per_ms_u(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d m_per_us_f_to_cm_per_s_d(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f m_per_us_f_to_cm_per_s_f(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t m_per_us_f_to_cm_per_s_t(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u m_per_us_f_to_cm_per_s_u(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to double.
+ */
+double m_per_us_f_to_d(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to float.
+ */
+float m_per_us_f_to_f(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to int16_t.
+ */
+int16_t m_per_us_f_to_i16(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to int32_t.
+ */
+int32_t m_per_us_f_to_i32(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to int64_t.
+ */
+int64_t m_per_us_f_to_i64(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to int8_t.
+ */
+int8_t m_per_us_f_to_i8(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d m_per_us_f_to_m_per_us_d(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t m_per_us_f_to_m_per_us_t(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u m_per_us_f_to_m_per_us_u(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d m_per_us_f_to_m_per_ms_d(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f m_per_us_f_to_m_per_ms_f(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t m_per_us_f_to_m_per_ms_t(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u m_per_us_f_to_m_per_ms_u(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to metres_per_seconds_d.
+ */
+metres_per_seconds_d m_per_us_f_to_m_per_s_d(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to metres_per_seconds_f.
+ */
+metres_per_seconds_f m_per_us_f_to_m_per_s_f(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to metres_per_seconds_t.
+ */
+metres_per_seconds_t m_per_us_f_to_m_per_s_t(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to metres_per_seconds_u.
+ */
+metres_per_seconds_u m_per_us_f_to_m_per_s_u(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d m_per_us_f_to_mm_per_us_d(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f m_per_us_f_to_mm_per_us_f(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t m_per_us_f_to_mm_per_us_t(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u m_per_us_f_to_mm_per_us_u(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d m_per_us_f_to_mm_per_ms_d(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f m_per_us_f_to_mm_per_ms_f(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t m_per_us_f_to_mm_per_ms_t(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u m_per_us_f_to_mm_per_ms_u(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d m_per_us_f_to_mm_per_s_d(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f m_per_us_f_to_mm_per_s_f(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t m_per_us_f_to_mm_per_s_t(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u m_per_us_f_to_mm_per_s_u(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to uint16_t.
+ */
+uint16_t m_per_us_f_to_u16(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to uint32_t.
+ */
+uint32_t m_per_us_f_to_u32(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to uint64_t.
+ */
+uint64_t m_per_us_f_to_u64(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_f to uint8_t.
+ */
+uint8_t m_per_us_f_to_u8(metres_per_microseconds_f metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d m_per_us_t_to_cm_per_us_d(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f m_per_us_t_to_cm_per_us_f(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t m_per_us_t_to_cm_per_us_t(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u m_per_us_t_to_cm_per_us_u(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d m_per_us_t_to_cm_per_ms_d(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f m_per_us_t_to_cm_per_ms_f(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t m_per_us_t_to_cm_per_ms_t(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u m_per_us_t_to_cm_per_ms_u(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d m_per_us_t_to_cm_per_s_d(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f m_per_us_t_to_cm_per_s_f(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t m_per_us_t_to_cm_per_s_t(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u m_per_us_t_to_cm_per_s_u(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to double.
+ */
+double m_per_us_t_to_d(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to float.
+ */
+float m_per_us_t_to_f(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to int16_t.
+ */
+int16_t m_per_us_t_to_i16(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to int32_t.
+ */
+int32_t m_per_us_t_to_i32(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to int64_t.
+ */
+int64_t m_per_us_t_to_i64(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to int8_t.
+ */
+int8_t m_per_us_t_to_i8(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d m_per_us_t_to_m_per_us_d(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f m_per_us_t_to_m_per_us_f(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u m_per_us_t_to_m_per_us_u(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d m_per_us_t_to_m_per_ms_d(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f m_per_us_t_to_m_per_ms_f(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t m_per_us_t_to_m_per_ms_t(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u m_per_us_t_to_m_per_ms_u(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to metres_per_seconds_d.
+ */
+metres_per_seconds_d m_per_us_t_to_m_per_s_d(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to metres_per_seconds_f.
+ */
+metres_per_seconds_f m_per_us_t_to_m_per_s_f(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to metres_per_seconds_t.
+ */
+metres_per_seconds_t m_per_us_t_to_m_per_s_t(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to metres_per_seconds_u.
+ */
+metres_per_seconds_u m_per_us_t_to_m_per_s_u(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d m_per_us_t_to_mm_per_us_d(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f m_per_us_t_to_mm_per_us_f(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t m_per_us_t_to_mm_per_us_t(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u m_per_us_t_to_mm_per_us_u(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d m_per_us_t_to_mm_per_ms_d(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f m_per_us_t_to_mm_per_ms_f(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t m_per_us_t_to_mm_per_ms_t(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u m_per_us_t_to_mm_per_ms_u(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d m_per_us_t_to_mm_per_s_d(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f m_per_us_t_to_mm_per_s_f(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t m_per_us_t_to_mm_per_s_t(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u m_per_us_t_to_mm_per_s_u(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to uint16_t.
+ */
+uint16_t m_per_us_t_to_u16(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to uint32_t.
+ */
+uint32_t m_per_us_t_to_u32(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to uint64_t.
+ */
+uint64_t m_per_us_t_to_u64(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_t to uint8_t.
+ */
+uint8_t m_per_us_t_to_u8(metres_per_microseconds_t metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d m_per_us_u_to_cm_per_us_d(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f m_per_us_u_to_cm_per_us_f(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t m_per_us_u_to_cm_per_us_t(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u m_per_us_u_to_cm_per_us_u(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d m_per_us_u_to_cm_per_ms_d(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f m_per_us_u_to_cm_per_ms_f(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t m_per_us_u_to_cm_per_ms_t(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u m_per_us_u_to_cm_per_ms_u(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d m_per_us_u_to_cm_per_s_d(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f m_per_us_u_to_cm_per_s_f(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t m_per_us_u_to_cm_per_s_t(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u m_per_us_u_to_cm_per_s_u(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to double.
+ */
+double m_per_us_u_to_d(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to float.
+ */
+float m_per_us_u_to_f(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to int16_t.
+ */
+int16_t m_per_us_u_to_i16(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to int32_t.
+ */
+int32_t m_per_us_u_to_i32(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to int64_t.
+ */
+int64_t m_per_us_u_to_i64(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to int8_t.
+ */
+int8_t m_per_us_u_to_i8(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d m_per_us_u_to_m_per_us_d(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f m_per_us_u_to_m_per_us_f(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t m_per_us_u_to_m_per_us_t(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d m_per_us_u_to_m_per_ms_d(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f m_per_us_u_to_m_per_ms_f(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t m_per_us_u_to_m_per_ms_t(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u m_per_us_u_to_m_per_ms_u(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to metres_per_seconds_d.
+ */
+metres_per_seconds_d m_per_us_u_to_m_per_s_d(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to metres_per_seconds_f.
+ */
+metres_per_seconds_f m_per_us_u_to_m_per_s_f(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to metres_per_seconds_t.
+ */
+metres_per_seconds_t m_per_us_u_to_m_per_s_t(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to metres_per_seconds_u.
+ */
+metres_per_seconds_u m_per_us_u_to_m_per_s_u(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d m_per_us_u_to_mm_per_us_d(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f m_per_us_u_to_mm_per_us_f(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t m_per_us_u_to_mm_per_us_t(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u m_per_us_u_to_mm_per_us_u(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d m_per_us_u_to_mm_per_ms_d(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f m_per_us_u_to_mm_per_ms_f(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t m_per_us_u_to_mm_per_ms_t(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u m_per_us_u_to_mm_per_ms_u(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d m_per_us_u_to_mm_per_s_d(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f m_per_us_u_to_mm_per_s_f(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t m_per_us_u_to_mm_per_s_t(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u m_per_us_u_to_mm_per_s_u(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to uint16_t.
+ */
+uint16_t m_per_us_u_to_u16(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to uint32_t.
+ */
+uint32_t m_per_us_u_to_u32(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to uint64_t.
+ */
+uint64_t m_per_us_u_to_u64(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_microseconds_u to uint8_t.
+ */
+uint8_t m_per_us_u_to_u8(metres_per_microseconds_u metres_per_microseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d m_per_ms_d_to_cm_per_us_d(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f m_per_ms_d_to_cm_per_us_f(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t m_per_ms_d_to_cm_per_us_t(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u m_per_ms_d_to_cm_per_us_u(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d m_per_ms_d_to_cm_per_ms_d(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f m_per_ms_d_to_cm_per_ms_f(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t m_per_ms_d_to_cm_per_ms_t(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u m_per_ms_d_to_cm_per_ms_u(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d m_per_ms_d_to_cm_per_s_d(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f m_per_ms_d_to_cm_per_s_f(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t m_per_ms_d_to_cm_per_s_t(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u m_per_ms_d_to_cm_per_s_u(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to double.
+ */
+double m_per_ms_d_to_d(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to float.
+ */
+float m_per_ms_d_to_f(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to int16_t.
+ */
+int16_t m_per_ms_d_to_i16(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to int32_t.
+ */
+int32_t m_per_ms_d_to_i32(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to int64_t.
+ */
+int64_t m_per_ms_d_to_i64(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to int8_t.
+ */
+int8_t m_per_ms_d_to_i8(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d m_per_ms_d_to_m_per_us_d(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f m_per_ms_d_to_m_per_us_f(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t m_per_ms_d_to_m_per_us_t(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u m_per_ms_d_to_m_per_us_u(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f m_per_ms_d_to_m_per_ms_f(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t m_per_ms_d_to_m_per_ms_t(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u m_per_ms_d_to_m_per_ms_u(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to metres_per_seconds_d.
+ */
+metres_per_seconds_d m_per_ms_d_to_m_per_s_d(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to metres_per_seconds_f.
+ */
+metres_per_seconds_f m_per_ms_d_to_m_per_s_f(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to metres_per_seconds_t.
+ */
+metres_per_seconds_t m_per_ms_d_to_m_per_s_t(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to metres_per_seconds_u.
+ */
+metres_per_seconds_u m_per_ms_d_to_m_per_s_u(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d m_per_ms_d_to_mm_per_us_d(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f m_per_ms_d_to_mm_per_us_f(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t m_per_ms_d_to_mm_per_us_t(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u m_per_ms_d_to_mm_per_us_u(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d m_per_ms_d_to_mm_per_ms_d(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f m_per_ms_d_to_mm_per_ms_f(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t m_per_ms_d_to_mm_per_ms_t(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u m_per_ms_d_to_mm_per_ms_u(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d m_per_ms_d_to_mm_per_s_d(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f m_per_ms_d_to_mm_per_s_f(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t m_per_ms_d_to_mm_per_s_t(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u m_per_ms_d_to_mm_per_s_u(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to uint16_t.
+ */
+uint16_t m_per_ms_d_to_u16(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to uint32_t.
+ */
+uint32_t m_per_ms_d_to_u32(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to uint64_t.
+ */
+uint64_t m_per_ms_d_to_u64(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_d to uint8_t.
+ */
+uint8_t m_per_ms_d_to_u8(metres_per_milliseconds_d metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d m_per_ms_f_to_cm_per_us_d(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f m_per_ms_f_to_cm_per_us_f(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t m_per_ms_f_to_cm_per_us_t(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u m_per_ms_f_to_cm_per_us_u(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d m_per_ms_f_to_cm_per_ms_d(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f m_per_ms_f_to_cm_per_ms_f(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t m_per_ms_f_to_cm_per_ms_t(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u m_per_ms_f_to_cm_per_ms_u(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d m_per_ms_f_to_cm_per_s_d(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f m_per_ms_f_to_cm_per_s_f(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t m_per_ms_f_to_cm_per_s_t(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u m_per_ms_f_to_cm_per_s_u(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to double.
+ */
+double m_per_ms_f_to_d(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to float.
+ */
+float m_per_ms_f_to_f(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to int16_t.
+ */
+int16_t m_per_ms_f_to_i16(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to int32_t.
+ */
+int32_t m_per_ms_f_to_i32(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to int64_t.
+ */
+int64_t m_per_ms_f_to_i64(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to int8_t.
+ */
+int8_t m_per_ms_f_to_i8(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d m_per_ms_f_to_m_per_us_d(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f m_per_ms_f_to_m_per_us_f(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t m_per_ms_f_to_m_per_us_t(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u m_per_ms_f_to_m_per_us_u(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d m_per_ms_f_to_m_per_ms_d(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t m_per_ms_f_to_m_per_ms_t(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u m_per_ms_f_to_m_per_ms_u(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to metres_per_seconds_d.
+ */
+metres_per_seconds_d m_per_ms_f_to_m_per_s_d(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to metres_per_seconds_f.
+ */
+metres_per_seconds_f m_per_ms_f_to_m_per_s_f(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to metres_per_seconds_t.
+ */
+metres_per_seconds_t m_per_ms_f_to_m_per_s_t(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to metres_per_seconds_u.
+ */
+metres_per_seconds_u m_per_ms_f_to_m_per_s_u(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d m_per_ms_f_to_mm_per_us_d(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f m_per_ms_f_to_mm_per_us_f(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t m_per_ms_f_to_mm_per_us_t(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u m_per_ms_f_to_mm_per_us_u(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d m_per_ms_f_to_mm_per_ms_d(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f m_per_ms_f_to_mm_per_ms_f(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t m_per_ms_f_to_mm_per_ms_t(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u m_per_ms_f_to_mm_per_ms_u(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d m_per_ms_f_to_mm_per_s_d(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f m_per_ms_f_to_mm_per_s_f(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t m_per_ms_f_to_mm_per_s_t(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u m_per_ms_f_to_mm_per_s_u(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to uint16_t.
+ */
+uint16_t m_per_ms_f_to_u16(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to uint32_t.
+ */
+uint32_t m_per_ms_f_to_u32(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to uint64_t.
+ */
+uint64_t m_per_ms_f_to_u64(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_f to uint8_t.
+ */
+uint8_t m_per_ms_f_to_u8(metres_per_milliseconds_f metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d m_per_ms_t_to_cm_per_us_d(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f m_per_ms_t_to_cm_per_us_f(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t m_per_ms_t_to_cm_per_us_t(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u m_per_ms_t_to_cm_per_us_u(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d m_per_ms_t_to_cm_per_ms_d(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f m_per_ms_t_to_cm_per_ms_f(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t m_per_ms_t_to_cm_per_ms_t(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u m_per_ms_t_to_cm_per_ms_u(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d m_per_ms_t_to_cm_per_s_d(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f m_per_ms_t_to_cm_per_s_f(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t m_per_ms_t_to_cm_per_s_t(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u m_per_ms_t_to_cm_per_s_u(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to double.
+ */
+double m_per_ms_t_to_d(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to float.
+ */
+float m_per_ms_t_to_f(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to int16_t.
+ */
+int16_t m_per_ms_t_to_i16(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to int32_t.
+ */
+int32_t m_per_ms_t_to_i32(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to int64_t.
+ */
+int64_t m_per_ms_t_to_i64(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to int8_t.
+ */
+int8_t m_per_ms_t_to_i8(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d m_per_ms_t_to_m_per_us_d(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f m_per_ms_t_to_m_per_us_f(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t m_per_ms_t_to_m_per_us_t(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u m_per_ms_t_to_m_per_us_u(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d m_per_ms_t_to_m_per_ms_d(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f m_per_ms_t_to_m_per_ms_f(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u m_per_ms_t_to_m_per_ms_u(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to metres_per_seconds_d.
+ */
+metres_per_seconds_d m_per_ms_t_to_m_per_s_d(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to metres_per_seconds_f.
+ */
+metres_per_seconds_f m_per_ms_t_to_m_per_s_f(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to metres_per_seconds_t.
+ */
+metres_per_seconds_t m_per_ms_t_to_m_per_s_t(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to metres_per_seconds_u.
+ */
+metres_per_seconds_u m_per_ms_t_to_m_per_s_u(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d m_per_ms_t_to_mm_per_us_d(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f m_per_ms_t_to_mm_per_us_f(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t m_per_ms_t_to_mm_per_us_t(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u m_per_ms_t_to_mm_per_us_u(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d m_per_ms_t_to_mm_per_ms_d(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f m_per_ms_t_to_mm_per_ms_f(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t m_per_ms_t_to_mm_per_ms_t(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u m_per_ms_t_to_mm_per_ms_u(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d m_per_ms_t_to_mm_per_s_d(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f m_per_ms_t_to_mm_per_s_f(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t m_per_ms_t_to_mm_per_s_t(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u m_per_ms_t_to_mm_per_s_u(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to uint16_t.
+ */
+uint16_t m_per_ms_t_to_u16(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to uint32_t.
+ */
+uint32_t m_per_ms_t_to_u32(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to uint64_t.
+ */
+uint64_t m_per_ms_t_to_u64(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_t to uint8_t.
+ */
+uint8_t m_per_ms_t_to_u8(metres_per_milliseconds_t metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d m_per_ms_u_to_cm_per_us_d(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f m_per_ms_u_to_cm_per_us_f(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t m_per_ms_u_to_cm_per_us_t(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u m_per_ms_u_to_cm_per_us_u(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d m_per_ms_u_to_cm_per_ms_d(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f m_per_ms_u_to_cm_per_ms_f(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t m_per_ms_u_to_cm_per_ms_t(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u m_per_ms_u_to_cm_per_ms_u(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d m_per_ms_u_to_cm_per_s_d(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f m_per_ms_u_to_cm_per_s_f(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t m_per_ms_u_to_cm_per_s_t(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u m_per_ms_u_to_cm_per_s_u(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to double.
+ */
+double m_per_ms_u_to_d(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to float.
+ */
+float m_per_ms_u_to_f(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to int16_t.
+ */
+int16_t m_per_ms_u_to_i16(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to int32_t.
+ */
+int32_t m_per_ms_u_to_i32(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to int64_t.
+ */
+int64_t m_per_ms_u_to_i64(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to int8_t.
+ */
+int8_t m_per_ms_u_to_i8(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d m_per_ms_u_to_m_per_us_d(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f m_per_ms_u_to_m_per_us_f(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t m_per_ms_u_to_m_per_us_t(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u m_per_ms_u_to_m_per_us_u(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d m_per_ms_u_to_m_per_ms_d(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f m_per_ms_u_to_m_per_ms_f(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t m_per_ms_u_to_m_per_ms_t(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to metres_per_seconds_d.
+ */
+metres_per_seconds_d m_per_ms_u_to_m_per_s_d(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to metres_per_seconds_f.
+ */
+metres_per_seconds_f m_per_ms_u_to_m_per_s_f(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to metres_per_seconds_t.
+ */
+metres_per_seconds_t m_per_ms_u_to_m_per_s_t(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to metres_per_seconds_u.
+ */
+metres_per_seconds_u m_per_ms_u_to_m_per_s_u(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d m_per_ms_u_to_mm_per_us_d(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f m_per_ms_u_to_mm_per_us_f(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t m_per_ms_u_to_mm_per_us_t(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u m_per_ms_u_to_mm_per_us_u(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d m_per_ms_u_to_mm_per_ms_d(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f m_per_ms_u_to_mm_per_ms_f(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t m_per_ms_u_to_mm_per_ms_t(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u m_per_ms_u_to_mm_per_ms_u(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d m_per_ms_u_to_mm_per_s_d(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f m_per_ms_u_to_mm_per_s_f(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t m_per_ms_u_to_mm_per_s_t(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u m_per_ms_u_to_mm_per_s_u(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to uint16_t.
+ */
+uint16_t m_per_ms_u_to_u16(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to uint32_t.
+ */
+uint32_t m_per_ms_u_to_u32(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to uint64_t.
+ */
+uint64_t m_per_ms_u_to_u64(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_milliseconds_u to uint8_t.
+ */
+uint8_t m_per_ms_u_to_u8(metres_per_milliseconds_u metres_per_milliseconds);
+
+/**
+ * Convert metres_per_seconds_d to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d m_per_s_d_to_cm_per_us_d(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f m_per_s_d_to_cm_per_us_f(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t m_per_s_d_to_cm_per_us_t(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u m_per_s_d_to_cm_per_us_u(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d m_per_s_d_to_cm_per_ms_d(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f m_per_s_d_to_cm_per_ms_f(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t m_per_s_d_to_cm_per_ms_t(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u m_per_s_d_to_cm_per_ms_u(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d m_per_s_d_to_cm_per_s_d(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f m_per_s_d_to_cm_per_s_f(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t m_per_s_d_to_cm_per_s_t(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u m_per_s_d_to_cm_per_s_u(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to double.
+ */
+double m_per_s_d_to_d(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to float.
+ */
+float m_per_s_d_to_f(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to int16_t.
+ */
+int16_t m_per_s_d_to_i16(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to int32_t.
+ */
+int32_t m_per_s_d_to_i32(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to int64_t.
+ */
+int64_t m_per_s_d_to_i64(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to int8_t.
+ */
+int8_t m_per_s_d_to_i8(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d m_per_s_d_to_m_per_us_d(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f m_per_s_d_to_m_per_us_f(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t m_per_s_d_to_m_per_us_t(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u m_per_s_d_to_m_per_us_u(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d m_per_s_d_to_m_per_ms_d(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f m_per_s_d_to_m_per_ms_f(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t m_per_s_d_to_m_per_ms_t(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u m_per_s_d_to_m_per_ms_u(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to metres_per_seconds_f.
+ */
+metres_per_seconds_f m_per_s_d_to_m_per_s_f(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to metres_per_seconds_t.
+ */
+metres_per_seconds_t m_per_s_d_to_m_per_s_t(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to metres_per_seconds_u.
+ */
+metres_per_seconds_u m_per_s_d_to_m_per_s_u(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d m_per_s_d_to_mm_per_us_d(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f m_per_s_d_to_mm_per_us_f(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t m_per_s_d_to_mm_per_us_t(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u m_per_s_d_to_mm_per_us_u(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d m_per_s_d_to_mm_per_ms_d(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f m_per_s_d_to_mm_per_ms_f(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t m_per_s_d_to_mm_per_ms_t(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u m_per_s_d_to_mm_per_ms_u(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d m_per_s_d_to_mm_per_s_d(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f m_per_s_d_to_mm_per_s_f(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t m_per_s_d_to_mm_per_s_t(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u m_per_s_d_to_mm_per_s_u(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to uint16_t.
+ */
+uint16_t m_per_s_d_to_u16(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to uint32_t.
+ */
+uint32_t m_per_s_d_to_u32(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to uint64_t.
+ */
+uint64_t m_per_s_d_to_u64(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_d to uint8_t.
+ */
+uint8_t m_per_s_d_to_u8(metres_per_seconds_d metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d m_per_s_f_to_cm_per_us_d(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f m_per_s_f_to_cm_per_us_f(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t m_per_s_f_to_cm_per_us_t(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u m_per_s_f_to_cm_per_us_u(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d m_per_s_f_to_cm_per_ms_d(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f m_per_s_f_to_cm_per_ms_f(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t m_per_s_f_to_cm_per_ms_t(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u m_per_s_f_to_cm_per_ms_u(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d m_per_s_f_to_cm_per_s_d(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f m_per_s_f_to_cm_per_s_f(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t m_per_s_f_to_cm_per_s_t(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u m_per_s_f_to_cm_per_s_u(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to double.
+ */
+double m_per_s_f_to_d(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to float.
+ */
+float m_per_s_f_to_f(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to int16_t.
+ */
+int16_t m_per_s_f_to_i16(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to int32_t.
+ */
+int32_t m_per_s_f_to_i32(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to int64_t.
+ */
+int64_t m_per_s_f_to_i64(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to int8_t.
+ */
+int8_t m_per_s_f_to_i8(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d m_per_s_f_to_m_per_us_d(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f m_per_s_f_to_m_per_us_f(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t m_per_s_f_to_m_per_us_t(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u m_per_s_f_to_m_per_us_u(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d m_per_s_f_to_m_per_ms_d(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f m_per_s_f_to_m_per_ms_f(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t m_per_s_f_to_m_per_ms_t(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u m_per_s_f_to_m_per_ms_u(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to metres_per_seconds_d.
+ */
+metres_per_seconds_d m_per_s_f_to_m_per_s_d(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to metres_per_seconds_t.
+ */
+metres_per_seconds_t m_per_s_f_to_m_per_s_t(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to metres_per_seconds_u.
+ */
+metres_per_seconds_u m_per_s_f_to_m_per_s_u(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d m_per_s_f_to_mm_per_us_d(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f m_per_s_f_to_mm_per_us_f(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t m_per_s_f_to_mm_per_us_t(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u m_per_s_f_to_mm_per_us_u(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d m_per_s_f_to_mm_per_ms_d(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f m_per_s_f_to_mm_per_ms_f(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t m_per_s_f_to_mm_per_ms_t(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u m_per_s_f_to_mm_per_ms_u(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d m_per_s_f_to_mm_per_s_d(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f m_per_s_f_to_mm_per_s_f(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t m_per_s_f_to_mm_per_s_t(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u m_per_s_f_to_mm_per_s_u(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to uint16_t.
+ */
+uint16_t m_per_s_f_to_u16(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to uint32_t.
+ */
+uint32_t m_per_s_f_to_u32(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to uint64_t.
+ */
+uint64_t m_per_s_f_to_u64(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_f to uint8_t.
+ */
+uint8_t m_per_s_f_to_u8(metres_per_seconds_f metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d m_per_s_t_to_cm_per_us_d(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f m_per_s_t_to_cm_per_us_f(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t m_per_s_t_to_cm_per_us_t(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u m_per_s_t_to_cm_per_us_u(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d m_per_s_t_to_cm_per_ms_d(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f m_per_s_t_to_cm_per_ms_f(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t m_per_s_t_to_cm_per_ms_t(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u m_per_s_t_to_cm_per_ms_u(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d m_per_s_t_to_cm_per_s_d(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f m_per_s_t_to_cm_per_s_f(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t m_per_s_t_to_cm_per_s_t(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u m_per_s_t_to_cm_per_s_u(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to double.
+ */
+double m_per_s_t_to_d(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to float.
+ */
+float m_per_s_t_to_f(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to int16_t.
+ */
+int16_t m_per_s_t_to_i16(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to int32_t.
+ */
+int32_t m_per_s_t_to_i32(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to int64_t.
+ */
+int64_t m_per_s_t_to_i64(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to int8_t.
+ */
+int8_t m_per_s_t_to_i8(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d m_per_s_t_to_m_per_us_d(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f m_per_s_t_to_m_per_us_f(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t m_per_s_t_to_m_per_us_t(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u m_per_s_t_to_m_per_us_u(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d m_per_s_t_to_m_per_ms_d(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f m_per_s_t_to_m_per_ms_f(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t m_per_s_t_to_m_per_ms_t(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u m_per_s_t_to_m_per_ms_u(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to metres_per_seconds_d.
+ */
+metres_per_seconds_d m_per_s_t_to_m_per_s_d(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to metres_per_seconds_f.
+ */
+metres_per_seconds_f m_per_s_t_to_m_per_s_f(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to metres_per_seconds_u.
+ */
+metres_per_seconds_u m_per_s_t_to_m_per_s_u(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d m_per_s_t_to_mm_per_us_d(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f m_per_s_t_to_mm_per_us_f(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t m_per_s_t_to_mm_per_us_t(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u m_per_s_t_to_mm_per_us_u(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d m_per_s_t_to_mm_per_ms_d(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f m_per_s_t_to_mm_per_ms_f(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t m_per_s_t_to_mm_per_ms_t(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u m_per_s_t_to_mm_per_ms_u(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d m_per_s_t_to_mm_per_s_d(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f m_per_s_t_to_mm_per_s_f(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t m_per_s_t_to_mm_per_s_t(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u m_per_s_t_to_mm_per_s_u(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to uint16_t.
+ */
+uint16_t m_per_s_t_to_u16(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to uint32_t.
+ */
+uint32_t m_per_s_t_to_u32(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to uint64_t.
+ */
+uint64_t m_per_s_t_to_u64(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_t to uint8_t.
+ */
+uint8_t m_per_s_t_to_u8(metres_per_seconds_t metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d m_per_s_u_to_cm_per_us_d(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f m_per_s_u_to_cm_per_us_f(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t m_per_s_u_to_cm_per_us_t(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u m_per_s_u_to_cm_per_us_u(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d m_per_s_u_to_cm_per_ms_d(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f m_per_s_u_to_cm_per_ms_f(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t m_per_s_u_to_cm_per_ms_t(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u m_per_s_u_to_cm_per_ms_u(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d m_per_s_u_to_cm_per_s_d(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f m_per_s_u_to_cm_per_s_f(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t m_per_s_u_to_cm_per_s_t(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u m_per_s_u_to_cm_per_s_u(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to double.
+ */
+double m_per_s_u_to_d(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to float.
+ */
+float m_per_s_u_to_f(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to int16_t.
+ */
+int16_t m_per_s_u_to_i16(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to int32_t.
+ */
+int32_t m_per_s_u_to_i32(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to int64_t.
+ */
+int64_t m_per_s_u_to_i64(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to int8_t.
+ */
+int8_t m_per_s_u_to_i8(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d m_per_s_u_to_m_per_us_d(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f m_per_s_u_to_m_per_us_f(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t m_per_s_u_to_m_per_us_t(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u m_per_s_u_to_m_per_us_u(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d m_per_s_u_to_m_per_ms_d(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f m_per_s_u_to_m_per_ms_f(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t m_per_s_u_to_m_per_ms_t(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u m_per_s_u_to_m_per_ms_u(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to metres_per_seconds_d.
+ */
+metres_per_seconds_d m_per_s_u_to_m_per_s_d(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to metres_per_seconds_f.
+ */
+metres_per_seconds_f m_per_s_u_to_m_per_s_f(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to metres_per_seconds_t.
+ */
+metres_per_seconds_t m_per_s_u_to_m_per_s_t(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d m_per_s_u_to_mm_per_us_d(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f m_per_s_u_to_mm_per_us_f(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t m_per_s_u_to_mm_per_us_t(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u m_per_s_u_to_mm_per_us_u(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d m_per_s_u_to_mm_per_ms_d(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f m_per_s_u_to_mm_per_ms_f(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t m_per_s_u_to_mm_per_ms_t(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u m_per_s_u_to_mm_per_ms_u(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d m_per_s_u_to_mm_per_s_d(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f m_per_s_u_to_mm_per_s_f(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t m_per_s_u_to_mm_per_s_t(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u m_per_s_u_to_mm_per_s_u(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to uint16_t.
+ */
+uint16_t m_per_s_u_to_u16(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to uint32_t.
+ */
+uint32_t m_per_s_u_to_u32(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to uint64_t.
+ */
+uint64_t m_per_s_u_to_u64(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert metres_per_seconds_u to uint8_t.
+ */
+uint8_t m_per_s_u_to_u8(metres_per_seconds_u metres_per_seconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d mm_per_us_d_to_cm_per_us_d(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f mm_per_us_d_to_cm_per_us_f(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t mm_per_us_d_to_cm_per_us_t(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u mm_per_us_d_to_cm_per_us_u(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d mm_per_us_d_to_cm_per_ms_d(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f mm_per_us_d_to_cm_per_ms_f(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t mm_per_us_d_to_cm_per_ms_t(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u mm_per_us_d_to_cm_per_ms_u(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d mm_per_us_d_to_cm_per_s_d(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f mm_per_us_d_to_cm_per_s_f(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t mm_per_us_d_to_cm_per_s_t(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u mm_per_us_d_to_cm_per_s_u(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to double.
+ */
+double mm_per_us_d_to_d(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to float.
+ */
+float mm_per_us_d_to_f(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to int16_t.
+ */
+int16_t mm_per_us_d_to_i16(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to int32_t.
+ */
+int32_t mm_per_us_d_to_i32(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to int64_t.
+ */
+int64_t mm_per_us_d_to_i64(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to int8_t.
+ */
+int8_t mm_per_us_d_to_i8(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d mm_per_us_d_to_m_per_us_d(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f mm_per_us_d_to_m_per_us_f(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t mm_per_us_d_to_m_per_us_t(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u mm_per_us_d_to_m_per_us_u(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d mm_per_us_d_to_m_per_ms_d(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f mm_per_us_d_to_m_per_ms_f(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t mm_per_us_d_to_m_per_ms_t(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u mm_per_us_d_to_m_per_ms_u(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to metres_per_seconds_d.
+ */
+metres_per_seconds_d mm_per_us_d_to_m_per_s_d(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to metres_per_seconds_f.
+ */
+metres_per_seconds_f mm_per_us_d_to_m_per_s_f(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to metres_per_seconds_t.
+ */
+metres_per_seconds_t mm_per_us_d_to_m_per_s_t(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to metres_per_seconds_u.
+ */
+metres_per_seconds_u mm_per_us_d_to_m_per_s_u(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f mm_per_us_d_to_mm_per_us_f(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t mm_per_us_d_to_mm_per_us_t(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u mm_per_us_d_to_mm_per_us_u(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d mm_per_us_d_to_mm_per_ms_d(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f mm_per_us_d_to_mm_per_ms_f(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t mm_per_us_d_to_mm_per_ms_t(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u mm_per_us_d_to_mm_per_ms_u(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d mm_per_us_d_to_mm_per_s_d(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f mm_per_us_d_to_mm_per_s_f(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t mm_per_us_d_to_mm_per_s_t(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u mm_per_us_d_to_mm_per_s_u(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to uint16_t.
+ */
+uint16_t mm_per_us_d_to_u16(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to uint32_t.
+ */
+uint32_t mm_per_us_d_to_u32(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to uint64_t.
+ */
+uint64_t mm_per_us_d_to_u64(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_d to uint8_t.
+ */
+uint8_t mm_per_us_d_to_u8(millimetres_per_microseconds_d millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d mm_per_us_f_to_cm_per_us_d(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f mm_per_us_f_to_cm_per_us_f(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t mm_per_us_f_to_cm_per_us_t(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u mm_per_us_f_to_cm_per_us_u(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d mm_per_us_f_to_cm_per_ms_d(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f mm_per_us_f_to_cm_per_ms_f(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t mm_per_us_f_to_cm_per_ms_t(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u mm_per_us_f_to_cm_per_ms_u(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d mm_per_us_f_to_cm_per_s_d(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f mm_per_us_f_to_cm_per_s_f(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t mm_per_us_f_to_cm_per_s_t(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u mm_per_us_f_to_cm_per_s_u(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to double.
+ */
+double mm_per_us_f_to_d(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to float.
+ */
+float mm_per_us_f_to_f(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to int16_t.
+ */
+int16_t mm_per_us_f_to_i16(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to int32_t.
+ */
+int32_t mm_per_us_f_to_i32(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to int64_t.
+ */
+int64_t mm_per_us_f_to_i64(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to int8_t.
+ */
+int8_t mm_per_us_f_to_i8(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d mm_per_us_f_to_m_per_us_d(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f mm_per_us_f_to_m_per_us_f(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t mm_per_us_f_to_m_per_us_t(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u mm_per_us_f_to_m_per_us_u(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d mm_per_us_f_to_m_per_ms_d(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f mm_per_us_f_to_m_per_ms_f(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t mm_per_us_f_to_m_per_ms_t(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u mm_per_us_f_to_m_per_ms_u(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to metres_per_seconds_d.
+ */
+metres_per_seconds_d mm_per_us_f_to_m_per_s_d(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to metres_per_seconds_f.
+ */
+metres_per_seconds_f mm_per_us_f_to_m_per_s_f(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to metres_per_seconds_t.
+ */
+metres_per_seconds_t mm_per_us_f_to_m_per_s_t(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to metres_per_seconds_u.
+ */
+metres_per_seconds_u mm_per_us_f_to_m_per_s_u(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d mm_per_us_f_to_mm_per_us_d(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t mm_per_us_f_to_mm_per_us_t(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u mm_per_us_f_to_mm_per_us_u(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d mm_per_us_f_to_mm_per_ms_d(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f mm_per_us_f_to_mm_per_ms_f(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t mm_per_us_f_to_mm_per_ms_t(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u mm_per_us_f_to_mm_per_ms_u(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d mm_per_us_f_to_mm_per_s_d(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f mm_per_us_f_to_mm_per_s_f(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t mm_per_us_f_to_mm_per_s_t(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u mm_per_us_f_to_mm_per_s_u(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to uint16_t.
+ */
+uint16_t mm_per_us_f_to_u16(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to uint32_t.
+ */
+uint32_t mm_per_us_f_to_u32(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to uint64_t.
+ */
+uint64_t mm_per_us_f_to_u64(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_f to uint8_t.
+ */
+uint8_t mm_per_us_f_to_u8(millimetres_per_microseconds_f millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d mm_per_us_t_to_cm_per_us_d(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f mm_per_us_t_to_cm_per_us_f(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t mm_per_us_t_to_cm_per_us_t(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u mm_per_us_t_to_cm_per_us_u(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d mm_per_us_t_to_cm_per_ms_d(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f mm_per_us_t_to_cm_per_ms_f(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t mm_per_us_t_to_cm_per_ms_t(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u mm_per_us_t_to_cm_per_ms_u(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d mm_per_us_t_to_cm_per_s_d(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f mm_per_us_t_to_cm_per_s_f(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t mm_per_us_t_to_cm_per_s_t(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u mm_per_us_t_to_cm_per_s_u(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to double.
+ */
+double mm_per_us_t_to_d(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to float.
+ */
+float mm_per_us_t_to_f(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to int16_t.
+ */
+int16_t mm_per_us_t_to_i16(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to int32_t.
+ */
+int32_t mm_per_us_t_to_i32(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to int64_t.
+ */
+int64_t mm_per_us_t_to_i64(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to int8_t.
+ */
+int8_t mm_per_us_t_to_i8(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d mm_per_us_t_to_m_per_us_d(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f mm_per_us_t_to_m_per_us_f(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t mm_per_us_t_to_m_per_us_t(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u mm_per_us_t_to_m_per_us_u(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d mm_per_us_t_to_m_per_ms_d(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f mm_per_us_t_to_m_per_ms_f(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t mm_per_us_t_to_m_per_ms_t(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u mm_per_us_t_to_m_per_ms_u(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to metres_per_seconds_d.
+ */
+metres_per_seconds_d mm_per_us_t_to_m_per_s_d(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to metres_per_seconds_f.
+ */
+metres_per_seconds_f mm_per_us_t_to_m_per_s_f(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to metres_per_seconds_t.
+ */
+metres_per_seconds_t mm_per_us_t_to_m_per_s_t(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to metres_per_seconds_u.
+ */
+metres_per_seconds_u mm_per_us_t_to_m_per_s_u(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d mm_per_us_t_to_mm_per_us_d(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f mm_per_us_t_to_mm_per_us_f(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u mm_per_us_t_to_mm_per_us_u(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d mm_per_us_t_to_mm_per_ms_d(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f mm_per_us_t_to_mm_per_ms_f(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t mm_per_us_t_to_mm_per_ms_t(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u mm_per_us_t_to_mm_per_ms_u(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d mm_per_us_t_to_mm_per_s_d(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f mm_per_us_t_to_mm_per_s_f(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t mm_per_us_t_to_mm_per_s_t(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u mm_per_us_t_to_mm_per_s_u(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to uint16_t.
+ */
+uint16_t mm_per_us_t_to_u16(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to uint32_t.
+ */
+uint32_t mm_per_us_t_to_u32(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to uint64_t.
+ */
+uint64_t mm_per_us_t_to_u64(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_t to uint8_t.
+ */
+uint8_t mm_per_us_t_to_u8(millimetres_per_microseconds_t millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d mm_per_us_u_to_cm_per_us_d(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f mm_per_us_u_to_cm_per_us_f(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t mm_per_us_u_to_cm_per_us_t(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u mm_per_us_u_to_cm_per_us_u(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d mm_per_us_u_to_cm_per_ms_d(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f mm_per_us_u_to_cm_per_ms_f(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t mm_per_us_u_to_cm_per_ms_t(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u mm_per_us_u_to_cm_per_ms_u(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d mm_per_us_u_to_cm_per_s_d(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f mm_per_us_u_to_cm_per_s_f(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t mm_per_us_u_to_cm_per_s_t(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u mm_per_us_u_to_cm_per_s_u(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to double.
+ */
+double mm_per_us_u_to_d(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to float.
+ */
+float mm_per_us_u_to_f(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to int16_t.
+ */
+int16_t mm_per_us_u_to_i16(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to int32_t.
+ */
+int32_t mm_per_us_u_to_i32(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to int64_t.
+ */
+int64_t mm_per_us_u_to_i64(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to int8_t.
+ */
+int8_t mm_per_us_u_to_i8(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d mm_per_us_u_to_m_per_us_d(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f mm_per_us_u_to_m_per_us_f(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t mm_per_us_u_to_m_per_us_t(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u mm_per_us_u_to_m_per_us_u(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d mm_per_us_u_to_m_per_ms_d(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f mm_per_us_u_to_m_per_ms_f(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t mm_per_us_u_to_m_per_ms_t(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u mm_per_us_u_to_m_per_ms_u(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to metres_per_seconds_d.
+ */
+metres_per_seconds_d mm_per_us_u_to_m_per_s_d(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to metres_per_seconds_f.
+ */
+metres_per_seconds_f mm_per_us_u_to_m_per_s_f(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to metres_per_seconds_t.
+ */
+metres_per_seconds_t mm_per_us_u_to_m_per_s_t(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to metres_per_seconds_u.
+ */
+metres_per_seconds_u mm_per_us_u_to_m_per_s_u(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d mm_per_us_u_to_mm_per_us_d(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f mm_per_us_u_to_mm_per_us_f(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t mm_per_us_u_to_mm_per_us_t(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d mm_per_us_u_to_mm_per_ms_d(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f mm_per_us_u_to_mm_per_ms_f(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t mm_per_us_u_to_mm_per_ms_t(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u mm_per_us_u_to_mm_per_ms_u(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d mm_per_us_u_to_mm_per_s_d(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f mm_per_us_u_to_mm_per_s_f(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t mm_per_us_u_to_mm_per_s_t(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u mm_per_us_u_to_mm_per_s_u(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to uint16_t.
+ */
+uint16_t mm_per_us_u_to_u16(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to uint32_t.
+ */
+uint32_t mm_per_us_u_to_u32(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to uint64_t.
+ */
+uint64_t mm_per_us_u_to_u64(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_microseconds_u to uint8_t.
+ */
+uint8_t mm_per_us_u_to_u8(millimetres_per_microseconds_u millimetres_per_microseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d mm_per_ms_d_to_cm_per_us_d(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f mm_per_ms_d_to_cm_per_us_f(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t mm_per_ms_d_to_cm_per_us_t(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u mm_per_ms_d_to_cm_per_us_u(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d mm_per_ms_d_to_cm_per_ms_d(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f mm_per_ms_d_to_cm_per_ms_f(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t mm_per_ms_d_to_cm_per_ms_t(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u mm_per_ms_d_to_cm_per_ms_u(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d mm_per_ms_d_to_cm_per_s_d(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f mm_per_ms_d_to_cm_per_s_f(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t mm_per_ms_d_to_cm_per_s_t(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u mm_per_ms_d_to_cm_per_s_u(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to double.
+ */
+double mm_per_ms_d_to_d(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to float.
+ */
+float mm_per_ms_d_to_f(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to int16_t.
+ */
+int16_t mm_per_ms_d_to_i16(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to int32_t.
+ */
+int32_t mm_per_ms_d_to_i32(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to int64_t.
+ */
+int64_t mm_per_ms_d_to_i64(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to int8_t.
+ */
+int8_t mm_per_ms_d_to_i8(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d mm_per_ms_d_to_m_per_us_d(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f mm_per_ms_d_to_m_per_us_f(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t mm_per_ms_d_to_m_per_us_t(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u mm_per_ms_d_to_m_per_us_u(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d mm_per_ms_d_to_m_per_ms_d(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f mm_per_ms_d_to_m_per_ms_f(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t mm_per_ms_d_to_m_per_ms_t(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u mm_per_ms_d_to_m_per_ms_u(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to metres_per_seconds_d.
+ */
+metres_per_seconds_d mm_per_ms_d_to_m_per_s_d(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to metres_per_seconds_f.
+ */
+metres_per_seconds_f mm_per_ms_d_to_m_per_s_f(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to metres_per_seconds_t.
+ */
+metres_per_seconds_t mm_per_ms_d_to_m_per_s_t(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to metres_per_seconds_u.
+ */
+metres_per_seconds_u mm_per_ms_d_to_m_per_s_u(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d mm_per_ms_d_to_mm_per_us_d(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f mm_per_ms_d_to_mm_per_us_f(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t mm_per_ms_d_to_mm_per_us_t(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u mm_per_ms_d_to_mm_per_us_u(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f mm_per_ms_d_to_mm_per_ms_f(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t mm_per_ms_d_to_mm_per_ms_t(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u mm_per_ms_d_to_mm_per_ms_u(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d mm_per_ms_d_to_mm_per_s_d(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f mm_per_ms_d_to_mm_per_s_f(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t mm_per_ms_d_to_mm_per_s_t(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u mm_per_ms_d_to_mm_per_s_u(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to uint16_t.
+ */
+uint16_t mm_per_ms_d_to_u16(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to uint32_t.
+ */
+uint32_t mm_per_ms_d_to_u32(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to uint64_t.
+ */
+uint64_t mm_per_ms_d_to_u64(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_d to uint8_t.
+ */
+uint8_t mm_per_ms_d_to_u8(millimetres_per_milliseconds_d millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d mm_per_ms_f_to_cm_per_us_d(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f mm_per_ms_f_to_cm_per_us_f(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t mm_per_ms_f_to_cm_per_us_t(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u mm_per_ms_f_to_cm_per_us_u(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d mm_per_ms_f_to_cm_per_ms_d(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f mm_per_ms_f_to_cm_per_ms_f(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t mm_per_ms_f_to_cm_per_ms_t(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u mm_per_ms_f_to_cm_per_ms_u(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d mm_per_ms_f_to_cm_per_s_d(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f mm_per_ms_f_to_cm_per_s_f(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t mm_per_ms_f_to_cm_per_s_t(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u mm_per_ms_f_to_cm_per_s_u(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to double.
+ */
+double mm_per_ms_f_to_d(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to float.
+ */
+float mm_per_ms_f_to_f(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to int16_t.
+ */
+int16_t mm_per_ms_f_to_i16(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to int32_t.
+ */
+int32_t mm_per_ms_f_to_i32(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to int64_t.
+ */
+int64_t mm_per_ms_f_to_i64(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to int8_t.
+ */
+int8_t mm_per_ms_f_to_i8(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d mm_per_ms_f_to_m_per_us_d(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f mm_per_ms_f_to_m_per_us_f(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t mm_per_ms_f_to_m_per_us_t(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u mm_per_ms_f_to_m_per_us_u(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d mm_per_ms_f_to_m_per_ms_d(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f mm_per_ms_f_to_m_per_ms_f(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t mm_per_ms_f_to_m_per_ms_t(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u mm_per_ms_f_to_m_per_ms_u(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to metres_per_seconds_d.
+ */
+metres_per_seconds_d mm_per_ms_f_to_m_per_s_d(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to metres_per_seconds_f.
+ */
+metres_per_seconds_f mm_per_ms_f_to_m_per_s_f(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to metres_per_seconds_t.
+ */
+metres_per_seconds_t mm_per_ms_f_to_m_per_s_t(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to metres_per_seconds_u.
+ */
+metres_per_seconds_u mm_per_ms_f_to_m_per_s_u(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d mm_per_ms_f_to_mm_per_us_d(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f mm_per_ms_f_to_mm_per_us_f(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t mm_per_ms_f_to_mm_per_us_t(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u mm_per_ms_f_to_mm_per_us_u(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d mm_per_ms_f_to_mm_per_ms_d(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t mm_per_ms_f_to_mm_per_ms_t(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u mm_per_ms_f_to_mm_per_ms_u(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d mm_per_ms_f_to_mm_per_s_d(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f mm_per_ms_f_to_mm_per_s_f(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t mm_per_ms_f_to_mm_per_s_t(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u mm_per_ms_f_to_mm_per_s_u(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to uint16_t.
+ */
+uint16_t mm_per_ms_f_to_u16(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to uint32_t.
+ */
+uint32_t mm_per_ms_f_to_u32(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to uint64_t.
+ */
+uint64_t mm_per_ms_f_to_u64(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_f to uint8_t.
+ */
+uint8_t mm_per_ms_f_to_u8(millimetres_per_milliseconds_f millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d mm_per_ms_t_to_cm_per_us_d(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f mm_per_ms_t_to_cm_per_us_f(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t mm_per_ms_t_to_cm_per_us_t(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u mm_per_ms_t_to_cm_per_us_u(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d mm_per_ms_t_to_cm_per_ms_d(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f mm_per_ms_t_to_cm_per_ms_f(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t mm_per_ms_t_to_cm_per_ms_t(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u mm_per_ms_t_to_cm_per_ms_u(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d mm_per_ms_t_to_cm_per_s_d(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f mm_per_ms_t_to_cm_per_s_f(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t mm_per_ms_t_to_cm_per_s_t(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u mm_per_ms_t_to_cm_per_s_u(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to double.
+ */
+double mm_per_ms_t_to_d(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to float.
+ */
+float mm_per_ms_t_to_f(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to int16_t.
+ */
+int16_t mm_per_ms_t_to_i16(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to int32_t.
+ */
+int32_t mm_per_ms_t_to_i32(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to int64_t.
+ */
+int64_t mm_per_ms_t_to_i64(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to int8_t.
+ */
+int8_t mm_per_ms_t_to_i8(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d mm_per_ms_t_to_m_per_us_d(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f mm_per_ms_t_to_m_per_us_f(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t mm_per_ms_t_to_m_per_us_t(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u mm_per_ms_t_to_m_per_us_u(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d mm_per_ms_t_to_m_per_ms_d(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f mm_per_ms_t_to_m_per_ms_f(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t mm_per_ms_t_to_m_per_ms_t(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u mm_per_ms_t_to_m_per_ms_u(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to metres_per_seconds_d.
+ */
+metres_per_seconds_d mm_per_ms_t_to_m_per_s_d(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to metres_per_seconds_f.
+ */
+metres_per_seconds_f mm_per_ms_t_to_m_per_s_f(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to metres_per_seconds_t.
+ */
+metres_per_seconds_t mm_per_ms_t_to_m_per_s_t(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to metres_per_seconds_u.
+ */
+metres_per_seconds_u mm_per_ms_t_to_m_per_s_u(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d mm_per_ms_t_to_mm_per_us_d(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f mm_per_ms_t_to_mm_per_us_f(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t mm_per_ms_t_to_mm_per_us_t(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u mm_per_ms_t_to_mm_per_us_u(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d mm_per_ms_t_to_mm_per_ms_d(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f mm_per_ms_t_to_mm_per_ms_f(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u mm_per_ms_t_to_mm_per_ms_u(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d mm_per_ms_t_to_mm_per_s_d(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f mm_per_ms_t_to_mm_per_s_f(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t mm_per_ms_t_to_mm_per_s_t(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u mm_per_ms_t_to_mm_per_s_u(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to uint16_t.
+ */
+uint16_t mm_per_ms_t_to_u16(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to uint32_t.
+ */
+uint32_t mm_per_ms_t_to_u32(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to uint64_t.
+ */
+uint64_t mm_per_ms_t_to_u64(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_t to uint8_t.
+ */
+uint8_t mm_per_ms_t_to_u8(millimetres_per_milliseconds_t millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d mm_per_ms_u_to_cm_per_us_d(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f mm_per_ms_u_to_cm_per_us_f(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t mm_per_ms_u_to_cm_per_us_t(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u mm_per_ms_u_to_cm_per_us_u(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d mm_per_ms_u_to_cm_per_ms_d(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f mm_per_ms_u_to_cm_per_ms_f(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t mm_per_ms_u_to_cm_per_ms_t(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u mm_per_ms_u_to_cm_per_ms_u(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d mm_per_ms_u_to_cm_per_s_d(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f mm_per_ms_u_to_cm_per_s_f(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t mm_per_ms_u_to_cm_per_s_t(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u mm_per_ms_u_to_cm_per_s_u(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to double.
+ */
+double mm_per_ms_u_to_d(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to float.
+ */
+float mm_per_ms_u_to_f(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to int16_t.
+ */
+int16_t mm_per_ms_u_to_i16(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to int32_t.
+ */
+int32_t mm_per_ms_u_to_i32(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to int64_t.
+ */
+int64_t mm_per_ms_u_to_i64(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to int8_t.
+ */
+int8_t mm_per_ms_u_to_i8(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d mm_per_ms_u_to_m_per_us_d(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f mm_per_ms_u_to_m_per_us_f(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t mm_per_ms_u_to_m_per_us_t(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u mm_per_ms_u_to_m_per_us_u(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d mm_per_ms_u_to_m_per_ms_d(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f mm_per_ms_u_to_m_per_ms_f(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t mm_per_ms_u_to_m_per_ms_t(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u mm_per_ms_u_to_m_per_ms_u(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to metres_per_seconds_d.
+ */
+metres_per_seconds_d mm_per_ms_u_to_m_per_s_d(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to metres_per_seconds_f.
+ */
+metres_per_seconds_f mm_per_ms_u_to_m_per_s_f(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to metres_per_seconds_t.
+ */
+metres_per_seconds_t mm_per_ms_u_to_m_per_s_t(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to metres_per_seconds_u.
+ */
+metres_per_seconds_u mm_per_ms_u_to_m_per_s_u(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d mm_per_ms_u_to_mm_per_us_d(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f mm_per_ms_u_to_mm_per_us_f(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t mm_per_ms_u_to_mm_per_us_t(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u mm_per_ms_u_to_mm_per_us_u(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d mm_per_ms_u_to_mm_per_ms_d(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f mm_per_ms_u_to_mm_per_ms_f(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t mm_per_ms_u_to_mm_per_ms_t(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d mm_per_ms_u_to_mm_per_s_d(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f mm_per_ms_u_to_mm_per_s_f(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t mm_per_ms_u_to_mm_per_s_t(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u mm_per_ms_u_to_mm_per_s_u(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to uint16_t.
+ */
+uint16_t mm_per_ms_u_to_u16(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to uint32_t.
+ */
+uint32_t mm_per_ms_u_to_u32(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to uint64_t.
+ */
+uint64_t mm_per_ms_u_to_u64(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_milliseconds_u to uint8_t.
+ */
+uint8_t mm_per_ms_u_to_u8(millimetres_per_milliseconds_u millimetres_per_milliseconds);
+
+/**
+ * Convert millimetres_per_seconds_d to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d mm_per_s_d_to_cm_per_us_d(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f mm_per_s_d_to_cm_per_us_f(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t mm_per_s_d_to_cm_per_us_t(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u mm_per_s_d_to_cm_per_us_u(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d mm_per_s_d_to_cm_per_ms_d(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f mm_per_s_d_to_cm_per_ms_f(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t mm_per_s_d_to_cm_per_ms_t(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u mm_per_s_d_to_cm_per_ms_u(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d mm_per_s_d_to_cm_per_s_d(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f mm_per_s_d_to_cm_per_s_f(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t mm_per_s_d_to_cm_per_s_t(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u mm_per_s_d_to_cm_per_s_u(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to double.
+ */
+double mm_per_s_d_to_d(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to float.
+ */
+float mm_per_s_d_to_f(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to int16_t.
+ */
+int16_t mm_per_s_d_to_i16(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to int32_t.
+ */
+int32_t mm_per_s_d_to_i32(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to int64_t.
+ */
+int64_t mm_per_s_d_to_i64(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to int8_t.
+ */
+int8_t mm_per_s_d_to_i8(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d mm_per_s_d_to_m_per_us_d(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f mm_per_s_d_to_m_per_us_f(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t mm_per_s_d_to_m_per_us_t(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u mm_per_s_d_to_m_per_us_u(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d mm_per_s_d_to_m_per_ms_d(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f mm_per_s_d_to_m_per_ms_f(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t mm_per_s_d_to_m_per_ms_t(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u mm_per_s_d_to_m_per_ms_u(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to metres_per_seconds_d.
+ */
+metres_per_seconds_d mm_per_s_d_to_m_per_s_d(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to metres_per_seconds_f.
+ */
+metres_per_seconds_f mm_per_s_d_to_m_per_s_f(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to metres_per_seconds_t.
+ */
+metres_per_seconds_t mm_per_s_d_to_m_per_s_t(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to metres_per_seconds_u.
+ */
+metres_per_seconds_u mm_per_s_d_to_m_per_s_u(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d mm_per_s_d_to_mm_per_us_d(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f mm_per_s_d_to_mm_per_us_f(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t mm_per_s_d_to_mm_per_us_t(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u mm_per_s_d_to_mm_per_us_u(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d mm_per_s_d_to_mm_per_ms_d(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f mm_per_s_d_to_mm_per_ms_f(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t mm_per_s_d_to_mm_per_ms_t(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u mm_per_s_d_to_mm_per_ms_u(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f mm_per_s_d_to_mm_per_s_f(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t mm_per_s_d_to_mm_per_s_t(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u mm_per_s_d_to_mm_per_s_u(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to uint16_t.
+ */
+uint16_t mm_per_s_d_to_u16(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to uint32_t.
+ */
+uint32_t mm_per_s_d_to_u32(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to uint64_t.
+ */
+uint64_t mm_per_s_d_to_u64(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_d to uint8_t.
+ */
+uint8_t mm_per_s_d_to_u8(millimetres_per_seconds_d millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d mm_per_s_f_to_cm_per_us_d(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f mm_per_s_f_to_cm_per_us_f(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t mm_per_s_f_to_cm_per_us_t(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u mm_per_s_f_to_cm_per_us_u(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d mm_per_s_f_to_cm_per_ms_d(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f mm_per_s_f_to_cm_per_ms_f(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t mm_per_s_f_to_cm_per_ms_t(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u mm_per_s_f_to_cm_per_ms_u(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d mm_per_s_f_to_cm_per_s_d(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f mm_per_s_f_to_cm_per_s_f(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t mm_per_s_f_to_cm_per_s_t(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u mm_per_s_f_to_cm_per_s_u(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to double.
+ */
+double mm_per_s_f_to_d(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to float.
+ */
+float mm_per_s_f_to_f(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to int16_t.
+ */
+int16_t mm_per_s_f_to_i16(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to int32_t.
+ */
+int32_t mm_per_s_f_to_i32(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to int64_t.
+ */
+int64_t mm_per_s_f_to_i64(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to int8_t.
+ */
+int8_t mm_per_s_f_to_i8(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d mm_per_s_f_to_m_per_us_d(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f mm_per_s_f_to_m_per_us_f(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t mm_per_s_f_to_m_per_us_t(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u mm_per_s_f_to_m_per_us_u(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d mm_per_s_f_to_m_per_ms_d(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f mm_per_s_f_to_m_per_ms_f(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t mm_per_s_f_to_m_per_ms_t(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u mm_per_s_f_to_m_per_ms_u(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to metres_per_seconds_d.
+ */
+metres_per_seconds_d mm_per_s_f_to_m_per_s_d(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to metres_per_seconds_f.
+ */
+metres_per_seconds_f mm_per_s_f_to_m_per_s_f(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to metres_per_seconds_t.
+ */
+metres_per_seconds_t mm_per_s_f_to_m_per_s_t(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to metres_per_seconds_u.
+ */
+metres_per_seconds_u mm_per_s_f_to_m_per_s_u(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d mm_per_s_f_to_mm_per_us_d(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f mm_per_s_f_to_mm_per_us_f(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t mm_per_s_f_to_mm_per_us_t(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u mm_per_s_f_to_mm_per_us_u(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d mm_per_s_f_to_mm_per_ms_d(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f mm_per_s_f_to_mm_per_ms_f(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t mm_per_s_f_to_mm_per_ms_t(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u mm_per_s_f_to_mm_per_ms_u(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d mm_per_s_f_to_mm_per_s_d(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t mm_per_s_f_to_mm_per_s_t(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u mm_per_s_f_to_mm_per_s_u(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to uint16_t.
+ */
+uint16_t mm_per_s_f_to_u16(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to uint32_t.
+ */
+uint32_t mm_per_s_f_to_u32(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to uint64_t.
+ */
+uint64_t mm_per_s_f_to_u64(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_f to uint8_t.
+ */
+uint8_t mm_per_s_f_to_u8(millimetres_per_seconds_f millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d mm_per_s_t_to_cm_per_us_d(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f mm_per_s_t_to_cm_per_us_f(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t mm_per_s_t_to_cm_per_us_t(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u mm_per_s_t_to_cm_per_us_u(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d mm_per_s_t_to_cm_per_ms_d(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f mm_per_s_t_to_cm_per_ms_f(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t mm_per_s_t_to_cm_per_ms_t(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u mm_per_s_t_to_cm_per_ms_u(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d mm_per_s_t_to_cm_per_s_d(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f mm_per_s_t_to_cm_per_s_f(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t mm_per_s_t_to_cm_per_s_t(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u mm_per_s_t_to_cm_per_s_u(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to double.
+ */
+double mm_per_s_t_to_d(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to float.
+ */
+float mm_per_s_t_to_f(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to int16_t.
+ */
+int16_t mm_per_s_t_to_i16(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to int32_t.
+ */
+int32_t mm_per_s_t_to_i32(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to int64_t.
+ */
+int64_t mm_per_s_t_to_i64(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to int8_t.
+ */
+int8_t mm_per_s_t_to_i8(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d mm_per_s_t_to_m_per_us_d(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f mm_per_s_t_to_m_per_us_f(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t mm_per_s_t_to_m_per_us_t(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u mm_per_s_t_to_m_per_us_u(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d mm_per_s_t_to_m_per_ms_d(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f mm_per_s_t_to_m_per_ms_f(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t mm_per_s_t_to_m_per_ms_t(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u mm_per_s_t_to_m_per_ms_u(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to metres_per_seconds_d.
+ */
+metres_per_seconds_d mm_per_s_t_to_m_per_s_d(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to metres_per_seconds_f.
+ */
+metres_per_seconds_f mm_per_s_t_to_m_per_s_f(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to metres_per_seconds_t.
+ */
+metres_per_seconds_t mm_per_s_t_to_m_per_s_t(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to metres_per_seconds_u.
+ */
+metres_per_seconds_u mm_per_s_t_to_m_per_s_u(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d mm_per_s_t_to_mm_per_us_d(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f mm_per_s_t_to_mm_per_us_f(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t mm_per_s_t_to_mm_per_us_t(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u mm_per_s_t_to_mm_per_us_u(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d mm_per_s_t_to_mm_per_ms_d(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f mm_per_s_t_to_mm_per_ms_f(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t mm_per_s_t_to_mm_per_ms_t(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u mm_per_s_t_to_mm_per_ms_u(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d mm_per_s_t_to_mm_per_s_d(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f mm_per_s_t_to_mm_per_s_f(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u mm_per_s_t_to_mm_per_s_u(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to uint16_t.
+ */
+uint16_t mm_per_s_t_to_u16(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to uint32_t.
+ */
+uint32_t mm_per_s_t_to_u32(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to uint64_t.
+ */
+uint64_t mm_per_s_t_to_u64(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_t to uint8_t.
+ */
+uint8_t mm_per_s_t_to_u8(millimetres_per_seconds_t millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d mm_per_s_u_to_cm_per_us_d(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f mm_per_s_u_to_cm_per_us_f(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t mm_per_s_u_to_cm_per_us_t(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u mm_per_s_u_to_cm_per_us_u(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d mm_per_s_u_to_cm_per_ms_d(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f mm_per_s_u_to_cm_per_ms_f(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t mm_per_s_u_to_cm_per_ms_t(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u mm_per_s_u_to_cm_per_ms_u(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d mm_per_s_u_to_cm_per_s_d(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f mm_per_s_u_to_cm_per_s_f(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t mm_per_s_u_to_cm_per_s_t(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u mm_per_s_u_to_cm_per_s_u(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to double.
+ */
+double mm_per_s_u_to_d(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to float.
+ */
+float mm_per_s_u_to_f(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to int16_t.
+ */
+int16_t mm_per_s_u_to_i16(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to int32_t.
+ */
+int32_t mm_per_s_u_to_i32(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to int64_t.
+ */
+int64_t mm_per_s_u_to_i64(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to int8_t.
+ */
+int8_t mm_per_s_u_to_i8(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d mm_per_s_u_to_m_per_us_d(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f mm_per_s_u_to_m_per_us_f(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t mm_per_s_u_to_m_per_us_t(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u mm_per_s_u_to_m_per_us_u(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d mm_per_s_u_to_m_per_ms_d(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f mm_per_s_u_to_m_per_ms_f(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t mm_per_s_u_to_m_per_ms_t(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u mm_per_s_u_to_m_per_ms_u(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to metres_per_seconds_d.
+ */
+metres_per_seconds_d mm_per_s_u_to_m_per_s_d(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to metres_per_seconds_f.
+ */
+metres_per_seconds_f mm_per_s_u_to_m_per_s_f(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to metres_per_seconds_t.
+ */
+metres_per_seconds_t mm_per_s_u_to_m_per_s_t(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to metres_per_seconds_u.
+ */
+metres_per_seconds_u mm_per_s_u_to_m_per_s_u(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d mm_per_s_u_to_mm_per_us_d(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f mm_per_s_u_to_mm_per_us_f(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t mm_per_s_u_to_mm_per_us_t(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u mm_per_s_u_to_mm_per_us_u(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d mm_per_s_u_to_mm_per_ms_d(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f mm_per_s_u_to_mm_per_ms_f(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t mm_per_s_u_to_mm_per_ms_t(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u mm_per_s_u_to_mm_per_ms_u(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d mm_per_s_u_to_mm_per_s_d(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f mm_per_s_u_to_mm_per_s_f(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t mm_per_s_u_to_mm_per_s_t(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to uint16_t.
+ */
+uint16_t mm_per_s_u_to_u16(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to uint32_t.
+ */
+uint32_t mm_per_s_u_to_u32(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to uint64_t.
+ */
+uint64_t mm_per_s_u_to_u64(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert millimetres_per_seconds_u to uint8_t.
+ */
+uint8_t mm_per_s_u_to_u8(millimetres_per_seconds_u millimetres_per_seconds);
+
+/**
+ * Convert uint16_t to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d u16_to_cm_per_us_d(uint16_t centimetres_per_microseconds);
+
+/**
+ * Convert uint16_t to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f u16_to_cm_per_us_f(uint16_t centimetres_per_microseconds);
+
+/**
+ * Convert uint16_t to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t u16_to_cm_per_us_t(uint16_t centimetres_per_microseconds);
+
+/**
+ * Convert uint16_t to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u u16_to_cm_per_us_u(uint16_t centimetres_per_microseconds);
+
+/**
+ * Convert uint16_t to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d u16_to_cm_per_ms_d(uint16_t centimetres_per_milliseconds);
+
+/**
+ * Convert uint16_t to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f u16_to_cm_per_ms_f(uint16_t centimetres_per_milliseconds);
+
+/**
+ * Convert uint16_t to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t u16_to_cm_per_ms_t(uint16_t centimetres_per_milliseconds);
+
+/**
+ * Convert uint16_t to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u u16_to_cm_per_ms_u(uint16_t centimetres_per_milliseconds);
+
+/**
+ * Convert uint16_t to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d u16_to_cm_per_s_d(uint16_t centimetres_per_seconds);
+
+/**
+ * Convert uint16_t to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f u16_to_cm_per_s_f(uint16_t centimetres_per_seconds);
+
+/**
+ * Convert uint16_t to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t u16_to_cm_per_s_t(uint16_t centimetres_per_seconds);
+
+/**
+ * Convert uint16_t to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u u16_to_cm_per_s_u(uint16_t centimetres_per_seconds);
+
+/**
+ * Convert uint16_t to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d u16_to_m_per_us_d(uint16_t metres_per_microseconds);
+
+/**
+ * Convert uint16_t to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f u16_to_m_per_us_f(uint16_t metres_per_microseconds);
+
+/**
+ * Convert uint16_t to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t u16_to_m_per_us_t(uint16_t metres_per_microseconds);
+
+/**
+ * Convert uint16_t to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u u16_to_m_per_us_u(uint16_t metres_per_microseconds);
+
+/**
+ * Convert uint16_t to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d u16_to_m_per_ms_d(uint16_t metres_per_milliseconds);
+
+/**
+ * Convert uint16_t to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f u16_to_m_per_ms_f(uint16_t metres_per_milliseconds);
+
+/**
+ * Convert uint16_t to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t u16_to_m_per_ms_t(uint16_t metres_per_milliseconds);
+
+/**
+ * Convert uint16_t to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u u16_to_m_per_ms_u(uint16_t metres_per_milliseconds);
+
+/**
+ * Convert uint16_t to metres_per_seconds_d.
+ */
+metres_per_seconds_d u16_to_m_per_s_d(uint16_t metres_per_seconds);
+
+/**
+ * Convert uint16_t to metres_per_seconds_f.
+ */
+metres_per_seconds_f u16_to_m_per_s_f(uint16_t metres_per_seconds);
+
+/**
+ * Convert uint16_t to metres_per_seconds_t.
+ */
+metres_per_seconds_t u16_to_m_per_s_t(uint16_t metres_per_seconds);
+
+/**
+ * Convert uint16_t to metres_per_seconds_u.
+ */
+metres_per_seconds_u u16_to_m_per_s_u(uint16_t metres_per_seconds);
+
+/**
+ * Convert uint16_t to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d u16_to_mm_per_us_d(uint16_t millimetres_per_microseconds);
+
+/**
+ * Convert uint16_t to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f u16_to_mm_per_us_f(uint16_t millimetres_per_microseconds);
+
+/**
+ * Convert uint16_t to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t u16_to_mm_per_us_t(uint16_t millimetres_per_microseconds);
+
+/**
+ * Convert uint16_t to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u u16_to_mm_per_us_u(uint16_t millimetres_per_microseconds);
+
+/**
+ * Convert uint16_t to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d u16_to_mm_per_ms_d(uint16_t millimetres_per_milliseconds);
+
+/**
+ * Convert uint16_t to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f u16_to_mm_per_ms_f(uint16_t millimetres_per_milliseconds);
+
+/**
+ * Convert uint16_t to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t u16_to_mm_per_ms_t(uint16_t millimetres_per_milliseconds);
+
+/**
+ * Convert uint16_t to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u u16_to_mm_per_ms_u(uint16_t millimetres_per_milliseconds);
+
+/**
+ * Convert uint16_t to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d u16_to_mm_per_s_d(uint16_t millimetres_per_seconds);
+
+/**
+ * Convert uint16_t to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f u16_to_mm_per_s_f(uint16_t millimetres_per_seconds);
+
+/**
+ * Convert uint16_t to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t u16_to_mm_per_s_t(uint16_t millimetres_per_seconds);
+
+/**
+ * Convert uint16_t to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u u16_to_mm_per_s_u(uint16_t millimetres_per_seconds);
+
+/**
+ * Convert uint32_t to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d u32_to_cm_per_us_d(uint32_t centimetres_per_microseconds);
+
+/**
+ * Convert uint32_t to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f u32_to_cm_per_us_f(uint32_t centimetres_per_microseconds);
+
+/**
+ * Convert uint32_t to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t u32_to_cm_per_us_t(uint32_t centimetres_per_microseconds);
+
+/**
+ * Convert uint32_t to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u u32_to_cm_per_us_u(uint32_t centimetres_per_microseconds);
+
+/**
+ * Convert uint32_t to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d u32_to_cm_per_ms_d(uint32_t centimetres_per_milliseconds);
+
+/**
+ * Convert uint32_t to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f u32_to_cm_per_ms_f(uint32_t centimetres_per_milliseconds);
+
+/**
+ * Convert uint32_t to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t u32_to_cm_per_ms_t(uint32_t centimetres_per_milliseconds);
+
+/**
+ * Convert uint32_t to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u u32_to_cm_per_ms_u(uint32_t centimetres_per_milliseconds);
+
+/**
+ * Convert uint32_t to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d u32_to_cm_per_s_d(uint32_t centimetres_per_seconds);
+
+/**
+ * Convert uint32_t to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f u32_to_cm_per_s_f(uint32_t centimetres_per_seconds);
+
+/**
+ * Convert uint32_t to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t u32_to_cm_per_s_t(uint32_t centimetres_per_seconds);
+
+/**
+ * Convert uint32_t to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u u32_to_cm_per_s_u(uint32_t centimetres_per_seconds);
+
+/**
+ * Convert uint32_t to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d u32_to_m_per_us_d(uint32_t metres_per_microseconds);
+
+/**
+ * Convert uint32_t to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f u32_to_m_per_us_f(uint32_t metres_per_microseconds);
+
+/**
+ * Convert uint32_t to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t u32_to_m_per_us_t(uint32_t metres_per_microseconds);
+
+/**
+ * Convert uint32_t to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u u32_to_m_per_us_u(uint32_t metres_per_microseconds);
+
+/**
+ * Convert uint32_t to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d u32_to_m_per_ms_d(uint32_t metres_per_milliseconds);
+
+/**
+ * Convert uint32_t to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f u32_to_m_per_ms_f(uint32_t metres_per_milliseconds);
+
+/**
+ * Convert uint32_t to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t u32_to_m_per_ms_t(uint32_t metres_per_milliseconds);
+
+/**
+ * Convert uint32_t to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u u32_to_m_per_ms_u(uint32_t metres_per_milliseconds);
+
+/**
+ * Convert uint32_t to metres_per_seconds_d.
+ */
+metres_per_seconds_d u32_to_m_per_s_d(uint32_t metres_per_seconds);
+
+/**
+ * Convert uint32_t to metres_per_seconds_f.
+ */
+metres_per_seconds_f u32_to_m_per_s_f(uint32_t metres_per_seconds);
+
+/**
+ * Convert uint32_t to metres_per_seconds_t.
+ */
+metres_per_seconds_t u32_to_m_per_s_t(uint32_t metres_per_seconds);
+
+/**
+ * Convert uint32_t to metres_per_seconds_u.
+ */
+metres_per_seconds_u u32_to_m_per_s_u(uint32_t metres_per_seconds);
+
+/**
+ * Convert uint32_t to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d u32_to_mm_per_us_d(uint32_t millimetres_per_microseconds);
+
+/**
+ * Convert uint32_t to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f u32_to_mm_per_us_f(uint32_t millimetres_per_microseconds);
+
+/**
+ * Convert uint32_t to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t u32_to_mm_per_us_t(uint32_t millimetres_per_microseconds);
+
+/**
+ * Convert uint32_t to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u u32_to_mm_per_us_u(uint32_t millimetres_per_microseconds);
+
+/**
+ * Convert uint32_t to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d u32_to_mm_per_ms_d(uint32_t millimetres_per_milliseconds);
+
+/**
+ * Convert uint32_t to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f u32_to_mm_per_ms_f(uint32_t millimetres_per_milliseconds);
+
+/**
+ * Convert uint32_t to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t u32_to_mm_per_ms_t(uint32_t millimetres_per_milliseconds);
+
+/**
+ * Convert uint32_t to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u u32_to_mm_per_ms_u(uint32_t millimetres_per_milliseconds);
+
+/**
+ * Convert uint32_t to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d u32_to_mm_per_s_d(uint32_t millimetres_per_seconds);
+
+/**
+ * Convert uint32_t to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f u32_to_mm_per_s_f(uint32_t millimetres_per_seconds);
+
+/**
+ * Convert uint32_t to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t u32_to_mm_per_s_t(uint32_t millimetres_per_seconds);
+
+/**
+ * Convert uint32_t to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u u32_to_mm_per_s_u(uint32_t millimetres_per_seconds);
+
+/**
+ * Convert uint64_t to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d u64_to_cm_per_us_d(uint64_t centimetres_per_microseconds);
+
+/**
+ * Convert uint64_t to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f u64_to_cm_per_us_f(uint64_t centimetres_per_microseconds);
+
+/**
+ * Convert uint64_t to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t u64_to_cm_per_us_t(uint64_t centimetres_per_microseconds);
+
+/**
+ * Convert uint64_t to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u u64_to_cm_per_us_u(uint64_t centimetres_per_microseconds);
+
+/**
+ * Convert uint64_t to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d u64_to_cm_per_ms_d(uint64_t centimetres_per_milliseconds);
+
+/**
+ * Convert uint64_t to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f u64_to_cm_per_ms_f(uint64_t centimetres_per_milliseconds);
+
+/**
+ * Convert uint64_t to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t u64_to_cm_per_ms_t(uint64_t centimetres_per_milliseconds);
+
+/**
+ * Convert uint64_t to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u u64_to_cm_per_ms_u(uint64_t centimetres_per_milliseconds);
+
+/**
+ * Convert uint64_t to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d u64_to_cm_per_s_d(uint64_t centimetres_per_seconds);
+
+/**
+ * Convert uint64_t to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f u64_to_cm_per_s_f(uint64_t centimetres_per_seconds);
+
+/**
+ * Convert uint64_t to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t u64_to_cm_per_s_t(uint64_t centimetres_per_seconds);
+
+/**
+ * Convert uint64_t to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u u64_to_cm_per_s_u(uint64_t centimetres_per_seconds);
+
+/**
+ * Convert uint64_t to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d u64_to_m_per_us_d(uint64_t metres_per_microseconds);
+
+/**
+ * Convert uint64_t to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f u64_to_m_per_us_f(uint64_t metres_per_microseconds);
+
+/**
+ * Convert uint64_t to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t u64_to_m_per_us_t(uint64_t metres_per_microseconds);
+
+/**
+ * Convert uint64_t to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u u64_to_m_per_us_u(uint64_t metres_per_microseconds);
+
+/**
+ * Convert uint64_t to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d u64_to_m_per_ms_d(uint64_t metres_per_milliseconds);
+
+/**
+ * Convert uint64_t to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f u64_to_m_per_ms_f(uint64_t metres_per_milliseconds);
+
+/**
+ * Convert uint64_t to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t u64_to_m_per_ms_t(uint64_t metres_per_milliseconds);
+
+/**
+ * Convert uint64_t to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u u64_to_m_per_ms_u(uint64_t metres_per_milliseconds);
+
+/**
+ * Convert uint64_t to metres_per_seconds_d.
+ */
+metres_per_seconds_d u64_to_m_per_s_d(uint64_t metres_per_seconds);
+
+/**
+ * Convert uint64_t to metres_per_seconds_f.
+ */
+metres_per_seconds_f u64_to_m_per_s_f(uint64_t metres_per_seconds);
+
+/**
+ * Convert uint64_t to metres_per_seconds_t.
+ */
+metres_per_seconds_t u64_to_m_per_s_t(uint64_t metres_per_seconds);
+
+/**
+ * Convert uint64_t to metres_per_seconds_u.
+ */
+metres_per_seconds_u u64_to_m_per_s_u(uint64_t metres_per_seconds);
+
+/**
+ * Convert uint64_t to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d u64_to_mm_per_us_d(uint64_t millimetres_per_microseconds);
+
+/**
+ * Convert uint64_t to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f u64_to_mm_per_us_f(uint64_t millimetres_per_microseconds);
+
+/**
+ * Convert uint64_t to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t u64_to_mm_per_us_t(uint64_t millimetres_per_microseconds);
+
+/**
+ * Convert uint64_t to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u u64_to_mm_per_us_u(uint64_t millimetres_per_microseconds);
+
+/**
+ * Convert uint64_t to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d u64_to_mm_per_ms_d(uint64_t millimetres_per_milliseconds);
+
+/**
+ * Convert uint64_t to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f u64_to_mm_per_ms_f(uint64_t millimetres_per_milliseconds);
+
+/**
+ * Convert uint64_t to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t u64_to_mm_per_ms_t(uint64_t millimetres_per_milliseconds);
+
+/**
+ * Convert uint64_t to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u u64_to_mm_per_ms_u(uint64_t millimetres_per_milliseconds);
+
+/**
+ * Convert uint64_t to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d u64_to_mm_per_s_d(uint64_t millimetres_per_seconds);
+
+/**
+ * Convert uint64_t to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f u64_to_mm_per_s_f(uint64_t millimetres_per_seconds);
+
+/**
+ * Convert uint64_t to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t u64_to_mm_per_s_t(uint64_t millimetres_per_seconds);
+
+/**
+ * Convert uint64_t to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u u64_to_mm_per_s_u(uint64_t millimetres_per_seconds);
+
+/**
+ * Convert uint8_t to centimetres_per_microseconds_d.
+ */
+centimetres_per_microseconds_d u8_to_cm_per_us_d(uint8_t centimetres_per_microseconds);
+
+/**
+ * Convert uint8_t to centimetres_per_microseconds_f.
+ */
+centimetres_per_microseconds_f u8_to_cm_per_us_f(uint8_t centimetres_per_microseconds);
+
+/**
+ * Convert uint8_t to centimetres_per_microseconds_t.
+ */
+centimetres_per_microseconds_t u8_to_cm_per_us_t(uint8_t centimetres_per_microseconds);
+
+/**
+ * Convert uint8_t to centimetres_per_microseconds_u.
+ */
+centimetres_per_microseconds_u u8_to_cm_per_us_u(uint8_t centimetres_per_microseconds);
+
+/**
+ * Convert uint8_t to centimetres_per_milliseconds_d.
+ */
+centimetres_per_milliseconds_d u8_to_cm_per_ms_d(uint8_t centimetres_per_milliseconds);
+
+/**
+ * Convert uint8_t to centimetres_per_milliseconds_f.
+ */
+centimetres_per_milliseconds_f u8_to_cm_per_ms_f(uint8_t centimetres_per_milliseconds);
+
+/**
+ * Convert uint8_t to centimetres_per_milliseconds_t.
+ */
+centimetres_per_milliseconds_t u8_to_cm_per_ms_t(uint8_t centimetres_per_milliseconds);
+
+/**
+ * Convert uint8_t to centimetres_per_milliseconds_u.
+ */
+centimetres_per_milliseconds_u u8_to_cm_per_ms_u(uint8_t centimetres_per_milliseconds);
+
+/**
+ * Convert uint8_t to centimetres_per_seconds_d.
+ */
+centimetres_per_seconds_d u8_to_cm_per_s_d(uint8_t centimetres_per_seconds);
+
+/**
+ * Convert uint8_t to centimetres_per_seconds_f.
+ */
+centimetres_per_seconds_f u8_to_cm_per_s_f(uint8_t centimetres_per_seconds);
+
+/**
+ * Convert uint8_t to centimetres_per_seconds_t.
+ */
+centimetres_per_seconds_t u8_to_cm_per_s_t(uint8_t centimetres_per_seconds);
+
+/**
+ * Convert uint8_t to centimetres_per_seconds_u.
+ */
+centimetres_per_seconds_u u8_to_cm_per_s_u(uint8_t centimetres_per_seconds);
+
+/**
+ * Convert uint8_t to metres_per_microseconds_d.
+ */
+metres_per_microseconds_d u8_to_m_per_us_d(uint8_t metres_per_microseconds);
+
+/**
+ * Convert uint8_t to metres_per_microseconds_f.
+ */
+metres_per_microseconds_f u8_to_m_per_us_f(uint8_t metres_per_microseconds);
+
+/**
+ * Convert uint8_t to metres_per_microseconds_t.
+ */
+metres_per_microseconds_t u8_to_m_per_us_t(uint8_t metres_per_microseconds);
+
+/**
+ * Convert uint8_t to metres_per_microseconds_u.
+ */
+metres_per_microseconds_u u8_to_m_per_us_u(uint8_t metres_per_microseconds);
+
+/**
+ * Convert uint8_t to metres_per_milliseconds_d.
+ */
+metres_per_milliseconds_d u8_to_m_per_ms_d(uint8_t metres_per_milliseconds);
+
+/**
+ * Convert uint8_t to metres_per_milliseconds_f.
+ */
+metres_per_milliseconds_f u8_to_m_per_ms_f(uint8_t metres_per_milliseconds);
+
+/**
+ * Convert uint8_t to metres_per_milliseconds_t.
+ */
+metres_per_milliseconds_t u8_to_m_per_ms_t(uint8_t metres_per_milliseconds);
+
+/**
+ * Convert uint8_t to metres_per_milliseconds_u.
+ */
+metres_per_milliseconds_u u8_to_m_per_ms_u(uint8_t metres_per_milliseconds);
+
+/**
+ * Convert uint8_t to metres_per_seconds_d.
+ */
+metres_per_seconds_d u8_to_m_per_s_d(uint8_t metres_per_seconds);
+
+/**
+ * Convert uint8_t to metres_per_seconds_f.
+ */
+metres_per_seconds_f u8_to_m_per_s_f(uint8_t metres_per_seconds);
+
+/**
+ * Convert uint8_t to metres_per_seconds_t.
+ */
+metres_per_seconds_t u8_to_m_per_s_t(uint8_t metres_per_seconds);
+
+/**
+ * Convert uint8_t to metres_per_seconds_u.
+ */
+metres_per_seconds_u u8_to_m_per_s_u(uint8_t metres_per_seconds);
+
+/**
+ * Convert uint8_t to millimetres_per_microseconds_d.
+ */
+millimetres_per_microseconds_d u8_to_mm_per_us_d(uint8_t millimetres_per_microseconds);
+
+/**
+ * Convert uint8_t to millimetres_per_microseconds_f.
+ */
+millimetres_per_microseconds_f u8_to_mm_per_us_f(uint8_t millimetres_per_microseconds);
+
+/**
+ * Convert uint8_t to millimetres_per_microseconds_t.
+ */
+millimetres_per_microseconds_t u8_to_mm_per_us_t(uint8_t millimetres_per_microseconds);
+
+/**
+ * Convert uint8_t to millimetres_per_microseconds_u.
+ */
+millimetres_per_microseconds_u u8_to_mm_per_us_u(uint8_t millimetres_per_microseconds);
+
+/**
+ * Convert uint8_t to millimetres_per_milliseconds_d.
+ */
+millimetres_per_milliseconds_d u8_to_mm_per_ms_d(uint8_t millimetres_per_milliseconds);
+
+/**
+ * Convert uint8_t to millimetres_per_milliseconds_f.
+ */
+millimetres_per_milliseconds_f u8_to_mm_per_ms_f(uint8_t millimetres_per_milliseconds);
+
+/**
+ * Convert uint8_t to millimetres_per_milliseconds_t.
+ */
+millimetres_per_milliseconds_t u8_to_mm_per_ms_t(uint8_t millimetres_per_milliseconds);
+
+/**
+ * Convert uint8_t to millimetres_per_milliseconds_u.
+ */
+millimetres_per_milliseconds_u u8_to_mm_per_ms_u(uint8_t millimetres_per_milliseconds);
+
+/**
+ * Convert uint8_t to millimetres_per_seconds_d.
+ */
+millimetres_per_seconds_d u8_to_mm_per_s_d(uint8_t millimetres_per_seconds);
+
+/**
+ * Convert uint8_t to millimetres_per_seconds_f.
+ */
+millimetres_per_seconds_f u8_to_mm_per_s_f(uint8_t millimetres_per_seconds);
+
+/**
+ * Convert uint8_t to millimetres_per_seconds_t.
+ */
+millimetres_per_seconds_t u8_to_mm_per_s_t(uint8_t millimetres_per_seconds);
+
+/**
+ * Convert uint8_t to millimetres_per_seconds_u.
+ */
+millimetres_per_seconds_u u8_to_mm_per_s_u(uint8_t millimetres_per_seconds);
+
+/**
+ * Convert degrees_per_microseconds_d to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f deg_per_us_d_to_deg_per_us_f(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t deg_per_us_d_to_deg_per_us_t(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u deg_per_us_d_to_deg_per_us_u(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d deg_per_us_d_to_deg_per_ms_d(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f deg_per_us_d_to_deg_per_ms_f(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t deg_per_us_d_to_deg_per_ms_t(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u deg_per_us_d_to_deg_per_ms_u(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d deg_per_us_d_to_deg_per_s_d(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f deg_per_us_d_to_deg_per_s_f(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t deg_per_us_d_to_deg_per_s_t(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u deg_per_us_d_to_deg_per_s_u(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to double.
+ */
+double deg_per_us_d_to_d(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to float.
+ */
+float deg_per_us_d_to_f(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to int16_t.
+ */
+int16_t deg_per_us_d_to_i16(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to int32_t.
+ */
+int32_t deg_per_us_d_to_i32(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to int64_t.
+ */
+int64_t deg_per_us_d_to_i64(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to int8_t.
+ */
+int8_t deg_per_us_d_to_i8(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d deg_per_us_d_to_rad_per_us_d(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f deg_per_us_d_to_rad_per_us_f(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t deg_per_us_d_to_rad_per_us_t(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u deg_per_us_d_to_rad_per_us_u(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d deg_per_us_d_to_rad_per_ms_d(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f deg_per_us_d_to_rad_per_ms_f(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t deg_per_us_d_to_rad_per_ms_t(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u deg_per_us_d_to_rad_per_ms_u(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to radians_per_seconds_d.
+ */
+radians_per_seconds_d deg_per_us_d_to_rad_per_s_d(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to radians_per_seconds_f.
+ */
+radians_per_seconds_f deg_per_us_d_to_rad_per_s_f(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to radians_per_seconds_t.
+ */
+radians_per_seconds_t deg_per_us_d_to_rad_per_s_t(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to radians_per_seconds_u.
+ */
+radians_per_seconds_u deg_per_us_d_to_rad_per_s_u(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to uint16_t.
+ */
+uint16_t deg_per_us_d_to_u16(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to uint32_t.
+ */
+uint32_t deg_per_us_d_to_u32(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to uint64_t.
+ */
+uint64_t deg_per_us_d_to_u64(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_d to uint8_t.
+ */
+uint8_t deg_per_us_d_to_u8(degrees_per_microseconds_d degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d deg_per_us_f_to_deg_per_us_d(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t deg_per_us_f_to_deg_per_us_t(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u deg_per_us_f_to_deg_per_us_u(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d deg_per_us_f_to_deg_per_ms_d(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f deg_per_us_f_to_deg_per_ms_f(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t deg_per_us_f_to_deg_per_ms_t(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u deg_per_us_f_to_deg_per_ms_u(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d deg_per_us_f_to_deg_per_s_d(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f deg_per_us_f_to_deg_per_s_f(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t deg_per_us_f_to_deg_per_s_t(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u deg_per_us_f_to_deg_per_s_u(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to double.
+ */
+double deg_per_us_f_to_d(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to float.
+ */
+float deg_per_us_f_to_f(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to int16_t.
+ */
+int16_t deg_per_us_f_to_i16(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to int32_t.
+ */
+int32_t deg_per_us_f_to_i32(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to int64_t.
+ */
+int64_t deg_per_us_f_to_i64(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to int8_t.
+ */
+int8_t deg_per_us_f_to_i8(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d deg_per_us_f_to_rad_per_us_d(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f deg_per_us_f_to_rad_per_us_f(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t deg_per_us_f_to_rad_per_us_t(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u deg_per_us_f_to_rad_per_us_u(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d deg_per_us_f_to_rad_per_ms_d(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f deg_per_us_f_to_rad_per_ms_f(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t deg_per_us_f_to_rad_per_ms_t(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u deg_per_us_f_to_rad_per_ms_u(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to radians_per_seconds_d.
+ */
+radians_per_seconds_d deg_per_us_f_to_rad_per_s_d(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to radians_per_seconds_f.
+ */
+radians_per_seconds_f deg_per_us_f_to_rad_per_s_f(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to radians_per_seconds_t.
+ */
+radians_per_seconds_t deg_per_us_f_to_rad_per_s_t(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to radians_per_seconds_u.
+ */
+radians_per_seconds_u deg_per_us_f_to_rad_per_s_u(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to uint16_t.
+ */
+uint16_t deg_per_us_f_to_u16(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to uint32_t.
+ */
+uint32_t deg_per_us_f_to_u32(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to uint64_t.
+ */
+uint64_t deg_per_us_f_to_u64(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_f to uint8_t.
+ */
+uint8_t deg_per_us_f_to_u8(degrees_per_microseconds_f degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d deg_per_us_t_to_deg_per_us_d(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f deg_per_us_t_to_deg_per_us_f(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u deg_per_us_t_to_deg_per_us_u(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d deg_per_us_t_to_deg_per_ms_d(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f deg_per_us_t_to_deg_per_ms_f(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t deg_per_us_t_to_deg_per_ms_t(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u deg_per_us_t_to_deg_per_ms_u(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d deg_per_us_t_to_deg_per_s_d(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f deg_per_us_t_to_deg_per_s_f(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t deg_per_us_t_to_deg_per_s_t(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u deg_per_us_t_to_deg_per_s_u(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to double.
+ */
+double deg_per_us_t_to_d(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to float.
+ */
+float deg_per_us_t_to_f(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to int16_t.
+ */
+int16_t deg_per_us_t_to_i16(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to int32_t.
+ */
+int32_t deg_per_us_t_to_i32(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to int64_t.
+ */
+int64_t deg_per_us_t_to_i64(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to int8_t.
+ */
+int8_t deg_per_us_t_to_i8(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d deg_per_us_t_to_rad_per_us_d(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f deg_per_us_t_to_rad_per_us_f(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t deg_per_us_t_to_rad_per_us_t(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u deg_per_us_t_to_rad_per_us_u(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d deg_per_us_t_to_rad_per_ms_d(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f deg_per_us_t_to_rad_per_ms_f(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t deg_per_us_t_to_rad_per_ms_t(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u deg_per_us_t_to_rad_per_ms_u(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to radians_per_seconds_d.
+ */
+radians_per_seconds_d deg_per_us_t_to_rad_per_s_d(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to radians_per_seconds_f.
+ */
+radians_per_seconds_f deg_per_us_t_to_rad_per_s_f(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to radians_per_seconds_t.
+ */
+radians_per_seconds_t deg_per_us_t_to_rad_per_s_t(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to radians_per_seconds_u.
+ */
+radians_per_seconds_u deg_per_us_t_to_rad_per_s_u(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to uint16_t.
+ */
+uint16_t deg_per_us_t_to_u16(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to uint32_t.
+ */
+uint32_t deg_per_us_t_to_u32(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to uint64_t.
+ */
+uint64_t deg_per_us_t_to_u64(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_t to uint8_t.
+ */
+uint8_t deg_per_us_t_to_u8(degrees_per_microseconds_t degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d deg_per_us_u_to_deg_per_us_d(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f deg_per_us_u_to_deg_per_us_f(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t deg_per_us_u_to_deg_per_us_t(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d deg_per_us_u_to_deg_per_ms_d(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f deg_per_us_u_to_deg_per_ms_f(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t deg_per_us_u_to_deg_per_ms_t(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u deg_per_us_u_to_deg_per_ms_u(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d deg_per_us_u_to_deg_per_s_d(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f deg_per_us_u_to_deg_per_s_f(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t deg_per_us_u_to_deg_per_s_t(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u deg_per_us_u_to_deg_per_s_u(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to double.
+ */
+double deg_per_us_u_to_d(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to float.
+ */
+float deg_per_us_u_to_f(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to int16_t.
+ */
+int16_t deg_per_us_u_to_i16(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to int32_t.
+ */
+int32_t deg_per_us_u_to_i32(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to int64_t.
+ */
+int64_t deg_per_us_u_to_i64(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to int8_t.
+ */
+int8_t deg_per_us_u_to_i8(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d deg_per_us_u_to_rad_per_us_d(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f deg_per_us_u_to_rad_per_us_f(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t deg_per_us_u_to_rad_per_us_t(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u deg_per_us_u_to_rad_per_us_u(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d deg_per_us_u_to_rad_per_ms_d(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f deg_per_us_u_to_rad_per_ms_f(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t deg_per_us_u_to_rad_per_ms_t(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u deg_per_us_u_to_rad_per_ms_u(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to radians_per_seconds_d.
+ */
+radians_per_seconds_d deg_per_us_u_to_rad_per_s_d(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to radians_per_seconds_f.
+ */
+radians_per_seconds_f deg_per_us_u_to_rad_per_s_f(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to radians_per_seconds_t.
+ */
+radians_per_seconds_t deg_per_us_u_to_rad_per_s_t(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to radians_per_seconds_u.
+ */
+radians_per_seconds_u deg_per_us_u_to_rad_per_s_u(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to uint16_t.
+ */
+uint16_t deg_per_us_u_to_u16(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to uint32_t.
+ */
+uint32_t deg_per_us_u_to_u32(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to uint64_t.
+ */
+uint64_t deg_per_us_u_to_u64(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_microseconds_u to uint8_t.
+ */
+uint8_t deg_per_us_u_to_u8(degrees_per_microseconds_u degrees_per_microseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d deg_per_ms_d_to_deg_per_us_d(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f deg_per_ms_d_to_deg_per_us_f(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t deg_per_ms_d_to_deg_per_us_t(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u deg_per_ms_d_to_deg_per_us_u(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f deg_per_ms_d_to_deg_per_ms_f(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t deg_per_ms_d_to_deg_per_ms_t(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u deg_per_ms_d_to_deg_per_ms_u(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d deg_per_ms_d_to_deg_per_s_d(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f deg_per_ms_d_to_deg_per_s_f(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t deg_per_ms_d_to_deg_per_s_t(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u deg_per_ms_d_to_deg_per_s_u(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to double.
+ */
+double deg_per_ms_d_to_d(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to float.
+ */
+float deg_per_ms_d_to_f(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to int16_t.
+ */
+int16_t deg_per_ms_d_to_i16(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to int32_t.
+ */
+int32_t deg_per_ms_d_to_i32(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to int64_t.
+ */
+int64_t deg_per_ms_d_to_i64(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to int8_t.
+ */
+int8_t deg_per_ms_d_to_i8(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d deg_per_ms_d_to_rad_per_us_d(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f deg_per_ms_d_to_rad_per_us_f(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t deg_per_ms_d_to_rad_per_us_t(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u deg_per_ms_d_to_rad_per_us_u(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d deg_per_ms_d_to_rad_per_ms_d(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f deg_per_ms_d_to_rad_per_ms_f(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t deg_per_ms_d_to_rad_per_ms_t(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u deg_per_ms_d_to_rad_per_ms_u(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to radians_per_seconds_d.
+ */
+radians_per_seconds_d deg_per_ms_d_to_rad_per_s_d(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to radians_per_seconds_f.
+ */
+radians_per_seconds_f deg_per_ms_d_to_rad_per_s_f(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to radians_per_seconds_t.
+ */
+radians_per_seconds_t deg_per_ms_d_to_rad_per_s_t(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to radians_per_seconds_u.
+ */
+radians_per_seconds_u deg_per_ms_d_to_rad_per_s_u(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to uint16_t.
+ */
+uint16_t deg_per_ms_d_to_u16(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to uint32_t.
+ */
+uint32_t deg_per_ms_d_to_u32(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to uint64_t.
+ */
+uint64_t deg_per_ms_d_to_u64(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_d to uint8_t.
+ */
+uint8_t deg_per_ms_d_to_u8(degrees_per_milliseconds_d degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d deg_per_ms_f_to_deg_per_us_d(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f deg_per_ms_f_to_deg_per_us_f(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t deg_per_ms_f_to_deg_per_us_t(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u deg_per_ms_f_to_deg_per_us_u(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d deg_per_ms_f_to_deg_per_ms_d(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t deg_per_ms_f_to_deg_per_ms_t(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u deg_per_ms_f_to_deg_per_ms_u(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d deg_per_ms_f_to_deg_per_s_d(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f deg_per_ms_f_to_deg_per_s_f(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t deg_per_ms_f_to_deg_per_s_t(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u deg_per_ms_f_to_deg_per_s_u(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to double.
+ */
+double deg_per_ms_f_to_d(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to float.
+ */
+float deg_per_ms_f_to_f(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to int16_t.
+ */
+int16_t deg_per_ms_f_to_i16(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to int32_t.
+ */
+int32_t deg_per_ms_f_to_i32(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to int64_t.
+ */
+int64_t deg_per_ms_f_to_i64(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to int8_t.
+ */
+int8_t deg_per_ms_f_to_i8(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d deg_per_ms_f_to_rad_per_us_d(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f deg_per_ms_f_to_rad_per_us_f(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t deg_per_ms_f_to_rad_per_us_t(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u deg_per_ms_f_to_rad_per_us_u(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d deg_per_ms_f_to_rad_per_ms_d(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f deg_per_ms_f_to_rad_per_ms_f(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t deg_per_ms_f_to_rad_per_ms_t(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u deg_per_ms_f_to_rad_per_ms_u(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to radians_per_seconds_d.
+ */
+radians_per_seconds_d deg_per_ms_f_to_rad_per_s_d(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to radians_per_seconds_f.
+ */
+radians_per_seconds_f deg_per_ms_f_to_rad_per_s_f(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to radians_per_seconds_t.
+ */
+radians_per_seconds_t deg_per_ms_f_to_rad_per_s_t(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to radians_per_seconds_u.
+ */
+radians_per_seconds_u deg_per_ms_f_to_rad_per_s_u(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to uint16_t.
+ */
+uint16_t deg_per_ms_f_to_u16(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to uint32_t.
+ */
+uint32_t deg_per_ms_f_to_u32(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to uint64_t.
+ */
+uint64_t deg_per_ms_f_to_u64(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_f to uint8_t.
+ */
+uint8_t deg_per_ms_f_to_u8(degrees_per_milliseconds_f degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d deg_per_ms_t_to_deg_per_us_d(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f deg_per_ms_t_to_deg_per_us_f(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t deg_per_ms_t_to_deg_per_us_t(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u deg_per_ms_t_to_deg_per_us_u(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d deg_per_ms_t_to_deg_per_ms_d(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f deg_per_ms_t_to_deg_per_ms_f(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u deg_per_ms_t_to_deg_per_ms_u(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d deg_per_ms_t_to_deg_per_s_d(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f deg_per_ms_t_to_deg_per_s_f(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t deg_per_ms_t_to_deg_per_s_t(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u deg_per_ms_t_to_deg_per_s_u(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to double.
+ */
+double deg_per_ms_t_to_d(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to float.
+ */
+float deg_per_ms_t_to_f(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to int16_t.
+ */
+int16_t deg_per_ms_t_to_i16(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to int32_t.
+ */
+int32_t deg_per_ms_t_to_i32(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to int64_t.
+ */
+int64_t deg_per_ms_t_to_i64(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to int8_t.
+ */
+int8_t deg_per_ms_t_to_i8(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d deg_per_ms_t_to_rad_per_us_d(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f deg_per_ms_t_to_rad_per_us_f(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t deg_per_ms_t_to_rad_per_us_t(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u deg_per_ms_t_to_rad_per_us_u(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d deg_per_ms_t_to_rad_per_ms_d(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f deg_per_ms_t_to_rad_per_ms_f(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t deg_per_ms_t_to_rad_per_ms_t(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u deg_per_ms_t_to_rad_per_ms_u(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to radians_per_seconds_d.
+ */
+radians_per_seconds_d deg_per_ms_t_to_rad_per_s_d(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to radians_per_seconds_f.
+ */
+radians_per_seconds_f deg_per_ms_t_to_rad_per_s_f(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to radians_per_seconds_t.
+ */
+radians_per_seconds_t deg_per_ms_t_to_rad_per_s_t(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to radians_per_seconds_u.
+ */
+radians_per_seconds_u deg_per_ms_t_to_rad_per_s_u(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to uint16_t.
+ */
+uint16_t deg_per_ms_t_to_u16(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to uint32_t.
+ */
+uint32_t deg_per_ms_t_to_u32(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to uint64_t.
+ */
+uint64_t deg_per_ms_t_to_u64(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_t to uint8_t.
+ */
+uint8_t deg_per_ms_t_to_u8(degrees_per_milliseconds_t degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d deg_per_ms_u_to_deg_per_us_d(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f deg_per_ms_u_to_deg_per_us_f(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t deg_per_ms_u_to_deg_per_us_t(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u deg_per_ms_u_to_deg_per_us_u(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d deg_per_ms_u_to_deg_per_ms_d(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f deg_per_ms_u_to_deg_per_ms_f(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t deg_per_ms_u_to_deg_per_ms_t(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d deg_per_ms_u_to_deg_per_s_d(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f deg_per_ms_u_to_deg_per_s_f(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t deg_per_ms_u_to_deg_per_s_t(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u deg_per_ms_u_to_deg_per_s_u(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to double.
+ */
+double deg_per_ms_u_to_d(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to float.
+ */
+float deg_per_ms_u_to_f(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to int16_t.
+ */
+int16_t deg_per_ms_u_to_i16(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to int32_t.
+ */
+int32_t deg_per_ms_u_to_i32(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to int64_t.
+ */
+int64_t deg_per_ms_u_to_i64(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to int8_t.
+ */
+int8_t deg_per_ms_u_to_i8(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d deg_per_ms_u_to_rad_per_us_d(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f deg_per_ms_u_to_rad_per_us_f(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t deg_per_ms_u_to_rad_per_us_t(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u deg_per_ms_u_to_rad_per_us_u(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d deg_per_ms_u_to_rad_per_ms_d(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f deg_per_ms_u_to_rad_per_ms_f(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t deg_per_ms_u_to_rad_per_ms_t(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u deg_per_ms_u_to_rad_per_ms_u(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to radians_per_seconds_d.
+ */
+radians_per_seconds_d deg_per_ms_u_to_rad_per_s_d(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to radians_per_seconds_f.
+ */
+radians_per_seconds_f deg_per_ms_u_to_rad_per_s_f(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to radians_per_seconds_t.
+ */
+radians_per_seconds_t deg_per_ms_u_to_rad_per_s_t(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to radians_per_seconds_u.
+ */
+radians_per_seconds_u deg_per_ms_u_to_rad_per_s_u(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to uint16_t.
+ */
+uint16_t deg_per_ms_u_to_u16(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to uint32_t.
+ */
+uint32_t deg_per_ms_u_to_u32(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to uint64_t.
+ */
+uint64_t deg_per_ms_u_to_u64(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_milliseconds_u to uint8_t.
+ */
+uint8_t deg_per_ms_u_to_u8(degrees_per_milliseconds_u degrees_per_milliseconds);
+
+/**
+ * Convert degrees_per_seconds_d to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d deg_per_s_d_to_deg_per_us_d(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f deg_per_s_d_to_deg_per_us_f(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t deg_per_s_d_to_deg_per_us_t(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u deg_per_s_d_to_deg_per_us_u(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d deg_per_s_d_to_deg_per_ms_d(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f deg_per_s_d_to_deg_per_ms_f(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t deg_per_s_d_to_deg_per_ms_t(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u deg_per_s_d_to_deg_per_ms_u(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f deg_per_s_d_to_deg_per_s_f(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t deg_per_s_d_to_deg_per_s_t(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u deg_per_s_d_to_deg_per_s_u(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to double.
+ */
+double deg_per_s_d_to_d(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to float.
+ */
+float deg_per_s_d_to_f(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to int16_t.
+ */
+int16_t deg_per_s_d_to_i16(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to int32_t.
+ */
+int32_t deg_per_s_d_to_i32(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to int64_t.
+ */
+int64_t deg_per_s_d_to_i64(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to int8_t.
+ */
+int8_t deg_per_s_d_to_i8(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d deg_per_s_d_to_rad_per_us_d(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f deg_per_s_d_to_rad_per_us_f(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t deg_per_s_d_to_rad_per_us_t(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u deg_per_s_d_to_rad_per_us_u(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d deg_per_s_d_to_rad_per_ms_d(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f deg_per_s_d_to_rad_per_ms_f(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t deg_per_s_d_to_rad_per_ms_t(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u deg_per_s_d_to_rad_per_ms_u(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to radians_per_seconds_d.
+ */
+radians_per_seconds_d deg_per_s_d_to_rad_per_s_d(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to radians_per_seconds_f.
+ */
+radians_per_seconds_f deg_per_s_d_to_rad_per_s_f(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to radians_per_seconds_t.
+ */
+radians_per_seconds_t deg_per_s_d_to_rad_per_s_t(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to radians_per_seconds_u.
+ */
+radians_per_seconds_u deg_per_s_d_to_rad_per_s_u(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to uint16_t.
+ */
+uint16_t deg_per_s_d_to_u16(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to uint32_t.
+ */
+uint32_t deg_per_s_d_to_u32(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to uint64_t.
+ */
+uint64_t deg_per_s_d_to_u64(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_d to uint8_t.
+ */
+uint8_t deg_per_s_d_to_u8(degrees_per_seconds_d degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d deg_per_s_f_to_deg_per_us_d(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f deg_per_s_f_to_deg_per_us_f(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t deg_per_s_f_to_deg_per_us_t(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u deg_per_s_f_to_deg_per_us_u(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d deg_per_s_f_to_deg_per_ms_d(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f deg_per_s_f_to_deg_per_ms_f(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t deg_per_s_f_to_deg_per_ms_t(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u deg_per_s_f_to_deg_per_ms_u(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d deg_per_s_f_to_deg_per_s_d(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t deg_per_s_f_to_deg_per_s_t(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u deg_per_s_f_to_deg_per_s_u(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to double.
+ */
+double deg_per_s_f_to_d(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to float.
+ */
+float deg_per_s_f_to_f(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to int16_t.
+ */
+int16_t deg_per_s_f_to_i16(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to int32_t.
+ */
+int32_t deg_per_s_f_to_i32(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to int64_t.
+ */
+int64_t deg_per_s_f_to_i64(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to int8_t.
+ */
+int8_t deg_per_s_f_to_i8(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d deg_per_s_f_to_rad_per_us_d(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f deg_per_s_f_to_rad_per_us_f(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t deg_per_s_f_to_rad_per_us_t(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u deg_per_s_f_to_rad_per_us_u(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d deg_per_s_f_to_rad_per_ms_d(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f deg_per_s_f_to_rad_per_ms_f(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t deg_per_s_f_to_rad_per_ms_t(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u deg_per_s_f_to_rad_per_ms_u(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to radians_per_seconds_d.
+ */
+radians_per_seconds_d deg_per_s_f_to_rad_per_s_d(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to radians_per_seconds_f.
+ */
+radians_per_seconds_f deg_per_s_f_to_rad_per_s_f(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to radians_per_seconds_t.
+ */
+radians_per_seconds_t deg_per_s_f_to_rad_per_s_t(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to radians_per_seconds_u.
+ */
+radians_per_seconds_u deg_per_s_f_to_rad_per_s_u(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to uint16_t.
+ */
+uint16_t deg_per_s_f_to_u16(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to uint32_t.
+ */
+uint32_t deg_per_s_f_to_u32(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to uint64_t.
+ */
+uint64_t deg_per_s_f_to_u64(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_f to uint8_t.
+ */
+uint8_t deg_per_s_f_to_u8(degrees_per_seconds_f degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d deg_per_s_t_to_deg_per_us_d(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f deg_per_s_t_to_deg_per_us_f(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t deg_per_s_t_to_deg_per_us_t(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u deg_per_s_t_to_deg_per_us_u(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d deg_per_s_t_to_deg_per_ms_d(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f deg_per_s_t_to_deg_per_ms_f(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t deg_per_s_t_to_deg_per_ms_t(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u deg_per_s_t_to_deg_per_ms_u(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d deg_per_s_t_to_deg_per_s_d(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f deg_per_s_t_to_deg_per_s_f(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u deg_per_s_t_to_deg_per_s_u(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to double.
+ */
+double deg_per_s_t_to_d(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to float.
+ */
+float deg_per_s_t_to_f(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to int16_t.
+ */
+int16_t deg_per_s_t_to_i16(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to int32_t.
+ */
+int32_t deg_per_s_t_to_i32(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to int64_t.
+ */
+int64_t deg_per_s_t_to_i64(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to int8_t.
+ */
+int8_t deg_per_s_t_to_i8(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d deg_per_s_t_to_rad_per_us_d(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f deg_per_s_t_to_rad_per_us_f(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t deg_per_s_t_to_rad_per_us_t(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u deg_per_s_t_to_rad_per_us_u(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d deg_per_s_t_to_rad_per_ms_d(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f deg_per_s_t_to_rad_per_ms_f(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t deg_per_s_t_to_rad_per_ms_t(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u deg_per_s_t_to_rad_per_ms_u(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to radians_per_seconds_d.
+ */
+radians_per_seconds_d deg_per_s_t_to_rad_per_s_d(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to radians_per_seconds_f.
+ */
+radians_per_seconds_f deg_per_s_t_to_rad_per_s_f(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to radians_per_seconds_t.
+ */
+radians_per_seconds_t deg_per_s_t_to_rad_per_s_t(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to radians_per_seconds_u.
+ */
+radians_per_seconds_u deg_per_s_t_to_rad_per_s_u(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to uint16_t.
+ */
+uint16_t deg_per_s_t_to_u16(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to uint32_t.
+ */
+uint32_t deg_per_s_t_to_u32(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to uint64_t.
+ */
+uint64_t deg_per_s_t_to_u64(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_t to uint8_t.
+ */
+uint8_t deg_per_s_t_to_u8(degrees_per_seconds_t degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d deg_per_s_u_to_deg_per_us_d(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f deg_per_s_u_to_deg_per_us_f(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t deg_per_s_u_to_deg_per_us_t(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u deg_per_s_u_to_deg_per_us_u(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d deg_per_s_u_to_deg_per_ms_d(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f deg_per_s_u_to_deg_per_ms_f(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t deg_per_s_u_to_deg_per_ms_t(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u deg_per_s_u_to_deg_per_ms_u(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d deg_per_s_u_to_deg_per_s_d(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f deg_per_s_u_to_deg_per_s_f(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t deg_per_s_u_to_deg_per_s_t(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to double.
+ */
+double deg_per_s_u_to_d(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to float.
+ */
+float deg_per_s_u_to_f(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to int16_t.
+ */
+int16_t deg_per_s_u_to_i16(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to int32_t.
+ */
+int32_t deg_per_s_u_to_i32(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to int64_t.
+ */
+int64_t deg_per_s_u_to_i64(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to int8_t.
+ */
+int8_t deg_per_s_u_to_i8(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d deg_per_s_u_to_rad_per_us_d(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f deg_per_s_u_to_rad_per_us_f(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t deg_per_s_u_to_rad_per_us_t(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u deg_per_s_u_to_rad_per_us_u(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d deg_per_s_u_to_rad_per_ms_d(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f deg_per_s_u_to_rad_per_ms_f(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t deg_per_s_u_to_rad_per_ms_t(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u deg_per_s_u_to_rad_per_ms_u(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to radians_per_seconds_d.
+ */
+radians_per_seconds_d deg_per_s_u_to_rad_per_s_d(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to radians_per_seconds_f.
+ */
+radians_per_seconds_f deg_per_s_u_to_rad_per_s_f(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to radians_per_seconds_t.
+ */
+radians_per_seconds_t deg_per_s_u_to_rad_per_s_t(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to radians_per_seconds_u.
+ */
+radians_per_seconds_u deg_per_s_u_to_rad_per_s_u(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to uint16_t.
+ */
+uint16_t deg_per_s_u_to_u16(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to uint32_t.
+ */
+uint32_t deg_per_s_u_to_u32(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to uint64_t.
+ */
+uint64_t deg_per_s_u_to_u64(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert degrees_per_seconds_u to uint8_t.
+ */
+uint8_t deg_per_s_u_to_u8(degrees_per_seconds_u degrees_per_seconds);
+
+/**
+ * Convert double to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d d_to_deg_per_us_d(double degrees_per_microseconds);
+
+/**
+ * Convert double to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f d_to_deg_per_us_f(double degrees_per_microseconds);
+
+/**
+ * Convert double to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t d_to_deg_per_us_t(double degrees_per_microseconds);
+
+/**
+ * Convert double to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u d_to_deg_per_us_u(double degrees_per_microseconds);
+
+/**
+ * Convert double to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d d_to_deg_per_ms_d(double degrees_per_milliseconds);
+
+/**
+ * Convert double to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f d_to_deg_per_ms_f(double degrees_per_milliseconds);
+
+/**
+ * Convert double to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t d_to_deg_per_ms_t(double degrees_per_milliseconds);
+
+/**
+ * Convert double to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u d_to_deg_per_ms_u(double degrees_per_milliseconds);
+
+/**
+ * Convert double to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d d_to_deg_per_s_d(double degrees_per_seconds);
+
+/**
+ * Convert double to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f d_to_deg_per_s_f(double degrees_per_seconds);
+
+/**
+ * Convert double to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t d_to_deg_per_s_t(double degrees_per_seconds);
+
+/**
+ * Convert double to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u d_to_deg_per_s_u(double degrees_per_seconds);
+
+/**
+ * Convert double to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d d_to_rad_per_us_d(double radians_per_microseconds);
+
+/**
+ * Convert double to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f d_to_rad_per_us_f(double radians_per_microseconds);
+
+/**
+ * Convert double to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t d_to_rad_per_us_t(double radians_per_microseconds);
+
+/**
+ * Convert double to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u d_to_rad_per_us_u(double radians_per_microseconds);
+
+/**
+ * Convert double to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d d_to_rad_per_ms_d(double radians_per_milliseconds);
+
+/**
+ * Convert double to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f d_to_rad_per_ms_f(double radians_per_milliseconds);
+
+/**
+ * Convert double to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t d_to_rad_per_ms_t(double radians_per_milliseconds);
+
+/**
+ * Convert double to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u d_to_rad_per_ms_u(double radians_per_milliseconds);
+
+/**
+ * Convert double to radians_per_seconds_d.
+ */
+radians_per_seconds_d d_to_rad_per_s_d(double radians_per_seconds);
+
+/**
+ * Convert double to radians_per_seconds_f.
+ */
+radians_per_seconds_f d_to_rad_per_s_f(double radians_per_seconds);
+
+/**
+ * Convert double to radians_per_seconds_t.
+ */
+radians_per_seconds_t d_to_rad_per_s_t(double radians_per_seconds);
+
+/**
+ * Convert double to radians_per_seconds_u.
+ */
+radians_per_seconds_u d_to_rad_per_s_u(double radians_per_seconds);
+
+/**
+ * Convert float to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d f_to_deg_per_us_d(float degrees_per_microseconds);
+
+/**
+ * Convert float to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f f_to_deg_per_us_f(float degrees_per_microseconds);
+
+/**
+ * Convert float to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t f_to_deg_per_us_t(float degrees_per_microseconds);
+
+/**
+ * Convert float to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u f_to_deg_per_us_u(float degrees_per_microseconds);
+
+/**
+ * Convert float to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d f_to_deg_per_ms_d(float degrees_per_milliseconds);
+
+/**
+ * Convert float to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f f_to_deg_per_ms_f(float degrees_per_milliseconds);
+
+/**
+ * Convert float to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t f_to_deg_per_ms_t(float degrees_per_milliseconds);
+
+/**
+ * Convert float to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u f_to_deg_per_ms_u(float degrees_per_milliseconds);
+
+/**
+ * Convert float to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d f_to_deg_per_s_d(float degrees_per_seconds);
+
+/**
+ * Convert float to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f f_to_deg_per_s_f(float degrees_per_seconds);
+
+/**
+ * Convert float to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t f_to_deg_per_s_t(float degrees_per_seconds);
+
+/**
+ * Convert float to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u f_to_deg_per_s_u(float degrees_per_seconds);
+
+/**
+ * Convert float to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d f_to_rad_per_us_d(float radians_per_microseconds);
+
+/**
+ * Convert float to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f f_to_rad_per_us_f(float radians_per_microseconds);
+
+/**
+ * Convert float to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t f_to_rad_per_us_t(float radians_per_microseconds);
+
+/**
+ * Convert float to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u f_to_rad_per_us_u(float radians_per_microseconds);
+
+/**
+ * Convert float to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d f_to_rad_per_ms_d(float radians_per_milliseconds);
+
+/**
+ * Convert float to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f f_to_rad_per_ms_f(float radians_per_milliseconds);
+
+/**
+ * Convert float to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t f_to_rad_per_ms_t(float radians_per_milliseconds);
+
+/**
+ * Convert float to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u f_to_rad_per_ms_u(float radians_per_milliseconds);
+
+/**
+ * Convert float to radians_per_seconds_d.
+ */
+radians_per_seconds_d f_to_rad_per_s_d(float radians_per_seconds);
+
+/**
+ * Convert float to radians_per_seconds_f.
+ */
+radians_per_seconds_f f_to_rad_per_s_f(float radians_per_seconds);
+
+/**
+ * Convert float to radians_per_seconds_t.
+ */
+radians_per_seconds_t f_to_rad_per_s_t(float radians_per_seconds);
+
+/**
+ * Convert float to radians_per_seconds_u.
+ */
+radians_per_seconds_u f_to_rad_per_s_u(float radians_per_seconds);
+
+/**
+ * Convert int16_t to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d i16_to_deg_per_us_d(int16_t degrees_per_microseconds);
+
+/**
+ * Convert int16_t to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f i16_to_deg_per_us_f(int16_t degrees_per_microseconds);
+
+/**
+ * Convert int16_t to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t i16_to_deg_per_us_t(int16_t degrees_per_microseconds);
+
+/**
+ * Convert int16_t to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u i16_to_deg_per_us_u(int16_t degrees_per_microseconds);
+
+/**
+ * Convert int16_t to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d i16_to_deg_per_ms_d(int16_t degrees_per_milliseconds);
+
+/**
+ * Convert int16_t to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f i16_to_deg_per_ms_f(int16_t degrees_per_milliseconds);
+
+/**
+ * Convert int16_t to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t i16_to_deg_per_ms_t(int16_t degrees_per_milliseconds);
+
+/**
+ * Convert int16_t to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u i16_to_deg_per_ms_u(int16_t degrees_per_milliseconds);
+
+/**
+ * Convert int16_t to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d i16_to_deg_per_s_d(int16_t degrees_per_seconds);
+
+/**
+ * Convert int16_t to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f i16_to_deg_per_s_f(int16_t degrees_per_seconds);
+
+/**
+ * Convert int16_t to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t i16_to_deg_per_s_t(int16_t degrees_per_seconds);
+
+/**
+ * Convert int16_t to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u i16_to_deg_per_s_u(int16_t degrees_per_seconds);
+
+/**
+ * Convert int16_t to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d i16_to_rad_per_us_d(int16_t radians_per_microseconds);
+
+/**
+ * Convert int16_t to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f i16_to_rad_per_us_f(int16_t radians_per_microseconds);
+
+/**
+ * Convert int16_t to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t i16_to_rad_per_us_t(int16_t radians_per_microseconds);
+
+/**
+ * Convert int16_t to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u i16_to_rad_per_us_u(int16_t radians_per_microseconds);
+
+/**
+ * Convert int16_t to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d i16_to_rad_per_ms_d(int16_t radians_per_milliseconds);
+
+/**
+ * Convert int16_t to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f i16_to_rad_per_ms_f(int16_t radians_per_milliseconds);
+
+/**
+ * Convert int16_t to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t i16_to_rad_per_ms_t(int16_t radians_per_milliseconds);
+
+/**
+ * Convert int16_t to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u i16_to_rad_per_ms_u(int16_t radians_per_milliseconds);
+
+/**
+ * Convert int16_t to radians_per_seconds_d.
+ */
+radians_per_seconds_d i16_to_rad_per_s_d(int16_t radians_per_seconds);
+
+/**
+ * Convert int16_t to radians_per_seconds_f.
+ */
+radians_per_seconds_f i16_to_rad_per_s_f(int16_t radians_per_seconds);
+
+/**
+ * Convert int16_t to radians_per_seconds_t.
+ */
+radians_per_seconds_t i16_to_rad_per_s_t(int16_t radians_per_seconds);
+
+/**
+ * Convert int16_t to radians_per_seconds_u.
+ */
+radians_per_seconds_u i16_to_rad_per_s_u(int16_t radians_per_seconds);
+
+/**
+ * Convert int32_t to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d i32_to_deg_per_us_d(int32_t degrees_per_microseconds);
+
+/**
+ * Convert int32_t to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f i32_to_deg_per_us_f(int32_t degrees_per_microseconds);
+
+/**
+ * Convert int32_t to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t i32_to_deg_per_us_t(int32_t degrees_per_microseconds);
+
+/**
+ * Convert int32_t to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u i32_to_deg_per_us_u(int32_t degrees_per_microseconds);
+
+/**
+ * Convert int32_t to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d i32_to_deg_per_ms_d(int32_t degrees_per_milliseconds);
+
+/**
+ * Convert int32_t to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f i32_to_deg_per_ms_f(int32_t degrees_per_milliseconds);
+
+/**
+ * Convert int32_t to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t i32_to_deg_per_ms_t(int32_t degrees_per_milliseconds);
+
+/**
+ * Convert int32_t to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u i32_to_deg_per_ms_u(int32_t degrees_per_milliseconds);
+
+/**
+ * Convert int32_t to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d i32_to_deg_per_s_d(int32_t degrees_per_seconds);
+
+/**
+ * Convert int32_t to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f i32_to_deg_per_s_f(int32_t degrees_per_seconds);
+
+/**
+ * Convert int32_t to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t i32_to_deg_per_s_t(int32_t degrees_per_seconds);
+
+/**
+ * Convert int32_t to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u i32_to_deg_per_s_u(int32_t degrees_per_seconds);
+
+/**
+ * Convert int32_t to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d i32_to_rad_per_us_d(int32_t radians_per_microseconds);
+
+/**
+ * Convert int32_t to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f i32_to_rad_per_us_f(int32_t radians_per_microseconds);
+
+/**
+ * Convert int32_t to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t i32_to_rad_per_us_t(int32_t radians_per_microseconds);
+
+/**
+ * Convert int32_t to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u i32_to_rad_per_us_u(int32_t radians_per_microseconds);
+
+/**
+ * Convert int32_t to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d i32_to_rad_per_ms_d(int32_t radians_per_milliseconds);
+
+/**
+ * Convert int32_t to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f i32_to_rad_per_ms_f(int32_t radians_per_milliseconds);
+
+/**
+ * Convert int32_t to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t i32_to_rad_per_ms_t(int32_t radians_per_milliseconds);
+
+/**
+ * Convert int32_t to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u i32_to_rad_per_ms_u(int32_t radians_per_milliseconds);
+
+/**
+ * Convert int32_t to radians_per_seconds_d.
+ */
+radians_per_seconds_d i32_to_rad_per_s_d(int32_t radians_per_seconds);
+
+/**
+ * Convert int32_t to radians_per_seconds_f.
+ */
+radians_per_seconds_f i32_to_rad_per_s_f(int32_t radians_per_seconds);
+
+/**
+ * Convert int32_t to radians_per_seconds_t.
+ */
+radians_per_seconds_t i32_to_rad_per_s_t(int32_t radians_per_seconds);
+
+/**
+ * Convert int32_t to radians_per_seconds_u.
+ */
+radians_per_seconds_u i32_to_rad_per_s_u(int32_t radians_per_seconds);
+
+/**
+ * Convert int64_t to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d i64_to_deg_per_us_d(int64_t degrees_per_microseconds);
+
+/**
+ * Convert int64_t to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f i64_to_deg_per_us_f(int64_t degrees_per_microseconds);
+
+/**
+ * Convert int64_t to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t i64_to_deg_per_us_t(int64_t degrees_per_microseconds);
+
+/**
+ * Convert int64_t to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u i64_to_deg_per_us_u(int64_t degrees_per_microseconds);
+
+/**
+ * Convert int64_t to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d i64_to_deg_per_ms_d(int64_t degrees_per_milliseconds);
+
+/**
+ * Convert int64_t to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f i64_to_deg_per_ms_f(int64_t degrees_per_milliseconds);
+
+/**
+ * Convert int64_t to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t i64_to_deg_per_ms_t(int64_t degrees_per_milliseconds);
+
+/**
+ * Convert int64_t to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u i64_to_deg_per_ms_u(int64_t degrees_per_milliseconds);
+
+/**
+ * Convert int64_t to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d i64_to_deg_per_s_d(int64_t degrees_per_seconds);
+
+/**
+ * Convert int64_t to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f i64_to_deg_per_s_f(int64_t degrees_per_seconds);
+
+/**
+ * Convert int64_t to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t i64_to_deg_per_s_t(int64_t degrees_per_seconds);
+
+/**
+ * Convert int64_t to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u i64_to_deg_per_s_u(int64_t degrees_per_seconds);
+
+/**
+ * Convert int64_t to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d i64_to_rad_per_us_d(int64_t radians_per_microseconds);
+
+/**
+ * Convert int64_t to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f i64_to_rad_per_us_f(int64_t radians_per_microseconds);
+
+/**
+ * Convert int64_t to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t i64_to_rad_per_us_t(int64_t radians_per_microseconds);
+
+/**
+ * Convert int64_t to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u i64_to_rad_per_us_u(int64_t radians_per_microseconds);
+
+/**
+ * Convert int64_t to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d i64_to_rad_per_ms_d(int64_t radians_per_milliseconds);
+
+/**
+ * Convert int64_t to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f i64_to_rad_per_ms_f(int64_t radians_per_milliseconds);
+
+/**
+ * Convert int64_t to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t i64_to_rad_per_ms_t(int64_t radians_per_milliseconds);
+
+/**
+ * Convert int64_t to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u i64_to_rad_per_ms_u(int64_t radians_per_milliseconds);
+
+/**
+ * Convert int64_t to radians_per_seconds_d.
+ */
+radians_per_seconds_d i64_to_rad_per_s_d(int64_t radians_per_seconds);
+
+/**
+ * Convert int64_t to radians_per_seconds_f.
+ */
+radians_per_seconds_f i64_to_rad_per_s_f(int64_t radians_per_seconds);
+
+/**
+ * Convert int64_t to radians_per_seconds_t.
+ */
+radians_per_seconds_t i64_to_rad_per_s_t(int64_t radians_per_seconds);
+
+/**
+ * Convert int64_t to radians_per_seconds_u.
+ */
+radians_per_seconds_u i64_to_rad_per_s_u(int64_t radians_per_seconds);
+
+/**
+ * Convert int8_t to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d i8_to_deg_per_us_d(int8_t degrees_per_microseconds);
+
+/**
+ * Convert int8_t to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f i8_to_deg_per_us_f(int8_t degrees_per_microseconds);
+
+/**
+ * Convert int8_t to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t i8_to_deg_per_us_t(int8_t degrees_per_microseconds);
+
+/**
+ * Convert int8_t to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u i8_to_deg_per_us_u(int8_t degrees_per_microseconds);
+
+/**
+ * Convert int8_t to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d i8_to_deg_per_ms_d(int8_t degrees_per_milliseconds);
+
+/**
+ * Convert int8_t to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f i8_to_deg_per_ms_f(int8_t degrees_per_milliseconds);
+
+/**
+ * Convert int8_t to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t i8_to_deg_per_ms_t(int8_t degrees_per_milliseconds);
+
+/**
+ * Convert int8_t to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u i8_to_deg_per_ms_u(int8_t degrees_per_milliseconds);
+
+/**
+ * Convert int8_t to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d i8_to_deg_per_s_d(int8_t degrees_per_seconds);
+
+/**
+ * Convert int8_t to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f i8_to_deg_per_s_f(int8_t degrees_per_seconds);
+
+/**
+ * Convert int8_t to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t i8_to_deg_per_s_t(int8_t degrees_per_seconds);
+
+/**
+ * Convert int8_t to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u i8_to_deg_per_s_u(int8_t degrees_per_seconds);
+
+/**
+ * Convert int8_t to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d i8_to_rad_per_us_d(int8_t radians_per_microseconds);
+
+/**
+ * Convert int8_t to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f i8_to_rad_per_us_f(int8_t radians_per_microseconds);
+
+/**
+ * Convert int8_t to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t i8_to_rad_per_us_t(int8_t radians_per_microseconds);
+
+/**
+ * Convert int8_t to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u i8_to_rad_per_us_u(int8_t radians_per_microseconds);
+
+/**
+ * Convert int8_t to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d i8_to_rad_per_ms_d(int8_t radians_per_milliseconds);
+
+/**
+ * Convert int8_t to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f i8_to_rad_per_ms_f(int8_t radians_per_milliseconds);
+
+/**
+ * Convert int8_t to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t i8_to_rad_per_ms_t(int8_t radians_per_milliseconds);
+
+/**
+ * Convert int8_t to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u i8_to_rad_per_ms_u(int8_t radians_per_milliseconds);
+
+/**
+ * Convert int8_t to radians_per_seconds_d.
+ */
+radians_per_seconds_d i8_to_rad_per_s_d(int8_t radians_per_seconds);
+
+/**
+ * Convert int8_t to radians_per_seconds_f.
+ */
+radians_per_seconds_f i8_to_rad_per_s_f(int8_t radians_per_seconds);
+
+/**
+ * Convert int8_t to radians_per_seconds_t.
+ */
+radians_per_seconds_t i8_to_rad_per_s_t(int8_t radians_per_seconds);
+
+/**
+ * Convert int8_t to radians_per_seconds_u.
+ */
+radians_per_seconds_u i8_to_rad_per_s_u(int8_t radians_per_seconds);
+
+/**
+ * Convert radians_per_microseconds_d to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d rad_per_us_d_to_deg_per_us_d(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f rad_per_us_d_to_deg_per_us_f(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t rad_per_us_d_to_deg_per_us_t(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u rad_per_us_d_to_deg_per_us_u(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d rad_per_us_d_to_deg_per_ms_d(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f rad_per_us_d_to_deg_per_ms_f(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t rad_per_us_d_to_deg_per_ms_t(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u rad_per_us_d_to_deg_per_ms_u(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d rad_per_us_d_to_deg_per_s_d(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f rad_per_us_d_to_deg_per_s_f(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t rad_per_us_d_to_deg_per_s_t(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u rad_per_us_d_to_deg_per_s_u(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to double.
+ */
+double rad_per_us_d_to_d(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to float.
+ */
+float rad_per_us_d_to_f(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to int16_t.
+ */
+int16_t rad_per_us_d_to_i16(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to int32_t.
+ */
+int32_t rad_per_us_d_to_i32(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to int64_t.
+ */
+int64_t rad_per_us_d_to_i64(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to int8_t.
+ */
+int8_t rad_per_us_d_to_i8(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f rad_per_us_d_to_rad_per_us_f(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t rad_per_us_d_to_rad_per_us_t(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u rad_per_us_d_to_rad_per_us_u(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d rad_per_us_d_to_rad_per_ms_d(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f rad_per_us_d_to_rad_per_ms_f(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t rad_per_us_d_to_rad_per_ms_t(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u rad_per_us_d_to_rad_per_ms_u(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to radians_per_seconds_d.
+ */
+radians_per_seconds_d rad_per_us_d_to_rad_per_s_d(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to radians_per_seconds_f.
+ */
+radians_per_seconds_f rad_per_us_d_to_rad_per_s_f(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to radians_per_seconds_t.
+ */
+radians_per_seconds_t rad_per_us_d_to_rad_per_s_t(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to radians_per_seconds_u.
+ */
+radians_per_seconds_u rad_per_us_d_to_rad_per_s_u(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to uint16_t.
+ */
+uint16_t rad_per_us_d_to_u16(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to uint32_t.
+ */
+uint32_t rad_per_us_d_to_u32(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to uint64_t.
+ */
+uint64_t rad_per_us_d_to_u64(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_d to uint8_t.
+ */
+uint8_t rad_per_us_d_to_u8(radians_per_microseconds_d radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d rad_per_us_f_to_deg_per_us_d(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f rad_per_us_f_to_deg_per_us_f(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t rad_per_us_f_to_deg_per_us_t(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u rad_per_us_f_to_deg_per_us_u(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d rad_per_us_f_to_deg_per_ms_d(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f rad_per_us_f_to_deg_per_ms_f(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t rad_per_us_f_to_deg_per_ms_t(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u rad_per_us_f_to_deg_per_ms_u(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d rad_per_us_f_to_deg_per_s_d(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f rad_per_us_f_to_deg_per_s_f(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t rad_per_us_f_to_deg_per_s_t(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u rad_per_us_f_to_deg_per_s_u(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to double.
+ */
+double rad_per_us_f_to_d(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to float.
+ */
+float rad_per_us_f_to_f(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to int16_t.
+ */
+int16_t rad_per_us_f_to_i16(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to int32_t.
+ */
+int32_t rad_per_us_f_to_i32(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to int64_t.
+ */
+int64_t rad_per_us_f_to_i64(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to int8_t.
+ */
+int8_t rad_per_us_f_to_i8(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d rad_per_us_f_to_rad_per_us_d(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t rad_per_us_f_to_rad_per_us_t(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u rad_per_us_f_to_rad_per_us_u(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d rad_per_us_f_to_rad_per_ms_d(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f rad_per_us_f_to_rad_per_ms_f(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t rad_per_us_f_to_rad_per_ms_t(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u rad_per_us_f_to_rad_per_ms_u(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to radians_per_seconds_d.
+ */
+radians_per_seconds_d rad_per_us_f_to_rad_per_s_d(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to radians_per_seconds_f.
+ */
+radians_per_seconds_f rad_per_us_f_to_rad_per_s_f(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to radians_per_seconds_t.
+ */
+radians_per_seconds_t rad_per_us_f_to_rad_per_s_t(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to radians_per_seconds_u.
+ */
+radians_per_seconds_u rad_per_us_f_to_rad_per_s_u(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to uint16_t.
+ */
+uint16_t rad_per_us_f_to_u16(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to uint32_t.
+ */
+uint32_t rad_per_us_f_to_u32(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to uint64_t.
+ */
+uint64_t rad_per_us_f_to_u64(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_f to uint8_t.
+ */
+uint8_t rad_per_us_f_to_u8(radians_per_microseconds_f radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d rad_per_us_t_to_deg_per_us_d(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f rad_per_us_t_to_deg_per_us_f(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t rad_per_us_t_to_deg_per_us_t(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u rad_per_us_t_to_deg_per_us_u(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d rad_per_us_t_to_deg_per_ms_d(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f rad_per_us_t_to_deg_per_ms_f(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t rad_per_us_t_to_deg_per_ms_t(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u rad_per_us_t_to_deg_per_ms_u(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d rad_per_us_t_to_deg_per_s_d(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f rad_per_us_t_to_deg_per_s_f(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t rad_per_us_t_to_deg_per_s_t(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u rad_per_us_t_to_deg_per_s_u(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to double.
+ */
+double rad_per_us_t_to_d(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to float.
+ */
+float rad_per_us_t_to_f(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to int16_t.
+ */
+int16_t rad_per_us_t_to_i16(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to int32_t.
+ */
+int32_t rad_per_us_t_to_i32(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to int64_t.
+ */
+int64_t rad_per_us_t_to_i64(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to int8_t.
+ */
+int8_t rad_per_us_t_to_i8(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d rad_per_us_t_to_rad_per_us_d(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f rad_per_us_t_to_rad_per_us_f(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u rad_per_us_t_to_rad_per_us_u(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d rad_per_us_t_to_rad_per_ms_d(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f rad_per_us_t_to_rad_per_ms_f(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t rad_per_us_t_to_rad_per_ms_t(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u rad_per_us_t_to_rad_per_ms_u(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to radians_per_seconds_d.
+ */
+radians_per_seconds_d rad_per_us_t_to_rad_per_s_d(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to radians_per_seconds_f.
+ */
+radians_per_seconds_f rad_per_us_t_to_rad_per_s_f(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to radians_per_seconds_t.
+ */
+radians_per_seconds_t rad_per_us_t_to_rad_per_s_t(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to radians_per_seconds_u.
+ */
+radians_per_seconds_u rad_per_us_t_to_rad_per_s_u(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to uint16_t.
+ */
+uint16_t rad_per_us_t_to_u16(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to uint32_t.
+ */
+uint32_t rad_per_us_t_to_u32(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to uint64_t.
+ */
+uint64_t rad_per_us_t_to_u64(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_t to uint8_t.
+ */
+uint8_t rad_per_us_t_to_u8(radians_per_microseconds_t radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d rad_per_us_u_to_deg_per_us_d(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f rad_per_us_u_to_deg_per_us_f(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t rad_per_us_u_to_deg_per_us_t(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u rad_per_us_u_to_deg_per_us_u(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d rad_per_us_u_to_deg_per_ms_d(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f rad_per_us_u_to_deg_per_ms_f(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t rad_per_us_u_to_deg_per_ms_t(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u rad_per_us_u_to_deg_per_ms_u(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d rad_per_us_u_to_deg_per_s_d(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f rad_per_us_u_to_deg_per_s_f(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t rad_per_us_u_to_deg_per_s_t(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u rad_per_us_u_to_deg_per_s_u(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to double.
+ */
+double rad_per_us_u_to_d(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to float.
+ */
+float rad_per_us_u_to_f(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to int16_t.
+ */
+int16_t rad_per_us_u_to_i16(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to int32_t.
+ */
+int32_t rad_per_us_u_to_i32(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to int64_t.
+ */
+int64_t rad_per_us_u_to_i64(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to int8_t.
+ */
+int8_t rad_per_us_u_to_i8(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d rad_per_us_u_to_rad_per_us_d(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f rad_per_us_u_to_rad_per_us_f(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t rad_per_us_u_to_rad_per_us_t(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d rad_per_us_u_to_rad_per_ms_d(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f rad_per_us_u_to_rad_per_ms_f(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t rad_per_us_u_to_rad_per_ms_t(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u rad_per_us_u_to_rad_per_ms_u(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to radians_per_seconds_d.
+ */
+radians_per_seconds_d rad_per_us_u_to_rad_per_s_d(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to radians_per_seconds_f.
+ */
+radians_per_seconds_f rad_per_us_u_to_rad_per_s_f(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to radians_per_seconds_t.
+ */
+radians_per_seconds_t rad_per_us_u_to_rad_per_s_t(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to radians_per_seconds_u.
+ */
+radians_per_seconds_u rad_per_us_u_to_rad_per_s_u(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to uint16_t.
+ */
+uint16_t rad_per_us_u_to_u16(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to uint32_t.
+ */
+uint32_t rad_per_us_u_to_u32(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to uint64_t.
+ */
+uint64_t rad_per_us_u_to_u64(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_microseconds_u to uint8_t.
+ */
+uint8_t rad_per_us_u_to_u8(radians_per_microseconds_u radians_per_microseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d rad_per_ms_d_to_deg_per_us_d(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f rad_per_ms_d_to_deg_per_us_f(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t rad_per_ms_d_to_deg_per_us_t(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u rad_per_ms_d_to_deg_per_us_u(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d rad_per_ms_d_to_deg_per_ms_d(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f rad_per_ms_d_to_deg_per_ms_f(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t rad_per_ms_d_to_deg_per_ms_t(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u rad_per_ms_d_to_deg_per_ms_u(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d rad_per_ms_d_to_deg_per_s_d(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f rad_per_ms_d_to_deg_per_s_f(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t rad_per_ms_d_to_deg_per_s_t(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u rad_per_ms_d_to_deg_per_s_u(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to double.
+ */
+double rad_per_ms_d_to_d(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to float.
+ */
+float rad_per_ms_d_to_f(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to int16_t.
+ */
+int16_t rad_per_ms_d_to_i16(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to int32_t.
+ */
+int32_t rad_per_ms_d_to_i32(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to int64_t.
+ */
+int64_t rad_per_ms_d_to_i64(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to int8_t.
+ */
+int8_t rad_per_ms_d_to_i8(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d rad_per_ms_d_to_rad_per_us_d(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f rad_per_ms_d_to_rad_per_us_f(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t rad_per_ms_d_to_rad_per_us_t(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u rad_per_ms_d_to_rad_per_us_u(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f rad_per_ms_d_to_rad_per_ms_f(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t rad_per_ms_d_to_rad_per_ms_t(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u rad_per_ms_d_to_rad_per_ms_u(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to radians_per_seconds_d.
+ */
+radians_per_seconds_d rad_per_ms_d_to_rad_per_s_d(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to radians_per_seconds_f.
+ */
+radians_per_seconds_f rad_per_ms_d_to_rad_per_s_f(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to radians_per_seconds_t.
+ */
+radians_per_seconds_t rad_per_ms_d_to_rad_per_s_t(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to radians_per_seconds_u.
+ */
+radians_per_seconds_u rad_per_ms_d_to_rad_per_s_u(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to uint16_t.
+ */
+uint16_t rad_per_ms_d_to_u16(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to uint32_t.
+ */
+uint32_t rad_per_ms_d_to_u32(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to uint64_t.
+ */
+uint64_t rad_per_ms_d_to_u64(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_d to uint8_t.
+ */
+uint8_t rad_per_ms_d_to_u8(radians_per_milliseconds_d radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d rad_per_ms_f_to_deg_per_us_d(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f rad_per_ms_f_to_deg_per_us_f(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t rad_per_ms_f_to_deg_per_us_t(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u rad_per_ms_f_to_deg_per_us_u(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d rad_per_ms_f_to_deg_per_ms_d(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f rad_per_ms_f_to_deg_per_ms_f(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t rad_per_ms_f_to_deg_per_ms_t(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u rad_per_ms_f_to_deg_per_ms_u(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d rad_per_ms_f_to_deg_per_s_d(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f rad_per_ms_f_to_deg_per_s_f(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t rad_per_ms_f_to_deg_per_s_t(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u rad_per_ms_f_to_deg_per_s_u(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to double.
+ */
+double rad_per_ms_f_to_d(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to float.
+ */
+float rad_per_ms_f_to_f(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to int16_t.
+ */
+int16_t rad_per_ms_f_to_i16(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to int32_t.
+ */
+int32_t rad_per_ms_f_to_i32(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to int64_t.
+ */
+int64_t rad_per_ms_f_to_i64(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to int8_t.
+ */
+int8_t rad_per_ms_f_to_i8(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d rad_per_ms_f_to_rad_per_us_d(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f rad_per_ms_f_to_rad_per_us_f(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t rad_per_ms_f_to_rad_per_us_t(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u rad_per_ms_f_to_rad_per_us_u(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d rad_per_ms_f_to_rad_per_ms_d(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t rad_per_ms_f_to_rad_per_ms_t(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u rad_per_ms_f_to_rad_per_ms_u(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to radians_per_seconds_d.
+ */
+radians_per_seconds_d rad_per_ms_f_to_rad_per_s_d(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to radians_per_seconds_f.
+ */
+radians_per_seconds_f rad_per_ms_f_to_rad_per_s_f(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to radians_per_seconds_t.
+ */
+radians_per_seconds_t rad_per_ms_f_to_rad_per_s_t(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to radians_per_seconds_u.
+ */
+radians_per_seconds_u rad_per_ms_f_to_rad_per_s_u(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to uint16_t.
+ */
+uint16_t rad_per_ms_f_to_u16(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to uint32_t.
+ */
+uint32_t rad_per_ms_f_to_u32(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to uint64_t.
+ */
+uint64_t rad_per_ms_f_to_u64(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_f to uint8_t.
+ */
+uint8_t rad_per_ms_f_to_u8(radians_per_milliseconds_f radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d rad_per_ms_t_to_deg_per_us_d(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f rad_per_ms_t_to_deg_per_us_f(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t rad_per_ms_t_to_deg_per_us_t(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u rad_per_ms_t_to_deg_per_us_u(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d rad_per_ms_t_to_deg_per_ms_d(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f rad_per_ms_t_to_deg_per_ms_f(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t rad_per_ms_t_to_deg_per_ms_t(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u rad_per_ms_t_to_deg_per_ms_u(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d rad_per_ms_t_to_deg_per_s_d(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f rad_per_ms_t_to_deg_per_s_f(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t rad_per_ms_t_to_deg_per_s_t(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u rad_per_ms_t_to_deg_per_s_u(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to double.
+ */
+double rad_per_ms_t_to_d(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to float.
+ */
+float rad_per_ms_t_to_f(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to int16_t.
+ */
+int16_t rad_per_ms_t_to_i16(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to int32_t.
+ */
+int32_t rad_per_ms_t_to_i32(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to int64_t.
+ */
+int64_t rad_per_ms_t_to_i64(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to int8_t.
+ */
+int8_t rad_per_ms_t_to_i8(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d rad_per_ms_t_to_rad_per_us_d(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f rad_per_ms_t_to_rad_per_us_f(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t rad_per_ms_t_to_rad_per_us_t(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u rad_per_ms_t_to_rad_per_us_u(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d rad_per_ms_t_to_rad_per_ms_d(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f rad_per_ms_t_to_rad_per_ms_f(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u rad_per_ms_t_to_rad_per_ms_u(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to radians_per_seconds_d.
+ */
+radians_per_seconds_d rad_per_ms_t_to_rad_per_s_d(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to radians_per_seconds_f.
+ */
+radians_per_seconds_f rad_per_ms_t_to_rad_per_s_f(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to radians_per_seconds_t.
+ */
+radians_per_seconds_t rad_per_ms_t_to_rad_per_s_t(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to radians_per_seconds_u.
+ */
+radians_per_seconds_u rad_per_ms_t_to_rad_per_s_u(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to uint16_t.
+ */
+uint16_t rad_per_ms_t_to_u16(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to uint32_t.
+ */
+uint32_t rad_per_ms_t_to_u32(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to uint64_t.
+ */
+uint64_t rad_per_ms_t_to_u64(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_t to uint8_t.
+ */
+uint8_t rad_per_ms_t_to_u8(radians_per_milliseconds_t radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d rad_per_ms_u_to_deg_per_us_d(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f rad_per_ms_u_to_deg_per_us_f(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t rad_per_ms_u_to_deg_per_us_t(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u rad_per_ms_u_to_deg_per_us_u(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d rad_per_ms_u_to_deg_per_ms_d(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f rad_per_ms_u_to_deg_per_ms_f(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t rad_per_ms_u_to_deg_per_ms_t(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u rad_per_ms_u_to_deg_per_ms_u(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d rad_per_ms_u_to_deg_per_s_d(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f rad_per_ms_u_to_deg_per_s_f(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t rad_per_ms_u_to_deg_per_s_t(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u rad_per_ms_u_to_deg_per_s_u(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to double.
+ */
+double rad_per_ms_u_to_d(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to float.
+ */
+float rad_per_ms_u_to_f(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to int16_t.
+ */
+int16_t rad_per_ms_u_to_i16(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to int32_t.
+ */
+int32_t rad_per_ms_u_to_i32(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to int64_t.
+ */
+int64_t rad_per_ms_u_to_i64(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to int8_t.
+ */
+int8_t rad_per_ms_u_to_i8(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d rad_per_ms_u_to_rad_per_us_d(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f rad_per_ms_u_to_rad_per_us_f(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t rad_per_ms_u_to_rad_per_us_t(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u rad_per_ms_u_to_rad_per_us_u(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d rad_per_ms_u_to_rad_per_ms_d(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f rad_per_ms_u_to_rad_per_ms_f(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t rad_per_ms_u_to_rad_per_ms_t(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to radians_per_seconds_d.
+ */
+radians_per_seconds_d rad_per_ms_u_to_rad_per_s_d(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to radians_per_seconds_f.
+ */
+radians_per_seconds_f rad_per_ms_u_to_rad_per_s_f(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to radians_per_seconds_t.
+ */
+radians_per_seconds_t rad_per_ms_u_to_rad_per_s_t(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to radians_per_seconds_u.
+ */
+radians_per_seconds_u rad_per_ms_u_to_rad_per_s_u(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to uint16_t.
+ */
+uint16_t rad_per_ms_u_to_u16(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to uint32_t.
+ */
+uint32_t rad_per_ms_u_to_u32(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to uint64_t.
+ */
+uint64_t rad_per_ms_u_to_u64(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_milliseconds_u to uint8_t.
+ */
+uint8_t rad_per_ms_u_to_u8(radians_per_milliseconds_u radians_per_milliseconds);
+
+/**
+ * Convert radians_per_seconds_d to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d rad_per_s_d_to_deg_per_us_d(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f rad_per_s_d_to_deg_per_us_f(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t rad_per_s_d_to_deg_per_us_t(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u rad_per_s_d_to_deg_per_us_u(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d rad_per_s_d_to_deg_per_ms_d(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f rad_per_s_d_to_deg_per_ms_f(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t rad_per_s_d_to_deg_per_ms_t(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u rad_per_s_d_to_deg_per_ms_u(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d rad_per_s_d_to_deg_per_s_d(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f rad_per_s_d_to_deg_per_s_f(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t rad_per_s_d_to_deg_per_s_t(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u rad_per_s_d_to_deg_per_s_u(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to double.
+ */
+double rad_per_s_d_to_d(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to float.
+ */
+float rad_per_s_d_to_f(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to int16_t.
+ */
+int16_t rad_per_s_d_to_i16(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to int32_t.
+ */
+int32_t rad_per_s_d_to_i32(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to int64_t.
+ */
+int64_t rad_per_s_d_to_i64(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to int8_t.
+ */
+int8_t rad_per_s_d_to_i8(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d rad_per_s_d_to_rad_per_us_d(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f rad_per_s_d_to_rad_per_us_f(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t rad_per_s_d_to_rad_per_us_t(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u rad_per_s_d_to_rad_per_us_u(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d rad_per_s_d_to_rad_per_ms_d(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f rad_per_s_d_to_rad_per_ms_f(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t rad_per_s_d_to_rad_per_ms_t(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u rad_per_s_d_to_rad_per_ms_u(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to radians_per_seconds_f.
+ */
+radians_per_seconds_f rad_per_s_d_to_rad_per_s_f(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to radians_per_seconds_t.
+ */
+radians_per_seconds_t rad_per_s_d_to_rad_per_s_t(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to radians_per_seconds_u.
+ */
+radians_per_seconds_u rad_per_s_d_to_rad_per_s_u(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to uint16_t.
+ */
+uint16_t rad_per_s_d_to_u16(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to uint32_t.
+ */
+uint32_t rad_per_s_d_to_u32(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to uint64_t.
+ */
+uint64_t rad_per_s_d_to_u64(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_d to uint8_t.
+ */
+uint8_t rad_per_s_d_to_u8(radians_per_seconds_d radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d rad_per_s_f_to_deg_per_us_d(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f rad_per_s_f_to_deg_per_us_f(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t rad_per_s_f_to_deg_per_us_t(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u rad_per_s_f_to_deg_per_us_u(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d rad_per_s_f_to_deg_per_ms_d(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f rad_per_s_f_to_deg_per_ms_f(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t rad_per_s_f_to_deg_per_ms_t(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u rad_per_s_f_to_deg_per_ms_u(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d rad_per_s_f_to_deg_per_s_d(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f rad_per_s_f_to_deg_per_s_f(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t rad_per_s_f_to_deg_per_s_t(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u rad_per_s_f_to_deg_per_s_u(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to double.
+ */
+double rad_per_s_f_to_d(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to float.
+ */
+float rad_per_s_f_to_f(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to int16_t.
+ */
+int16_t rad_per_s_f_to_i16(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to int32_t.
+ */
+int32_t rad_per_s_f_to_i32(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to int64_t.
+ */
+int64_t rad_per_s_f_to_i64(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to int8_t.
+ */
+int8_t rad_per_s_f_to_i8(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d rad_per_s_f_to_rad_per_us_d(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f rad_per_s_f_to_rad_per_us_f(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t rad_per_s_f_to_rad_per_us_t(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u rad_per_s_f_to_rad_per_us_u(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d rad_per_s_f_to_rad_per_ms_d(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f rad_per_s_f_to_rad_per_ms_f(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t rad_per_s_f_to_rad_per_ms_t(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u rad_per_s_f_to_rad_per_ms_u(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to radians_per_seconds_d.
+ */
+radians_per_seconds_d rad_per_s_f_to_rad_per_s_d(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to radians_per_seconds_t.
+ */
+radians_per_seconds_t rad_per_s_f_to_rad_per_s_t(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to radians_per_seconds_u.
+ */
+radians_per_seconds_u rad_per_s_f_to_rad_per_s_u(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to uint16_t.
+ */
+uint16_t rad_per_s_f_to_u16(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to uint32_t.
+ */
+uint32_t rad_per_s_f_to_u32(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to uint64_t.
+ */
+uint64_t rad_per_s_f_to_u64(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_f to uint8_t.
+ */
+uint8_t rad_per_s_f_to_u8(radians_per_seconds_f radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d rad_per_s_t_to_deg_per_us_d(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f rad_per_s_t_to_deg_per_us_f(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t rad_per_s_t_to_deg_per_us_t(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u rad_per_s_t_to_deg_per_us_u(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d rad_per_s_t_to_deg_per_ms_d(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f rad_per_s_t_to_deg_per_ms_f(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t rad_per_s_t_to_deg_per_ms_t(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u rad_per_s_t_to_deg_per_ms_u(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d rad_per_s_t_to_deg_per_s_d(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f rad_per_s_t_to_deg_per_s_f(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t rad_per_s_t_to_deg_per_s_t(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u rad_per_s_t_to_deg_per_s_u(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to double.
+ */
+double rad_per_s_t_to_d(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to float.
+ */
+float rad_per_s_t_to_f(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to int16_t.
+ */
+int16_t rad_per_s_t_to_i16(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to int32_t.
+ */
+int32_t rad_per_s_t_to_i32(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to int64_t.
+ */
+int64_t rad_per_s_t_to_i64(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to int8_t.
+ */
+int8_t rad_per_s_t_to_i8(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d rad_per_s_t_to_rad_per_us_d(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f rad_per_s_t_to_rad_per_us_f(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t rad_per_s_t_to_rad_per_us_t(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u rad_per_s_t_to_rad_per_us_u(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d rad_per_s_t_to_rad_per_ms_d(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f rad_per_s_t_to_rad_per_ms_f(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t rad_per_s_t_to_rad_per_ms_t(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u rad_per_s_t_to_rad_per_ms_u(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to radians_per_seconds_d.
+ */
+radians_per_seconds_d rad_per_s_t_to_rad_per_s_d(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to radians_per_seconds_f.
+ */
+radians_per_seconds_f rad_per_s_t_to_rad_per_s_f(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to radians_per_seconds_u.
+ */
+radians_per_seconds_u rad_per_s_t_to_rad_per_s_u(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to uint16_t.
+ */
+uint16_t rad_per_s_t_to_u16(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to uint32_t.
+ */
+uint32_t rad_per_s_t_to_u32(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to uint64_t.
+ */
+uint64_t rad_per_s_t_to_u64(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_t to uint8_t.
+ */
+uint8_t rad_per_s_t_to_u8(radians_per_seconds_t radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d rad_per_s_u_to_deg_per_us_d(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f rad_per_s_u_to_deg_per_us_f(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t rad_per_s_u_to_deg_per_us_t(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u rad_per_s_u_to_deg_per_us_u(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d rad_per_s_u_to_deg_per_ms_d(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f rad_per_s_u_to_deg_per_ms_f(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t rad_per_s_u_to_deg_per_ms_t(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u rad_per_s_u_to_deg_per_ms_u(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d rad_per_s_u_to_deg_per_s_d(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f rad_per_s_u_to_deg_per_s_f(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t rad_per_s_u_to_deg_per_s_t(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u rad_per_s_u_to_deg_per_s_u(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to double.
+ */
+double rad_per_s_u_to_d(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to float.
+ */
+float rad_per_s_u_to_f(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to int16_t.
+ */
+int16_t rad_per_s_u_to_i16(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to int32_t.
+ */
+int32_t rad_per_s_u_to_i32(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to int64_t.
+ */
+int64_t rad_per_s_u_to_i64(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to int8_t.
+ */
+int8_t rad_per_s_u_to_i8(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d rad_per_s_u_to_rad_per_us_d(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f rad_per_s_u_to_rad_per_us_f(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t rad_per_s_u_to_rad_per_us_t(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u rad_per_s_u_to_rad_per_us_u(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d rad_per_s_u_to_rad_per_ms_d(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f rad_per_s_u_to_rad_per_ms_f(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t rad_per_s_u_to_rad_per_ms_t(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u rad_per_s_u_to_rad_per_ms_u(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to radians_per_seconds_d.
+ */
+radians_per_seconds_d rad_per_s_u_to_rad_per_s_d(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to radians_per_seconds_f.
+ */
+radians_per_seconds_f rad_per_s_u_to_rad_per_s_f(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to radians_per_seconds_t.
+ */
+radians_per_seconds_t rad_per_s_u_to_rad_per_s_t(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to uint16_t.
+ */
+uint16_t rad_per_s_u_to_u16(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to uint32_t.
+ */
+uint32_t rad_per_s_u_to_u32(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to uint64_t.
+ */
+uint64_t rad_per_s_u_to_u64(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert radians_per_seconds_u to uint8_t.
+ */
+uint8_t rad_per_s_u_to_u8(radians_per_seconds_u radians_per_seconds);
+
+/**
+ * Convert uint16_t to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d u16_to_deg_per_us_d(uint16_t degrees_per_microseconds);
+
+/**
+ * Convert uint16_t to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f u16_to_deg_per_us_f(uint16_t degrees_per_microseconds);
+
+/**
+ * Convert uint16_t to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t u16_to_deg_per_us_t(uint16_t degrees_per_microseconds);
+
+/**
+ * Convert uint16_t to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u u16_to_deg_per_us_u(uint16_t degrees_per_microseconds);
+
+/**
+ * Convert uint16_t to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d u16_to_deg_per_ms_d(uint16_t degrees_per_milliseconds);
+
+/**
+ * Convert uint16_t to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f u16_to_deg_per_ms_f(uint16_t degrees_per_milliseconds);
+
+/**
+ * Convert uint16_t to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t u16_to_deg_per_ms_t(uint16_t degrees_per_milliseconds);
+
+/**
+ * Convert uint16_t to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u u16_to_deg_per_ms_u(uint16_t degrees_per_milliseconds);
+
+/**
+ * Convert uint16_t to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d u16_to_deg_per_s_d(uint16_t degrees_per_seconds);
+
+/**
+ * Convert uint16_t to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f u16_to_deg_per_s_f(uint16_t degrees_per_seconds);
+
+/**
+ * Convert uint16_t to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t u16_to_deg_per_s_t(uint16_t degrees_per_seconds);
+
+/**
+ * Convert uint16_t to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u u16_to_deg_per_s_u(uint16_t degrees_per_seconds);
+
+/**
+ * Convert uint16_t to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d u16_to_rad_per_us_d(uint16_t radians_per_microseconds);
+
+/**
+ * Convert uint16_t to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f u16_to_rad_per_us_f(uint16_t radians_per_microseconds);
+
+/**
+ * Convert uint16_t to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t u16_to_rad_per_us_t(uint16_t radians_per_microseconds);
+
+/**
+ * Convert uint16_t to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u u16_to_rad_per_us_u(uint16_t radians_per_microseconds);
+
+/**
+ * Convert uint16_t to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d u16_to_rad_per_ms_d(uint16_t radians_per_milliseconds);
+
+/**
+ * Convert uint16_t to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f u16_to_rad_per_ms_f(uint16_t radians_per_milliseconds);
+
+/**
+ * Convert uint16_t to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t u16_to_rad_per_ms_t(uint16_t radians_per_milliseconds);
+
+/**
+ * Convert uint16_t to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u u16_to_rad_per_ms_u(uint16_t radians_per_milliseconds);
+
+/**
+ * Convert uint16_t to radians_per_seconds_d.
+ */
+radians_per_seconds_d u16_to_rad_per_s_d(uint16_t radians_per_seconds);
+
+/**
+ * Convert uint16_t to radians_per_seconds_f.
+ */
+radians_per_seconds_f u16_to_rad_per_s_f(uint16_t radians_per_seconds);
+
+/**
+ * Convert uint16_t to radians_per_seconds_t.
+ */
+radians_per_seconds_t u16_to_rad_per_s_t(uint16_t radians_per_seconds);
+
+/**
+ * Convert uint16_t to radians_per_seconds_u.
+ */
+radians_per_seconds_u u16_to_rad_per_s_u(uint16_t radians_per_seconds);
+
+/**
+ * Convert uint32_t to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d u32_to_deg_per_us_d(uint32_t degrees_per_microseconds);
+
+/**
+ * Convert uint32_t to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f u32_to_deg_per_us_f(uint32_t degrees_per_microseconds);
+
+/**
+ * Convert uint32_t to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t u32_to_deg_per_us_t(uint32_t degrees_per_microseconds);
+
+/**
+ * Convert uint32_t to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u u32_to_deg_per_us_u(uint32_t degrees_per_microseconds);
+
+/**
+ * Convert uint32_t to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d u32_to_deg_per_ms_d(uint32_t degrees_per_milliseconds);
+
+/**
+ * Convert uint32_t to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f u32_to_deg_per_ms_f(uint32_t degrees_per_milliseconds);
+
+/**
+ * Convert uint32_t to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t u32_to_deg_per_ms_t(uint32_t degrees_per_milliseconds);
+
+/**
+ * Convert uint32_t to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u u32_to_deg_per_ms_u(uint32_t degrees_per_milliseconds);
+
+/**
+ * Convert uint32_t to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d u32_to_deg_per_s_d(uint32_t degrees_per_seconds);
+
+/**
+ * Convert uint32_t to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f u32_to_deg_per_s_f(uint32_t degrees_per_seconds);
+
+/**
+ * Convert uint32_t to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t u32_to_deg_per_s_t(uint32_t degrees_per_seconds);
+
+/**
+ * Convert uint32_t to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u u32_to_deg_per_s_u(uint32_t degrees_per_seconds);
+
+/**
+ * Convert uint32_t to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d u32_to_rad_per_us_d(uint32_t radians_per_microseconds);
+
+/**
+ * Convert uint32_t to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f u32_to_rad_per_us_f(uint32_t radians_per_microseconds);
+
+/**
+ * Convert uint32_t to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t u32_to_rad_per_us_t(uint32_t radians_per_microseconds);
+
+/**
+ * Convert uint32_t to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u u32_to_rad_per_us_u(uint32_t radians_per_microseconds);
+
+/**
+ * Convert uint32_t to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d u32_to_rad_per_ms_d(uint32_t radians_per_milliseconds);
+
+/**
+ * Convert uint32_t to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f u32_to_rad_per_ms_f(uint32_t radians_per_milliseconds);
+
+/**
+ * Convert uint32_t to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t u32_to_rad_per_ms_t(uint32_t radians_per_milliseconds);
+
+/**
+ * Convert uint32_t to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u u32_to_rad_per_ms_u(uint32_t radians_per_milliseconds);
+
+/**
+ * Convert uint32_t to radians_per_seconds_d.
+ */
+radians_per_seconds_d u32_to_rad_per_s_d(uint32_t radians_per_seconds);
+
+/**
+ * Convert uint32_t to radians_per_seconds_f.
+ */
+radians_per_seconds_f u32_to_rad_per_s_f(uint32_t radians_per_seconds);
+
+/**
+ * Convert uint32_t to radians_per_seconds_t.
+ */
+radians_per_seconds_t u32_to_rad_per_s_t(uint32_t radians_per_seconds);
+
+/**
+ * Convert uint32_t to radians_per_seconds_u.
+ */
+radians_per_seconds_u u32_to_rad_per_s_u(uint32_t radians_per_seconds);
+
+/**
+ * Convert uint64_t to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d u64_to_deg_per_us_d(uint64_t degrees_per_microseconds);
+
+/**
+ * Convert uint64_t to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f u64_to_deg_per_us_f(uint64_t degrees_per_microseconds);
+
+/**
+ * Convert uint64_t to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t u64_to_deg_per_us_t(uint64_t degrees_per_microseconds);
+
+/**
+ * Convert uint64_t to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u u64_to_deg_per_us_u(uint64_t degrees_per_microseconds);
+
+/**
+ * Convert uint64_t to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d u64_to_deg_per_ms_d(uint64_t degrees_per_milliseconds);
+
+/**
+ * Convert uint64_t to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f u64_to_deg_per_ms_f(uint64_t degrees_per_milliseconds);
+
+/**
+ * Convert uint64_t to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t u64_to_deg_per_ms_t(uint64_t degrees_per_milliseconds);
+
+/**
+ * Convert uint64_t to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u u64_to_deg_per_ms_u(uint64_t degrees_per_milliseconds);
+
+/**
+ * Convert uint64_t to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d u64_to_deg_per_s_d(uint64_t degrees_per_seconds);
+
+/**
+ * Convert uint64_t to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f u64_to_deg_per_s_f(uint64_t degrees_per_seconds);
+
+/**
+ * Convert uint64_t to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t u64_to_deg_per_s_t(uint64_t degrees_per_seconds);
+
+/**
+ * Convert uint64_t to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u u64_to_deg_per_s_u(uint64_t degrees_per_seconds);
+
+/**
+ * Convert uint64_t to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d u64_to_rad_per_us_d(uint64_t radians_per_microseconds);
+
+/**
+ * Convert uint64_t to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f u64_to_rad_per_us_f(uint64_t radians_per_microseconds);
+
+/**
+ * Convert uint64_t to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t u64_to_rad_per_us_t(uint64_t radians_per_microseconds);
+
+/**
+ * Convert uint64_t to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u u64_to_rad_per_us_u(uint64_t radians_per_microseconds);
+
+/**
+ * Convert uint64_t to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d u64_to_rad_per_ms_d(uint64_t radians_per_milliseconds);
+
+/**
+ * Convert uint64_t to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f u64_to_rad_per_ms_f(uint64_t radians_per_milliseconds);
+
+/**
+ * Convert uint64_t to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t u64_to_rad_per_ms_t(uint64_t radians_per_milliseconds);
+
+/**
+ * Convert uint64_t to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u u64_to_rad_per_ms_u(uint64_t radians_per_milliseconds);
+
+/**
+ * Convert uint64_t to radians_per_seconds_d.
+ */
+radians_per_seconds_d u64_to_rad_per_s_d(uint64_t radians_per_seconds);
+
+/**
+ * Convert uint64_t to radians_per_seconds_f.
+ */
+radians_per_seconds_f u64_to_rad_per_s_f(uint64_t radians_per_seconds);
+
+/**
+ * Convert uint64_t to radians_per_seconds_t.
+ */
+radians_per_seconds_t u64_to_rad_per_s_t(uint64_t radians_per_seconds);
+
+/**
+ * Convert uint64_t to radians_per_seconds_u.
+ */
+radians_per_seconds_u u64_to_rad_per_s_u(uint64_t radians_per_seconds);
+
+/**
+ * Convert uint8_t to degrees_per_microseconds_d.
+ */
+degrees_per_microseconds_d u8_to_deg_per_us_d(uint8_t degrees_per_microseconds);
+
+/**
+ * Convert uint8_t to degrees_per_microseconds_f.
+ */
+degrees_per_microseconds_f u8_to_deg_per_us_f(uint8_t degrees_per_microseconds);
+
+/**
+ * Convert uint8_t to degrees_per_microseconds_t.
+ */
+degrees_per_microseconds_t u8_to_deg_per_us_t(uint8_t degrees_per_microseconds);
+
+/**
+ * Convert uint8_t to degrees_per_microseconds_u.
+ */
+degrees_per_microseconds_u u8_to_deg_per_us_u(uint8_t degrees_per_microseconds);
+
+/**
+ * Convert uint8_t to degrees_per_milliseconds_d.
+ */
+degrees_per_milliseconds_d u8_to_deg_per_ms_d(uint8_t degrees_per_milliseconds);
+
+/**
+ * Convert uint8_t to degrees_per_milliseconds_f.
+ */
+degrees_per_milliseconds_f u8_to_deg_per_ms_f(uint8_t degrees_per_milliseconds);
+
+/**
+ * Convert uint8_t to degrees_per_milliseconds_t.
+ */
+degrees_per_milliseconds_t u8_to_deg_per_ms_t(uint8_t degrees_per_milliseconds);
+
+/**
+ * Convert uint8_t to degrees_per_milliseconds_u.
+ */
+degrees_per_milliseconds_u u8_to_deg_per_ms_u(uint8_t degrees_per_milliseconds);
+
+/**
+ * Convert uint8_t to degrees_per_seconds_d.
+ */
+degrees_per_seconds_d u8_to_deg_per_s_d(uint8_t degrees_per_seconds);
+
+/**
+ * Convert uint8_t to degrees_per_seconds_f.
+ */
+degrees_per_seconds_f u8_to_deg_per_s_f(uint8_t degrees_per_seconds);
+
+/**
+ * Convert uint8_t to degrees_per_seconds_t.
+ */
+degrees_per_seconds_t u8_to_deg_per_s_t(uint8_t degrees_per_seconds);
+
+/**
+ * Convert uint8_t to degrees_per_seconds_u.
+ */
+degrees_per_seconds_u u8_to_deg_per_s_u(uint8_t degrees_per_seconds);
+
+/**
+ * Convert uint8_t to radians_per_microseconds_d.
+ */
+radians_per_microseconds_d u8_to_rad_per_us_d(uint8_t radians_per_microseconds);
+
+/**
+ * Convert uint8_t to radians_per_microseconds_f.
+ */
+radians_per_microseconds_f u8_to_rad_per_us_f(uint8_t radians_per_microseconds);
+
+/**
+ * Convert uint8_t to radians_per_microseconds_t.
+ */
+radians_per_microseconds_t u8_to_rad_per_us_t(uint8_t radians_per_microseconds);
+
+/**
+ * Convert uint8_t to radians_per_microseconds_u.
+ */
+radians_per_microseconds_u u8_to_rad_per_us_u(uint8_t radians_per_microseconds);
+
+/**
+ * Convert uint8_t to radians_per_milliseconds_d.
+ */
+radians_per_milliseconds_d u8_to_rad_per_ms_d(uint8_t radians_per_milliseconds);
+
+/**
+ * Convert uint8_t to radians_per_milliseconds_f.
+ */
+radians_per_milliseconds_f u8_to_rad_per_ms_f(uint8_t radians_per_milliseconds);
+
+/**
+ * Convert uint8_t to radians_per_milliseconds_t.
+ */
+radians_per_milliseconds_t u8_to_rad_per_ms_t(uint8_t radians_per_milliseconds);
+
+/**
+ * Convert uint8_t to radians_per_milliseconds_u.
+ */
+radians_per_milliseconds_u u8_to_rad_per_ms_u(uint8_t radians_per_milliseconds);
+
+/**
+ * Convert uint8_t to radians_per_seconds_d.
+ */
+radians_per_seconds_d u8_to_rad_per_s_d(uint8_t radians_per_seconds);
+
+/**
+ * Convert uint8_t to radians_per_seconds_f.
+ */
+radians_per_seconds_f u8_to_rad_per_s_f(uint8_t radians_per_seconds);
+
+/**
+ * Convert uint8_t to radians_per_seconds_t.
+ */
+radians_per_seconds_t u8_to_rad_per_s_t(uint8_t radians_per_seconds);
+
+/**
+ * Convert uint8_t to radians_per_seconds_u.
+ */
+radians_per_seconds_u u8_to_rad_per_s_u(uint8_t radians_per_seconds);
 
 int8_t d_to_i8(double);
 

@@ -488,84 +488,84 @@ public struct Temperature: Sendable, Hashable, Codable {
     ///
     /// - Parameter value: A `Celsius_t` value to convert to a `Temperature`.
     public init(_ value: Celsius_t) {
-        self.rawValue = .celsius_t(value)
+        self.rawValue = TemperatureTypes.celsius_t(value)
     }
 
     /// Create a `Temperature` by converting a `Celsius_u`.
     ///
     /// - Parameter value: A `Celsius_u` value to convert to a `Temperature`.
     public init(_ value: Celsius_u) {
-        self.rawValue = .celsius_u(value)
+        self.rawValue = TemperatureTypes.celsius_u(value)
     }
 
     /// Create a `Temperature` by converting a `Celsius_f`.
     ///
     /// - Parameter value: A `Celsius_f` value to convert to a `Temperature`.
     public init(_ value: Celsius_f) {
-        self.rawValue = .celsius_f(value)
+        self.rawValue = TemperatureTypes.celsius_f(value)
     }
 
     /// Create a `Temperature` by converting a `Celsius_d`.
     ///
     /// - Parameter value: A `Celsius_d` value to convert to a `Temperature`.
     public init(_ value: Celsius_d) {
-        self.rawValue = .celsius_d(value)
+        self.rawValue = TemperatureTypes.celsius_d(value)
     }
 
     /// Create a `Temperature` by converting a `Fahrenheit_t`.
     ///
     /// - Parameter value: A `Fahrenheit_t` value to convert to a `Temperature`.
     public init(_ value: Fahrenheit_t) {
-        self.rawValue = .fahrenheit_t(value)
+        self.rawValue = TemperatureTypes.fahrenheit_t(value)
     }
 
     /// Create a `Temperature` by converting a `Fahrenheit_u`.
     ///
     /// - Parameter value: A `Fahrenheit_u` value to convert to a `Temperature`.
     public init(_ value: Fahrenheit_u) {
-        self.rawValue = .fahrenheit_u(value)
+        self.rawValue = TemperatureTypes.fahrenheit_u(value)
     }
 
     /// Create a `Temperature` by converting a `Fahrenheit_f`.
     ///
     /// - Parameter value: A `Fahrenheit_f` value to convert to a `Temperature`.
     public init(_ value: Fahrenheit_f) {
-        self.rawValue = .fahrenheit_f(value)
+        self.rawValue = TemperatureTypes.fahrenheit_f(value)
     }
 
     /// Create a `Temperature` by converting a `Fahrenheit_d`.
     ///
     /// - Parameter value: A `Fahrenheit_d` value to convert to a `Temperature`.
     public init(_ value: Fahrenheit_d) {
-        self.rawValue = .fahrenheit_d(value)
+        self.rawValue = TemperatureTypes.fahrenheit_d(value)
     }
 
     /// Create a `Temperature` by converting a `Kelvin_t`.
     ///
     /// - Parameter value: A `Kelvin_t` value to convert to a `Temperature`.
     public init(_ value: Kelvin_t) {
-        self.rawValue = .kelvin_t(value)
+        self.rawValue = TemperatureTypes.kelvin_t(value)
     }
 
     /// Create a `Temperature` by converting a `Kelvin_u`.
     ///
     /// - Parameter value: A `Kelvin_u` value to convert to a `Temperature`.
     public init(_ value: Kelvin_u) {
-        self.rawValue = .kelvin_u(value)
+        self.rawValue = TemperatureTypes.kelvin_u(value)
     }
 
     /// Create a `Temperature` by converting a `Kelvin_f`.
     ///
     /// - Parameter value: A `Kelvin_f` value to convert to a `Temperature`.
     public init(_ value: Kelvin_f) {
-        self.rawValue = .kelvin_f(value)
+        self.rawValue = TemperatureTypes.kelvin_f(value)
     }
 
     /// Create a `Temperature` by converting a `Kelvin_d`.
     ///
     /// - Parameter value: A `Kelvin_d` value to convert to a `Temperature`.
     public init(_ value: Kelvin_d) {
-        self.rawValue = .kelvin_d(value)
+        self.rawValue = TemperatureTypes.kelvin_d(value)
     }
 
 // MARK: - Converting From Swift Numeric Types
@@ -831,252 +831,252 @@ public struct Temperature: Sendable, Hashable, Codable {
     ///
     /// - Parameter value: A `Double` celsius value to convert to a `Temperature`.
     public init(celsius value: Double) {
-        self.rawValue = .celsius_d(Celsius_d(value))
+        self.rawValue = TemperatureTypes.celsius_d(Celsius_d(value))
     }
 
     /// Create a `Temperature` by converting a `Double` fahrenheit value.
     ///
     /// - Parameter value: A `Double` fahrenheit value to convert to a `Temperature`.
     public init(fahrenheit value: Double) {
-        self.rawValue = .fahrenheit_d(Fahrenheit_d(value))
+        self.rawValue = TemperatureTypes.fahrenheit_d(Fahrenheit_d(value))
     }
 
     /// Create a `Temperature` by converting a `Double` kelvin value.
     ///
     /// - Parameter value: A `Double` kelvin value to convert to a `Temperature`.
     public init(kelvin value: Double) {
-        self.rawValue = .kelvin_d(Kelvin_d(value))
+        self.rawValue = TemperatureTypes.kelvin_d(Kelvin_d(value))
     }
 
     /// Create a `Temperature` by converting a `Float` celsius value.
     ///
     /// - Parameter value: A `Float` celsius value to convert to a `Temperature`.
     public init(celsius value: Float) {
-        self.rawValue = .celsius_f(Celsius_f(value))
+        self.rawValue = TemperatureTypes.celsius_f(Celsius_f(value))
     }
 
     /// Create a `Temperature` by converting a `Float` fahrenheit value.
     ///
     /// - Parameter value: A `Float` fahrenheit value to convert to a `Temperature`.
     public init(fahrenheit value: Float) {
-        self.rawValue = .fahrenheit_f(Fahrenheit_f(value))
+        self.rawValue = TemperatureTypes.fahrenheit_f(Fahrenheit_f(value))
     }
 
     /// Create a `Temperature` by converting a `Float` kelvin value.
     ///
     /// - Parameter value: A `Float` kelvin value to convert to a `Temperature`.
     public init(kelvin value: Float) {
-        self.rawValue = .kelvin_f(Kelvin_f(value))
+        self.rawValue = TemperatureTypes.kelvin_f(Kelvin_f(value))
     }
 
     /// Create a `Temperature` by converting a `Int` celsius value.
     ///
     /// - Parameter value: A `Int` celsius value to convert to a `Temperature`.
     public init(celsius value: Int) {
-        self.rawValue = .celsius_t(Celsius_t(value))
+        self.rawValue = TemperatureTypes.celsius_t(Celsius_t(value))
     }
 
     /// Create a `Temperature` by converting a `Int` fahrenheit value.
     ///
     /// - Parameter value: A `Int` fahrenheit value to convert to a `Temperature`.
     public init(fahrenheit value: Int) {
-        self.rawValue = .fahrenheit_t(Fahrenheit_t(value))
+        self.rawValue = TemperatureTypes.fahrenheit_t(Fahrenheit_t(value))
     }
 
     /// Create a `Temperature` by converting a `Int` kelvin value.
     ///
     /// - Parameter value: A `Int` kelvin value to convert to a `Temperature`.
     public init(kelvin value: Int) {
-        self.rawValue = .kelvin_t(Kelvin_t(value))
+        self.rawValue = TemperatureTypes.kelvin_t(Kelvin_t(value))
     }
 
     /// Create a `Temperature` by converting a `Int16` celsius value.
     ///
     /// - Parameter value: A `Int16` celsius value to convert to a `Temperature`.
     public init(celsius value: Int16) {
-        self.rawValue = .celsius_t(Celsius_t(value))
+        self.rawValue = TemperatureTypes.celsius_t(Celsius_t(value))
     }
 
     /// Create a `Temperature` by converting a `Int16` fahrenheit value.
     ///
     /// - Parameter value: A `Int16` fahrenheit value to convert to a `Temperature`.
     public init(fahrenheit value: Int16) {
-        self.rawValue = .fahrenheit_t(Fahrenheit_t(value))
+        self.rawValue = TemperatureTypes.fahrenheit_t(Fahrenheit_t(value))
     }
 
     /// Create a `Temperature` by converting a `Int16` kelvin value.
     ///
     /// - Parameter value: A `Int16` kelvin value to convert to a `Temperature`.
     public init(kelvin value: Int16) {
-        self.rawValue = .kelvin_t(Kelvin_t(value))
+        self.rawValue = TemperatureTypes.kelvin_t(Kelvin_t(value))
     }
 
     /// Create a `Temperature` by converting a `Int32` celsius value.
     ///
     /// - Parameter value: A `Int32` celsius value to convert to a `Temperature`.
     public init(celsius value: Int32) {
-        self.rawValue = .celsius_t(Celsius_t(value))
+        self.rawValue = TemperatureTypes.celsius_t(Celsius_t(value))
     }
 
     /// Create a `Temperature` by converting a `Int32` fahrenheit value.
     ///
     /// - Parameter value: A `Int32` fahrenheit value to convert to a `Temperature`.
     public init(fahrenheit value: Int32) {
-        self.rawValue = .fahrenheit_t(Fahrenheit_t(value))
+        self.rawValue = TemperatureTypes.fahrenheit_t(Fahrenheit_t(value))
     }
 
     /// Create a `Temperature` by converting a `Int32` kelvin value.
     ///
     /// - Parameter value: A `Int32` kelvin value to convert to a `Temperature`.
     public init(kelvin value: Int32) {
-        self.rawValue = .kelvin_t(Kelvin_t(value))
+        self.rawValue = TemperatureTypes.kelvin_t(Kelvin_t(value))
     }
 
     /// Create a `Temperature` by converting a `Int64` celsius value.
     ///
     /// - Parameter value: A `Int64` celsius value to convert to a `Temperature`.
     public init(celsius value: Int64) {
-        self.rawValue = .celsius_d(Celsius_d(value))
+        self.rawValue = TemperatureTypes.celsius_d(Celsius_d(value))
     }
 
     /// Create a `Temperature` by converting a `Int64` fahrenheit value.
     ///
     /// - Parameter value: A `Int64` fahrenheit value to convert to a `Temperature`.
     public init(fahrenheit value: Int64) {
-        self.rawValue = .fahrenheit_d(Fahrenheit_d(value))
+        self.rawValue = TemperatureTypes.fahrenheit_d(Fahrenheit_d(value))
     }
 
     /// Create a `Temperature` by converting a `Int64` kelvin value.
     ///
     /// - Parameter value: A `Int64` kelvin value to convert to a `Temperature`.
     public init(kelvin value: Int64) {
-        self.rawValue = .kelvin_d(Kelvin_d(value))
+        self.rawValue = TemperatureTypes.kelvin_d(Kelvin_d(value))
     }
 
     /// Create a `Temperature` by converting a `Int8` celsius value.
     ///
     /// - Parameter value: A `Int8` celsius value to convert to a `Temperature`.
     public init(celsius value: Int8) {
-        self.rawValue = .celsius_t(Celsius_t(value))
+        self.rawValue = TemperatureTypes.celsius_t(Celsius_t(value))
     }
 
     /// Create a `Temperature` by converting a `Int8` fahrenheit value.
     ///
     /// - Parameter value: A `Int8` fahrenheit value to convert to a `Temperature`.
     public init(fahrenheit value: Int8) {
-        self.rawValue = .fahrenheit_t(Fahrenheit_t(value))
+        self.rawValue = TemperatureTypes.fahrenheit_t(Fahrenheit_t(value))
     }
 
     /// Create a `Temperature` by converting a `Int8` kelvin value.
     ///
     /// - Parameter value: A `Int8` kelvin value to convert to a `Temperature`.
     public init(kelvin value: Int8) {
-        self.rawValue = .kelvin_t(Kelvin_t(value))
+        self.rawValue = TemperatureTypes.kelvin_t(Kelvin_t(value))
     }
 
     /// Create a `Temperature` by converting a `UInt` celsius value.
     ///
     /// - Parameter value: A `UInt` celsius value to convert to a `Temperature`.
     public init(celsius value: UInt) {
-        self.rawValue = .celsius_u(Celsius_u(value))
+        self.rawValue = TemperatureTypes.celsius_u(Celsius_u(value))
     }
 
     /// Create a `Temperature` by converting a `UInt` fahrenheit value.
     ///
     /// - Parameter value: A `UInt` fahrenheit value to convert to a `Temperature`.
     public init(fahrenheit value: UInt) {
-        self.rawValue = .fahrenheit_u(Fahrenheit_u(value))
+        self.rawValue = TemperatureTypes.fahrenheit_u(Fahrenheit_u(value))
     }
 
     /// Create a `Temperature` by converting a `UInt` kelvin value.
     ///
     /// - Parameter value: A `UInt` kelvin value to convert to a `Temperature`.
     public init(kelvin value: UInt) {
-        self.rawValue = .kelvin_u(Kelvin_u(value))
+        self.rawValue = TemperatureTypes.kelvin_u(Kelvin_u(value))
     }
 
     /// Create a `Temperature` by converting a `UInt16` celsius value.
     ///
     /// - Parameter value: A `UInt16` celsius value to convert to a `Temperature`.
     public init(celsius value: UInt16) {
-        self.rawValue = .celsius_u(Celsius_u(value))
+        self.rawValue = TemperatureTypes.celsius_u(Celsius_u(value))
     }
 
     /// Create a `Temperature` by converting a `UInt16` fahrenheit value.
     ///
     /// - Parameter value: A `UInt16` fahrenheit value to convert to a `Temperature`.
     public init(fahrenheit value: UInt16) {
-        self.rawValue = .fahrenheit_u(Fahrenheit_u(value))
+        self.rawValue = TemperatureTypes.fahrenheit_u(Fahrenheit_u(value))
     }
 
     /// Create a `Temperature` by converting a `UInt16` kelvin value.
     ///
     /// - Parameter value: A `UInt16` kelvin value to convert to a `Temperature`.
     public init(kelvin value: UInt16) {
-        self.rawValue = .kelvin_u(Kelvin_u(value))
+        self.rawValue = TemperatureTypes.kelvin_u(Kelvin_u(value))
     }
 
     /// Create a `Temperature` by converting a `UInt32` celsius value.
     ///
     /// - Parameter value: A `UInt32` celsius value to convert to a `Temperature`.
     public init(celsius value: UInt32) {
-        self.rawValue = .celsius_u(Celsius_u(value))
+        self.rawValue = TemperatureTypes.celsius_u(Celsius_u(value))
     }
 
     /// Create a `Temperature` by converting a `UInt32` fahrenheit value.
     ///
     /// - Parameter value: A `UInt32` fahrenheit value to convert to a `Temperature`.
     public init(fahrenheit value: UInt32) {
-        self.rawValue = .fahrenheit_u(Fahrenheit_u(value))
+        self.rawValue = TemperatureTypes.fahrenheit_u(Fahrenheit_u(value))
     }
 
     /// Create a `Temperature` by converting a `UInt32` kelvin value.
     ///
     /// - Parameter value: A `UInt32` kelvin value to convert to a `Temperature`.
     public init(kelvin value: UInt32) {
-        self.rawValue = .kelvin_u(Kelvin_u(value))
+        self.rawValue = TemperatureTypes.kelvin_u(Kelvin_u(value))
     }
 
     /// Create a `Temperature` by converting a `UInt64` celsius value.
     ///
     /// - Parameter value: A `UInt64` celsius value to convert to a `Temperature`.
     public init(celsius value: UInt64) {
-        self.rawValue = .celsius_d(Celsius_d(value))
+        self.rawValue = TemperatureTypes.celsius_d(Celsius_d(value))
     }
 
     /// Create a `Temperature` by converting a `UInt64` fahrenheit value.
     ///
     /// - Parameter value: A `UInt64` fahrenheit value to convert to a `Temperature`.
     public init(fahrenheit value: UInt64) {
-        self.rawValue = .fahrenheit_d(Fahrenheit_d(value))
+        self.rawValue = TemperatureTypes.fahrenheit_d(Fahrenheit_d(value))
     }
 
     /// Create a `Temperature` by converting a `UInt64` kelvin value.
     ///
     /// - Parameter value: A `UInt64` kelvin value to convert to a `Temperature`.
     public init(kelvin value: UInt64) {
-        self.rawValue = .kelvin_d(Kelvin_d(value))
+        self.rawValue = TemperatureTypes.kelvin_d(Kelvin_d(value))
     }
 
     /// Create a `Temperature` by converting a `UInt8` celsius value.
     ///
     /// - Parameter value: A `UInt8` celsius value to convert to a `Temperature`.
     public init(celsius value: UInt8) {
-        self.rawValue = .celsius_u(Celsius_u(value))
+        self.rawValue = TemperatureTypes.celsius_u(Celsius_u(value))
     }
 
     /// Create a `Temperature` by converting a `UInt8` fahrenheit value.
     ///
     /// - Parameter value: A `UInt8` fahrenheit value to convert to a `Temperature`.
     public init(fahrenheit value: UInt8) {
-        self.rawValue = .fahrenheit_u(Fahrenheit_u(value))
+        self.rawValue = TemperatureTypes.fahrenheit_u(Fahrenheit_u(value))
     }
 
     /// Create a `Temperature` by converting a `UInt8` kelvin value.
     ///
     /// - Parameter value: A `UInt8` kelvin value to convert to a `Temperature`.
     public init(kelvin value: UInt8) {
-        self.rawValue = .kelvin_u(Kelvin_u(value))
+        self.rawValue = TemperatureTypes.kelvin_u(Kelvin_u(value))
     }
 
 }

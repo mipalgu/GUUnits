@@ -488,84 +488,84 @@ public struct Current: Sendable, Hashable, Codable {
     ///
     /// - Parameter value: A `Microamperes_t` value to convert to a `Current`.
     public init(_ value: Microamperes_t) {
-        self.rawValue = .microamperes_t(value)
+        self.rawValue = CurrentTypes.microamperes_t(value)
     }
 
     /// Create a `Current` by converting a `Microamperes_u`.
     ///
     /// - Parameter value: A `Microamperes_u` value to convert to a `Current`.
     public init(_ value: Microamperes_u) {
-        self.rawValue = .microamperes_u(value)
+        self.rawValue = CurrentTypes.microamperes_u(value)
     }
 
     /// Create a `Current` by converting a `Microamperes_f`.
     ///
     /// - Parameter value: A `Microamperes_f` value to convert to a `Current`.
     public init(_ value: Microamperes_f) {
-        self.rawValue = .microamperes_f(value)
+        self.rawValue = CurrentTypes.microamperes_f(value)
     }
 
     /// Create a `Current` by converting a `Microamperes_d`.
     ///
     /// - Parameter value: A `Microamperes_d` value to convert to a `Current`.
     public init(_ value: Microamperes_d) {
-        self.rawValue = .microamperes_d(value)
+        self.rawValue = CurrentTypes.microamperes_d(value)
     }
 
     /// Create a `Current` by converting a `Milliamperes_t`.
     ///
     /// - Parameter value: A `Milliamperes_t` value to convert to a `Current`.
     public init(_ value: Milliamperes_t) {
-        self.rawValue = .milliamperes_t(value)
+        self.rawValue = CurrentTypes.milliamperes_t(value)
     }
 
     /// Create a `Current` by converting a `Milliamperes_u`.
     ///
     /// - Parameter value: A `Milliamperes_u` value to convert to a `Current`.
     public init(_ value: Milliamperes_u) {
-        self.rawValue = .milliamperes_u(value)
+        self.rawValue = CurrentTypes.milliamperes_u(value)
     }
 
     /// Create a `Current` by converting a `Milliamperes_f`.
     ///
     /// - Parameter value: A `Milliamperes_f` value to convert to a `Current`.
     public init(_ value: Milliamperes_f) {
-        self.rawValue = .milliamperes_f(value)
+        self.rawValue = CurrentTypes.milliamperes_f(value)
     }
 
     /// Create a `Current` by converting a `Milliamperes_d`.
     ///
     /// - Parameter value: A `Milliamperes_d` value to convert to a `Current`.
     public init(_ value: Milliamperes_d) {
-        self.rawValue = .milliamperes_d(value)
+        self.rawValue = CurrentTypes.milliamperes_d(value)
     }
 
     /// Create a `Current` by converting a `Amperes_t`.
     ///
     /// - Parameter value: A `Amperes_t` value to convert to a `Current`.
     public init(_ value: Amperes_t) {
-        self.rawValue = .amperes_t(value)
+        self.rawValue = CurrentTypes.amperes_t(value)
     }
 
     /// Create a `Current` by converting a `Amperes_u`.
     ///
     /// - Parameter value: A `Amperes_u` value to convert to a `Current`.
     public init(_ value: Amperes_u) {
-        self.rawValue = .amperes_u(value)
+        self.rawValue = CurrentTypes.amperes_u(value)
     }
 
     /// Create a `Current` by converting a `Amperes_f`.
     ///
     /// - Parameter value: A `Amperes_f` value to convert to a `Current`.
     public init(_ value: Amperes_f) {
-        self.rawValue = .amperes_f(value)
+        self.rawValue = CurrentTypes.amperes_f(value)
     }
 
     /// Create a `Current` by converting a `Amperes_d`.
     ///
     /// - Parameter value: A `Amperes_d` value to convert to a `Current`.
     public init(_ value: Amperes_d) {
-        self.rawValue = .amperes_d(value)
+        self.rawValue = CurrentTypes.amperes_d(value)
     }
 
 // MARK: - Converting From Swift Numeric Types
@@ -831,252 +831,252 @@ public struct Current: Sendable, Hashable, Codable {
     ///
     /// - Parameter value: A `Double` microamperes value to convert to a `Current`.
     public init(microamperes value: Double) {
-        self.rawValue = .microamperes_d(Microamperes_d(value))
+        self.rawValue = CurrentTypes.microamperes_d(Microamperes_d(value))
     }
 
     /// Create a `Current` by converting a `Double` milliamperes value.
     ///
     /// - Parameter value: A `Double` milliamperes value to convert to a `Current`.
     public init(milliamperes value: Double) {
-        self.rawValue = .milliamperes_d(Milliamperes_d(value))
+        self.rawValue = CurrentTypes.milliamperes_d(Milliamperes_d(value))
     }
 
     /// Create a `Current` by converting a `Double` amperes value.
     ///
     /// - Parameter value: A `Double` amperes value to convert to a `Current`.
     public init(amperes value: Double) {
-        self.rawValue = .amperes_d(Amperes_d(value))
+        self.rawValue = CurrentTypes.amperes_d(Amperes_d(value))
     }
 
     /// Create a `Current` by converting a `Float` microamperes value.
     ///
     /// - Parameter value: A `Float` microamperes value to convert to a `Current`.
     public init(microamperes value: Float) {
-        self.rawValue = .microamperes_f(Microamperes_f(value))
+        self.rawValue = CurrentTypes.microamperes_f(Microamperes_f(value))
     }
 
     /// Create a `Current` by converting a `Float` milliamperes value.
     ///
     /// - Parameter value: A `Float` milliamperes value to convert to a `Current`.
     public init(milliamperes value: Float) {
-        self.rawValue = .milliamperes_f(Milliamperes_f(value))
+        self.rawValue = CurrentTypes.milliamperes_f(Milliamperes_f(value))
     }
 
     /// Create a `Current` by converting a `Float` amperes value.
     ///
     /// - Parameter value: A `Float` amperes value to convert to a `Current`.
     public init(amperes value: Float) {
-        self.rawValue = .amperes_f(Amperes_f(value))
+        self.rawValue = CurrentTypes.amperes_f(Amperes_f(value))
     }
 
     /// Create a `Current` by converting a `Int` microamperes value.
     ///
     /// - Parameter value: A `Int` microamperes value to convert to a `Current`.
     public init(microamperes value: Int) {
-        self.rawValue = .microamperes_t(Microamperes_t(value))
+        self.rawValue = CurrentTypes.microamperes_t(Microamperes_t(value))
     }
 
     /// Create a `Current` by converting a `Int` milliamperes value.
     ///
     /// - Parameter value: A `Int` milliamperes value to convert to a `Current`.
     public init(milliamperes value: Int) {
-        self.rawValue = .milliamperes_t(Milliamperes_t(value))
+        self.rawValue = CurrentTypes.milliamperes_t(Milliamperes_t(value))
     }
 
     /// Create a `Current` by converting a `Int` amperes value.
     ///
     /// - Parameter value: A `Int` amperes value to convert to a `Current`.
     public init(amperes value: Int) {
-        self.rawValue = .amperes_t(Amperes_t(value))
+        self.rawValue = CurrentTypes.amperes_t(Amperes_t(value))
     }
 
     /// Create a `Current` by converting a `Int16` microamperes value.
     ///
     /// - Parameter value: A `Int16` microamperes value to convert to a `Current`.
     public init(microamperes value: Int16) {
-        self.rawValue = .microamperes_t(Microamperes_t(value))
+        self.rawValue = CurrentTypes.microamperes_t(Microamperes_t(value))
     }
 
     /// Create a `Current` by converting a `Int16` milliamperes value.
     ///
     /// - Parameter value: A `Int16` milliamperes value to convert to a `Current`.
     public init(milliamperes value: Int16) {
-        self.rawValue = .milliamperes_t(Milliamperes_t(value))
+        self.rawValue = CurrentTypes.milliamperes_t(Milliamperes_t(value))
     }
 
     /// Create a `Current` by converting a `Int16` amperes value.
     ///
     /// - Parameter value: A `Int16` amperes value to convert to a `Current`.
     public init(amperes value: Int16) {
-        self.rawValue = .amperes_t(Amperes_t(value))
+        self.rawValue = CurrentTypes.amperes_t(Amperes_t(value))
     }
 
     /// Create a `Current` by converting a `Int32` microamperes value.
     ///
     /// - Parameter value: A `Int32` microamperes value to convert to a `Current`.
     public init(microamperes value: Int32) {
-        self.rawValue = .microamperes_t(Microamperes_t(value))
+        self.rawValue = CurrentTypes.microamperes_t(Microamperes_t(value))
     }
 
     /// Create a `Current` by converting a `Int32` milliamperes value.
     ///
     /// - Parameter value: A `Int32` milliamperes value to convert to a `Current`.
     public init(milliamperes value: Int32) {
-        self.rawValue = .milliamperes_t(Milliamperes_t(value))
+        self.rawValue = CurrentTypes.milliamperes_t(Milliamperes_t(value))
     }
 
     /// Create a `Current` by converting a `Int32` amperes value.
     ///
     /// - Parameter value: A `Int32` amperes value to convert to a `Current`.
     public init(amperes value: Int32) {
-        self.rawValue = .amperes_t(Amperes_t(value))
+        self.rawValue = CurrentTypes.amperes_t(Amperes_t(value))
     }
 
     /// Create a `Current` by converting a `Int64` microamperes value.
     ///
     /// - Parameter value: A `Int64` microamperes value to convert to a `Current`.
     public init(microamperes value: Int64) {
-        self.rawValue = .microamperes_d(Microamperes_d(value))
+        self.rawValue = CurrentTypes.microamperes_d(Microamperes_d(value))
     }
 
     /// Create a `Current` by converting a `Int64` milliamperes value.
     ///
     /// - Parameter value: A `Int64` milliamperes value to convert to a `Current`.
     public init(milliamperes value: Int64) {
-        self.rawValue = .milliamperes_d(Milliamperes_d(value))
+        self.rawValue = CurrentTypes.milliamperes_d(Milliamperes_d(value))
     }
 
     /// Create a `Current` by converting a `Int64` amperes value.
     ///
     /// - Parameter value: A `Int64` amperes value to convert to a `Current`.
     public init(amperes value: Int64) {
-        self.rawValue = .amperes_d(Amperes_d(value))
+        self.rawValue = CurrentTypes.amperes_d(Amperes_d(value))
     }
 
     /// Create a `Current` by converting a `Int8` microamperes value.
     ///
     /// - Parameter value: A `Int8` microamperes value to convert to a `Current`.
     public init(microamperes value: Int8) {
-        self.rawValue = .microamperes_t(Microamperes_t(value))
+        self.rawValue = CurrentTypes.microamperes_t(Microamperes_t(value))
     }
 
     /// Create a `Current` by converting a `Int8` milliamperes value.
     ///
     /// - Parameter value: A `Int8` milliamperes value to convert to a `Current`.
     public init(milliamperes value: Int8) {
-        self.rawValue = .milliamperes_t(Milliamperes_t(value))
+        self.rawValue = CurrentTypes.milliamperes_t(Milliamperes_t(value))
     }
 
     /// Create a `Current` by converting a `Int8` amperes value.
     ///
     /// - Parameter value: A `Int8` amperes value to convert to a `Current`.
     public init(amperes value: Int8) {
-        self.rawValue = .amperes_t(Amperes_t(value))
+        self.rawValue = CurrentTypes.amperes_t(Amperes_t(value))
     }
 
     /// Create a `Current` by converting a `UInt` microamperes value.
     ///
     /// - Parameter value: A `UInt` microamperes value to convert to a `Current`.
     public init(microamperes value: UInt) {
-        self.rawValue = .microamperes_u(Microamperes_u(value))
+        self.rawValue = CurrentTypes.microamperes_u(Microamperes_u(value))
     }
 
     /// Create a `Current` by converting a `UInt` milliamperes value.
     ///
     /// - Parameter value: A `UInt` milliamperes value to convert to a `Current`.
     public init(milliamperes value: UInt) {
-        self.rawValue = .milliamperes_u(Milliamperes_u(value))
+        self.rawValue = CurrentTypes.milliamperes_u(Milliamperes_u(value))
     }
 
     /// Create a `Current` by converting a `UInt` amperes value.
     ///
     /// - Parameter value: A `UInt` amperes value to convert to a `Current`.
     public init(amperes value: UInt) {
-        self.rawValue = .amperes_u(Amperes_u(value))
+        self.rawValue = CurrentTypes.amperes_u(Amperes_u(value))
     }
 
     /// Create a `Current` by converting a `UInt16` microamperes value.
     ///
     /// - Parameter value: A `UInt16` microamperes value to convert to a `Current`.
     public init(microamperes value: UInt16) {
-        self.rawValue = .microamperes_u(Microamperes_u(value))
+        self.rawValue = CurrentTypes.microamperes_u(Microamperes_u(value))
     }
 
     /// Create a `Current` by converting a `UInt16` milliamperes value.
     ///
     /// - Parameter value: A `UInt16` milliamperes value to convert to a `Current`.
     public init(milliamperes value: UInt16) {
-        self.rawValue = .milliamperes_u(Milliamperes_u(value))
+        self.rawValue = CurrentTypes.milliamperes_u(Milliamperes_u(value))
     }
 
     /// Create a `Current` by converting a `UInt16` amperes value.
     ///
     /// - Parameter value: A `UInt16` amperes value to convert to a `Current`.
     public init(amperes value: UInt16) {
-        self.rawValue = .amperes_u(Amperes_u(value))
+        self.rawValue = CurrentTypes.amperes_u(Amperes_u(value))
     }
 
     /// Create a `Current` by converting a `UInt32` microamperes value.
     ///
     /// - Parameter value: A `UInt32` microamperes value to convert to a `Current`.
     public init(microamperes value: UInt32) {
-        self.rawValue = .microamperes_u(Microamperes_u(value))
+        self.rawValue = CurrentTypes.microamperes_u(Microamperes_u(value))
     }
 
     /// Create a `Current` by converting a `UInt32` milliamperes value.
     ///
     /// - Parameter value: A `UInt32` milliamperes value to convert to a `Current`.
     public init(milliamperes value: UInt32) {
-        self.rawValue = .milliamperes_u(Milliamperes_u(value))
+        self.rawValue = CurrentTypes.milliamperes_u(Milliamperes_u(value))
     }
 
     /// Create a `Current` by converting a `UInt32` amperes value.
     ///
     /// - Parameter value: A `UInt32` amperes value to convert to a `Current`.
     public init(amperes value: UInt32) {
-        self.rawValue = .amperes_u(Amperes_u(value))
+        self.rawValue = CurrentTypes.amperes_u(Amperes_u(value))
     }
 
     /// Create a `Current` by converting a `UInt64` microamperes value.
     ///
     /// - Parameter value: A `UInt64` microamperes value to convert to a `Current`.
     public init(microamperes value: UInt64) {
-        self.rawValue = .microamperes_d(Microamperes_d(value))
+        self.rawValue = CurrentTypes.microamperes_d(Microamperes_d(value))
     }
 
     /// Create a `Current` by converting a `UInt64` milliamperes value.
     ///
     /// - Parameter value: A `UInt64` milliamperes value to convert to a `Current`.
     public init(milliamperes value: UInt64) {
-        self.rawValue = .milliamperes_d(Milliamperes_d(value))
+        self.rawValue = CurrentTypes.milliamperes_d(Milliamperes_d(value))
     }
 
     /// Create a `Current` by converting a `UInt64` amperes value.
     ///
     /// - Parameter value: A `UInt64` amperes value to convert to a `Current`.
     public init(amperes value: UInt64) {
-        self.rawValue = .amperes_d(Amperes_d(value))
+        self.rawValue = CurrentTypes.amperes_d(Amperes_d(value))
     }
 
     /// Create a `Current` by converting a `UInt8` microamperes value.
     ///
     /// - Parameter value: A `UInt8` microamperes value to convert to a `Current`.
     public init(microamperes value: UInt8) {
-        self.rawValue = .microamperes_u(Microamperes_u(value))
+        self.rawValue = CurrentTypes.microamperes_u(Microamperes_u(value))
     }
 
     /// Create a `Current` by converting a `UInt8` milliamperes value.
     ///
     /// - Parameter value: A `UInt8` milliamperes value to convert to a `Current`.
     public init(milliamperes value: UInt8) {
-        self.rawValue = .milliamperes_u(Milliamperes_u(value))
+        self.rawValue = CurrentTypes.milliamperes_u(Milliamperes_u(value))
     }
 
     /// Create a `Current` by converting a `UInt8` amperes value.
     ///
     /// - Parameter value: A `UInt8` amperes value to convert to a `Current`.
     public init(amperes value: UInt8) {
-        self.rawValue = .amperes_u(Amperes_u(value))
+        self.rawValue = CurrentTypes.amperes_u(Amperes_u(value))
     }
 
 }
