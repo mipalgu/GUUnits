@@ -63,7 +63,7 @@ import XCTest
 /// Provides earthg_d unit tests.
 final class Earthg_dTests0: XCTestCase {
 
-    func testearthG_dToearthG_tUsingNeg5000000ExpectingearthG_tDoubleNeg5000000_roundedDoubleInt64_max_nextDownInt64_maxDoubleNeg5000000_roundedDoubleInt64_min_nextUpInt64_minInt64DoubleNeg5000000_rounded() {
+    func testearthG_dToearthG_t() {
         let unit = Earthg_d(-5000000)
         let expected = gs_d_to_gs_t(-5000000)
         let result = Earthg_t(unit).rawValue
@@ -75,51 +75,39 @@ final class Earthg_dTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
-    }
-
-    func testearthG_dToearthG_tUsing0ExpectingearthG_tDouble0_roundedDoubleInt64_max_nextDownInt64_maxDouble0_roundedDoubleInt64_min_nextUpInt64_minInt64Double0_rounded() {
-        let unit = Earthg_d(0)
-        let expected = gs_d_to_gs_t(0)
-        let result = Earthg_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: earthG_t = 1
-        let categoryResult = ReferenceAcceleration(unit).earthG_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        let unit1 = Earthg_d(0)
+        let expected1 = gs_d_to_gs_t(0)
+        let result1 = Earthg_t(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: earthG_t = 1
+        let categoryResult1 = ReferenceAcceleration(unit1).earthG_t.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
         }
-    }
-
-    func testearthG_dToearthG_tUsing5000000ExpectingearthG_tDouble5000000_roundedDoubleInt64_max_nextDownInt64_maxDouble5000000_roundedDoubleInt64_min_nextUpInt64_minInt64Double5000000_rounded() {
-        let unit = Earthg_d(5000000)
-        let expected = gs_d_to_gs_t(5000000)
-        let result = Earthg_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: earthG_t = 1
-        let categoryResult = ReferenceAcceleration(unit).earthG_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        let unit2 = Earthg_d(5000000)
+        let expected2 = gs_d_to_gs_t(5000000)
+        let result2 = Earthg_t(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: earthG_t = 1
+        let categoryResult2 = ReferenceAcceleration(unit2).earthG_t.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
         } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
         }
+        let unit3 = Earthg_d(-Double.greatestFiniteMagnitude)
+        let expected3 = gs_d_to_gs_t(-Double.greatestFiniteMagnitude)
+        let result3 = Earthg_t(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let unit4 = Earthg_d(Double.greatestFiniteMagnitude)
+        let expected4 = gs_d_to_gs_t(Double.greatestFiniteMagnitude)
+        let result4 = Earthg_t(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
     }
 
-    func testearthG_dToearthG_tUsingNegDouble_greatestFiniteMagnitudeExpectingearthG_tInt64_min() {
-        let unit = Earthg_d(-Double.greatestFiniteMagnitude)
-        let expected = gs_d_to_gs_t(-Double.greatestFiniteMagnitude)
-        let result = Earthg_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testearthG_dToearthG_tUsingDouble_greatestFiniteMagnitudeExpectingearthG_tInt64_max() {
-        let unit = Earthg_d(Double.greatestFiniteMagnitude)
-        let expected = gs_d_to_gs_t(Double.greatestFiniteMagnitude)
-        let result = Earthg_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testearthG_dToearthG_uUsingNeg5000000ExpectingearthG_uDoubleNeg5000000_roundedDoubleUInt64_max_nextDownUInt64_maxDoubleNeg5000000_roundedDoubleUInt64_min_nextUpUInt64_minUInt64DoubleNeg5000000_rounded() {
+    func testearthG_dToearthG_u() {
         let unit = Earthg_d(-5000000)
         let expected = gs_d_to_gs_u(-5000000)
         let result = Earthg_u(unit).rawValue
@@ -131,51 +119,39 @@ final class Earthg_dTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
-    }
-
-    func testearthG_dToearthG_uUsing0ExpectingearthG_uDouble0_roundedDoubleUInt64_max_nextDownUInt64_maxDouble0_roundedDoubleUInt64_min_nextUpUInt64_minUInt64Double0_rounded() {
-        let unit = Earthg_d(0)
-        let expected = gs_d_to_gs_u(0)
-        let result = Earthg_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: earthG_u = 1
-        let categoryResult = ReferenceAcceleration(unit).earthG_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        let unit1 = Earthg_d(0)
+        let expected1 = gs_d_to_gs_u(0)
+        let result1 = Earthg_u(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: earthG_u = 1
+        let categoryResult1 = ReferenceAcceleration(unit1).earthG_u.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
         }
-    }
-
-    func testearthG_dToearthG_uUsing5000000ExpectingearthG_uDouble5000000_roundedDoubleUInt64_max_nextDownUInt64_maxDouble5000000_roundedDoubleUInt64_min_nextUpUInt64_minUInt64Double5000000_rounded() {
-        let unit = Earthg_d(5000000)
-        let expected = gs_d_to_gs_u(5000000)
-        let result = Earthg_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: earthG_u = 1
-        let categoryResult = ReferenceAcceleration(unit).earthG_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        let unit2 = Earthg_d(5000000)
+        let expected2 = gs_d_to_gs_u(5000000)
+        let result2 = Earthg_u(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: earthG_u = 1
+        let categoryResult2 = ReferenceAcceleration(unit2).earthG_u.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
         } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
         }
+        let unit3 = Earthg_d(-Double.greatestFiniteMagnitude)
+        let expected3 = gs_d_to_gs_u(-Double.greatestFiniteMagnitude)
+        let result3 = Earthg_u(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let unit4 = Earthg_d(Double.greatestFiniteMagnitude)
+        let expected4 = gs_d_to_gs_u(Double.greatestFiniteMagnitude)
+        let result4 = Earthg_u(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
     }
 
-    func testearthG_dToearthG_uUsingNegDouble_greatestFiniteMagnitudeExpectingearthG_uUInt64_min() {
-        let unit = Earthg_d(-Double.greatestFiniteMagnitude)
-        let expected = gs_d_to_gs_u(-Double.greatestFiniteMagnitude)
-        let result = Earthg_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testearthG_dToearthG_uUsingDouble_greatestFiniteMagnitudeExpectingearthG_uUInt64_max() {
-        let unit = Earthg_d(Double.greatestFiniteMagnitude)
-        let expected = gs_d_to_gs_u(Double.greatestFiniteMagnitude)
-        let result = Earthg_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testearthG_dToearthG_fUsingNeg5000000ExpectingearthG_fDoubleNeg5000000() {
+    func testearthG_dToearthG_f() {
         let unit = Earthg_d(-5000000)
         let expected = gs_d_to_gs_f(-5000000)
         let result = Earthg_f(unit).rawValue
@@ -187,138 +163,336 @@ final class Earthg_dTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
-    }
-
-    func testearthG_dToearthG_fUsing0ExpectingearthG_fDouble0() {
-        let unit = Earthg_d(0)
-        let expected = gs_d_to_gs_f(0)
-        let result = Earthg_f(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: earthG_f = 1.0
-        let categoryResult = ReferenceAcceleration(unit).earthG_f.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        let unit1 = Earthg_d(0)
+        let expected1 = gs_d_to_gs_f(0)
+        let result1 = Earthg_f(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: earthG_f = 1.0
+        let categoryResult1 = ReferenceAcceleration(unit1).earthG_f.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
         }
-    }
-
-    func testearthG_dToearthG_fUsing5000000ExpectingearthG_fDouble5000000() {
-        let unit = Earthg_d(5000000)
-        let expected = gs_d_to_gs_f(5000000)
-        let result = Earthg_f(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: earthG_f = 1.0
-        let categoryResult = ReferenceAcceleration(unit).earthG_f.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        let unit2 = Earthg_d(5000000)
+        let expected2 = gs_d_to_gs_f(5000000)
+        let result2 = Earthg_f(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: earthG_f = 1.0
+        let categoryResult2 = ReferenceAcceleration(unit2).earthG_f.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
         } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
         }
+        let unit3 = Earthg_d(-Double.greatestFiniteMagnitude)
+        let expected3 = gs_d_to_gs_f(-Double.greatestFiniteMagnitude)
+        let result3 = Earthg_f(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let unit4 = Earthg_d(Double.greatestFiniteMagnitude)
+        let expected4 = gs_d_to_gs_f(Double.greatestFiniteMagnitude)
+        let result4 = Earthg_f(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
     }
 
-    func testearthG_dToearthG_fUsingNegDouble_greatestFiniteMagnitudeExpectingearthG_fNegFloat_greatestFiniteMagnitude() {
-        let unit = Earthg_d(-Double.greatestFiniteMagnitude)
-        let expected = gs_d_to_gs_f(-Double.greatestFiniteMagnitude)
-        let result = Earthg_f(unit).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testearthG_dToearthG_fUsingDouble_greatestFiniteMagnitudeExpectingearthG_fFloat_greatestFiniteMagnitude() {
-        let unit = Earthg_d(Double.greatestFiniteMagnitude)
-        let expected = gs_d_to_gs_f(Double.greatestFiniteMagnitude)
-        let result = Earthg_f(unit).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testearthG_dToint8_tUsing0_0Expecting0() {
+    func testearthG_dToInt8() {
         let expected = gs_d_to_i8(0.0)
         let result = Int8(Earthg_d(0.0))
         XCTAssertEqual(expected, result)
+        let expected1 = gs_d_to_i8(5.0)
+        let result1 = Int8(Earthg_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = gs_d_to_i8(earthG_d(-Double.greatestFiniteMagnitude))
+        let result2 = Int8(Earthg_d(earthG_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = gs_d_to_i8(earthG_d(Double.greatestFiniteMagnitude))
+        let result3 = Int8(Earthg_d(earthG_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testearthG_dToint8_tUsing5_0Expecting5() {
-        let expected = gs_d_to_i8(5.0)
-        let result = Int8(Earthg_d(5.0))
-        XCTAssertEqual(expected, result)
-    }
-
-    func testearthG_dToint8_tUsingearthG_dNegDouble_greatestFiniteMagnitudeExpectingInt8Int8_min() {
-        let expected = gs_d_to_i8(earthG_d(-Double.greatestFiniteMagnitude))
-        let result = Int8(Earthg_d(earthG_d(-Double.greatestFiniteMagnitude)))
-        XCTAssertEqual(expected, result)
-    }
-
-    func testearthG_dToint8_tUsingearthG_dDouble_greatestFiniteMagnitudeExpectingInt8Int8_max() {
-        let expected = gs_d_to_i8(earthG_d(Double.greatestFiniteMagnitude))
-        let result = Int8(Earthg_d(earthG_d(Double.greatestFiniteMagnitude)))
-        XCTAssertEqual(expected, result)
-    }
-
-    func testint8_tToearthG_dUsing0Expecting0_0() {
+    func testInt8ToearthG_d() {
         let expected = i8_to_gs_d(0)
         let result = Earthg_d(Int8(0)).rawValue
         XCTAssertEqual(expected, result)
+        let expected1 = i8_to_gs_d(5)
+        let result1 = Earthg_d(Int8(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = i8_to_gs_d(Int8(Int8.min))
+        let result2 = Earthg_d(Int8(Int8(Int8.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = i8_to_gs_d(Int8(Int8.max))
+        let result3 = Earthg_d(Int8(Int8(Int8.max))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testint8_tToearthG_dUsing5Expecting5_0() {
-        let expected = i8_to_gs_d(5)
-        let result = Earthg_d(Int8(5)).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testint8_tToearthG_dUsingInt8Int8_minExpectingearthG_dInt8_min() {
-        let expected = i8_to_gs_d(Int8(Int8.min))
-        let result = Earthg_d(Int8(Int8(Int8.min))).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testint8_tToearthG_dUsingInt8Int8_maxExpectingearthG_dInt8_max() {
-        let expected = i8_to_gs_d(Int8(Int8.max))
-        let result = Earthg_d(Int8(Int8(Int8.max))).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testearthG_dToint16_tUsing0_0Expecting0() {
+    func testearthG_dToInt16() {
         let expected = gs_d_to_i16(0.0)
         let result = Int16(Earthg_d(0.0))
         XCTAssertEqual(expected, result)
+        let expected1 = gs_d_to_i16(5.0)
+        let result1 = Int16(Earthg_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = gs_d_to_i16(earthG_d(-Double.greatestFiniteMagnitude))
+        let result2 = Int16(Earthg_d(earthG_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = gs_d_to_i16(earthG_d(Double.greatestFiniteMagnitude))
+        let result3 = Int16(Earthg_d(earthG_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testearthG_dToint16_tUsing5_0Expecting5() {
-        let expected = gs_d_to_i16(5.0)
-        let result = Int16(Earthg_d(5.0))
-        XCTAssertEqual(expected, result)
-    }
-
-    func testearthG_dToint16_tUsingearthG_dNegDouble_greatestFiniteMagnitudeExpectingInt16Int16_min() {
-        let expected = gs_d_to_i16(earthG_d(-Double.greatestFiniteMagnitude))
-        let result = Int16(Earthg_d(earthG_d(-Double.greatestFiniteMagnitude)))
-        XCTAssertEqual(expected, result)
-    }
-
-    func testearthG_dToint16_tUsingearthG_dDouble_greatestFiniteMagnitudeExpectingInt16Int16_max() {
-        let expected = gs_d_to_i16(earthG_d(Double.greatestFiniteMagnitude))
-        let result = Int16(Earthg_d(earthG_d(Double.greatestFiniteMagnitude)))
-        XCTAssertEqual(expected, result)
-    }
-
-    func testint16_tToearthG_dUsing0Expecting0_0() {
+    func testInt16ToearthG_d() {
         let expected = i16_to_gs_d(0)
         let result = Earthg_d(Int16(0)).rawValue
         XCTAssertEqual(expected, result)
+        let expected1 = i16_to_gs_d(5)
+        let result1 = Earthg_d(Int16(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = i16_to_gs_d(Int16(Int16.min))
+        let result2 = Earthg_d(Int16(Int16(Int16.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = i16_to_gs_d(Int16(Int16.max))
+        let result3 = Earthg_d(Int16(Int16(Int16.max))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testint16_tToearthG_dUsing5Expecting5_0() {
-        let expected = i16_to_gs_d(5)
-        let result = Earthg_d(Int16(5)).rawValue
+    func testearthG_dToInt32() {
+        let expected = gs_d_to_i32(0.0)
+        let result = Int32(Earthg_d(0.0))
         XCTAssertEqual(expected, result)
+        let expected1 = gs_d_to_i32(5.0)
+        let result1 = Int32(Earthg_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = gs_d_to_i32(earthG_d(-Double.greatestFiniteMagnitude))
+        let result2 = Int32(Earthg_d(earthG_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = gs_d_to_i32(earthG_d(Double.greatestFiniteMagnitude))
+        let result3 = Int32(Earthg_d(earthG_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testint16_tToearthG_dUsingInt16Int16_minExpectingearthG_dInt16_min() {
-        let expected = i16_to_gs_d(Int16(Int16.min))
-        let result = Earthg_d(Int16(Int16(Int16.min))).rawValue
+    func testInt32ToearthG_d() {
+        let expected = i32_to_gs_d(0)
+        let result = Earthg_d(Int32(0)).rawValue
         XCTAssertEqual(expected, result)
+        let expected1 = i32_to_gs_d(5)
+        let result1 = Earthg_d(Int32(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = i32_to_gs_d(Int32(Int32.min))
+        let result2 = Earthg_d(Int32(Int32(Int32.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = i32_to_gs_d(Int32(Int32.max))
+        let result3 = Earthg_d(Int32(Int32(Int32.max))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testearthG_dToInt64() {
+        let expected = gs_d_to_i64(0.0)
+        let result = Int64(Earthg_d(0.0))
+        XCTAssertEqual(expected, result)
+        let expected1 = gs_d_to_i64(5.0)
+        let result1 = Int64(Earthg_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = gs_d_to_i64(earthG_d(-Double.greatestFiniteMagnitude))
+        let result2 = Int64(Earthg_d(earthG_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = gs_d_to_i64(earthG_d(Double.greatestFiniteMagnitude))
+        let result3 = Int64(Earthg_d(earthG_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testInt64ToearthG_d() {
+        let expected = i64_to_gs_d(0)
+        let result = Earthg_d(Int64(0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = i64_to_gs_d(5)
+        let result1 = Earthg_d(Int64(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = i64_to_gs_d(Int64(Int64.min))
+        let result2 = Earthg_d(Int64(Int64(Int64.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = i64_to_gs_d(Int64(Int64.max))
+        let result3 = Earthg_d(Int64(Int64(Int64.max))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testearthG_dToUInt8() {
+        let expected = gs_d_to_u8(0.0)
+        let result = UInt8(Earthg_d(0.0))
+        XCTAssertEqual(expected, result)
+        let expected1 = gs_d_to_u8(5.0)
+        let result1 = UInt8(Earthg_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = gs_d_to_u8(earthG_d(-Double.greatestFiniteMagnitude))
+        let result2 = UInt8(Earthg_d(earthG_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = gs_d_to_u8(earthG_d(Double.greatestFiniteMagnitude))
+        let result3 = UInt8(Earthg_d(earthG_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testUInt8ToearthG_d() {
+        let expected = u8_to_gs_d(0)
+        let result = Earthg_d(UInt8(0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = u8_to_gs_d(5)
+        let result1 = Earthg_d(UInt8(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u8_to_gs_d(UInt8(UInt8.min))
+        let result2 = Earthg_d(UInt8(UInt8(UInt8.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u8_to_gs_d(UInt8(UInt8.max))
+        let result3 = Earthg_d(UInt8(UInt8(UInt8.max))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testearthG_dToUInt16() {
+        let expected = gs_d_to_u16(0.0)
+        let result = UInt16(Earthg_d(0.0))
+        XCTAssertEqual(expected, result)
+        let expected1 = gs_d_to_u16(5.0)
+        let result1 = UInt16(Earthg_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = gs_d_to_u16(earthG_d(-Double.greatestFiniteMagnitude))
+        let result2 = UInt16(Earthg_d(earthG_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = gs_d_to_u16(earthG_d(Double.greatestFiniteMagnitude))
+        let result3 = UInt16(Earthg_d(earthG_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testUInt16ToearthG_d() {
+        let expected = u16_to_gs_d(0)
+        let result = Earthg_d(UInt16(0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = u16_to_gs_d(5)
+        let result1 = Earthg_d(UInt16(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u16_to_gs_d(UInt16(UInt16.min))
+        let result2 = Earthg_d(UInt16(UInt16(UInt16.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u16_to_gs_d(UInt16(UInt16.max))
+        let result3 = Earthg_d(UInt16(UInt16(UInt16.max))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testearthG_dToUInt32() {
+        let expected = gs_d_to_u32(0.0)
+        let result = UInt32(Earthg_d(0.0))
+        XCTAssertEqual(expected, result)
+        let expected1 = gs_d_to_u32(5.0)
+        let result1 = UInt32(Earthg_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = gs_d_to_u32(earthG_d(-Double.greatestFiniteMagnitude))
+        let result2 = UInt32(Earthg_d(earthG_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = gs_d_to_u32(earthG_d(Double.greatestFiniteMagnitude))
+        let result3 = UInt32(Earthg_d(earthG_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testUInt32ToearthG_d() {
+        let expected = u32_to_gs_d(0)
+        let result = Earthg_d(UInt32(0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = u32_to_gs_d(5)
+        let result1 = Earthg_d(UInt32(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u32_to_gs_d(UInt32(UInt32.min))
+        let result2 = Earthg_d(UInt32(UInt32(UInt32.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u32_to_gs_d(UInt32(UInt32.max))
+        let result3 = Earthg_d(UInt32(UInt32(UInt32.max))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testearthG_dToUInt64() {
+        let expected = gs_d_to_u64(0.0)
+        let result = UInt64(Earthg_d(0.0))
+        XCTAssertEqual(expected, result)
+        let expected1 = gs_d_to_u64(5.0)
+        let result1 = UInt64(Earthg_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = gs_d_to_u64(earthG_d(-Double.greatestFiniteMagnitude))
+        let result2 = UInt64(Earthg_d(earthG_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = gs_d_to_u64(earthG_d(Double.greatestFiniteMagnitude))
+        let result3 = UInt64(Earthg_d(earthG_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testUInt64ToearthG_d() {
+        let expected = u64_to_gs_d(0)
+        let result = Earthg_d(UInt64(0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = u64_to_gs_d(5)
+        let result1 = Earthg_d(UInt64(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u64_to_gs_d(UInt64(UInt64.min))
+        let result2 = Earthg_d(UInt64(UInt64(UInt64.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u64_to_gs_d(UInt64(UInt64.max))
+        let result3 = Earthg_d(UInt64(UInt64(UInt64.max))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testearthG_dToFloat() {
+        let expected = gs_d_to_f(0.0)
+        let result = Float(Earthg_d(0.0))
+        XCTAssertEqual(expected, result)
+        let expected1 = gs_d_to_f(5.0)
+        let result1 = Float(Earthg_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = gs_d_to_f(earthG_d(-Double.greatestFiniteMagnitude))
+        let result2 = Float(Earthg_d(earthG_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = gs_d_to_f(earthG_d(Double.greatestFiniteMagnitude))
+        let result3 = Float(Earthg_d(earthG_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testFloatToearthG_d() {
+        let expected = f_to_gs_d(0.0)
+        let result = Earthg_d(Float(0.0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = f_to_gs_d(5.0)
+        let result1 = Earthg_d(Float(5.0)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = f_to_gs_d(Float(-Float.greatestFiniteMagnitude))
+        let result2 = Earthg_d(Float(Float(-Float.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = f_to_gs_d(Float(Float.greatestFiniteMagnitude))
+        let result3 = Earthg_d(Float(Float(Float.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testearthG_dToDouble() {
+        let expected = gs_d_to_d(0.0)
+        let result = Double(Earthg_d(0.0))
+        XCTAssertEqual(expected, result)
+        let expected1 = gs_d_to_d(5.0)
+        let result1 = Double(Earthg_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = gs_d_to_d(earthG_d(-Double.greatestFiniteMagnitude))
+        let result2 = Double(Earthg_d(earthG_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = gs_d_to_d(earthG_d(Double.greatestFiniteMagnitude))
+        let result3 = Double(Earthg_d(earthG_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testDoubleToearthG_d() {
+        let expected = d_to_gs_d(0.0)
+        let result = Earthg_d(Double(0.0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = d_to_gs_d(5.0)
+        let result1 = Earthg_d(Double(5.0)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = d_to_gs_d(Double(-Double.greatestFiniteMagnitude))
+        let result2 = Earthg_d(Double(Double(-Double.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = d_to_gs_d(Double(Double.greatestFiniteMagnitude))
+        let result3 = Earthg_d(Double(Double(Double.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
 }

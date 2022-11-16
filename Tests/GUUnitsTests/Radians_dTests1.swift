@@ -63,410 +63,79 @@ import XCTest
 /// Provides radians_d unit tests.
 final class Radians_dTests1: XCTestCase {
 
-    func testradians_dTodegrees_uUsing0_0Expectingdegrees_u0_0Double_pi180_0_rounded() {
-        let unit = Radians_d(0.0)
-        let expected = rad_d_to_deg_u(0.0)
-        let result = Degrees_u(unit).rawValue
+    func testUInt64Toradians_d() {
+        let expected = u64_to_rad_d(0)
+        let result = Radians_d(UInt64(0)).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: degrees_u = 1
-        let categoryResult = Angle(unit).degrees_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = u64_to_rad_d(5)
+        let result1 = Radians_d(UInt64(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u64_to_rad_d(UInt64(UInt64.min))
+        let result2 = Radians_d(UInt64(UInt64(UInt64.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u64_to_rad_d(UInt64(UInt64.max))
+        let result3 = Radians_d(UInt64(UInt64(UInt64.max))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testradians_dTodegrees_uUsing2500_0Expectingdegrees_u2500_0Double_pi180_0_rounded() {
-        let unit = Radians_d(2500.0)
-        let expected = rad_d_to_deg_u(2500.0)
-        let result = Degrees_u(unit).rawValue
+    func testradians_dToFloat() {
+        let expected = rad_d_to_f(0.0)
+        let result = Float(Radians_d(0.0))
         XCTAssertEqual(expected, result)
-        let tolerance: degrees_u = 1
-        let categoryResult = Angle(unit).degrees_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = rad_d_to_f(5.0)
+        let result1 = Float(Radians_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = rad_d_to_f(radians_d(-Double.greatestFiniteMagnitude))
+        let result2 = Float(Radians_d(radians_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = rad_d_to_f(radians_d(Double.greatestFiniteMagnitude))
+        let result3 = Float(Radians_d(radians_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testradians_dTodegrees_uUsing25000_0Expectingdegrees_u25000_0Double_pi180_0_rounded() {
-        let unit = Radians_d(25000.0)
-        let expected = rad_d_to_deg_u(25000.0)
-        let result = Degrees_u(unit).rawValue
+    func testFloatToradians_d() {
+        let expected = f_to_rad_d(0.0)
+        let result = Radians_d(Float(0.0)).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: degrees_u = 1
-        let categoryResult = Angle(unit).degrees_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = f_to_rad_d(5.0)
+        let result1 = Radians_d(Float(5.0)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = f_to_rad_d(Float(-Float.greatestFiniteMagnitude))
+        let result2 = Radians_d(Float(Float(-Float.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = f_to_rad_d(Float(Float.greatestFiniteMagnitude))
+        let result3 = Radians_d(Float(Float(Float.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testradians_dTodegrees_uUsing250000_0Expectingdegrees_u250000_0Double_pi180_0_rounded() {
-        let unit = Radians_d(250000.0)
-        let expected = rad_d_to_deg_u(250000.0)
-        let result = Degrees_u(unit).rawValue
+    func testradians_dToDouble() {
+        let expected = rad_d_to_d(0.0)
+        let result = Double(Radians_d(0.0))
         XCTAssertEqual(expected, result)
-        let tolerance: degrees_u = 1
-        let categoryResult = Angle(unit).degrees_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = rad_d_to_d(5.0)
+        let result1 = Double(Radians_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = rad_d_to_d(radians_d(-Double.greatestFiniteMagnitude))
+        let result2 = Double(Radians_d(radians_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = rad_d_to_d(radians_d(Double.greatestFiniteMagnitude))
+        let result3 = Double(Radians_d(radians_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testradians_dTodegrees_uUsing2500000_0Expectingdegrees_u2500000_0Double_pi180_0_rounded() {
-        let unit = Radians_d(2500000.0)
-        let expected = rad_d_to_deg_u(2500000.0)
-        let result = Degrees_u(unit).rawValue
+    func testDoubleToradians_d() {
+        let expected = d_to_rad_d(0.0)
+        let result = Radians_d(Double(0.0)).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: degrees_u = 1
-        let categoryResult = Angle(unit).degrees_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testradians_dTodegrees_uUsing3_14Expectingdegrees_u3_14Double_pi180_0_rounded() {
-        let unit = Radians_d(3.14)
-        let expected = rad_d_to_deg_u(3.14)
-        let result = Degrees_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: degrees_u = 1
-        let categoryResult = Angle(unit).degrees_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testradians_dTodegrees_uUsing180_0Expectingdegrees_u180_0Double_pi180_0_rounded() {
-        let unit = Radians_d(180.0)
-        let expected = rad_d_to_deg_u(180.0)
-        let result = Degrees_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: degrees_u = 1
-        let categoryResult = Angle(unit).degrees_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testradians_dTodegrees_uUsing360_0Expectingdegrees_u360_0Double_pi180_0_rounded() {
-        let unit = Radians_d(360.0)
-        let expected = rad_d_to_deg_u(360.0)
-        let result = Degrees_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: degrees_u = 1
-        let categoryResult = Angle(unit).degrees_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testradians_dTodegrees_uUsing6_28Expectingdegrees_u6_28Double_pi180_0_rounded() {
-        let unit = Radians_d(6.28)
-        let expected = rad_d_to_deg_u(6.28)
-        let result = Degrees_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: degrees_u = 1
-        let categoryResult = Angle(unit).degrees_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testradians_dTodegrees_uUsing90_0Expectingdegrees_u90_0Double_pi180_0_rounded() {
-        let unit = Radians_d(90.0)
-        let expected = rad_d_to_deg_u(90.0)
-        let result = Degrees_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: degrees_u = 1
-        let categoryResult = Angle(unit).degrees_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testradians_dTodegrees_uUsing1_57Expectingdegrees_u1_57Double_pi180_0_rounded() {
-        let unit = Radians_d(1.57)
-        let expected = rad_d_to_deg_u(1.57)
-        let result = Degrees_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: degrees_u = 1
-        let categoryResult = Angle(unit).degrees_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testradians_dTodegrees_uUsingNeg1_57Expecting0() {
-        let unit = Radians_d(-1.57)
-        let expected = rad_d_to_deg_u(-1.57)
-        let result = Degrees_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: degrees_u = 1
-        let categoryResult = Angle(unit).degrees_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testradians_dTodegrees_uUsingNeg90_0Expecting0() {
-        let unit = Radians_d(-90.0)
-        let expected = rad_d_to_deg_u(-90.0)
-        let result = Degrees_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: degrees_u = 1
-        let categoryResult = Angle(unit).degrees_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testradians_dTodegrees_uUsingNeg6_28Expecting0() {
-        let unit = Radians_d(-6.28)
-        let expected = rad_d_to_deg_u(-6.28)
-        let result = Degrees_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: degrees_u = 1
-        let categoryResult = Angle(unit).degrees_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testradians_dTodegrees_uUsingNeg360_0Expecting0() {
-        let unit = Radians_d(-360.0)
-        let expected = rad_d_to_deg_u(-360.0)
-        let result = Degrees_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: degrees_u = 1
-        let categoryResult = Angle(unit).degrees_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testradians_dTodegrees_uUsingNeg180_0Expecting0() {
-        let unit = Radians_d(-180.0)
-        let expected = rad_d_to_deg_u(-180.0)
-        let result = Degrees_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: degrees_u = 1
-        let categoryResult = Angle(unit).degrees_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testradians_dTodegrees_uUsingNeg3_14Expecting0() {
-        let unit = Radians_d(-3.14)
-        let expected = rad_d_to_deg_u(-3.14)
-        let result = Degrees_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: degrees_u = 1
-        let categoryResult = Angle(unit).degrees_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testradians_dTodegrees_uUsingNeg250_0Expecting0() {
-        let unit = Radians_d(-250.0)
-        let expected = rad_d_to_deg_u(-250.0)
-        let result = Degrees_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: degrees_u = 1
-        let categoryResult = Angle(unit).degrees_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testradians_dTodegrees_uUsingNeg2500_0Expecting0() {
-        let unit = Radians_d(-2500.0)
-        let expected = rad_d_to_deg_u(-2500.0)
-        let result = Degrees_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: degrees_u = 1
-        let categoryResult = Angle(unit).degrees_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testradians_dTodegrees_uUsingNeg25000_0Expecting0() {
-        let unit = Radians_d(-25000.0)
-        let expected = rad_d_to_deg_u(-25000.0)
-        let result = Degrees_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: degrees_u = 1
-        let categoryResult = Angle(unit).degrees_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testradians_dTodegrees_uUsingNeg250000_0Expecting0() {
-        let unit = Radians_d(-250000.0)
-        let expected = rad_d_to_deg_u(-250000.0)
-        let result = Degrees_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: degrees_u = 1
-        let categoryResult = Angle(unit).degrees_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testradians_dTodegrees_uUsingNeg2500000_0Expecting0() {
-        let unit = Radians_d(-2500000.0)
-        let expected = rad_d_to_deg_u(-2500000.0)
-        let result = Degrees_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: degrees_u = 1
-        let categoryResult = Angle(unit).degrees_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testradians_dTodegrees_uUsingNegDouble_greatestFiniteMagnitudeExpectingUInt64_min() {
-        let unit = Radians_d(-Double.greatestFiniteMagnitude)
-        let expected = rad_d_to_deg_u(-Double.greatestFiniteMagnitude)
-        let result = Degrees_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testradians_dTodegrees_uUsingDouble_greatestFiniteMagnitudeExpectingUInt64_max() {
-        let unit = Radians_d(Double.greatestFiniteMagnitude)
-        let expected = rad_d_to_deg_u(Double.greatestFiniteMagnitude)
-        let result = Degrees_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testradians_dToradians_uUsing0_0Expecting0() {
-        let unit = Radians_d(0.0)
-        let expected = rad_d_to_rad_u(0.0)
-        let result = Radians_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: radians_u = 1
-        let categoryResult = Angle(unit).radians_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testradians_dToradians_uUsingradians_dNegDouble_greatestFiniteMagnitudeExpectingradians_uUInt64_min() {
-        let unit = Radians_d(radians_d(-Double.greatestFiniteMagnitude))
-        let expected = rad_d_to_rad_u(radians_d(-Double.greatestFiniteMagnitude))
-        let result = Radians_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: radians_u = 1
-        let categoryResult = Angle(unit).radians_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testradians_dToradians_uUsingradians_dDouble_greatestFiniteMagnitudeExpectingradians_uUInt64_max() {
-        let unit = Radians_d(radians_d(Double.greatestFiniteMagnitude))
-        let expected = rad_d_to_rad_u(radians_d(Double.greatestFiniteMagnitude))
-        let result = Radians_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: radians_u = 1
-        let categoryResult = Angle(unit).radians_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testradians_dToradians_uUsing5_0Expecting5() {
-        let unit = Radians_d(5.0)
-        let expected = rad_d_to_rad_u(5.0)
-        let result = Radians_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: radians_u = 1
-        let categoryResult = Angle(unit).radians_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testradians_dTodegrees_fUsing250_0Expectingdegrees_f250_0Double_pi180_0() {
-        let unit = Radians_d(250.0)
-        let expected = rad_d_to_deg_f(250.0)
-        let result = Degrees_f(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: degrees_f = 1.0
-        let categoryResult = Angle(unit).degrees_f.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testradians_dTodegrees_fUsing0_0Expectingdegrees_f0_0Double_pi180_0() {
-        let unit = Radians_d(0.0)
-        let expected = rad_d_to_deg_f(0.0)
-        let result = Degrees_f(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: degrees_f = 1.0
-        let categoryResult = Angle(unit).degrees_f.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = d_to_rad_d(5.0)
+        let result1 = Radians_d(Double(5.0)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = d_to_rad_d(Double(-Double.greatestFiniteMagnitude))
+        let result2 = Radians_d(Double(Double(-Double.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = d_to_rad_d(Double(Double.greatestFiniteMagnitude))
+        let result3 = Radians_d(Double(Double(Double.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
 }

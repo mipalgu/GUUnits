@@ -63,424 +63,139 @@ import XCTest
 /// Provides microamperes_f unit tests.
 final class Microamperes_fTests1: XCTestCase {
 
-    func testmicroamperes_fToamperes_tUsingNegFloat_greatestFiniteMagnitudeExpectingamperes_tInt64_min() {
-        let unit = Microamperes_f(-Float.greatestFiniteMagnitude)
-        let expected = uA_f_to_A_t(-Float.greatestFiniteMagnitude)
-        let result = Amperes_t(unit).rawValue
+    func testUInt16Tomicroamperes_f() {
+        let expected = u16_to_uA_f(0)
+        let result = Microamperes_f(UInt16(0)).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: amperes_t = 1
-        let categoryResult = Current(unit).amperes_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = u16_to_uA_f(5)
+        let result1 = Microamperes_f(UInt16(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u16_to_uA_f(UInt16(UInt16.min))
+        let result2 = Microamperes_f(UInt16(UInt16(UInt16.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u16_to_uA_f(UInt16(UInt16.max))
+        let result3 = Microamperes_f(UInt16(UInt16(UInt16.max))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testmicroamperes_fToamperes_tUsingFloat_greatestFiniteMagnitudeExpectingamperes_tInt64_max() {
-        let unit = Microamperes_f(Float.greatestFiniteMagnitude)
-        let expected = uA_f_to_A_t(Float.greatestFiniteMagnitude)
-        let result = Amperes_t(unit).rawValue
+    func testmicroamperes_fToUInt32() {
+        let expected = uA_f_to_u32(0.0)
+        let result = UInt32(Microamperes_f(0.0))
         XCTAssertEqual(expected, result)
-        let tolerance: amperes_t = 1
-        let categoryResult = Current(unit).amperes_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = uA_f_to_u32(5.0)
+        let result1 = UInt32(Microamperes_f(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = uA_f_to_u32(microamperes_f(-Float.greatestFiniteMagnitude))
+        let result2 = UInt32(Microamperes_f(microamperes_f(-Float.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = uA_f_to_u32(microamperes_f(Float.greatestFiniteMagnitude))
+        let result3 = UInt32(Microamperes_f(microamperes_f(Float.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testmicroamperes_fTomicroamperes_uUsing0_0Expecting0() {
-        let unit = Microamperes_f(0.0)
-        let expected = uA_f_to_uA_u(0.0)
-        let result = Microamperes_u(unit).rawValue
+    func testUInt32Tomicroamperes_f() {
+        let expected = u32_to_uA_f(0)
+        let result = Microamperes_f(UInt32(0)).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: microamperes_u = 1
-        let categoryResult = Current(unit).microamperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = u32_to_uA_f(5)
+        let result1 = Microamperes_f(UInt32(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u32_to_uA_f(UInt32(UInt32.min))
+        let result2 = Microamperes_f(UInt32(UInt32(UInt32.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u32_to_uA_f(UInt32(UInt32.max))
+        let result3 = Microamperes_f(UInt32(UInt32(UInt32.max))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testmicroamperes_fTomicroamperes_uUsingmicroamperes_fNegFloat_greatestFiniteMagnitudeExpectingmicroamperes_uUInt64_min() {
-        let unit = Microamperes_f(microamperes_f(-Float.greatestFiniteMagnitude))
-        let expected = uA_f_to_uA_u(microamperes_f(-Float.greatestFiniteMagnitude))
-        let result = Microamperes_u(unit).rawValue
+    func testmicroamperes_fToUInt64() {
+        let expected = uA_f_to_u64(0.0)
+        let result = UInt64(Microamperes_f(0.0))
         XCTAssertEqual(expected, result)
-        let tolerance: microamperes_u = 1
-        let categoryResult = Current(unit).microamperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = uA_f_to_u64(5.0)
+        let result1 = UInt64(Microamperes_f(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = uA_f_to_u64(microamperes_f(-Float.greatestFiniteMagnitude))
+        let result2 = UInt64(Microamperes_f(microamperes_f(-Float.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = uA_f_to_u64(microamperes_f(Float.greatestFiniteMagnitude))
+        let result3 = UInt64(Microamperes_f(microamperes_f(Float.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testmicroamperes_fTomicroamperes_uUsingmicroamperes_fFloat_greatestFiniteMagnitudeExpectingmicroamperes_uUInt64_max() {
-        let unit = Microamperes_f(microamperes_f(Float.greatestFiniteMagnitude))
-        let expected = uA_f_to_uA_u(microamperes_f(Float.greatestFiniteMagnitude))
-        let result = Microamperes_u(unit).rawValue
+    func testUInt64Tomicroamperes_f() {
+        let expected = u64_to_uA_f(0)
+        let result = Microamperes_f(UInt64(0)).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: microamperes_u = 1
-        let categoryResult = Current(unit).microamperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = u64_to_uA_f(5)
+        let result1 = Microamperes_f(UInt64(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u64_to_uA_f(UInt64(UInt64.min))
+        let result2 = Microamperes_f(UInt64(UInt64(UInt64.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u64_to_uA_f(UInt64(UInt64.max))
+        let result3 = Microamperes_f(UInt64(UInt64(UInt64.max))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testmicroamperes_fTomicroamperes_uUsing5_0Expecting5() {
-        let unit = Microamperes_f(5.0)
-        let expected = uA_f_to_uA_u(5.0)
-        let result = Microamperes_u(unit).rawValue
+    func testmicroamperes_fToFloat() {
+        let expected = uA_f_to_f(0.0)
+        let result = Float(Microamperes_f(0.0))
         XCTAssertEqual(expected, result)
-        let tolerance: microamperes_u = 1
-        let categoryResult = Current(unit).microamperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = uA_f_to_f(5.0)
+        let result1 = Float(Microamperes_f(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = uA_f_to_f(microamperes_f(-Float.greatestFiniteMagnitude))
+        let result2 = Float(Microamperes_f(microamperes_f(-Float.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = uA_f_to_f(microamperes_f(Float.greatestFiniteMagnitude))
+        let result3 = Float(Microamperes_f(microamperes_f(Float.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testmicroamperes_fTomilliamperes_uUsing15_0Expectingmilliamperes_uFloat15_01000_0_rounded() {
-        let unit = Microamperes_f(15.0)
-        let expected = uA_f_to_mA_u(15.0)
-        let result = Milliamperes_u(unit).rawValue
+    func testFloatTomicroamperes_f() {
+        let expected = f_to_uA_f(0.0)
+        let result = Microamperes_f(Float(0.0)).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: milliamperes_u = 1
-        let categoryResult = Current(unit).milliamperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = f_to_uA_f(5.0)
+        let result1 = Microamperes_f(Float(5.0)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = f_to_uA_f(Float(-Float.greatestFiniteMagnitude))
+        let result2 = Microamperes_f(Float(Float(-Float.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = f_to_uA_f(Float(Float.greatestFiniteMagnitude))
+        let result3 = Microamperes_f(Float(Float(Float.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testmicroamperes_fTomilliamperes_uUsing25_0Expectingmilliamperes_uFloat25_01000_0_rounded() {
-        let unit = Microamperes_f(25.0)
-        let expected = uA_f_to_mA_u(25.0)
-        let result = Milliamperes_u(unit).rawValue
+    func testmicroamperes_fToDouble() {
+        let expected = uA_f_to_d(0.0)
+        let result = Double(Microamperes_f(0.0))
         XCTAssertEqual(expected, result)
-        let tolerance: milliamperes_u = 1
-        let categoryResult = Current(unit).milliamperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = uA_f_to_d(5.0)
+        let result1 = Double(Microamperes_f(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = uA_f_to_d(microamperes_f(-Float.greatestFiniteMagnitude))
+        let result2 = Double(Microamperes_f(microamperes_f(-Float.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = uA_f_to_d(microamperes_f(Float.greatestFiniteMagnitude))
+        let result3 = Double(Microamperes_f(microamperes_f(Float.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testmicroamperes_fTomilliamperes_uUsing250_0Expectingmilliamperes_uFloat250_01000_0_rounded() {
-        let unit = Microamperes_f(250.0)
-        let expected = uA_f_to_mA_u(250.0)
-        let result = Milliamperes_u(unit).rawValue
+    func testDoubleTomicroamperes_f() {
+        let expected = d_to_uA_f(0.0)
+        let result = Microamperes_f(Double(0.0)).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: milliamperes_u = 1
-        let categoryResult = Current(unit).milliamperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmicroamperes_fTomilliamperes_uUsing0_0Expectingmilliamperes_uFloat0_01000_0_rounded() {
-        let unit = Microamperes_f(0.0)
-        let expected = uA_f_to_mA_u(0.0)
-        let result = Milliamperes_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: milliamperes_u = 1
-        let categoryResult = Current(unit).milliamperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmicroamperes_fTomilliamperes_uUsing2500_0Expectingmilliamperes_uFloat2500_01000_0_rounded() {
-        let unit = Microamperes_f(2500.0)
-        let expected = uA_f_to_mA_u(2500.0)
-        let result = Milliamperes_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: milliamperes_u = 1
-        let categoryResult = Current(unit).milliamperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmicroamperes_fTomilliamperes_uUsing25000_0Expectingmilliamperes_uFloat25000_01000_0_rounded() {
-        let unit = Microamperes_f(25000.0)
-        let expected = uA_f_to_mA_u(25000.0)
-        let result = Milliamperes_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: milliamperes_u = 1
-        let categoryResult = Current(unit).milliamperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmicroamperes_fTomilliamperes_uUsing250000_0Expectingmilliamperes_uFloat250000_01000_0_rounded() {
-        let unit = Microamperes_f(250000.0)
-        let expected = uA_f_to_mA_u(250000.0)
-        let result = Milliamperes_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: milliamperes_u = 1
-        let categoryResult = Current(unit).milliamperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmicroamperes_fTomilliamperes_uUsing2500000_0Expectingmilliamperes_uFloat2500000_01000_0_rounded() {
-        let unit = Microamperes_f(2500000.0)
-        let expected = uA_f_to_mA_u(2500000.0)
-        let result = Milliamperes_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: milliamperes_u = 1
-        let categoryResult = Current(unit).milliamperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmicroamperes_fTomilliamperes_uUsingNeg323_0Expecting0() {
-        let unit = Microamperes_f(-323.0)
-        let expected = uA_f_to_mA_u(-323.0)
-        let result = Milliamperes_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: milliamperes_u = 1
-        let categoryResult = Current(unit).milliamperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmicroamperes_fTomilliamperes_uUsingNeg10_0Expecting0() {
-        let unit = Microamperes_f(-10.0)
-        let expected = uA_f_to_mA_u(-10.0)
-        let result = Milliamperes_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: milliamperes_u = 1
-        let categoryResult = Current(unit).milliamperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmicroamperes_fTomilliamperes_uUsingNeg1000_0Expecting0() {
-        let unit = Microamperes_f(-1000.0)
-        let expected = uA_f_to_mA_u(-1000.0)
-        let result = Milliamperes_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: milliamperes_u = 1
-        let categoryResult = Current(unit).milliamperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmicroamperes_fTomilliamperes_uUsingNeg6_0Expecting0() {
-        let unit = Microamperes_f(-6.0)
-        let expected = uA_f_to_mA_u(-6.0)
-        let result = Milliamperes_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: milliamperes_u = 1
-        let categoryResult = Current(unit).milliamperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmicroamperes_fTomilliamperes_uUsingNegFloat_greatestFiniteMagnitudeExpectingmilliamperes_uUInt64_min() {
-        let unit = Microamperes_f(-Float.greatestFiniteMagnitude)
-        let expected = uA_f_to_mA_u(-Float.greatestFiniteMagnitude)
-        let result = Milliamperes_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: milliamperes_u = 1
-        let categoryResult = Current(unit).milliamperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmicroamperes_fTomilliamperes_uUsingFloat_greatestFiniteMagnitudeExpectingmilliamperes_uUInt64_max() {
-        let unit = Microamperes_f(Float.greatestFiniteMagnitude)
-        let expected = uA_f_to_mA_u(Float.greatestFiniteMagnitude)
-        let result = Milliamperes_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: milliamperes_u = 1
-        let categoryResult = Current(unit).milliamperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmicroamperes_fToamperes_uUsing15_0Expectingamperes_uFloat15_01000000_0_rounded() {
-        let unit = Microamperes_f(15.0)
-        let expected = uA_f_to_A_u(15.0)
-        let result = Amperes_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: amperes_u = 1
-        let categoryResult = Current(unit).amperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmicroamperes_fToamperes_uUsing25_0Expectingamperes_uFloat25_01000000_0_rounded() {
-        let unit = Microamperes_f(25.0)
-        let expected = uA_f_to_A_u(25.0)
-        let result = Amperes_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: amperes_u = 1
-        let categoryResult = Current(unit).amperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmicroamperes_fToamperes_uUsing250_0Expectingamperes_uFloat250_01000000_0_rounded() {
-        let unit = Microamperes_f(250.0)
-        let expected = uA_f_to_A_u(250.0)
-        let result = Amperes_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: amperes_u = 1
-        let categoryResult = Current(unit).amperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmicroamperes_fToamperes_uUsing0_0Expectingamperes_uFloat0_01000000_0_rounded() {
-        let unit = Microamperes_f(0.0)
-        let expected = uA_f_to_A_u(0.0)
-        let result = Amperes_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: amperes_u = 1
-        let categoryResult = Current(unit).amperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmicroamperes_fToamperes_uUsing2500_0Expectingamperes_uFloat2500_01000000_0_rounded() {
-        let unit = Microamperes_f(2500.0)
-        let expected = uA_f_to_A_u(2500.0)
-        let result = Amperes_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: amperes_u = 1
-        let categoryResult = Current(unit).amperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmicroamperes_fToamperes_uUsing25000_0Expectingamperes_uFloat25000_01000000_0_rounded() {
-        let unit = Microamperes_f(25000.0)
-        let expected = uA_f_to_A_u(25000.0)
-        let result = Amperes_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: amperes_u = 1
-        let categoryResult = Current(unit).amperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmicroamperes_fToamperes_uUsing250000_0Expectingamperes_uFloat250000_01000000_0_rounded() {
-        let unit = Microamperes_f(250000.0)
-        let expected = uA_f_to_A_u(250000.0)
-        let result = Amperes_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: amperes_u = 1
-        let categoryResult = Current(unit).amperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmicroamperes_fToamperes_uUsing2500000_0Expectingamperes_uFloat2500000_01000000_0_rounded() {
-        let unit = Microamperes_f(2500000.0)
-        let expected = uA_f_to_A_u(2500000.0)
-        let result = Amperes_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: amperes_u = 1
-        let categoryResult = Current(unit).amperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmicroamperes_fToamperes_uUsingNeg323_0Expecting0() {
-        let unit = Microamperes_f(-323.0)
-        let expected = uA_f_to_A_u(-323.0)
-        let result = Amperes_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: amperes_u = 1
-        let categoryResult = Current(unit).amperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmicroamperes_fToamperes_uUsingNeg10_0Expecting0() {
-        let unit = Microamperes_f(-10.0)
-        let expected = uA_f_to_A_u(-10.0)
-        let result = Amperes_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: amperes_u = 1
-        let categoryResult = Current(unit).amperes_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = d_to_uA_f(5.0)
+        let result1 = Microamperes_f(Double(5.0)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = d_to_uA_f(Double(-Double.greatestFiniteMagnitude))
+        let result2 = Microamperes_f(Double(Double(-Double.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = d_to_uA_f(Double(Double.greatestFiniteMagnitude))
+        let result3 = Microamperes_f(Double(Double(Double.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
 }

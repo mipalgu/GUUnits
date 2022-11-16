@@ -63,7 +63,7 @@ import XCTest
 /// Provides metres_per_seconds_sq_f unit tests.
 final class Metres_Per_Seconds_Sq_fTests0: XCTestCase {
 
-    func testmetres_per_seconds_sq_fTomillimetres_per_microseconds_sq_tUsingNeg5000000Expectingmillimetres_per_microseconds_sq_tDoubleNeg5000000Double1000Double1000000Double1000000_roundedDoubleInt64_max_nextDownInt64_maxDoubleNeg5000000Double1000Double1000000Double1000000_roundedDoubleInt64_min_nextUpInt64_minInt64DoubleNeg5000000Double1000Double1000000Double1000000_rounded() {
+    func testmetres_per_seconds_sq_fTomillimetres_per_microseconds_sq_t() {
         let unit = Metres_Per_Seconds_Sq_f(-5000000)
         let expected = m_per_s_sq_f_to_mm_per_us_sq_t(-5000000)
         let result = Millimetres_Per_Microseconds_Sq_t(unit).rawValue
@@ -75,65 +75,53 @@ final class Metres_Per_Seconds_Sq_fTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
-    }
-
-    func testmetres_per_seconds_sq_fTomillimetres_per_microseconds_sq_tUsing0Expectingmillimetres_per_microseconds_sq_tDouble0Double1000Double1000000Double1000000_roundedDoubleInt64_max_nextDownInt64_maxDouble0Double1000Double1000000Double1000000_roundedDoubleInt64_min_nextUpInt64_minInt64Double0Double1000Double1000000Double1000000_rounded() {
-        let unit = Metres_Per_Seconds_Sq_f(0)
-        let expected = m_per_s_sq_f_to_mm_per_us_sq_t(0)
-        let result = Millimetres_Per_Microseconds_Sq_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: millimetres_per_microseconds_sq_t = 1
-        let categoryResult = Acceleration(unit).millimetres_per_microseconds_sq_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_mm_per_us_sq_t(0)
+        let result1 = Millimetres_Per_Microseconds_Sq_t(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: millimetres_per_microseconds_sq_t = 1
+        let categoryResult1 = Acceleration(unit1).millimetres_per_microseconds_sq_t.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_mm_per_us_sq_t(5000000)
+        let result2 = Millimetres_Per_Microseconds_Sq_t(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: millimetres_per_microseconds_sq_t = 1
+        let categoryResult2 = Acceleration(unit2).millimetres_per_microseconds_sq_t.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_mm_per_us_sq_t(-Float.greatestFiniteMagnitude)
+        let result3 = Millimetres_Per_Microseconds_Sq_t(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: millimetres_per_microseconds_sq_t = 1
+        let categoryResult3 = Acceleration(unit3).millimetres_per_microseconds_sq_t.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_mm_per_us_sq_t(Float.greatestFiniteMagnitude)
+        let result4 = Millimetres_Per_Microseconds_Sq_t(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: millimetres_per_microseconds_sq_t = 1
+        let categoryResult4 = Acceleration(unit4).millimetres_per_microseconds_sq_t.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
         }
     }
 
-    func testmetres_per_seconds_sq_fTomillimetres_per_microseconds_sq_tUsing5000000Expectingmillimetres_per_microseconds_sq_tDouble5000000Double1000Double1000000Double1000000_roundedDoubleInt64_max_nextDownInt64_maxDouble5000000Double1000Double1000000Double1000000_roundedDoubleInt64_min_nextUpInt64_minInt64Double5000000Double1000Double1000000Double1000000_rounded() {
-        let unit = Metres_Per_Seconds_Sq_f(5000000)
-        let expected = m_per_s_sq_f_to_mm_per_us_sq_t(5000000)
-        let result = Millimetres_Per_Microseconds_Sq_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: millimetres_per_microseconds_sq_t = 1
-        let categoryResult = Acceleration(unit).millimetres_per_microseconds_sq_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmetres_per_seconds_sq_fTomillimetres_per_microseconds_sq_tUsingNegFloat_greatestFiniteMagnitudeExpectingmillimetres_per_microseconds_sq_tInt64_min() {
-        let unit = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
-        let expected = m_per_s_sq_f_to_mm_per_us_sq_t(-Float.greatestFiniteMagnitude)
-        let result = Millimetres_Per_Microseconds_Sq_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: millimetres_per_microseconds_sq_t = 1
-        let categoryResult = Acceleration(unit).millimetres_per_microseconds_sq_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmetres_per_seconds_sq_fTomillimetres_per_microseconds_sq_tUsingFloat_greatestFiniteMagnitudeExpectingmillimetres_per_microseconds_sq_tInt64_max() {
-        let unit = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
-        let expected = m_per_s_sq_f_to_mm_per_us_sq_t(Float.greatestFiniteMagnitude)
-        let result = Millimetres_Per_Microseconds_Sq_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: millimetres_per_microseconds_sq_t = 1
-        let categoryResult = Acceleration(unit).millimetres_per_microseconds_sq_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmetres_per_seconds_sq_fTomillimetres_per_milliseconds_sq_tUsingNeg5000000Expectingmillimetres_per_milliseconds_sq_tDoubleNeg5000000Double1000Double1000Double1000_roundedDoubleInt64_max_nextDownInt64_maxDoubleNeg5000000Double1000Double1000Double1000_roundedDoubleInt64_min_nextUpInt64_minInt64DoubleNeg5000000Double1000Double1000Double1000_rounded() {
+    func testmetres_per_seconds_sq_fTomillimetres_per_milliseconds_sq_t() {
         let unit = Metres_Per_Seconds_Sq_f(-5000000)
         let expected = m_per_s_sq_f_to_mm_per_ms_sq_t(-5000000)
         let result = Millimetres_Per_Milliseconds_Sq_t(unit).rawValue
@@ -145,65 +133,53 @@ final class Metres_Per_Seconds_Sq_fTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
-    }
-
-    func testmetres_per_seconds_sq_fTomillimetres_per_milliseconds_sq_tUsing0Expectingmillimetres_per_milliseconds_sq_tDouble0Double1000Double1000Double1000_roundedDoubleInt64_max_nextDownInt64_maxDouble0Double1000Double1000Double1000_roundedDoubleInt64_min_nextUpInt64_minInt64Double0Double1000Double1000Double1000_rounded() {
-        let unit = Metres_Per_Seconds_Sq_f(0)
-        let expected = m_per_s_sq_f_to_mm_per_ms_sq_t(0)
-        let result = Millimetres_Per_Milliseconds_Sq_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: millimetres_per_milliseconds_sq_t = 1
-        let categoryResult = Acceleration(unit).millimetres_per_milliseconds_sq_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_mm_per_ms_sq_t(0)
+        let result1 = Millimetres_Per_Milliseconds_Sq_t(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: millimetres_per_milliseconds_sq_t = 1
+        let categoryResult1 = Acceleration(unit1).millimetres_per_milliseconds_sq_t.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_mm_per_ms_sq_t(5000000)
+        let result2 = Millimetres_Per_Milliseconds_Sq_t(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: millimetres_per_milliseconds_sq_t = 1
+        let categoryResult2 = Acceleration(unit2).millimetres_per_milliseconds_sq_t.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_mm_per_ms_sq_t(-Float.greatestFiniteMagnitude)
+        let result3 = Millimetres_Per_Milliseconds_Sq_t(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: millimetres_per_milliseconds_sq_t = 1
+        let categoryResult3 = Acceleration(unit3).millimetres_per_milliseconds_sq_t.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_mm_per_ms_sq_t(Float.greatestFiniteMagnitude)
+        let result4 = Millimetres_Per_Milliseconds_Sq_t(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: millimetres_per_milliseconds_sq_t = 1
+        let categoryResult4 = Acceleration(unit4).millimetres_per_milliseconds_sq_t.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
         }
     }
 
-    func testmetres_per_seconds_sq_fTomillimetres_per_milliseconds_sq_tUsing5000000Expectingmillimetres_per_milliseconds_sq_tDouble5000000Double1000Double1000Double1000_roundedDoubleInt64_max_nextDownInt64_maxDouble5000000Double1000Double1000Double1000_roundedDoubleInt64_min_nextUpInt64_minInt64Double5000000Double1000Double1000Double1000_rounded() {
-        let unit = Metres_Per_Seconds_Sq_f(5000000)
-        let expected = m_per_s_sq_f_to_mm_per_ms_sq_t(5000000)
-        let result = Millimetres_Per_Milliseconds_Sq_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: millimetres_per_milliseconds_sq_t = 1
-        let categoryResult = Acceleration(unit).millimetres_per_milliseconds_sq_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmetres_per_seconds_sq_fTomillimetres_per_milliseconds_sq_tUsingNegFloat_greatestFiniteMagnitudeExpectingmillimetres_per_milliseconds_sq_tInt64_min() {
-        let unit = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
-        let expected = m_per_s_sq_f_to_mm_per_ms_sq_t(-Float.greatestFiniteMagnitude)
-        let result = Millimetres_Per_Milliseconds_Sq_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: millimetres_per_milliseconds_sq_t = 1
-        let categoryResult = Acceleration(unit).millimetres_per_milliseconds_sq_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmetres_per_seconds_sq_fTomillimetres_per_milliseconds_sq_tUsingFloat_greatestFiniteMagnitudeExpectingmillimetres_per_milliseconds_sq_tInt64_max() {
-        let unit = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
-        let expected = m_per_s_sq_f_to_mm_per_ms_sq_t(Float.greatestFiniteMagnitude)
-        let result = Millimetres_Per_Milliseconds_Sq_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: millimetres_per_milliseconds_sq_t = 1
-        let categoryResult = Acceleration(unit).millimetres_per_milliseconds_sq_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmetres_per_seconds_sq_fTomillimetres_per_seconds_sq_tUsingNeg5000000Expectingmillimetres_per_seconds_sq_tDoubleNeg5000000Double1000_roundedDoubleInt64_max_nextDownInt64_maxDoubleNeg5000000Double1000_roundedDoubleInt64_min_nextUpInt64_minInt64DoubleNeg5000000Double1000_rounded() {
+    func testmetres_per_seconds_sq_fTomillimetres_per_seconds_sq_t() {
         let unit = Metres_Per_Seconds_Sq_f(-5000000)
         let expected = m_per_s_sq_f_to_mm_per_s_sq_t(-5000000)
         let result = Millimetres_Per_Seconds_Sq_t(unit).rawValue
@@ -215,65 +191,53 @@ final class Metres_Per_Seconds_Sq_fTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
-    }
-
-    func testmetres_per_seconds_sq_fTomillimetres_per_seconds_sq_tUsing0Expectingmillimetres_per_seconds_sq_tDouble0Double1000_roundedDoubleInt64_max_nextDownInt64_maxDouble0Double1000_roundedDoubleInt64_min_nextUpInt64_minInt64Double0Double1000_rounded() {
-        let unit = Metres_Per_Seconds_Sq_f(0)
-        let expected = m_per_s_sq_f_to_mm_per_s_sq_t(0)
-        let result = Millimetres_Per_Seconds_Sq_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: millimetres_per_seconds_sq_t = 1
-        let categoryResult = Acceleration(unit).millimetres_per_seconds_sq_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_mm_per_s_sq_t(0)
+        let result1 = Millimetres_Per_Seconds_Sq_t(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: millimetres_per_seconds_sq_t = 1
+        let categoryResult1 = Acceleration(unit1).millimetres_per_seconds_sq_t.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_mm_per_s_sq_t(5000000)
+        let result2 = Millimetres_Per_Seconds_Sq_t(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: millimetres_per_seconds_sq_t = 1
+        let categoryResult2 = Acceleration(unit2).millimetres_per_seconds_sq_t.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_mm_per_s_sq_t(-Float.greatestFiniteMagnitude)
+        let result3 = Millimetres_Per_Seconds_Sq_t(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: millimetres_per_seconds_sq_t = 1
+        let categoryResult3 = Acceleration(unit3).millimetres_per_seconds_sq_t.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_mm_per_s_sq_t(Float.greatestFiniteMagnitude)
+        let result4 = Millimetres_Per_Seconds_Sq_t(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: millimetres_per_seconds_sq_t = 1
+        let categoryResult4 = Acceleration(unit4).millimetres_per_seconds_sq_t.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
         }
     }
 
-    func testmetres_per_seconds_sq_fTomillimetres_per_seconds_sq_tUsing5000000Expectingmillimetres_per_seconds_sq_tDouble5000000Double1000_roundedDoubleInt64_max_nextDownInt64_maxDouble5000000Double1000_roundedDoubleInt64_min_nextUpInt64_minInt64Double5000000Double1000_rounded() {
-        let unit = Metres_Per_Seconds_Sq_f(5000000)
-        let expected = m_per_s_sq_f_to_mm_per_s_sq_t(5000000)
-        let result = Millimetres_Per_Seconds_Sq_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: millimetres_per_seconds_sq_t = 1
-        let categoryResult = Acceleration(unit).millimetres_per_seconds_sq_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmetres_per_seconds_sq_fTomillimetres_per_seconds_sq_tUsingNegFloat_greatestFiniteMagnitudeExpectingmillimetres_per_seconds_sq_tInt64_min() {
-        let unit = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
-        let expected = m_per_s_sq_f_to_mm_per_s_sq_t(-Float.greatestFiniteMagnitude)
-        let result = Millimetres_Per_Seconds_Sq_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: millimetres_per_seconds_sq_t = 1
-        let categoryResult = Acceleration(unit).millimetres_per_seconds_sq_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmetres_per_seconds_sq_fTomillimetres_per_seconds_sq_tUsingFloat_greatestFiniteMagnitudeExpectingmillimetres_per_seconds_sq_tInt64_max() {
-        let unit = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
-        let expected = m_per_s_sq_f_to_mm_per_s_sq_t(Float.greatestFiniteMagnitude)
-        let result = Millimetres_Per_Seconds_Sq_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: millimetres_per_seconds_sq_t = 1
-        let categoryResult = Acceleration(unit).millimetres_per_seconds_sq_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmetres_per_seconds_sq_fTocentimetres_per_microseconds_sq_tUsingNeg5000000Expectingcentimetres_per_microseconds_sq_tDoubleNeg5000000Double100Double1000000Double1000000_roundedDoubleInt64_max_nextDownInt64_maxDoubleNeg5000000Double100Double1000000Double1000000_roundedDoubleInt64_min_nextUpInt64_minInt64DoubleNeg5000000Double100Double1000000Double1000000_rounded() {
+    func testmetres_per_seconds_sq_fTocentimetres_per_microseconds_sq_t() {
         let unit = Metres_Per_Seconds_Sq_f(-5000000)
         let expected = m_per_s_sq_f_to_cm_per_us_sq_t(-5000000)
         let result = Centimetres_Per_Microseconds_Sq_t(unit).rawValue
@@ -285,65 +249,53 @@ final class Metres_Per_Seconds_Sq_fTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
-    }
-
-    func testmetres_per_seconds_sq_fTocentimetres_per_microseconds_sq_tUsing0Expectingcentimetres_per_microseconds_sq_tDouble0Double100Double1000000Double1000000_roundedDoubleInt64_max_nextDownInt64_maxDouble0Double100Double1000000Double1000000_roundedDoubleInt64_min_nextUpInt64_minInt64Double0Double100Double1000000Double1000000_rounded() {
-        let unit = Metres_Per_Seconds_Sq_f(0)
-        let expected = m_per_s_sq_f_to_cm_per_us_sq_t(0)
-        let result = Centimetres_Per_Microseconds_Sq_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: centimetres_per_microseconds_sq_t = 1
-        let categoryResult = Acceleration(unit).centimetres_per_microseconds_sq_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_cm_per_us_sq_t(0)
+        let result1 = Centimetres_Per_Microseconds_Sq_t(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: centimetres_per_microseconds_sq_t = 1
+        let categoryResult1 = Acceleration(unit1).centimetres_per_microseconds_sq_t.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_cm_per_us_sq_t(5000000)
+        let result2 = Centimetres_Per_Microseconds_Sq_t(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: centimetres_per_microseconds_sq_t = 1
+        let categoryResult2 = Acceleration(unit2).centimetres_per_microseconds_sq_t.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_cm_per_us_sq_t(-Float.greatestFiniteMagnitude)
+        let result3 = Centimetres_Per_Microseconds_Sq_t(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: centimetres_per_microseconds_sq_t = 1
+        let categoryResult3 = Acceleration(unit3).centimetres_per_microseconds_sq_t.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_cm_per_us_sq_t(Float.greatestFiniteMagnitude)
+        let result4 = Centimetres_Per_Microseconds_Sq_t(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: centimetres_per_microseconds_sq_t = 1
+        let categoryResult4 = Acceleration(unit4).centimetres_per_microseconds_sq_t.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
         }
     }
 
-    func testmetres_per_seconds_sq_fTocentimetres_per_microseconds_sq_tUsing5000000Expectingcentimetres_per_microseconds_sq_tDouble5000000Double100Double1000000Double1000000_roundedDoubleInt64_max_nextDownInt64_maxDouble5000000Double100Double1000000Double1000000_roundedDoubleInt64_min_nextUpInt64_minInt64Double5000000Double100Double1000000Double1000000_rounded() {
-        let unit = Metres_Per_Seconds_Sq_f(5000000)
-        let expected = m_per_s_sq_f_to_cm_per_us_sq_t(5000000)
-        let result = Centimetres_Per_Microseconds_Sq_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: centimetres_per_microseconds_sq_t = 1
-        let categoryResult = Acceleration(unit).centimetres_per_microseconds_sq_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmetres_per_seconds_sq_fTocentimetres_per_microseconds_sq_tUsingNegFloat_greatestFiniteMagnitudeExpectingcentimetres_per_microseconds_sq_tInt64_min() {
-        let unit = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
-        let expected = m_per_s_sq_f_to_cm_per_us_sq_t(-Float.greatestFiniteMagnitude)
-        let result = Centimetres_Per_Microseconds_Sq_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: centimetres_per_microseconds_sq_t = 1
-        let categoryResult = Acceleration(unit).centimetres_per_microseconds_sq_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmetres_per_seconds_sq_fTocentimetres_per_microseconds_sq_tUsingFloat_greatestFiniteMagnitudeExpectingcentimetres_per_microseconds_sq_tInt64_max() {
-        let unit = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
-        let expected = m_per_s_sq_f_to_cm_per_us_sq_t(Float.greatestFiniteMagnitude)
-        let result = Centimetres_Per_Microseconds_Sq_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: centimetres_per_microseconds_sq_t = 1
-        let categoryResult = Acceleration(unit).centimetres_per_microseconds_sq_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmetres_per_seconds_sq_fTocentimetres_per_milliseconds_sq_tUsingNeg5000000Expectingcentimetres_per_milliseconds_sq_tDoubleNeg5000000Double100Double1000Double1000_roundedDoubleInt64_max_nextDownInt64_maxDoubleNeg5000000Double100Double1000Double1000_roundedDoubleInt64_min_nextUpInt64_minInt64DoubleNeg5000000Double100Double1000Double1000_rounded() {
+    func testmetres_per_seconds_sq_fTocentimetres_per_milliseconds_sq_t() {
         let unit = Metres_Per_Seconds_Sq_f(-5000000)
         let expected = m_per_s_sq_f_to_cm_per_ms_sq_t(-5000000)
         let result = Centimetres_Per_Milliseconds_Sq_t(unit).rawValue
@@ -355,65 +307,53 @@ final class Metres_Per_Seconds_Sq_fTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
-    }
-
-    func testmetres_per_seconds_sq_fTocentimetres_per_milliseconds_sq_tUsing0Expectingcentimetres_per_milliseconds_sq_tDouble0Double100Double1000Double1000_roundedDoubleInt64_max_nextDownInt64_maxDouble0Double100Double1000Double1000_roundedDoubleInt64_min_nextUpInt64_minInt64Double0Double100Double1000Double1000_rounded() {
-        let unit = Metres_Per_Seconds_Sq_f(0)
-        let expected = m_per_s_sq_f_to_cm_per_ms_sq_t(0)
-        let result = Centimetres_Per_Milliseconds_Sq_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: centimetres_per_milliseconds_sq_t = 1
-        let categoryResult = Acceleration(unit).centimetres_per_milliseconds_sq_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_cm_per_ms_sq_t(0)
+        let result1 = Centimetres_Per_Milliseconds_Sq_t(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: centimetres_per_milliseconds_sq_t = 1
+        let categoryResult1 = Acceleration(unit1).centimetres_per_milliseconds_sq_t.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_cm_per_ms_sq_t(5000000)
+        let result2 = Centimetres_Per_Milliseconds_Sq_t(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: centimetres_per_milliseconds_sq_t = 1
+        let categoryResult2 = Acceleration(unit2).centimetres_per_milliseconds_sq_t.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_cm_per_ms_sq_t(-Float.greatestFiniteMagnitude)
+        let result3 = Centimetres_Per_Milliseconds_Sq_t(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: centimetres_per_milliseconds_sq_t = 1
+        let categoryResult3 = Acceleration(unit3).centimetres_per_milliseconds_sq_t.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_cm_per_ms_sq_t(Float.greatestFiniteMagnitude)
+        let result4 = Centimetres_Per_Milliseconds_Sq_t(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: centimetres_per_milliseconds_sq_t = 1
+        let categoryResult4 = Acceleration(unit4).centimetres_per_milliseconds_sq_t.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
         }
     }
 
-    func testmetres_per_seconds_sq_fTocentimetres_per_milliseconds_sq_tUsing5000000Expectingcentimetres_per_milliseconds_sq_tDouble5000000Double100Double1000Double1000_roundedDoubleInt64_max_nextDownInt64_maxDouble5000000Double100Double1000Double1000_roundedDoubleInt64_min_nextUpInt64_minInt64Double5000000Double100Double1000Double1000_rounded() {
-        let unit = Metres_Per_Seconds_Sq_f(5000000)
-        let expected = m_per_s_sq_f_to_cm_per_ms_sq_t(5000000)
-        let result = Centimetres_Per_Milliseconds_Sq_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: centimetres_per_milliseconds_sq_t = 1
-        let categoryResult = Acceleration(unit).centimetres_per_milliseconds_sq_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmetres_per_seconds_sq_fTocentimetres_per_milliseconds_sq_tUsingNegFloat_greatestFiniteMagnitudeExpectingcentimetres_per_milliseconds_sq_tInt64_min() {
-        let unit = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
-        let expected = m_per_s_sq_f_to_cm_per_ms_sq_t(-Float.greatestFiniteMagnitude)
-        let result = Centimetres_Per_Milliseconds_Sq_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: centimetres_per_milliseconds_sq_t = 1
-        let categoryResult = Acceleration(unit).centimetres_per_milliseconds_sq_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmetres_per_seconds_sq_fTocentimetres_per_milliseconds_sq_tUsingFloat_greatestFiniteMagnitudeExpectingcentimetres_per_milliseconds_sq_tInt64_max() {
-        let unit = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
-        let expected = m_per_s_sq_f_to_cm_per_ms_sq_t(Float.greatestFiniteMagnitude)
-        let result = Centimetres_Per_Milliseconds_Sq_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: centimetres_per_milliseconds_sq_t = 1
-        let categoryResult = Acceleration(unit).centimetres_per_milliseconds_sq_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmetres_per_seconds_sq_fTocentimetres_per_seconds_sq_tUsingNeg5000000Expectingcentimetres_per_seconds_sq_tDoubleNeg5000000Double100_roundedDoubleInt64_max_nextDownInt64_maxDoubleNeg5000000Double100_roundedDoubleInt64_min_nextUpInt64_minInt64DoubleNeg5000000Double100_rounded() {
+    func testmetres_per_seconds_sq_fTocentimetres_per_seconds_sq_t() {
         let unit = Metres_Per_Seconds_Sq_f(-5000000)
         let expected = m_per_s_sq_f_to_cm_per_s_sq_t(-5000000)
         let result = Centimetres_Per_Seconds_Sq_t(unit).rawValue
@@ -425,61 +365,1441 @@ final class Metres_Per_Seconds_Sq_fTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_cm_per_s_sq_t(0)
+        let result1 = Centimetres_Per_Seconds_Sq_t(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: centimetres_per_seconds_sq_t = 1
+        let categoryResult1 = Acceleration(unit1).centimetres_per_seconds_sq_t.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_cm_per_s_sq_t(5000000)
+        let result2 = Centimetres_Per_Seconds_Sq_t(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: centimetres_per_seconds_sq_t = 1
+        let categoryResult2 = Acceleration(unit2).centimetres_per_seconds_sq_t.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_cm_per_s_sq_t(-Float.greatestFiniteMagnitude)
+        let result3 = Centimetres_Per_Seconds_Sq_t(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: centimetres_per_seconds_sq_t = 1
+        let categoryResult3 = Acceleration(unit3).centimetres_per_seconds_sq_t.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_cm_per_s_sq_t(Float.greatestFiniteMagnitude)
+        let result4 = Centimetres_Per_Seconds_Sq_t(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: centimetres_per_seconds_sq_t = 1
+        let categoryResult4 = Acceleration(unit4).centimetres_per_seconds_sq_t.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
     }
 
-    func testmetres_per_seconds_sq_fTocentimetres_per_seconds_sq_tUsing0Expectingcentimetres_per_seconds_sq_tDouble0Double100_roundedDoubleInt64_max_nextDownInt64_maxDouble0Double100_roundedDoubleInt64_min_nextUpInt64_minInt64Double0Double100_rounded() {
-        let unit = Metres_Per_Seconds_Sq_f(0)
-        let expected = m_per_s_sq_f_to_cm_per_s_sq_t(0)
-        let result = Centimetres_Per_Seconds_Sq_t(unit).rawValue
+    func testmetres_per_seconds_sq_fTometres_per_microseconds_sq_t() {
+        let unit = Metres_Per_Seconds_Sq_f(-5000000)
+        let expected = m_per_s_sq_f_to_m_per_us_sq_t(-5000000)
+        let result = Metres_Per_Microseconds_Sq_t(unit).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: centimetres_per_seconds_sq_t = 1
-        let categoryResult = Acceleration(unit).centimetres_per_seconds_sq_t.rawValue
+        let tolerance: metres_per_microseconds_sq_t = 1
+        let categoryResult = Acceleration(unit).metres_per_microseconds_sq_t.rawValue
         if categoryResult > expected {
             XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_m_per_us_sq_t(0)
+        let result1 = Metres_Per_Microseconds_Sq_t(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: metres_per_microseconds_sq_t = 1
+        let categoryResult1 = Acceleration(unit1).metres_per_microseconds_sq_t.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_m_per_us_sq_t(5000000)
+        let result2 = Metres_Per_Microseconds_Sq_t(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: metres_per_microseconds_sq_t = 1
+        let categoryResult2 = Acceleration(unit2).metres_per_microseconds_sq_t.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_m_per_us_sq_t(-Float.greatestFiniteMagnitude)
+        let result3 = Metres_Per_Microseconds_Sq_t(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: metres_per_microseconds_sq_t = 1
+        let categoryResult3 = Acceleration(unit3).metres_per_microseconds_sq_t.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_m_per_us_sq_t(Float.greatestFiniteMagnitude)
+        let result4 = Metres_Per_Microseconds_Sq_t(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: metres_per_microseconds_sq_t = 1
+        let categoryResult4 = Acceleration(unit4).metres_per_microseconds_sq_t.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
     }
 
-    func testmetres_per_seconds_sq_fTocentimetres_per_seconds_sq_tUsing5000000Expectingcentimetres_per_seconds_sq_tDouble5000000Double100_roundedDoubleInt64_max_nextDownInt64_maxDouble5000000Double100_roundedDoubleInt64_min_nextUpInt64_minInt64Double5000000Double100_rounded() {
-        let unit = Metres_Per_Seconds_Sq_f(5000000)
-        let expected = m_per_s_sq_f_to_cm_per_s_sq_t(5000000)
-        let result = Centimetres_Per_Seconds_Sq_t(unit).rawValue
+    func testmetres_per_seconds_sq_fTometres_per_milliseconds_sq_t() {
+        let unit = Metres_Per_Seconds_Sq_f(-5000000)
+        let expected = m_per_s_sq_f_to_m_per_ms_sq_t(-5000000)
+        let result = Metres_Per_Milliseconds_Sq_t(unit).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: centimetres_per_seconds_sq_t = 1
-        let categoryResult = Acceleration(unit).centimetres_per_seconds_sq_t.rawValue
+        let tolerance: metres_per_milliseconds_sq_t = 1
+        let categoryResult = Acceleration(unit).metres_per_milliseconds_sq_t.rawValue
         if categoryResult > expected {
             XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_m_per_ms_sq_t(0)
+        let result1 = Metres_Per_Milliseconds_Sq_t(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: metres_per_milliseconds_sq_t = 1
+        let categoryResult1 = Acceleration(unit1).metres_per_milliseconds_sq_t.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_m_per_ms_sq_t(5000000)
+        let result2 = Metres_Per_Milliseconds_Sq_t(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: metres_per_milliseconds_sq_t = 1
+        let categoryResult2 = Acceleration(unit2).metres_per_milliseconds_sq_t.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_m_per_ms_sq_t(-Float.greatestFiniteMagnitude)
+        let result3 = Metres_Per_Milliseconds_Sq_t(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: metres_per_milliseconds_sq_t = 1
+        let categoryResult3 = Acceleration(unit3).metres_per_milliseconds_sq_t.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_m_per_ms_sq_t(Float.greatestFiniteMagnitude)
+        let result4 = Metres_Per_Milliseconds_Sq_t(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: metres_per_milliseconds_sq_t = 1
+        let categoryResult4 = Acceleration(unit4).metres_per_milliseconds_sq_t.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
     }
 
-    func testmetres_per_seconds_sq_fTocentimetres_per_seconds_sq_tUsingNegFloat_greatestFiniteMagnitudeExpectingcentimetres_per_seconds_sq_tInt64_min() {
-        let unit = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
-        let expected = m_per_s_sq_f_to_cm_per_s_sq_t(-Float.greatestFiniteMagnitude)
-        let result = Centimetres_Per_Seconds_Sq_t(unit).rawValue
+    func testmetres_per_seconds_sq_fTometres_per_seconds_sq_t() {
+        let unit = Metres_Per_Seconds_Sq_f(-5000000)
+        let expected = m_per_s_sq_f_to_m_per_s_sq_t(-5000000)
+        let result = Metres_Per_Seconds_Sq_t(unit).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: centimetres_per_seconds_sq_t = 1
-        let categoryResult = Acceleration(unit).centimetres_per_seconds_sq_t.rawValue
+        let tolerance: metres_per_seconds_sq_t = 1
+        let categoryResult = Acceleration(unit).metres_per_seconds_sq_t.rawValue
         if categoryResult > expected {
             XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_m_per_s_sq_t(0)
+        let result1 = Metres_Per_Seconds_Sq_t(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: metres_per_seconds_sq_t = 1
+        let categoryResult1 = Acceleration(unit1).metres_per_seconds_sq_t.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_m_per_s_sq_t(5000000)
+        let result2 = Metres_Per_Seconds_Sq_t(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: metres_per_seconds_sq_t = 1
+        let categoryResult2 = Acceleration(unit2).metres_per_seconds_sq_t.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_m_per_s_sq_t(-Float.greatestFiniteMagnitude)
+        let result3 = Metres_Per_Seconds_Sq_t(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: metres_per_seconds_sq_t = 1
+        let categoryResult3 = Acceleration(unit3).metres_per_seconds_sq_t.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_m_per_s_sq_t(Float.greatestFiniteMagnitude)
+        let result4 = Metres_Per_Seconds_Sq_t(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: metres_per_seconds_sq_t = 1
+        let categoryResult4 = Acceleration(unit4).metres_per_seconds_sq_t.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
     }
 
-    func testmetres_per_seconds_sq_fTocentimetres_per_seconds_sq_tUsingFloat_greatestFiniteMagnitudeExpectingcentimetres_per_seconds_sq_tInt64_max() {
-        let unit = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
-        let expected = m_per_s_sq_f_to_cm_per_s_sq_t(Float.greatestFiniteMagnitude)
-        let result = Centimetres_Per_Seconds_Sq_t(unit).rawValue
+    func testmetres_per_seconds_sq_fTomillimetres_per_microseconds_sq_u() {
+        let unit = Metres_Per_Seconds_Sq_f(-5000000)
+        let expected = m_per_s_sq_f_to_mm_per_us_sq_u(-5000000)
+        let result = Millimetres_Per_Microseconds_Sq_u(unit).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: centimetres_per_seconds_sq_t = 1
-        let categoryResult = Acceleration(unit).centimetres_per_seconds_sq_t.rawValue
+        let tolerance: millimetres_per_microseconds_sq_u = 1
+        let categoryResult = Acceleration(unit).millimetres_per_microseconds_sq_u.rawValue
         if categoryResult > expected {
             XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_mm_per_us_sq_u(0)
+        let result1 = Millimetres_Per_Microseconds_Sq_u(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: millimetres_per_microseconds_sq_u = 1
+        let categoryResult1 = Acceleration(unit1).millimetres_per_microseconds_sq_u.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_mm_per_us_sq_u(5000000)
+        let result2 = Millimetres_Per_Microseconds_Sq_u(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: millimetres_per_microseconds_sq_u = 1
+        let categoryResult2 = Acceleration(unit2).millimetres_per_microseconds_sq_u.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_mm_per_us_sq_u(-Float.greatestFiniteMagnitude)
+        let result3 = Millimetres_Per_Microseconds_Sq_u(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: millimetres_per_microseconds_sq_u = 1
+        let categoryResult3 = Acceleration(unit3).millimetres_per_microseconds_sq_u.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_mm_per_us_sq_u(Float.greatestFiniteMagnitude)
+        let result4 = Millimetres_Per_Microseconds_Sq_u(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: millimetres_per_microseconds_sq_u = 1
+        let categoryResult4 = Acceleration(unit4).millimetres_per_microseconds_sq_u.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+    }
+
+    func testmetres_per_seconds_sq_fTomillimetres_per_milliseconds_sq_u() {
+        let unit = Metres_Per_Seconds_Sq_f(-5000000)
+        let expected = m_per_s_sq_f_to_mm_per_ms_sq_u(-5000000)
+        let result = Millimetres_Per_Milliseconds_Sq_u(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: millimetres_per_milliseconds_sq_u = 1
+        let categoryResult = Acceleration(unit).millimetres_per_milliseconds_sq_u.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_mm_per_ms_sq_u(0)
+        let result1 = Millimetres_Per_Milliseconds_Sq_u(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: millimetres_per_milliseconds_sq_u = 1
+        let categoryResult1 = Acceleration(unit1).millimetres_per_milliseconds_sq_u.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_mm_per_ms_sq_u(5000000)
+        let result2 = Millimetres_Per_Milliseconds_Sq_u(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: millimetres_per_milliseconds_sq_u = 1
+        let categoryResult2 = Acceleration(unit2).millimetres_per_milliseconds_sq_u.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_mm_per_ms_sq_u(-Float.greatestFiniteMagnitude)
+        let result3 = Millimetres_Per_Milliseconds_Sq_u(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: millimetres_per_milliseconds_sq_u = 1
+        let categoryResult3 = Acceleration(unit3).millimetres_per_milliseconds_sq_u.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_mm_per_ms_sq_u(Float.greatestFiniteMagnitude)
+        let result4 = Millimetres_Per_Milliseconds_Sq_u(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: millimetres_per_milliseconds_sq_u = 1
+        let categoryResult4 = Acceleration(unit4).millimetres_per_milliseconds_sq_u.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+    }
+
+    func testmetres_per_seconds_sq_fTomillimetres_per_seconds_sq_u() {
+        let unit = Metres_Per_Seconds_Sq_f(-5000000)
+        let expected = m_per_s_sq_f_to_mm_per_s_sq_u(-5000000)
+        let result = Millimetres_Per_Seconds_Sq_u(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: millimetres_per_seconds_sq_u = 1
+        let categoryResult = Acceleration(unit).millimetres_per_seconds_sq_u.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_mm_per_s_sq_u(0)
+        let result1 = Millimetres_Per_Seconds_Sq_u(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: millimetres_per_seconds_sq_u = 1
+        let categoryResult1 = Acceleration(unit1).millimetres_per_seconds_sq_u.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_mm_per_s_sq_u(5000000)
+        let result2 = Millimetres_Per_Seconds_Sq_u(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: millimetres_per_seconds_sq_u = 1
+        let categoryResult2 = Acceleration(unit2).millimetres_per_seconds_sq_u.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_mm_per_s_sq_u(-Float.greatestFiniteMagnitude)
+        let result3 = Millimetres_Per_Seconds_Sq_u(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: millimetres_per_seconds_sq_u = 1
+        let categoryResult3 = Acceleration(unit3).millimetres_per_seconds_sq_u.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_mm_per_s_sq_u(Float.greatestFiniteMagnitude)
+        let result4 = Millimetres_Per_Seconds_Sq_u(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: millimetres_per_seconds_sq_u = 1
+        let categoryResult4 = Acceleration(unit4).millimetres_per_seconds_sq_u.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+    }
+
+    func testmetres_per_seconds_sq_fTocentimetres_per_microseconds_sq_u() {
+        let unit = Metres_Per_Seconds_Sq_f(-5000000)
+        let expected = m_per_s_sq_f_to_cm_per_us_sq_u(-5000000)
+        let result = Centimetres_Per_Microseconds_Sq_u(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: centimetres_per_microseconds_sq_u = 1
+        let categoryResult = Acceleration(unit).centimetres_per_microseconds_sq_u.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_cm_per_us_sq_u(0)
+        let result1 = Centimetres_Per_Microseconds_Sq_u(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: centimetres_per_microseconds_sq_u = 1
+        let categoryResult1 = Acceleration(unit1).centimetres_per_microseconds_sq_u.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_cm_per_us_sq_u(5000000)
+        let result2 = Centimetres_Per_Microseconds_Sq_u(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: centimetres_per_microseconds_sq_u = 1
+        let categoryResult2 = Acceleration(unit2).centimetres_per_microseconds_sq_u.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_cm_per_us_sq_u(-Float.greatestFiniteMagnitude)
+        let result3 = Centimetres_Per_Microseconds_Sq_u(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: centimetres_per_microseconds_sq_u = 1
+        let categoryResult3 = Acceleration(unit3).centimetres_per_microseconds_sq_u.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_cm_per_us_sq_u(Float.greatestFiniteMagnitude)
+        let result4 = Centimetres_Per_Microseconds_Sq_u(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: centimetres_per_microseconds_sq_u = 1
+        let categoryResult4 = Acceleration(unit4).centimetres_per_microseconds_sq_u.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+    }
+
+    func testmetres_per_seconds_sq_fTocentimetres_per_milliseconds_sq_u() {
+        let unit = Metres_Per_Seconds_Sq_f(-5000000)
+        let expected = m_per_s_sq_f_to_cm_per_ms_sq_u(-5000000)
+        let result = Centimetres_Per_Milliseconds_Sq_u(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: centimetres_per_milliseconds_sq_u = 1
+        let categoryResult = Acceleration(unit).centimetres_per_milliseconds_sq_u.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_cm_per_ms_sq_u(0)
+        let result1 = Centimetres_Per_Milliseconds_Sq_u(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: centimetres_per_milliseconds_sq_u = 1
+        let categoryResult1 = Acceleration(unit1).centimetres_per_milliseconds_sq_u.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_cm_per_ms_sq_u(5000000)
+        let result2 = Centimetres_Per_Milliseconds_Sq_u(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: centimetres_per_milliseconds_sq_u = 1
+        let categoryResult2 = Acceleration(unit2).centimetres_per_milliseconds_sq_u.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_cm_per_ms_sq_u(-Float.greatestFiniteMagnitude)
+        let result3 = Centimetres_Per_Milliseconds_Sq_u(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: centimetres_per_milliseconds_sq_u = 1
+        let categoryResult3 = Acceleration(unit3).centimetres_per_milliseconds_sq_u.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_cm_per_ms_sq_u(Float.greatestFiniteMagnitude)
+        let result4 = Centimetres_Per_Milliseconds_Sq_u(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: centimetres_per_milliseconds_sq_u = 1
+        let categoryResult4 = Acceleration(unit4).centimetres_per_milliseconds_sq_u.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+    }
+
+    func testmetres_per_seconds_sq_fTocentimetres_per_seconds_sq_u() {
+        let unit = Metres_Per_Seconds_Sq_f(-5000000)
+        let expected = m_per_s_sq_f_to_cm_per_s_sq_u(-5000000)
+        let result = Centimetres_Per_Seconds_Sq_u(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: centimetres_per_seconds_sq_u = 1
+        let categoryResult = Acceleration(unit).centimetres_per_seconds_sq_u.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_cm_per_s_sq_u(0)
+        let result1 = Centimetres_Per_Seconds_Sq_u(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: centimetres_per_seconds_sq_u = 1
+        let categoryResult1 = Acceleration(unit1).centimetres_per_seconds_sq_u.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_cm_per_s_sq_u(5000000)
+        let result2 = Centimetres_Per_Seconds_Sq_u(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: centimetres_per_seconds_sq_u = 1
+        let categoryResult2 = Acceleration(unit2).centimetres_per_seconds_sq_u.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_cm_per_s_sq_u(-Float.greatestFiniteMagnitude)
+        let result3 = Centimetres_Per_Seconds_Sq_u(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: centimetres_per_seconds_sq_u = 1
+        let categoryResult3 = Acceleration(unit3).centimetres_per_seconds_sq_u.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_cm_per_s_sq_u(Float.greatestFiniteMagnitude)
+        let result4 = Centimetres_Per_Seconds_Sq_u(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: centimetres_per_seconds_sq_u = 1
+        let categoryResult4 = Acceleration(unit4).centimetres_per_seconds_sq_u.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+    }
+
+    func testmetres_per_seconds_sq_fTometres_per_microseconds_sq_u() {
+        let unit = Metres_Per_Seconds_Sq_f(-5000000)
+        let expected = m_per_s_sq_f_to_m_per_us_sq_u(-5000000)
+        let result = Metres_Per_Microseconds_Sq_u(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: metres_per_microseconds_sq_u = 1
+        let categoryResult = Acceleration(unit).metres_per_microseconds_sq_u.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_m_per_us_sq_u(0)
+        let result1 = Metres_Per_Microseconds_Sq_u(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: metres_per_microseconds_sq_u = 1
+        let categoryResult1 = Acceleration(unit1).metres_per_microseconds_sq_u.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_m_per_us_sq_u(5000000)
+        let result2 = Metres_Per_Microseconds_Sq_u(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: metres_per_microseconds_sq_u = 1
+        let categoryResult2 = Acceleration(unit2).metres_per_microseconds_sq_u.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_m_per_us_sq_u(-Float.greatestFiniteMagnitude)
+        let result3 = Metres_Per_Microseconds_Sq_u(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: metres_per_microseconds_sq_u = 1
+        let categoryResult3 = Acceleration(unit3).metres_per_microseconds_sq_u.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_m_per_us_sq_u(Float.greatestFiniteMagnitude)
+        let result4 = Metres_Per_Microseconds_Sq_u(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: metres_per_microseconds_sq_u = 1
+        let categoryResult4 = Acceleration(unit4).metres_per_microseconds_sq_u.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+    }
+
+    func testmetres_per_seconds_sq_fTometres_per_milliseconds_sq_u() {
+        let unit = Metres_Per_Seconds_Sq_f(-5000000)
+        let expected = m_per_s_sq_f_to_m_per_ms_sq_u(-5000000)
+        let result = Metres_Per_Milliseconds_Sq_u(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: metres_per_milliseconds_sq_u = 1
+        let categoryResult = Acceleration(unit).metres_per_milliseconds_sq_u.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_m_per_ms_sq_u(0)
+        let result1 = Metres_Per_Milliseconds_Sq_u(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: metres_per_milliseconds_sq_u = 1
+        let categoryResult1 = Acceleration(unit1).metres_per_milliseconds_sq_u.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_m_per_ms_sq_u(5000000)
+        let result2 = Metres_Per_Milliseconds_Sq_u(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: metres_per_milliseconds_sq_u = 1
+        let categoryResult2 = Acceleration(unit2).metres_per_milliseconds_sq_u.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_m_per_ms_sq_u(-Float.greatestFiniteMagnitude)
+        let result3 = Metres_Per_Milliseconds_Sq_u(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: metres_per_milliseconds_sq_u = 1
+        let categoryResult3 = Acceleration(unit3).metres_per_milliseconds_sq_u.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_m_per_ms_sq_u(Float.greatestFiniteMagnitude)
+        let result4 = Metres_Per_Milliseconds_Sq_u(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: metres_per_milliseconds_sq_u = 1
+        let categoryResult4 = Acceleration(unit4).metres_per_milliseconds_sq_u.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+    }
+
+    func testmetres_per_seconds_sq_fTometres_per_seconds_sq_u() {
+        let unit = Metres_Per_Seconds_Sq_f(-5000000)
+        let expected = m_per_s_sq_f_to_m_per_s_sq_u(-5000000)
+        let result = Metres_Per_Seconds_Sq_u(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: metres_per_seconds_sq_u = 1
+        let categoryResult = Acceleration(unit).metres_per_seconds_sq_u.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_m_per_s_sq_u(0)
+        let result1 = Metres_Per_Seconds_Sq_u(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: metres_per_seconds_sq_u = 1
+        let categoryResult1 = Acceleration(unit1).metres_per_seconds_sq_u.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_m_per_s_sq_u(5000000)
+        let result2 = Metres_Per_Seconds_Sq_u(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: metres_per_seconds_sq_u = 1
+        let categoryResult2 = Acceleration(unit2).metres_per_seconds_sq_u.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_m_per_s_sq_u(-Float.greatestFiniteMagnitude)
+        let result3 = Metres_Per_Seconds_Sq_u(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: metres_per_seconds_sq_u = 1
+        let categoryResult3 = Acceleration(unit3).metres_per_seconds_sq_u.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_m_per_s_sq_u(Float.greatestFiniteMagnitude)
+        let result4 = Metres_Per_Seconds_Sq_u(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: metres_per_seconds_sq_u = 1
+        let categoryResult4 = Acceleration(unit4).metres_per_seconds_sq_u.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+    }
+
+    func testmetres_per_seconds_sq_fTomillimetres_per_microseconds_sq_f() {
+        let unit = Metres_Per_Seconds_Sq_f(-5000000)
+        let expected = m_per_s_sq_f_to_mm_per_us_sq_f(-5000000)
+        let result = Millimetres_Per_Microseconds_Sq_f(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: millimetres_per_microseconds_sq_f = 1.0
+        let categoryResult = Acceleration(unit).millimetres_per_microseconds_sq_f.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_mm_per_us_sq_f(0)
+        let result1 = Millimetres_Per_Microseconds_Sq_f(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: millimetres_per_microseconds_sq_f = 1.0
+        let categoryResult1 = Acceleration(unit1).millimetres_per_microseconds_sq_f.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_mm_per_us_sq_f(5000000)
+        let result2 = Millimetres_Per_Microseconds_Sq_f(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: millimetres_per_microseconds_sq_f = 1.0
+        let categoryResult2 = Acceleration(unit2).millimetres_per_microseconds_sq_f.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_mm_per_us_sq_f(-Float.greatestFiniteMagnitude)
+        let result3 = Millimetres_Per_Microseconds_Sq_f(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: millimetres_per_microseconds_sq_f = 1.0
+        let categoryResult3 = Acceleration(unit3).millimetres_per_microseconds_sq_f.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_mm_per_us_sq_f(Float.greatestFiniteMagnitude)
+        let result4 = Millimetres_Per_Microseconds_Sq_f(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: millimetres_per_microseconds_sq_f = 1.0
+        let categoryResult4 = Acceleration(unit4).millimetres_per_microseconds_sq_f.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+    }
+
+    func testmetres_per_seconds_sq_fTomillimetres_per_milliseconds_sq_f() {
+        let unit = Metres_Per_Seconds_Sq_f(-5000000)
+        let expected = m_per_s_sq_f_to_mm_per_ms_sq_f(-5000000)
+        let result = Millimetres_Per_Milliseconds_Sq_f(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: millimetres_per_milliseconds_sq_f = 1.0
+        let categoryResult = Acceleration(unit).millimetres_per_milliseconds_sq_f.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_mm_per_ms_sq_f(0)
+        let result1 = Millimetres_Per_Milliseconds_Sq_f(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: millimetres_per_milliseconds_sq_f = 1.0
+        let categoryResult1 = Acceleration(unit1).millimetres_per_milliseconds_sq_f.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_mm_per_ms_sq_f(5000000)
+        let result2 = Millimetres_Per_Milliseconds_Sq_f(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: millimetres_per_milliseconds_sq_f = 1.0
+        let categoryResult2 = Acceleration(unit2).millimetres_per_milliseconds_sq_f.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_mm_per_ms_sq_f(-Float.greatestFiniteMagnitude)
+        let result3 = Millimetres_Per_Milliseconds_Sq_f(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: millimetres_per_milliseconds_sq_f = 1.0
+        let categoryResult3 = Acceleration(unit3).millimetres_per_milliseconds_sq_f.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_mm_per_ms_sq_f(Float.greatestFiniteMagnitude)
+        let result4 = Millimetres_Per_Milliseconds_Sq_f(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: millimetres_per_milliseconds_sq_f = 1.0
+        let categoryResult4 = Acceleration(unit4).millimetres_per_milliseconds_sq_f.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+    }
+
+    func testmetres_per_seconds_sq_fTomillimetres_per_seconds_sq_f() {
+        let unit = Metres_Per_Seconds_Sq_f(-5000000)
+        let expected = m_per_s_sq_f_to_mm_per_s_sq_f(-5000000)
+        let result = Millimetres_Per_Seconds_Sq_f(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: millimetres_per_seconds_sq_f = 1.0
+        let categoryResult = Acceleration(unit).millimetres_per_seconds_sq_f.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_mm_per_s_sq_f(0)
+        let result1 = Millimetres_Per_Seconds_Sq_f(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: millimetres_per_seconds_sq_f = 1.0
+        let categoryResult1 = Acceleration(unit1).millimetres_per_seconds_sq_f.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_mm_per_s_sq_f(5000000)
+        let result2 = Millimetres_Per_Seconds_Sq_f(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: millimetres_per_seconds_sq_f = 1.0
+        let categoryResult2 = Acceleration(unit2).millimetres_per_seconds_sq_f.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_mm_per_s_sq_f(-Float.greatestFiniteMagnitude)
+        let result3 = Millimetres_Per_Seconds_Sq_f(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: millimetres_per_seconds_sq_f = 1.0
+        let categoryResult3 = Acceleration(unit3).millimetres_per_seconds_sq_f.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_mm_per_s_sq_f(Float.greatestFiniteMagnitude)
+        let result4 = Millimetres_Per_Seconds_Sq_f(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: millimetres_per_seconds_sq_f = 1.0
+        let categoryResult4 = Acceleration(unit4).millimetres_per_seconds_sq_f.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+    }
+
+    func testmetres_per_seconds_sq_fTocentimetres_per_microseconds_sq_f() {
+        let unit = Metres_Per_Seconds_Sq_f(-5000000)
+        let expected = m_per_s_sq_f_to_cm_per_us_sq_f(-5000000)
+        let result = Centimetres_Per_Microseconds_Sq_f(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: centimetres_per_microseconds_sq_f = 1.0
+        let categoryResult = Acceleration(unit).centimetres_per_microseconds_sq_f.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_cm_per_us_sq_f(0)
+        let result1 = Centimetres_Per_Microseconds_Sq_f(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: centimetres_per_microseconds_sq_f = 1.0
+        let categoryResult1 = Acceleration(unit1).centimetres_per_microseconds_sq_f.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_cm_per_us_sq_f(5000000)
+        let result2 = Centimetres_Per_Microseconds_Sq_f(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: centimetres_per_microseconds_sq_f = 1.0
+        let categoryResult2 = Acceleration(unit2).centimetres_per_microseconds_sq_f.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_cm_per_us_sq_f(-Float.greatestFiniteMagnitude)
+        let result3 = Centimetres_Per_Microseconds_Sq_f(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: centimetres_per_microseconds_sq_f = 1.0
+        let categoryResult3 = Acceleration(unit3).centimetres_per_microseconds_sq_f.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_cm_per_us_sq_f(Float.greatestFiniteMagnitude)
+        let result4 = Centimetres_Per_Microseconds_Sq_f(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: centimetres_per_microseconds_sq_f = 1.0
+        let categoryResult4 = Acceleration(unit4).centimetres_per_microseconds_sq_f.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+    }
+
+    func testmetres_per_seconds_sq_fTocentimetres_per_milliseconds_sq_f() {
+        let unit = Metres_Per_Seconds_Sq_f(-5000000)
+        let expected = m_per_s_sq_f_to_cm_per_ms_sq_f(-5000000)
+        let result = Centimetres_Per_Milliseconds_Sq_f(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: centimetres_per_milliseconds_sq_f = 1.0
+        let categoryResult = Acceleration(unit).centimetres_per_milliseconds_sq_f.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_cm_per_ms_sq_f(0)
+        let result1 = Centimetres_Per_Milliseconds_Sq_f(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: centimetres_per_milliseconds_sq_f = 1.0
+        let categoryResult1 = Acceleration(unit1).centimetres_per_milliseconds_sq_f.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_cm_per_ms_sq_f(5000000)
+        let result2 = Centimetres_Per_Milliseconds_Sq_f(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: centimetres_per_milliseconds_sq_f = 1.0
+        let categoryResult2 = Acceleration(unit2).centimetres_per_milliseconds_sq_f.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_cm_per_ms_sq_f(-Float.greatestFiniteMagnitude)
+        let result3 = Centimetres_Per_Milliseconds_Sq_f(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: centimetres_per_milliseconds_sq_f = 1.0
+        let categoryResult3 = Acceleration(unit3).centimetres_per_milliseconds_sq_f.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_cm_per_ms_sq_f(Float.greatestFiniteMagnitude)
+        let result4 = Centimetres_Per_Milliseconds_Sq_f(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: centimetres_per_milliseconds_sq_f = 1.0
+        let categoryResult4 = Acceleration(unit4).centimetres_per_milliseconds_sq_f.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+    }
+
+    func testmetres_per_seconds_sq_fTocentimetres_per_seconds_sq_f() {
+        let unit = Metres_Per_Seconds_Sq_f(-5000000)
+        let expected = m_per_s_sq_f_to_cm_per_s_sq_f(-5000000)
+        let result = Centimetres_Per_Seconds_Sq_f(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: centimetres_per_seconds_sq_f = 1.0
+        let categoryResult = Acceleration(unit).centimetres_per_seconds_sq_f.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_cm_per_s_sq_f(0)
+        let result1 = Centimetres_Per_Seconds_Sq_f(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: centimetres_per_seconds_sq_f = 1.0
+        let categoryResult1 = Acceleration(unit1).centimetres_per_seconds_sq_f.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_cm_per_s_sq_f(5000000)
+        let result2 = Centimetres_Per_Seconds_Sq_f(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: centimetres_per_seconds_sq_f = 1.0
+        let categoryResult2 = Acceleration(unit2).centimetres_per_seconds_sq_f.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_cm_per_s_sq_f(-Float.greatestFiniteMagnitude)
+        let result3 = Centimetres_Per_Seconds_Sq_f(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: centimetres_per_seconds_sq_f = 1.0
+        let categoryResult3 = Acceleration(unit3).centimetres_per_seconds_sq_f.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_cm_per_s_sq_f(Float.greatestFiniteMagnitude)
+        let result4 = Centimetres_Per_Seconds_Sq_f(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: centimetres_per_seconds_sq_f = 1.0
+        let categoryResult4 = Acceleration(unit4).centimetres_per_seconds_sq_f.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+    }
+
+    func testmetres_per_seconds_sq_fTometres_per_microseconds_sq_f() {
+        let unit = Metres_Per_Seconds_Sq_f(-5000000)
+        let expected = m_per_s_sq_f_to_m_per_us_sq_f(-5000000)
+        let result = Metres_Per_Microseconds_Sq_f(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: metres_per_microseconds_sq_f = 1.0
+        let categoryResult = Acceleration(unit).metres_per_microseconds_sq_f.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_m_per_us_sq_f(0)
+        let result1 = Metres_Per_Microseconds_Sq_f(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: metres_per_microseconds_sq_f = 1.0
+        let categoryResult1 = Acceleration(unit1).metres_per_microseconds_sq_f.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_m_per_us_sq_f(5000000)
+        let result2 = Metres_Per_Microseconds_Sq_f(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: metres_per_microseconds_sq_f = 1.0
+        let categoryResult2 = Acceleration(unit2).metres_per_microseconds_sq_f.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_m_per_us_sq_f(-Float.greatestFiniteMagnitude)
+        let result3 = Metres_Per_Microseconds_Sq_f(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: metres_per_microseconds_sq_f = 1.0
+        let categoryResult3 = Acceleration(unit3).metres_per_microseconds_sq_f.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_m_per_us_sq_f(Float.greatestFiniteMagnitude)
+        let result4 = Metres_Per_Microseconds_Sq_f(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: metres_per_microseconds_sq_f = 1.0
+        let categoryResult4 = Acceleration(unit4).metres_per_microseconds_sq_f.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+    }
+
+    func testmetres_per_seconds_sq_fTometres_per_milliseconds_sq_f() {
+        let unit = Metres_Per_Seconds_Sq_f(-5000000)
+        let expected = m_per_s_sq_f_to_m_per_ms_sq_f(-5000000)
+        let result = Metres_Per_Milliseconds_Sq_f(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: metres_per_milliseconds_sq_f = 1.0
+        let categoryResult = Acceleration(unit).metres_per_milliseconds_sq_f.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_m_per_ms_sq_f(0)
+        let result1 = Metres_Per_Milliseconds_Sq_f(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: metres_per_milliseconds_sq_f = 1.0
+        let categoryResult1 = Acceleration(unit1).metres_per_milliseconds_sq_f.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_m_per_ms_sq_f(5000000)
+        let result2 = Metres_Per_Milliseconds_Sq_f(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: metres_per_milliseconds_sq_f = 1.0
+        let categoryResult2 = Acceleration(unit2).metres_per_milliseconds_sq_f.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_m_per_ms_sq_f(-Float.greatestFiniteMagnitude)
+        let result3 = Metres_Per_Milliseconds_Sq_f(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: metres_per_milliseconds_sq_f = 1.0
+        let categoryResult3 = Acceleration(unit3).metres_per_milliseconds_sq_f.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_m_per_ms_sq_f(Float.greatestFiniteMagnitude)
+        let result4 = Metres_Per_Milliseconds_Sq_f(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: metres_per_milliseconds_sq_f = 1.0
+        let categoryResult4 = Acceleration(unit4).metres_per_milliseconds_sq_f.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+    }
+
+    func testmetres_per_seconds_sq_fTomillimetres_per_microseconds_sq_d() {
+        let unit = Metres_Per_Seconds_Sq_f(-5000000)
+        let expected = m_per_s_sq_f_to_mm_per_us_sq_d(-5000000)
+        let result = Millimetres_Per_Microseconds_Sq_d(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: millimetres_per_microseconds_sq_d = 1.0
+        let categoryResult = Acceleration(unit).millimetres_per_microseconds_sq_d.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_mm_per_us_sq_d(0)
+        let result1 = Millimetres_Per_Microseconds_Sq_d(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: millimetres_per_microseconds_sq_d = 1.0
+        let categoryResult1 = Acceleration(unit1).millimetres_per_microseconds_sq_d.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_mm_per_us_sq_d(5000000)
+        let result2 = Millimetres_Per_Microseconds_Sq_d(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: millimetres_per_microseconds_sq_d = 1.0
+        let categoryResult2 = Acceleration(unit2).millimetres_per_microseconds_sq_d.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_mm_per_us_sq_d(-Float.greatestFiniteMagnitude)
+        let result3 = Millimetres_Per_Microseconds_Sq_d(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: millimetres_per_microseconds_sq_d = 1.0
+        let categoryResult3 = Acceleration(unit3).millimetres_per_microseconds_sq_d.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_mm_per_us_sq_d(Float.greatestFiniteMagnitude)
+        let result4 = Millimetres_Per_Microseconds_Sq_d(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: millimetres_per_microseconds_sq_d = 1.0
+        let categoryResult4 = Acceleration(unit4).millimetres_per_microseconds_sq_d.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+    }
+
+    func testmetres_per_seconds_sq_fTomillimetres_per_milliseconds_sq_d() {
+        let unit = Metres_Per_Seconds_Sq_f(-5000000)
+        let expected = m_per_s_sq_f_to_mm_per_ms_sq_d(-5000000)
+        let result = Millimetres_Per_Milliseconds_Sq_d(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: millimetres_per_milliseconds_sq_d = 1.0
+        let categoryResult = Acceleration(unit).millimetres_per_milliseconds_sq_d.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_mm_per_ms_sq_d(0)
+        let result1 = Millimetres_Per_Milliseconds_Sq_d(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: millimetres_per_milliseconds_sq_d = 1.0
+        let categoryResult1 = Acceleration(unit1).millimetres_per_milliseconds_sq_d.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_mm_per_ms_sq_d(5000000)
+        let result2 = Millimetres_Per_Milliseconds_Sq_d(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: millimetres_per_milliseconds_sq_d = 1.0
+        let categoryResult2 = Acceleration(unit2).millimetres_per_milliseconds_sq_d.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_mm_per_ms_sq_d(-Float.greatestFiniteMagnitude)
+        let result3 = Millimetres_Per_Milliseconds_Sq_d(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: millimetres_per_milliseconds_sq_d = 1.0
+        let categoryResult3 = Acceleration(unit3).millimetres_per_milliseconds_sq_d.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_mm_per_ms_sq_d(Float.greatestFiniteMagnitude)
+        let result4 = Millimetres_Per_Milliseconds_Sq_d(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: millimetres_per_milliseconds_sq_d = 1.0
+        let categoryResult4 = Acceleration(unit4).millimetres_per_milliseconds_sq_d.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+    }
+
+    func testmetres_per_seconds_sq_fTomillimetres_per_seconds_sq_d() {
+        let unit = Metres_Per_Seconds_Sq_f(-5000000)
+        let expected = m_per_s_sq_f_to_mm_per_s_sq_d(-5000000)
+        let result = Millimetres_Per_Seconds_Sq_d(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: millimetres_per_seconds_sq_d = 1.0
+        let categoryResult = Acceleration(unit).millimetres_per_seconds_sq_d.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_mm_per_s_sq_d(0)
+        let result1 = Millimetres_Per_Seconds_Sq_d(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: millimetres_per_seconds_sq_d = 1.0
+        let categoryResult1 = Acceleration(unit1).millimetres_per_seconds_sq_d.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_mm_per_s_sq_d(5000000)
+        let result2 = Millimetres_Per_Seconds_Sq_d(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: millimetres_per_seconds_sq_d = 1.0
+        let categoryResult2 = Acceleration(unit2).millimetres_per_seconds_sq_d.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_mm_per_s_sq_d(-Float.greatestFiniteMagnitude)
+        let result3 = Millimetres_Per_Seconds_Sq_d(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: millimetres_per_seconds_sq_d = 1.0
+        let categoryResult3 = Acceleration(unit3).millimetres_per_seconds_sq_d.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_mm_per_s_sq_d(Float.greatestFiniteMagnitude)
+        let result4 = Millimetres_Per_Seconds_Sq_d(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: millimetres_per_seconds_sq_d = 1.0
+        let categoryResult4 = Acceleration(unit4).millimetres_per_seconds_sq_d.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+    }
+
+    func testmetres_per_seconds_sq_fTocentimetres_per_microseconds_sq_d() {
+        let unit = Metres_Per_Seconds_Sq_f(-5000000)
+        let expected = m_per_s_sq_f_to_cm_per_us_sq_d(-5000000)
+        let result = Centimetres_Per_Microseconds_Sq_d(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: centimetres_per_microseconds_sq_d = 1.0
+        let categoryResult = Acceleration(unit).centimetres_per_microseconds_sq_d.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Metres_Per_Seconds_Sq_f(0)
+        let expected1 = m_per_s_sq_f_to_cm_per_us_sq_d(0)
+        let result1 = Centimetres_Per_Microseconds_Sq_d(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: centimetres_per_microseconds_sq_d = 1.0
+        let categoryResult1 = Acceleration(unit1).centimetres_per_microseconds_sq_d.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Metres_Per_Seconds_Sq_f(5000000)
+        let expected2 = m_per_s_sq_f_to_cm_per_us_sq_d(5000000)
+        let result2 = Centimetres_Per_Microseconds_Sq_d(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: centimetres_per_microseconds_sq_d = 1.0
+        let categoryResult2 = Acceleration(unit2).centimetres_per_microseconds_sq_d.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Metres_Per_Seconds_Sq_f(-Float.greatestFiniteMagnitude)
+        let expected3 = m_per_s_sq_f_to_cm_per_us_sq_d(-Float.greatestFiniteMagnitude)
+        let result3 = Centimetres_Per_Microseconds_Sq_d(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: centimetres_per_microseconds_sq_d = 1.0
+        let categoryResult3 = Acceleration(unit3).centimetres_per_microseconds_sq_d.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Metres_Per_Seconds_Sq_f(Float.greatestFiniteMagnitude)
+        let expected4 = m_per_s_sq_f_to_cm_per_us_sq_d(Float.greatestFiniteMagnitude)
+        let result4 = Centimetres_Per_Microseconds_Sq_d(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: centimetres_per_microseconds_sq_d = 1.0
+        let categoryResult4 = Acceleration(unit4).centimetres_per_microseconds_sq_d.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
         }
     }
 

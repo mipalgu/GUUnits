@@ -4,166 +4,179 @@ import XCTest
 
 final class Time_Microseconds_fTests1: XCTestCase {
 
-    func testmicroseconds_fTofloatUsingmicroseconds_fFloat_greatestFiniteMagnitudeExpectingFloatFloat_greatestFiniteMagnitude() {
-        let result = us_f_to_f(microseconds_f(Float.greatestFiniteMagnitude))
-        let expected: Float = Float(Float.greatestFiniteMagnitude)
-        let tolerance: Float = 0.99
+    func testmicroseconds_f_to_seconds_u1() {
+        XCTAssertEqual(us_f_to_s_u(-1000.0), 0)
+        XCTAssertEqual(us_f_to_s_u(-6.0), 0)
+        XCTAssertEqual(us_f_to_s_u(-Float.greatestFiniteMagnitude), seconds_u(UInt64.min))
+        XCTAssertEqual(us_f_to_s_u(Float.greatestFiniteMagnitude), seconds_u(UInt64.max))
+    }
+
+    func testmicroseconds_f_to_uint16_t() {
+        XCTAssertEqual(us_f_to_u16(0.0), 0)
+        XCTAssertEqual(us_f_to_u16(5.0), 5)
+        XCTAssertEqual(us_f_to_u16(microseconds_f(-Float.greatestFiniteMagnitude)), UInt16(UInt16.min))
+        XCTAssertEqual(us_f_to_u16(microseconds_f(Float.greatestFiniteMagnitude)), UInt16(UInt16.max))
+    }
+
+    func testmicroseconds_f_to_uint32_t() {
+        XCTAssertEqual(us_f_to_u32(0.0), 0)
+        XCTAssertEqual(us_f_to_u32(5.0), 5)
+        XCTAssertEqual(us_f_to_u32(microseconds_f(-Float.greatestFiniteMagnitude)), UInt32(UInt32.min))
+        XCTAssertEqual(us_f_to_u32(microseconds_f(Float.greatestFiniteMagnitude)), UInt32(UInt32.max))
+    }
+
+    func testmicroseconds_f_to_uint64_t() {
+        XCTAssertEqual(us_f_to_u64(0.0), 0)
+        XCTAssertEqual(us_f_to_u64(5.0), 5)
+        XCTAssertEqual(us_f_to_u64(microseconds_f(-Float.greatestFiniteMagnitude)), UInt64(UInt64.min))
+        XCTAssertEqual(us_f_to_u64(microseconds_f(Float.greatestFiniteMagnitude)), UInt64(UInt64.max))
+    }
+
+    func testmicroseconds_f_to_uint8_t() {
+        XCTAssertEqual(us_f_to_u8(0.0), 0)
+        XCTAssertEqual(us_f_to_u8(5.0), 5)
+        XCTAssertEqual(us_f_to_u8(microseconds_f(-Float.greatestFiniteMagnitude)), UInt8(UInt8.min))
+        XCTAssertEqual(us_f_to_u8(microseconds_f(Float.greatestFiniteMagnitude)), UInt8(UInt8.max))
+    }
+
+    func testuint16_t_to_microseconds_f() {
+        let result = u16_to_us_f(0)
+        let expected: microseconds_f = 0.0
+        let tolerance: microseconds_f = 0.99
         if result > expected {
             XCTAssertLessThanOrEqual(result - expected, tolerance)
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
+        let result1 = u16_to_us_f(5)
+        let expected1: microseconds_f = 5.0
+        let tolerance1: microseconds_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = u16_to_us_f(UInt16(UInt16.min))
+        let expected2: microseconds_f = microseconds_f(UInt16.min)
+        let tolerance2: microseconds_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = u16_to_us_f(UInt16(UInt16.max))
+        let expected3: microseconds_f = microseconds_f(UInt16.max)
+        let tolerance3: microseconds_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
     }
 
-    func testmicroseconds_fTofloatUsingmicroseconds_fNegFloat_greatestFiniteMagnitudeExpectingFloatNegFloat_greatestFiniteMagnitude() {
-        let result = us_f_to_f(microseconds_f(-Float.greatestFiniteMagnitude))
-        let expected: Float = Float(-Float.greatestFiniteMagnitude)
-        let tolerance: Float = 0.99
+    func testuint32_t_to_microseconds_f() {
+        let result = u32_to_us_f(0)
+        let expected: microseconds_f = 0.0
+        let tolerance: microseconds_f = 0.99
         if result > expected {
             XCTAssertLessThanOrEqual(result - expected, tolerance)
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
+        let result1 = u32_to_us_f(5)
+        let expected1: microseconds_f = 5.0
+        let tolerance1: microseconds_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = u32_to_us_f(UInt32(UInt32.min))
+        let expected2: microseconds_f = microseconds_f(UInt32.min)
+        let tolerance2: microseconds_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = u32_to_us_f(UInt32(UInt32.max))
+        let expected3: microseconds_f = microseconds_f(UInt32.max)
+        let tolerance3: microseconds_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
     }
 
-    func testmicroseconds_fToint16_tUsing0_0Expecting0() {
-        XCTAssertEqual(us_f_to_i16(0.0), 0)
-    }
-
-    func testmicroseconds_fToint16_tUsing5_0Expecting5() {
-        XCTAssertEqual(us_f_to_i16(5.0), 5)
-    }
-
-    func testmicroseconds_fToint16_tUsingmicroseconds_fFloat_greatestFiniteMagnitudeExpectingInt16Int16_max() {
-        XCTAssertEqual(us_f_to_i16(microseconds_f(Float.greatestFiniteMagnitude)), Int16(Int16.max))
-    }
-
-    func testmicroseconds_fToint16_tUsingmicroseconds_fNegFloat_greatestFiniteMagnitudeExpectingInt16Int16_min() {
-        XCTAssertEqual(us_f_to_i16(microseconds_f(-Float.greatestFiniteMagnitude)), Int16(Int16.min))
-    }
-
-    func testmicroseconds_fToint32_tUsing0_0Expecting0() {
-        XCTAssertEqual(us_f_to_i32(0.0), 0)
-    }
-
-    func testmicroseconds_fToint32_tUsing5_0Expecting5() {
-        XCTAssertEqual(us_f_to_i32(5.0), 5)
-    }
-
-    func testmicroseconds_fToint32_tUsingmicroseconds_fFloat_greatestFiniteMagnitudeExpectingInt32Int32_max() {
-        XCTAssertEqual(us_f_to_i32(microseconds_f(Float.greatestFiniteMagnitude)), Int32(Int32.max))
-    }
-
-    func testmicroseconds_fToint32_tUsingmicroseconds_fNegFloat_greatestFiniteMagnitudeExpectingInt32Int32_min() {
-        XCTAssertEqual(us_f_to_i32(microseconds_f(-Float.greatestFiniteMagnitude)), Int32(Int32.min))
-    }
-
-    func testmicroseconds_fToint64_tUsing0_0Expecting0() {
-        XCTAssertEqual(us_f_to_i64(0.0), 0)
-    }
-
-    func testmicroseconds_fToint64_tUsing5_0Expecting5() {
-        XCTAssertEqual(us_f_to_i64(5.0), 5)
-    }
-
-    func testmicroseconds_fToint64_tUsingmicroseconds_fFloat_greatestFiniteMagnitudeExpectingInt64Int64_max() {
-        XCTAssertEqual(us_f_to_i64(microseconds_f(Float.greatestFiniteMagnitude)), Int64(Int64.max))
-    }
-
-    func testmicroseconds_fToint64_tUsingmicroseconds_fNegFloat_greatestFiniteMagnitudeExpectingInt64Int64_min() {
-        XCTAssertEqual(us_f_to_i64(microseconds_f(-Float.greatestFiniteMagnitude)), Int64(Int64.min))
-    }
-
-    func testmicroseconds_fToint8_tUsing0_0Expecting0() {
-        XCTAssertEqual(us_f_to_i8(0.0), 0)
-    }
-
-    func testmicroseconds_fToint8_tUsing5_0Expecting5() {
-        XCTAssertEqual(us_f_to_i8(5.0), 5)
-    }
-
-    func testmicroseconds_fToint8_tUsingmicroseconds_fFloat_greatestFiniteMagnitudeExpectingInt8Int8_max() {
-        XCTAssertEqual(us_f_to_i8(microseconds_f(Float.greatestFiniteMagnitude)), Int8(Int8.max))
-    }
-
-    func testmicroseconds_fToint8_tUsingmicroseconds_fNegFloat_greatestFiniteMagnitudeExpectingInt8Int8_min() {
-        XCTAssertEqual(us_f_to_i8(microseconds_f(-Float.greatestFiniteMagnitude)), Int8(Int8.min))
-    }
-
-    func testmicroseconds_fTomicroseconds_dUsing0_0Expecting0_0() {
-        let result = us_f_to_us_d(0.0)
-        let expected: microseconds_d = 0.0
-        let tolerance: microseconds_d = 0.99
+    func testuint64_t_to_microseconds_f() {
+        let result = u64_to_us_f(0)
+        let expected: microseconds_f = 0.0
+        let tolerance: microseconds_f = 0.99
         if result > expected {
             XCTAssertLessThanOrEqual(result - expected, tolerance)
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
+        let result1 = u64_to_us_f(5)
+        let expected1: microseconds_f = 5.0
+        let tolerance1: microseconds_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = u64_to_us_f(UInt64(UInt64.min))
+        let expected2: microseconds_f = microseconds_f(UInt64.min)
+        let tolerance2: microseconds_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = u64_to_us_f(UInt64(UInt64.max))
+        let expected3: microseconds_f = microseconds_f(UInt64.max)
+        let tolerance3: microseconds_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
     }
 
-    func testmicroseconds_fTomicroseconds_dUsing5_0Expecting5_0() {
-        let result = us_f_to_us_d(5.0)
-        let expected: microseconds_d = 5.0
-        let tolerance: microseconds_d = 0.99
+    func testuint8_t_to_microseconds_f() {
+        let result = u8_to_us_f(0)
+        let expected: microseconds_f = 0.0
+        let tolerance: microseconds_f = 0.99
         if result > expected {
             XCTAssertLessThanOrEqual(result - expected, tolerance)
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
-    }
-
-    func testmicroseconds_fTomicroseconds_dUsingmicroseconds_fFloat_greatestFiniteMagnitudeExpectingmicroseconds_dFloat_greatestFiniteMagnitude() {
-        let result = us_f_to_us_d(microseconds_f(Float.greatestFiniteMagnitude))
-        let expected: microseconds_d = microseconds_d(Float.greatestFiniteMagnitude)
-        let tolerance: microseconds_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        let result1 = u8_to_us_f(5)
+        let expected1: microseconds_f = 5.0
+        let tolerance1: microseconds_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
         }
-    }
-
-    func testmicroseconds_fTomicroseconds_dUsingmicroseconds_fNegFloat_greatestFiniteMagnitudeExpectingmicroseconds_dNegFloat_greatestFiniteMagnitude() {
-        let result = us_f_to_us_d(microseconds_f(-Float.greatestFiniteMagnitude))
-        let expected: microseconds_d = microseconds_d(-Float.greatestFiniteMagnitude)
-        let tolerance: microseconds_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        let result2 = u8_to_us_f(UInt8(UInt8.min))
+        let expected2: microseconds_f = microseconds_f(UInt8.min)
+        let tolerance2: microseconds_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
         } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
         }
-    }
-
-    func testmicroseconds_fTomicroseconds_tUsing0_0Expecting0() {
-        XCTAssertEqual(us_f_to_us_t(0.0), 0)
-    }
-
-    func testmicroseconds_fTomicroseconds_tUsing5_0Expecting5() {
-        XCTAssertEqual(us_f_to_us_t(5.0), 5)
-    }
-
-    func testmicroseconds_fTomicroseconds_tUsingmicroseconds_fFloat_greatestFiniteMagnitudeExpectingmicroseconds_tInt64_max() {
-        XCTAssertEqual(us_f_to_us_t(microseconds_f(Float.greatestFiniteMagnitude)), microseconds_t(Int64.max))
-    }
-
-    func testmicroseconds_fTomicroseconds_tUsingmicroseconds_fNegFloat_greatestFiniteMagnitudeExpectingmicroseconds_tInt64_min() {
-        XCTAssertEqual(us_f_to_us_t(microseconds_f(-Float.greatestFiniteMagnitude)), microseconds_t(Int64.min))
-    }
-
-    func testmicroseconds_fTomicroseconds_uUsing0_0Expecting0() {
-        XCTAssertEqual(us_f_to_us_u(0.0), 0)
-    }
-
-    func testmicroseconds_fTomicroseconds_uUsing5_0Expecting5() {
-        XCTAssertEqual(us_f_to_us_u(5.0), 5)
-    }
-
-    func testmicroseconds_fTomicroseconds_uUsingmicroseconds_fFloat_greatestFiniteMagnitudeExpectingmicroseconds_uUInt64_max() {
-        XCTAssertEqual(us_f_to_us_u(microseconds_f(Float.greatestFiniteMagnitude)), microseconds_u(UInt64.max))
-    }
-
-    func testmicroseconds_fTomicroseconds_uUsingmicroseconds_fNegFloat_greatestFiniteMagnitudeExpectingmicroseconds_uUInt64_min() {
-        XCTAssertEqual(us_f_to_us_u(microseconds_f(-Float.greatestFiniteMagnitude)), microseconds_u(UInt64.min))
+        let result3 = u8_to_us_f(UInt8(UInt8.max))
+        let expected3: microseconds_f = microseconds_f(UInt8.max)
+        let tolerance3: microseconds_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
     }
 
 }

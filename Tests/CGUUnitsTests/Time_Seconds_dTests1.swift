@@ -4,221 +4,178 @@ import XCTest
 
 final class Time_Seconds_dTests1: XCTestCase {
 
-    func testseconds_dTofloatUsingseconds_dDouble_greatestFiniteMagnitudeExpectingFloatFloat_greatestFiniteMagnitude() {
-        let result = s_d_to_f(seconds_d(Double.greatestFiniteMagnitude))
-        let expected: Float = Float(Float.greatestFiniteMagnitude)
-        let tolerance: Float = 0.99
+    func testseconds_d_to_seconds_u() {
+        XCTAssertEqual(s_d_to_s_u(0.0), 0)
+        XCTAssertEqual(s_d_to_s_u(seconds_d(-Double.greatestFiniteMagnitude)), seconds_u(UInt64.min))
+        XCTAssertEqual(s_d_to_s_u(seconds_d(Double.greatestFiniteMagnitude)), seconds_u(UInt64.max))
+        XCTAssertEqual(s_d_to_s_u(5.0), 5)
+    }
+
+    func testseconds_d_to_uint16_t() {
+        XCTAssertEqual(s_d_to_u16(0.0), 0)
+        XCTAssertEqual(s_d_to_u16(5.0), 5)
+        XCTAssertEqual(s_d_to_u16(seconds_d(-Double.greatestFiniteMagnitude)), UInt16(UInt16.min))
+        XCTAssertEqual(s_d_to_u16(seconds_d(Double.greatestFiniteMagnitude)), UInt16(UInt16.max))
+    }
+
+    func testseconds_d_to_uint32_t() {
+        XCTAssertEqual(s_d_to_u32(0.0), 0)
+        XCTAssertEqual(s_d_to_u32(5.0), 5)
+        XCTAssertEqual(s_d_to_u32(seconds_d(-Double.greatestFiniteMagnitude)), UInt32(UInt32.min))
+        XCTAssertEqual(s_d_to_u32(seconds_d(Double.greatestFiniteMagnitude)), UInt32(UInt32.max))
+    }
+
+    func testseconds_d_to_uint64_t() {
+        XCTAssertEqual(s_d_to_u64(0.0), 0)
+        XCTAssertEqual(s_d_to_u64(5.0), 5)
+        XCTAssertEqual(s_d_to_u64(seconds_d(-Double.greatestFiniteMagnitude)), UInt64(UInt64.min))
+        XCTAssertEqual(s_d_to_u64(seconds_d(Double.greatestFiniteMagnitude)), UInt64(UInt64.max))
+    }
+
+    func testseconds_d_to_uint8_t() {
+        XCTAssertEqual(s_d_to_u8(0.0), 0)
+        XCTAssertEqual(s_d_to_u8(5.0), 5)
+        XCTAssertEqual(s_d_to_u8(seconds_d(-Double.greatestFiniteMagnitude)), UInt8(UInt8.min))
+        XCTAssertEqual(s_d_to_u8(seconds_d(Double.greatestFiniteMagnitude)), UInt8(UInt8.max))
+    }
+
+    func testuint16_t_to_seconds_d() {
+        let result = u16_to_s_d(0)
+        let expected: seconds_d = 0.0
+        let tolerance: seconds_d = 0.99
         if result > expected {
             XCTAssertLessThanOrEqual(result - expected, tolerance)
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
+        let result1 = u16_to_s_d(5)
+        let expected1: seconds_d = 5.0
+        let tolerance1: seconds_d = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = u16_to_s_d(UInt16(UInt16.min))
+        let expected2: seconds_d = seconds_d(UInt16.min)
+        let tolerance2: seconds_d = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = u16_to_s_d(UInt16(UInt16.max))
+        let expected3: seconds_d = seconds_d(UInt16.max)
+        let tolerance3: seconds_d = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
     }
 
-    func testseconds_dTofloatUsingseconds_dNegDouble_greatestFiniteMagnitudeExpectingFloatNegFloat_greatestFiniteMagnitude() {
-        let result = s_d_to_f(seconds_d(-Double.greatestFiniteMagnitude))
-        let expected: Float = Float(-Float.greatestFiniteMagnitude)
-        let tolerance: Float = 0.99
+    func testuint32_t_to_seconds_d() {
+        let result = u32_to_s_d(0)
+        let expected: seconds_d = 0.0
+        let tolerance: seconds_d = 0.99
         if result > expected {
             XCTAssertLessThanOrEqual(result - expected, tolerance)
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
+        let result1 = u32_to_s_d(5)
+        let expected1: seconds_d = 5.0
+        let tolerance1: seconds_d = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = u32_to_s_d(UInt32(UInt32.min))
+        let expected2: seconds_d = seconds_d(UInt32.min)
+        let tolerance2: seconds_d = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = u32_to_s_d(UInt32(UInt32.max))
+        let expected3: seconds_d = seconds_d(UInt32.max)
+        let tolerance3: seconds_d = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
     }
 
-    func testseconds_dToint16_tUsing0_0Expecting0() {
-        XCTAssertEqual(s_d_to_i16(0.0), 0)
-    }
-
-    func testseconds_dToint16_tUsing5_0Expecting5() {
-        XCTAssertEqual(s_d_to_i16(5.0), 5)
-    }
-
-    func testseconds_dToint16_tUsingseconds_dDouble_greatestFiniteMagnitudeExpectingInt16Int16_max() {
-        XCTAssertEqual(s_d_to_i16(seconds_d(Double.greatestFiniteMagnitude)), Int16(Int16.max))
-    }
-
-    func testseconds_dToint16_tUsingseconds_dNegDouble_greatestFiniteMagnitudeExpectingInt16Int16_min() {
-        XCTAssertEqual(s_d_to_i16(seconds_d(-Double.greatestFiniteMagnitude)), Int16(Int16.min))
-    }
-
-    func testseconds_dToint32_tUsing0_0Expecting0() {
-        XCTAssertEqual(s_d_to_i32(0.0), 0)
-    }
-
-    func testseconds_dToint32_tUsing5_0Expecting5() {
-        XCTAssertEqual(s_d_to_i32(5.0), 5)
-    }
-
-    func testseconds_dToint32_tUsingseconds_dDouble_greatestFiniteMagnitudeExpectingInt32Int32_max() {
-        XCTAssertEqual(s_d_to_i32(seconds_d(Double.greatestFiniteMagnitude)), Int32(Int32.max))
-    }
-
-    func testseconds_dToint32_tUsingseconds_dNegDouble_greatestFiniteMagnitudeExpectingInt32Int32_min() {
-        XCTAssertEqual(s_d_to_i32(seconds_d(-Double.greatestFiniteMagnitude)), Int32(Int32.min))
-    }
-
-    func testseconds_dToint64_tUsing0_0Expecting0() {
-        XCTAssertEqual(s_d_to_i64(0.0), 0)
-    }
-
-    func testseconds_dToint64_tUsing5_0Expecting5() {
-        XCTAssertEqual(s_d_to_i64(5.0), 5)
-    }
-
-    func testseconds_dToint64_tUsingseconds_dDouble_greatestFiniteMagnitudeExpectingInt64Int64_max() {
-        XCTAssertEqual(s_d_to_i64(seconds_d(Double.greatestFiniteMagnitude)), Int64(Int64.max))
-    }
-
-    func testseconds_dToint64_tUsingseconds_dNegDouble_greatestFiniteMagnitudeExpectingInt64Int64_min() {
-        XCTAssertEqual(s_d_to_i64(seconds_d(-Double.greatestFiniteMagnitude)), Int64(Int64.min))
-    }
-
-    func testseconds_dToint8_tUsing0_0Expecting0() {
-        XCTAssertEqual(s_d_to_i8(0.0), 0)
-    }
-
-    func testseconds_dToint8_tUsing5_0Expecting5() {
-        XCTAssertEqual(s_d_to_i8(5.0), 5)
-    }
-
-    func testseconds_dToint8_tUsingseconds_dDouble_greatestFiniteMagnitudeExpectingInt8Int8_max() {
-        XCTAssertEqual(s_d_to_i8(seconds_d(Double.greatestFiniteMagnitude)), Int8(Int8.max))
-    }
-
-    func testseconds_dToint8_tUsingseconds_dNegDouble_greatestFiniteMagnitudeExpectingInt8Int8_min() {
-        XCTAssertEqual(s_d_to_i8(seconds_d(-Double.greatestFiniteMagnitude)), Int8(Int8.min))
-    }
-
-    func testseconds_dTomicroseconds_dUsing0_0Expectingmicroseconds_d0_01000000_0() {
-        let result = s_d_to_us_d(0.0)
-        let expected: microseconds_d = microseconds_d(0.0) * 1000000.0
-        let tolerance: microseconds_d = 0.99
+    func testuint64_t_to_seconds_d() {
+        let result = u64_to_s_d(0)
+        let expected: seconds_d = 0.0
+        let tolerance: seconds_d = 0.99
         if result > expected {
             XCTAssertLessThanOrEqual(result - expected, tolerance)
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
+        let result1 = u64_to_s_d(5)
+        let expected1: seconds_d = 5.0
+        let tolerance1: seconds_d = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = u64_to_s_d(UInt64(UInt64.min))
+        let expected2: seconds_d = seconds_d(UInt64.min)
+        let tolerance2: seconds_d = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = u64_to_s_d(UInt64(UInt64.max))
+        let expected3: seconds_d = seconds_d(UInt64.max)
+        let tolerance3: seconds_d = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
     }
 
-    func testseconds_dTomicroseconds_dUsing15_0Expectingmicroseconds_d15_01000000_0() {
-        let result = s_d_to_us_d(15.0)
-        let expected: microseconds_d = microseconds_d(15.0) * 1000000.0
-        let tolerance: microseconds_d = 0.99
+    func testuint8_t_to_seconds_d() {
+        let result = u8_to_s_d(0)
+        let expected: seconds_d = 0.0
+        let tolerance: seconds_d = 0.99
         if result > expected {
             XCTAssertLessThanOrEqual(result - expected, tolerance)
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
-    }
-
-    func testseconds_dTomicroseconds_dUsing2500000_0Expectingmicroseconds_d2500000_01000000_0() {
-        let result = s_d_to_us_d(2500000.0)
-        let expected: microseconds_d = microseconds_d(2500000.0) * 1000000.0
-        let tolerance: microseconds_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        let result1 = u8_to_s_d(5)
+        let expected1: seconds_d = 5.0
+        let tolerance1: seconds_d = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
         }
-    }
-
-    func testseconds_dTomicroseconds_dUsing250000_0Expectingmicroseconds_d250000_01000000_0() {
-        let result = s_d_to_us_d(250000.0)
-        let expected: microseconds_d = microseconds_d(250000.0) * 1000000.0
-        let tolerance: microseconds_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        let result2 = u8_to_s_d(UInt8(UInt8.min))
+        let expected2: seconds_d = seconds_d(UInt8.min)
+        let tolerance2: seconds_d = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
         } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
         }
-    }
-
-    func testseconds_dTomicroseconds_dUsing25000_0Expectingmicroseconds_d25000_01000000_0() {
-        let result = s_d_to_us_d(25000.0)
-        let expected: microseconds_d = microseconds_d(25000.0) * 1000000.0
-        let tolerance: microseconds_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        let result3 = u8_to_s_d(UInt8(UInt8.max))
+        let expected3: seconds_d = seconds_d(UInt8.max)
+        let tolerance3: seconds_d = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
         } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testseconds_dTomicroseconds_dUsing2500_0Expectingmicroseconds_d2500_01000000_0() {
-        let result = s_d_to_us_d(2500.0)
-        let expected: microseconds_d = microseconds_d(2500.0) * 1000000.0
-        let tolerance: microseconds_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testseconds_dTomicroseconds_dUsing250_0Expectingmicroseconds_d250_01000000_0() {
-        let result = s_d_to_us_d(250.0)
-        let expected: microseconds_d = microseconds_d(250.0) * 1000000.0
-        let tolerance: microseconds_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testseconds_dTomicroseconds_dUsing25_0Expectingmicroseconds_d25_01000000_0() {
-        let result = s_d_to_us_d(25.0)
-        let expected: microseconds_d = microseconds_d(25.0) * 1000000.0
-        let tolerance: microseconds_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testseconds_dTomicroseconds_dUsingDouble_greatestFiniteMagnitudeExpectingmicroseconds_dDouble_greatestFiniteMagnitude() {
-        let result = s_d_to_us_d(Double.greatestFiniteMagnitude)
-        let expected: microseconds_d = microseconds_d(Double.greatestFiniteMagnitude)
-        let tolerance: microseconds_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testseconds_dTomicroseconds_dUsingNeg1000_0Expectingmicroseconds_dNeg1000_01000000_0() {
-        let result = s_d_to_us_d(-1000.0)
-        let expected: microseconds_d = microseconds_d(-1000.0) * 1000000.0
-        let tolerance: microseconds_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testseconds_dTomicroseconds_dUsingNeg10_0Expectingmicroseconds_dNeg10_01000000_0() {
-        let result = s_d_to_us_d(-10.0)
-        let expected: microseconds_d = microseconds_d(-10.0) * 1000000.0
-        let tolerance: microseconds_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testseconds_dTomicroseconds_dUsingNeg323_0Expectingmicroseconds_dNeg323_01000000_0() {
-        let result = s_d_to_us_d(-323.0)
-        let expected: microseconds_d = microseconds_d(-323.0) * 1000000.0
-        let tolerance: microseconds_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
         }
     }
 

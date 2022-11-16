@@ -4,7 +4,7 @@ import XCTest
 
 final class Mass_Kilogram_fTests0: XCTestCase {
 
-    func testdoubleTokilogram_fUsing0_0Expecting0_0() {
+    func testdouble_to_kilogram_f() {
         let result = d_to_kg_f(0.0)
         let expected: kilogram_f = 0.0
         let tolerance: kilogram_f = 0.99
@@ -13,42 +13,33 @@ final class Mass_Kilogram_fTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
-    }
-
-    func testdoubleTokilogram_fUsing5_0Expecting5_0() {
-        let result = d_to_kg_f(5.0)
-        let expected: kilogram_f = 5.0
-        let tolerance: kilogram_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        let result1 = d_to_kg_f(5.0)
+        let expected1: kilogram_f = 5.0
+        let tolerance1: kilogram_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = d_to_kg_f(Double(-Double.greatestFiniteMagnitude))
+        let expected2: kilogram_f = kilogram_f(-Float.greatestFiniteMagnitude)
+        let tolerance2: kilogram_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = d_to_kg_f(Double(Double.greatestFiniteMagnitude))
+        let expected3: kilogram_f = kilogram_f(Float.greatestFiniteMagnitude)
+        let tolerance3: kilogram_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
         }
     }
 
-    func testdoubleTokilogram_fUsingDoubleDouble_greatestFiniteMagnitudeExpectingkilogram_fFloat_greatestFiniteMagnitude() {
-        let result = d_to_kg_f(Double(Double.greatestFiniteMagnitude))
-        let expected: kilogram_f = kilogram_f(Float.greatestFiniteMagnitude)
-        let tolerance: kilogram_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testdoubleTokilogram_fUsingDoubleNegDouble_greatestFiniteMagnitudeExpectingkilogram_fNegFloat_greatestFiniteMagnitude() {
-        let result = d_to_kg_f(Double(-Double.greatestFiniteMagnitude))
-        let expected: kilogram_f = kilogram_f(-Float.greatestFiniteMagnitude)
-        let tolerance: kilogram_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testfloatTokilogram_fUsing0_0Expecting0_0() {
+    func testfloat_to_kilogram_f() {
         let result = f_to_kg_f(0.0)
         let expected: kilogram_f = 0.0
         let tolerance: kilogram_f = 0.99
@@ -57,42 +48,33 @@ final class Mass_Kilogram_fTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
-    }
-
-    func testfloatTokilogram_fUsing5_0Expecting5_0() {
-        let result = f_to_kg_f(5.0)
-        let expected: kilogram_f = 5.0
-        let tolerance: kilogram_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        let result1 = f_to_kg_f(5.0)
+        let expected1: kilogram_f = 5.0
+        let tolerance1: kilogram_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = f_to_kg_f(Float(-Float.greatestFiniteMagnitude))
+        let expected2: kilogram_f = kilogram_f(-Float.greatestFiniteMagnitude)
+        let tolerance2: kilogram_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = f_to_kg_f(Float(Float.greatestFiniteMagnitude))
+        let expected3: kilogram_f = kilogram_f(Float.greatestFiniteMagnitude)
+        let tolerance3: kilogram_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
         }
     }
 
-    func testfloatTokilogram_fUsingFloatFloat_greatestFiniteMagnitudeExpectingkilogram_fFloat_greatestFiniteMagnitude() {
-        let result = f_to_kg_f(Float(Float.greatestFiniteMagnitude))
-        let expected: kilogram_f = kilogram_f(Float.greatestFiniteMagnitude)
-        let tolerance: kilogram_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testfloatTokilogram_fUsingFloatNegFloat_greatestFiniteMagnitudeExpectingkilogram_fNegFloat_greatestFiniteMagnitude() {
-        let result = f_to_kg_f(Float(-Float.greatestFiniteMagnitude))
-        let expected: kilogram_f = kilogram_f(-Float.greatestFiniteMagnitude)
-        let tolerance: kilogram_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testint16_tTokilogram_fUsing0Expecting0_0() {
+    func testint16_t_to_kilogram_f() {
         let result = i16_to_kg_f(0)
         let expected: kilogram_f = 0.0
         let tolerance: kilogram_f = 0.99
@@ -101,42 +83,33 @@ final class Mass_Kilogram_fTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
-    }
-
-    func testint16_tTokilogram_fUsing5Expecting5_0() {
-        let result = i16_to_kg_f(5)
-        let expected: kilogram_f = 5.0
-        let tolerance: kilogram_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        let result1 = i16_to_kg_f(5)
+        let expected1: kilogram_f = 5.0
+        let tolerance1: kilogram_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = i16_to_kg_f(Int16(Int16.min))
+        let expected2: kilogram_f = kilogram_f(Int16.min)
+        let tolerance2: kilogram_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = i16_to_kg_f(Int16(Int16.max))
+        let expected3: kilogram_f = kilogram_f(Int16.max)
+        let tolerance3: kilogram_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
         }
     }
 
-    func testint16_tTokilogram_fUsingInt16Int16_maxExpectingkilogram_fInt16_max() {
-        let result = i16_to_kg_f(Int16(Int16.max))
-        let expected: kilogram_f = kilogram_f(Int16.max)
-        let tolerance: kilogram_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testint16_tTokilogram_fUsingInt16Int16_minExpectingkilogram_fInt16_min() {
-        let result = i16_to_kg_f(Int16(Int16.min))
-        let expected: kilogram_f = kilogram_f(Int16.min)
-        let tolerance: kilogram_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testint32_tTokilogram_fUsing0Expecting0_0() {
+    func testint32_t_to_kilogram_f() {
         let result = i32_to_kg_f(0)
         let expected: kilogram_f = 0.0
         let tolerance: kilogram_f = 0.99
@@ -145,42 +118,33 @@ final class Mass_Kilogram_fTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
-    }
-
-    func testint32_tTokilogram_fUsing5Expecting5_0() {
-        let result = i32_to_kg_f(5)
-        let expected: kilogram_f = 5.0
-        let tolerance: kilogram_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        let result1 = i32_to_kg_f(5)
+        let expected1: kilogram_f = 5.0
+        let tolerance1: kilogram_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = i32_to_kg_f(Int32(Int32.min))
+        let expected2: kilogram_f = kilogram_f(Int32.min)
+        let tolerance2: kilogram_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = i32_to_kg_f(Int32(Int32.max))
+        let expected3: kilogram_f = kilogram_f(Int32.max)
+        let tolerance3: kilogram_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
         }
     }
 
-    func testint32_tTokilogram_fUsingInt32Int32_maxExpectingkilogram_fInt32_max() {
-        let result = i32_to_kg_f(Int32(Int32.max))
-        let expected: kilogram_f = kilogram_f(Int32.max)
-        let tolerance: kilogram_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testint32_tTokilogram_fUsingInt32Int32_minExpectingkilogram_fInt32_min() {
-        let result = i32_to_kg_f(Int32(Int32.min))
-        let expected: kilogram_f = kilogram_f(Int32.min)
-        let tolerance: kilogram_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testint64_tTokilogram_fUsing0Expecting0_0() {
+    func testint64_t_to_kilogram_f() {
         let result = i64_to_kg_f(0)
         let expected: kilogram_f = 0.0
         let tolerance: kilogram_f = 0.99
@@ -189,42 +153,33 @@ final class Mass_Kilogram_fTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
-    }
-
-    func testint64_tTokilogram_fUsing5Expecting5_0() {
-        let result = i64_to_kg_f(5)
-        let expected: kilogram_f = 5.0
-        let tolerance: kilogram_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        let result1 = i64_to_kg_f(5)
+        let expected1: kilogram_f = 5.0
+        let tolerance1: kilogram_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = i64_to_kg_f(Int64(Int64.min))
+        let expected2: kilogram_f = kilogram_f(Int64.min)
+        let tolerance2: kilogram_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = i64_to_kg_f(Int64(Int64.max))
+        let expected3: kilogram_f = kilogram_f(Int64.max)
+        let tolerance3: kilogram_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
         }
     }
 
-    func testint64_tTokilogram_fUsingInt64Int64_maxExpectingkilogram_fInt64_max() {
-        let result = i64_to_kg_f(Int64(Int64.max))
-        let expected: kilogram_f = kilogram_f(Int64.max)
-        let tolerance: kilogram_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testint64_tTokilogram_fUsingInt64Int64_minExpectingkilogram_fInt64_min() {
-        let result = i64_to_kg_f(Int64(Int64.min))
-        let expected: kilogram_f = kilogram_f(Int64.min)
-        let tolerance: kilogram_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testint8_tTokilogram_fUsing0Expecting0_0() {
+    func testint8_t_to_kilogram_f() {
         let result = i8_to_kg_f(0)
         let expected: kilogram_f = 0.0
         let tolerance: kilogram_f = 0.99
@@ -233,42 +188,33 @@ final class Mass_Kilogram_fTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
-    }
-
-    func testint8_tTokilogram_fUsing5Expecting5_0() {
-        let result = i8_to_kg_f(5)
-        let expected: kilogram_f = 5.0
-        let tolerance: kilogram_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        let result1 = i8_to_kg_f(5)
+        let expected1: kilogram_f = 5.0
+        let tolerance1: kilogram_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = i8_to_kg_f(Int8(Int8.min))
+        let expected2: kilogram_f = kilogram_f(Int8.min)
+        let tolerance2: kilogram_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = i8_to_kg_f(Int8(Int8.max))
+        let expected3: kilogram_f = kilogram_f(Int8.max)
+        let tolerance3: kilogram_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
         }
     }
 
-    func testint8_tTokilogram_fUsingInt8Int8_maxExpectingkilogram_fInt8_max() {
-        let result = i8_to_kg_f(Int8(Int8.max))
-        let expected: kilogram_f = kilogram_f(Int8.max)
-        let tolerance: kilogram_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testint8_tTokilogram_fUsingInt8Int8_minExpectingkilogram_fInt8_min() {
-        let result = i8_to_kg_f(Int8(Int8.min))
-        let expected: kilogram_f = kilogram_f(Int8.min)
-        let tolerance: kilogram_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testkilogram_fTodoubleUsing0_0Expecting0_0() {
+    func testkilogram_f_to_double() {
         let result = kg_f_to_d(0.0)
         let expected: Double = 0.0
         let tolerance: Double = 0.99
@@ -277,42 +223,33 @@ final class Mass_Kilogram_fTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
-    }
-
-    func testkilogram_fTodoubleUsing5_0Expecting5_0() {
-        let result = kg_f_to_d(5.0)
-        let expected: Double = 5.0
-        let tolerance: Double = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        let result1 = kg_f_to_d(5.0)
+        let expected1: Double = 5.0
+        let tolerance1: Double = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = kg_f_to_d(kilogram_f(-Float.greatestFiniteMagnitude))
+        let expected2: Double = Double(-Float.greatestFiniteMagnitude)
+        let tolerance2: Double = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = kg_f_to_d(kilogram_f(Float.greatestFiniteMagnitude))
+        let expected3: Double = Double(Float.greatestFiniteMagnitude)
+        let tolerance3: Double = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
         }
     }
 
-    func testkilogram_fTodoubleUsingkilogram_fFloat_greatestFiniteMagnitudeExpectingDoubleFloat_greatestFiniteMagnitude() {
-        let result = kg_f_to_d(kilogram_f(Float.greatestFiniteMagnitude))
-        let expected: Double = Double(Float.greatestFiniteMagnitude)
-        let tolerance: Double = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testkilogram_fTodoubleUsingkilogram_fNegFloat_greatestFiniteMagnitudeExpectingDoubleNegFloat_greatestFiniteMagnitude() {
-        let result = kg_f_to_d(kilogram_f(-Float.greatestFiniteMagnitude))
-        let expected: Double = Double(-Float.greatestFiniteMagnitude)
-        let tolerance: Double = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testkilogram_fTofloatUsing0_0Expecting0_0() {
+    func testkilogram_f_to_float() {
         let result = kg_f_to_f(0.0)
         let expected: Float = 0.0
         let tolerance: Float = 0.99
@@ -321,17 +258,652 @@ final class Mass_Kilogram_fTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
+        let result1 = kg_f_to_f(5.0)
+        let expected1: Float = 5.0
+        let tolerance1: Float = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = kg_f_to_f(kilogram_f(-Float.greatestFiniteMagnitude))
+        let expected2: Float = Float(-Float.greatestFiniteMagnitude)
+        let tolerance2: Float = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = kg_f_to_f(kilogram_f(Float.greatestFiniteMagnitude))
+        let expected3: Float = Float(Float.greatestFiniteMagnitude)
+        let tolerance3: Float = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
     }
 
-    func testkilogram_fTofloatUsing5_0Expecting5_0() {
-        let result = kg_f_to_f(5.0)
-        let expected: Float = 5.0
-        let tolerance: Float = 0.99
+    func testkilogram_f_to_gram_d() {
+        let result = kg_f_to_g_d(15.0)
+        let expected: gram_d = gram_d(15.0) * 1000.0
+        let tolerance: gram_d = 0.99
         if result > expected {
             XCTAssertLessThanOrEqual(result - expected, tolerance)
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
+        let result1 = kg_f_to_g_d(25.0)
+        let expected1: gram_d = gram_d(25.0) * 1000.0
+        let tolerance1: gram_d = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = kg_f_to_g_d(250.0)
+        let expected2: gram_d = gram_d(250.0) * 1000.0
+        let tolerance2: gram_d = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = kg_f_to_g_d(0.0)
+        let expected3: gram_d = gram_d(0.0) * 1000.0
+        let tolerance3: gram_d = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+        let result4 = kg_f_to_g_d(2500.0)
+        let expected4: gram_d = gram_d(2500.0) * 1000.0
+        let tolerance4: gram_d = 0.99
+        if result4 > expected4 {
+            XCTAssertLessThanOrEqual(result4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - result4, tolerance4)
+        }
+        let result5 = kg_f_to_g_d(25000.0)
+        let expected5: gram_d = gram_d(25000.0) * 1000.0
+        let tolerance5: gram_d = 0.99
+        if result5 > expected5 {
+            XCTAssertLessThanOrEqual(result5 - expected5, tolerance5)
+        } else {
+            XCTAssertLessThanOrEqual(expected5 - result5, tolerance5)
+        }
+        let result6 = kg_f_to_g_d(250000.0)
+        let expected6: gram_d = gram_d(250000.0) * 1000.0
+        let tolerance6: gram_d = 0.99
+        if result6 > expected6 {
+            XCTAssertLessThanOrEqual(result6 - expected6, tolerance6)
+        } else {
+            XCTAssertLessThanOrEqual(expected6 - result6, tolerance6)
+        }
+        let result7 = kg_f_to_g_d(2500000.0)
+        let expected7: gram_d = gram_d(2500000.0) * 1000.0
+        let tolerance7: gram_d = 0.99
+        if result7 > expected7 {
+            XCTAssertLessThanOrEqual(result7 - expected7, tolerance7)
+        } else {
+            XCTAssertLessThanOrEqual(expected7 - result7, tolerance7)
+        }
+        let result8 = kg_f_to_g_d(-323.0)
+        let expected8: gram_d = gram_d(-323.0) * 1000.0
+        let tolerance8: gram_d = 0.99
+        if result8 > expected8 {
+            XCTAssertLessThanOrEqual(result8 - expected8, tolerance8)
+        } else {
+            XCTAssertLessThanOrEqual(expected8 - result8, tolerance8)
+        }
+        let result9 = kg_f_to_g_d(-10.0)
+        let expected9: gram_d = gram_d(-10.0) * 1000.0
+        let tolerance9: gram_d = 0.99
+        if result9 > expected9 {
+            XCTAssertLessThanOrEqual(result9 - expected9, tolerance9)
+        } else {
+            XCTAssertLessThanOrEqual(expected9 - result9, tolerance9)
+        }
+    }
+
+    func testkilogram_f_to_gram_d1() {
+        let result = kg_f_to_g_d(-1000.0)
+        let expected: gram_d = gram_d(-1000.0) * 1000.0
+        let tolerance: gram_d = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = kg_f_to_g_d(-5.0)
+        let expected1: gram_d = gram_d(-5.0) * 1000.0
+        let tolerance1: gram_d = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = kg_f_to_g_d(-Float.greatestFiniteMagnitude)
+        let expected2: gram_d = gram_d(-Float.greatestFiniteMagnitude) * 1000.0
+        let tolerance2: gram_d = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = kg_f_to_g_d(Float.greatestFiniteMagnitude)
+        let expected3: gram_d = gram_d(Float.greatestFiniteMagnitude) * 1000.0
+        let tolerance3: gram_d = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+    }
+
+    func testkilogram_f_to_gram_f() {
+        let result = kg_f_to_g_f(15.0)
+        let expected: gram_f = gram_f(15.0) * 1000.0
+        let tolerance: gram_f = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = kg_f_to_g_f(25.0)
+        let expected1: gram_f = gram_f(25.0) * 1000.0
+        let tolerance1: gram_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = kg_f_to_g_f(250.0)
+        let expected2: gram_f = gram_f(250.0) * 1000.0
+        let tolerance2: gram_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = kg_f_to_g_f(0.0)
+        let expected3: gram_f = gram_f(0.0) * 1000.0
+        let tolerance3: gram_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+        let result4 = kg_f_to_g_f(2500.0)
+        let expected4: gram_f = gram_f(2500.0) * 1000.0
+        let tolerance4: gram_f = 0.99
+        if result4 > expected4 {
+            XCTAssertLessThanOrEqual(result4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - result4, tolerance4)
+        }
+        let result5 = kg_f_to_g_f(25000.0)
+        let expected5: gram_f = gram_f(25000.0) * 1000.0
+        let tolerance5: gram_f = 0.99
+        if result5 > expected5 {
+            XCTAssertLessThanOrEqual(result5 - expected5, tolerance5)
+        } else {
+            XCTAssertLessThanOrEqual(expected5 - result5, tolerance5)
+        }
+        let result6 = kg_f_to_g_f(250000.0)
+        let expected6: gram_f = gram_f(250000.0) * 1000.0
+        let tolerance6: gram_f = 0.99
+        if result6 > expected6 {
+            XCTAssertLessThanOrEqual(result6 - expected6, tolerance6)
+        } else {
+            XCTAssertLessThanOrEqual(expected6 - result6, tolerance6)
+        }
+        let result7 = kg_f_to_g_f(2500000.0)
+        let expected7: gram_f = gram_f(2500000.0) * 1000.0
+        let tolerance7: gram_f = 0.99
+        if result7 > expected7 {
+            XCTAssertLessThanOrEqual(result7 - expected7, tolerance7)
+        } else {
+            XCTAssertLessThanOrEqual(expected7 - result7, tolerance7)
+        }
+        let result8 = kg_f_to_g_f(-323.0)
+        let expected8: gram_f = gram_f(-323.0) * 1000.0
+        let tolerance8: gram_f = 0.99
+        if result8 > expected8 {
+            XCTAssertLessThanOrEqual(result8 - expected8, tolerance8)
+        } else {
+            XCTAssertLessThanOrEqual(expected8 - result8, tolerance8)
+        }
+        let result9 = kg_f_to_g_f(-10.0)
+        let expected9: gram_f = gram_f(-10.0) * 1000.0
+        let tolerance9: gram_f = 0.99
+        if result9 > expected9 {
+            XCTAssertLessThanOrEqual(result9 - expected9, tolerance9)
+        } else {
+            XCTAssertLessThanOrEqual(expected9 - result9, tolerance9)
+        }
+    }
+
+    func testkilogram_f_to_gram_f1() {
+        let result = kg_f_to_g_f(-1000.0)
+        let expected: gram_f = gram_f(-1000.0) * 1000.0
+        let tolerance: gram_f = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = kg_f_to_g_f(-5.0)
+        let expected1: gram_f = gram_f(-5.0) * 1000.0
+        let tolerance1: gram_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = kg_f_to_g_f(-Float.greatestFiniteMagnitude)
+        let expected2: gram_f = gram_f(-Float.greatestFiniteMagnitude)
+        let tolerance2: gram_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = kg_f_to_g_f(Float.greatestFiniteMagnitude)
+        let expected3: gram_f = gram_f(Float.greatestFiniteMagnitude)
+        let tolerance3: gram_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+    }
+
+    func testkilogram_f_to_gram_t() {
+        XCTAssertEqual(kg_f_to_g_t(15.0), gram_t((Float(15.0) * 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_g_t(25.0), gram_t((Float(25.0) * 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_g_t(250.0), gram_t((Float(250.0) * 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_g_t(0.0), gram_t((Float(0.0) * 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_g_t(2500.0), gram_t((Float(2500.0) * 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_g_t(25000.0), gram_t((Float(25000.0) * 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_g_t(250000.0), gram_t((Float(250000.0) * 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_g_t(2500000.0), gram_t((Float(2500000.0) * 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_g_t(-323.0), gram_t((Float(-323.0) * 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_g_t(-10.0), gram_t((Float(-10.0) * 1000.0).rounded()))
+    }
+
+    func testkilogram_f_to_gram_t1() {
+        XCTAssertEqual(kg_f_to_g_t(-1000.0), gram_t((Float(-1000.0) * 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_g_t(-5.0), gram_t((Float(-5.0) * 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_g_t(-Float.greatestFiniteMagnitude), gram_t(Int64.min))
+        XCTAssertEqual(kg_f_to_g_t(Float.greatestFiniteMagnitude), gram_t(Int64.max))
+    }
+
+    func testkilogram_f_to_gram_u() {
+        XCTAssertEqual(kg_f_to_g_u(15.0), gram_u((Float(15.0) * 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_g_u(25.0), gram_u((Float(25.0) * 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_g_u(250.0), gram_u((Float(250.0) * 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_g_u(0.0), gram_u((Float(0.0) * 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_g_u(2500.0), gram_u((Float(2500.0) * 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_g_u(25000.0), gram_u((Float(25000.0) * 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_g_u(250000.0), gram_u((Float(250000.0) * 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_g_u(2500000.0), gram_u((Float(2500000.0) * 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_g_u(-323.0), 0)
+        XCTAssertEqual(kg_f_to_g_u(-10.0), 0)
+    }
+
+    func testkilogram_f_to_gram_u1() {
+        XCTAssertEqual(kg_f_to_g_u(-1000.0), 0)
+        XCTAssertEqual(kg_f_to_g_u(-6.0), 0)
+        XCTAssertEqual(kg_f_to_g_u(-Float.greatestFiniteMagnitude), gram_u(UInt64.min))
+        XCTAssertEqual(kg_f_to_g_u(Float.greatestFiniteMagnitude), gram_u(UInt64.max))
+    }
+
+    func testkilogram_f_to_int16_t() {
+        XCTAssertEqual(kg_f_to_i16(0.0), 0)
+        XCTAssertEqual(kg_f_to_i16(5.0), 5)
+        XCTAssertEqual(kg_f_to_i16(kilogram_f(-Float.greatestFiniteMagnitude)), Int16(Int16.min))
+        XCTAssertEqual(kg_f_to_i16(kilogram_f(Float.greatestFiniteMagnitude)), Int16(Int16.max))
+    }
+
+    func testkilogram_f_to_int32_t() {
+        XCTAssertEqual(kg_f_to_i32(0.0), 0)
+        XCTAssertEqual(kg_f_to_i32(5.0), 5)
+        XCTAssertEqual(kg_f_to_i32(kilogram_f(-Float.greatestFiniteMagnitude)), Int32(Int32.min))
+        XCTAssertEqual(kg_f_to_i32(kilogram_f(Float.greatestFiniteMagnitude)), Int32(Int32.max))
+    }
+
+    func testkilogram_f_to_int64_t() {
+        XCTAssertEqual(kg_f_to_i64(0.0), 0)
+        XCTAssertEqual(kg_f_to_i64(5.0), 5)
+        XCTAssertEqual(kg_f_to_i64(kilogram_f(-Float.greatestFiniteMagnitude)), Int64(Int64.min))
+        XCTAssertEqual(kg_f_to_i64(kilogram_f(Float.greatestFiniteMagnitude)), Int64(Int64.max))
+    }
+
+    func testkilogram_f_to_int8_t() {
+        XCTAssertEqual(kg_f_to_i8(0.0), 0)
+        XCTAssertEqual(kg_f_to_i8(5.0), 5)
+        XCTAssertEqual(kg_f_to_i8(kilogram_f(-Float.greatestFiniteMagnitude)), Int8(Int8.min))
+        XCTAssertEqual(kg_f_to_i8(kilogram_f(Float.greatestFiniteMagnitude)), Int8(Int8.max))
+    }
+
+    func testkilogram_f_to_kilogram_d() {
+        let result = kg_f_to_kg_d(0.0)
+        let expected: kilogram_d = 0.0
+        let tolerance: kilogram_d = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = kg_f_to_kg_d(kilogram_f(-Float.greatestFiniteMagnitude))
+        let expected1: kilogram_d = kilogram_d(-Float.greatestFiniteMagnitude)
+        let tolerance1: kilogram_d = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = kg_f_to_kg_d(kilogram_f(Float.greatestFiniteMagnitude))
+        let expected2: kilogram_d = kilogram_d(Float.greatestFiniteMagnitude)
+        let tolerance2: kilogram_d = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = kg_f_to_kg_d(5.0)
+        let expected3: kilogram_d = 5.0
+        let tolerance3: kilogram_d = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+    }
+
+    func testkilogram_f_to_kilogram_t() {
+        XCTAssertEqual(kg_f_to_kg_t(0.0), 0)
+        XCTAssertEqual(kg_f_to_kg_t(kilogram_f(-Float.greatestFiniteMagnitude)), kilogram_t(Int64.min))
+        XCTAssertEqual(kg_f_to_kg_t(kilogram_f(Float.greatestFiniteMagnitude)), kilogram_t(Int64.max))
+        XCTAssertEqual(kg_f_to_kg_t(5.0), 5)
+    }
+
+    func testkilogram_f_to_kilogram_u() {
+        XCTAssertEqual(kg_f_to_kg_u(0.0), 0)
+        XCTAssertEqual(kg_f_to_kg_u(kilogram_f(-Float.greatestFiniteMagnitude)), kilogram_u(UInt64.min))
+        XCTAssertEqual(kg_f_to_kg_u(kilogram_f(Float.greatestFiniteMagnitude)), kilogram_u(UInt64.max))
+        XCTAssertEqual(kg_f_to_kg_u(5.0), 5)
+    }
+
+    func testkilogram_f_to_megagram_d() {
+        let result = kg_f_to_Mg_d(15.0)
+        let expected: megagram_d = megagram_d(15.0) / 1000.0
+        let tolerance: megagram_d = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = kg_f_to_Mg_d(25.0)
+        let expected1: megagram_d = megagram_d(25.0) / 1000.0
+        let tolerance1: megagram_d = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = kg_f_to_Mg_d(250.0)
+        let expected2: megagram_d = megagram_d(250.0) / 1000.0
+        let tolerance2: megagram_d = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = kg_f_to_Mg_d(0.0)
+        let expected3: megagram_d = megagram_d(0.0) / 1000.0
+        let tolerance3: megagram_d = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+        let result4 = kg_f_to_Mg_d(2500.0)
+        let expected4: megagram_d = megagram_d(2500.0) / 1000.0
+        let tolerance4: megagram_d = 0.99
+        if result4 > expected4 {
+            XCTAssertLessThanOrEqual(result4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - result4, tolerance4)
+        }
+        let result5 = kg_f_to_Mg_d(25000.0)
+        let expected5: megagram_d = megagram_d(25000.0) / 1000.0
+        let tolerance5: megagram_d = 0.99
+        if result5 > expected5 {
+            XCTAssertLessThanOrEqual(result5 - expected5, tolerance5)
+        } else {
+            XCTAssertLessThanOrEqual(expected5 - result5, tolerance5)
+        }
+        let result6 = kg_f_to_Mg_d(250000.0)
+        let expected6: megagram_d = megagram_d(250000.0) / 1000.0
+        let tolerance6: megagram_d = 0.99
+        if result6 > expected6 {
+            XCTAssertLessThanOrEqual(result6 - expected6, tolerance6)
+        } else {
+            XCTAssertLessThanOrEqual(expected6 - result6, tolerance6)
+        }
+        let result7 = kg_f_to_Mg_d(2500000.0)
+        let expected7: megagram_d = megagram_d(2500000.0) / 1000.0
+        let tolerance7: megagram_d = 0.99
+        if result7 > expected7 {
+            XCTAssertLessThanOrEqual(result7 - expected7, tolerance7)
+        } else {
+            XCTAssertLessThanOrEqual(expected7 - result7, tolerance7)
+        }
+        let result8 = kg_f_to_Mg_d(-323.0)
+        let expected8: megagram_d = megagram_d(-323.0) / 1000.0
+        let tolerance8: megagram_d = 0.99
+        if result8 > expected8 {
+            XCTAssertLessThanOrEqual(result8 - expected8, tolerance8)
+        } else {
+            XCTAssertLessThanOrEqual(expected8 - result8, tolerance8)
+        }
+        let result9 = kg_f_to_Mg_d(-10.0)
+        let expected9: megagram_d = megagram_d(-10.0) / 1000.0
+        let tolerance9: megagram_d = 0.99
+        if result9 > expected9 {
+            XCTAssertLessThanOrEqual(result9 - expected9, tolerance9)
+        } else {
+            XCTAssertLessThanOrEqual(expected9 - result9, tolerance9)
+        }
+    }
+
+    func testkilogram_f_to_megagram_d1() {
+        let result = kg_f_to_Mg_d(-1000.0)
+        let expected: megagram_d = megagram_d(-1000.0) / 1000.0
+        let tolerance: megagram_d = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = kg_f_to_Mg_d(-5.0)
+        let expected1: megagram_d = megagram_d(-5.0) / 1000.0
+        let tolerance1: megagram_d = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = kg_f_to_Mg_d(-Float.greatestFiniteMagnitude)
+        let expected2: megagram_d = megagram_d(-Float.greatestFiniteMagnitude) / 1000.0
+        let tolerance2: megagram_d = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = kg_f_to_Mg_d(Float.greatestFiniteMagnitude)
+        let expected3: megagram_d = megagram_d(Float.greatestFiniteMagnitude) / 1000.0
+        let tolerance3: megagram_d = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+    }
+
+    func testkilogram_f_to_megagram_f() {
+        let result = kg_f_to_Mg_f(15.0)
+        let expected: megagram_f = megagram_f(15.0) / 1000.0
+        let tolerance: megagram_f = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = kg_f_to_Mg_f(25.0)
+        let expected1: megagram_f = megagram_f(25.0) / 1000.0
+        let tolerance1: megagram_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = kg_f_to_Mg_f(250.0)
+        let expected2: megagram_f = megagram_f(250.0) / 1000.0
+        let tolerance2: megagram_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = kg_f_to_Mg_f(0.0)
+        let expected3: megagram_f = megagram_f(0.0) / 1000.0
+        let tolerance3: megagram_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+        let result4 = kg_f_to_Mg_f(2500.0)
+        let expected4: megagram_f = megagram_f(2500.0) / 1000.0
+        let tolerance4: megagram_f = 0.99
+        if result4 > expected4 {
+            XCTAssertLessThanOrEqual(result4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - result4, tolerance4)
+        }
+        let result5 = kg_f_to_Mg_f(25000.0)
+        let expected5: megagram_f = megagram_f(25000.0) / 1000.0
+        let tolerance5: megagram_f = 0.99
+        if result5 > expected5 {
+            XCTAssertLessThanOrEqual(result5 - expected5, tolerance5)
+        } else {
+            XCTAssertLessThanOrEqual(expected5 - result5, tolerance5)
+        }
+        let result6 = kg_f_to_Mg_f(250000.0)
+        let expected6: megagram_f = megagram_f(250000.0) / 1000.0
+        let tolerance6: megagram_f = 0.99
+        if result6 > expected6 {
+            XCTAssertLessThanOrEqual(result6 - expected6, tolerance6)
+        } else {
+            XCTAssertLessThanOrEqual(expected6 - result6, tolerance6)
+        }
+        let result7 = kg_f_to_Mg_f(2500000.0)
+        let expected7: megagram_f = megagram_f(2500000.0) / 1000.0
+        let tolerance7: megagram_f = 0.99
+        if result7 > expected7 {
+            XCTAssertLessThanOrEqual(result7 - expected7, tolerance7)
+        } else {
+            XCTAssertLessThanOrEqual(expected7 - result7, tolerance7)
+        }
+        let result8 = kg_f_to_Mg_f(-323.0)
+        let expected8: megagram_f = megagram_f(-323.0) / 1000.0
+        let tolerance8: megagram_f = 0.99
+        if result8 > expected8 {
+            XCTAssertLessThanOrEqual(result8 - expected8, tolerance8)
+        } else {
+            XCTAssertLessThanOrEqual(expected8 - result8, tolerance8)
+        }
+        let result9 = kg_f_to_Mg_f(-10.0)
+        let expected9: megagram_f = megagram_f(-10.0) / 1000.0
+        let tolerance9: megagram_f = 0.99
+        if result9 > expected9 {
+            XCTAssertLessThanOrEqual(result9 - expected9, tolerance9)
+        } else {
+            XCTAssertLessThanOrEqual(expected9 - result9, tolerance9)
+        }
+    }
+
+    func testkilogram_f_to_megagram_f1() {
+        let result = kg_f_to_Mg_f(-1000.0)
+        let expected: megagram_f = megagram_f(-1000.0) / 1000.0
+        let tolerance: megagram_f = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = kg_f_to_Mg_f(-5.0)
+        let expected1: megagram_f = megagram_f(-5.0) / 1000.0
+        let tolerance1: megagram_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = kg_f_to_Mg_f(-Float.greatestFiniteMagnitude)
+        let expected2: megagram_f = megagram_f(-Float.greatestFiniteMagnitude) / 1000.0
+        let tolerance2: megagram_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = kg_f_to_Mg_f(Float.greatestFiniteMagnitude)
+        let expected3: megagram_f = megagram_f(Float.greatestFiniteMagnitude) / 1000.0
+        let tolerance3: megagram_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+    }
+
+    func testkilogram_f_to_megagram_t() {
+        XCTAssertEqual(kg_f_to_Mg_t(15.0), megagram_t((Float(15.0) / 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_Mg_t(25.0), megagram_t((Float(25.0) / 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_Mg_t(250.0), megagram_t((Float(250.0) / 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_Mg_t(0.0), megagram_t((Float(0.0) / 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_Mg_t(2500.0), megagram_t((Float(2500.0) / 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_Mg_t(25000.0), megagram_t((Float(25000.0) / 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_Mg_t(250000.0), megagram_t((Float(250000.0) / 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_Mg_t(2500000.0), megagram_t((Float(2500000.0) / 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_Mg_t(-323.0), megagram_t((Float(-323.0) / 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_Mg_t(-10.0), megagram_t((Float(-10.0) / 1000.0).rounded()))
+    }
+
+    func testkilogram_f_to_megagram_t1() {
+        XCTAssertEqual(kg_f_to_Mg_t(-1000.0), megagram_t((Float(-1000.0) / 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_Mg_t(-5.0), megagram_t((Float(-5.0) / 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_Mg_t(-Float.greatestFiniteMagnitude), megagram_t(Int64.min))
+        XCTAssertEqual(kg_f_to_Mg_t(Float.greatestFiniteMagnitude), megagram_t(Int64.max))
+    }
+
+    func testkilogram_f_to_megagram_u() {
+        XCTAssertEqual(kg_f_to_Mg_u(15.0), megagram_u((Float(15.0) / 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_Mg_u(25.0), megagram_u((Float(25.0) / 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_Mg_u(250.0), megagram_u((Float(250.0) / 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_Mg_u(0.0), megagram_u((Float(0.0) / 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_Mg_u(2500.0), megagram_u((Float(2500.0) / 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_Mg_u(25000.0), megagram_u((Float(25000.0) / 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_Mg_u(250000.0), megagram_u((Float(250000.0) / 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_Mg_u(2500000.0), megagram_u((Float(2500000.0) / 1000.0).rounded()))
+        XCTAssertEqual(kg_f_to_Mg_u(-323.0), 0)
+        XCTAssertEqual(kg_f_to_Mg_u(-10.0), 0)
     }
 
 }

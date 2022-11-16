@@ -63,7 +63,7 @@ import XCTest
 /// Provides fahrenheit_f unit tests.
 final class Fahrenheit_fTests0: XCTestCase {
 
-    func testfahrenheit_fTocelsius_tUsing250_0Expectingcelsius_tDouble250_05_09_0Neg32_05_09_0_rounded() {
+    func testfahrenheit_fTocelsius_t() {
         let unit = Fahrenheit_f(250.0)
         let expected = degF_f_to_degC_t(250.0)
         let result = Celsius_t(unit).rawValue
@@ -75,135 +75,108 @@ final class Fahrenheit_fTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
-    }
-
-    func testfahrenheit_fTocelsius_tUsing2500_0Expectingcelsius_tDouble2500_05_09_0Neg32_05_09_0_rounded() {
-        let unit = Fahrenheit_f(2500.0)
-        let expected = degF_f_to_degC_t(2500.0)
-        let result = Celsius_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: celsius_t = 1
-        let categoryResult = Temperature(unit).celsius_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        let unit1 = Fahrenheit_f(2500.0)
+        let expected1 = degF_f_to_degC_t(2500.0)
+        let result1 = Celsius_t(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: celsius_t = 1
+        let categoryResult1 = Temperature(unit1).celsius_t.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Fahrenheit_f(25000.0)
+        let expected2 = degF_f_to_degC_t(25000.0)
+        let result2 = Celsius_t(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: celsius_t = 1
+        let categoryResult2 = Temperature(unit2).celsius_t.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Fahrenheit_f(250000.0)
+        let expected3 = degF_f_to_degC_t(250000.0)
+        let result3 = Celsius_t(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: celsius_t = 1
+        let categoryResult3 = Temperature(unit3).celsius_t.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Fahrenheit_f(2500000.0)
+        let expected4 = degF_f_to_degC_t(2500000.0)
+        let result4 = Celsius_t(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: celsius_t = 1
+        let categoryResult4 = Temperature(unit4).celsius_t.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+        let unit5 = Fahrenheit_f(32.0)
+        let expected5 = degF_f_to_degC_t(32.0)
+        let result5 = Celsius_t(unit5).rawValue
+        XCTAssertEqual(expected5, result5)
+        let tolerance5: celsius_t = 1
+        let categoryResult5 = Temperature(unit5).celsius_t.rawValue
+        if categoryResult5 > expected5 {
+            XCTAssertLessThanOrEqual(categoryResult5 - expected5, tolerance5)
+        } else {
+            XCTAssertLessThanOrEqual(expected5 - categoryResult5, tolerance5)
+        }
+        let unit6 = Fahrenheit_f(523.67)
+        let expected6 = degF_f_to_degC_t(523.67)
+        let result6 = Celsius_t(unit6).rawValue
+        XCTAssertEqual(expected6, result6)
+        let tolerance6: celsius_t = 1
+        let categoryResult6 = Temperature(unit6).celsius_t.rawValue
+        if categoryResult6 > expected6 {
+            XCTAssertLessThanOrEqual(categoryResult6 - expected6, tolerance6)
+        } else {
+            XCTAssertLessThanOrEqual(expected6 - categoryResult6, tolerance6)
+        }
+        let unit7 = Fahrenheit_f(100.0)
+        let expected7 = degF_f_to_degC_t(100.0)
+        let result7 = Celsius_t(unit7).rawValue
+        XCTAssertEqual(expected7, result7)
+        let tolerance7: celsius_t = 1
+        let categoryResult7 = Temperature(unit7).celsius_t.rawValue
+        if categoryResult7 > expected7 {
+            XCTAssertLessThanOrEqual(categoryResult7 - expected7, tolerance7)
+        } else {
+            XCTAssertLessThanOrEqual(expected7 - categoryResult7, tolerance7)
+        }
+        let unit8 = Fahrenheit_f(0.0)
+        let expected8 = degF_f_to_degC_t(0.0)
+        let result8 = Celsius_t(unit8).rawValue
+        XCTAssertEqual(expected8, result8)
+        let tolerance8: celsius_t = 1
+        let categoryResult8 = Temperature(unit8).celsius_t.rawValue
+        if categoryResult8 > expected8 {
+            XCTAssertLessThanOrEqual(categoryResult8 - expected8, tolerance8)
+        } else {
+            XCTAssertLessThanOrEqual(expected8 - categoryResult8, tolerance8)
+        }
+        let unit9 = Fahrenheit_f(20.0)
+        let expected9 = degF_f_to_degC_t(20.0)
+        let result9 = Celsius_t(unit9).rawValue
+        XCTAssertEqual(expected9, result9)
+        let tolerance9: celsius_t = 1
+        let categoryResult9 = Temperature(unit9).celsius_t.rawValue
+        if categoryResult9 > expected9 {
+            XCTAssertLessThanOrEqual(categoryResult9 - expected9, tolerance9)
+        } else {
+            XCTAssertLessThanOrEqual(expected9 - categoryResult9, tolerance9)
         }
     }
 
-    func testfahrenheit_fTocelsius_tUsing25000_0Expectingcelsius_tDouble25000_05_09_0Neg32_05_09_0_rounded() {
-        let unit = Fahrenheit_f(25000.0)
-        let expected = degF_f_to_degC_t(25000.0)
-        let result = Celsius_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: celsius_t = 1
-        let categoryResult = Temperature(unit).celsius_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testfahrenheit_fTocelsius_tUsing250000_0Expectingcelsius_tDouble250000_05_09_0Neg32_05_09_0_rounded() {
-        let unit = Fahrenheit_f(250000.0)
-        let expected = degF_f_to_degC_t(250000.0)
-        let result = Celsius_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: celsius_t = 1
-        let categoryResult = Temperature(unit).celsius_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testfahrenheit_fTocelsius_tUsing2500000_0Expectingcelsius_tDouble2500000_05_09_0Neg32_05_09_0_rounded() {
-        let unit = Fahrenheit_f(2500000.0)
-        let expected = degF_f_to_degC_t(2500000.0)
-        let result = Celsius_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: celsius_t = 1
-        let categoryResult = Temperature(unit).celsius_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testfahrenheit_fTocelsius_tUsing32_0Expectingcelsius_tDouble32_05_09_0Neg32_05_09_0_rounded() {
-        let unit = Fahrenheit_f(32.0)
-        let expected = degF_f_to_degC_t(32.0)
-        let result = Celsius_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: celsius_t = 1
-        let categoryResult = Temperature(unit).celsius_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testfahrenheit_fTocelsius_tUsing523_67Expectingcelsius_tDouble523_675_09_0Neg32_05_09_0_rounded() {
-        let unit = Fahrenheit_f(523.67)
-        let expected = degF_f_to_degC_t(523.67)
-        let result = Celsius_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: celsius_t = 1
-        let categoryResult = Temperature(unit).celsius_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testfahrenheit_fTocelsius_tUsing100_0Expectingcelsius_tDouble100_05_09_0Neg32_05_09_0_rounded() {
-        let unit = Fahrenheit_f(100.0)
-        let expected = degF_f_to_degC_t(100.0)
-        let result = Celsius_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: celsius_t = 1
-        let categoryResult = Temperature(unit).celsius_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testfahrenheit_fTocelsius_tUsing0_0Expectingcelsius_tDouble0_05_09_0Neg32_05_09_0_rounded() {
-        let unit = Fahrenheit_f(0.0)
-        let expected = degF_f_to_degC_t(0.0)
-        let result = Celsius_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: celsius_t = 1
-        let categoryResult = Temperature(unit).celsius_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testfahrenheit_fTocelsius_tUsing20_0Expectingcelsius_tDouble20_05_09_0Neg32_05_09_0_rounded() {
-        let unit = Fahrenheit_f(20.0)
-        let expected = degF_f_to_degC_t(20.0)
-        let result = Celsius_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: celsius_t = 1
-        let categoryResult = Temperature(unit).celsius_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testfahrenheit_fTocelsius_tUsing10_0Expectingcelsius_tDouble10_05_09_0Neg32_05_09_0_rounded() {
+    func testfahrenheit_fTocelsius_t1() {
         let unit = Fahrenheit_f(10.0)
         let expected = degF_f_to_degC_t(10.0)
         let result = Celsius_t(unit).rawValue
@@ -215,135 +188,108 @@ final class Fahrenheit_fTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
-    }
-
-    func testfahrenheit_fTocelsius_tUsing15_0Expectingcelsius_tDouble15_05_09_0Neg32_05_09_0_rounded() {
-        let unit = Fahrenheit_f(15.0)
-        let expected = degF_f_to_degC_t(15.0)
-        let result = Celsius_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: celsius_t = 1
-        let categoryResult = Temperature(unit).celsius_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        let unit1 = Fahrenheit_f(15.0)
+        let expected1 = degF_f_to_degC_t(15.0)
+        let result1 = Celsius_t(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: celsius_t = 1
+        let categoryResult1 = Temperature(unit1).celsius_t.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Fahrenheit_f(12.0)
+        let expected2 = degF_f_to_degC_t(12.0)
+        let result2 = Celsius_t(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: celsius_t = 1
+        let categoryResult2 = Temperature(unit2).celsius_t.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Fahrenheit_f(25.0)
+        let expected3 = degF_f_to_degC_t(25.0)
+        let result3 = Celsius_t(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: celsius_t = 1
+        let categoryResult3 = Temperature(unit3).celsius_t.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Fahrenheit_f(-250.0)
+        let expected4 = degF_f_to_degC_t(-250.0)
+        let result4 = Celsius_t(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: celsius_t = 1
+        let categoryResult4 = Temperature(unit4).celsius_t.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+        let unit5 = Fahrenheit_f(-2500.0)
+        let expected5 = degF_f_to_degC_t(-2500.0)
+        let result5 = Celsius_t(unit5).rawValue
+        XCTAssertEqual(expected5, result5)
+        let tolerance5: celsius_t = 1
+        let categoryResult5 = Temperature(unit5).celsius_t.rawValue
+        if categoryResult5 > expected5 {
+            XCTAssertLessThanOrEqual(categoryResult5 - expected5, tolerance5)
+        } else {
+            XCTAssertLessThanOrEqual(expected5 - categoryResult5, tolerance5)
+        }
+        let unit6 = Fahrenheit_f(-25000.0)
+        let expected6 = degF_f_to_degC_t(-25000.0)
+        let result6 = Celsius_t(unit6).rawValue
+        XCTAssertEqual(expected6, result6)
+        let tolerance6: celsius_t = 1
+        let categoryResult6 = Temperature(unit6).celsius_t.rawValue
+        if categoryResult6 > expected6 {
+            XCTAssertLessThanOrEqual(categoryResult6 - expected6, tolerance6)
+        } else {
+            XCTAssertLessThanOrEqual(expected6 - categoryResult6, tolerance6)
+        }
+        let unit7 = Fahrenheit_f(-250000.0)
+        let expected7 = degF_f_to_degC_t(-250000.0)
+        let result7 = Celsius_t(unit7).rawValue
+        XCTAssertEqual(expected7, result7)
+        let tolerance7: celsius_t = 1
+        let categoryResult7 = Temperature(unit7).celsius_t.rawValue
+        if categoryResult7 > expected7 {
+            XCTAssertLessThanOrEqual(categoryResult7 - expected7, tolerance7)
+        } else {
+            XCTAssertLessThanOrEqual(expected7 - categoryResult7, tolerance7)
+        }
+        let unit8 = Fahrenheit_f(-2500000.0)
+        let expected8 = degF_f_to_degC_t(-2500000.0)
+        let result8 = Celsius_t(unit8).rawValue
+        XCTAssertEqual(expected8, result8)
+        let tolerance8: celsius_t = 1
+        let categoryResult8 = Temperature(unit8).celsius_t.rawValue
+        if categoryResult8 > expected8 {
+            XCTAssertLessThanOrEqual(categoryResult8 - expected8, tolerance8)
+        } else {
+            XCTAssertLessThanOrEqual(expected8 - categoryResult8, tolerance8)
+        }
+        let unit9 = Fahrenheit_f(-40.0)
+        let expected9 = degF_f_to_degC_t(-40.0)
+        let result9 = Celsius_t(unit9).rawValue
+        XCTAssertEqual(expected9, result9)
+        let tolerance9: celsius_t = 1
+        let categoryResult9 = Temperature(unit9).celsius_t.rawValue
+        if categoryResult9 > expected9 {
+            XCTAssertLessThanOrEqual(categoryResult9 - expected9, tolerance9)
+        } else {
+            XCTAssertLessThanOrEqual(expected9 - categoryResult9, tolerance9)
         }
     }
 
-    func testfahrenheit_fTocelsius_tUsing12_0Expectingcelsius_tDouble12_05_09_0Neg32_05_09_0_rounded() {
-        let unit = Fahrenheit_f(12.0)
-        let expected = degF_f_to_degC_t(12.0)
-        let result = Celsius_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: celsius_t = 1
-        let categoryResult = Temperature(unit).celsius_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testfahrenheit_fTocelsius_tUsing25_0Expectingcelsius_tDouble25_05_09_0Neg32_05_09_0_rounded() {
-        let unit = Fahrenheit_f(25.0)
-        let expected = degF_f_to_degC_t(25.0)
-        let result = Celsius_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: celsius_t = 1
-        let categoryResult = Temperature(unit).celsius_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testfahrenheit_fTocelsius_tUsingNeg250_0Expectingcelsius_tDoubleNeg250_05_09_0Neg32_05_09_0_rounded() {
-        let unit = Fahrenheit_f(-250.0)
-        let expected = degF_f_to_degC_t(-250.0)
-        let result = Celsius_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: celsius_t = 1
-        let categoryResult = Temperature(unit).celsius_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testfahrenheit_fTocelsius_tUsingNeg2500_0Expectingcelsius_tDoubleNeg2500_05_09_0Neg32_05_09_0_rounded() {
-        let unit = Fahrenheit_f(-2500.0)
-        let expected = degF_f_to_degC_t(-2500.0)
-        let result = Celsius_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: celsius_t = 1
-        let categoryResult = Temperature(unit).celsius_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testfahrenheit_fTocelsius_tUsingNeg25000_0Expectingcelsius_tDoubleNeg25000_05_09_0Neg32_05_09_0_rounded() {
-        let unit = Fahrenheit_f(-25000.0)
-        let expected = degF_f_to_degC_t(-25000.0)
-        let result = Celsius_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: celsius_t = 1
-        let categoryResult = Temperature(unit).celsius_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testfahrenheit_fTocelsius_tUsingNeg250000_0Expectingcelsius_tDoubleNeg250000_05_09_0Neg32_05_09_0_rounded() {
-        let unit = Fahrenheit_f(-250000.0)
-        let expected = degF_f_to_degC_t(-250000.0)
-        let result = Celsius_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: celsius_t = 1
-        let categoryResult = Temperature(unit).celsius_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testfahrenheit_fTocelsius_tUsingNeg2500000_0Expectingcelsius_tDoubleNeg2500000_05_09_0Neg32_05_09_0_rounded() {
-        let unit = Fahrenheit_f(-2500000.0)
-        let expected = degF_f_to_degC_t(-2500000.0)
-        let result = Celsius_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: celsius_t = 1
-        let categoryResult = Temperature(unit).celsius_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testfahrenheit_fTocelsius_tUsingNeg40_0Expectingcelsius_tDoubleNeg40_05_09_0Neg32_05_09_0_rounded() {
-        let unit = Fahrenheit_f(-40.0)
-        let expected = degF_f_to_degC_t(-40.0)
-        let result = Celsius_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: celsius_t = 1
-        let categoryResult = Temperature(unit).celsius_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testfahrenheit_fTocelsius_tUsingNegFloat_greatestFiniteMagnitudeExpectingInt64_min() {
+    func testfahrenheit_fTocelsius_t2() {
         let unit = Fahrenheit_f(-Float.greatestFiniteMagnitude)
         let expected = degF_f_to_degC_t(-Float.greatestFiniteMagnitude)
         let result = Celsius_t(unit).rawValue
@@ -355,23 +301,20 @@ final class Fahrenheit_fTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
-    }
-
-    func testfahrenheit_fTocelsius_tUsingFloat_greatestFiniteMagnitudeExpectingInt64_max() {
-        let unit = Fahrenheit_f(Float.greatestFiniteMagnitude)
-        let expected = degF_f_to_degC_t(Float.greatestFiniteMagnitude)
-        let result = Celsius_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: celsius_t = 1
-        let categoryResult = Temperature(unit).celsius_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        let unit1 = Fahrenheit_f(Float.greatestFiniteMagnitude)
+        let expected1 = degF_f_to_degC_t(Float.greatestFiniteMagnitude)
+        let result1 = Celsius_t(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: celsius_t = 1
+        let categoryResult1 = Temperature(unit1).celsius_t.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
         }
     }
 
-    func testfahrenheit_fTofahrenheit_tUsing0_0Expecting0() {
+    func testfahrenheit_fTofahrenheit_t() {
         let unit = Fahrenheit_f(0.0)
         let expected = degF_f_to_degF_t(0.0)
         let result = Fahrenheit_t(unit).rawValue
@@ -383,51 +326,42 @@ final class Fahrenheit_fTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
-    }
-
-    func testfahrenheit_fTofahrenheit_tUsingfahrenheit_fNegFloat_greatestFiniteMagnitudeExpectingfahrenheit_tInt64_min() {
-        let unit = Fahrenheit_f(fahrenheit_f(-Float.greatestFiniteMagnitude))
-        let expected = degF_f_to_degF_t(fahrenheit_f(-Float.greatestFiniteMagnitude))
-        let result = Fahrenheit_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: fahrenheit_t = 1
-        let categoryResult = Temperature(unit).fahrenheit_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        let unit1 = Fahrenheit_f(fahrenheit_f(-Float.greatestFiniteMagnitude))
+        let expected1 = degF_f_to_degF_t(fahrenheit_f(-Float.greatestFiniteMagnitude))
+        let result1 = Fahrenheit_t(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: fahrenheit_t = 1
+        let categoryResult1 = Temperature(unit1).fahrenheit_t.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Fahrenheit_f(fahrenheit_f(Float.greatestFiniteMagnitude))
+        let expected2 = degF_f_to_degF_t(fahrenheit_f(Float.greatestFiniteMagnitude))
+        let result2 = Fahrenheit_t(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: fahrenheit_t = 1
+        let categoryResult2 = Temperature(unit2).fahrenheit_t.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Fahrenheit_f(5.0)
+        let expected3 = degF_f_to_degF_t(5.0)
+        let result3 = Fahrenheit_t(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: fahrenheit_t = 1
+        let categoryResult3 = Temperature(unit3).fahrenheit_t.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
         }
     }
 
-    func testfahrenheit_fTofahrenheit_tUsingfahrenheit_fFloat_greatestFiniteMagnitudeExpectingfahrenheit_tInt64_max() {
-        let unit = Fahrenheit_f(fahrenheit_f(Float.greatestFiniteMagnitude))
-        let expected = degF_f_to_degF_t(fahrenheit_f(Float.greatestFiniteMagnitude))
-        let result = Fahrenheit_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: fahrenheit_t = 1
-        let categoryResult = Temperature(unit).fahrenheit_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testfahrenheit_fTofahrenheit_tUsing5_0Expecting5() {
-        let unit = Fahrenheit_f(5.0)
-        let expected = degF_f_to_degF_t(5.0)
-        let result = Fahrenheit_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: fahrenheit_t = 1
-        let categoryResult = Temperature(unit).fahrenheit_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testfahrenheit_fTokelvin_tUsing250_0Expectingkelvin_tDouble250_05_09_0Neg32_05_09_0273_15_rounded() {
+    func testfahrenheit_fTokelvin_t() {
         let unit = Fahrenheit_f(250.0)
         let expected = degF_f_to_K_t(250.0)
         let result = Kelvin_t(unit).rawValue
@@ -439,11 +373,110 @@ final class Fahrenheit_fTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
+        let unit1 = Fahrenheit_f(2500.0)
+        let expected1 = degF_f_to_K_t(2500.0)
+        let result1 = Kelvin_t(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: kelvin_t = 1
+        let categoryResult1 = Temperature(unit1).kelvin_t.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Fahrenheit_f(25000.0)
+        let expected2 = degF_f_to_K_t(25000.0)
+        let result2 = Kelvin_t(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: kelvin_t = 1
+        let categoryResult2 = Temperature(unit2).kelvin_t.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Fahrenheit_f(250000.0)
+        let expected3 = degF_f_to_K_t(250000.0)
+        let result3 = Kelvin_t(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: kelvin_t = 1
+        let categoryResult3 = Temperature(unit3).kelvin_t.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Fahrenheit_f(2500000.0)
+        let expected4 = degF_f_to_K_t(2500000.0)
+        let result4 = Kelvin_t(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: kelvin_t = 1
+        let categoryResult4 = Temperature(unit4).kelvin_t.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+        let unit5 = Fahrenheit_f(32.0)
+        let expected5 = degF_f_to_K_t(32.0)
+        let result5 = Kelvin_t(unit5).rawValue
+        XCTAssertEqual(expected5, result5)
+        let tolerance5: kelvin_t = 1
+        let categoryResult5 = Temperature(unit5).kelvin_t.rawValue
+        if categoryResult5 > expected5 {
+            XCTAssertLessThanOrEqual(categoryResult5 - expected5, tolerance5)
+        } else {
+            XCTAssertLessThanOrEqual(expected5 - categoryResult5, tolerance5)
+        }
+        let unit6 = Fahrenheit_f(523.67)
+        let expected6 = degF_f_to_K_t(523.67)
+        let result6 = Kelvin_t(unit6).rawValue
+        XCTAssertEqual(expected6, result6)
+        let tolerance6: kelvin_t = 1
+        let categoryResult6 = Temperature(unit6).kelvin_t.rawValue
+        if categoryResult6 > expected6 {
+            XCTAssertLessThanOrEqual(categoryResult6 - expected6, tolerance6)
+        } else {
+            XCTAssertLessThanOrEqual(expected6 - categoryResult6, tolerance6)
+        }
+        let unit7 = Fahrenheit_f(100.0)
+        let expected7 = degF_f_to_K_t(100.0)
+        let result7 = Kelvin_t(unit7).rawValue
+        XCTAssertEqual(expected7, result7)
+        let tolerance7: kelvin_t = 1
+        let categoryResult7 = Temperature(unit7).kelvin_t.rawValue
+        if categoryResult7 > expected7 {
+            XCTAssertLessThanOrEqual(categoryResult7 - expected7, tolerance7)
+        } else {
+            XCTAssertLessThanOrEqual(expected7 - categoryResult7, tolerance7)
+        }
+        let unit8 = Fahrenheit_f(0.0)
+        let expected8 = degF_f_to_K_t(0.0)
+        let result8 = Kelvin_t(unit8).rawValue
+        XCTAssertEqual(expected8, result8)
+        let tolerance8: kelvin_t = 1
+        let categoryResult8 = Temperature(unit8).kelvin_t.rawValue
+        if categoryResult8 > expected8 {
+            XCTAssertLessThanOrEqual(categoryResult8 - expected8, tolerance8)
+        } else {
+            XCTAssertLessThanOrEqual(expected8 - categoryResult8, tolerance8)
+        }
+        let unit9 = Fahrenheit_f(20.0)
+        let expected9 = degF_f_to_K_t(20.0)
+        let result9 = Kelvin_t(unit9).rawValue
+        XCTAssertEqual(expected9, result9)
+        let tolerance9: kelvin_t = 1
+        let categoryResult9 = Temperature(unit9).kelvin_t.rawValue
+        if categoryResult9 > expected9 {
+            XCTAssertLessThanOrEqual(categoryResult9 - expected9, tolerance9)
+        } else {
+            XCTAssertLessThanOrEqual(expected9 - categoryResult9, tolerance9)
+        }
     }
 
-    func testfahrenheit_fTokelvin_tUsing2500_0Expectingkelvin_tDouble2500_05_09_0Neg32_05_09_0273_15_rounded() {
-        let unit = Fahrenheit_f(2500.0)
-        let expected = degF_f_to_K_t(2500.0)
+    func testfahrenheit_fTokelvin_t1() {
+        let unit = Fahrenheit_f(10.0)
+        let expected = degF_f_to_K_t(10.0)
         let result = Kelvin_t(unit).rawValue
         XCTAssertEqual(expected, result)
         let tolerance: kelvin_t = 1
@@ -453,11 +486,110 @@ final class Fahrenheit_fTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
+        let unit1 = Fahrenheit_f(15.0)
+        let expected1 = degF_f_to_K_t(15.0)
+        let result1 = Kelvin_t(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: kelvin_t = 1
+        let categoryResult1 = Temperature(unit1).kelvin_t.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Fahrenheit_f(12.0)
+        let expected2 = degF_f_to_K_t(12.0)
+        let result2 = Kelvin_t(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: kelvin_t = 1
+        let categoryResult2 = Temperature(unit2).kelvin_t.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Fahrenheit_f(25.0)
+        let expected3 = degF_f_to_K_t(25.0)
+        let result3 = Kelvin_t(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: kelvin_t = 1
+        let categoryResult3 = Temperature(unit3).kelvin_t.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Fahrenheit_f(-250.0)
+        let expected4 = degF_f_to_K_t(-250.0)
+        let result4 = Kelvin_t(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: kelvin_t = 1
+        let categoryResult4 = Temperature(unit4).kelvin_t.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+        let unit5 = Fahrenheit_f(-2500.0)
+        let expected5 = degF_f_to_K_t(-2500.0)
+        let result5 = Kelvin_t(unit5).rawValue
+        XCTAssertEqual(expected5, result5)
+        let tolerance5: kelvin_t = 1
+        let categoryResult5 = Temperature(unit5).kelvin_t.rawValue
+        if categoryResult5 > expected5 {
+            XCTAssertLessThanOrEqual(categoryResult5 - expected5, tolerance5)
+        } else {
+            XCTAssertLessThanOrEqual(expected5 - categoryResult5, tolerance5)
+        }
+        let unit6 = Fahrenheit_f(-25000.0)
+        let expected6 = degF_f_to_K_t(-25000.0)
+        let result6 = Kelvin_t(unit6).rawValue
+        XCTAssertEqual(expected6, result6)
+        let tolerance6: kelvin_t = 1
+        let categoryResult6 = Temperature(unit6).kelvin_t.rawValue
+        if categoryResult6 > expected6 {
+            XCTAssertLessThanOrEqual(categoryResult6 - expected6, tolerance6)
+        } else {
+            XCTAssertLessThanOrEqual(expected6 - categoryResult6, tolerance6)
+        }
+        let unit7 = Fahrenheit_f(-250000.0)
+        let expected7 = degF_f_to_K_t(-250000.0)
+        let result7 = Kelvin_t(unit7).rawValue
+        XCTAssertEqual(expected7, result7)
+        let tolerance7: kelvin_t = 1
+        let categoryResult7 = Temperature(unit7).kelvin_t.rawValue
+        if categoryResult7 > expected7 {
+            XCTAssertLessThanOrEqual(categoryResult7 - expected7, tolerance7)
+        } else {
+            XCTAssertLessThanOrEqual(expected7 - categoryResult7, tolerance7)
+        }
+        let unit8 = Fahrenheit_f(-2500000.0)
+        let expected8 = degF_f_to_K_t(-2500000.0)
+        let result8 = Kelvin_t(unit8).rawValue
+        XCTAssertEqual(expected8, result8)
+        let tolerance8: kelvin_t = 1
+        let categoryResult8 = Temperature(unit8).kelvin_t.rawValue
+        if categoryResult8 > expected8 {
+            XCTAssertLessThanOrEqual(categoryResult8 - expected8, tolerance8)
+        } else {
+            XCTAssertLessThanOrEqual(expected8 - categoryResult8, tolerance8)
+        }
+        let unit9 = Fahrenheit_f(-40.0)
+        let expected9 = degF_f_to_K_t(-40.0)
+        let result9 = Kelvin_t(unit9).rawValue
+        XCTAssertEqual(expected9, result9)
+        let tolerance9: kelvin_t = 1
+        let categoryResult9 = Temperature(unit9).kelvin_t.rawValue
+        if categoryResult9 > expected9 {
+            XCTAssertLessThanOrEqual(categoryResult9 - expected9, tolerance9)
+        } else {
+            XCTAssertLessThanOrEqual(expected9 - categoryResult9, tolerance9)
+        }
     }
 
-    func testfahrenheit_fTokelvin_tUsing25000_0Expectingkelvin_tDouble25000_05_09_0Neg32_05_09_0273_15_rounded() {
-        let unit = Fahrenheit_f(25000.0)
-        let expected = degF_f_to_K_t(25000.0)
+    func testfahrenheit_fTokelvin_t2() {
+        let unit = Fahrenheit_f(-Float.greatestFiniteMagnitude)
+        let expected = degF_f_to_K_t(-Float.greatestFiniteMagnitude)
         let result = Kelvin_t(unit).rawValue
         XCTAssertEqual(expected, result)
         let tolerance: kelvin_t = 1
@@ -467,20 +599,1532 @@ final class Fahrenheit_fTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
+        let unit1 = Fahrenheit_f(Float.greatestFiniteMagnitude)
+        let expected1 = degF_f_to_K_t(Float.greatestFiniteMagnitude)
+        let result1 = Kelvin_t(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: kelvin_t = 1
+        let categoryResult1 = Temperature(unit1).kelvin_t.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
     }
 
-    func testfahrenheit_fTokelvin_tUsing250000_0Expectingkelvin_tDouble250000_05_09_0Neg32_05_09_0273_15_rounded() {
-        let unit = Fahrenheit_f(250000.0)
-        let expected = degF_f_to_K_t(250000.0)
-        let result = Kelvin_t(unit).rawValue
+    func testfahrenheit_fTocelsius_u() {
+        let unit = Fahrenheit_f(250.0)
+        let expected = degF_f_to_degC_u(250.0)
+        let result = Celsius_u(unit).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: kelvin_t = 1
-        let categoryResult = Temperature(unit).kelvin_t.rawValue
+        let tolerance: celsius_u = 1
+        let categoryResult = Temperature(unit).celsius_u.rawValue
         if categoryResult > expected {
             XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
+        let unit1 = Fahrenheit_f(2500.0)
+        let expected1 = degF_f_to_degC_u(2500.0)
+        let result1 = Celsius_u(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: celsius_u = 1
+        let categoryResult1 = Temperature(unit1).celsius_u.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Fahrenheit_f(25000.0)
+        let expected2 = degF_f_to_degC_u(25000.0)
+        let result2 = Celsius_u(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: celsius_u = 1
+        let categoryResult2 = Temperature(unit2).celsius_u.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Fahrenheit_f(250000.0)
+        let expected3 = degF_f_to_degC_u(250000.0)
+        let result3 = Celsius_u(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: celsius_u = 1
+        let categoryResult3 = Temperature(unit3).celsius_u.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Fahrenheit_f(2500000.0)
+        let expected4 = degF_f_to_degC_u(2500000.0)
+        let result4 = Celsius_u(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: celsius_u = 1
+        let categoryResult4 = Temperature(unit4).celsius_u.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+        let unit5 = Fahrenheit_f(32.0)
+        let expected5 = degF_f_to_degC_u(32.0)
+        let result5 = Celsius_u(unit5).rawValue
+        XCTAssertEqual(expected5, result5)
+        let tolerance5: celsius_u = 1
+        let categoryResult5 = Temperature(unit5).celsius_u.rawValue
+        if categoryResult5 > expected5 {
+            XCTAssertLessThanOrEqual(categoryResult5 - expected5, tolerance5)
+        } else {
+            XCTAssertLessThanOrEqual(expected5 - categoryResult5, tolerance5)
+        }
+        let unit6 = Fahrenheit_f(523.67)
+        let expected6 = degF_f_to_degC_u(523.67)
+        let result6 = Celsius_u(unit6).rawValue
+        XCTAssertEqual(expected6, result6)
+        let tolerance6: celsius_u = 1
+        let categoryResult6 = Temperature(unit6).celsius_u.rawValue
+        if categoryResult6 > expected6 {
+            XCTAssertLessThanOrEqual(categoryResult6 - expected6, tolerance6)
+        } else {
+            XCTAssertLessThanOrEqual(expected6 - categoryResult6, tolerance6)
+        }
+        let unit7 = Fahrenheit_f(100.0)
+        let expected7 = degF_f_to_degC_u(100.0)
+        let result7 = Celsius_u(unit7).rawValue
+        XCTAssertEqual(expected7, result7)
+        let tolerance7: celsius_u = 1
+        let categoryResult7 = Temperature(unit7).celsius_u.rawValue
+        if categoryResult7 > expected7 {
+            XCTAssertLessThanOrEqual(categoryResult7 - expected7, tolerance7)
+        } else {
+            XCTAssertLessThanOrEqual(expected7 - categoryResult7, tolerance7)
+        }
+        let unit8 = Fahrenheit_f(-250.0)
+        let expected8 = degF_f_to_degC_u(-250.0)
+        let result8 = Celsius_u(unit8).rawValue
+        XCTAssertEqual(expected8, result8)
+        let tolerance8: celsius_u = 1
+        let categoryResult8 = Temperature(unit8).celsius_u.rawValue
+        if categoryResult8 > expected8 {
+            XCTAssertLessThanOrEqual(categoryResult8 - expected8, tolerance8)
+        } else {
+            XCTAssertLessThanOrEqual(expected8 - categoryResult8, tolerance8)
+        }
+        let unit9 = Fahrenheit_f(-2500.0)
+        let expected9 = degF_f_to_degC_u(-2500.0)
+        let result9 = Celsius_u(unit9).rawValue
+        XCTAssertEqual(expected9, result9)
+        let tolerance9: celsius_u = 1
+        let categoryResult9 = Temperature(unit9).celsius_u.rawValue
+        if categoryResult9 > expected9 {
+            XCTAssertLessThanOrEqual(categoryResult9 - expected9, tolerance9)
+        } else {
+            XCTAssertLessThanOrEqual(expected9 - categoryResult9, tolerance9)
+        }
+    }
+
+    func testfahrenheit_fTocelsius_u1() {
+        let unit = Fahrenheit_f(-25000.0)
+        let expected = degF_f_to_degC_u(-25000.0)
+        let result = Celsius_u(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: celsius_u = 1
+        let categoryResult = Temperature(unit).celsius_u.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Fahrenheit_f(-250000.0)
+        let expected1 = degF_f_to_degC_u(-250000.0)
+        let result1 = Celsius_u(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: celsius_u = 1
+        let categoryResult1 = Temperature(unit1).celsius_u.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Fahrenheit_f(-2500000.0)
+        let expected2 = degF_f_to_degC_u(-2500000.0)
+        let result2 = Celsius_u(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: celsius_u = 1
+        let categoryResult2 = Temperature(unit2).celsius_u.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Fahrenheit_f(-40.0)
+        let expected3 = degF_f_to_degC_u(-40.0)
+        let result3 = Celsius_u(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: celsius_u = 1
+        let categoryResult3 = Temperature(unit3).celsius_u.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Fahrenheit_f(-Float.greatestFiniteMagnitude)
+        let expected4 = degF_f_to_degC_u(-Float.greatestFiniteMagnitude)
+        let result4 = Celsius_u(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: celsius_u = 1
+        let categoryResult4 = Temperature(unit4).celsius_u.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+        let unit5 = Fahrenheit_f(Float.greatestFiniteMagnitude)
+        let expected5 = degF_f_to_degC_u(Float.greatestFiniteMagnitude)
+        let result5 = Celsius_u(unit5).rawValue
+        XCTAssertEqual(expected5, result5)
+        let tolerance5: celsius_u = 1
+        let categoryResult5 = Temperature(unit5).celsius_u.rawValue
+        if categoryResult5 > expected5 {
+            XCTAssertLessThanOrEqual(categoryResult5 - expected5, tolerance5)
+        } else {
+            XCTAssertLessThanOrEqual(expected5 - categoryResult5, tolerance5)
+        }
+    }
+
+    func testfahrenheit_fTofahrenheit_u() {
+        let unit = Fahrenheit_f(0.0)
+        let expected = degF_f_to_degF_u(0.0)
+        let result = Fahrenheit_u(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: fahrenheit_u = 1
+        let categoryResult = Temperature(unit).fahrenheit_u.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Fahrenheit_f(fahrenheit_f(-Float.greatestFiniteMagnitude))
+        let expected1 = degF_f_to_degF_u(fahrenheit_f(-Float.greatestFiniteMagnitude))
+        let result1 = Fahrenheit_u(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: fahrenheit_u = 1
+        let categoryResult1 = Temperature(unit1).fahrenheit_u.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Fahrenheit_f(fahrenheit_f(Float.greatestFiniteMagnitude))
+        let expected2 = degF_f_to_degF_u(fahrenheit_f(Float.greatestFiniteMagnitude))
+        let result2 = Fahrenheit_u(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: fahrenheit_u = 1
+        let categoryResult2 = Temperature(unit2).fahrenheit_u.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Fahrenheit_f(5.0)
+        let expected3 = degF_f_to_degF_u(5.0)
+        let result3 = Fahrenheit_u(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: fahrenheit_u = 1
+        let categoryResult3 = Temperature(unit3).fahrenheit_u.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+    }
+
+    func testfahrenheit_fTokelvin_u() {
+        let unit = Fahrenheit_f(250.0)
+        let expected = degF_f_to_K_u(250.0)
+        let result = Kelvin_u(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: kelvin_u = 1
+        let categoryResult = Temperature(unit).kelvin_u.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Fahrenheit_f(2500.0)
+        let expected1 = degF_f_to_K_u(2500.0)
+        let result1 = Kelvin_u(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: kelvin_u = 1
+        let categoryResult1 = Temperature(unit1).kelvin_u.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Fahrenheit_f(25000.0)
+        let expected2 = degF_f_to_K_u(25000.0)
+        let result2 = Kelvin_u(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: kelvin_u = 1
+        let categoryResult2 = Temperature(unit2).kelvin_u.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Fahrenheit_f(250000.0)
+        let expected3 = degF_f_to_K_u(250000.0)
+        let result3 = Kelvin_u(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: kelvin_u = 1
+        let categoryResult3 = Temperature(unit3).kelvin_u.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Fahrenheit_f(2500000.0)
+        let expected4 = degF_f_to_K_u(2500000.0)
+        let result4 = Kelvin_u(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: kelvin_u = 1
+        let categoryResult4 = Temperature(unit4).kelvin_u.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+        let unit5 = Fahrenheit_f(32.0)
+        let expected5 = degF_f_to_K_u(32.0)
+        let result5 = Kelvin_u(unit5).rawValue
+        XCTAssertEqual(expected5, result5)
+        let tolerance5: kelvin_u = 1
+        let categoryResult5 = Temperature(unit5).kelvin_u.rawValue
+        if categoryResult5 > expected5 {
+            XCTAssertLessThanOrEqual(categoryResult5 - expected5, tolerance5)
+        } else {
+            XCTAssertLessThanOrEqual(expected5 - categoryResult5, tolerance5)
+        }
+        let unit6 = Fahrenheit_f(523.67)
+        let expected6 = degF_f_to_K_u(523.67)
+        let result6 = Kelvin_u(unit6).rawValue
+        XCTAssertEqual(expected6, result6)
+        let tolerance6: kelvin_u = 1
+        let categoryResult6 = Temperature(unit6).kelvin_u.rawValue
+        if categoryResult6 > expected6 {
+            XCTAssertLessThanOrEqual(categoryResult6 - expected6, tolerance6)
+        } else {
+            XCTAssertLessThanOrEqual(expected6 - categoryResult6, tolerance6)
+        }
+        let unit7 = Fahrenheit_f(100.0)
+        let expected7 = degF_f_to_K_u(100.0)
+        let result7 = Kelvin_u(unit7).rawValue
+        XCTAssertEqual(expected7, result7)
+        let tolerance7: kelvin_u = 1
+        let categoryResult7 = Temperature(unit7).kelvin_u.rawValue
+        if categoryResult7 > expected7 {
+            XCTAssertLessThanOrEqual(categoryResult7 - expected7, tolerance7)
+        } else {
+            XCTAssertLessThanOrEqual(expected7 - categoryResult7, tolerance7)
+        }
+        let unit8 = Fahrenheit_f(-2500.0)
+        let expected8 = degF_f_to_K_u(-2500.0)
+        let result8 = Kelvin_u(unit8).rawValue
+        XCTAssertEqual(expected8, result8)
+        let tolerance8: kelvin_u = 1
+        let categoryResult8 = Temperature(unit8).kelvin_u.rawValue
+        if categoryResult8 > expected8 {
+            XCTAssertLessThanOrEqual(categoryResult8 - expected8, tolerance8)
+        } else {
+            XCTAssertLessThanOrEqual(expected8 - categoryResult8, tolerance8)
+        }
+        let unit9 = Fahrenheit_f(-25000.0)
+        let expected9 = degF_f_to_K_u(-25000.0)
+        let result9 = Kelvin_u(unit9).rawValue
+        XCTAssertEqual(expected9, result9)
+        let tolerance9: kelvin_u = 1
+        let categoryResult9 = Temperature(unit9).kelvin_u.rawValue
+        if categoryResult9 > expected9 {
+            XCTAssertLessThanOrEqual(categoryResult9 - expected9, tolerance9)
+        } else {
+            XCTAssertLessThanOrEqual(expected9 - categoryResult9, tolerance9)
+        }
+    }
+
+    func testfahrenheit_fTokelvin_u1() {
+        let unit = Fahrenheit_f(-250000.0)
+        let expected = degF_f_to_K_u(-250000.0)
+        let result = Kelvin_u(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: kelvin_u = 1
+        let categoryResult = Temperature(unit).kelvin_u.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Fahrenheit_f(-2500000.0)
+        let expected1 = degF_f_to_K_u(-2500000.0)
+        let result1 = Kelvin_u(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: kelvin_u = 1
+        let categoryResult1 = Temperature(unit1).kelvin_u.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Fahrenheit_f(-Float.greatestFiniteMagnitude)
+        let expected2 = degF_f_to_K_u(-Float.greatestFiniteMagnitude)
+        let result2 = Kelvin_u(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: kelvin_u = 1
+        let categoryResult2 = Temperature(unit2).kelvin_u.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Fahrenheit_f(Float.greatestFiniteMagnitude)
+        let expected3 = degF_f_to_K_u(Float.greatestFiniteMagnitude)
+        let result3 = Kelvin_u(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: kelvin_u = 1
+        let categoryResult3 = Temperature(unit3).kelvin_u.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+    }
+
+    func testfahrenheit_fTocelsius_f() {
+        let unit = Fahrenheit_f(250.0)
+        let expected = degF_f_to_degC_f(250.0)
+        let result = Celsius_f(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: celsius_f = 1.0
+        let categoryResult = Temperature(unit).celsius_f.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Fahrenheit_f(2500.0)
+        let expected1 = degF_f_to_degC_f(2500.0)
+        let result1 = Celsius_f(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: celsius_f = 1.0
+        let categoryResult1 = Temperature(unit1).celsius_f.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Fahrenheit_f(25000.0)
+        let expected2 = degF_f_to_degC_f(25000.0)
+        let result2 = Celsius_f(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: celsius_f = 1.0
+        let categoryResult2 = Temperature(unit2).celsius_f.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Fahrenheit_f(250000.0)
+        let expected3 = degF_f_to_degC_f(250000.0)
+        let result3 = Celsius_f(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: celsius_f = 1.0
+        let categoryResult3 = Temperature(unit3).celsius_f.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Fahrenheit_f(2500000.0)
+        let expected4 = degF_f_to_degC_f(2500000.0)
+        let result4 = Celsius_f(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: celsius_f = 1.0
+        let categoryResult4 = Temperature(unit4).celsius_f.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+        let unit5 = Fahrenheit_f(32.0)
+        let expected5 = degF_f_to_degC_f(32.0)
+        let result5 = Celsius_f(unit5).rawValue
+        XCTAssertEqual(expected5, result5)
+        let tolerance5: celsius_f = 1.0
+        let categoryResult5 = Temperature(unit5).celsius_f.rawValue
+        if categoryResult5 > expected5 {
+            XCTAssertLessThanOrEqual(categoryResult5 - expected5, tolerance5)
+        } else {
+            XCTAssertLessThanOrEqual(expected5 - categoryResult5, tolerance5)
+        }
+        let unit6 = Fahrenheit_f(523.67)
+        let expected6 = degF_f_to_degC_f(523.67)
+        let result6 = Celsius_f(unit6).rawValue
+        XCTAssertEqual(expected6, result6)
+        let tolerance6: celsius_f = 1.0
+        let categoryResult6 = Temperature(unit6).celsius_f.rawValue
+        if categoryResult6 > expected6 {
+            XCTAssertLessThanOrEqual(categoryResult6 - expected6, tolerance6)
+        } else {
+            XCTAssertLessThanOrEqual(expected6 - categoryResult6, tolerance6)
+        }
+        let unit7 = Fahrenheit_f(100.0)
+        let expected7 = degF_f_to_degC_f(100.0)
+        let result7 = Celsius_f(unit7).rawValue
+        XCTAssertEqual(expected7, result7)
+        let tolerance7: celsius_f = 1.0
+        let categoryResult7 = Temperature(unit7).celsius_f.rawValue
+        if categoryResult7 > expected7 {
+            XCTAssertLessThanOrEqual(categoryResult7 - expected7, tolerance7)
+        } else {
+            XCTAssertLessThanOrEqual(expected7 - categoryResult7, tolerance7)
+        }
+        let unit8 = Fahrenheit_f(0.0)
+        let expected8 = degF_f_to_degC_f(0.0)
+        let result8 = Celsius_f(unit8).rawValue
+        XCTAssertEqual(expected8, result8)
+        let tolerance8: celsius_f = 1.0
+        let categoryResult8 = Temperature(unit8).celsius_f.rawValue
+        if categoryResult8 > expected8 {
+            XCTAssertLessThanOrEqual(categoryResult8 - expected8, tolerance8)
+        } else {
+            XCTAssertLessThanOrEqual(expected8 - categoryResult8, tolerance8)
+        }
+        let unit9 = Fahrenheit_f(20.0)
+        let expected9 = degF_f_to_degC_f(20.0)
+        let result9 = Celsius_f(unit9).rawValue
+        XCTAssertEqual(expected9, result9)
+        let tolerance9: celsius_f = 1.0
+        let categoryResult9 = Temperature(unit9).celsius_f.rawValue
+        if categoryResult9 > expected9 {
+            XCTAssertLessThanOrEqual(categoryResult9 - expected9, tolerance9)
+        } else {
+            XCTAssertLessThanOrEqual(expected9 - categoryResult9, tolerance9)
+        }
+    }
+
+    func testfahrenheit_fTocelsius_f1() {
+        let unit = Fahrenheit_f(10.0)
+        let expected = degF_f_to_degC_f(10.0)
+        let result = Celsius_f(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: celsius_f = 1.0
+        let categoryResult = Temperature(unit).celsius_f.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Fahrenheit_f(15.0)
+        let expected1 = degF_f_to_degC_f(15.0)
+        let result1 = Celsius_f(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: celsius_f = 1.0
+        let categoryResult1 = Temperature(unit1).celsius_f.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Fahrenheit_f(12.0)
+        let expected2 = degF_f_to_degC_f(12.0)
+        let result2 = Celsius_f(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: celsius_f = 1.0
+        let categoryResult2 = Temperature(unit2).celsius_f.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Fahrenheit_f(25.0)
+        let expected3 = degF_f_to_degC_f(25.0)
+        let result3 = Celsius_f(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: celsius_f = 1.0
+        let categoryResult3 = Temperature(unit3).celsius_f.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Fahrenheit_f(-250.0)
+        let expected4 = degF_f_to_degC_f(-250.0)
+        let result4 = Celsius_f(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: celsius_f = 1.0
+        let categoryResult4 = Temperature(unit4).celsius_f.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+        let unit5 = Fahrenheit_f(-2500.0)
+        let expected5 = degF_f_to_degC_f(-2500.0)
+        let result5 = Celsius_f(unit5).rawValue
+        XCTAssertEqual(expected5, result5)
+        let tolerance5: celsius_f = 1.0
+        let categoryResult5 = Temperature(unit5).celsius_f.rawValue
+        if categoryResult5 > expected5 {
+            XCTAssertLessThanOrEqual(categoryResult5 - expected5, tolerance5)
+        } else {
+            XCTAssertLessThanOrEqual(expected5 - categoryResult5, tolerance5)
+        }
+        let unit6 = Fahrenheit_f(-25000.0)
+        let expected6 = degF_f_to_degC_f(-25000.0)
+        let result6 = Celsius_f(unit6).rawValue
+        XCTAssertEqual(expected6, result6)
+        let tolerance6: celsius_f = 1.0
+        let categoryResult6 = Temperature(unit6).celsius_f.rawValue
+        if categoryResult6 > expected6 {
+            XCTAssertLessThanOrEqual(categoryResult6 - expected6, tolerance6)
+        } else {
+            XCTAssertLessThanOrEqual(expected6 - categoryResult6, tolerance6)
+        }
+        let unit7 = Fahrenheit_f(-250000.0)
+        let expected7 = degF_f_to_degC_f(-250000.0)
+        let result7 = Celsius_f(unit7).rawValue
+        XCTAssertEqual(expected7, result7)
+        let tolerance7: celsius_f = 1.0
+        let categoryResult7 = Temperature(unit7).celsius_f.rawValue
+        if categoryResult7 > expected7 {
+            XCTAssertLessThanOrEqual(categoryResult7 - expected7, tolerance7)
+        } else {
+            XCTAssertLessThanOrEqual(expected7 - categoryResult7, tolerance7)
+        }
+        let unit8 = Fahrenheit_f(-2500000.0)
+        let expected8 = degF_f_to_degC_f(-2500000.0)
+        let result8 = Celsius_f(unit8).rawValue
+        XCTAssertEqual(expected8, result8)
+        let tolerance8: celsius_f = 1.0
+        let categoryResult8 = Temperature(unit8).celsius_f.rawValue
+        if categoryResult8 > expected8 {
+            XCTAssertLessThanOrEqual(categoryResult8 - expected8, tolerance8)
+        } else {
+            XCTAssertLessThanOrEqual(expected8 - categoryResult8, tolerance8)
+        }
+        let unit9 = Fahrenheit_f(-40.0)
+        let expected9 = degF_f_to_degC_f(-40.0)
+        let result9 = Celsius_f(unit9).rawValue
+        XCTAssertEqual(expected9, result9)
+        let tolerance9: celsius_f = 1.0
+        let categoryResult9 = Temperature(unit9).celsius_f.rawValue
+        if categoryResult9 > expected9 {
+            XCTAssertLessThanOrEqual(categoryResult9 - expected9, tolerance9)
+        } else {
+            XCTAssertLessThanOrEqual(expected9 - categoryResult9, tolerance9)
+        }
+    }
+
+    func testfahrenheit_fTocelsius_f2() {
+        let unit = Fahrenheit_f(-Float.greatestFiniteMagnitude)
+        let expected = degF_f_to_degC_f(-Float.greatestFiniteMagnitude)
+        let result = Celsius_f(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: celsius_f = 1.0
+        let categoryResult = Temperature(unit).celsius_f.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Fahrenheit_f(Float.greatestFiniteMagnitude)
+        let expected1 = degF_f_to_degC_f(Float.greatestFiniteMagnitude)
+        let result1 = Celsius_f(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: celsius_f = 1.0
+        let categoryResult1 = Temperature(unit1).celsius_f.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+    }
+
+    func testfahrenheit_fTokelvin_f() {
+        let unit = Fahrenheit_f(250.0)
+        let expected = degF_f_to_K_f(250.0)
+        let result = Kelvin_f(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: kelvin_f = 1.0
+        let categoryResult = Temperature(unit).kelvin_f.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Fahrenheit_f(2500.0)
+        let expected1 = degF_f_to_K_f(2500.0)
+        let result1 = Kelvin_f(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: kelvin_f = 1.0
+        let categoryResult1 = Temperature(unit1).kelvin_f.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Fahrenheit_f(25000.0)
+        let expected2 = degF_f_to_K_f(25000.0)
+        let result2 = Kelvin_f(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: kelvin_f = 1.0
+        let categoryResult2 = Temperature(unit2).kelvin_f.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Fahrenheit_f(250000.0)
+        let expected3 = degF_f_to_K_f(250000.0)
+        let result3 = Kelvin_f(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: kelvin_f = 1.0
+        let categoryResult3 = Temperature(unit3).kelvin_f.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Fahrenheit_f(2500000.0)
+        let expected4 = degF_f_to_K_f(2500000.0)
+        let result4 = Kelvin_f(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: kelvin_f = 1.0
+        let categoryResult4 = Temperature(unit4).kelvin_f.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+        let unit5 = Fahrenheit_f(32.0)
+        let expected5 = degF_f_to_K_f(32.0)
+        let result5 = Kelvin_f(unit5).rawValue
+        XCTAssertEqual(expected5, result5)
+        let tolerance5: kelvin_f = 1.0
+        let categoryResult5 = Temperature(unit5).kelvin_f.rawValue
+        if categoryResult5 > expected5 {
+            XCTAssertLessThanOrEqual(categoryResult5 - expected5, tolerance5)
+        } else {
+            XCTAssertLessThanOrEqual(expected5 - categoryResult5, tolerance5)
+        }
+        let unit6 = Fahrenheit_f(523.67)
+        let expected6 = degF_f_to_K_f(523.67)
+        let result6 = Kelvin_f(unit6).rawValue
+        XCTAssertEqual(expected6, result6)
+        let tolerance6: kelvin_f = 1.0
+        let categoryResult6 = Temperature(unit6).kelvin_f.rawValue
+        if categoryResult6 > expected6 {
+            XCTAssertLessThanOrEqual(categoryResult6 - expected6, tolerance6)
+        } else {
+            XCTAssertLessThanOrEqual(expected6 - categoryResult6, tolerance6)
+        }
+        let unit7 = Fahrenheit_f(100.0)
+        let expected7 = degF_f_to_K_f(100.0)
+        let result7 = Kelvin_f(unit7).rawValue
+        XCTAssertEqual(expected7, result7)
+        let tolerance7: kelvin_f = 1.0
+        let categoryResult7 = Temperature(unit7).kelvin_f.rawValue
+        if categoryResult7 > expected7 {
+            XCTAssertLessThanOrEqual(categoryResult7 - expected7, tolerance7)
+        } else {
+            XCTAssertLessThanOrEqual(expected7 - categoryResult7, tolerance7)
+        }
+        let unit8 = Fahrenheit_f(0.0)
+        let expected8 = degF_f_to_K_f(0.0)
+        let result8 = Kelvin_f(unit8).rawValue
+        XCTAssertEqual(expected8, result8)
+        let tolerance8: kelvin_f = 1.0
+        let categoryResult8 = Temperature(unit8).kelvin_f.rawValue
+        if categoryResult8 > expected8 {
+            XCTAssertLessThanOrEqual(categoryResult8 - expected8, tolerance8)
+        } else {
+            XCTAssertLessThanOrEqual(expected8 - categoryResult8, tolerance8)
+        }
+        let unit9 = Fahrenheit_f(20.0)
+        let expected9 = degF_f_to_K_f(20.0)
+        let result9 = Kelvin_f(unit9).rawValue
+        XCTAssertEqual(expected9, result9)
+        let tolerance9: kelvin_f = 1.0
+        let categoryResult9 = Temperature(unit9).kelvin_f.rawValue
+        if categoryResult9 > expected9 {
+            XCTAssertLessThanOrEqual(categoryResult9 - expected9, tolerance9)
+        } else {
+            XCTAssertLessThanOrEqual(expected9 - categoryResult9, tolerance9)
+        }
+    }
+
+    func testfahrenheit_fTokelvin_f1() {
+        let unit = Fahrenheit_f(10.0)
+        let expected = degF_f_to_K_f(10.0)
+        let result = Kelvin_f(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: kelvin_f = 1.0
+        let categoryResult = Temperature(unit).kelvin_f.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Fahrenheit_f(15.0)
+        let expected1 = degF_f_to_K_f(15.0)
+        let result1 = Kelvin_f(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: kelvin_f = 1.0
+        let categoryResult1 = Temperature(unit1).kelvin_f.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Fahrenheit_f(12.0)
+        let expected2 = degF_f_to_K_f(12.0)
+        let result2 = Kelvin_f(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: kelvin_f = 1.0
+        let categoryResult2 = Temperature(unit2).kelvin_f.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Fahrenheit_f(25.0)
+        let expected3 = degF_f_to_K_f(25.0)
+        let result3 = Kelvin_f(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: kelvin_f = 1.0
+        let categoryResult3 = Temperature(unit3).kelvin_f.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Fahrenheit_f(-250.0)
+        let expected4 = degF_f_to_K_f(-250.0)
+        let result4 = Kelvin_f(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: kelvin_f = 1.0
+        let categoryResult4 = Temperature(unit4).kelvin_f.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+        let unit5 = Fahrenheit_f(-2500.0)
+        let expected5 = degF_f_to_K_f(-2500.0)
+        let result5 = Kelvin_f(unit5).rawValue
+        XCTAssertEqual(expected5, result5)
+        let tolerance5: kelvin_f = 1.0
+        let categoryResult5 = Temperature(unit5).kelvin_f.rawValue
+        if categoryResult5 > expected5 {
+            XCTAssertLessThanOrEqual(categoryResult5 - expected5, tolerance5)
+        } else {
+            XCTAssertLessThanOrEqual(expected5 - categoryResult5, tolerance5)
+        }
+        let unit6 = Fahrenheit_f(-25000.0)
+        let expected6 = degF_f_to_K_f(-25000.0)
+        let result6 = Kelvin_f(unit6).rawValue
+        XCTAssertEqual(expected6, result6)
+        let tolerance6: kelvin_f = 1.0
+        let categoryResult6 = Temperature(unit6).kelvin_f.rawValue
+        if categoryResult6 > expected6 {
+            XCTAssertLessThanOrEqual(categoryResult6 - expected6, tolerance6)
+        } else {
+            XCTAssertLessThanOrEqual(expected6 - categoryResult6, tolerance6)
+        }
+        let unit7 = Fahrenheit_f(-250000.0)
+        let expected7 = degF_f_to_K_f(-250000.0)
+        let result7 = Kelvin_f(unit7).rawValue
+        XCTAssertEqual(expected7, result7)
+        let tolerance7: kelvin_f = 1.0
+        let categoryResult7 = Temperature(unit7).kelvin_f.rawValue
+        if categoryResult7 > expected7 {
+            XCTAssertLessThanOrEqual(categoryResult7 - expected7, tolerance7)
+        } else {
+            XCTAssertLessThanOrEqual(expected7 - categoryResult7, tolerance7)
+        }
+        let unit8 = Fahrenheit_f(-2500000.0)
+        let expected8 = degF_f_to_K_f(-2500000.0)
+        let result8 = Kelvin_f(unit8).rawValue
+        XCTAssertEqual(expected8, result8)
+        let tolerance8: kelvin_f = 1.0
+        let categoryResult8 = Temperature(unit8).kelvin_f.rawValue
+        if categoryResult8 > expected8 {
+            XCTAssertLessThanOrEqual(categoryResult8 - expected8, tolerance8)
+        } else {
+            XCTAssertLessThanOrEqual(expected8 - categoryResult8, tolerance8)
+        }
+        let unit9 = Fahrenheit_f(-40.0)
+        let expected9 = degF_f_to_K_f(-40.0)
+        let result9 = Kelvin_f(unit9).rawValue
+        XCTAssertEqual(expected9, result9)
+        let tolerance9: kelvin_f = 1.0
+        let categoryResult9 = Temperature(unit9).kelvin_f.rawValue
+        if categoryResult9 > expected9 {
+            XCTAssertLessThanOrEqual(categoryResult9 - expected9, tolerance9)
+        } else {
+            XCTAssertLessThanOrEqual(expected9 - categoryResult9, tolerance9)
+        }
+    }
+
+    func testfahrenheit_fTokelvin_f2() {
+        let unit = Fahrenheit_f(-Float.greatestFiniteMagnitude)
+        let expected = degF_f_to_K_f(-Float.greatestFiniteMagnitude)
+        let result = Kelvin_f(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: kelvin_f = 1.0
+        let categoryResult = Temperature(unit).kelvin_f.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Fahrenheit_f(Float.greatestFiniteMagnitude)
+        let expected1 = degF_f_to_K_f(Float.greatestFiniteMagnitude)
+        let result1 = Kelvin_f(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: kelvin_f = 1.0
+        let categoryResult1 = Temperature(unit1).kelvin_f.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+    }
+
+    func testfahrenheit_fTocelsius_d() {
+        let unit = Fahrenheit_f(250.0)
+        let expected = degF_f_to_degC_d(250.0)
+        let result = Celsius_d(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: celsius_d = 1.0
+        let categoryResult = Temperature(unit).celsius_d.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Fahrenheit_f(2500.0)
+        let expected1 = degF_f_to_degC_d(2500.0)
+        let result1 = Celsius_d(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: celsius_d = 1.0
+        let categoryResult1 = Temperature(unit1).celsius_d.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Fahrenheit_f(25000.0)
+        let expected2 = degF_f_to_degC_d(25000.0)
+        let result2 = Celsius_d(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: celsius_d = 1.0
+        let categoryResult2 = Temperature(unit2).celsius_d.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Fahrenheit_f(250000.0)
+        let expected3 = degF_f_to_degC_d(250000.0)
+        let result3 = Celsius_d(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: celsius_d = 1.0
+        let categoryResult3 = Temperature(unit3).celsius_d.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Fahrenheit_f(2500000.0)
+        let expected4 = degF_f_to_degC_d(2500000.0)
+        let result4 = Celsius_d(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: celsius_d = 1.0
+        let categoryResult4 = Temperature(unit4).celsius_d.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+        let unit5 = Fahrenheit_f(32.0)
+        let expected5 = degF_f_to_degC_d(32.0)
+        let result5 = Celsius_d(unit5).rawValue
+        XCTAssertEqual(expected5, result5)
+        let tolerance5: celsius_d = 1.0
+        let categoryResult5 = Temperature(unit5).celsius_d.rawValue
+        if categoryResult5 > expected5 {
+            XCTAssertLessThanOrEqual(categoryResult5 - expected5, tolerance5)
+        } else {
+            XCTAssertLessThanOrEqual(expected5 - categoryResult5, tolerance5)
+        }
+        let unit6 = Fahrenheit_f(523.67)
+        let expected6 = degF_f_to_degC_d(523.67)
+        let result6 = Celsius_d(unit6).rawValue
+        XCTAssertEqual(expected6, result6)
+        let tolerance6: celsius_d = 1.0
+        let categoryResult6 = Temperature(unit6).celsius_d.rawValue
+        if categoryResult6 > expected6 {
+            XCTAssertLessThanOrEqual(categoryResult6 - expected6, tolerance6)
+        } else {
+            XCTAssertLessThanOrEqual(expected6 - categoryResult6, tolerance6)
+        }
+        let unit7 = Fahrenheit_f(100.0)
+        let expected7 = degF_f_to_degC_d(100.0)
+        let result7 = Celsius_d(unit7).rawValue
+        XCTAssertEqual(expected7, result7)
+        let tolerance7: celsius_d = 1.0
+        let categoryResult7 = Temperature(unit7).celsius_d.rawValue
+        if categoryResult7 > expected7 {
+            XCTAssertLessThanOrEqual(categoryResult7 - expected7, tolerance7)
+        } else {
+            XCTAssertLessThanOrEqual(expected7 - categoryResult7, tolerance7)
+        }
+        let unit8 = Fahrenheit_f(0.0)
+        let expected8 = degF_f_to_degC_d(0.0)
+        let result8 = Celsius_d(unit8).rawValue
+        XCTAssertEqual(expected8, result8)
+        let tolerance8: celsius_d = 1.0
+        let categoryResult8 = Temperature(unit8).celsius_d.rawValue
+        if categoryResult8 > expected8 {
+            XCTAssertLessThanOrEqual(categoryResult8 - expected8, tolerance8)
+        } else {
+            XCTAssertLessThanOrEqual(expected8 - categoryResult8, tolerance8)
+        }
+        let unit9 = Fahrenheit_f(20.0)
+        let expected9 = degF_f_to_degC_d(20.0)
+        let result9 = Celsius_d(unit9).rawValue
+        XCTAssertEqual(expected9, result9)
+        let tolerance9: celsius_d = 1.0
+        let categoryResult9 = Temperature(unit9).celsius_d.rawValue
+        if categoryResult9 > expected9 {
+            XCTAssertLessThanOrEqual(categoryResult9 - expected9, tolerance9)
+        } else {
+            XCTAssertLessThanOrEqual(expected9 - categoryResult9, tolerance9)
+        }
+    }
+
+    func testfahrenheit_fTocelsius_d1() {
+        let unit = Fahrenheit_f(10.0)
+        let expected = degF_f_to_degC_d(10.0)
+        let result = Celsius_d(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: celsius_d = 1.0
+        let categoryResult = Temperature(unit).celsius_d.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Fahrenheit_f(15.0)
+        let expected1 = degF_f_to_degC_d(15.0)
+        let result1 = Celsius_d(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: celsius_d = 1.0
+        let categoryResult1 = Temperature(unit1).celsius_d.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Fahrenheit_f(12.0)
+        let expected2 = degF_f_to_degC_d(12.0)
+        let result2 = Celsius_d(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: celsius_d = 1.0
+        let categoryResult2 = Temperature(unit2).celsius_d.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Fahrenheit_f(25.0)
+        let expected3 = degF_f_to_degC_d(25.0)
+        let result3 = Celsius_d(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: celsius_d = 1.0
+        let categoryResult3 = Temperature(unit3).celsius_d.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Fahrenheit_f(-250.0)
+        let expected4 = degF_f_to_degC_d(-250.0)
+        let result4 = Celsius_d(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: celsius_d = 1.0
+        let categoryResult4 = Temperature(unit4).celsius_d.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+        let unit5 = Fahrenheit_f(-2500.0)
+        let expected5 = degF_f_to_degC_d(-2500.0)
+        let result5 = Celsius_d(unit5).rawValue
+        XCTAssertEqual(expected5, result5)
+        let tolerance5: celsius_d = 1.0
+        let categoryResult5 = Temperature(unit5).celsius_d.rawValue
+        if categoryResult5 > expected5 {
+            XCTAssertLessThanOrEqual(categoryResult5 - expected5, tolerance5)
+        } else {
+            XCTAssertLessThanOrEqual(expected5 - categoryResult5, tolerance5)
+        }
+        let unit6 = Fahrenheit_f(-25000.0)
+        let expected6 = degF_f_to_degC_d(-25000.0)
+        let result6 = Celsius_d(unit6).rawValue
+        XCTAssertEqual(expected6, result6)
+        let tolerance6: celsius_d = 1.0
+        let categoryResult6 = Temperature(unit6).celsius_d.rawValue
+        if categoryResult6 > expected6 {
+            XCTAssertLessThanOrEqual(categoryResult6 - expected6, tolerance6)
+        } else {
+            XCTAssertLessThanOrEqual(expected6 - categoryResult6, tolerance6)
+        }
+        let unit7 = Fahrenheit_f(-250000.0)
+        let expected7 = degF_f_to_degC_d(-250000.0)
+        let result7 = Celsius_d(unit7).rawValue
+        XCTAssertEqual(expected7, result7)
+        let tolerance7: celsius_d = 1.0
+        let categoryResult7 = Temperature(unit7).celsius_d.rawValue
+        if categoryResult7 > expected7 {
+            XCTAssertLessThanOrEqual(categoryResult7 - expected7, tolerance7)
+        } else {
+            XCTAssertLessThanOrEqual(expected7 - categoryResult7, tolerance7)
+        }
+        let unit8 = Fahrenheit_f(-2500000.0)
+        let expected8 = degF_f_to_degC_d(-2500000.0)
+        let result8 = Celsius_d(unit8).rawValue
+        XCTAssertEqual(expected8, result8)
+        let tolerance8: celsius_d = 1.0
+        let categoryResult8 = Temperature(unit8).celsius_d.rawValue
+        if categoryResult8 > expected8 {
+            XCTAssertLessThanOrEqual(categoryResult8 - expected8, tolerance8)
+        } else {
+            XCTAssertLessThanOrEqual(expected8 - categoryResult8, tolerance8)
+        }
+        let unit9 = Fahrenheit_f(-40.0)
+        let expected9 = degF_f_to_degC_d(-40.0)
+        let result9 = Celsius_d(unit9).rawValue
+        XCTAssertEqual(expected9, result9)
+        let tolerance9: celsius_d = 1.0
+        let categoryResult9 = Temperature(unit9).celsius_d.rawValue
+        if categoryResult9 > expected9 {
+            XCTAssertLessThanOrEqual(categoryResult9 - expected9, tolerance9)
+        } else {
+            XCTAssertLessThanOrEqual(expected9 - categoryResult9, tolerance9)
+        }
+    }
+
+    func testfahrenheit_fTocelsius_d2() {
+        let unit = Fahrenheit_f(-Float.greatestFiniteMagnitude)
+        let expected = degF_f_to_degC_d(-Float.greatestFiniteMagnitude)
+        let result = Celsius_d(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: celsius_d = 1.0
+        let categoryResult = Temperature(unit).celsius_d.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Fahrenheit_f(Float.greatestFiniteMagnitude)
+        let expected1 = degF_f_to_degC_d(Float.greatestFiniteMagnitude)
+        let result1 = Celsius_d(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: celsius_d = 1.0
+        let categoryResult1 = Temperature(unit1).celsius_d.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+    }
+
+    func testfahrenheit_fTofahrenheit_d() {
+        let unit = Fahrenheit_f(0.0)
+        let expected = degF_f_to_degF_d(0.0)
+        let result = Fahrenheit_d(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: fahrenheit_d = 1.0
+        let categoryResult = Temperature(unit).fahrenheit_d.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Fahrenheit_f(fahrenheit_f(-Float.greatestFiniteMagnitude))
+        let expected1 = degF_f_to_degF_d(fahrenheit_f(-Float.greatestFiniteMagnitude))
+        let result1 = Fahrenheit_d(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: fahrenheit_d = 1.0
+        let categoryResult1 = Temperature(unit1).fahrenheit_d.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Fahrenheit_f(fahrenheit_f(Float.greatestFiniteMagnitude))
+        let expected2 = degF_f_to_degF_d(fahrenheit_f(Float.greatestFiniteMagnitude))
+        let result2 = Fahrenheit_d(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: fahrenheit_d = 1.0
+        let categoryResult2 = Temperature(unit2).fahrenheit_d.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Fahrenheit_f(5.0)
+        let expected3 = degF_f_to_degF_d(5.0)
+        let result3 = Fahrenheit_d(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: fahrenheit_d = 1.0
+        let categoryResult3 = Temperature(unit3).fahrenheit_d.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+    }
+
+    func testfahrenheit_fTokelvin_d() {
+        let unit = Fahrenheit_f(250.0)
+        let expected = degF_f_to_K_d(250.0)
+        let result = Kelvin_d(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: kelvin_d = 1.0
+        let categoryResult = Temperature(unit).kelvin_d.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Fahrenheit_f(2500.0)
+        let expected1 = degF_f_to_K_d(2500.0)
+        let result1 = Kelvin_d(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: kelvin_d = 1.0
+        let categoryResult1 = Temperature(unit1).kelvin_d.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Fahrenheit_f(25000.0)
+        let expected2 = degF_f_to_K_d(25000.0)
+        let result2 = Kelvin_d(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: kelvin_d = 1.0
+        let categoryResult2 = Temperature(unit2).kelvin_d.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Fahrenheit_f(250000.0)
+        let expected3 = degF_f_to_K_d(250000.0)
+        let result3 = Kelvin_d(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: kelvin_d = 1.0
+        let categoryResult3 = Temperature(unit3).kelvin_d.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Fahrenheit_f(2500000.0)
+        let expected4 = degF_f_to_K_d(2500000.0)
+        let result4 = Kelvin_d(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: kelvin_d = 1.0
+        let categoryResult4 = Temperature(unit4).kelvin_d.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+        let unit5 = Fahrenheit_f(32.0)
+        let expected5 = degF_f_to_K_d(32.0)
+        let result5 = Kelvin_d(unit5).rawValue
+        XCTAssertEqual(expected5, result5)
+        let tolerance5: kelvin_d = 1.0
+        let categoryResult5 = Temperature(unit5).kelvin_d.rawValue
+        if categoryResult5 > expected5 {
+            XCTAssertLessThanOrEqual(categoryResult5 - expected5, tolerance5)
+        } else {
+            XCTAssertLessThanOrEqual(expected5 - categoryResult5, tolerance5)
+        }
+        let unit6 = Fahrenheit_f(523.67)
+        let expected6 = degF_f_to_K_d(523.67)
+        let result6 = Kelvin_d(unit6).rawValue
+        XCTAssertEqual(expected6, result6)
+        let tolerance6: kelvin_d = 1.0
+        let categoryResult6 = Temperature(unit6).kelvin_d.rawValue
+        if categoryResult6 > expected6 {
+            XCTAssertLessThanOrEqual(categoryResult6 - expected6, tolerance6)
+        } else {
+            XCTAssertLessThanOrEqual(expected6 - categoryResult6, tolerance6)
+        }
+        let unit7 = Fahrenheit_f(100.0)
+        let expected7 = degF_f_to_K_d(100.0)
+        let result7 = Kelvin_d(unit7).rawValue
+        XCTAssertEqual(expected7, result7)
+        let tolerance7: kelvin_d = 1.0
+        let categoryResult7 = Temperature(unit7).kelvin_d.rawValue
+        if categoryResult7 > expected7 {
+            XCTAssertLessThanOrEqual(categoryResult7 - expected7, tolerance7)
+        } else {
+            XCTAssertLessThanOrEqual(expected7 - categoryResult7, tolerance7)
+        }
+        let unit8 = Fahrenheit_f(0.0)
+        let expected8 = degF_f_to_K_d(0.0)
+        let result8 = Kelvin_d(unit8).rawValue
+        XCTAssertEqual(expected8, result8)
+        let tolerance8: kelvin_d = 1.0
+        let categoryResult8 = Temperature(unit8).kelvin_d.rawValue
+        if categoryResult8 > expected8 {
+            XCTAssertLessThanOrEqual(categoryResult8 - expected8, tolerance8)
+        } else {
+            XCTAssertLessThanOrEqual(expected8 - categoryResult8, tolerance8)
+        }
+        let unit9 = Fahrenheit_f(20.0)
+        let expected9 = degF_f_to_K_d(20.0)
+        let result9 = Kelvin_d(unit9).rawValue
+        XCTAssertEqual(expected9, result9)
+        let tolerance9: kelvin_d = 1.0
+        let categoryResult9 = Temperature(unit9).kelvin_d.rawValue
+        if categoryResult9 > expected9 {
+            XCTAssertLessThanOrEqual(categoryResult9 - expected9, tolerance9)
+        } else {
+            XCTAssertLessThanOrEqual(expected9 - categoryResult9, tolerance9)
+        }
+    }
+
+    func testfahrenheit_fTokelvin_d1() {
+        let unit = Fahrenheit_f(10.0)
+        let expected = degF_f_to_K_d(10.0)
+        let result = Kelvin_d(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: kelvin_d = 1.0
+        let categoryResult = Temperature(unit).kelvin_d.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Fahrenheit_f(15.0)
+        let expected1 = degF_f_to_K_d(15.0)
+        let result1 = Kelvin_d(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: kelvin_d = 1.0
+        let categoryResult1 = Temperature(unit1).kelvin_d.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Fahrenheit_f(12.0)
+        let expected2 = degF_f_to_K_d(12.0)
+        let result2 = Kelvin_d(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: kelvin_d = 1.0
+        let categoryResult2 = Temperature(unit2).kelvin_d.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
+        }
+        let unit3 = Fahrenheit_f(25.0)
+        let expected3 = degF_f_to_K_d(25.0)
+        let result3 = Kelvin_d(unit3).rawValue
+        XCTAssertEqual(expected3, result3)
+        let tolerance3: kelvin_d = 1.0
+        let categoryResult3 = Temperature(unit3).kelvin_d.rawValue
+        if categoryResult3 > expected3 {
+            XCTAssertLessThanOrEqual(categoryResult3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - categoryResult3, tolerance3)
+        }
+        let unit4 = Fahrenheit_f(-250.0)
+        let expected4 = degF_f_to_K_d(-250.0)
+        let result4 = Kelvin_d(unit4).rawValue
+        XCTAssertEqual(expected4, result4)
+        let tolerance4: kelvin_d = 1.0
+        let categoryResult4 = Temperature(unit4).kelvin_d.rawValue
+        if categoryResult4 > expected4 {
+            XCTAssertLessThanOrEqual(categoryResult4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - categoryResult4, tolerance4)
+        }
+        let unit5 = Fahrenheit_f(-2500.0)
+        let expected5 = degF_f_to_K_d(-2500.0)
+        let result5 = Kelvin_d(unit5).rawValue
+        XCTAssertEqual(expected5, result5)
+        let tolerance5: kelvin_d = 1.0
+        let categoryResult5 = Temperature(unit5).kelvin_d.rawValue
+        if categoryResult5 > expected5 {
+            XCTAssertLessThanOrEqual(categoryResult5 - expected5, tolerance5)
+        } else {
+            XCTAssertLessThanOrEqual(expected5 - categoryResult5, tolerance5)
+        }
+        let unit6 = Fahrenheit_f(-25000.0)
+        let expected6 = degF_f_to_K_d(-25000.0)
+        let result6 = Kelvin_d(unit6).rawValue
+        XCTAssertEqual(expected6, result6)
+        let tolerance6: kelvin_d = 1.0
+        let categoryResult6 = Temperature(unit6).kelvin_d.rawValue
+        if categoryResult6 > expected6 {
+            XCTAssertLessThanOrEqual(categoryResult6 - expected6, tolerance6)
+        } else {
+            XCTAssertLessThanOrEqual(expected6 - categoryResult6, tolerance6)
+        }
+        let unit7 = Fahrenheit_f(-250000.0)
+        let expected7 = degF_f_to_K_d(-250000.0)
+        let result7 = Kelvin_d(unit7).rawValue
+        XCTAssertEqual(expected7, result7)
+        let tolerance7: kelvin_d = 1.0
+        let categoryResult7 = Temperature(unit7).kelvin_d.rawValue
+        if categoryResult7 > expected7 {
+            XCTAssertLessThanOrEqual(categoryResult7 - expected7, tolerance7)
+        } else {
+            XCTAssertLessThanOrEqual(expected7 - categoryResult7, tolerance7)
+        }
+        let unit8 = Fahrenheit_f(-2500000.0)
+        let expected8 = degF_f_to_K_d(-2500000.0)
+        let result8 = Kelvin_d(unit8).rawValue
+        XCTAssertEqual(expected8, result8)
+        let tolerance8: kelvin_d = 1.0
+        let categoryResult8 = Temperature(unit8).kelvin_d.rawValue
+        if categoryResult8 > expected8 {
+            XCTAssertLessThanOrEqual(categoryResult8 - expected8, tolerance8)
+        } else {
+            XCTAssertLessThanOrEqual(expected8 - categoryResult8, tolerance8)
+        }
+        let unit9 = Fahrenheit_f(-40.0)
+        let expected9 = degF_f_to_K_d(-40.0)
+        let result9 = Kelvin_d(unit9).rawValue
+        XCTAssertEqual(expected9, result9)
+        let tolerance9: kelvin_d = 1.0
+        let categoryResult9 = Temperature(unit9).kelvin_d.rawValue
+        if categoryResult9 > expected9 {
+            XCTAssertLessThanOrEqual(categoryResult9 - expected9, tolerance9)
+        } else {
+            XCTAssertLessThanOrEqual(expected9 - categoryResult9, tolerance9)
+        }
+    }
+
+    func testfahrenheit_fTokelvin_d2() {
+        let unit = Fahrenheit_f(-Float.greatestFiniteMagnitude)
+        let expected = degF_f_to_K_d(-Float.greatestFiniteMagnitude)
+        let result = Kelvin_d(unit).rawValue
+        XCTAssertEqual(expected, result)
+        let tolerance: kelvin_d = 1.0
+        let categoryResult = Temperature(unit).kelvin_d.rawValue
+        if categoryResult > expected {
+            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+        }
+        let unit1 = Fahrenheit_f(Float.greatestFiniteMagnitude)
+        let expected1 = degF_f_to_K_d(Float.greatestFiniteMagnitude)
+        let result1 = Kelvin_d(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: kelvin_d = 1.0
+        let categoryResult1 = Temperature(unit1).kelvin_d.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+    }
+
+    func testfahrenheit_fToInt8() {
+        let expected = degF_f_to_i8(0.0)
+        let result = Int8(Fahrenheit_f(0.0))
+        XCTAssertEqual(expected, result)
+        let expected1 = degF_f_to_i8(5.0)
+        let result1 = Int8(Fahrenheit_f(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = degF_f_to_i8(fahrenheit_f(-Float.greatestFiniteMagnitude))
+        let result2 = Int8(Fahrenheit_f(fahrenheit_f(-Float.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = degF_f_to_i8(fahrenheit_f(Float.greatestFiniteMagnitude))
+        let result3 = Int8(Fahrenheit_f(fahrenheit_f(Float.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testInt8Tofahrenheit_f() {
+        let expected = i8_to_degF_f(0)
+        let result = Fahrenheit_f(Int8(0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = i8_to_degF_f(5)
+        let result1 = Fahrenheit_f(Int8(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = i8_to_degF_f(Int8(Int8.min))
+        let result2 = Fahrenheit_f(Int8(Int8(Int8.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = i8_to_degF_f(Int8(Int8.max))
+        let result3 = Fahrenheit_f(Int8(Int8(Int8.max))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testfahrenheit_fToInt16() {
+        let expected = degF_f_to_i16(0.0)
+        let result = Int16(Fahrenheit_f(0.0))
+        XCTAssertEqual(expected, result)
+        let expected1 = degF_f_to_i16(5.0)
+        let result1 = Int16(Fahrenheit_f(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = degF_f_to_i16(fahrenheit_f(-Float.greatestFiniteMagnitude))
+        let result2 = Int16(Fahrenheit_f(fahrenheit_f(-Float.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = degF_f_to_i16(fahrenheit_f(Float.greatestFiniteMagnitude))
+        let result3 = Int16(Fahrenheit_f(fahrenheit_f(Float.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testInt16Tofahrenheit_f() {
+        let expected = i16_to_degF_f(0)
+        let result = Fahrenheit_f(Int16(0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = i16_to_degF_f(5)
+        let result1 = Fahrenheit_f(Int16(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = i16_to_degF_f(Int16(Int16.min))
+        let result2 = Fahrenheit_f(Int16(Int16(Int16.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = i16_to_degF_f(Int16(Int16.max))
+        let result3 = Fahrenheit_f(Int16(Int16(Int16.max))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testfahrenheit_fToInt32() {
+        let expected = degF_f_to_i32(0.0)
+        let result = Int32(Fahrenheit_f(0.0))
+        XCTAssertEqual(expected, result)
+        let expected1 = degF_f_to_i32(5.0)
+        let result1 = Int32(Fahrenheit_f(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = degF_f_to_i32(fahrenheit_f(-Float.greatestFiniteMagnitude))
+        let result2 = Int32(Fahrenheit_f(fahrenheit_f(-Float.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = degF_f_to_i32(fahrenheit_f(Float.greatestFiniteMagnitude))
+        let result3 = Int32(Fahrenheit_f(fahrenheit_f(Float.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
     }
 
 }

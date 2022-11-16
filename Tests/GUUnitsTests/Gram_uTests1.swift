@@ -63,424 +63,139 @@ import XCTest
 /// Provides gram_u unit tests.
 final class Gram_uTests1: XCTestCase {
 
-    func testgram_uTokilogram_tUsing250000Expectingkilogram_t2500001000() {
-        let unit = Gram_u(250000)
-        let expected = g_u_to_kg_t(250000)
-        let result = Kilogram_t(unit).rawValue
+    func testUInt16Togram_u() {
+        let expected = u16_to_g_u(0)
+        let result = Gram_u(UInt16(0)).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: kilogram_t = 1
-        let categoryResult = Mass(unit).kilogram_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = u16_to_g_u(5)
+        let result1 = Gram_u(UInt16(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u16_to_g_u(UInt16(UInt16.min))
+        let result2 = Gram_u(UInt16(UInt16(UInt16.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u16_to_g_u(UInt16(UInt16.max))
+        let result3 = Gram_u(UInt16(UInt16(UInt16.max))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testgram_uTokilogram_tUsing2500000Expectingkilogram_t25000001000() {
-        let unit = Gram_u(2500000)
-        let expected = g_u_to_kg_t(2500000)
-        let result = Kilogram_t(unit).rawValue
+    func testgram_uToUInt32() {
+        let expected = g_u_to_u32(0)
+        let result = UInt32(Gram_u(0))
         XCTAssertEqual(expected, result)
-        let tolerance: kilogram_t = 1
-        let categoryResult = Mass(unit).kilogram_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = g_u_to_u32(5)
+        let result1 = UInt32(Gram_u(5))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = g_u_to_u32(gram_u(UInt64.min))
+        let result2 = UInt32(Gram_u(gram_u(UInt64.min)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = g_u_to_u32(gram_u(UInt64.max))
+        let result3 = UInt32(Gram_u(gram_u(UInt64.max)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testgram_uTokilogram_tUsingUInt64_minExpectingkilogram_tUInt64_min1000() {
-        let unit = Gram_u(UInt64.min)
-        let expected = g_u_to_kg_t(UInt64.min)
-        let result = Kilogram_t(unit).rawValue
+    func testUInt32Togram_u() {
+        let expected = u32_to_g_u(0)
+        let result = Gram_u(UInt32(0)).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: kilogram_t = 1
-        let categoryResult = Mass(unit).kilogram_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = u32_to_g_u(5)
+        let result1 = Gram_u(UInt32(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u32_to_g_u(UInt32(UInt32.min))
+        let result2 = Gram_u(UInt32(UInt32(UInt32.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u32_to_g_u(UInt32(UInt32.max))
+        let result3 = Gram_u(UInt32(UInt32(UInt32.max))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testgram_uTokilogram_tUsingUInt64_maxExpectingkilogram_tUInt64_max1000() {
-        let unit = Gram_u(UInt64.max)
-        let expected = g_u_to_kg_t(UInt64.max)
-        let result = Kilogram_t(unit).rawValue
+    func testgram_uToUInt64() {
+        let expected = g_u_to_u64(0)
+        let result = UInt64(Gram_u(0))
         XCTAssertEqual(expected, result)
-        let tolerance: kilogram_t = 1
-        let categoryResult = Mass(unit).kilogram_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = g_u_to_u64(5)
+        let result1 = UInt64(Gram_u(5))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = g_u_to_u64(gram_u(UInt64.min))
+        let result2 = UInt64(Gram_u(gram_u(UInt64.min)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = g_u_to_u64(gram_u(UInt64.max))
+        let result3 = UInt64(Gram_u(gram_u(UInt64.max)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testgram_uTomegagram_tUsing15Expectingmegagram_t151000000() {
-        let unit = Gram_u(15)
-        let expected = g_u_to_Mg_t(15)
-        let result = Megagram_t(unit).rawValue
+    func testUInt64Togram_u() {
+        let expected = u64_to_g_u(0)
+        let result = Gram_u(UInt64(0)).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: megagram_t = 1
-        let categoryResult = Mass(unit).megagram_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = u64_to_g_u(5)
+        let result1 = Gram_u(UInt64(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u64_to_g_u(UInt64(UInt64.min))
+        let result2 = Gram_u(UInt64(UInt64(UInt64.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u64_to_g_u(UInt64(UInt64.max))
+        let result3 = Gram_u(UInt64(UInt64(UInt64.max))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testgram_uTomegagram_tUsing25Expectingmegagram_t251000000() {
-        let unit = Gram_u(25)
-        let expected = g_u_to_Mg_t(25)
-        let result = Megagram_t(unit).rawValue
+    func testgram_uToFloat() {
+        let expected = g_u_to_f(0)
+        let result = Float(Gram_u(0))
         XCTAssertEqual(expected, result)
-        let tolerance: megagram_t = 1
-        let categoryResult = Mass(unit).megagram_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = g_u_to_f(5)
+        let result1 = Float(Gram_u(5))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = g_u_to_f(gram_u(UInt64.min))
+        let result2 = Float(Gram_u(gram_u(UInt64.min)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = g_u_to_f(gram_u(UInt64.max))
+        let result3 = Float(Gram_u(gram_u(UInt64.max)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testgram_uTomegagram_tUsing250Expectingmegagram_t2501000000() {
-        let unit = Gram_u(250)
-        let expected = g_u_to_Mg_t(250)
-        let result = Megagram_t(unit).rawValue
+    func testFloatTogram_u() {
+        let expected = f_to_g_u(0.0)
+        let result = Gram_u(Float(0.0)).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: megagram_t = 1
-        let categoryResult = Mass(unit).megagram_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = f_to_g_u(5.0)
+        let result1 = Gram_u(Float(5.0)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = f_to_g_u(Float(-Float.greatestFiniteMagnitude))
+        let result2 = Gram_u(Float(Float(-Float.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = f_to_g_u(Float(Float.greatestFiniteMagnitude))
+        let result3 = Gram_u(Float(Float(Float.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testgram_uTomegagram_tUsing0Expectingmegagram_t01000000() {
-        let unit = Gram_u(0)
-        let expected = g_u_to_Mg_t(0)
-        let result = Megagram_t(unit).rawValue
+    func testgram_uToDouble() {
+        let expected = g_u_to_d(0)
+        let result = Double(Gram_u(0))
         XCTAssertEqual(expected, result)
-        let tolerance: megagram_t = 1
-        let categoryResult = Mass(unit).megagram_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = g_u_to_d(5)
+        let result1 = Double(Gram_u(5))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = g_u_to_d(gram_u(UInt64.min))
+        let result2 = Double(Gram_u(gram_u(UInt64.min)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = g_u_to_d(gram_u(UInt64.max))
+        let result3 = Double(Gram_u(gram_u(UInt64.max)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testgram_uTomegagram_tUsing2500Expectingmegagram_t25001000000() {
-        let unit = Gram_u(2500)
-        let expected = g_u_to_Mg_t(2500)
-        let result = Megagram_t(unit).rawValue
+    func testDoubleTogram_u() {
+        let expected = d_to_g_u(0.0)
+        let result = Gram_u(Double(0.0)).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: megagram_t = 1
-        let categoryResult = Mass(unit).megagram_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testgram_uTomegagram_tUsing25000Expectingmegagram_t250001000000() {
-        let unit = Gram_u(25000)
-        let expected = g_u_to_Mg_t(25000)
-        let result = Megagram_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: megagram_t = 1
-        let categoryResult = Mass(unit).megagram_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testgram_uTomegagram_tUsing250000Expectingmegagram_t2500001000000() {
-        let unit = Gram_u(250000)
-        let expected = g_u_to_Mg_t(250000)
-        let result = Megagram_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: megagram_t = 1
-        let categoryResult = Mass(unit).megagram_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testgram_uTomegagram_tUsing2500000Expectingmegagram_t25000001000000() {
-        let unit = Gram_u(2500000)
-        let expected = g_u_to_Mg_t(2500000)
-        let result = Megagram_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: megagram_t = 1
-        let categoryResult = Mass(unit).megagram_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testgram_uTomegagram_tUsingUInt64_minExpectingmegagram_tUInt64_min1000000() {
-        let unit = Gram_u(UInt64.min)
-        let expected = g_u_to_Mg_t(UInt64.min)
-        let result = Megagram_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: megagram_t = 1
-        let categoryResult = Mass(unit).megagram_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testgram_uTomegagram_tUsingUInt64_maxExpectingmegagram_tUInt64_max1000000() {
-        let unit = Gram_u(UInt64.max)
-        let expected = g_u_to_Mg_t(UInt64.max)
-        let result = Megagram_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: megagram_t = 1
-        let categoryResult = Mass(unit).megagram_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testgram_uTomicrogram_uUsing15Expectingmicrogram_u151000000() {
-        let unit = Gram_u(15)
-        let expected = g_u_to_ug_u(15)
-        let result = Microgram_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: microgram_u = 1
-        let categoryResult = Mass(unit).microgram_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testgram_uTomicrogram_uUsing25Expectingmicrogram_u251000000() {
-        let unit = Gram_u(25)
-        let expected = g_u_to_ug_u(25)
-        let result = Microgram_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: microgram_u = 1
-        let categoryResult = Mass(unit).microgram_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testgram_uTomicrogram_uUsing250Expectingmicrogram_u2501000000() {
-        let unit = Gram_u(250)
-        let expected = g_u_to_ug_u(250)
-        let result = Microgram_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: microgram_u = 1
-        let categoryResult = Mass(unit).microgram_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testgram_uTomicrogram_uUsing0Expectingmicrogram_u01000000() {
-        let unit = Gram_u(0)
-        let expected = g_u_to_ug_u(0)
-        let result = Microgram_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: microgram_u = 1
-        let categoryResult = Mass(unit).microgram_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testgram_uTomicrogram_uUsing2500Expectingmicrogram_u25001000000() {
-        let unit = Gram_u(2500)
-        let expected = g_u_to_ug_u(2500)
-        let result = Microgram_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: microgram_u = 1
-        let categoryResult = Mass(unit).microgram_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testgram_uTomicrogram_uUsing25000Expectingmicrogram_u250001000000() {
-        let unit = Gram_u(25000)
-        let expected = g_u_to_ug_u(25000)
-        let result = Microgram_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: microgram_u = 1
-        let categoryResult = Mass(unit).microgram_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testgram_uTomicrogram_uUsing250000Expectingmicrogram_u2500001000000() {
-        let unit = Gram_u(250000)
-        let expected = g_u_to_ug_u(250000)
-        let result = Microgram_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: microgram_u = 1
-        let categoryResult = Mass(unit).microgram_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testgram_uTomicrogram_uUsing2500000Expectingmicrogram_u25000001000000() {
-        let unit = Gram_u(2500000)
-        let expected = g_u_to_ug_u(2500000)
-        let result = Microgram_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: microgram_u = 1
-        let categoryResult = Mass(unit).microgram_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testgram_uTomicrogram_uUsingUInt64_minExpectingmicrogram_uUInt64_min() {
-        let unit = Gram_u(UInt64.min)
-        let expected = g_u_to_ug_u(UInt64.min)
-        let result = Microgram_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: microgram_u = 1
-        let categoryResult = Mass(unit).microgram_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testgram_uTomicrogram_uUsingUInt64_maxExpectingmicrogram_uUInt64_max() {
-        let unit = Gram_u(UInt64.max)
-        let expected = g_u_to_ug_u(UInt64.max)
-        let result = Microgram_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: microgram_u = 1
-        let categoryResult = Mass(unit).microgram_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testgram_uTomilligram_uUsing15Expectingmilligram_u151000() {
-        let unit = Gram_u(15)
-        let expected = g_u_to_mg_u(15)
-        let result = Milligram_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: milligram_u = 1
-        let categoryResult = Mass(unit).milligram_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testgram_uTomilligram_uUsing25Expectingmilligram_u251000() {
-        let unit = Gram_u(25)
-        let expected = g_u_to_mg_u(25)
-        let result = Milligram_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: milligram_u = 1
-        let categoryResult = Mass(unit).milligram_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testgram_uTomilligram_uUsing250Expectingmilligram_u2501000() {
-        let unit = Gram_u(250)
-        let expected = g_u_to_mg_u(250)
-        let result = Milligram_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: milligram_u = 1
-        let categoryResult = Mass(unit).milligram_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testgram_uTomilligram_uUsing0Expectingmilligram_u01000() {
-        let unit = Gram_u(0)
-        let expected = g_u_to_mg_u(0)
-        let result = Milligram_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: milligram_u = 1
-        let categoryResult = Mass(unit).milligram_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testgram_uTomilligram_uUsing2500Expectingmilligram_u25001000() {
-        let unit = Gram_u(2500)
-        let expected = g_u_to_mg_u(2500)
-        let result = Milligram_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: milligram_u = 1
-        let categoryResult = Mass(unit).milligram_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testgram_uTomilligram_uUsing25000Expectingmilligram_u250001000() {
-        let unit = Gram_u(25000)
-        let expected = g_u_to_mg_u(25000)
-        let result = Milligram_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: milligram_u = 1
-        let categoryResult = Mass(unit).milligram_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = d_to_g_u(5.0)
+        let result1 = Gram_u(Double(5.0)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = d_to_g_u(Double(-Double.greatestFiniteMagnitude))
+        let result2 = Gram_u(Double(Double(-Double.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = d_to_g_u(Double(Double.greatestFiniteMagnitude))
+        let result3 = Gram_u(Double(Double(Double.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
 }

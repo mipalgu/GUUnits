@@ -4,7 +4,7 @@ import XCTest
 
 final class Mass_Megagram_dTests0: XCTestCase {
 
-    func testdoubleTomegagram_dUsing0_0Expecting0_0() {
+    func testdouble_to_megagram_d() {
         let result = d_to_Mg_d(0.0)
         let expected: megagram_d = 0.0
         let tolerance: megagram_d = 0.99
@@ -13,42 +13,33 @@ final class Mass_Megagram_dTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
-    }
-
-    func testdoubleTomegagram_dUsing5_0Expecting5_0() {
-        let result = d_to_Mg_d(5.0)
-        let expected: megagram_d = 5.0
-        let tolerance: megagram_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        let result1 = d_to_Mg_d(5.0)
+        let expected1: megagram_d = 5.0
+        let tolerance1: megagram_d = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = d_to_Mg_d(Double(-Double.greatestFiniteMagnitude))
+        let expected2: megagram_d = megagram_d(-Double.greatestFiniteMagnitude)
+        let tolerance2: megagram_d = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = d_to_Mg_d(Double(Double.greatestFiniteMagnitude))
+        let expected3: megagram_d = megagram_d(Double.greatestFiniteMagnitude)
+        let tolerance3: megagram_d = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
         }
     }
 
-    func testdoubleTomegagram_dUsingDoubleDouble_greatestFiniteMagnitudeExpectingmegagram_dDouble_greatestFiniteMagnitude() {
-        let result = d_to_Mg_d(Double(Double.greatestFiniteMagnitude))
-        let expected: megagram_d = megagram_d(Double.greatestFiniteMagnitude)
-        let tolerance: megagram_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testdoubleTomegagram_dUsingDoubleNegDouble_greatestFiniteMagnitudeExpectingmegagram_dNegDouble_greatestFiniteMagnitude() {
-        let result = d_to_Mg_d(Double(-Double.greatestFiniteMagnitude))
-        let expected: megagram_d = megagram_d(-Double.greatestFiniteMagnitude)
-        let tolerance: megagram_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testfloatTomegagram_dUsing0_0Expecting0_0() {
+    func testfloat_to_megagram_d() {
         let result = f_to_Mg_d(0.0)
         let expected: megagram_d = 0.0
         let tolerance: megagram_d = 0.99
@@ -57,42 +48,33 @@ final class Mass_Megagram_dTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
-    }
-
-    func testfloatTomegagram_dUsing5_0Expecting5_0() {
-        let result = f_to_Mg_d(5.0)
-        let expected: megagram_d = 5.0
-        let tolerance: megagram_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        let result1 = f_to_Mg_d(5.0)
+        let expected1: megagram_d = 5.0
+        let tolerance1: megagram_d = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = f_to_Mg_d(Float(-Float.greatestFiniteMagnitude))
+        let expected2: megagram_d = megagram_d(-Float.greatestFiniteMagnitude)
+        let tolerance2: megagram_d = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = f_to_Mg_d(Float(Float.greatestFiniteMagnitude))
+        let expected3: megagram_d = megagram_d(Float.greatestFiniteMagnitude)
+        let tolerance3: megagram_d = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
         }
     }
 
-    func testfloatTomegagram_dUsingFloatFloat_greatestFiniteMagnitudeExpectingmegagram_dFloat_greatestFiniteMagnitude() {
-        let result = f_to_Mg_d(Float(Float.greatestFiniteMagnitude))
-        let expected: megagram_d = megagram_d(Float.greatestFiniteMagnitude)
-        let tolerance: megagram_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testfloatTomegagram_dUsingFloatNegFloat_greatestFiniteMagnitudeExpectingmegagram_dNegFloat_greatestFiniteMagnitude() {
-        let result = f_to_Mg_d(Float(-Float.greatestFiniteMagnitude))
-        let expected: megagram_d = megagram_d(-Float.greatestFiniteMagnitude)
-        let tolerance: megagram_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testint16_tTomegagram_dUsing0Expecting0_0() {
+    func testint16_t_to_megagram_d() {
         let result = i16_to_Mg_d(0)
         let expected: megagram_d = 0.0
         let tolerance: megagram_d = 0.99
@@ -101,42 +83,33 @@ final class Mass_Megagram_dTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
-    }
-
-    func testint16_tTomegagram_dUsing5Expecting5_0() {
-        let result = i16_to_Mg_d(5)
-        let expected: megagram_d = 5.0
-        let tolerance: megagram_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        let result1 = i16_to_Mg_d(5)
+        let expected1: megagram_d = 5.0
+        let tolerance1: megagram_d = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = i16_to_Mg_d(Int16(Int16.min))
+        let expected2: megagram_d = megagram_d(Int16.min)
+        let tolerance2: megagram_d = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = i16_to_Mg_d(Int16(Int16.max))
+        let expected3: megagram_d = megagram_d(Int16.max)
+        let tolerance3: megagram_d = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
         }
     }
 
-    func testint16_tTomegagram_dUsingInt16Int16_maxExpectingmegagram_dInt16_max() {
-        let result = i16_to_Mg_d(Int16(Int16.max))
-        let expected: megagram_d = megagram_d(Int16.max)
-        let tolerance: megagram_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testint16_tTomegagram_dUsingInt16Int16_minExpectingmegagram_dInt16_min() {
-        let result = i16_to_Mg_d(Int16(Int16.min))
-        let expected: megagram_d = megagram_d(Int16.min)
-        let tolerance: megagram_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testint32_tTomegagram_dUsing0Expecting0_0() {
+    func testint32_t_to_megagram_d() {
         let result = i32_to_Mg_d(0)
         let expected: megagram_d = 0.0
         let tolerance: megagram_d = 0.99
@@ -145,42 +118,33 @@ final class Mass_Megagram_dTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
-    }
-
-    func testint32_tTomegagram_dUsing5Expecting5_0() {
-        let result = i32_to_Mg_d(5)
-        let expected: megagram_d = 5.0
-        let tolerance: megagram_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        let result1 = i32_to_Mg_d(5)
+        let expected1: megagram_d = 5.0
+        let tolerance1: megagram_d = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = i32_to_Mg_d(Int32(Int32.min))
+        let expected2: megagram_d = megagram_d(Int32.min)
+        let tolerance2: megagram_d = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = i32_to_Mg_d(Int32(Int32.max))
+        let expected3: megagram_d = megagram_d(Int32.max)
+        let tolerance3: megagram_d = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
         }
     }
 
-    func testint32_tTomegagram_dUsingInt32Int32_maxExpectingmegagram_dInt32_max() {
-        let result = i32_to_Mg_d(Int32(Int32.max))
-        let expected: megagram_d = megagram_d(Int32.max)
-        let tolerance: megagram_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testint32_tTomegagram_dUsingInt32Int32_minExpectingmegagram_dInt32_min() {
-        let result = i32_to_Mg_d(Int32(Int32.min))
-        let expected: megagram_d = megagram_d(Int32.min)
-        let tolerance: megagram_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testint64_tTomegagram_dUsing0Expecting0_0() {
+    func testint64_t_to_megagram_d() {
         let result = i64_to_Mg_d(0)
         let expected: megagram_d = 0.0
         let tolerance: megagram_d = 0.99
@@ -189,42 +153,33 @@ final class Mass_Megagram_dTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
-    }
-
-    func testint64_tTomegagram_dUsing5Expecting5_0() {
-        let result = i64_to_Mg_d(5)
-        let expected: megagram_d = 5.0
-        let tolerance: megagram_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        let result1 = i64_to_Mg_d(5)
+        let expected1: megagram_d = 5.0
+        let tolerance1: megagram_d = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = i64_to_Mg_d(Int64(Int64.min))
+        let expected2: megagram_d = megagram_d(Int64.min)
+        let tolerance2: megagram_d = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = i64_to_Mg_d(Int64(Int64.max))
+        let expected3: megagram_d = megagram_d(Int64.max)
+        let tolerance3: megagram_d = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
         }
     }
 
-    func testint64_tTomegagram_dUsingInt64Int64_maxExpectingmegagram_dInt64_max() {
-        let result = i64_to_Mg_d(Int64(Int64.max))
-        let expected: megagram_d = megagram_d(Int64.max)
-        let tolerance: megagram_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testint64_tTomegagram_dUsingInt64Int64_minExpectingmegagram_dInt64_min() {
-        let result = i64_to_Mg_d(Int64(Int64.min))
-        let expected: megagram_d = megagram_d(Int64.min)
-        let tolerance: megagram_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testint8_tTomegagram_dUsing0Expecting0_0() {
+    func testint8_t_to_megagram_d() {
         let result = i8_to_Mg_d(0)
         let expected: megagram_d = 0.0
         let tolerance: megagram_d = 0.99
@@ -233,42 +188,33 @@ final class Mass_Megagram_dTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
-    }
-
-    func testint8_tTomegagram_dUsing5Expecting5_0() {
-        let result = i8_to_Mg_d(5)
-        let expected: megagram_d = 5.0
-        let tolerance: megagram_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        let result1 = i8_to_Mg_d(5)
+        let expected1: megagram_d = 5.0
+        let tolerance1: megagram_d = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = i8_to_Mg_d(Int8(Int8.min))
+        let expected2: megagram_d = megagram_d(Int8.min)
+        let tolerance2: megagram_d = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = i8_to_Mg_d(Int8(Int8.max))
+        let expected3: megagram_d = megagram_d(Int8.max)
+        let tolerance3: megagram_d = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
         }
     }
 
-    func testint8_tTomegagram_dUsingInt8Int8_maxExpectingmegagram_dInt8_max() {
-        let result = i8_to_Mg_d(Int8(Int8.max))
-        let expected: megagram_d = megagram_d(Int8.max)
-        let tolerance: megagram_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testint8_tTomegagram_dUsingInt8Int8_minExpectingmegagram_dInt8_min() {
-        let result = i8_to_Mg_d(Int8(Int8.min))
-        let expected: megagram_d = megagram_d(Int8.min)
-        let tolerance: megagram_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testmegagram_dTodoubleUsing0_0Expecting0_0() {
+    func testmegagram_d_to_double() {
         let result = Mg_d_to_d(0.0)
         let expected: Double = 0.0
         let tolerance: Double = 0.99
@@ -277,42 +223,33 @@ final class Mass_Megagram_dTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
-    }
-
-    func testmegagram_dTodoubleUsing5_0Expecting5_0() {
-        let result = Mg_d_to_d(5.0)
-        let expected: Double = 5.0
-        let tolerance: Double = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        let result1 = Mg_d_to_d(5.0)
+        let expected1: Double = 5.0
+        let tolerance1: Double = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = Mg_d_to_d(megagram_d(-Double.greatestFiniteMagnitude))
+        let expected2: Double = Double(-Double.greatestFiniteMagnitude)
+        let tolerance2: Double = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = Mg_d_to_d(megagram_d(Double.greatestFiniteMagnitude))
+        let expected3: Double = Double(Double.greatestFiniteMagnitude)
+        let tolerance3: Double = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
         }
     }
 
-    func testmegagram_dTodoubleUsingmegagram_dDouble_greatestFiniteMagnitudeExpectingDoubleDouble_greatestFiniteMagnitude() {
-        let result = Mg_d_to_d(megagram_d(Double.greatestFiniteMagnitude))
-        let expected: Double = Double(Double.greatestFiniteMagnitude)
-        let tolerance: Double = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testmegagram_dTodoubleUsingmegagram_dNegDouble_greatestFiniteMagnitudeExpectingDoubleNegDouble_greatestFiniteMagnitude() {
-        let result = Mg_d_to_d(megagram_d(-Double.greatestFiniteMagnitude))
-        let expected: Double = Double(-Double.greatestFiniteMagnitude)
-        let tolerance: Double = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testmegagram_dTofloatUsing0_0Expecting0_0() {
+    func testmegagram_d_to_float() {
         let result = Mg_d_to_f(0.0)
         let expected: Float = 0.0
         let tolerance: Float = 0.99
@@ -321,17 +258,652 @@ final class Mass_Megagram_dTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
+        let result1 = Mg_d_to_f(5.0)
+        let expected1: Float = 5.0
+        let tolerance1: Float = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = Mg_d_to_f(megagram_d(-Double.greatestFiniteMagnitude))
+        let expected2: Float = Float(-Float.greatestFiniteMagnitude)
+        let tolerance2: Float = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = Mg_d_to_f(megagram_d(Double.greatestFiniteMagnitude))
+        let expected3: Float = Float(Float.greatestFiniteMagnitude)
+        let tolerance3: Float = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
     }
 
-    func testmegagram_dTofloatUsing5_0Expecting5_0() {
-        let result = Mg_d_to_f(5.0)
-        let expected: Float = 5.0
-        let tolerance: Float = 0.99
+    func testmegagram_d_to_gram_d() {
+        let result = Mg_d_to_g_d(15.0)
+        let expected: gram_d = gram_d(15.0) * 1000000.0
+        let tolerance: gram_d = 0.99
         if result > expected {
             XCTAssertLessThanOrEqual(result - expected, tolerance)
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
+        let result1 = Mg_d_to_g_d(25.0)
+        let expected1: gram_d = gram_d(25.0) * 1000000.0
+        let tolerance1: gram_d = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = Mg_d_to_g_d(250.0)
+        let expected2: gram_d = gram_d(250.0) * 1000000.0
+        let tolerance2: gram_d = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = Mg_d_to_g_d(0.0)
+        let expected3: gram_d = gram_d(0.0) * 1000000.0
+        let tolerance3: gram_d = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+        let result4 = Mg_d_to_g_d(2500.0)
+        let expected4: gram_d = gram_d(2500.0) * 1000000.0
+        let tolerance4: gram_d = 0.99
+        if result4 > expected4 {
+            XCTAssertLessThanOrEqual(result4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - result4, tolerance4)
+        }
+        let result5 = Mg_d_to_g_d(25000.0)
+        let expected5: gram_d = gram_d(25000.0) * 1000000.0
+        let tolerance5: gram_d = 0.99
+        if result5 > expected5 {
+            XCTAssertLessThanOrEqual(result5 - expected5, tolerance5)
+        } else {
+            XCTAssertLessThanOrEqual(expected5 - result5, tolerance5)
+        }
+        let result6 = Mg_d_to_g_d(250000.0)
+        let expected6: gram_d = gram_d(250000.0) * 1000000.0
+        let tolerance6: gram_d = 0.99
+        if result6 > expected6 {
+            XCTAssertLessThanOrEqual(result6 - expected6, tolerance6)
+        } else {
+            XCTAssertLessThanOrEqual(expected6 - result6, tolerance6)
+        }
+        let result7 = Mg_d_to_g_d(2500000.0)
+        let expected7: gram_d = gram_d(2500000.0) * 1000000.0
+        let tolerance7: gram_d = 0.99
+        if result7 > expected7 {
+            XCTAssertLessThanOrEqual(result7 - expected7, tolerance7)
+        } else {
+            XCTAssertLessThanOrEqual(expected7 - result7, tolerance7)
+        }
+        let result8 = Mg_d_to_g_d(-323.0)
+        let expected8: gram_d = gram_d(-323.0) * 1000000.0
+        let tolerance8: gram_d = 0.99
+        if result8 > expected8 {
+            XCTAssertLessThanOrEqual(result8 - expected8, tolerance8)
+        } else {
+            XCTAssertLessThanOrEqual(expected8 - result8, tolerance8)
+        }
+        let result9 = Mg_d_to_g_d(-10.0)
+        let expected9: gram_d = gram_d(-10.0) * 1000000.0
+        let tolerance9: gram_d = 0.99
+        if result9 > expected9 {
+            XCTAssertLessThanOrEqual(result9 - expected9, tolerance9)
+        } else {
+            XCTAssertLessThanOrEqual(expected9 - result9, tolerance9)
+        }
+    }
+
+    func testmegagram_d_to_gram_d1() {
+        let result = Mg_d_to_g_d(-1000.0)
+        let expected: gram_d = gram_d(-1000.0) * 1000000.0
+        let tolerance: gram_d = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = Mg_d_to_g_d(-5.0)
+        let expected1: gram_d = gram_d(-5.0) * 1000000.0
+        let tolerance1: gram_d = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = Mg_d_to_g_d(-Double.greatestFiniteMagnitude)
+        let expected2: gram_d = gram_d(-Double.greatestFiniteMagnitude)
+        let tolerance2: gram_d = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = Mg_d_to_g_d(Double.greatestFiniteMagnitude)
+        let expected3: gram_d = gram_d(Double.greatestFiniteMagnitude)
+        let tolerance3: gram_d = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+    }
+
+    func testmegagram_d_to_gram_f() {
+        let result = Mg_d_to_g_f(15.0)
+        let expected: gram_f = gram_f(15.0) * 1000000.0
+        let tolerance: gram_f = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = Mg_d_to_g_f(25.0)
+        let expected1: gram_f = gram_f(25.0) * 1000000.0
+        let tolerance1: gram_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = Mg_d_to_g_f(250.0)
+        let expected2: gram_f = gram_f(250.0) * 1000000.0
+        let tolerance2: gram_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = Mg_d_to_g_f(0.0)
+        let expected3: gram_f = gram_f(0.0) * 1000000.0
+        let tolerance3: gram_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+        let result4 = Mg_d_to_g_f(2500.0)
+        let expected4: gram_f = gram_f(2500.0) * 1000000.0
+        let tolerance4: gram_f = 0.99
+        if result4 > expected4 {
+            XCTAssertLessThanOrEqual(result4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - result4, tolerance4)
+        }
+        let result5 = Mg_d_to_g_f(25000.0)
+        let expected5: gram_f = gram_f(25000.0) * 1000000.0
+        let tolerance5: gram_f = 0.99
+        if result5 > expected5 {
+            XCTAssertLessThanOrEqual(result5 - expected5, tolerance5)
+        } else {
+            XCTAssertLessThanOrEqual(expected5 - result5, tolerance5)
+        }
+        let result6 = Mg_d_to_g_f(250000.0)
+        let expected6: gram_f = gram_f(250000.0) * 1000000.0
+        let tolerance6: gram_f = 0.99
+        if result6 > expected6 {
+            XCTAssertLessThanOrEqual(result6 - expected6, tolerance6)
+        } else {
+            XCTAssertLessThanOrEqual(expected6 - result6, tolerance6)
+        }
+        let result7 = Mg_d_to_g_f(2500000.0)
+        let expected7: gram_f = gram_f(2500000.0) * 1000000.0
+        let tolerance7: gram_f = 0.99
+        if result7 > expected7 {
+            XCTAssertLessThanOrEqual(result7 - expected7, tolerance7)
+        } else {
+            XCTAssertLessThanOrEqual(expected7 - result7, tolerance7)
+        }
+        let result8 = Mg_d_to_g_f(-323.0)
+        let expected8: gram_f = gram_f(-323.0) * 1000000.0
+        let tolerance8: gram_f = 0.99
+        if result8 > expected8 {
+            XCTAssertLessThanOrEqual(result8 - expected8, tolerance8)
+        } else {
+            XCTAssertLessThanOrEqual(expected8 - result8, tolerance8)
+        }
+        let result9 = Mg_d_to_g_f(-10.0)
+        let expected9: gram_f = gram_f(-10.0) * 1000000.0
+        let tolerance9: gram_f = 0.99
+        if result9 > expected9 {
+            XCTAssertLessThanOrEqual(result9 - expected9, tolerance9)
+        } else {
+            XCTAssertLessThanOrEqual(expected9 - result9, tolerance9)
+        }
+    }
+
+    func testmegagram_d_to_gram_f1() {
+        let result = Mg_d_to_g_f(-1000.0)
+        let expected: gram_f = gram_f(-1000.0) * 1000000.0
+        let tolerance: gram_f = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = Mg_d_to_g_f(-5.0)
+        let expected1: gram_f = gram_f(-5.0) * 1000000.0
+        let tolerance1: gram_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = Mg_d_to_g_f(-Double.greatestFiniteMagnitude)
+        let expected2: gram_f = gram_f(-Float.greatestFiniteMagnitude)
+        let tolerance2: gram_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = Mg_d_to_g_f(Double.greatestFiniteMagnitude)
+        let expected3: gram_f = gram_f(Float.greatestFiniteMagnitude)
+        let tolerance3: gram_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+    }
+
+    func testmegagram_d_to_gram_t() {
+        XCTAssertEqual(Mg_d_to_g_t(15.0), gram_t((Double(15.0) * 1000000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_g_t(25.0), gram_t((Double(25.0) * 1000000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_g_t(250.0), gram_t((Double(250.0) * 1000000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_g_t(0.0), gram_t((Double(0.0) * 1000000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_g_t(2500.0), gram_t((Double(2500.0) * 1000000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_g_t(25000.0), gram_t((Double(25000.0) * 1000000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_g_t(250000.0), gram_t((Double(250000.0) * 1000000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_g_t(2500000.0), gram_t((Double(2500000.0) * 1000000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_g_t(-323.0), gram_t((Double(-323.0) * 1000000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_g_t(-10.0), gram_t((Double(-10.0) * 1000000.0).rounded()))
+    }
+
+    func testmegagram_d_to_gram_t1() {
+        XCTAssertEqual(Mg_d_to_g_t(-1000.0), gram_t((Double(-1000.0) * 1000000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_g_t(-5.0), gram_t((Double(-5.0) * 1000000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_g_t(-Double.greatestFiniteMagnitude), gram_t(Int64.min))
+        XCTAssertEqual(Mg_d_to_g_t(Double.greatestFiniteMagnitude), gram_t(Int64.max))
+    }
+
+    func testmegagram_d_to_gram_u() {
+        XCTAssertEqual(Mg_d_to_g_u(15.0), gram_u((Double(15.0) * 1000000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_g_u(25.0), gram_u((Double(25.0) * 1000000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_g_u(250.0), gram_u((Double(250.0) * 1000000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_g_u(0.0), gram_u((Double(0.0) * 1000000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_g_u(2500.0), gram_u((Double(2500.0) * 1000000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_g_u(25000.0), gram_u((Double(25000.0) * 1000000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_g_u(250000.0), gram_u((Double(250000.0) * 1000000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_g_u(2500000.0), gram_u((Double(2500000.0) * 1000000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_g_u(-323.0), 0)
+        XCTAssertEqual(Mg_d_to_g_u(-10.0), 0)
+    }
+
+    func testmegagram_d_to_gram_u1() {
+        XCTAssertEqual(Mg_d_to_g_u(-1000.0), 0)
+        XCTAssertEqual(Mg_d_to_g_u(-6.0), 0)
+        XCTAssertEqual(Mg_d_to_g_u(-Double.greatestFiniteMagnitude), gram_u(UInt64.min))
+        XCTAssertEqual(Mg_d_to_g_u(Double.greatestFiniteMagnitude), gram_u(UInt64.max))
+    }
+
+    func testmegagram_d_to_int16_t() {
+        XCTAssertEqual(Mg_d_to_i16(0.0), 0)
+        XCTAssertEqual(Mg_d_to_i16(5.0), 5)
+        XCTAssertEqual(Mg_d_to_i16(megagram_d(-Double.greatestFiniteMagnitude)), Int16(Int16.min))
+        XCTAssertEqual(Mg_d_to_i16(megagram_d(Double.greatestFiniteMagnitude)), Int16(Int16.max))
+    }
+
+    func testmegagram_d_to_int32_t() {
+        XCTAssertEqual(Mg_d_to_i32(0.0), 0)
+        XCTAssertEqual(Mg_d_to_i32(5.0), 5)
+        XCTAssertEqual(Mg_d_to_i32(megagram_d(-Double.greatestFiniteMagnitude)), Int32(Int32.min))
+        XCTAssertEqual(Mg_d_to_i32(megagram_d(Double.greatestFiniteMagnitude)), Int32(Int32.max))
+    }
+
+    func testmegagram_d_to_int64_t() {
+        XCTAssertEqual(Mg_d_to_i64(0.0), 0)
+        XCTAssertEqual(Mg_d_to_i64(5.0), 5)
+        XCTAssertEqual(Mg_d_to_i64(megagram_d(-Double.greatestFiniteMagnitude)), Int64(Int64.min))
+        XCTAssertEqual(Mg_d_to_i64(megagram_d(Double.greatestFiniteMagnitude)), Int64(Int64.max))
+    }
+
+    func testmegagram_d_to_int8_t() {
+        XCTAssertEqual(Mg_d_to_i8(0.0), 0)
+        XCTAssertEqual(Mg_d_to_i8(5.0), 5)
+        XCTAssertEqual(Mg_d_to_i8(megagram_d(-Double.greatestFiniteMagnitude)), Int8(Int8.min))
+        XCTAssertEqual(Mg_d_to_i8(megagram_d(Double.greatestFiniteMagnitude)), Int8(Int8.max))
+    }
+
+    func testmegagram_d_to_kilogram_d() {
+        let result = Mg_d_to_kg_d(15.0)
+        let expected: kilogram_d = kilogram_d(15.0) * 1000.0
+        let tolerance: kilogram_d = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = Mg_d_to_kg_d(25.0)
+        let expected1: kilogram_d = kilogram_d(25.0) * 1000.0
+        let tolerance1: kilogram_d = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = Mg_d_to_kg_d(250.0)
+        let expected2: kilogram_d = kilogram_d(250.0) * 1000.0
+        let tolerance2: kilogram_d = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = Mg_d_to_kg_d(0.0)
+        let expected3: kilogram_d = kilogram_d(0.0) * 1000.0
+        let tolerance3: kilogram_d = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+        let result4 = Mg_d_to_kg_d(2500.0)
+        let expected4: kilogram_d = kilogram_d(2500.0) * 1000.0
+        let tolerance4: kilogram_d = 0.99
+        if result4 > expected4 {
+            XCTAssertLessThanOrEqual(result4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - result4, tolerance4)
+        }
+        let result5 = Mg_d_to_kg_d(25000.0)
+        let expected5: kilogram_d = kilogram_d(25000.0) * 1000.0
+        let tolerance5: kilogram_d = 0.99
+        if result5 > expected5 {
+            XCTAssertLessThanOrEqual(result5 - expected5, tolerance5)
+        } else {
+            XCTAssertLessThanOrEqual(expected5 - result5, tolerance5)
+        }
+        let result6 = Mg_d_to_kg_d(250000.0)
+        let expected6: kilogram_d = kilogram_d(250000.0) * 1000.0
+        let tolerance6: kilogram_d = 0.99
+        if result6 > expected6 {
+            XCTAssertLessThanOrEqual(result6 - expected6, tolerance6)
+        } else {
+            XCTAssertLessThanOrEqual(expected6 - result6, tolerance6)
+        }
+        let result7 = Mg_d_to_kg_d(2500000.0)
+        let expected7: kilogram_d = kilogram_d(2500000.0) * 1000.0
+        let tolerance7: kilogram_d = 0.99
+        if result7 > expected7 {
+            XCTAssertLessThanOrEqual(result7 - expected7, tolerance7)
+        } else {
+            XCTAssertLessThanOrEqual(expected7 - result7, tolerance7)
+        }
+        let result8 = Mg_d_to_kg_d(-323.0)
+        let expected8: kilogram_d = kilogram_d(-323.0) * 1000.0
+        let tolerance8: kilogram_d = 0.99
+        if result8 > expected8 {
+            XCTAssertLessThanOrEqual(result8 - expected8, tolerance8)
+        } else {
+            XCTAssertLessThanOrEqual(expected8 - result8, tolerance8)
+        }
+        let result9 = Mg_d_to_kg_d(-10.0)
+        let expected9: kilogram_d = kilogram_d(-10.0) * 1000.0
+        let tolerance9: kilogram_d = 0.99
+        if result9 > expected9 {
+            XCTAssertLessThanOrEqual(result9 - expected9, tolerance9)
+        } else {
+            XCTAssertLessThanOrEqual(expected9 - result9, tolerance9)
+        }
+    }
+
+    func testmegagram_d_to_kilogram_d1() {
+        let result = Mg_d_to_kg_d(-1000.0)
+        let expected: kilogram_d = kilogram_d(-1000.0) * 1000.0
+        let tolerance: kilogram_d = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = Mg_d_to_kg_d(-5.0)
+        let expected1: kilogram_d = kilogram_d(-5.0) * 1000.0
+        let tolerance1: kilogram_d = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = Mg_d_to_kg_d(-Double.greatestFiniteMagnitude)
+        let expected2: kilogram_d = kilogram_d(-Double.greatestFiniteMagnitude)
+        let tolerance2: kilogram_d = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = Mg_d_to_kg_d(Double.greatestFiniteMagnitude)
+        let expected3: kilogram_d = kilogram_d(Double.greatestFiniteMagnitude)
+        let tolerance3: kilogram_d = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+    }
+
+    func testmegagram_d_to_kilogram_f() {
+        let result = Mg_d_to_kg_f(15.0)
+        let expected: kilogram_f = kilogram_f(15.0) * 1000.0
+        let tolerance: kilogram_f = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = Mg_d_to_kg_f(25.0)
+        let expected1: kilogram_f = kilogram_f(25.0) * 1000.0
+        let tolerance1: kilogram_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = Mg_d_to_kg_f(250.0)
+        let expected2: kilogram_f = kilogram_f(250.0) * 1000.0
+        let tolerance2: kilogram_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = Mg_d_to_kg_f(0.0)
+        let expected3: kilogram_f = kilogram_f(0.0) * 1000.0
+        let tolerance3: kilogram_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+        let result4 = Mg_d_to_kg_f(2500.0)
+        let expected4: kilogram_f = kilogram_f(2500.0) * 1000.0
+        let tolerance4: kilogram_f = 0.99
+        if result4 > expected4 {
+            XCTAssertLessThanOrEqual(result4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - result4, tolerance4)
+        }
+        let result5 = Mg_d_to_kg_f(25000.0)
+        let expected5: kilogram_f = kilogram_f(25000.0) * 1000.0
+        let tolerance5: kilogram_f = 0.99
+        if result5 > expected5 {
+            XCTAssertLessThanOrEqual(result5 - expected5, tolerance5)
+        } else {
+            XCTAssertLessThanOrEqual(expected5 - result5, tolerance5)
+        }
+        let result6 = Mg_d_to_kg_f(250000.0)
+        let expected6: kilogram_f = kilogram_f(250000.0) * 1000.0
+        let tolerance6: kilogram_f = 0.99
+        if result6 > expected6 {
+            XCTAssertLessThanOrEqual(result6 - expected6, tolerance6)
+        } else {
+            XCTAssertLessThanOrEqual(expected6 - result6, tolerance6)
+        }
+        let result7 = Mg_d_to_kg_f(2500000.0)
+        let expected7: kilogram_f = kilogram_f(2500000.0) * 1000.0
+        let tolerance7: kilogram_f = 0.99
+        if result7 > expected7 {
+            XCTAssertLessThanOrEqual(result7 - expected7, tolerance7)
+        } else {
+            XCTAssertLessThanOrEqual(expected7 - result7, tolerance7)
+        }
+        let result8 = Mg_d_to_kg_f(-323.0)
+        let expected8: kilogram_f = kilogram_f(-323.0) * 1000.0
+        let tolerance8: kilogram_f = 0.99
+        if result8 > expected8 {
+            XCTAssertLessThanOrEqual(result8 - expected8, tolerance8)
+        } else {
+            XCTAssertLessThanOrEqual(expected8 - result8, tolerance8)
+        }
+        let result9 = Mg_d_to_kg_f(-10.0)
+        let expected9: kilogram_f = kilogram_f(-10.0) * 1000.0
+        let tolerance9: kilogram_f = 0.99
+        if result9 > expected9 {
+            XCTAssertLessThanOrEqual(result9 - expected9, tolerance9)
+        } else {
+            XCTAssertLessThanOrEqual(expected9 - result9, tolerance9)
+        }
+    }
+
+    func testmegagram_d_to_kilogram_f1() {
+        let result = Mg_d_to_kg_f(-1000.0)
+        let expected: kilogram_f = kilogram_f(-1000.0) * 1000.0
+        let tolerance: kilogram_f = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = Mg_d_to_kg_f(-5.0)
+        let expected1: kilogram_f = kilogram_f(-5.0) * 1000.0
+        let tolerance1: kilogram_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = Mg_d_to_kg_f(-Double.greatestFiniteMagnitude)
+        let expected2: kilogram_f = kilogram_f(-Float.greatestFiniteMagnitude)
+        let tolerance2: kilogram_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = Mg_d_to_kg_f(Double.greatestFiniteMagnitude)
+        let expected3: kilogram_f = kilogram_f(Float.greatestFiniteMagnitude)
+        let tolerance3: kilogram_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+    }
+
+    func testmegagram_d_to_kilogram_t() {
+        XCTAssertEqual(Mg_d_to_kg_t(15.0), kilogram_t((Double(15.0) * 1000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_kg_t(25.0), kilogram_t((Double(25.0) * 1000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_kg_t(250.0), kilogram_t((Double(250.0) * 1000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_kg_t(0.0), kilogram_t((Double(0.0) * 1000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_kg_t(2500.0), kilogram_t((Double(2500.0) * 1000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_kg_t(25000.0), kilogram_t((Double(25000.0) * 1000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_kg_t(250000.0), kilogram_t((Double(250000.0) * 1000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_kg_t(2500000.0), kilogram_t((Double(2500000.0) * 1000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_kg_t(-323.0), kilogram_t((Double(-323.0) * 1000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_kg_t(-10.0), kilogram_t((Double(-10.0) * 1000.0).rounded()))
+    }
+
+    func testmegagram_d_to_kilogram_t1() {
+        XCTAssertEqual(Mg_d_to_kg_t(-1000.0), kilogram_t((Double(-1000.0) * 1000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_kg_t(-5.0), kilogram_t((Double(-5.0) * 1000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_kg_t(-Double.greatestFiniteMagnitude), kilogram_t(Int64.min))
+        XCTAssertEqual(Mg_d_to_kg_t(Double.greatestFiniteMagnitude), kilogram_t(Int64.max))
+    }
+
+    func testmegagram_d_to_kilogram_u() {
+        XCTAssertEqual(Mg_d_to_kg_u(15.0), kilogram_u((Double(15.0) * 1000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_kg_u(25.0), kilogram_u((Double(25.0) * 1000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_kg_u(250.0), kilogram_u((Double(250.0) * 1000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_kg_u(0.0), kilogram_u((Double(0.0) * 1000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_kg_u(2500.0), kilogram_u((Double(2500.0) * 1000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_kg_u(25000.0), kilogram_u((Double(25000.0) * 1000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_kg_u(250000.0), kilogram_u((Double(250000.0) * 1000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_kg_u(2500000.0), kilogram_u((Double(2500000.0) * 1000.0).rounded()))
+        XCTAssertEqual(Mg_d_to_kg_u(-323.0), 0)
+        XCTAssertEqual(Mg_d_to_kg_u(-10.0), 0)
+    }
+
+    func testmegagram_d_to_kilogram_u1() {
+        XCTAssertEqual(Mg_d_to_kg_u(-1000.0), 0)
+        XCTAssertEqual(Mg_d_to_kg_u(-6.0), 0)
+        XCTAssertEqual(Mg_d_to_kg_u(-Double.greatestFiniteMagnitude), kilogram_u(UInt64.min))
+        XCTAssertEqual(Mg_d_to_kg_u(Double.greatestFiniteMagnitude), kilogram_u(UInt64.max))
+    }
+
+    func testmegagram_d_to_megagram_f() {
+        let result = Mg_d_to_Mg_f(0.0)
+        let expected: megagram_f = 0.0
+        let tolerance: megagram_f = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = Mg_d_to_Mg_f(megagram_d(-Double.greatestFiniteMagnitude))
+        let expected1: megagram_f = megagram_f(-Float.greatestFiniteMagnitude)
+        let tolerance1: megagram_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = Mg_d_to_Mg_f(megagram_d(Double.greatestFiniteMagnitude))
+        let expected2: megagram_f = megagram_f(Float.greatestFiniteMagnitude)
+        let tolerance2: megagram_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = Mg_d_to_Mg_f(5.0)
+        let expected3: megagram_f = 5.0
+        let tolerance3: megagram_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+    }
+
+    func testmegagram_d_to_megagram_t() {
+        XCTAssertEqual(Mg_d_to_Mg_t(0.0), 0)
+        XCTAssertEqual(Mg_d_to_Mg_t(megagram_d(-Double.greatestFiniteMagnitude)), megagram_t(Int64.min))
+        XCTAssertEqual(Mg_d_to_Mg_t(megagram_d(Double.greatestFiniteMagnitude)), megagram_t(Int64.max))
+        XCTAssertEqual(Mg_d_to_Mg_t(5.0), 5)
     }
 
 }

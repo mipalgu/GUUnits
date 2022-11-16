@@ -63,7 +63,7 @@ import XCTest
 /// Provides pixels_u unit tests.
 final class Pixels_uTests0: XCTestCase {
 
-    func testpixels_uTopixels_tUsing0Expecting0() {
+    func testpixels_uTopixels_t() {
         let unit = Pixels_u(0)
         let expected = px_u_to_px_t(0)
         let result = Pixels_t(unit).rawValue
@@ -75,37 +75,31 @@ final class Pixels_uTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
-    }
-
-    func testpixels_uTopixels_tUsingpixels_uUInt64_minExpectingpixels_tUInt64_min() {
-        let unit = Pixels_u(pixels_u(UInt64.min))
-        let expected = px_u_to_px_t(pixels_u(UInt64.min))
-        let result = Pixels_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: pixels_t = 1
-        let categoryResult = Pixels(unit).pixels_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        let unit1 = Pixels_u(pixels_u(UInt64.min))
+        let expected1 = px_u_to_px_t(pixels_u(UInt64.min))
+        let result1 = Pixels_t(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: pixels_t = 1
+        let categoryResult1 = Pixels(unit1).pixels_t.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Pixels_u(pixels_u(UInt64.max))
+        let expected2 = px_u_to_px_t(pixels_u(UInt64.max))
+        let result2 = Pixels_t(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: pixels_t = 1
+        let categoryResult2 = Pixels(unit2).pixels_t.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
         }
     }
 
-    func testpixels_uTopixels_tUsingpixels_uUInt64_maxExpectingpixels_tInt64_max() {
-        let unit = Pixels_u(pixels_u(UInt64.max))
-        let expected = px_u_to_px_t(pixels_u(UInt64.max))
-        let result = Pixels_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: pixels_t = 1
-        let categoryResult = Pixels(unit).pixels_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testpixels_uTopixels_fUsing0Expecting0_0() {
+    func testpixels_uTopixels_f() {
         let unit = Pixels_u(0)
         let expected = px_u_to_px_f(0)
         let result = Pixels_f(unit).rawValue
@@ -117,37 +111,31 @@ final class Pixels_uTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
-    }
-
-    func testpixels_uTopixels_fUsingpixels_uUInt64_minExpectingpixels_fUInt64_min() {
-        let unit = Pixels_u(pixels_u(UInt64.min))
-        let expected = px_u_to_px_f(pixels_u(UInt64.min))
-        let result = Pixels_f(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: pixels_f = 1.0
-        let categoryResult = Pixels(unit).pixels_f.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        let unit1 = Pixels_u(pixels_u(UInt64.min))
+        let expected1 = px_u_to_px_f(pixels_u(UInt64.min))
+        let result1 = Pixels_f(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: pixels_f = 1.0
+        let categoryResult1 = Pixels(unit1).pixels_f.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Pixels_u(pixels_u(UInt64.max))
+        let expected2 = px_u_to_px_f(pixels_u(UInt64.max))
+        let result2 = Pixels_f(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: pixels_f = 1.0
+        let categoryResult2 = Pixels(unit2).pixels_f.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
         }
     }
 
-    func testpixels_uTopixels_fUsingpixels_uUInt64_maxExpectingpixels_fUInt64_max() {
-        let unit = Pixels_u(pixels_u(UInt64.max))
-        let expected = px_u_to_px_f(pixels_u(UInt64.max))
-        let result = Pixels_f(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: pixels_f = 1.0
-        let categoryResult = Pixels(unit).pixels_f.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testpixels_uTopixels_dUsing0Expecting0_0() {
+    func testpixels_uTopixels_d() {
         let unit = Pixels_u(0)
         let expected = px_u_to_px_d(0)
         let result = Pixels_d(unit).rawValue
@@ -159,160 +147,328 @@ final class Pixels_uTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
-    }
-
-    func testpixels_uTopixels_dUsingpixels_uUInt64_minExpectingpixels_dUInt64_min() {
-        let unit = Pixels_u(pixels_u(UInt64.min))
-        let expected = px_u_to_px_d(pixels_u(UInt64.min))
-        let result = Pixels_d(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: pixels_d = 1.0
-        let categoryResult = Pixels(unit).pixels_d.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        let unit1 = Pixels_u(pixels_u(UInt64.min))
+        let expected1 = px_u_to_px_d(pixels_u(UInt64.min))
+        let result1 = Pixels_d(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: pixels_d = 1.0
+        let categoryResult1 = Pixels(unit1).pixels_d.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Pixels_u(pixels_u(UInt64.max))
+        let expected2 = px_u_to_px_d(pixels_u(UInt64.max))
+        let result2 = Pixels_d(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: pixels_d = 1.0
+        let categoryResult2 = Pixels(unit2).pixels_d.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
         }
     }
 
-    func testpixels_uTopixels_dUsingpixels_uUInt64_maxExpectingpixels_dUInt64_max() {
-        let unit = Pixels_u(pixels_u(UInt64.max))
-        let expected = px_u_to_px_d(pixels_u(UInt64.max))
-        let result = Pixels_d(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: pixels_d = 1.0
-        let categoryResult = Pixels(unit).pixels_d.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testpixels_uToint8_tUsing0Expecting0() {
+    func testpixels_uToInt8() {
         let expected = px_u_to_i8(0)
         let result = Int8(Pixels_u(0))
         XCTAssertEqual(expected, result)
+        let expected1 = px_u_to_i8(5)
+        let result1 = Int8(Pixels_u(5))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = px_u_to_i8(pixels_u(UInt64.min))
+        let result2 = Int8(Pixels_u(pixels_u(UInt64.min)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = px_u_to_i8(pixels_u(UInt64.max))
+        let result3 = Int8(Pixels_u(pixels_u(UInt64.max)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testpixels_uToint8_tUsing5Expecting5() {
-        let expected = px_u_to_i8(5)
-        let result = Int8(Pixels_u(5))
-        XCTAssertEqual(expected, result)
-    }
-
-    func testpixels_uToint8_tUsingpixels_uUInt64_minExpectingInt8UInt64_min() {
-        let expected = px_u_to_i8(pixels_u(UInt64.min))
-        let result = Int8(Pixels_u(pixels_u(UInt64.min)))
-        XCTAssertEqual(expected, result)
-    }
-
-    func testpixels_uToint8_tUsingpixels_uUInt64_maxExpectingInt8Int8_max() {
-        let expected = px_u_to_i8(pixels_u(UInt64.max))
-        let result = Int8(Pixels_u(pixels_u(UInt64.max)))
-        XCTAssertEqual(expected, result)
-    }
-
-    func testint8_tTopixels_uUsing0Expecting0() {
+    func testInt8Topixels_u() {
         let expected = i8_to_px_u(0)
         let result = Pixels_u(Int8(0)).rawValue
         XCTAssertEqual(expected, result)
+        let expected1 = i8_to_px_u(5)
+        let result1 = Pixels_u(Int8(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = i8_to_px_u(Int8(Int8.min))
+        let result2 = Pixels_u(Int8(Int8(Int8.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = i8_to_px_u(Int8(Int8.max))
+        let result3 = Pixels_u(Int8(Int8(Int8.max))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testint8_tTopixels_uUsing5Expecting5() {
-        let expected = i8_to_px_u(5)
-        let result = Pixels_u(Int8(5)).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testint8_tTopixels_uUsingInt8Int8_minExpectingpixels_uUInt64_min() {
-        let expected = i8_to_px_u(Int8(Int8.min))
-        let result = Pixels_u(Int8(Int8(Int8.min))).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testint8_tTopixels_uUsingInt8Int8_maxExpectingpixels_uInt8_max() {
-        let expected = i8_to_px_u(Int8(Int8.max))
-        let result = Pixels_u(Int8(Int8(Int8.max))).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testpixels_uToint16_tUsing0Expecting0() {
+    func testpixels_uToInt16() {
         let expected = px_u_to_i16(0)
         let result = Int16(Pixels_u(0))
         XCTAssertEqual(expected, result)
+        let expected1 = px_u_to_i16(5)
+        let result1 = Int16(Pixels_u(5))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = px_u_to_i16(pixels_u(UInt64.min))
+        let result2 = Int16(Pixels_u(pixels_u(UInt64.min)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = px_u_to_i16(pixels_u(UInt64.max))
+        let result3 = Int16(Pixels_u(pixels_u(UInt64.max)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testpixels_uToint16_tUsing5Expecting5() {
-        let expected = px_u_to_i16(5)
-        let result = Int16(Pixels_u(5))
-        XCTAssertEqual(expected, result)
-    }
-
-    func testpixels_uToint16_tUsingpixels_uUInt64_minExpectingInt16UInt64_min() {
-        let expected = px_u_to_i16(pixels_u(UInt64.min))
-        let result = Int16(Pixels_u(pixels_u(UInt64.min)))
-        XCTAssertEqual(expected, result)
-    }
-
-    func testpixels_uToint16_tUsingpixels_uUInt64_maxExpectingInt16Int16_max() {
-        let expected = px_u_to_i16(pixels_u(UInt64.max))
-        let result = Int16(Pixels_u(pixels_u(UInt64.max)))
-        XCTAssertEqual(expected, result)
-    }
-
-    func testint16_tTopixels_uUsing0Expecting0() {
+    func testInt16Topixels_u() {
         let expected = i16_to_px_u(0)
         let result = Pixels_u(Int16(0)).rawValue
         XCTAssertEqual(expected, result)
+        let expected1 = i16_to_px_u(5)
+        let result1 = Pixels_u(Int16(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = i16_to_px_u(Int16(Int16.min))
+        let result2 = Pixels_u(Int16(Int16(Int16.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = i16_to_px_u(Int16(Int16.max))
+        let result3 = Pixels_u(Int16(Int16(Int16.max))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testint16_tTopixels_uUsing5Expecting5() {
-        let expected = i16_to_px_u(5)
-        let result = Pixels_u(Int16(5)).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testint16_tTopixels_uUsingInt16Int16_minExpectingpixels_uUInt64_min() {
-        let expected = i16_to_px_u(Int16(Int16.min))
-        let result = Pixels_u(Int16(Int16(Int16.min))).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testint16_tTopixels_uUsingInt16Int16_maxExpectingpixels_uInt16_max() {
-        let expected = i16_to_px_u(Int16(Int16.max))
-        let result = Pixels_u(Int16(Int16(Int16.max))).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testpixels_uToint32_tUsing0Expecting0() {
+    func testpixels_uToInt32() {
         let expected = px_u_to_i32(0)
         let result = Int32(Pixels_u(0))
         XCTAssertEqual(expected, result)
+        let expected1 = px_u_to_i32(5)
+        let result1 = Int32(Pixels_u(5))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = px_u_to_i32(pixels_u(UInt64.min))
+        let result2 = Int32(Pixels_u(pixels_u(UInt64.min)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = px_u_to_i32(pixels_u(UInt64.max))
+        let result3 = Int32(Pixels_u(pixels_u(UInt64.max)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testpixels_uToint32_tUsing5Expecting5() {
-        let expected = px_u_to_i32(5)
-        let result = Int32(Pixels_u(5))
-        XCTAssertEqual(expected, result)
-    }
-
-    func testpixels_uToint32_tUsingpixels_uUInt64_minExpectingInt32UInt64_min() {
-        let expected = px_u_to_i32(pixels_u(UInt64.min))
-        let result = Int32(Pixels_u(pixels_u(UInt64.min)))
-        XCTAssertEqual(expected, result)
-    }
-
-    func testpixels_uToint32_tUsingpixels_uUInt64_maxExpectingInt32Int32_max() {
-        let expected = px_u_to_i32(pixels_u(UInt64.max))
-        let result = Int32(Pixels_u(pixels_u(UInt64.max)))
-        XCTAssertEqual(expected, result)
-    }
-
-    func testint32_tTopixels_uUsing0Expecting0() {
+    func testInt32Topixels_u() {
         let expected = i32_to_px_u(0)
         let result = Pixels_u(Int32(0)).rawValue
         XCTAssertEqual(expected, result)
+        let expected1 = i32_to_px_u(5)
+        let result1 = Pixels_u(Int32(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = i32_to_px_u(Int32(Int32.min))
+        let result2 = Pixels_u(Int32(Int32(Int32.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = i32_to_px_u(Int32(Int32.max))
+        let result3 = Pixels_u(Int32(Int32(Int32.max))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testpixels_uToInt64() {
+        let expected = px_u_to_i64(0)
+        let result = Int64(Pixels_u(0))
+        XCTAssertEqual(expected, result)
+        let expected1 = px_u_to_i64(5)
+        let result1 = Int64(Pixels_u(5))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = px_u_to_i64(pixels_u(UInt64.min))
+        let result2 = Int64(Pixels_u(pixels_u(UInt64.min)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = px_u_to_i64(pixels_u(UInt64.max))
+        let result3 = Int64(Pixels_u(pixels_u(UInt64.max)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testInt64Topixels_u() {
+        let expected = i64_to_px_u(0)
+        let result = Pixels_u(Int64(0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = i64_to_px_u(5)
+        let result1 = Pixels_u(Int64(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = i64_to_px_u(Int64(Int64.min))
+        let result2 = Pixels_u(Int64(Int64(Int64.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = i64_to_px_u(Int64(Int64.max))
+        let result3 = Pixels_u(Int64(Int64(Int64.max))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testpixels_uToUInt8() {
+        let expected = px_u_to_u8(0)
+        let result = UInt8(Pixels_u(0))
+        XCTAssertEqual(expected, result)
+        let expected1 = px_u_to_u8(5)
+        let result1 = UInt8(Pixels_u(5))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = px_u_to_u8(pixels_u(UInt64.min))
+        let result2 = UInt8(Pixels_u(pixels_u(UInt64.min)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = px_u_to_u8(pixels_u(UInt64.max))
+        let result3 = UInt8(Pixels_u(pixels_u(UInt64.max)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testUInt8Topixels_u() {
+        let expected = u8_to_px_u(0)
+        let result = Pixels_u(UInt8(0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = u8_to_px_u(5)
+        let result1 = Pixels_u(UInt8(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u8_to_px_u(UInt8(UInt8.min))
+        let result2 = Pixels_u(UInt8(UInt8(UInt8.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u8_to_px_u(UInt8(UInt8.max))
+        let result3 = Pixels_u(UInt8(UInt8(UInt8.max))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testpixels_uToUInt16() {
+        let expected = px_u_to_u16(0)
+        let result = UInt16(Pixels_u(0))
+        XCTAssertEqual(expected, result)
+        let expected1 = px_u_to_u16(5)
+        let result1 = UInt16(Pixels_u(5))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = px_u_to_u16(pixels_u(UInt64.min))
+        let result2 = UInt16(Pixels_u(pixels_u(UInt64.min)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = px_u_to_u16(pixels_u(UInt64.max))
+        let result3 = UInt16(Pixels_u(pixels_u(UInt64.max)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testUInt16Topixels_u() {
+        let expected = u16_to_px_u(0)
+        let result = Pixels_u(UInt16(0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = u16_to_px_u(5)
+        let result1 = Pixels_u(UInt16(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u16_to_px_u(UInt16(UInt16.min))
+        let result2 = Pixels_u(UInt16(UInt16(UInt16.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u16_to_px_u(UInt16(UInt16.max))
+        let result3 = Pixels_u(UInt16(UInt16(UInt16.max))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testpixels_uToUInt32() {
+        let expected = px_u_to_u32(0)
+        let result = UInt32(Pixels_u(0))
+        XCTAssertEqual(expected, result)
+        let expected1 = px_u_to_u32(5)
+        let result1 = UInt32(Pixels_u(5))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = px_u_to_u32(pixels_u(UInt64.min))
+        let result2 = UInt32(Pixels_u(pixels_u(UInt64.min)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = px_u_to_u32(pixels_u(UInt64.max))
+        let result3 = UInt32(Pixels_u(pixels_u(UInt64.max)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testUInt32Topixels_u() {
+        let expected = u32_to_px_u(0)
+        let result = Pixels_u(UInt32(0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = u32_to_px_u(5)
+        let result1 = Pixels_u(UInt32(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u32_to_px_u(UInt32(UInt32.min))
+        let result2 = Pixels_u(UInt32(UInt32(UInt32.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u32_to_px_u(UInt32(UInt32.max))
+        let result3 = Pixels_u(UInt32(UInt32(UInt32.max))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testpixels_uToUInt64() {
+        let expected = px_u_to_u64(0)
+        let result = UInt64(Pixels_u(0))
+        XCTAssertEqual(expected, result)
+        let expected1 = px_u_to_u64(5)
+        let result1 = UInt64(Pixels_u(5))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = px_u_to_u64(pixels_u(UInt64.min))
+        let result2 = UInt64(Pixels_u(pixels_u(UInt64.min)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = px_u_to_u64(pixels_u(UInt64.max))
+        let result3 = UInt64(Pixels_u(pixels_u(UInt64.max)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testUInt64Topixels_u() {
+        let expected = u64_to_px_u(0)
+        let result = Pixels_u(UInt64(0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = u64_to_px_u(5)
+        let result1 = Pixels_u(UInt64(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u64_to_px_u(UInt64(UInt64.min))
+        let result2 = Pixels_u(UInt64(UInt64(UInt64.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u64_to_px_u(UInt64(UInt64.max))
+        let result3 = Pixels_u(UInt64(UInt64(UInt64.max))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testpixels_uToFloat() {
+        let expected = px_u_to_f(0)
+        let result = Float(Pixels_u(0))
+        XCTAssertEqual(expected, result)
+        let expected1 = px_u_to_f(5)
+        let result1 = Float(Pixels_u(5))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = px_u_to_f(pixels_u(UInt64.min))
+        let result2 = Float(Pixels_u(pixels_u(UInt64.min)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = px_u_to_f(pixels_u(UInt64.max))
+        let result3 = Float(Pixels_u(pixels_u(UInt64.max)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testFloatTopixels_u() {
+        let expected = f_to_px_u(0.0)
+        let result = Pixels_u(Float(0.0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = f_to_px_u(5.0)
+        let result1 = Pixels_u(Float(5.0)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = f_to_px_u(Float(-Float.greatestFiniteMagnitude))
+        let result2 = Pixels_u(Float(Float(-Float.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = f_to_px_u(Float(Float.greatestFiniteMagnitude))
+        let result3 = Pixels_u(Float(Float(Float.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testpixels_uToDouble() {
+        let expected = px_u_to_d(0)
+        let result = Double(Pixels_u(0))
+        XCTAssertEqual(expected, result)
+        let expected1 = px_u_to_d(5)
+        let result1 = Double(Pixels_u(5))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = px_u_to_d(pixels_u(UInt64.min))
+        let result2 = Double(Pixels_u(pixels_u(UInt64.min)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = px_u_to_d(pixels_u(UInt64.max))
+        let result3 = Double(Pixels_u(pixels_u(UInt64.max)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testDoubleTopixels_u() {
+        let expected = d_to_px_u(0.0)
+        let result = Pixels_u(Double(0.0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = d_to_px_u(5.0)
+        let result1 = Pixels_u(Double(5.0)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = d_to_px_u(Double(-Double.greatestFiniteMagnitude))
+        let result2 = Pixels_u(Double(Double(-Double.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = d_to_px_u(Double(Double.greatestFiniteMagnitude))
+        let result3 = Pixels_u(Double(Double(Double.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
 }

@@ -63,424 +63,139 @@ import XCTest
 /// Provides millimetres_f unit tests.
 final class Millimetres_fTests1: XCTestCase {
 
-    func testmillimetres_fTometres_tUsingNegFloat_greatestFiniteMagnitudeExpectingmetres_tInt64_min() {
-        let unit = Millimetres_f(-Float.greatestFiniteMagnitude)
-        let expected = mm_f_to_m_t(-Float.greatestFiniteMagnitude)
-        let result = Metres_t(unit).rawValue
+    func testUInt16Tomillimetres_f() {
+        let expected = u16_to_mm_f(0)
+        let result = Millimetres_f(UInt16(0)).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: metres_t = 1
-        let categoryResult = Distance(unit).metres_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = u16_to_mm_f(5)
+        let result1 = Millimetres_f(UInt16(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u16_to_mm_f(UInt16(UInt16.min))
+        let result2 = Millimetres_f(UInt16(UInt16(UInt16.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u16_to_mm_f(UInt16(UInt16.max))
+        let result3 = Millimetres_f(UInt16(UInt16(UInt16.max))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testmillimetres_fTometres_tUsingFloat_greatestFiniteMagnitudeExpectingmetres_tInt64_max() {
-        let unit = Millimetres_f(Float.greatestFiniteMagnitude)
-        let expected = mm_f_to_m_t(Float.greatestFiniteMagnitude)
-        let result = Metres_t(unit).rawValue
+    func testmillimetres_fToUInt32() {
+        let expected = mm_f_to_u32(0.0)
+        let result = UInt32(Millimetres_f(0.0))
         XCTAssertEqual(expected, result)
-        let tolerance: metres_t = 1
-        let categoryResult = Distance(unit).metres_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = mm_f_to_u32(5.0)
+        let result1 = UInt32(Millimetres_f(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = mm_f_to_u32(millimetres_f(-Float.greatestFiniteMagnitude))
+        let result2 = UInt32(Millimetres_f(millimetres_f(-Float.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = mm_f_to_u32(millimetres_f(Float.greatestFiniteMagnitude))
+        let result3 = UInt32(Millimetres_f(millimetres_f(Float.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testmillimetres_fTomillimetres_uUsing0_0Expecting0() {
-        let unit = Millimetres_f(0.0)
-        let expected = mm_f_to_mm_u(0.0)
-        let result = Millimetres_u(unit).rawValue
+    func testUInt32Tomillimetres_f() {
+        let expected = u32_to_mm_f(0)
+        let result = Millimetres_f(UInt32(0)).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: millimetres_u = 1
-        let categoryResult = Distance(unit).millimetres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = u32_to_mm_f(5)
+        let result1 = Millimetres_f(UInt32(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u32_to_mm_f(UInt32(UInt32.min))
+        let result2 = Millimetres_f(UInt32(UInt32(UInt32.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u32_to_mm_f(UInt32(UInt32.max))
+        let result3 = Millimetres_f(UInt32(UInt32(UInt32.max))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testmillimetres_fTomillimetres_uUsingmillimetres_fNegFloat_greatestFiniteMagnitudeExpectingmillimetres_uUInt64_min() {
-        let unit = Millimetres_f(millimetres_f(-Float.greatestFiniteMagnitude))
-        let expected = mm_f_to_mm_u(millimetres_f(-Float.greatestFiniteMagnitude))
-        let result = Millimetres_u(unit).rawValue
+    func testmillimetres_fToUInt64() {
+        let expected = mm_f_to_u64(0.0)
+        let result = UInt64(Millimetres_f(0.0))
         XCTAssertEqual(expected, result)
-        let tolerance: millimetres_u = 1
-        let categoryResult = Distance(unit).millimetres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = mm_f_to_u64(5.0)
+        let result1 = UInt64(Millimetres_f(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = mm_f_to_u64(millimetres_f(-Float.greatestFiniteMagnitude))
+        let result2 = UInt64(Millimetres_f(millimetres_f(-Float.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = mm_f_to_u64(millimetres_f(Float.greatestFiniteMagnitude))
+        let result3 = UInt64(Millimetres_f(millimetres_f(Float.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testmillimetres_fTomillimetres_uUsingmillimetres_fFloat_greatestFiniteMagnitudeExpectingmillimetres_uUInt64_max() {
-        let unit = Millimetres_f(millimetres_f(Float.greatestFiniteMagnitude))
-        let expected = mm_f_to_mm_u(millimetres_f(Float.greatestFiniteMagnitude))
-        let result = Millimetres_u(unit).rawValue
+    func testUInt64Tomillimetres_f() {
+        let expected = u64_to_mm_f(0)
+        let result = Millimetres_f(UInt64(0)).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: millimetres_u = 1
-        let categoryResult = Distance(unit).millimetres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = u64_to_mm_f(5)
+        let result1 = Millimetres_f(UInt64(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u64_to_mm_f(UInt64(UInt64.min))
+        let result2 = Millimetres_f(UInt64(UInt64(UInt64.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u64_to_mm_f(UInt64(UInt64.max))
+        let result3 = Millimetres_f(UInt64(UInt64(UInt64.max))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testmillimetres_fTomillimetres_uUsing5_0Expecting5() {
-        let unit = Millimetres_f(5.0)
-        let expected = mm_f_to_mm_u(5.0)
-        let result = Millimetres_u(unit).rawValue
+    func testmillimetres_fToFloat() {
+        let expected = mm_f_to_f(0.0)
+        let result = Float(Millimetres_f(0.0))
         XCTAssertEqual(expected, result)
-        let tolerance: millimetres_u = 1
-        let categoryResult = Distance(unit).millimetres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = mm_f_to_f(5.0)
+        let result1 = Float(Millimetres_f(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = mm_f_to_f(millimetres_f(-Float.greatestFiniteMagnitude))
+        let result2 = Float(Millimetres_f(millimetres_f(-Float.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = mm_f_to_f(millimetres_f(Float.greatestFiniteMagnitude))
+        let result3 = Float(Millimetres_f(millimetres_f(Float.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testmillimetres_fTocentimetres_uUsing15_0Expectingcentimetres_uFloat15_010_0_rounded() {
-        let unit = Millimetres_f(15.0)
-        let expected = mm_f_to_cm_u(15.0)
-        let result = Centimetres_u(unit).rawValue
+    func testFloatTomillimetres_f() {
+        let expected = f_to_mm_f(0.0)
+        let result = Millimetres_f(Float(0.0)).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: centimetres_u = 1
-        let categoryResult = Distance(unit).centimetres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = f_to_mm_f(5.0)
+        let result1 = Millimetres_f(Float(5.0)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = f_to_mm_f(Float(-Float.greatestFiniteMagnitude))
+        let result2 = Millimetres_f(Float(Float(-Float.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = f_to_mm_f(Float(Float.greatestFiniteMagnitude))
+        let result3 = Millimetres_f(Float(Float(Float.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testmillimetres_fTocentimetres_uUsing25_0Expectingcentimetres_uFloat25_010_0_rounded() {
-        let unit = Millimetres_f(25.0)
-        let expected = mm_f_to_cm_u(25.0)
-        let result = Centimetres_u(unit).rawValue
+    func testmillimetres_fToDouble() {
+        let expected = mm_f_to_d(0.0)
+        let result = Double(Millimetres_f(0.0))
         XCTAssertEqual(expected, result)
-        let tolerance: centimetres_u = 1
-        let categoryResult = Distance(unit).centimetres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = mm_f_to_d(5.0)
+        let result1 = Double(Millimetres_f(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = mm_f_to_d(millimetres_f(-Float.greatestFiniteMagnitude))
+        let result2 = Double(Millimetres_f(millimetres_f(-Float.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = mm_f_to_d(millimetres_f(Float.greatestFiniteMagnitude))
+        let result3 = Double(Millimetres_f(millimetres_f(Float.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testmillimetres_fTocentimetres_uUsing250_0Expectingcentimetres_uFloat250_010_0_rounded() {
-        let unit = Millimetres_f(250.0)
-        let expected = mm_f_to_cm_u(250.0)
-        let result = Centimetres_u(unit).rawValue
+    func testDoubleTomillimetres_f() {
+        let expected = d_to_mm_f(0.0)
+        let result = Millimetres_f(Double(0.0)).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: centimetres_u = 1
-        let categoryResult = Distance(unit).centimetres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmillimetres_fTocentimetres_uUsing0_0Expectingcentimetres_uFloat0_010_0_rounded() {
-        let unit = Millimetres_f(0.0)
-        let expected = mm_f_to_cm_u(0.0)
-        let result = Centimetres_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: centimetres_u = 1
-        let categoryResult = Distance(unit).centimetres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmillimetres_fTocentimetres_uUsing2500_0Expectingcentimetres_uFloat2500_010_0_rounded() {
-        let unit = Millimetres_f(2500.0)
-        let expected = mm_f_to_cm_u(2500.0)
-        let result = Centimetres_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: centimetres_u = 1
-        let categoryResult = Distance(unit).centimetres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmillimetres_fTocentimetres_uUsing25000_0Expectingcentimetres_uFloat25000_010_0_rounded() {
-        let unit = Millimetres_f(25000.0)
-        let expected = mm_f_to_cm_u(25000.0)
-        let result = Centimetres_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: centimetres_u = 1
-        let categoryResult = Distance(unit).centimetres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmillimetres_fTocentimetres_uUsing250000_0Expectingcentimetres_uFloat250000_010_0_rounded() {
-        let unit = Millimetres_f(250000.0)
-        let expected = mm_f_to_cm_u(250000.0)
-        let result = Centimetres_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: centimetres_u = 1
-        let categoryResult = Distance(unit).centimetres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmillimetres_fTocentimetres_uUsing2500000_0Expectingcentimetres_uFloat2500000_010_0_rounded() {
-        let unit = Millimetres_f(2500000.0)
-        let expected = mm_f_to_cm_u(2500000.0)
-        let result = Centimetres_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: centimetres_u = 1
-        let categoryResult = Distance(unit).centimetres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmillimetres_fTocentimetres_uUsingNeg323_0Expecting0() {
-        let unit = Millimetres_f(-323.0)
-        let expected = mm_f_to_cm_u(-323.0)
-        let result = Centimetres_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: centimetres_u = 1
-        let categoryResult = Distance(unit).centimetres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmillimetres_fTocentimetres_uUsingNeg10_0Expecting0() {
-        let unit = Millimetres_f(-10.0)
-        let expected = mm_f_to_cm_u(-10.0)
-        let result = Centimetres_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: centimetres_u = 1
-        let categoryResult = Distance(unit).centimetres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmillimetres_fTocentimetres_uUsingNeg1000_0Expecting0() {
-        let unit = Millimetres_f(-1000.0)
-        let expected = mm_f_to_cm_u(-1000.0)
-        let result = Centimetres_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: centimetres_u = 1
-        let categoryResult = Distance(unit).centimetres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmillimetres_fTocentimetres_uUsingNeg6_0Expecting0() {
-        let unit = Millimetres_f(-6.0)
-        let expected = mm_f_to_cm_u(-6.0)
-        let result = Centimetres_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: centimetres_u = 1
-        let categoryResult = Distance(unit).centimetres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmillimetres_fTocentimetres_uUsingNegFloat_greatestFiniteMagnitudeExpectingcentimetres_uUInt64_min() {
-        let unit = Millimetres_f(-Float.greatestFiniteMagnitude)
-        let expected = mm_f_to_cm_u(-Float.greatestFiniteMagnitude)
-        let result = Centimetres_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: centimetres_u = 1
-        let categoryResult = Distance(unit).centimetres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmillimetres_fTocentimetres_uUsingFloat_greatestFiniteMagnitudeExpectingcentimetres_uUInt64_max() {
-        let unit = Millimetres_f(Float.greatestFiniteMagnitude)
-        let expected = mm_f_to_cm_u(Float.greatestFiniteMagnitude)
-        let result = Centimetres_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: centimetres_u = 1
-        let categoryResult = Distance(unit).centimetres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmillimetres_fTometres_uUsing15_0Expectingmetres_uFloat15_01000_0_rounded() {
-        let unit = Millimetres_f(15.0)
-        let expected = mm_f_to_m_u(15.0)
-        let result = Metres_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: metres_u = 1
-        let categoryResult = Distance(unit).metres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmillimetres_fTometres_uUsing25_0Expectingmetres_uFloat25_01000_0_rounded() {
-        let unit = Millimetres_f(25.0)
-        let expected = mm_f_to_m_u(25.0)
-        let result = Metres_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: metres_u = 1
-        let categoryResult = Distance(unit).metres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmillimetres_fTometres_uUsing250_0Expectingmetres_uFloat250_01000_0_rounded() {
-        let unit = Millimetres_f(250.0)
-        let expected = mm_f_to_m_u(250.0)
-        let result = Metres_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: metres_u = 1
-        let categoryResult = Distance(unit).metres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmillimetres_fTometres_uUsing0_0Expectingmetres_uFloat0_01000_0_rounded() {
-        let unit = Millimetres_f(0.0)
-        let expected = mm_f_to_m_u(0.0)
-        let result = Metres_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: metres_u = 1
-        let categoryResult = Distance(unit).metres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmillimetres_fTometres_uUsing2500_0Expectingmetres_uFloat2500_01000_0_rounded() {
-        let unit = Millimetres_f(2500.0)
-        let expected = mm_f_to_m_u(2500.0)
-        let result = Metres_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: metres_u = 1
-        let categoryResult = Distance(unit).metres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmillimetres_fTometres_uUsing25000_0Expectingmetres_uFloat25000_01000_0_rounded() {
-        let unit = Millimetres_f(25000.0)
-        let expected = mm_f_to_m_u(25000.0)
-        let result = Metres_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: metres_u = 1
-        let categoryResult = Distance(unit).metres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmillimetres_fTometres_uUsing250000_0Expectingmetres_uFloat250000_01000_0_rounded() {
-        let unit = Millimetres_f(250000.0)
-        let expected = mm_f_to_m_u(250000.0)
-        let result = Metres_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: metres_u = 1
-        let categoryResult = Distance(unit).metres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmillimetres_fTometres_uUsing2500000_0Expectingmetres_uFloat2500000_01000_0_rounded() {
-        let unit = Millimetres_f(2500000.0)
-        let expected = mm_f_to_m_u(2500000.0)
-        let result = Metres_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: metres_u = 1
-        let categoryResult = Distance(unit).metres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmillimetres_fTometres_uUsingNeg323_0Expecting0() {
-        let unit = Millimetres_f(-323.0)
-        let expected = mm_f_to_m_u(-323.0)
-        let result = Metres_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: metres_u = 1
-        let categoryResult = Distance(unit).metres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testmillimetres_fTometres_uUsingNeg10_0Expecting0() {
-        let unit = Millimetres_f(-10.0)
-        let expected = mm_f_to_m_u(-10.0)
-        let result = Metres_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: metres_u = 1
-        let categoryResult = Distance(unit).metres_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = d_to_mm_f(5.0)
+        let result1 = Millimetres_f(Double(5.0)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = d_to_mm_f(Double(-Double.greatestFiniteMagnitude))
+        let result2 = Millimetres_f(Double(Double(-Double.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = d_to_mm_f(Double(Double.greatestFiniteMagnitude))
+        let result3 = Millimetres_f(Double(Double(Double.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
 }

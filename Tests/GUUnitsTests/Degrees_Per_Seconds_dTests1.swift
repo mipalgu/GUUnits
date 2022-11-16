@@ -63,340 +63,199 @@ import XCTest
 /// Provides degrees_per_seconds_d unit tests.
 final class Degrees_Per_Seconds_dTests1: XCTestCase {
 
-    func testdegrees_per_seconds_dTodegrees_per_microseconds_uUsingNeg5000000Expectingdegrees_per_microseconds_uDoubleNeg5000000Double1000000_roundedDoubleUInt64_max_nextDownUInt64_maxDoubleNeg5000000Double1000000_roundedDoubleUInt64_min_nextUpUInt64_minUInt64DoubleNeg5000000Double1000000_rounded() {
-        let unit = Degrees_Per_Seconds_d(-5000000)
-        let expected = deg_per_s_d_to_deg_per_us_u(-5000000)
-        let result = Degrees_Per_Microseconds_u(unit).rawValue
+    func testInt64Todegrees_per_seconds_d() {
+        let expected = i64_to_deg_per_s_d(0)
+        let result = Degrees_Per_Seconds_d(Int64(0)).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: degrees_per_microseconds_u = 1
-        let categoryResult = AngularVelocity(unit).degrees_per_microseconds_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = i64_to_deg_per_s_d(5)
+        let result1 = Degrees_Per_Seconds_d(Int64(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = i64_to_deg_per_s_d(Int64(Int64.min))
+        let result2 = Degrees_Per_Seconds_d(Int64(Int64(Int64.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = i64_to_deg_per_s_d(Int64(Int64.max))
+        let result3 = Degrees_Per_Seconds_d(Int64(Int64(Int64.max))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testdegrees_per_seconds_dTodegrees_per_microseconds_uUsing0Expectingdegrees_per_microseconds_uDouble0Double1000000_roundedDoubleUInt64_max_nextDownUInt64_maxDouble0Double1000000_roundedDoubleUInt64_min_nextUpUInt64_minUInt64Double0Double1000000_rounded() {
-        let unit = Degrees_Per_Seconds_d(0)
-        let expected = deg_per_s_d_to_deg_per_us_u(0)
-        let result = Degrees_Per_Microseconds_u(unit).rawValue
+    func testdegrees_per_seconds_dToUInt8() {
+        let expected = deg_per_s_d_to_u8(0.0)
+        let result = UInt8(Degrees_Per_Seconds_d(0.0))
         XCTAssertEqual(expected, result)
-        let tolerance: degrees_per_microseconds_u = 1
-        let categoryResult = AngularVelocity(unit).degrees_per_microseconds_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = deg_per_s_d_to_u8(5.0)
+        let result1 = UInt8(Degrees_Per_Seconds_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = deg_per_s_d_to_u8(degrees_per_seconds_d(-Double.greatestFiniteMagnitude))
+        let result2 = UInt8(Degrees_Per_Seconds_d(degrees_per_seconds_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = deg_per_s_d_to_u8(degrees_per_seconds_d(Double.greatestFiniteMagnitude))
+        let result3 = UInt8(Degrees_Per_Seconds_d(degrees_per_seconds_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testdegrees_per_seconds_dTodegrees_per_microseconds_uUsing5000000Expectingdegrees_per_microseconds_uDouble5000000Double1000000_roundedDoubleUInt64_max_nextDownUInt64_maxDouble5000000Double1000000_roundedDoubleUInt64_min_nextUpUInt64_minUInt64Double5000000Double1000000_rounded() {
-        let unit = Degrees_Per_Seconds_d(5000000)
-        let expected = deg_per_s_d_to_deg_per_us_u(5000000)
-        let result = Degrees_Per_Microseconds_u(unit).rawValue
+    func testUInt8Todegrees_per_seconds_d() {
+        let expected = u8_to_deg_per_s_d(0)
+        let result = Degrees_Per_Seconds_d(UInt8(0)).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: degrees_per_microseconds_u = 1
-        let categoryResult = AngularVelocity(unit).degrees_per_microseconds_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = u8_to_deg_per_s_d(5)
+        let result1 = Degrees_Per_Seconds_d(UInt8(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u8_to_deg_per_s_d(UInt8(UInt8.min))
+        let result2 = Degrees_Per_Seconds_d(UInt8(UInt8(UInt8.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u8_to_deg_per_s_d(UInt8(UInt8.max))
+        let result3 = Degrees_Per_Seconds_d(UInt8(UInt8(UInt8.max))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testdegrees_per_seconds_dTodegrees_per_microseconds_uUsingNegDouble_greatestFiniteMagnitudeExpectingdegrees_per_microseconds_uUInt64_min() {
-        let unit = Degrees_Per_Seconds_d(-Double.greatestFiniteMagnitude)
-        let expected = deg_per_s_d_to_deg_per_us_u(-Double.greatestFiniteMagnitude)
-        let result = Degrees_Per_Microseconds_u(unit).rawValue
+    func testdegrees_per_seconds_dToUInt16() {
+        let expected = deg_per_s_d_to_u16(0.0)
+        let result = UInt16(Degrees_Per_Seconds_d(0.0))
         XCTAssertEqual(expected, result)
+        let expected1 = deg_per_s_d_to_u16(5.0)
+        let result1 = UInt16(Degrees_Per_Seconds_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = deg_per_s_d_to_u16(degrees_per_seconds_d(-Double.greatestFiniteMagnitude))
+        let result2 = UInt16(Degrees_Per_Seconds_d(degrees_per_seconds_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = deg_per_s_d_to_u16(degrees_per_seconds_d(Double.greatestFiniteMagnitude))
+        let result3 = UInt16(Degrees_Per_Seconds_d(degrees_per_seconds_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testdegrees_per_seconds_dTodegrees_per_microseconds_uUsingDouble_greatestFiniteMagnitudeExpectingdegrees_per_microseconds_uUInt64_max() {
-        let unit = Degrees_Per_Seconds_d(Double.greatestFiniteMagnitude)
-        let expected = deg_per_s_d_to_deg_per_us_u(Double.greatestFiniteMagnitude)
-        let result = Degrees_Per_Microseconds_u(unit).rawValue
+    func testUInt16Todegrees_per_seconds_d() {
+        let expected = u16_to_deg_per_s_d(0)
+        let result = Degrees_Per_Seconds_d(UInt16(0)).rawValue
         XCTAssertEqual(expected, result)
+        let expected1 = u16_to_deg_per_s_d(5)
+        let result1 = Degrees_Per_Seconds_d(UInt16(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u16_to_deg_per_s_d(UInt16(UInt16.min))
+        let result2 = Degrees_Per_Seconds_d(UInt16(UInt16(UInt16.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u16_to_deg_per_s_d(UInt16(UInt16.max))
+        let result3 = Degrees_Per_Seconds_d(UInt16(UInt16(UInt16.max))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testdegrees_per_seconds_dTodegrees_per_milliseconds_uUsingNeg5000000Expectingdegrees_per_milliseconds_uDoubleNeg5000000Double1000_roundedDoubleUInt64_max_nextDownUInt64_maxDoubleNeg5000000Double1000_roundedDoubleUInt64_min_nextUpUInt64_minUInt64DoubleNeg5000000Double1000_rounded() {
-        let unit = Degrees_Per_Seconds_d(-5000000)
-        let expected = deg_per_s_d_to_deg_per_ms_u(-5000000)
-        let result = Degrees_Per_Milliseconds_u(unit).rawValue
+    func testdegrees_per_seconds_dToUInt32() {
+        let expected = deg_per_s_d_to_u32(0.0)
+        let result = UInt32(Degrees_Per_Seconds_d(0.0))
         XCTAssertEqual(expected, result)
-        let tolerance: degrees_per_milliseconds_u = 1
-        let categoryResult = AngularVelocity(unit).degrees_per_milliseconds_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = deg_per_s_d_to_u32(5.0)
+        let result1 = UInt32(Degrees_Per_Seconds_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = deg_per_s_d_to_u32(degrees_per_seconds_d(-Double.greatestFiniteMagnitude))
+        let result2 = UInt32(Degrees_Per_Seconds_d(degrees_per_seconds_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = deg_per_s_d_to_u32(degrees_per_seconds_d(Double.greatestFiniteMagnitude))
+        let result3 = UInt32(Degrees_Per_Seconds_d(degrees_per_seconds_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testdegrees_per_seconds_dTodegrees_per_milliseconds_uUsing0Expectingdegrees_per_milliseconds_uDouble0Double1000_roundedDoubleUInt64_max_nextDownUInt64_maxDouble0Double1000_roundedDoubleUInt64_min_nextUpUInt64_minUInt64Double0Double1000_rounded() {
-        let unit = Degrees_Per_Seconds_d(0)
-        let expected = deg_per_s_d_to_deg_per_ms_u(0)
-        let result = Degrees_Per_Milliseconds_u(unit).rawValue
+    func testUInt32Todegrees_per_seconds_d() {
+        let expected = u32_to_deg_per_s_d(0)
+        let result = Degrees_Per_Seconds_d(UInt32(0)).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: degrees_per_milliseconds_u = 1
-        let categoryResult = AngularVelocity(unit).degrees_per_milliseconds_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = u32_to_deg_per_s_d(5)
+        let result1 = Degrees_Per_Seconds_d(UInt32(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u32_to_deg_per_s_d(UInt32(UInt32.min))
+        let result2 = Degrees_Per_Seconds_d(UInt32(UInt32(UInt32.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u32_to_deg_per_s_d(UInt32(UInt32.max))
+        let result3 = Degrees_Per_Seconds_d(UInt32(UInt32(UInt32.max))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testdegrees_per_seconds_dTodegrees_per_milliseconds_uUsing5000000Expectingdegrees_per_milliseconds_uDouble5000000Double1000_roundedDoubleUInt64_max_nextDownUInt64_maxDouble5000000Double1000_roundedDoubleUInt64_min_nextUpUInt64_minUInt64Double5000000Double1000_rounded() {
-        let unit = Degrees_Per_Seconds_d(5000000)
-        let expected = deg_per_s_d_to_deg_per_ms_u(5000000)
-        let result = Degrees_Per_Milliseconds_u(unit).rawValue
+    func testdegrees_per_seconds_dToUInt64() {
+        let expected = deg_per_s_d_to_u64(0.0)
+        let result = UInt64(Degrees_Per_Seconds_d(0.0))
         XCTAssertEqual(expected, result)
-        let tolerance: degrees_per_milliseconds_u = 1
-        let categoryResult = AngularVelocity(unit).degrees_per_milliseconds_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = deg_per_s_d_to_u64(5.0)
+        let result1 = UInt64(Degrees_Per_Seconds_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = deg_per_s_d_to_u64(degrees_per_seconds_d(-Double.greatestFiniteMagnitude))
+        let result2 = UInt64(Degrees_Per_Seconds_d(degrees_per_seconds_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = deg_per_s_d_to_u64(degrees_per_seconds_d(Double.greatestFiniteMagnitude))
+        let result3 = UInt64(Degrees_Per_Seconds_d(degrees_per_seconds_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testdegrees_per_seconds_dTodegrees_per_milliseconds_uUsingNegDouble_greatestFiniteMagnitudeExpectingdegrees_per_milliseconds_uUInt64_min() {
-        let unit = Degrees_Per_Seconds_d(-Double.greatestFiniteMagnitude)
-        let expected = deg_per_s_d_to_deg_per_ms_u(-Double.greatestFiniteMagnitude)
-        let result = Degrees_Per_Milliseconds_u(unit).rawValue
+    func testUInt64Todegrees_per_seconds_d() {
+        let expected = u64_to_deg_per_s_d(0)
+        let result = Degrees_Per_Seconds_d(UInt64(0)).rawValue
         XCTAssertEqual(expected, result)
+        let expected1 = u64_to_deg_per_s_d(5)
+        let result1 = Degrees_Per_Seconds_d(UInt64(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u64_to_deg_per_s_d(UInt64(UInt64.min))
+        let result2 = Degrees_Per_Seconds_d(UInt64(UInt64(UInt64.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u64_to_deg_per_s_d(UInt64(UInt64.max))
+        let result3 = Degrees_Per_Seconds_d(UInt64(UInt64(UInt64.max))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testdegrees_per_seconds_dTodegrees_per_milliseconds_uUsingDouble_greatestFiniteMagnitudeExpectingdegrees_per_milliseconds_uUInt64_max() {
-        let unit = Degrees_Per_Seconds_d(Double.greatestFiniteMagnitude)
-        let expected = deg_per_s_d_to_deg_per_ms_u(Double.greatestFiniteMagnitude)
-        let result = Degrees_Per_Milliseconds_u(unit).rawValue
+    func testdegrees_per_seconds_dToFloat() {
+        let expected = deg_per_s_d_to_f(0.0)
+        let result = Float(Degrees_Per_Seconds_d(0.0))
         XCTAssertEqual(expected, result)
+        let expected1 = deg_per_s_d_to_f(5.0)
+        let result1 = Float(Degrees_Per_Seconds_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = deg_per_s_d_to_f(degrees_per_seconds_d(-Double.greatestFiniteMagnitude))
+        let result2 = Float(Degrees_Per_Seconds_d(degrees_per_seconds_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = deg_per_s_d_to_f(degrees_per_seconds_d(Double.greatestFiniteMagnitude))
+        let result3 = Float(Degrees_Per_Seconds_d(degrees_per_seconds_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testdegrees_per_seconds_dTodegrees_per_seconds_uUsingNeg5000000Expectingdegrees_per_seconds_uDoubleNeg5000000_roundedDoubleUInt64_max_nextDownUInt64_maxDoubleNeg5000000_roundedDoubleUInt64_min_nextUpUInt64_minUInt64DoubleNeg5000000_rounded() {
-        let unit = Degrees_Per_Seconds_d(-5000000)
-        let expected = deg_per_s_d_to_deg_per_s_u(-5000000)
-        let result = Degrees_Per_Seconds_u(unit).rawValue
+    func testFloatTodegrees_per_seconds_d() {
+        let expected = f_to_deg_per_s_d(0.0)
+        let result = Degrees_Per_Seconds_d(Float(0.0)).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: degrees_per_seconds_u = 1
-        let categoryResult = AngularVelocity(unit).degrees_per_seconds_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = f_to_deg_per_s_d(5.0)
+        let result1 = Degrees_Per_Seconds_d(Float(5.0)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = f_to_deg_per_s_d(Float(-Float.greatestFiniteMagnitude))
+        let result2 = Degrees_Per_Seconds_d(Float(Float(-Float.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = f_to_deg_per_s_d(Float(Float.greatestFiniteMagnitude))
+        let result3 = Degrees_Per_Seconds_d(Float(Float(Float.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testdegrees_per_seconds_dTodegrees_per_seconds_uUsing0Expectingdegrees_per_seconds_uDouble0_roundedDoubleUInt64_max_nextDownUInt64_maxDouble0_roundedDoubleUInt64_min_nextUpUInt64_minUInt64Double0_rounded() {
-        let unit = Degrees_Per_Seconds_d(0)
-        let expected = deg_per_s_d_to_deg_per_s_u(0)
-        let result = Degrees_Per_Seconds_u(unit).rawValue
+    func testdegrees_per_seconds_dToDouble() {
+        let expected = deg_per_s_d_to_d(0.0)
+        let result = Double(Degrees_Per_Seconds_d(0.0))
         XCTAssertEqual(expected, result)
-        let tolerance: degrees_per_seconds_u = 1
-        let categoryResult = AngularVelocity(unit).degrees_per_seconds_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
+        let expected1 = deg_per_s_d_to_d(5.0)
+        let result1 = Double(Degrees_Per_Seconds_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = deg_per_s_d_to_d(degrees_per_seconds_d(-Double.greatestFiniteMagnitude))
+        let result2 = Double(Degrees_Per_Seconds_d(degrees_per_seconds_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = deg_per_s_d_to_d(degrees_per_seconds_d(Double.greatestFiniteMagnitude))
+        let result3 = Double(Degrees_Per_Seconds_d(degrees_per_seconds_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testdegrees_per_seconds_dTodegrees_per_seconds_uUsing5000000Expectingdegrees_per_seconds_uDouble5000000_roundedDoubleUInt64_max_nextDownUInt64_maxDouble5000000_roundedDoubleUInt64_min_nextUpUInt64_minUInt64Double5000000_rounded() {
-        let unit = Degrees_Per_Seconds_d(5000000)
-        let expected = deg_per_s_d_to_deg_per_s_u(5000000)
-        let result = Degrees_Per_Seconds_u(unit).rawValue
+    func testDoubleTodegrees_per_seconds_d() {
+        let expected = d_to_deg_per_s_d(0.0)
+        let result = Degrees_Per_Seconds_d(Double(0.0)).rawValue
         XCTAssertEqual(expected, result)
-        let tolerance: degrees_per_seconds_u = 1
-        let categoryResult = AngularVelocity(unit).degrees_per_seconds_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testdegrees_per_seconds_dTodegrees_per_seconds_uUsingNegDouble_greatestFiniteMagnitudeExpectingdegrees_per_seconds_uUInt64_min() {
-        let unit = Degrees_Per_Seconds_d(-Double.greatestFiniteMagnitude)
-        let expected = deg_per_s_d_to_deg_per_s_u(-Double.greatestFiniteMagnitude)
-        let result = Degrees_Per_Seconds_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testdegrees_per_seconds_dTodegrees_per_seconds_uUsingDouble_greatestFiniteMagnitudeExpectingdegrees_per_seconds_uUInt64_max() {
-        let unit = Degrees_Per_Seconds_d(Double.greatestFiniteMagnitude)
-        let expected = deg_per_s_d_to_deg_per_s_u(Double.greatestFiniteMagnitude)
-        let result = Degrees_Per_Seconds_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testdegrees_per_seconds_dToradians_per_microseconds_uUsingNeg5000000Expectingradians_per_microseconds_uDoubleNeg5000000Double3_141592653589793Double180Double1000000_roundedDoubleUInt64_max_nextDownUInt64_maxDoubleNeg5000000Double3_141592653589793Double180Double1000000_roundedDoubleUInt64_min_nextUpUInt64_minUInt64DoubleNeg5000000Double3_141592653589793Double180Double1000000_rounded() {
-        let unit = Degrees_Per_Seconds_d(-5000000)
-        let expected = deg_per_s_d_to_rad_per_us_u(-5000000)
-        let result = Radians_Per_Microseconds_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: radians_per_microseconds_u = 1
-        let categoryResult = AngularVelocity(unit).radians_per_microseconds_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testdegrees_per_seconds_dToradians_per_microseconds_uUsing0Expectingradians_per_microseconds_uDouble0Double3_141592653589793Double180Double1000000_roundedDoubleUInt64_max_nextDownUInt64_maxDouble0Double3_141592653589793Double180Double1000000_roundedDoubleUInt64_min_nextUpUInt64_minUInt64Double0Double3_141592653589793Double180Double1000000_rounded() {
-        let unit = Degrees_Per_Seconds_d(0)
-        let expected = deg_per_s_d_to_rad_per_us_u(0)
-        let result = Radians_Per_Microseconds_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: radians_per_microseconds_u = 1
-        let categoryResult = AngularVelocity(unit).radians_per_microseconds_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testdegrees_per_seconds_dToradians_per_microseconds_uUsing5000000Expectingradians_per_microseconds_uDouble5000000Double3_141592653589793Double180Double1000000_roundedDoubleUInt64_max_nextDownUInt64_maxDouble5000000Double3_141592653589793Double180Double1000000_roundedDoubleUInt64_min_nextUpUInt64_minUInt64Double5000000Double3_141592653589793Double180Double1000000_rounded() {
-        let unit = Degrees_Per_Seconds_d(5000000)
-        let expected = deg_per_s_d_to_rad_per_us_u(5000000)
-        let result = Radians_Per_Microseconds_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: radians_per_microseconds_u = 1
-        let categoryResult = AngularVelocity(unit).radians_per_microseconds_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testdegrees_per_seconds_dToradians_per_microseconds_uUsingNegDouble_greatestFiniteMagnitudeExpectingradians_per_microseconds_uUInt64_min() {
-        let unit = Degrees_Per_Seconds_d(-Double.greatestFiniteMagnitude)
-        let expected = deg_per_s_d_to_rad_per_us_u(-Double.greatestFiniteMagnitude)
-        let result = Radians_Per_Microseconds_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testdegrees_per_seconds_dToradians_per_microseconds_uUsingDouble_greatestFiniteMagnitudeExpectingradians_per_microseconds_uUInt64_max() {
-        let unit = Degrees_Per_Seconds_d(Double.greatestFiniteMagnitude)
-        let expected = deg_per_s_d_to_rad_per_us_u(Double.greatestFiniteMagnitude)
-        let result = Radians_Per_Microseconds_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testdegrees_per_seconds_dToradians_per_milliseconds_uUsingNeg5000000Expectingradians_per_milliseconds_uDoubleNeg5000000Double3_141592653589793Double180Double1000_roundedDoubleUInt64_max_nextDownUInt64_maxDoubleNeg5000000Double3_141592653589793Double180Double1000_roundedDoubleUInt64_min_nextUpUInt64_minUInt64DoubleNeg5000000Double3_141592653589793Double180Double1000_rounded() {
-        let unit = Degrees_Per_Seconds_d(-5000000)
-        let expected = deg_per_s_d_to_rad_per_ms_u(-5000000)
-        let result = Radians_Per_Milliseconds_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: radians_per_milliseconds_u = 1
-        let categoryResult = AngularVelocity(unit).radians_per_milliseconds_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testdegrees_per_seconds_dToradians_per_milliseconds_uUsing0Expectingradians_per_milliseconds_uDouble0Double3_141592653589793Double180Double1000_roundedDoubleUInt64_max_nextDownUInt64_maxDouble0Double3_141592653589793Double180Double1000_roundedDoubleUInt64_min_nextUpUInt64_minUInt64Double0Double3_141592653589793Double180Double1000_rounded() {
-        let unit = Degrees_Per_Seconds_d(0)
-        let expected = deg_per_s_d_to_rad_per_ms_u(0)
-        let result = Radians_Per_Milliseconds_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: radians_per_milliseconds_u = 1
-        let categoryResult = AngularVelocity(unit).radians_per_milliseconds_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testdegrees_per_seconds_dToradians_per_milliseconds_uUsing5000000Expectingradians_per_milliseconds_uDouble5000000Double3_141592653589793Double180Double1000_roundedDoubleUInt64_max_nextDownUInt64_maxDouble5000000Double3_141592653589793Double180Double1000_roundedDoubleUInt64_min_nextUpUInt64_minUInt64Double5000000Double3_141592653589793Double180Double1000_rounded() {
-        let unit = Degrees_Per_Seconds_d(5000000)
-        let expected = deg_per_s_d_to_rad_per_ms_u(5000000)
-        let result = Radians_Per_Milliseconds_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: radians_per_milliseconds_u = 1
-        let categoryResult = AngularVelocity(unit).radians_per_milliseconds_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testdegrees_per_seconds_dToradians_per_milliseconds_uUsingNegDouble_greatestFiniteMagnitudeExpectingradians_per_milliseconds_uUInt64_min() {
-        let unit = Degrees_Per_Seconds_d(-Double.greatestFiniteMagnitude)
-        let expected = deg_per_s_d_to_rad_per_ms_u(-Double.greatestFiniteMagnitude)
-        let result = Radians_Per_Milliseconds_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testdegrees_per_seconds_dToradians_per_milliseconds_uUsingDouble_greatestFiniteMagnitudeExpectingradians_per_milliseconds_uUInt64_max() {
-        let unit = Degrees_Per_Seconds_d(Double.greatestFiniteMagnitude)
-        let expected = deg_per_s_d_to_rad_per_ms_u(Double.greatestFiniteMagnitude)
-        let result = Radians_Per_Milliseconds_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testdegrees_per_seconds_dToradians_per_seconds_uUsingNeg5000000Expectingradians_per_seconds_uDoubleNeg5000000Double3_141592653589793Double180_roundedDoubleUInt64_max_nextDownUInt64_maxDoubleNeg5000000Double3_141592653589793Double180_roundedDoubleUInt64_min_nextUpUInt64_minUInt64DoubleNeg5000000Double3_141592653589793Double180_rounded() {
-        let unit = Degrees_Per_Seconds_d(-5000000)
-        let expected = deg_per_s_d_to_rad_per_s_u(-5000000)
-        let result = Radians_Per_Seconds_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: radians_per_seconds_u = 1
-        let categoryResult = AngularVelocity(unit).radians_per_seconds_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testdegrees_per_seconds_dToradians_per_seconds_uUsing0Expectingradians_per_seconds_uDouble0Double3_141592653589793Double180_roundedDoubleUInt64_max_nextDownUInt64_maxDouble0Double3_141592653589793Double180_roundedDoubleUInt64_min_nextUpUInt64_minUInt64Double0Double3_141592653589793Double180_rounded() {
-        let unit = Degrees_Per_Seconds_d(0)
-        let expected = deg_per_s_d_to_rad_per_s_u(0)
-        let result = Radians_Per_Seconds_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: radians_per_seconds_u = 1
-        let categoryResult = AngularVelocity(unit).radians_per_seconds_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testdegrees_per_seconds_dToradians_per_seconds_uUsing5000000Expectingradians_per_seconds_uDouble5000000Double3_141592653589793Double180_roundedDoubleUInt64_max_nextDownUInt64_maxDouble5000000Double3_141592653589793Double180_roundedDoubleUInt64_min_nextUpUInt64_minUInt64Double5000000Double3_141592653589793Double180_rounded() {
-        let unit = Degrees_Per_Seconds_d(5000000)
-        let expected = deg_per_s_d_to_rad_per_s_u(5000000)
-        let result = Radians_Per_Seconds_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: radians_per_seconds_u = 1
-        let categoryResult = AngularVelocity(unit).radians_per_seconds_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testdegrees_per_seconds_dToradians_per_seconds_uUsingNegDouble_greatestFiniteMagnitudeExpectingradians_per_seconds_uUInt64_min() {
-        let unit = Degrees_Per_Seconds_d(-Double.greatestFiniteMagnitude)
-        let expected = deg_per_s_d_to_rad_per_s_u(-Double.greatestFiniteMagnitude)
-        let result = Radians_Per_Seconds_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testdegrees_per_seconds_dToradians_per_seconds_uUsingDouble_greatestFiniteMagnitudeExpectingradians_per_seconds_uUInt64_max() {
-        let unit = Degrees_Per_Seconds_d(Double.greatestFiniteMagnitude)
-        let expected = deg_per_s_d_to_rad_per_s_u(Double.greatestFiniteMagnitude)
-        let result = Radians_Per_Seconds_u(unit).rawValue
-        XCTAssertEqual(expected, result)
+        let expected1 = d_to_deg_per_s_d(5.0)
+        let result1 = Degrees_Per_Seconds_d(Double(5.0)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = d_to_deg_per_s_d(Double(-Double.greatestFiniteMagnitude))
+        let result2 = Degrees_Per_Seconds_d(Double(Double(-Double.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = d_to_deg_per_s_d(Double(Double.greatestFiniteMagnitude))
+        let result3 = Degrees_Per_Seconds_d(Double(Double(Double.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
 }

@@ -4,292 +4,67 @@ import XCTest
 
 final class Distance_Centimetres_tTests1: XCTestCase {
 
-    func testcentimetres_tToint64_tUsingcentimetres_tInt64_maxExpectingInt64Int64_max() {
-        XCTAssertEqual(cm_t_to_i64(centimetres_t(Int64.max)), Int64(Int64.max))
+    func testfloat_to_centimetres_t() {
+        XCTAssertEqual(f_to_cm_t(0.0), 0)
+        XCTAssertEqual(f_to_cm_t(5.0), 5)
+        XCTAssertEqual(f_to_cm_t(Float(-Float.greatestFiniteMagnitude)), centimetres_t(Int64.min))
+        XCTAssertEqual(f_to_cm_t(Float(Float.greatestFiniteMagnitude)), centimetres_t(Int64.max))
     }
 
-    func testcentimetres_tToint64_tUsingcentimetres_tInt64_minExpectingInt64Int64_min() {
-        XCTAssertEqual(cm_t_to_i64(centimetres_t(Int64.min)), Int64(Int64.min))
+    func testint16_t_to_centimetres_t() {
+        XCTAssertEqual(i16_to_cm_t(0), 0)
+        XCTAssertEqual(i16_to_cm_t(5), 5)
+        XCTAssertEqual(i16_to_cm_t(Int16(Int16.min)), centimetres_t(Int16.min))
+        XCTAssertEqual(i16_to_cm_t(Int16(Int16.max)), centimetres_t(Int16.max))
     }
 
-    func testcentimetres_tToint8_tUsing0Expecting0() {
-        XCTAssertEqual(cm_t_to_i8(0), 0)
+    func testint32_t_to_centimetres_t() {
+        XCTAssertEqual(i32_to_cm_t(0), 0)
+        XCTAssertEqual(i32_to_cm_t(5), 5)
+        XCTAssertEqual(i32_to_cm_t(Int32(Int32.min)), centimetres_t(Int32.min))
+        XCTAssertEqual(i32_to_cm_t(Int32(Int32.max)), centimetres_t(Int32.max))
     }
 
-    func testcentimetres_tToint8_tUsing5Expecting5() {
-        XCTAssertEqual(cm_t_to_i8(5), 5)
+    func testint64_t_to_centimetres_t() {
+        XCTAssertEqual(i64_to_cm_t(0), 0)
+        XCTAssertEqual(i64_to_cm_t(5), 5)
+        XCTAssertEqual(i64_to_cm_t(Int64(Int64.min)), centimetres_t(Int64.min))
+        XCTAssertEqual(i64_to_cm_t(Int64(Int64.max)), centimetres_t(Int64.max))
     }
 
-    func testcentimetres_tToint8_tUsingcentimetres_tInt64_maxExpectingInt8Int8_max() {
-        XCTAssertEqual(cm_t_to_i8(centimetres_t(Int64.max)), Int8(Int8.max))
+    func testint8_t_to_centimetres_t() {
+        XCTAssertEqual(i8_to_cm_t(0), 0)
+        XCTAssertEqual(i8_to_cm_t(5), 5)
+        XCTAssertEqual(i8_to_cm_t(Int8(Int8.min)), centimetres_t(Int8.min))
+        XCTAssertEqual(i8_to_cm_t(Int8(Int8.max)), centimetres_t(Int8.max))
     }
 
-    func testcentimetres_tToint8_tUsingcentimetres_tInt64_minExpectingInt8Int8_min() {
-        XCTAssertEqual(cm_t_to_i8(centimetres_t(Int64.min)), Int8(Int8.min))
+    func testuint16_t_to_centimetres_t() {
+        XCTAssertEqual(u16_to_cm_t(0), 0)
+        XCTAssertEqual(u16_to_cm_t(5), 5)
+        XCTAssertEqual(u16_to_cm_t(UInt16(UInt16.min)), centimetres_t(UInt16.min))
+        XCTAssertEqual(u16_to_cm_t(UInt16(UInt16.max)), centimetres_t(UInt16.max))
     }
 
-    func testcentimetres_tTometres_dUsing0Expectingmetres_d0_0100_0() {
-        let result = cm_t_to_m_d(0)
-        let expected: metres_d = metres_d(0.0) / 100.0
-        let tolerance: metres_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
+    func testuint32_t_to_centimetres_t() {
+        XCTAssertEqual(u32_to_cm_t(0), 0)
+        XCTAssertEqual(u32_to_cm_t(5), 5)
+        XCTAssertEqual(u32_to_cm_t(UInt32(UInt32.min)), centimetres_t(UInt32.min))
+        XCTAssertEqual(u32_to_cm_t(UInt32(UInt32.max)), centimetres_t(UInt32.max))
     }
 
-    func testcentimetres_tTometres_dUsing15Expectingmetres_d15_0100_0() {
-        let result = cm_t_to_m_d(15)
-        let expected: metres_d = metres_d(15.0) / 100.0
-        let tolerance: metres_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
+    func testuint64_t_to_centimetres_t() {
+        XCTAssertEqual(u64_to_cm_t(0), 0)
+        XCTAssertEqual(u64_to_cm_t(5), 5)
+        XCTAssertEqual(u64_to_cm_t(UInt64(UInt64.min)), centimetres_t(UInt64.min))
+        XCTAssertEqual(u64_to_cm_t(UInt64(UInt64.max)), centimetres_t(Int64.max))
     }
 
-    func testcentimetres_tTometres_dUsing2500000Expectingmetres_d2500000_0100_0() {
-        let result = cm_t_to_m_d(2500000)
-        let expected: metres_d = metres_d(2500000.0) / 100.0
-        let tolerance: metres_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testcentimetres_tTometres_dUsing250000Expectingmetres_d250000_0100_0() {
-        let result = cm_t_to_m_d(250000)
-        let expected: metres_d = metres_d(250000.0) / 100.0
-        let tolerance: metres_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testcentimetres_tTometres_dUsing25000Expectingmetres_d25000_0100_0() {
-        let result = cm_t_to_m_d(25000)
-        let expected: metres_d = metres_d(25000.0) / 100.0
-        let tolerance: metres_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testcentimetres_tTometres_dUsing2500Expectingmetres_d2500_0100_0() {
-        let result = cm_t_to_m_d(2500)
-        let expected: metres_d = metres_d(2500.0) / 100.0
-        let tolerance: metres_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testcentimetres_tTometres_dUsing250Expectingmetres_d250_0100_0() {
-        let result = cm_t_to_m_d(250)
-        let expected: metres_d = metres_d(250.0) / 100.0
-        let tolerance: metres_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testcentimetres_tTometres_dUsing25Expectingmetres_d25_0100_0() {
-        let result = cm_t_to_m_d(25)
-        let expected: metres_d = metres_d(25.0) / 100.0
-        let tolerance: metres_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testcentimetres_tTometres_dUsingInt64_maxExpectingmetres_dInt64_max100_0() {
-        let result = cm_t_to_m_d(Int64.max)
-        let expected: metres_d = metres_d(Int64.max) / 100.0
-        let tolerance: metres_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testcentimetres_tTometres_dUsingInt64_minExpectingmetres_dInt64_min100_0() {
-        let result = cm_t_to_m_d(Int64.min)
-        let expected: metres_d = metres_d(Int64.min) / 100.0
-        let tolerance: metres_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testcentimetres_tTometres_dUsingNeg1000Expectingmetres_dNeg1000_0100_0() {
-        let result = cm_t_to_m_d(-1000)
-        let expected: metres_d = metres_d(-1000.0) / 100.0
-        let tolerance: metres_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testcentimetres_tTometres_dUsingNeg10Expectingmetres_dNeg10_0100_0() {
-        let result = cm_t_to_m_d(-10)
-        let expected: metres_d = metres_d(-10.0) / 100.0
-        let tolerance: metres_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testcentimetres_tTometres_dUsingNeg323Expectingmetres_dNeg323_0100_0() {
-        let result = cm_t_to_m_d(-323)
-        let expected: metres_d = metres_d(-323.0) / 100.0
-        let tolerance: metres_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testcentimetres_tTometres_dUsingNeg5Expectingmetres_dNeg5_0100_0() {
-        let result = cm_t_to_m_d(-5)
-        let expected: metres_d = metres_d(-5.0) / 100.0
-        let tolerance: metres_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testcentimetres_tTometres_fUsing0Expectingmetres_f0_0100_0() {
-        let result = cm_t_to_m_f(0)
-        let expected: metres_f = metres_f(0.0) / 100.0
-        let tolerance: metres_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testcentimetres_tTometres_fUsing15Expectingmetres_f15_0100_0() {
-        let result = cm_t_to_m_f(15)
-        let expected: metres_f = metres_f(15.0) / 100.0
-        let tolerance: metres_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testcentimetres_tTometres_fUsing2500000Expectingmetres_f2500000_0100_0() {
-        let result = cm_t_to_m_f(2500000)
-        let expected: metres_f = metres_f(2500000.0) / 100.0
-        let tolerance: metres_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testcentimetres_tTometres_fUsing250000Expectingmetres_f250000_0100_0() {
-        let result = cm_t_to_m_f(250000)
-        let expected: metres_f = metres_f(250000.0) / 100.0
-        let tolerance: metres_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testcentimetres_tTometres_fUsing25000Expectingmetres_f25000_0100_0() {
-        let result = cm_t_to_m_f(25000)
-        let expected: metres_f = metres_f(25000.0) / 100.0
-        let tolerance: metres_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testcentimetres_tTometres_fUsing2500Expectingmetres_f2500_0100_0() {
-        let result = cm_t_to_m_f(2500)
-        let expected: metres_f = metres_f(2500.0) / 100.0
-        let tolerance: metres_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testcentimetres_tTometres_fUsing250Expectingmetres_f250_0100_0() {
-        let result = cm_t_to_m_f(250)
-        let expected: metres_f = metres_f(250.0) / 100.0
-        let tolerance: metres_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testcentimetres_tTometres_fUsing25Expectingmetres_f25_0100_0() {
-        let result = cm_t_to_m_f(25)
-        let expected: metres_f = metres_f(25.0) / 100.0
-        let tolerance: metres_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testcentimetres_tTometres_fUsingInt64_maxExpectingmetres_fInt64_max100_0() {
-        let result = cm_t_to_m_f(Int64.max)
-        let expected: metres_f = metres_f(Int64.max) / 100.0
-        let tolerance: metres_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testcentimetres_tTometres_fUsingInt64_minExpectingmetres_fInt64_min100_0() {
-        let result = cm_t_to_m_f(Int64.min)
-        let expected: metres_f = metres_f(Int64.min) / 100.0
-        let tolerance: metres_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
+    func testuint8_t_to_centimetres_t() {
+        XCTAssertEqual(u8_to_cm_t(0), 0)
+        XCTAssertEqual(u8_to_cm_t(5), 5)
+        XCTAssertEqual(u8_to_cm_t(UInt8(UInt8.min)), centimetres_t(UInt8.min))
+        XCTAssertEqual(u8_to_cm_t(UInt8(UInt8.max)), centimetres_t(UInt8.max))
     }
 
 }

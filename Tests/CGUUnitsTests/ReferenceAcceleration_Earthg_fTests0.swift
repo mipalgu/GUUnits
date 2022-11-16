@@ -4,7 +4,7 @@ import XCTest
 
 final class ReferenceAcceleration_Earthg_fTests0: XCTestCase {
 
-    func testdoubleToearthG_fUsing0_0Expecting0_0() {
+    func testdouble_to_earthG_f() {
         let result = d_to_gs_f(0.0)
         let expected: earthG_f = 0.0
         let tolerance: earthG_f = 0.99
@@ -13,42 +13,33 @@ final class ReferenceAcceleration_Earthg_fTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
-    }
-
-    func testdoubleToearthG_fUsing5_0Expecting5_0() {
-        let result = d_to_gs_f(5.0)
-        let expected: earthG_f = 5.0
-        let tolerance: earthG_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        let result1 = d_to_gs_f(5.0)
+        let expected1: earthG_f = 5.0
+        let tolerance1: earthG_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = d_to_gs_f(Double(-Double.greatestFiniteMagnitude))
+        let expected2: earthG_f = earthG_f(-Float.greatestFiniteMagnitude)
+        let tolerance2: earthG_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = d_to_gs_f(Double(Double.greatestFiniteMagnitude))
+        let expected3: earthG_f = earthG_f(Float.greatestFiniteMagnitude)
+        let tolerance3: earthG_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
         }
     }
 
-    func testdoubleToearthG_fUsingDoubleDouble_greatestFiniteMagnitudeExpectingearthG_fFloat_greatestFiniteMagnitude() {
-        let result = d_to_gs_f(Double(Double.greatestFiniteMagnitude))
-        let expected: earthG_f = earthG_f(Float.greatestFiniteMagnitude)
-        let tolerance: earthG_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testdoubleToearthG_fUsingDoubleNegDouble_greatestFiniteMagnitudeExpectingearthG_fNegFloat_greatestFiniteMagnitude() {
-        let result = d_to_gs_f(Double(-Double.greatestFiniteMagnitude))
-        let expected: earthG_f = earthG_f(-Float.greatestFiniteMagnitude)
-        let tolerance: earthG_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testearthG_fTodoubleUsing0_0Expecting0_0() {
+    func testearthG_f_to_double() {
         let result = gs_f_to_d(0.0)
         let expected: Double = 0.0
         let tolerance: Double = 0.99
@@ -57,75 +48,33 @@ final class ReferenceAcceleration_Earthg_fTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
-    }
-
-    func testearthG_fTodoubleUsing5_0Expecting5_0() {
-        let result = gs_f_to_d(5.0)
-        let expected: Double = 5.0
-        let tolerance: Double = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        let result1 = gs_f_to_d(5.0)
+        let expected1: Double = 5.0
+        let tolerance1: Double = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = gs_f_to_d(earthG_f(-Float.greatestFiniteMagnitude))
+        let expected2: Double = Double(-Float.greatestFiniteMagnitude)
+        let tolerance2: Double = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = gs_f_to_d(earthG_f(Float.greatestFiniteMagnitude))
+        let expected3: Double = Double(Float.greatestFiniteMagnitude)
+        let tolerance3: Double = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
         }
     }
 
-    func testearthG_fTodoubleUsingearthG_fFloat_greatestFiniteMagnitudeExpectingDoubleFloat_greatestFiniteMagnitude() {
-        let result = gs_f_to_d(earthG_f(Float.greatestFiniteMagnitude))
-        let expected: Double = Double(Float.greatestFiniteMagnitude)
-        let tolerance: Double = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testearthG_fTodoubleUsingearthG_fNegFloat_greatestFiniteMagnitudeExpectingDoubleNegFloat_greatestFiniteMagnitude() {
-        let result = gs_f_to_d(earthG_f(-Float.greatestFiniteMagnitude))
-        let expected: Double = Double(-Float.greatestFiniteMagnitude)
-        let tolerance: Double = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testearthG_fToearthG_dUsing0ExpectingearthG_dDouble0() {
-        let result = gs_f_to_gs_d(0)
-        let expected: earthG_d = earthG_d(Double(0))
-        let tolerance: earthG_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testearthG_fToearthG_dUsing5000000ExpectingearthG_dDouble5000000() {
-        let result = gs_f_to_gs_d(5000000)
-        let expected: earthG_d = earthG_d(Double(5000000))
-        let tolerance: earthG_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testearthG_fToearthG_dUsingFloat_greatestFiniteMagnitudeExpectingearthG_dDouble_greatestFiniteMagnitude() {
-        let result = gs_f_to_gs_d(Float.greatestFiniteMagnitude)
-        let expected: earthG_d = earthG_d(Double.greatestFiniteMagnitude)
-        let tolerance: earthG_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testearthG_fToearthG_dUsingNeg5000000ExpectingearthG_dDoubleNeg5000000() {
+    func testearthG_f_to_earthG_d() {
         let result = gs_f_to_gs_d(-5000000)
         let expected: earthG_d = earthG_d(Double(-5000000))
         let tolerance: earthG_d = 0.99
@@ -134,60 +83,57 @@ final class ReferenceAcceleration_Earthg_fTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
-    }
-
-    func testearthG_fToearthG_dUsingNegFloat_greatestFiniteMagnitudeExpectingearthG_dNegDouble_greatestFiniteMagnitude() {
-        let result = gs_f_to_gs_d(-Float.greatestFiniteMagnitude)
-        let expected: earthG_d = earthG_d(-Double.greatestFiniteMagnitude)
-        let tolerance: earthG_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        let result1 = gs_f_to_gs_d(0)
+        let expected1: earthG_d = earthG_d(Double(0))
+        let tolerance1: earthG_d = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = gs_f_to_gs_d(5000000)
+        let expected2: earthG_d = earthG_d(Double(5000000))
+        let tolerance2: earthG_d = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = gs_f_to_gs_d(-Float.greatestFiniteMagnitude)
+        let expected3: earthG_d = earthG_d(-Double.greatestFiniteMagnitude)
+        let tolerance3: earthG_d = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+        let result4 = gs_f_to_gs_d(Float.greatestFiniteMagnitude)
+        let expected4: earthG_d = earthG_d(Double.greatestFiniteMagnitude)
+        let tolerance4: earthG_d = 0.99
+        if result4 > expected4 {
+            XCTAssertLessThanOrEqual(result4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - result4, tolerance4)
         }
     }
 
-    func testearthG_fToearthG_tUsing0ExpectingearthG_tDouble0_roundedDoubleInt64_max_nextDownInt64_maxDouble0_roundedDoubleInt64_min_nextUpInt64_minInt64Double0_rounded() {
+    func testearthG_f_to_earthG_t() {
+        XCTAssertEqual(gs_f_to_gs_t(-5000000), earthG_t(((Double(-5000000)).rounded()) > (Double(Int64.max)).nextDown ? (Int64.max) : ((((Double(-5000000)).rounded()) < (Double(Int64.min)).nextUp) ? (Int64.min) : Int64((Double(-5000000)).rounded()))))
         XCTAssertEqual(gs_f_to_gs_t(0), earthG_t(((Double(0)).rounded()) > (Double(Int64.max)).nextDown ? (Int64.max) : ((((Double(0)).rounded()) < (Double(Int64.min)).nextUp) ? (Int64.min) : Int64((Double(0)).rounded()))))
-    }
-
-    func testearthG_fToearthG_tUsing5000000ExpectingearthG_tDouble5000000_roundedDoubleInt64_max_nextDownInt64_maxDouble5000000_roundedDoubleInt64_min_nextUpInt64_minInt64Double5000000_rounded() {
         XCTAssertEqual(gs_f_to_gs_t(5000000), earthG_t(((Double(5000000)).rounded()) > (Double(Int64.max)).nextDown ? (Int64.max) : ((((Double(5000000)).rounded()) < (Double(Int64.min)).nextUp) ? (Int64.min) : Int64((Double(5000000)).rounded()))))
-    }
-
-    func testearthG_fToearthG_tUsingFloat_greatestFiniteMagnitudeExpectingearthG_tInt64_max() {
+        XCTAssertEqual(gs_f_to_gs_t(-Float.greatestFiniteMagnitude), earthG_t(Int64.min))
         XCTAssertEqual(gs_f_to_gs_t(Float.greatestFiniteMagnitude), earthG_t(Int64.max))
     }
 
-    func testearthG_fToearthG_tUsingNeg5000000ExpectingearthG_tDoubleNeg5000000_roundedDoubleInt64_max_nextDownInt64_maxDoubleNeg5000000_roundedDoubleInt64_min_nextUpInt64_minInt64DoubleNeg5000000_rounded() {
-        XCTAssertEqual(gs_f_to_gs_t(-5000000), earthG_t(((Double(-5000000)).rounded()) > (Double(Int64.max)).nextDown ? (Int64.max) : ((((Double(-5000000)).rounded()) < (Double(Int64.min)).nextUp) ? (Int64.min) : Int64((Double(-5000000)).rounded()))))
-    }
-
-    func testearthG_fToearthG_tUsingNegFloat_greatestFiniteMagnitudeExpectingearthG_tInt64_min() {
-        XCTAssertEqual(gs_f_to_gs_t(-Float.greatestFiniteMagnitude), earthG_t(Int64.min))
-    }
-
-    func testearthG_fToearthG_uUsing0ExpectingearthG_uDouble0_roundedDoubleUInt64_max_nextDownUInt64_maxDouble0_roundedDoubleUInt64_min_nextUpUInt64_minUInt64Double0_rounded() {
+    func testearthG_f_to_earthG_u() {
+        XCTAssertEqual(gs_f_to_gs_u(-5000000), earthG_u(((Double(-5000000)).rounded()) > (Double(UInt64.max)).nextDown ? (UInt64.max) : ((((Double(-5000000)).rounded()) < (Double(UInt64.min)).nextUp) ? (UInt64.min) : UInt64((Double(-5000000)).rounded()))))
         XCTAssertEqual(gs_f_to_gs_u(0), earthG_u(((Double(0)).rounded()) > (Double(UInt64.max)).nextDown ? (UInt64.max) : ((((Double(0)).rounded()) < (Double(UInt64.min)).nextUp) ? (UInt64.min) : UInt64((Double(0)).rounded()))))
-    }
-
-    func testearthG_fToearthG_uUsing5000000ExpectingearthG_uDouble5000000_roundedDoubleUInt64_max_nextDownUInt64_maxDouble5000000_roundedDoubleUInt64_min_nextUpUInt64_minUInt64Double5000000_rounded() {
         XCTAssertEqual(gs_f_to_gs_u(5000000), earthG_u(((Double(5000000)).rounded()) > (Double(UInt64.max)).nextDown ? (UInt64.max) : ((((Double(5000000)).rounded()) < (Double(UInt64.min)).nextUp) ? (UInt64.min) : UInt64((Double(5000000)).rounded()))))
-    }
-
-    func testearthG_fToearthG_uUsingFloat_greatestFiniteMagnitudeExpectingearthG_uUInt64_max() {
+        XCTAssertEqual(gs_f_to_gs_u(-Float.greatestFiniteMagnitude), earthG_u(UInt64.min))
         XCTAssertEqual(gs_f_to_gs_u(Float.greatestFiniteMagnitude), earthG_u(UInt64.max))
     }
 
-    func testearthG_fToearthG_uUsingNeg5000000ExpectingearthG_uDoubleNeg5000000_roundedDoubleUInt64_max_nextDownUInt64_maxDoubleNeg5000000_roundedDoubleUInt64_min_nextUpUInt64_minUInt64DoubleNeg5000000_rounded() {
-        XCTAssertEqual(gs_f_to_gs_u(-5000000), earthG_u(((Double(-5000000)).rounded()) > (Double(UInt64.max)).nextDown ? (UInt64.max) : ((((Double(-5000000)).rounded()) < (Double(UInt64.min)).nextUp) ? (UInt64.min) : UInt64((Double(-5000000)).rounded()))))
-    }
-
-    func testearthG_fToearthG_uUsingNegFloat_greatestFiniteMagnitudeExpectingearthG_uUInt64_min() {
-        XCTAssertEqual(gs_f_to_gs_u(-Float.greatestFiniteMagnitude), earthG_u(UInt64.min))
-    }
-
-    func testearthG_fTofloatUsing0_0Expecting0_0() {
+    func testearthG_f_to_float() {
         let result = gs_f_to_f(0.0)
         let expected: Float = 0.0
         let tolerance: Float = 0.99
@@ -196,51 +142,401 @@ final class ReferenceAcceleration_Earthg_fTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
-    }
-
-    func testearthG_fTofloatUsing5_0Expecting5_0() {
-        let result = gs_f_to_f(5.0)
-        let expected: Float = 5.0
-        let tolerance: Float = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        let result1 = gs_f_to_f(5.0)
+        let expected1: Float = 5.0
+        let tolerance1: Float = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = gs_f_to_f(earthG_f(-Float.greatestFiniteMagnitude))
+        let expected2: Float = Float(-Float.greatestFiniteMagnitude)
+        let tolerance2: Float = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = gs_f_to_f(earthG_f(Float.greatestFiniteMagnitude))
+        let expected3: Float = Float(Float.greatestFiniteMagnitude)
+        let tolerance3: Float = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
         }
     }
 
-    func testearthG_fTofloatUsingearthG_fFloat_greatestFiniteMagnitudeExpectingFloatFloat_greatestFiniteMagnitude() {
-        let result = gs_f_to_f(earthG_f(Float.greatestFiniteMagnitude))
-        let expected: Float = Float(Float.greatestFiniteMagnitude)
-        let tolerance: Float = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testearthG_fTofloatUsingearthG_fNegFloat_greatestFiniteMagnitudeExpectingFloatNegFloat_greatestFiniteMagnitude() {
-        let result = gs_f_to_f(earthG_f(-Float.greatestFiniteMagnitude))
-        let expected: Float = Float(-Float.greatestFiniteMagnitude)
-        let tolerance: Float = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testearthG_fToint16_tUsing0_0Expecting0() {
+    func testearthG_f_to_int16_t() {
         XCTAssertEqual(gs_f_to_i16(0.0), 0)
-    }
-
-    func testearthG_fToint16_tUsing5_0Expecting5() {
         XCTAssertEqual(gs_f_to_i16(5.0), 5)
+        XCTAssertEqual(gs_f_to_i16(earthG_f(-Float.greatestFiniteMagnitude)), Int16(Int16.min))
+        XCTAssertEqual(gs_f_to_i16(earthG_f(Float.greatestFiniteMagnitude)), Int16(Int16.max))
     }
 
-    func testearthG_fToint16_tUsingearthG_fFloat_greatestFiniteMagnitudeExpectingInt16Int16_max() {
-        XCTAssertEqual(gs_f_to_i16(earthG_f(Float.greatestFiniteMagnitude)), Int16(Int16.max))
+    func testearthG_f_to_int32_t() {
+        XCTAssertEqual(gs_f_to_i32(0.0), 0)
+        XCTAssertEqual(gs_f_to_i32(5.0), 5)
+        XCTAssertEqual(gs_f_to_i32(earthG_f(-Float.greatestFiniteMagnitude)), Int32(Int32.min))
+        XCTAssertEqual(gs_f_to_i32(earthG_f(Float.greatestFiniteMagnitude)), Int32(Int32.max))
+    }
+
+    func testearthG_f_to_int64_t() {
+        XCTAssertEqual(gs_f_to_i64(0.0), 0)
+        XCTAssertEqual(gs_f_to_i64(5.0), 5)
+        XCTAssertEqual(gs_f_to_i64(earthG_f(-Float.greatestFiniteMagnitude)), Int64(Int64.min))
+        XCTAssertEqual(gs_f_to_i64(earthG_f(Float.greatestFiniteMagnitude)), Int64(Int64.max))
+    }
+
+    func testearthG_f_to_int8_t() {
+        XCTAssertEqual(gs_f_to_i8(0.0), 0)
+        XCTAssertEqual(gs_f_to_i8(5.0), 5)
+        XCTAssertEqual(gs_f_to_i8(earthG_f(-Float.greatestFiniteMagnitude)), Int8(Int8.min))
+        XCTAssertEqual(gs_f_to_i8(earthG_f(Float.greatestFiniteMagnitude)), Int8(Int8.max))
+    }
+
+    func testearthG_f_to_uint16_t() {
+        XCTAssertEqual(gs_f_to_u16(0.0), 0)
+        XCTAssertEqual(gs_f_to_u16(5.0), 5)
+        XCTAssertEqual(gs_f_to_u16(earthG_f(-Float.greatestFiniteMagnitude)), UInt16(UInt16.min))
+        XCTAssertEqual(gs_f_to_u16(earthG_f(Float.greatestFiniteMagnitude)), UInt16(UInt16.max))
+    }
+
+    func testearthG_f_to_uint32_t() {
+        XCTAssertEqual(gs_f_to_u32(0.0), 0)
+        XCTAssertEqual(gs_f_to_u32(5.0), 5)
+        XCTAssertEqual(gs_f_to_u32(earthG_f(-Float.greatestFiniteMagnitude)), UInt32(UInt32.min))
+        XCTAssertEqual(gs_f_to_u32(earthG_f(Float.greatestFiniteMagnitude)), UInt32(UInt32.max))
+    }
+
+    func testearthG_f_to_uint64_t() {
+        XCTAssertEqual(gs_f_to_u64(0.0), 0)
+        XCTAssertEqual(gs_f_to_u64(5.0), 5)
+        XCTAssertEqual(gs_f_to_u64(earthG_f(-Float.greatestFiniteMagnitude)), UInt64(UInt64.min))
+        XCTAssertEqual(gs_f_to_u64(earthG_f(Float.greatestFiniteMagnitude)), UInt64(UInt64.max))
+    }
+
+    func testearthG_f_to_uint8_t() {
+        XCTAssertEqual(gs_f_to_u8(0.0), 0)
+        XCTAssertEqual(gs_f_to_u8(5.0), 5)
+        XCTAssertEqual(gs_f_to_u8(earthG_f(-Float.greatestFiniteMagnitude)), UInt8(UInt8.min))
+        XCTAssertEqual(gs_f_to_u8(earthG_f(Float.greatestFiniteMagnitude)), UInt8(UInt8.max))
+    }
+
+    func testfloat_to_earthG_f() {
+        let result = f_to_gs_f(0.0)
+        let expected: earthG_f = 0.0
+        let tolerance: earthG_f = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = f_to_gs_f(5.0)
+        let expected1: earthG_f = 5.0
+        let tolerance1: earthG_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = f_to_gs_f(Float(-Float.greatestFiniteMagnitude))
+        let expected2: earthG_f = earthG_f(-Float.greatestFiniteMagnitude)
+        let tolerance2: earthG_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = f_to_gs_f(Float(Float.greatestFiniteMagnitude))
+        let expected3: earthG_f = earthG_f(Float.greatestFiniteMagnitude)
+        let tolerance3: earthG_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+    }
+
+    func testint16_t_to_earthG_f() {
+        let result = i16_to_gs_f(0)
+        let expected: earthG_f = 0.0
+        let tolerance: earthG_f = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = i16_to_gs_f(5)
+        let expected1: earthG_f = 5.0
+        let tolerance1: earthG_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = i16_to_gs_f(Int16(Int16.min))
+        let expected2: earthG_f = earthG_f(Int16.min)
+        let tolerance2: earthG_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = i16_to_gs_f(Int16(Int16.max))
+        let expected3: earthG_f = earthG_f(Int16.max)
+        let tolerance3: earthG_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+    }
+
+    func testint32_t_to_earthG_f() {
+        let result = i32_to_gs_f(0)
+        let expected: earthG_f = 0.0
+        let tolerance: earthG_f = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = i32_to_gs_f(5)
+        let expected1: earthG_f = 5.0
+        let tolerance1: earthG_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = i32_to_gs_f(Int32(Int32.min))
+        let expected2: earthG_f = earthG_f(Int32.min)
+        let tolerance2: earthG_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = i32_to_gs_f(Int32(Int32.max))
+        let expected3: earthG_f = earthG_f(Int32.max)
+        let tolerance3: earthG_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+    }
+
+    func testint64_t_to_earthG_f() {
+        let result = i64_to_gs_f(0)
+        let expected: earthG_f = 0.0
+        let tolerance: earthG_f = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = i64_to_gs_f(5)
+        let expected1: earthG_f = 5.0
+        let tolerance1: earthG_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = i64_to_gs_f(Int64(Int64.min))
+        let expected2: earthG_f = earthG_f(Int64.min)
+        let tolerance2: earthG_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = i64_to_gs_f(Int64(Int64.max))
+        let expected3: earthG_f = earthG_f(Int64.max)
+        let tolerance3: earthG_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+    }
+
+    func testint8_t_to_earthG_f() {
+        let result = i8_to_gs_f(0)
+        let expected: earthG_f = 0.0
+        let tolerance: earthG_f = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = i8_to_gs_f(5)
+        let expected1: earthG_f = 5.0
+        let tolerance1: earthG_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = i8_to_gs_f(Int8(Int8.min))
+        let expected2: earthG_f = earthG_f(Int8.min)
+        let tolerance2: earthG_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = i8_to_gs_f(Int8(Int8.max))
+        let expected3: earthG_f = earthG_f(Int8.max)
+        let tolerance3: earthG_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+    }
+
+    func testuint16_t_to_earthG_f() {
+        let result = u16_to_gs_f(0)
+        let expected: earthG_f = 0.0
+        let tolerance: earthG_f = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = u16_to_gs_f(5)
+        let expected1: earthG_f = 5.0
+        let tolerance1: earthG_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = u16_to_gs_f(UInt16(UInt16.min))
+        let expected2: earthG_f = earthG_f(UInt16.min)
+        let tolerance2: earthG_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = u16_to_gs_f(UInt16(UInt16.max))
+        let expected3: earthG_f = earthG_f(UInt16.max)
+        let tolerance3: earthG_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+    }
+
+    func testuint32_t_to_earthG_f() {
+        let result = u32_to_gs_f(0)
+        let expected: earthG_f = 0.0
+        let tolerance: earthG_f = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = u32_to_gs_f(5)
+        let expected1: earthG_f = 5.0
+        let tolerance1: earthG_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = u32_to_gs_f(UInt32(UInt32.min))
+        let expected2: earthG_f = earthG_f(UInt32.min)
+        let tolerance2: earthG_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = u32_to_gs_f(UInt32(UInt32.max))
+        let expected3: earthG_f = earthG_f(UInt32.max)
+        let tolerance3: earthG_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+    }
+
+    func testuint64_t_to_earthG_f() {
+        let result = u64_to_gs_f(0)
+        let expected: earthG_f = 0.0
+        let tolerance: earthG_f = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = u64_to_gs_f(5)
+        let expected1: earthG_f = 5.0
+        let tolerance1: earthG_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = u64_to_gs_f(UInt64(UInt64.min))
+        let expected2: earthG_f = earthG_f(UInt64.min)
+        let tolerance2: earthG_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = u64_to_gs_f(UInt64(UInt64.max))
+        let expected3: earthG_f = earthG_f(UInt64.max)
+        let tolerance3: earthG_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+    }
+
+    func testuint8_t_to_earthG_f() {
+        let result = u8_to_gs_f(0)
+        let expected: earthG_f = 0.0
+        let tolerance: earthG_f = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = u8_to_gs_f(5)
+        let expected1: earthG_f = 5.0
+        let tolerance1: earthG_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = u8_to_gs_f(UInt8(UInt8.min))
+        let expected2: earthG_f = earthG_f(UInt8.min)
+        let tolerance2: earthG_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = u8_to_gs_f(UInt8(UInt8.max))
+        let expected3: earthG_f = earthG_f(UInt8.max)
+        let tolerance3: earthG_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
     }
 
 }

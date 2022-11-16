@@ -4,229 +4,365 @@ import XCTest
 
 final class Velocity_Centimetres_Per_Seconds_tTests1: XCTestCase {
 
-    func testcentimetres_per_seconds_tTocentimetres_per_milliseconds_tUsing0Expectingcentimetres_per_milliseconds_tInt64clampingInt640Int641000() {
-        XCTAssertEqual(cm_per_s_t_to_cm_per_ms_t(0), centimetres_per_milliseconds_t(Int64(clamping: (Int64(0)) / (Int64(1000)))))
-    }
-
-    func testcentimetres_per_seconds_tTocentimetres_per_milliseconds_tUsing5000000Expectingcentimetres_per_milliseconds_tInt64clampingInt645000000Int641000() {
-        XCTAssertEqual(cm_per_s_t_to_cm_per_ms_t(5000000), centimetres_per_milliseconds_t(Int64(clamping: (Int64(5000000)) / (Int64(1000)))))
-    }
-
-    func testcentimetres_per_seconds_tTocentimetres_per_milliseconds_tUsingInt64_maxExpectingcentimetres_per_milliseconds_tInt64_max() {
-        XCTAssertEqual(cm_per_s_t_to_cm_per_ms_t(Int64.max), centimetres_per_milliseconds_t(Int64.max))
-    }
-
-    func testcentimetres_per_seconds_tTocentimetres_per_milliseconds_tUsingInt64_minExpectingcentimetres_per_milliseconds_tInt64_min() {
-        XCTAssertEqual(cm_per_s_t_to_cm_per_ms_t(Int64.min), centimetres_per_milliseconds_t(Int64.min))
-    }
-
-    func testcentimetres_per_seconds_tTocentimetres_per_milliseconds_tUsingNeg5000000Expectingcentimetres_per_milliseconds_tInt64clampingInt64Neg5000000Int641000() {
-        XCTAssertEqual(cm_per_s_t_to_cm_per_ms_t(-5000000), centimetres_per_milliseconds_t(Int64(clamping: (Int64(-5000000)) / (Int64(1000)))))
-    }
-
-    func testcentimetres_per_seconds_tTocentimetres_per_milliseconds_uUsing0Expectingcentimetres_per_milliseconds_uUInt64clampingInt640Int641000() {
-        XCTAssertEqual(cm_per_s_t_to_cm_per_ms_u(0), centimetres_per_milliseconds_u(UInt64(clamping: (Int64(0)) / (Int64(1000)))))
-    }
-
-    func testcentimetres_per_seconds_tTocentimetres_per_milliseconds_uUsing5000000Expectingcentimetres_per_milliseconds_uUInt64clampingInt645000000Int641000() {
-        XCTAssertEqual(cm_per_s_t_to_cm_per_ms_u(5000000), centimetres_per_milliseconds_u(UInt64(clamping: (Int64(5000000)) / (Int64(1000)))))
-    }
-
-    func testcentimetres_per_seconds_tTocentimetres_per_milliseconds_uUsingInt64_maxExpectingcentimetres_per_milliseconds_uUInt64_max() {
-        XCTAssertEqual(cm_per_s_t_to_cm_per_ms_u(Int64.max), centimetres_per_milliseconds_u(UInt64.max))
-    }
-
-    func testcentimetres_per_seconds_tTocentimetres_per_milliseconds_uUsingInt64_minExpectingcentimetres_per_milliseconds_uUInt64_min() {
-        XCTAssertEqual(cm_per_s_t_to_cm_per_ms_u(Int64.min), centimetres_per_milliseconds_u(UInt64.min))
-    }
-
-    func testcentimetres_per_seconds_tTocentimetres_per_milliseconds_uUsingNeg5000000Expectingcentimetres_per_milliseconds_uUInt64clampingInt64Neg5000000Int641000() {
-        XCTAssertEqual(cm_per_s_t_to_cm_per_ms_u(-5000000), centimetres_per_milliseconds_u(UInt64(clamping: (Int64(-5000000)) / (Int64(1000)))))
-    }
-
-    func testcentimetres_per_seconds_tTocentimetres_per_seconds_dUsing0Expectingcentimetres_per_seconds_dDouble0() {
-        let result = cm_per_s_t_to_cm_per_s_d(0)
-        let expected: centimetres_per_seconds_d = centimetres_per_seconds_d(Double(0))
-        let tolerance: centimetres_per_seconds_d = 0.99
+    func testcentimetres_per_seconds_t_to_millimetres_per_microseconds_f() {
+        let result = cm_per_s_t_to_mm_per_us_f(-5000000)
+        let expected: millimetres_per_microseconds_f = millimetres_per_microseconds_f((Double(-5000000)) * ((Double(10)) / (Double(1000000))))
+        let tolerance: millimetres_per_microseconds_f = 0.99
         if result > expected {
             XCTAssertLessThanOrEqual(result - expected, tolerance)
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
+        let result1 = cm_per_s_t_to_mm_per_us_f(0)
+        let expected1: millimetres_per_microseconds_f = millimetres_per_microseconds_f((Double(0)) * ((Double(10)) / (Double(1000000))))
+        let tolerance1: millimetres_per_microseconds_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = cm_per_s_t_to_mm_per_us_f(5000000)
+        let expected2: millimetres_per_microseconds_f = millimetres_per_microseconds_f((Double(5000000)) * ((Double(10)) / (Double(1000000))))
+        let tolerance2: millimetres_per_microseconds_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = cm_per_s_t_to_mm_per_us_f(Int64.min)
+        let expected3: millimetres_per_microseconds_f = millimetres_per_microseconds_f(-Float.greatestFiniteMagnitude)
+        let tolerance3: millimetres_per_microseconds_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+        let result4 = cm_per_s_t_to_mm_per_us_f(Int64.max)
+        let expected4: millimetres_per_microseconds_f = millimetres_per_microseconds_f(Float.greatestFiniteMagnitude)
+        let tolerance4: millimetres_per_microseconds_f = 0.99
+        if result4 > expected4 {
+            XCTAssertLessThanOrEqual(result4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - result4, tolerance4)
+        }
     }
 
-    func testcentimetres_per_seconds_tTocentimetres_per_seconds_dUsing5000000Expectingcentimetres_per_seconds_dDouble5000000() {
-        let result = cm_per_s_t_to_cm_per_s_d(5000000)
-        let expected: centimetres_per_seconds_d = centimetres_per_seconds_d(Double(5000000))
-        let tolerance: centimetres_per_seconds_d = 0.99
+    func testcentimetres_per_seconds_t_to_millimetres_per_microseconds_t() {
+        XCTAssertEqual(cm_per_s_t_to_mm_per_us_t(-5000000), millimetres_per_microseconds_t((((Double(-5000000)) * ((Double(10)) / (Double(1000000)))).rounded()) > (Double(Int64.max)).nextDown ? (Int64.max) : (((((Double(-5000000)) * ((Double(10)) / (Double(1000000)))).rounded()) < (Double(Int64.min)).nextUp) ? (Int64.min) : Int64(((Double(-5000000)) * ((Double(10)) / (Double(1000000)))).rounded()))))
+        XCTAssertEqual(cm_per_s_t_to_mm_per_us_t(0), millimetres_per_microseconds_t((((Double(0)) * ((Double(10)) / (Double(1000000)))).rounded()) > (Double(Int64.max)).nextDown ? (Int64.max) : (((((Double(0)) * ((Double(10)) / (Double(1000000)))).rounded()) < (Double(Int64.min)).nextUp) ? (Int64.min) : Int64(((Double(0)) * ((Double(10)) / (Double(1000000)))).rounded()))))
+        XCTAssertEqual(cm_per_s_t_to_mm_per_us_t(5000000), millimetres_per_microseconds_t((((Double(5000000)) * ((Double(10)) / (Double(1000000)))).rounded()) > (Double(Int64.max)).nextDown ? (Int64.max) : (((((Double(5000000)) * ((Double(10)) / (Double(1000000)))).rounded()) < (Double(Int64.min)).nextUp) ? (Int64.min) : Int64(((Double(5000000)) * ((Double(10)) / (Double(1000000)))).rounded()))))
+        XCTAssertEqual(cm_per_s_t_to_mm_per_us_t(Int64.min), millimetres_per_microseconds_t(Int64.min))
+        XCTAssertEqual(cm_per_s_t_to_mm_per_us_t(Int64.max), millimetres_per_microseconds_t(Int64.max))
+    }
+
+    func testcentimetres_per_seconds_t_to_millimetres_per_microseconds_u() {
+        XCTAssertEqual(cm_per_s_t_to_mm_per_us_u(-5000000), millimetres_per_microseconds_u((((Double(-5000000)) * ((Double(10)) / (Double(1000000)))).rounded()) > (Double(UInt64.max)).nextDown ? (UInt64.max) : (((((Double(-5000000)) * ((Double(10)) / (Double(1000000)))).rounded()) < (Double(UInt64.min)).nextUp) ? (UInt64.min) : UInt64(((Double(-5000000)) * ((Double(10)) / (Double(1000000)))).rounded()))))
+        XCTAssertEqual(cm_per_s_t_to_mm_per_us_u(0), millimetres_per_microseconds_u((((Double(0)) * ((Double(10)) / (Double(1000000)))).rounded()) > (Double(UInt64.max)).nextDown ? (UInt64.max) : (((((Double(0)) * ((Double(10)) / (Double(1000000)))).rounded()) < (Double(UInt64.min)).nextUp) ? (UInt64.min) : UInt64(((Double(0)) * ((Double(10)) / (Double(1000000)))).rounded()))))
+        XCTAssertEqual(cm_per_s_t_to_mm_per_us_u(5000000), millimetres_per_microseconds_u((((Double(5000000)) * ((Double(10)) / (Double(1000000)))).rounded()) > (Double(UInt64.max)).nextDown ? (UInt64.max) : (((((Double(5000000)) * ((Double(10)) / (Double(1000000)))).rounded()) < (Double(UInt64.min)).nextUp) ? (UInt64.min) : UInt64(((Double(5000000)) * ((Double(10)) / (Double(1000000)))).rounded()))))
+        XCTAssertEqual(cm_per_s_t_to_mm_per_us_u(Int64.min), millimetres_per_microseconds_u(UInt64.min))
+        XCTAssertEqual(cm_per_s_t_to_mm_per_us_u(Int64.max), millimetres_per_microseconds_u(UInt64.max))
+    }
+
+    func testcentimetres_per_seconds_t_to_millimetres_per_milliseconds_d() {
+        let result = cm_per_s_t_to_mm_per_ms_d(-5000000)
+        let expected: millimetres_per_milliseconds_d = millimetres_per_milliseconds_d((Double(-5000000)) * ((Double(10)) / (Double(1000))))
+        let tolerance: millimetres_per_milliseconds_d = 0.99
         if result > expected {
             XCTAssertLessThanOrEqual(result - expected, tolerance)
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
+        let result1 = cm_per_s_t_to_mm_per_ms_d(0)
+        let expected1: millimetres_per_milliseconds_d = millimetres_per_milliseconds_d((Double(0)) * ((Double(10)) / (Double(1000))))
+        let tolerance1: millimetres_per_milliseconds_d = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = cm_per_s_t_to_mm_per_ms_d(5000000)
+        let expected2: millimetres_per_milliseconds_d = millimetres_per_milliseconds_d((Double(5000000)) * ((Double(10)) / (Double(1000))))
+        let tolerance2: millimetres_per_milliseconds_d = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = cm_per_s_t_to_mm_per_ms_d(Int64.min)
+        let expected3: millimetres_per_milliseconds_d = millimetres_per_milliseconds_d(-Double.greatestFiniteMagnitude)
+        let tolerance3: millimetres_per_milliseconds_d = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+        let result4 = cm_per_s_t_to_mm_per_ms_d(Int64.max)
+        let expected4: millimetres_per_milliseconds_d = millimetres_per_milliseconds_d(Double.greatestFiniteMagnitude)
+        let tolerance4: millimetres_per_milliseconds_d = 0.99
+        if result4 > expected4 {
+            XCTAssertLessThanOrEqual(result4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - result4, tolerance4)
+        }
     }
 
-    func testcentimetres_per_seconds_tTocentimetres_per_seconds_dUsingInt64_maxExpectingcentimetres_per_seconds_dDouble_greatestFiniteMagnitude() {
-        let result = cm_per_s_t_to_cm_per_s_d(Int64.max)
-        let expected: centimetres_per_seconds_d = centimetres_per_seconds_d(Double.greatestFiniteMagnitude)
-        let tolerance: centimetres_per_seconds_d = 0.99
+    func testcentimetres_per_seconds_t_to_millimetres_per_milliseconds_f() {
+        let result = cm_per_s_t_to_mm_per_ms_f(-5000000)
+        let expected: millimetres_per_milliseconds_f = millimetres_per_milliseconds_f((Double(-5000000)) * ((Double(10)) / (Double(1000))))
+        let tolerance: millimetres_per_milliseconds_f = 0.99
         if result > expected {
             XCTAssertLessThanOrEqual(result - expected, tolerance)
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
+        let result1 = cm_per_s_t_to_mm_per_ms_f(0)
+        let expected1: millimetres_per_milliseconds_f = millimetres_per_milliseconds_f((Double(0)) * ((Double(10)) / (Double(1000))))
+        let tolerance1: millimetres_per_milliseconds_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = cm_per_s_t_to_mm_per_ms_f(5000000)
+        let expected2: millimetres_per_milliseconds_f = millimetres_per_milliseconds_f((Double(5000000)) * ((Double(10)) / (Double(1000))))
+        let tolerance2: millimetres_per_milliseconds_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = cm_per_s_t_to_mm_per_ms_f(Int64.min)
+        let expected3: millimetres_per_milliseconds_f = millimetres_per_milliseconds_f(-Float.greatestFiniteMagnitude)
+        let tolerance3: millimetres_per_milliseconds_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+        let result4 = cm_per_s_t_to_mm_per_ms_f(Int64.max)
+        let expected4: millimetres_per_milliseconds_f = millimetres_per_milliseconds_f(Float.greatestFiniteMagnitude)
+        let tolerance4: millimetres_per_milliseconds_f = 0.99
+        if result4 > expected4 {
+            XCTAssertLessThanOrEqual(result4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - result4, tolerance4)
+        }
     }
 
-    func testcentimetres_per_seconds_tTocentimetres_per_seconds_dUsingInt64_minExpectingcentimetres_per_seconds_dNegDouble_greatestFiniteMagnitude() {
-        let result = cm_per_s_t_to_cm_per_s_d(Int64.min)
-        let expected: centimetres_per_seconds_d = centimetres_per_seconds_d(-Double.greatestFiniteMagnitude)
-        let tolerance: centimetres_per_seconds_d = 0.99
+    func testcentimetres_per_seconds_t_to_millimetres_per_milliseconds_t() {
+        XCTAssertEqual(cm_per_s_t_to_mm_per_ms_t(-5000000), millimetres_per_milliseconds_t((((Double(-5000000)) * ((Double(10)) / (Double(1000)))).rounded()) > (Double(Int64.max)).nextDown ? (Int64.max) : (((((Double(-5000000)) * ((Double(10)) / (Double(1000)))).rounded()) < (Double(Int64.min)).nextUp) ? (Int64.min) : Int64(((Double(-5000000)) * ((Double(10)) / (Double(1000)))).rounded()))))
+        XCTAssertEqual(cm_per_s_t_to_mm_per_ms_t(0), millimetres_per_milliseconds_t((((Double(0)) * ((Double(10)) / (Double(1000)))).rounded()) > (Double(Int64.max)).nextDown ? (Int64.max) : (((((Double(0)) * ((Double(10)) / (Double(1000)))).rounded()) < (Double(Int64.min)).nextUp) ? (Int64.min) : Int64(((Double(0)) * ((Double(10)) / (Double(1000)))).rounded()))))
+        XCTAssertEqual(cm_per_s_t_to_mm_per_ms_t(5000000), millimetres_per_milliseconds_t((((Double(5000000)) * ((Double(10)) / (Double(1000)))).rounded()) > (Double(Int64.max)).nextDown ? (Int64.max) : (((((Double(5000000)) * ((Double(10)) / (Double(1000)))).rounded()) < (Double(Int64.min)).nextUp) ? (Int64.min) : Int64(((Double(5000000)) * ((Double(10)) / (Double(1000)))).rounded()))))
+        XCTAssertEqual(cm_per_s_t_to_mm_per_ms_t(Int64.min), millimetres_per_milliseconds_t(Int64.min))
+        XCTAssertEqual(cm_per_s_t_to_mm_per_ms_t(Int64.max), millimetres_per_milliseconds_t(Int64.max))
+    }
+
+    func testcentimetres_per_seconds_t_to_millimetres_per_milliseconds_u() {
+        XCTAssertEqual(cm_per_s_t_to_mm_per_ms_u(-5000000), millimetres_per_milliseconds_u((((Double(-5000000)) * ((Double(10)) / (Double(1000)))).rounded()) > (Double(UInt64.max)).nextDown ? (UInt64.max) : (((((Double(-5000000)) * ((Double(10)) / (Double(1000)))).rounded()) < (Double(UInt64.min)).nextUp) ? (UInt64.min) : UInt64(((Double(-5000000)) * ((Double(10)) / (Double(1000)))).rounded()))))
+        XCTAssertEqual(cm_per_s_t_to_mm_per_ms_u(0), millimetres_per_milliseconds_u((((Double(0)) * ((Double(10)) / (Double(1000)))).rounded()) > (Double(UInt64.max)).nextDown ? (UInt64.max) : (((((Double(0)) * ((Double(10)) / (Double(1000)))).rounded()) < (Double(UInt64.min)).nextUp) ? (UInt64.min) : UInt64(((Double(0)) * ((Double(10)) / (Double(1000)))).rounded()))))
+        XCTAssertEqual(cm_per_s_t_to_mm_per_ms_u(5000000), millimetres_per_milliseconds_u((((Double(5000000)) * ((Double(10)) / (Double(1000)))).rounded()) > (Double(UInt64.max)).nextDown ? (UInt64.max) : (((((Double(5000000)) * ((Double(10)) / (Double(1000)))).rounded()) < (Double(UInt64.min)).nextUp) ? (UInt64.min) : UInt64(((Double(5000000)) * ((Double(10)) / (Double(1000)))).rounded()))))
+        XCTAssertEqual(cm_per_s_t_to_mm_per_ms_u(Int64.min), millimetres_per_milliseconds_u(UInt64.min))
+        XCTAssertEqual(cm_per_s_t_to_mm_per_ms_u(Int64.max), millimetres_per_milliseconds_u(UInt64.max))
+    }
+
+    func testcentimetres_per_seconds_t_to_millimetres_per_seconds_d() {
+        let result = cm_per_s_t_to_mm_per_s_d(-5000000)
+        let expected: millimetres_per_seconds_d = millimetres_per_seconds_d((Double(-5000000)) * (Double(10)))
+        let tolerance: millimetres_per_seconds_d = 0.99
         if result > expected {
             XCTAssertLessThanOrEqual(result - expected, tolerance)
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
+        let result1 = cm_per_s_t_to_mm_per_s_d(0)
+        let expected1: millimetres_per_seconds_d = millimetres_per_seconds_d((Double(0)) * (Double(10)))
+        let tolerance1: millimetres_per_seconds_d = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = cm_per_s_t_to_mm_per_s_d(5000000)
+        let expected2: millimetres_per_seconds_d = millimetres_per_seconds_d((Double(5000000)) * (Double(10)))
+        let tolerance2: millimetres_per_seconds_d = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = cm_per_s_t_to_mm_per_s_d(Int64.min)
+        let expected3: millimetres_per_seconds_d = millimetres_per_seconds_d(-Double.greatestFiniteMagnitude)
+        let tolerance3: millimetres_per_seconds_d = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+        let result4 = cm_per_s_t_to_mm_per_s_d(Int64.max)
+        let expected4: millimetres_per_seconds_d = millimetres_per_seconds_d(Double.greatestFiniteMagnitude)
+        let tolerance4: millimetres_per_seconds_d = 0.99
+        if result4 > expected4 {
+            XCTAssertLessThanOrEqual(result4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - result4, tolerance4)
+        }
     }
 
-    func testcentimetres_per_seconds_tTocentimetres_per_seconds_dUsingNeg5000000Expectingcentimetres_per_seconds_dDoubleNeg5000000() {
-        let result = cm_per_s_t_to_cm_per_s_d(-5000000)
-        let expected: centimetres_per_seconds_d = centimetres_per_seconds_d(Double(-5000000))
-        let tolerance: centimetres_per_seconds_d = 0.99
+    func testcentimetres_per_seconds_t_to_millimetres_per_seconds_f() {
+        let result = cm_per_s_t_to_mm_per_s_f(-5000000)
+        let expected: millimetres_per_seconds_f = millimetres_per_seconds_f((Double(-5000000)) * (Double(10)))
+        let tolerance: millimetres_per_seconds_f = 0.99
         if result > expected {
             XCTAssertLessThanOrEqual(result - expected, tolerance)
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
-    }
-
-    func testcentimetres_per_seconds_tTocentimetres_per_seconds_fUsing0Expectingcentimetres_per_seconds_fDouble0() {
-        let result = cm_per_s_t_to_cm_per_s_f(0)
-        let expected: centimetres_per_seconds_f = centimetres_per_seconds_f(Double(0))
-        let tolerance: centimetres_per_seconds_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        let result1 = cm_per_s_t_to_mm_per_s_f(0)
+        let expected1: millimetres_per_seconds_f = millimetres_per_seconds_f((Double(0)) * (Double(10)))
+        let tolerance1: millimetres_per_seconds_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = cm_per_s_t_to_mm_per_s_f(5000000)
+        let expected2: millimetres_per_seconds_f = millimetres_per_seconds_f((Double(5000000)) * (Double(10)))
+        let tolerance2: millimetres_per_seconds_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = cm_per_s_t_to_mm_per_s_f(Int64.min)
+        let expected3: millimetres_per_seconds_f = millimetres_per_seconds_f(-Float.greatestFiniteMagnitude)
+        let tolerance3: millimetres_per_seconds_f = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
+        let result4 = cm_per_s_t_to_mm_per_s_f(Int64.max)
+        let expected4: millimetres_per_seconds_f = millimetres_per_seconds_f(Float.greatestFiniteMagnitude)
+        let tolerance4: millimetres_per_seconds_f = 0.99
+        if result4 > expected4 {
+            XCTAssertLessThanOrEqual(result4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - result4, tolerance4)
         }
     }
 
-    func testcentimetres_per_seconds_tTocentimetres_per_seconds_fUsing5000000Expectingcentimetres_per_seconds_fDouble5000000() {
-        let result = cm_per_s_t_to_cm_per_s_f(5000000)
-        let expected: centimetres_per_seconds_f = centimetres_per_seconds_f(Double(5000000))
-        let tolerance: centimetres_per_seconds_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
+    func testcentimetres_per_seconds_t_to_millimetres_per_seconds_t() {
+        XCTAssertEqual(cm_per_s_t_to_mm_per_s_t(-5000000), millimetres_per_seconds_t(Int64(clamping: (Int64(-5000000)) * (Int64(10)))))
+        XCTAssertEqual(cm_per_s_t_to_mm_per_s_t(0), millimetres_per_seconds_t(Int64(clamping: (Int64(0)) * (Int64(10)))))
+        XCTAssertEqual(cm_per_s_t_to_mm_per_s_t(5000000), millimetres_per_seconds_t(Int64(clamping: (Int64(5000000)) * (Int64(10)))))
+        XCTAssertEqual(cm_per_s_t_to_mm_per_s_t(Int64.min), millimetres_per_seconds_t(Int64.min))
+        XCTAssertEqual(cm_per_s_t_to_mm_per_s_t(Int64.max), millimetres_per_seconds_t(Int64.max))
     }
 
-    func testcentimetres_per_seconds_tTocentimetres_per_seconds_fUsingInt64_maxExpectingcentimetres_per_seconds_fFloat_greatestFiniteMagnitude() {
-        let result = cm_per_s_t_to_cm_per_s_f(Int64.max)
-        let expected: centimetres_per_seconds_f = centimetres_per_seconds_f(Float.greatestFiniteMagnitude)
-        let tolerance: centimetres_per_seconds_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
+    func testcentimetres_per_seconds_t_to_millimetres_per_seconds_u() {
+        XCTAssertEqual(cm_per_s_t_to_mm_per_s_u(-5000000), millimetres_per_seconds_u(UInt64(clamping: (Int64(-5000000)) * (Int64(10)))))
+        XCTAssertEqual(cm_per_s_t_to_mm_per_s_u(0), millimetres_per_seconds_u(UInt64(clamping: (Int64(0)) * (Int64(10)))))
+        XCTAssertEqual(cm_per_s_t_to_mm_per_s_u(5000000), millimetres_per_seconds_u(UInt64(clamping: (Int64(5000000)) * (Int64(10)))))
+        XCTAssertEqual(cm_per_s_t_to_mm_per_s_u(Int64.min), millimetres_per_seconds_u(UInt64.min))
+        XCTAssertEqual(cm_per_s_t_to_mm_per_s_u(Int64.max), millimetres_per_seconds_u(UInt64.max))
     }
 
-    func testcentimetres_per_seconds_tTocentimetres_per_seconds_fUsingInt64_minExpectingcentimetres_per_seconds_fNegFloat_greatestFiniteMagnitude() {
-        let result = cm_per_s_t_to_cm_per_s_f(Int64.min)
-        let expected: centimetres_per_seconds_f = centimetres_per_seconds_f(-Float.greatestFiniteMagnitude)
-        let tolerance: centimetres_per_seconds_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
+    func testcentimetres_per_seconds_t_to_uint16_t() {
+        XCTAssertEqual(cm_per_s_t_to_u16(0), 0)
+        XCTAssertEqual(cm_per_s_t_to_u16(5), 5)
+        XCTAssertEqual(cm_per_s_t_to_u16(centimetres_per_seconds_t(Int64.min)), UInt16(UInt16.min))
+        XCTAssertEqual(cm_per_s_t_to_u16(centimetres_per_seconds_t(Int64.max)), UInt16(UInt16.max))
     }
 
-    func testcentimetres_per_seconds_tTocentimetres_per_seconds_fUsingNeg5000000Expectingcentimetres_per_seconds_fDoubleNeg5000000() {
-        let result = cm_per_s_t_to_cm_per_s_f(-5000000)
-        let expected: centimetres_per_seconds_f = centimetres_per_seconds_f(Double(-5000000))
-        let tolerance: centimetres_per_seconds_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
+    func testcentimetres_per_seconds_t_to_uint32_t() {
+        XCTAssertEqual(cm_per_s_t_to_u32(0), 0)
+        XCTAssertEqual(cm_per_s_t_to_u32(5), 5)
+        XCTAssertEqual(cm_per_s_t_to_u32(centimetres_per_seconds_t(Int64.min)), UInt32(UInt32.min))
+        XCTAssertEqual(cm_per_s_t_to_u32(centimetres_per_seconds_t(Int64.max)), UInt32(UInt32.max))
     }
 
-    func testcentimetres_per_seconds_tTocentimetres_per_seconds_uUsing0Expectingcentimetres_per_seconds_uUInt64clampingInt640() {
-        XCTAssertEqual(cm_per_s_t_to_cm_per_s_u(0), centimetres_per_seconds_u(UInt64(clamping: Int64(0))))
+    func testcentimetres_per_seconds_t_to_uint64_t() {
+        XCTAssertEqual(cm_per_s_t_to_u64(0), 0)
+        XCTAssertEqual(cm_per_s_t_to_u64(5), 5)
+        XCTAssertEqual(cm_per_s_t_to_u64(centimetres_per_seconds_t(Int64.min)), UInt64(UInt64.min))
+        XCTAssertEqual(cm_per_s_t_to_u64(centimetres_per_seconds_t(Int64.max)), UInt64(Int64.max))
     }
 
-    func testcentimetres_per_seconds_tTocentimetres_per_seconds_uUsing5000000Expectingcentimetres_per_seconds_uUInt64clampingInt645000000() {
-        XCTAssertEqual(cm_per_s_t_to_cm_per_s_u(5000000), centimetres_per_seconds_u(UInt64(clamping: Int64(5000000))))
+    func testcentimetres_per_seconds_t_to_uint8_t() {
+        XCTAssertEqual(cm_per_s_t_to_u8(0), 0)
+        XCTAssertEqual(cm_per_s_t_to_u8(5), 5)
+        XCTAssertEqual(cm_per_s_t_to_u8(centimetres_per_seconds_t(Int64.min)), UInt8(UInt8.min))
+        XCTAssertEqual(cm_per_s_t_to_u8(centimetres_per_seconds_t(Int64.max)), UInt8(UInt8.max))
     }
 
-    func testcentimetres_per_seconds_tTocentimetres_per_seconds_uUsingInt64_maxExpectingcentimetres_per_seconds_uUInt64_max() {
-        XCTAssertEqual(cm_per_s_t_to_cm_per_s_u(Int64.max), centimetres_per_seconds_u(UInt64.max))
+    func testdouble_to_centimetres_per_seconds_t() {
+        XCTAssertEqual(d_to_cm_per_s_t(0.0), 0)
+        XCTAssertEqual(d_to_cm_per_s_t(5.0), 5)
+        XCTAssertEqual(d_to_cm_per_s_t(Double(-Double.greatestFiniteMagnitude)), centimetres_per_seconds_t(Int64.min))
+        XCTAssertEqual(d_to_cm_per_s_t(Double(Double.greatestFiniteMagnitude)), centimetres_per_seconds_t(Int64.max))
     }
 
-    func testcentimetres_per_seconds_tTocentimetres_per_seconds_uUsingInt64_minExpectingcentimetres_per_seconds_uUInt64_min() {
-        XCTAssertEqual(cm_per_s_t_to_cm_per_s_u(Int64.min), centimetres_per_seconds_u(UInt64.min))
+    func testfloat_to_centimetres_per_seconds_t() {
+        XCTAssertEqual(f_to_cm_per_s_t(0.0), 0)
+        XCTAssertEqual(f_to_cm_per_s_t(5.0), 5)
+        XCTAssertEqual(f_to_cm_per_s_t(Float(-Float.greatestFiniteMagnitude)), centimetres_per_seconds_t(Int64.min))
+        XCTAssertEqual(f_to_cm_per_s_t(Float(Float.greatestFiniteMagnitude)), centimetres_per_seconds_t(Int64.max))
     }
 
-    func testcentimetres_per_seconds_tTocentimetres_per_seconds_uUsingNeg5000000Expectingcentimetres_per_seconds_uUInt64clampingInt64Neg5000000() {
-        XCTAssertEqual(cm_per_s_t_to_cm_per_s_u(-5000000), centimetres_per_seconds_u(UInt64(clamping: Int64(-5000000))))
+    func testint16_t_to_centimetres_per_seconds_t() {
+        XCTAssertEqual(i16_to_cm_per_s_t(0), 0)
+        XCTAssertEqual(i16_to_cm_per_s_t(5), 5)
+        XCTAssertEqual(i16_to_cm_per_s_t(Int16(Int16.min)), centimetres_per_seconds_t(Int16.min))
+        XCTAssertEqual(i16_to_cm_per_s_t(Int16(Int16.max)), centimetres_per_seconds_t(Int16.max))
     }
 
-    func testcentimetres_per_seconds_tTodoubleUsing0Expecting0_0() {
-        let result = cm_per_s_t_to_d(0)
-        let expected: Double = 0.0
-        let tolerance: Double = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
+    func testint32_t_to_centimetres_per_seconds_t() {
+        XCTAssertEqual(i32_to_cm_per_s_t(0), 0)
+        XCTAssertEqual(i32_to_cm_per_s_t(5), 5)
+        XCTAssertEqual(i32_to_cm_per_s_t(Int32(Int32.min)), centimetres_per_seconds_t(Int32.min))
+        XCTAssertEqual(i32_to_cm_per_s_t(Int32(Int32.max)), centimetres_per_seconds_t(Int32.max))
     }
 
-    func testcentimetres_per_seconds_tTodoubleUsing5Expecting5_0() {
-        let result = cm_per_s_t_to_d(5)
-        let expected: Double = 5.0
-        let tolerance: Double = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
+    func testint64_t_to_centimetres_per_seconds_t() {
+        XCTAssertEqual(i64_to_cm_per_s_t(0), 0)
+        XCTAssertEqual(i64_to_cm_per_s_t(5), 5)
+        XCTAssertEqual(i64_to_cm_per_s_t(Int64(Int64.min)), centimetres_per_seconds_t(Int64.min))
+        XCTAssertEqual(i64_to_cm_per_s_t(Int64(Int64.max)), centimetres_per_seconds_t(Int64.max))
     }
 
-    func testcentimetres_per_seconds_tTodoubleUsingcentimetres_per_seconds_tInt64_maxExpectingDoubleInt64_max() {
-        let result = cm_per_s_t_to_d(centimetres_per_seconds_t(Int64.max))
-        let expected: Double = Double(Int64.max)
-        let tolerance: Double = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
+    func testint8_t_to_centimetres_per_seconds_t() {
+        XCTAssertEqual(i8_to_cm_per_s_t(0), 0)
+        XCTAssertEqual(i8_to_cm_per_s_t(5), 5)
+        XCTAssertEqual(i8_to_cm_per_s_t(Int8(Int8.min)), centimetres_per_seconds_t(Int8.min))
+        XCTAssertEqual(i8_to_cm_per_s_t(Int8(Int8.max)), centimetres_per_seconds_t(Int8.max))
     }
 
-    func testcentimetres_per_seconds_tTodoubleUsingcentimetres_per_seconds_tInt64_minExpectingDoubleInt64_min() {
-        let result = cm_per_s_t_to_d(centimetres_per_seconds_t(Int64.min))
-        let expected: Double = Double(Int64.min)
-        let tolerance: Double = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
+    func testuint16_t_to_centimetres_per_seconds_t() {
+        XCTAssertEqual(u16_to_cm_per_s_t(0), 0)
+        XCTAssertEqual(u16_to_cm_per_s_t(5), 5)
+        XCTAssertEqual(u16_to_cm_per_s_t(UInt16(UInt16.min)), centimetres_per_seconds_t(UInt16.min))
+        XCTAssertEqual(u16_to_cm_per_s_t(UInt16(UInt16.max)), centimetres_per_seconds_t(UInt16.max))
     }
 
-    func testcentimetres_per_seconds_tTofloatUsing0Expecting0_0() {
-        let result = cm_per_s_t_to_f(0)
-        let expected: Float = 0.0
-        let tolerance: Float = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
+    func testuint32_t_to_centimetres_per_seconds_t() {
+        XCTAssertEqual(u32_to_cm_per_s_t(0), 0)
+        XCTAssertEqual(u32_to_cm_per_s_t(5), 5)
+        XCTAssertEqual(u32_to_cm_per_s_t(UInt32(UInt32.min)), centimetres_per_seconds_t(UInt32.min))
+        XCTAssertEqual(u32_to_cm_per_s_t(UInt32(UInt32.max)), centimetres_per_seconds_t(UInt32.max))
+    }
+
+    func testuint64_t_to_centimetres_per_seconds_t() {
+        XCTAssertEqual(u64_to_cm_per_s_t(0), 0)
+        XCTAssertEqual(u64_to_cm_per_s_t(5), 5)
+        XCTAssertEqual(u64_to_cm_per_s_t(UInt64(UInt64.min)), centimetres_per_seconds_t(UInt64.min))
+        XCTAssertEqual(u64_to_cm_per_s_t(UInt64(UInt64.max)), centimetres_per_seconds_t(Int64.max))
+    }
+
+    func testuint8_t_to_centimetres_per_seconds_t() {
+        XCTAssertEqual(u8_to_cm_per_s_t(0), 0)
+        XCTAssertEqual(u8_to_cm_per_s_t(5), 5)
+        XCTAssertEqual(u8_to_cm_per_s_t(UInt8(UInt8.min)), centimetres_per_seconds_t(UInt8.min))
+        XCTAssertEqual(u8_to_cm_per_s_t(UInt8(UInt8.max)), centimetres_per_seconds_t(UInt8.max))
     }
 
 }

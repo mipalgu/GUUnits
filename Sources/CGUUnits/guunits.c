@@ -48704,7 +48704,7 @@ earthG_t mm_per_us_sq_t_to_gs_t(millimetres_per_microseconds_sq_t millimetres_pe
     const int64_t unit0 = ((int64_t) (millimetres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -48726,7 +48726,7 @@ earthG_u mm_per_us_sq_t_to_gs_u(millimetres_per_microseconds_sq_t millimetres_pe
     const int64_t unit0 = ((int64_t) (millimetres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -48748,7 +48748,7 @@ earthG_f mm_per_us_sq_t_to_gs_f(millimetres_per_microseconds_sq_t millimetres_pe
     const int64_t unit0 = ((int64_t) (millimetres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -48770,7 +48770,7 @@ earthG_d mm_per_us_sq_t_to_gs_d(millimetres_per_microseconds_sq_t millimetres_pe
     const int64_t unit0 = ((int64_t) (millimetres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -48790,7 +48790,7 @@ earthG_d mm_per_us_sq_t_to_gs_d(millimetres_per_microseconds_sq_t millimetres_pe
 earthG_t mm_per_us_sq_u_to_gs_t(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (millimetres_per_microseconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 9223372036854775807;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -48808,7 +48808,7 @@ earthG_t mm_per_us_sq_u_to_gs_t(millimetres_per_microseconds_sq_u millimetres_pe
 earthG_u mm_per_us_sq_u_to_gs_u(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (millimetres_per_microseconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 18446744073709551615U;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -48826,7 +48826,7 @@ earthG_u mm_per_us_sq_u_to_gs_u(millimetres_per_microseconds_sq_u millimetres_pe
 earthG_f mm_per_us_sq_u_to_gs_f(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (millimetres_per_microseconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return FLT_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -48844,7 +48844,7 @@ earthG_f mm_per_us_sq_u_to_gs_f(millimetres_per_microseconds_sq_u millimetres_pe
 earthG_d mm_per_us_sq_u_to_gs_d(millimetres_per_microseconds_sq_u millimetres_per_microseconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (millimetres_per_microseconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return DBL_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -48864,7 +48864,7 @@ earthG_t mm_per_us_sq_f_to_gs_t(millimetres_per_microseconds_sq_f millimetres_pe
     const float unit0 = ((float) (millimetres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -48886,7 +48886,7 @@ earthG_u mm_per_us_sq_f_to_gs_u(millimetres_per_microseconds_sq_f millimetres_pe
     const float unit0 = ((float) (millimetres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -48908,7 +48908,7 @@ earthG_f mm_per_us_sq_f_to_gs_f(millimetres_per_microseconds_sq_f millimetres_pe
     const float unit0 = ((float) (millimetres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -48930,7 +48930,7 @@ earthG_d mm_per_us_sq_f_to_gs_d(millimetres_per_microseconds_sq_f millimetres_pe
     const float unit0 = ((float) (millimetres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -48952,7 +48952,7 @@ earthG_t mm_per_us_sq_d_to_gs_t(millimetres_per_microseconds_sq_d millimetres_pe
     const double unit0 = ((double) (millimetres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -48974,7 +48974,7 @@ earthG_u mm_per_us_sq_d_to_gs_u(millimetres_per_microseconds_sq_d millimetres_pe
     const double unit0 = ((double) (millimetres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -48996,7 +48996,7 @@ earthG_f mm_per_us_sq_d_to_gs_f(millimetres_per_microseconds_sq_d millimetres_pe
     const double unit0 = ((double) (millimetres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -49018,7 +49018,7 @@ earthG_d mm_per_us_sq_d_to_gs_d(millimetres_per_microseconds_sq_d millimetres_pe
     const double unit0 = ((double) (millimetres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -49040,7 +49040,7 @@ earthG_t mm_per_ms_sq_t_to_gs_t(millimetres_per_milliseconds_sq_t millimetres_pe
     const int64_t unit0 = ((int64_t) (millimetres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -49062,7 +49062,7 @@ earthG_u mm_per_ms_sq_t_to_gs_u(millimetres_per_milliseconds_sq_t millimetres_pe
     const int64_t unit0 = ((int64_t) (millimetres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -49084,7 +49084,7 @@ earthG_f mm_per_ms_sq_t_to_gs_f(millimetres_per_milliseconds_sq_t millimetres_pe
     const int64_t unit0 = ((int64_t) (millimetres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -49106,7 +49106,7 @@ earthG_d mm_per_ms_sq_t_to_gs_d(millimetres_per_milliseconds_sq_t millimetres_pe
     const int64_t unit0 = ((int64_t) (millimetres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -49126,7 +49126,7 @@ earthG_d mm_per_ms_sq_t_to_gs_d(millimetres_per_milliseconds_sq_t millimetres_pe
 earthG_t mm_per_ms_sq_u_to_gs_t(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (millimetres_per_milliseconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 9223372036854775807;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -49144,7 +49144,7 @@ earthG_t mm_per_ms_sq_u_to_gs_t(millimetres_per_milliseconds_sq_u millimetres_pe
 earthG_u mm_per_ms_sq_u_to_gs_u(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (millimetres_per_milliseconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 18446744073709551615U;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -49162,7 +49162,7 @@ earthG_u mm_per_ms_sq_u_to_gs_u(millimetres_per_milliseconds_sq_u millimetres_pe
 earthG_f mm_per_ms_sq_u_to_gs_f(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (millimetres_per_milliseconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return FLT_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -49180,7 +49180,7 @@ earthG_f mm_per_ms_sq_u_to_gs_f(millimetres_per_milliseconds_sq_u millimetres_pe
 earthG_d mm_per_ms_sq_u_to_gs_d(millimetres_per_milliseconds_sq_u millimetres_per_milliseconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (millimetres_per_milliseconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return DBL_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -49200,7 +49200,7 @@ earthG_t mm_per_ms_sq_f_to_gs_t(millimetres_per_milliseconds_sq_f millimetres_pe
     const float unit0 = ((float) (millimetres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -49222,7 +49222,7 @@ earthG_u mm_per_ms_sq_f_to_gs_u(millimetres_per_milliseconds_sq_f millimetres_pe
     const float unit0 = ((float) (millimetres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -49244,7 +49244,7 @@ earthG_f mm_per_ms_sq_f_to_gs_f(millimetres_per_milliseconds_sq_f millimetres_pe
     const float unit0 = ((float) (millimetres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -49266,7 +49266,7 @@ earthG_d mm_per_ms_sq_f_to_gs_d(millimetres_per_milliseconds_sq_f millimetres_pe
     const float unit0 = ((float) (millimetres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -49288,7 +49288,7 @@ earthG_t mm_per_ms_sq_d_to_gs_t(millimetres_per_milliseconds_sq_d millimetres_pe
     const double unit0 = ((double) (millimetres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -49310,7 +49310,7 @@ earthG_u mm_per_ms_sq_d_to_gs_u(millimetres_per_milliseconds_sq_d millimetres_pe
     const double unit0 = ((double) (millimetres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -49332,7 +49332,7 @@ earthG_f mm_per_ms_sq_d_to_gs_f(millimetres_per_milliseconds_sq_d millimetres_pe
     const double unit0 = ((double) (millimetres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -49354,7 +49354,7 @@ earthG_d mm_per_ms_sq_d_to_gs_d(millimetres_per_milliseconds_sq_d millimetres_pe
     const double unit0 = ((double) (millimetres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (millimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -49376,7 +49376,7 @@ earthG_t mm_per_s_sq_t_to_gs_t(millimetres_per_seconds_sq_t millimetres_per_seco
     const int64_t unit0 = ((int64_t) (millimetres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((divide_d((((double) (millimetres_per_seconds_sq))), (((double) (1000))))), (((double) (9.80665))));
@@ -49398,7 +49398,7 @@ earthG_u mm_per_s_sq_t_to_gs_u(millimetres_per_seconds_sq_t millimetres_per_seco
     const int64_t unit0 = ((int64_t) (millimetres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((divide_d((((double) (millimetres_per_seconds_sq))), (((double) (1000))))), (((double) (9.80665))));
@@ -49420,7 +49420,7 @@ earthG_f mm_per_s_sq_t_to_gs_f(millimetres_per_seconds_sq_t millimetres_per_seco
     const int64_t unit0 = ((int64_t) (millimetres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (millimetres_per_seconds_sq))), (((double) (1000))))), (((double) (9.80665))));
@@ -49442,7 +49442,7 @@ earthG_d mm_per_s_sq_t_to_gs_d(millimetres_per_seconds_sq_t millimetres_per_seco
     const int64_t unit0 = ((int64_t) (millimetres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (millimetres_per_seconds_sq))), (((double) (1000))))), (((double) (9.80665))));
@@ -49462,7 +49462,7 @@ earthG_d mm_per_s_sq_t_to_gs_d(millimetres_per_seconds_sq_t millimetres_per_seco
 earthG_t mm_per_s_sq_u_to_gs_t(millimetres_per_seconds_sq_u millimetres_per_seconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (millimetres_per_seconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 9223372036854775807;
     } else {
         const double result = divide_d((divide_d((((double) (millimetres_per_seconds_sq))), (((double) (1000))))), (((double) (9.80665))));
@@ -49480,7 +49480,7 @@ earthG_t mm_per_s_sq_u_to_gs_t(millimetres_per_seconds_sq_u millimetres_per_seco
 earthG_u mm_per_s_sq_u_to_gs_u(millimetres_per_seconds_sq_u millimetres_per_seconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (millimetres_per_seconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 18446744073709551615U;
     } else {
         const double result = divide_d((divide_d((((double) (millimetres_per_seconds_sq))), (((double) (1000))))), (((double) (9.80665))));
@@ -49498,7 +49498,7 @@ earthG_u mm_per_s_sq_u_to_gs_u(millimetres_per_seconds_sq_u millimetres_per_seco
 earthG_f mm_per_s_sq_u_to_gs_f(millimetres_per_seconds_sq_u millimetres_per_seconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (millimetres_per_seconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return FLT_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (millimetres_per_seconds_sq))), (((double) (1000))))), (((double) (9.80665))));
@@ -49516,7 +49516,7 @@ earthG_f mm_per_s_sq_u_to_gs_f(millimetres_per_seconds_sq_u millimetres_per_seco
 earthG_d mm_per_s_sq_u_to_gs_d(millimetres_per_seconds_sq_u millimetres_per_seconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (millimetres_per_seconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return DBL_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (millimetres_per_seconds_sq))), (((double) (1000))))), (((double) (9.80665))));
@@ -49536,7 +49536,7 @@ earthG_t mm_per_s_sq_f_to_gs_t(millimetres_per_seconds_sq_f millimetres_per_seco
     const float unit0 = ((float) (millimetres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((divide_d((((double) (millimetres_per_seconds_sq))), (((double) (1000))))), (((double) (9.80665))));
@@ -49558,7 +49558,7 @@ earthG_u mm_per_s_sq_f_to_gs_u(millimetres_per_seconds_sq_f millimetres_per_seco
     const float unit0 = ((float) (millimetres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((divide_d((((double) (millimetres_per_seconds_sq))), (((double) (1000))))), (((double) (9.80665))));
@@ -49580,7 +49580,7 @@ earthG_f mm_per_s_sq_f_to_gs_f(millimetres_per_seconds_sq_f millimetres_per_seco
     const float unit0 = ((float) (millimetres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (millimetres_per_seconds_sq))), (((double) (1000))))), (((double) (9.80665))));
@@ -49602,7 +49602,7 @@ earthG_d mm_per_s_sq_f_to_gs_d(millimetres_per_seconds_sq_f millimetres_per_seco
     const float unit0 = ((float) (millimetres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (millimetres_per_seconds_sq))), (((double) (1000))))), (((double) (9.80665))));
@@ -49624,7 +49624,7 @@ earthG_t mm_per_s_sq_d_to_gs_t(millimetres_per_seconds_sq_d millimetres_per_seco
     const double unit0 = ((double) (millimetres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((divide_d((((double) (millimetres_per_seconds_sq))), (((double) (1000))))), (((double) (9.80665))));
@@ -49646,7 +49646,7 @@ earthG_u mm_per_s_sq_d_to_gs_u(millimetres_per_seconds_sq_d millimetres_per_seco
     const double unit0 = ((double) (millimetres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((divide_d((((double) (millimetres_per_seconds_sq))), (((double) (1000))))), (((double) (9.80665))));
@@ -49668,7 +49668,7 @@ earthG_f mm_per_s_sq_d_to_gs_f(millimetres_per_seconds_sq_d millimetres_per_seco
     const double unit0 = ((double) (millimetres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (millimetres_per_seconds_sq))), (((double) (1000))))), (((double) (9.80665))));
@@ -49690,7 +49690,7 @@ earthG_d mm_per_s_sq_d_to_gs_d(millimetres_per_seconds_sq_d millimetres_per_seco
     const double unit0 = ((double) (millimetres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (millimetres_per_seconds_sq))), (((double) (1000))))), (((double) (9.80665))));
@@ -49712,7 +49712,7 @@ earthG_t cm_per_us_sq_t_to_gs_t(centimetres_per_microseconds_sq_t centimetres_pe
     const int64_t unit0 = ((int64_t) (centimetres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -49734,7 +49734,7 @@ earthG_u cm_per_us_sq_t_to_gs_u(centimetres_per_microseconds_sq_t centimetres_pe
     const int64_t unit0 = ((int64_t) (centimetres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -49756,7 +49756,7 @@ earthG_f cm_per_us_sq_t_to_gs_f(centimetres_per_microseconds_sq_t centimetres_pe
     const int64_t unit0 = ((int64_t) (centimetres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -49778,7 +49778,7 @@ earthG_d cm_per_us_sq_t_to_gs_d(centimetres_per_microseconds_sq_t centimetres_pe
     const int64_t unit0 = ((int64_t) (centimetres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -49798,7 +49798,7 @@ earthG_d cm_per_us_sq_t_to_gs_d(centimetres_per_microseconds_sq_t centimetres_pe
 earthG_t cm_per_us_sq_u_to_gs_t(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (centimetres_per_microseconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 9223372036854775807;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -49816,7 +49816,7 @@ earthG_t cm_per_us_sq_u_to_gs_t(centimetres_per_microseconds_sq_u centimetres_pe
 earthG_u cm_per_us_sq_u_to_gs_u(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (centimetres_per_microseconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 18446744073709551615U;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -49834,7 +49834,7 @@ earthG_u cm_per_us_sq_u_to_gs_u(centimetres_per_microseconds_sq_u centimetres_pe
 earthG_f cm_per_us_sq_u_to_gs_f(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (centimetres_per_microseconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return FLT_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -49852,7 +49852,7 @@ earthG_f cm_per_us_sq_u_to_gs_f(centimetres_per_microseconds_sq_u centimetres_pe
 earthG_d cm_per_us_sq_u_to_gs_d(centimetres_per_microseconds_sq_u centimetres_per_microseconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (centimetres_per_microseconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return DBL_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -49872,7 +49872,7 @@ earthG_t cm_per_us_sq_f_to_gs_t(centimetres_per_microseconds_sq_f centimetres_pe
     const float unit0 = ((float) (centimetres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -49894,7 +49894,7 @@ earthG_u cm_per_us_sq_f_to_gs_u(centimetres_per_microseconds_sq_f centimetres_pe
     const float unit0 = ((float) (centimetres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -49916,7 +49916,7 @@ earthG_f cm_per_us_sq_f_to_gs_f(centimetres_per_microseconds_sq_f centimetres_pe
     const float unit0 = ((float) (centimetres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -49938,7 +49938,7 @@ earthG_d cm_per_us_sq_f_to_gs_d(centimetres_per_microseconds_sq_f centimetres_pe
     const float unit0 = ((float) (centimetres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -49960,7 +49960,7 @@ earthG_t cm_per_us_sq_d_to_gs_t(centimetres_per_microseconds_sq_d centimetres_pe
     const double unit0 = ((double) (centimetres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -49982,7 +49982,7 @@ earthG_u cm_per_us_sq_d_to_gs_u(centimetres_per_microseconds_sq_d centimetres_pe
     const double unit0 = ((double) (centimetres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -50004,7 +50004,7 @@ earthG_f cm_per_us_sq_d_to_gs_f(centimetres_per_microseconds_sq_d centimetres_pe
     const double unit0 = ((double) (centimetres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -50026,7 +50026,7 @@ earthG_d cm_per_us_sq_d_to_gs_d(centimetres_per_microseconds_sq_d centimetres_pe
     const double unit0 = ((double) (centimetres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))))), (((double) (9.80665))));
@@ -50048,7 +50048,7 @@ earthG_t cm_per_ms_sq_t_to_gs_t(centimetres_per_milliseconds_sq_t centimetres_pe
     const int64_t unit0 = ((int64_t) (centimetres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -50070,7 +50070,7 @@ earthG_u cm_per_ms_sq_t_to_gs_u(centimetres_per_milliseconds_sq_t centimetres_pe
     const int64_t unit0 = ((int64_t) (centimetres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -50092,7 +50092,7 @@ earthG_f cm_per_ms_sq_t_to_gs_f(centimetres_per_milliseconds_sq_t centimetres_pe
     const int64_t unit0 = ((int64_t) (centimetres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -50114,7 +50114,7 @@ earthG_d cm_per_ms_sq_t_to_gs_d(centimetres_per_milliseconds_sq_t centimetres_pe
     const int64_t unit0 = ((int64_t) (centimetres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -50134,7 +50134,7 @@ earthG_d cm_per_ms_sq_t_to_gs_d(centimetres_per_milliseconds_sq_t centimetres_pe
 earthG_t cm_per_ms_sq_u_to_gs_t(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (centimetres_per_milliseconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 9223372036854775807;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -50152,7 +50152,7 @@ earthG_t cm_per_ms_sq_u_to_gs_t(centimetres_per_milliseconds_sq_u centimetres_pe
 earthG_u cm_per_ms_sq_u_to_gs_u(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (centimetres_per_milliseconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 18446744073709551615U;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -50170,7 +50170,7 @@ earthG_u cm_per_ms_sq_u_to_gs_u(centimetres_per_milliseconds_sq_u centimetres_pe
 earthG_f cm_per_ms_sq_u_to_gs_f(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (centimetres_per_milliseconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return FLT_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -50188,7 +50188,7 @@ earthG_f cm_per_ms_sq_u_to_gs_f(centimetres_per_milliseconds_sq_u centimetres_pe
 earthG_d cm_per_ms_sq_u_to_gs_d(centimetres_per_milliseconds_sq_u centimetres_per_milliseconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (centimetres_per_milliseconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return DBL_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -50208,7 +50208,7 @@ earthG_t cm_per_ms_sq_f_to_gs_t(centimetres_per_milliseconds_sq_f centimetres_pe
     const float unit0 = ((float) (centimetres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -50230,7 +50230,7 @@ earthG_u cm_per_ms_sq_f_to_gs_u(centimetres_per_milliseconds_sq_f centimetres_pe
     const float unit0 = ((float) (centimetres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -50252,7 +50252,7 @@ earthG_f cm_per_ms_sq_f_to_gs_f(centimetres_per_milliseconds_sq_f centimetres_pe
     const float unit0 = ((float) (centimetres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -50274,7 +50274,7 @@ earthG_d cm_per_ms_sq_f_to_gs_d(centimetres_per_milliseconds_sq_f centimetres_pe
     const float unit0 = ((float) (centimetres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -50296,7 +50296,7 @@ earthG_t cm_per_ms_sq_d_to_gs_t(centimetres_per_milliseconds_sq_d centimetres_pe
     const double unit0 = ((double) (centimetres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -50318,7 +50318,7 @@ earthG_u cm_per_ms_sq_d_to_gs_u(centimetres_per_milliseconds_sq_d centimetres_pe
     const double unit0 = ((double) (centimetres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -50340,7 +50340,7 @@ earthG_f cm_per_ms_sq_d_to_gs_f(centimetres_per_milliseconds_sq_d centimetres_pe
     const double unit0 = ((double) (centimetres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -50362,7 +50362,7 @@ earthG_d cm_per_ms_sq_d_to_gs_d(centimetres_per_milliseconds_sq_d centimetres_pe
     const double unit0 = ((double) (centimetres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (centimetres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (100))))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))))), (((double) (9.80665))));
@@ -50384,7 +50384,7 @@ earthG_t cm_per_s_sq_t_to_gs_t(centimetres_per_seconds_sq_t centimetres_per_seco
     const int64_t unit0 = ((int64_t) (centimetres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((divide_d((((double) (centimetres_per_seconds_sq))), (((double) (100))))), (((double) (9.80665))));
@@ -50406,7 +50406,7 @@ earthG_u cm_per_s_sq_t_to_gs_u(centimetres_per_seconds_sq_t centimetres_per_seco
     const int64_t unit0 = ((int64_t) (centimetres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((divide_d((((double) (centimetres_per_seconds_sq))), (((double) (100))))), (((double) (9.80665))));
@@ -50428,7 +50428,7 @@ earthG_f cm_per_s_sq_t_to_gs_f(centimetres_per_seconds_sq_t centimetres_per_seco
     const int64_t unit0 = ((int64_t) (centimetres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (centimetres_per_seconds_sq))), (((double) (100))))), (((double) (9.80665))));
@@ -50450,7 +50450,7 @@ earthG_d cm_per_s_sq_t_to_gs_d(centimetres_per_seconds_sq_t centimetres_per_seco
     const int64_t unit0 = ((int64_t) (centimetres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (centimetres_per_seconds_sq))), (((double) (100))))), (((double) (9.80665))));
@@ -50470,7 +50470,7 @@ earthG_d cm_per_s_sq_t_to_gs_d(centimetres_per_seconds_sq_t centimetres_per_seco
 earthG_t cm_per_s_sq_u_to_gs_t(centimetres_per_seconds_sq_u centimetres_per_seconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (centimetres_per_seconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 9223372036854775807;
     } else {
         const double result = divide_d((divide_d((((double) (centimetres_per_seconds_sq))), (((double) (100))))), (((double) (9.80665))));
@@ -50488,7 +50488,7 @@ earthG_t cm_per_s_sq_u_to_gs_t(centimetres_per_seconds_sq_u centimetres_per_seco
 earthG_u cm_per_s_sq_u_to_gs_u(centimetres_per_seconds_sq_u centimetres_per_seconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (centimetres_per_seconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 18446744073709551615U;
     } else {
         const double result = divide_d((divide_d((((double) (centimetres_per_seconds_sq))), (((double) (100))))), (((double) (9.80665))));
@@ -50506,7 +50506,7 @@ earthG_u cm_per_s_sq_u_to_gs_u(centimetres_per_seconds_sq_u centimetres_per_seco
 earthG_f cm_per_s_sq_u_to_gs_f(centimetres_per_seconds_sq_u centimetres_per_seconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (centimetres_per_seconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return FLT_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (centimetres_per_seconds_sq))), (((double) (100))))), (((double) (9.80665))));
@@ -50524,7 +50524,7 @@ earthG_f cm_per_s_sq_u_to_gs_f(centimetres_per_seconds_sq_u centimetres_per_seco
 earthG_d cm_per_s_sq_u_to_gs_d(centimetres_per_seconds_sq_u centimetres_per_seconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (centimetres_per_seconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return DBL_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (centimetres_per_seconds_sq))), (((double) (100))))), (((double) (9.80665))));
@@ -50544,7 +50544,7 @@ earthG_t cm_per_s_sq_f_to_gs_t(centimetres_per_seconds_sq_f centimetres_per_seco
     const float unit0 = ((float) (centimetres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((divide_d((((double) (centimetres_per_seconds_sq))), (((double) (100))))), (((double) (9.80665))));
@@ -50566,7 +50566,7 @@ earthG_u cm_per_s_sq_f_to_gs_u(centimetres_per_seconds_sq_f centimetres_per_seco
     const float unit0 = ((float) (centimetres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((divide_d((((double) (centimetres_per_seconds_sq))), (((double) (100))))), (((double) (9.80665))));
@@ -50588,7 +50588,7 @@ earthG_f cm_per_s_sq_f_to_gs_f(centimetres_per_seconds_sq_f centimetres_per_seco
     const float unit0 = ((float) (centimetres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (centimetres_per_seconds_sq))), (((double) (100))))), (((double) (9.80665))));
@@ -50610,7 +50610,7 @@ earthG_d cm_per_s_sq_f_to_gs_d(centimetres_per_seconds_sq_f centimetres_per_seco
     const float unit0 = ((float) (centimetres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (centimetres_per_seconds_sq))), (((double) (100))))), (((double) (9.80665))));
@@ -50632,7 +50632,7 @@ earthG_t cm_per_s_sq_d_to_gs_t(centimetres_per_seconds_sq_d centimetres_per_seco
     const double unit0 = ((double) (centimetres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((divide_d((((double) (centimetres_per_seconds_sq))), (((double) (100))))), (((double) (9.80665))));
@@ -50654,7 +50654,7 @@ earthG_u cm_per_s_sq_d_to_gs_u(centimetres_per_seconds_sq_d centimetres_per_seco
     const double unit0 = ((double) (centimetres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((divide_d((((double) (centimetres_per_seconds_sq))), (((double) (100))))), (((double) (9.80665))));
@@ -50676,7 +50676,7 @@ earthG_f cm_per_s_sq_d_to_gs_f(centimetres_per_seconds_sq_d centimetres_per_seco
     const double unit0 = ((double) (centimetres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (centimetres_per_seconds_sq))), (((double) (100))))), (((double) (9.80665))));
@@ -50698,7 +50698,7 @@ earthG_d cm_per_s_sq_d_to_gs_d(centimetres_per_seconds_sq_d centimetres_per_seco
     const double unit0 = ((double) (centimetres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (centimetres_per_seconds_sq))), (((double) (100))))), (((double) (9.80665))));
@@ -50720,7 +50720,7 @@ earthG_t m_per_us_sq_t_to_gs_t(metres_per_microseconds_sq_t metres_per_microseco
     const int64_t unit0 = ((int64_t) (metres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))), (((double) (9.80665))));
@@ -50742,7 +50742,7 @@ earthG_u m_per_us_sq_t_to_gs_u(metres_per_microseconds_sq_t metres_per_microseco
     const int64_t unit0 = ((int64_t) (metres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))), (((double) (9.80665))));
@@ -50764,7 +50764,7 @@ earthG_f m_per_us_sq_t_to_gs_f(metres_per_microseconds_sq_t metres_per_microseco
     const int64_t unit0 = ((int64_t) (metres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))), (((double) (9.80665))));
@@ -50786,7 +50786,7 @@ earthG_d m_per_us_sq_t_to_gs_d(metres_per_microseconds_sq_t metres_per_microseco
     const int64_t unit0 = ((int64_t) (metres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))), (((double) (9.80665))));
@@ -50806,7 +50806,7 @@ earthG_d m_per_us_sq_t_to_gs_d(metres_per_microseconds_sq_t metres_per_microseco
 earthG_t m_per_us_sq_u_to_gs_t(metres_per_microseconds_sq_u metres_per_microseconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (metres_per_microseconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 9223372036854775807;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))), (((double) (9.80665))));
@@ -50824,7 +50824,7 @@ earthG_t m_per_us_sq_u_to_gs_t(metres_per_microseconds_sq_u metres_per_microseco
 earthG_u m_per_us_sq_u_to_gs_u(metres_per_microseconds_sq_u metres_per_microseconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (metres_per_microseconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 18446744073709551615U;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))), (((double) (9.80665))));
@@ -50842,7 +50842,7 @@ earthG_u m_per_us_sq_u_to_gs_u(metres_per_microseconds_sq_u metres_per_microseco
 earthG_f m_per_us_sq_u_to_gs_f(metres_per_microseconds_sq_u metres_per_microseconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (metres_per_microseconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return FLT_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))), (((double) (9.80665))));
@@ -50860,7 +50860,7 @@ earthG_f m_per_us_sq_u_to_gs_f(metres_per_microseconds_sq_u metres_per_microseco
 earthG_d m_per_us_sq_u_to_gs_d(metres_per_microseconds_sq_u metres_per_microseconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (metres_per_microseconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return DBL_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))), (((double) (9.80665))));
@@ -50880,7 +50880,7 @@ earthG_t m_per_us_sq_f_to_gs_t(metres_per_microseconds_sq_f metres_per_microseco
     const float unit0 = ((float) (metres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))), (((double) (9.80665))));
@@ -50902,7 +50902,7 @@ earthG_u m_per_us_sq_f_to_gs_u(metres_per_microseconds_sq_f metres_per_microseco
     const float unit0 = ((float) (metres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))), (((double) (9.80665))));
@@ -50924,7 +50924,7 @@ earthG_f m_per_us_sq_f_to_gs_f(metres_per_microseconds_sq_f metres_per_microseco
     const float unit0 = ((float) (metres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))), (((double) (9.80665))));
@@ -50946,7 +50946,7 @@ earthG_d m_per_us_sq_f_to_gs_d(metres_per_microseconds_sq_f metres_per_microseco
     const float unit0 = ((float) (metres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))), (((double) (9.80665))));
@@ -50968,7 +50968,7 @@ earthG_t m_per_us_sq_d_to_gs_t(metres_per_microseconds_sq_d metres_per_microseco
     const double unit0 = ((double) (metres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))), (((double) (9.80665))));
@@ -50990,7 +50990,7 @@ earthG_u m_per_us_sq_d_to_gs_u(metres_per_microseconds_sq_d metres_per_microseco
     const double unit0 = ((double) (metres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))), (((double) (9.80665))));
@@ -51012,7 +51012,7 @@ earthG_f m_per_us_sq_d_to_gs_f(metres_per_microseconds_sq_d metres_per_microseco
     const double unit0 = ((double) (metres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))), (((double) (9.80665))));
@@ -51034,7 +51034,7 @@ earthG_d m_per_us_sq_d_to_gs_d(metres_per_microseconds_sq_d metres_per_microseco
     const double unit0 = ((double) (metres_per_microseconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_microseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000000))))), (((double) (1000000))))))), (((double) (9.80665))));
@@ -51056,7 +51056,7 @@ earthG_t m_per_ms_sq_t_to_gs_t(metres_per_milliseconds_sq_t metres_per_milliseco
     const int64_t unit0 = ((int64_t) (metres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))), (((double) (9.80665))));
@@ -51078,7 +51078,7 @@ earthG_u m_per_ms_sq_t_to_gs_u(metres_per_milliseconds_sq_t metres_per_milliseco
     const int64_t unit0 = ((int64_t) (metres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))), (((double) (9.80665))));
@@ -51100,7 +51100,7 @@ earthG_f m_per_ms_sq_t_to_gs_f(metres_per_milliseconds_sq_t metres_per_milliseco
     const int64_t unit0 = ((int64_t) (metres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))), (((double) (9.80665))));
@@ -51122,7 +51122,7 @@ earthG_d m_per_ms_sq_t_to_gs_d(metres_per_milliseconds_sq_t metres_per_milliseco
     const int64_t unit0 = ((int64_t) (metres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))), (((double) (9.80665))));
@@ -51142,7 +51142,7 @@ earthG_d m_per_ms_sq_t_to_gs_d(metres_per_milliseconds_sq_t metres_per_milliseco
 earthG_t m_per_ms_sq_u_to_gs_t(metres_per_milliseconds_sq_u metres_per_milliseconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (metres_per_milliseconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 9223372036854775807;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))), (((double) (9.80665))));
@@ -51160,7 +51160,7 @@ earthG_t m_per_ms_sq_u_to_gs_t(metres_per_milliseconds_sq_u metres_per_milliseco
 earthG_u m_per_ms_sq_u_to_gs_u(metres_per_milliseconds_sq_u metres_per_milliseconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (metres_per_milliseconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 18446744073709551615U;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))), (((double) (9.80665))));
@@ -51178,7 +51178,7 @@ earthG_u m_per_ms_sq_u_to_gs_u(metres_per_milliseconds_sq_u metres_per_milliseco
 earthG_f m_per_ms_sq_u_to_gs_f(metres_per_milliseconds_sq_u metres_per_milliseconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (metres_per_milliseconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return FLT_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))), (((double) (9.80665))));
@@ -51196,7 +51196,7 @@ earthG_f m_per_ms_sq_u_to_gs_f(metres_per_milliseconds_sq_u metres_per_milliseco
 earthG_d m_per_ms_sq_u_to_gs_d(metres_per_milliseconds_sq_u metres_per_milliseconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (metres_per_milliseconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return DBL_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))), (((double) (9.80665))));
@@ -51216,7 +51216,7 @@ earthG_t m_per_ms_sq_f_to_gs_t(metres_per_milliseconds_sq_f metres_per_milliseco
     const float unit0 = ((float) (metres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))), (((double) (9.80665))));
@@ -51238,7 +51238,7 @@ earthG_u m_per_ms_sq_f_to_gs_u(metres_per_milliseconds_sq_f metres_per_milliseco
     const float unit0 = ((float) (metres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))), (((double) (9.80665))));
@@ -51260,7 +51260,7 @@ earthG_f m_per_ms_sq_f_to_gs_f(metres_per_milliseconds_sq_f metres_per_milliseco
     const float unit0 = ((float) (metres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))), (((double) (9.80665))));
@@ -51282,7 +51282,7 @@ earthG_d m_per_ms_sq_f_to_gs_d(metres_per_milliseconds_sq_f metres_per_milliseco
     const float unit0 = ((float) (metres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))), (((double) (9.80665))));
@@ -51304,7 +51304,7 @@ earthG_t m_per_ms_sq_d_to_gs_t(metres_per_milliseconds_sq_d metres_per_milliseco
     const double unit0 = ((double) (metres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))), (((double) (9.80665))));
@@ -51326,7 +51326,7 @@ earthG_u m_per_ms_sq_d_to_gs_u(metres_per_milliseconds_sq_d metres_per_milliseco
     const double unit0 = ((double) (metres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))), (((double) (9.80665))));
@@ -51348,7 +51348,7 @@ earthG_f m_per_ms_sq_d_to_gs_f(metres_per_milliseconds_sq_d metres_per_milliseco
     const double unit0 = ((double) (metres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))), (((double) (9.80665))));
@@ -51370,7 +51370,7 @@ earthG_d m_per_ms_sq_d_to_gs_d(metres_per_milliseconds_sq_d metres_per_milliseco
     const double unit0 = ((double) (metres_per_milliseconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((divide_d((((double) (metres_per_milliseconds_sq))), (divide_d((divide_d((((double) (1))), (((double) (1000))))), (((double) (1000))))))), (((double) (9.80665))));
@@ -51392,7 +51392,7 @@ earthG_t m_per_s_sq_t_to_gs_t(metres_per_seconds_sq_t metres_per_seconds_sq)
     const int64_t unit0 = ((int64_t) (metres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((((double) (metres_per_seconds_sq))), (((double) (9.80665))));
@@ -51414,7 +51414,7 @@ earthG_u m_per_s_sq_t_to_gs_u(metres_per_seconds_sq_t metres_per_seconds_sq)
     const int64_t unit0 = ((int64_t) (metres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((((double) (metres_per_seconds_sq))), (((double) (9.80665))));
@@ -51436,7 +51436,7 @@ earthG_f m_per_s_sq_t_to_gs_f(metres_per_seconds_sq_t metres_per_seconds_sq)
     const int64_t unit0 = ((int64_t) (metres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((((double) (metres_per_seconds_sq))), (((double) (9.80665))));
@@ -51458,7 +51458,7 @@ earthG_d m_per_s_sq_t_to_gs_d(metres_per_seconds_sq_t metres_per_seconds_sq)
     const int64_t unit0 = ((int64_t) (metres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((((double) (metres_per_seconds_sq))), (((double) (9.80665))));
@@ -51478,7 +51478,7 @@ earthG_d m_per_s_sq_t_to_gs_d(metres_per_seconds_sq_t metres_per_seconds_sq)
 earthG_t m_per_s_sq_u_to_gs_t(metres_per_seconds_sq_u metres_per_seconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (metres_per_seconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 9223372036854775807;
     } else {
         const double result = divide_d((((double) (metres_per_seconds_sq))), (((double) (9.80665))));
@@ -51496,7 +51496,7 @@ earthG_t m_per_s_sq_u_to_gs_t(metres_per_seconds_sq_u metres_per_seconds_sq)
 earthG_u m_per_s_sq_u_to_gs_u(metres_per_seconds_sq_u metres_per_seconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (metres_per_seconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 18446744073709551615U;
     } else {
         const double result = divide_d((((double) (metres_per_seconds_sq))), (((double) (9.80665))));
@@ -51514,7 +51514,7 @@ earthG_u m_per_s_sq_u_to_gs_u(metres_per_seconds_sq_u metres_per_seconds_sq)
 earthG_f m_per_s_sq_u_to_gs_f(metres_per_seconds_sq_u metres_per_seconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (metres_per_seconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return FLT_MAX;
     } else {
         const double result = divide_d((((double) (metres_per_seconds_sq))), (((double) (9.80665))));
@@ -51532,7 +51532,7 @@ earthG_f m_per_s_sq_u_to_gs_f(metres_per_seconds_sq_u metres_per_seconds_sq)
 earthG_d m_per_s_sq_u_to_gs_d(metres_per_seconds_sq_u metres_per_seconds_sq)
 {
     const uint64_t unit0 = ((uint64_t) (metres_per_seconds_sq));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return DBL_MAX;
     } else {
         const double result = divide_d((((double) (metres_per_seconds_sq))), (((double) (9.80665))));
@@ -51552,7 +51552,7 @@ earthG_t m_per_s_sq_f_to_gs_t(metres_per_seconds_sq_f metres_per_seconds_sq)
     const float unit0 = ((float) (metres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((((double) (metres_per_seconds_sq))), (((double) (9.80665))));
@@ -51574,7 +51574,7 @@ earthG_u m_per_s_sq_f_to_gs_u(metres_per_seconds_sq_f metres_per_seconds_sq)
     const float unit0 = ((float) (metres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((((double) (metres_per_seconds_sq))), (((double) (9.80665))));
@@ -51596,7 +51596,7 @@ earthG_f m_per_s_sq_f_to_gs_f(metres_per_seconds_sq_f metres_per_seconds_sq)
     const float unit0 = ((float) (metres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((((double) (metres_per_seconds_sq))), (((double) (9.80665))));
@@ -51618,7 +51618,7 @@ earthG_d m_per_s_sq_f_to_gs_d(metres_per_seconds_sq_f metres_per_seconds_sq)
     const float unit0 = ((float) (metres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((((double) (metres_per_seconds_sq))), (((double) (9.80665))));
@@ -51640,7 +51640,7 @@ earthG_t m_per_s_sq_d_to_gs_t(metres_per_seconds_sq_d metres_per_seconds_sq)
     const double unit0 = ((double) (metres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((((double) (metres_per_seconds_sq))), (((double) (9.80665))));
@@ -51662,7 +51662,7 @@ earthG_u m_per_s_sq_d_to_gs_u(metres_per_seconds_sq_d metres_per_seconds_sq)
     const double unit0 = ((double) (metres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((((double) (metres_per_seconds_sq))), (((double) (9.80665))));
@@ -51684,7 +51684,7 @@ earthG_f m_per_s_sq_d_to_gs_f(metres_per_seconds_sq_d metres_per_seconds_sq)
     const double unit0 = ((double) (metres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((((double) (metres_per_seconds_sq))), (((double) (9.80665))));
@@ -51706,7 +51706,7 @@ earthG_d m_per_s_sq_d_to_gs_d(metres_per_seconds_sq_d metres_per_seconds_sq)
     const double unit0 = ((double) (metres_per_seconds_sq));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((((double) (metres_per_seconds_sq))), (((double) (9.80665))));
@@ -52620,7 +52620,7 @@ millimetres_per_microseconds_sq_t gs_t_to_mm_per_us_sq_t(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -52642,7 +52642,7 @@ millimetres_per_microseconds_sq_u gs_t_to_mm_per_us_sq_u(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return 0;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -52664,7 +52664,7 @@ millimetres_per_microseconds_sq_f gs_t_to_mm_per_us_sq_f(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -52686,7 +52686,7 @@ millimetres_per_microseconds_sq_d gs_t_to_mm_per_us_sq_d(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -52706,7 +52706,7 @@ millimetres_per_microseconds_sq_d gs_t_to_mm_per_us_sq_d(earthG_t earthG)
 millimetres_per_microseconds_sq_t gs_u_to_mm_per_us_sq_t(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 9223372036854775807;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -52724,7 +52724,7 @@ millimetres_per_microseconds_sq_t gs_u_to_mm_per_us_sq_t(earthG_u earthG)
 millimetres_per_microseconds_sq_u gs_u_to_mm_per_us_sq_u(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 18446744073709551615U;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -52742,7 +52742,7 @@ millimetres_per_microseconds_sq_u gs_u_to_mm_per_us_sq_u(earthG_u earthG)
 millimetres_per_microseconds_sq_f gs_u_to_mm_per_us_sq_f(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return FLT_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -52760,7 +52760,7 @@ millimetres_per_microseconds_sq_f gs_u_to_mm_per_us_sq_f(earthG_u earthG)
 millimetres_per_microseconds_sq_d gs_u_to_mm_per_us_sq_d(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return DBL_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -52780,7 +52780,7 @@ millimetres_per_microseconds_sq_t gs_f_to_mm_per_us_sq_t(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -52802,7 +52802,7 @@ millimetres_per_microseconds_sq_u gs_f_to_mm_per_us_sq_u(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return 0;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -52824,7 +52824,7 @@ millimetres_per_microseconds_sq_f gs_f_to_mm_per_us_sq_f(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -52846,7 +52846,7 @@ millimetres_per_microseconds_sq_d gs_f_to_mm_per_us_sq_d(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -52868,7 +52868,7 @@ millimetres_per_microseconds_sq_t gs_d_to_mm_per_us_sq_t(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -52890,7 +52890,7 @@ millimetres_per_microseconds_sq_u gs_d_to_mm_per_us_sq_u(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return 0;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -52912,7 +52912,7 @@ millimetres_per_microseconds_sq_f gs_d_to_mm_per_us_sq_f(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -52934,7 +52934,7 @@ millimetres_per_microseconds_sq_d gs_d_to_mm_per_us_sq_d(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -52956,7 +52956,7 @@ millimetres_per_milliseconds_sq_t gs_t_to_mm_per_ms_sq_t(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -52978,7 +52978,7 @@ millimetres_per_milliseconds_sq_u gs_t_to_mm_per_ms_sq_u(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return 0;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -53000,7 +53000,7 @@ millimetres_per_milliseconds_sq_f gs_t_to_mm_per_ms_sq_f(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -53022,7 +53022,7 @@ millimetres_per_milliseconds_sq_d gs_t_to_mm_per_ms_sq_d(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -53042,7 +53042,7 @@ millimetres_per_milliseconds_sq_d gs_t_to_mm_per_ms_sq_d(earthG_t earthG)
 millimetres_per_milliseconds_sq_t gs_u_to_mm_per_ms_sq_t(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 9223372036854775807;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -53060,7 +53060,7 @@ millimetres_per_milliseconds_sq_t gs_u_to_mm_per_ms_sq_t(earthG_u earthG)
 millimetres_per_milliseconds_sq_u gs_u_to_mm_per_ms_sq_u(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 18446744073709551615U;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -53078,7 +53078,7 @@ millimetres_per_milliseconds_sq_u gs_u_to_mm_per_ms_sq_u(earthG_u earthG)
 millimetres_per_milliseconds_sq_f gs_u_to_mm_per_ms_sq_f(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return FLT_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -53096,7 +53096,7 @@ millimetres_per_milliseconds_sq_f gs_u_to_mm_per_ms_sq_f(earthG_u earthG)
 millimetres_per_milliseconds_sq_d gs_u_to_mm_per_ms_sq_d(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return DBL_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -53116,7 +53116,7 @@ millimetres_per_milliseconds_sq_t gs_f_to_mm_per_ms_sq_t(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -53138,7 +53138,7 @@ millimetres_per_milliseconds_sq_u gs_f_to_mm_per_ms_sq_u(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return 0;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -53160,7 +53160,7 @@ millimetres_per_milliseconds_sq_f gs_f_to_mm_per_ms_sq_f(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -53182,7 +53182,7 @@ millimetres_per_milliseconds_sq_d gs_f_to_mm_per_ms_sq_d(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -53204,7 +53204,7 @@ millimetres_per_milliseconds_sq_t gs_d_to_mm_per_ms_sq_t(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -53226,7 +53226,7 @@ millimetres_per_milliseconds_sq_u gs_d_to_mm_per_ms_sq_u(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return 0;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -53248,7 +53248,7 @@ millimetres_per_milliseconds_sq_f gs_d_to_mm_per_ms_sq_f(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -53270,7 +53270,7 @@ millimetres_per_milliseconds_sq_d gs_d_to_mm_per_ms_sq_d(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (1000))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -53292,7 +53292,7 @@ millimetres_per_seconds_sq_t gs_t_to_mm_per_s_sq_t(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (1000))));
@@ -53314,7 +53314,7 @@ millimetres_per_seconds_sq_u gs_t_to_mm_per_s_sq_u(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return 0;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (1000))));
@@ -53336,7 +53336,7 @@ millimetres_per_seconds_sq_f gs_t_to_mm_per_s_sq_f(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (1000))));
@@ -53358,7 +53358,7 @@ millimetres_per_seconds_sq_d gs_t_to_mm_per_s_sq_d(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (1000))));
@@ -53378,7 +53378,7 @@ millimetres_per_seconds_sq_d gs_t_to_mm_per_s_sq_d(earthG_t earthG)
 millimetres_per_seconds_sq_t gs_u_to_mm_per_s_sq_t(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 9223372036854775807;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (1000))));
@@ -53396,7 +53396,7 @@ millimetres_per_seconds_sq_t gs_u_to_mm_per_s_sq_t(earthG_u earthG)
 millimetres_per_seconds_sq_u gs_u_to_mm_per_s_sq_u(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 18446744073709551615U;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (1000))));
@@ -53414,7 +53414,7 @@ millimetres_per_seconds_sq_u gs_u_to_mm_per_s_sq_u(earthG_u earthG)
 millimetres_per_seconds_sq_f gs_u_to_mm_per_s_sq_f(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return FLT_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (1000))));
@@ -53432,7 +53432,7 @@ millimetres_per_seconds_sq_f gs_u_to_mm_per_s_sq_f(earthG_u earthG)
 millimetres_per_seconds_sq_d gs_u_to_mm_per_s_sq_d(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return DBL_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (1000))));
@@ -53452,7 +53452,7 @@ millimetres_per_seconds_sq_t gs_f_to_mm_per_s_sq_t(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (1000))));
@@ -53474,7 +53474,7 @@ millimetres_per_seconds_sq_u gs_f_to_mm_per_s_sq_u(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return 0;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (1000))));
@@ -53496,7 +53496,7 @@ millimetres_per_seconds_sq_f gs_f_to_mm_per_s_sq_f(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (1000))));
@@ -53518,7 +53518,7 @@ millimetres_per_seconds_sq_d gs_f_to_mm_per_s_sq_d(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (1000))));
@@ -53540,7 +53540,7 @@ millimetres_per_seconds_sq_t gs_d_to_mm_per_s_sq_t(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (1000))));
@@ -53562,7 +53562,7 @@ millimetres_per_seconds_sq_u gs_d_to_mm_per_s_sq_u(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return 0;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (1000))));
@@ -53584,7 +53584,7 @@ millimetres_per_seconds_sq_f gs_d_to_mm_per_s_sq_f(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (1000))));
@@ -53606,7 +53606,7 @@ millimetres_per_seconds_sq_d gs_d_to_mm_per_s_sq_d(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (1000))));
@@ -53628,7 +53628,7 @@ centimetres_per_microseconds_sq_t gs_t_to_cm_per_us_sq_t(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -53650,7 +53650,7 @@ centimetres_per_microseconds_sq_u gs_t_to_cm_per_us_sq_u(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return 0;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -53672,7 +53672,7 @@ centimetres_per_microseconds_sq_f gs_t_to_cm_per_us_sq_f(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -53694,7 +53694,7 @@ centimetres_per_microseconds_sq_d gs_t_to_cm_per_us_sq_d(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -53714,7 +53714,7 @@ centimetres_per_microseconds_sq_d gs_t_to_cm_per_us_sq_d(earthG_t earthG)
 centimetres_per_microseconds_sq_t gs_u_to_cm_per_us_sq_t(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 9223372036854775807;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -53732,7 +53732,7 @@ centimetres_per_microseconds_sq_t gs_u_to_cm_per_us_sq_t(earthG_u earthG)
 centimetres_per_microseconds_sq_u gs_u_to_cm_per_us_sq_u(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 18446744073709551615U;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -53750,7 +53750,7 @@ centimetres_per_microseconds_sq_u gs_u_to_cm_per_us_sq_u(earthG_u earthG)
 centimetres_per_microseconds_sq_f gs_u_to_cm_per_us_sq_f(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return FLT_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -53768,7 +53768,7 @@ centimetres_per_microseconds_sq_f gs_u_to_cm_per_us_sq_f(earthG_u earthG)
 centimetres_per_microseconds_sq_d gs_u_to_cm_per_us_sq_d(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return DBL_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -53788,7 +53788,7 @@ centimetres_per_microseconds_sq_t gs_f_to_cm_per_us_sq_t(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -53810,7 +53810,7 @@ centimetres_per_microseconds_sq_u gs_f_to_cm_per_us_sq_u(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return 0;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -53832,7 +53832,7 @@ centimetres_per_microseconds_sq_f gs_f_to_cm_per_us_sq_f(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -53854,7 +53854,7 @@ centimetres_per_microseconds_sq_d gs_f_to_cm_per_us_sq_d(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -53876,7 +53876,7 @@ centimetres_per_microseconds_sq_t gs_d_to_cm_per_us_sq_t(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -53898,7 +53898,7 @@ centimetres_per_microseconds_sq_u gs_d_to_cm_per_us_sq_u(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return 0;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -53920,7 +53920,7 @@ centimetres_per_microseconds_sq_f gs_d_to_cm_per_us_sq_f(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -53942,7 +53942,7 @@ centimetres_per_microseconds_sq_d gs_d_to_cm_per_us_sq_d(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000000))), (((double) (1000000))))))));
@@ -53964,7 +53964,7 @@ centimetres_per_milliseconds_sq_t gs_t_to_cm_per_ms_sq_t(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -53986,7 +53986,7 @@ centimetres_per_milliseconds_sq_u gs_t_to_cm_per_ms_sq_u(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return 0;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -54008,7 +54008,7 @@ centimetres_per_milliseconds_sq_f gs_t_to_cm_per_ms_sq_f(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -54030,7 +54030,7 @@ centimetres_per_milliseconds_sq_d gs_t_to_cm_per_ms_sq_d(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -54050,7 +54050,7 @@ centimetres_per_milliseconds_sq_d gs_t_to_cm_per_ms_sq_d(earthG_t earthG)
 centimetres_per_milliseconds_sq_t gs_u_to_cm_per_ms_sq_t(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 9223372036854775807;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -54068,7 +54068,7 @@ centimetres_per_milliseconds_sq_t gs_u_to_cm_per_ms_sq_t(earthG_u earthG)
 centimetres_per_milliseconds_sq_u gs_u_to_cm_per_ms_sq_u(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 18446744073709551615U;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -54086,7 +54086,7 @@ centimetres_per_milliseconds_sq_u gs_u_to_cm_per_ms_sq_u(earthG_u earthG)
 centimetres_per_milliseconds_sq_f gs_u_to_cm_per_ms_sq_f(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return FLT_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -54104,7 +54104,7 @@ centimetres_per_milliseconds_sq_f gs_u_to_cm_per_ms_sq_f(earthG_u earthG)
 centimetres_per_milliseconds_sq_d gs_u_to_cm_per_ms_sq_d(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return DBL_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -54124,7 +54124,7 @@ centimetres_per_milliseconds_sq_t gs_f_to_cm_per_ms_sq_t(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -54146,7 +54146,7 @@ centimetres_per_milliseconds_sq_u gs_f_to_cm_per_ms_sq_u(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return 0;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -54168,7 +54168,7 @@ centimetres_per_milliseconds_sq_f gs_f_to_cm_per_ms_sq_f(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -54190,7 +54190,7 @@ centimetres_per_milliseconds_sq_d gs_f_to_cm_per_ms_sq_d(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -54212,7 +54212,7 @@ centimetres_per_milliseconds_sq_t gs_d_to_cm_per_ms_sq_t(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -54234,7 +54234,7 @@ centimetres_per_milliseconds_sq_u gs_d_to_cm_per_ms_sq_u(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return 0;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -54256,7 +54256,7 @@ centimetres_per_milliseconds_sq_f gs_d_to_cm_per_ms_sq_f(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -54278,7 +54278,7 @@ centimetres_per_milliseconds_sq_d gs_d_to_cm_per_ms_sq_d(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (divide_d((((double) (100))), (multiply_d((((double) (1000))), (((double) (1000))))))));
@@ -54300,7 +54300,7 @@ centimetres_per_seconds_sq_t gs_t_to_cm_per_s_sq_t(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (100))));
@@ -54322,7 +54322,7 @@ centimetres_per_seconds_sq_u gs_t_to_cm_per_s_sq_u(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return 0;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (100))));
@@ -54344,7 +54344,7 @@ centimetres_per_seconds_sq_f gs_t_to_cm_per_s_sq_f(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (100))));
@@ -54366,7 +54366,7 @@ centimetres_per_seconds_sq_d gs_t_to_cm_per_s_sq_d(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (100))));
@@ -54386,7 +54386,7 @@ centimetres_per_seconds_sq_d gs_t_to_cm_per_s_sq_d(earthG_t earthG)
 centimetres_per_seconds_sq_t gs_u_to_cm_per_s_sq_t(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 9223372036854775807;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (100))));
@@ -54404,7 +54404,7 @@ centimetres_per_seconds_sq_t gs_u_to_cm_per_s_sq_t(earthG_u earthG)
 centimetres_per_seconds_sq_u gs_u_to_cm_per_s_sq_u(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 18446744073709551615U;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (100))));
@@ -54422,7 +54422,7 @@ centimetres_per_seconds_sq_u gs_u_to_cm_per_s_sq_u(earthG_u earthG)
 centimetres_per_seconds_sq_f gs_u_to_cm_per_s_sq_f(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return FLT_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (100))));
@@ -54440,7 +54440,7 @@ centimetres_per_seconds_sq_f gs_u_to_cm_per_s_sq_f(earthG_u earthG)
 centimetres_per_seconds_sq_d gs_u_to_cm_per_s_sq_d(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return DBL_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (100))));
@@ -54460,7 +54460,7 @@ centimetres_per_seconds_sq_t gs_f_to_cm_per_s_sq_t(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (100))));
@@ -54482,7 +54482,7 @@ centimetres_per_seconds_sq_u gs_f_to_cm_per_s_sq_u(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return 0;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (100))));
@@ -54504,7 +54504,7 @@ centimetres_per_seconds_sq_f gs_f_to_cm_per_s_sq_f(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (100))));
@@ -54526,7 +54526,7 @@ centimetres_per_seconds_sq_d gs_f_to_cm_per_s_sq_d(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (100))));
@@ -54548,7 +54548,7 @@ centimetres_per_seconds_sq_t gs_d_to_cm_per_s_sq_t(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (100))));
@@ -54570,7 +54570,7 @@ centimetres_per_seconds_sq_u gs_d_to_cm_per_s_sq_u(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return 0;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (100))));
@@ -54592,7 +54592,7 @@ centimetres_per_seconds_sq_f gs_d_to_cm_per_s_sq_f(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (100))));
@@ -54614,7 +54614,7 @@ centimetres_per_seconds_sq_d gs_d_to_cm_per_s_sq_d(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = multiply_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (((double) (100))));
@@ -54636,7 +54636,7 @@ metres_per_microseconds_sq_t gs_t_to_m_per_us_sq_t(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000000))), (((double) (1000000))))));
@@ -54658,7 +54658,7 @@ metres_per_microseconds_sq_u gs_t_to_m_per_us_sq_u(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000000))), (((double) (1000000))))));
@@ -54680,7 +54680,7 @@ metres_per_microseconds_sq_f gs_t_to_m_per_us_sq_f(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000000))), (((double) (1000000))))));
@@ -54702,7 +54702,7 @@ metres_per_microseconds_sq_d gs_t_to_m_per_us_sq_d(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000000))), (((double) (1000000))))));
@@ -54722,7 +54722,7 @@ metres_per_microseconds_sq_d gs_t_to_m_per_us_sq_d(earthG_t earthG)
 metres_per_microseconds_sq_t gs_u_to_m_per_us_sq_t(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 9223372036854775807;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000000))), (((double) (1000000))))));
@@ -54740,7 +54740,7 @@ metres_per_microseconds_sq_t gs_u_to_m_per_us_sq_t(earthG_u earthG)
 metres_per_microseconds_sq_u gs_u_to_m_per_us_sq_u(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 18446744073709551615U;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000000))), (((double) (1000000))))));
@@ -54758,7 +54758,7 @@ metres_per_microseconds_sq_u gs_u_to_m_per_us_sq_u(earthG_u earthG)
 metres_per_microseconds_sq_f gs_u_to_m_per_us_sq_f(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return FLT_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000000))), (((double) (1000000))))));
@@ -54776,7 +54776,7 @@ metres_per_microseconds_sq_f gs_u_to_m_per_us_sq_f(earthG_u earthG)
 metres_per_microseconds_sq_d gs_u_to_m_per_us_sq_d(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return DBL_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000000))), (((double) (1000000))))));
@@ -54796,7 +54796,7 @@ metres_per_microseconds_sq_t gs_f_to_m_per_us_sq_t(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000000))), (((double) (1000000))))));
@@ -54818,7 +54818,7 @@ metres_per_microseconds_sq_u gs_f_to_m_per_us_sq_u(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000000))), (((double) (1000000))))));
@@ -54840,7 +54840,7 @@ metres_per_microseconds_sq_f gs_f_to_m_per_us_sq_f(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000000))), (((double) (1000000))))));
@@ -54862,7 +54862,7 @@ metres_per_microseconds_sq_d gs_f_to_m_per_us_sq_d(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000000))), (((double) (1000000))))));
@@ -54884,7 +54884,7 @@ metres_per_microseconds_sq_t gs_d_to_m_per_us_sq_t(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000000))), (((double) (1000000))))));
@@ -54906,7 +54906,7 @@ metres_per_microseconds_sq_u gs_d_to_m_per_us_sq_u(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000000))), (((double) (1000000))))));
@@ -54928,7 +54928,7 @@ metres_per_microseconds_sq_f gs_d_to_m_per_us_sq_f(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000000))), (((double) (1000000))))));
@@ -54950,7 +54950,7 @@ metres_per_microseconds_sq_d gs_d_to_m_per_us_sq_d(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000000))), (((double) (1000000))))));
@@ -54972,7 +54972,7 @@ metres_per_milliseconds_sq_t gs_t_to_m_per_ms_sq_t(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000))), (((double) (1000))))));
@@ -54994,7 +54994,7 @@ metres_per_milliseconds_sq_u gs_t_to_m_per_ms_sq_u(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000))), (((double) (1000))))));
@@ -55016,7 +55016,7 @@ metres_per_milliseconds_sq_f gs_t_to_m_per_ms_sq_f(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000))), (((double) (1000))))));
@@ -55038,7 +55038,7 @@ metres_per_milliseconds_sq_d gs_t_to_m_per_ms_sq_d(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000))), (((double) (1000))))));
@@ -55058,7 +55058,7 @@ metres_per_milliseconds_sq_d gs_t_to_m_per_ms_sq_d(earthG_t earthG)
 metres_per_milliseconds_sq_t gs_u_to_m_per_ms_sq_t(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 9223372036854775807;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000))), (((double) (1000))))));
@@ -55076,7 +55076,7 @@ metres_per_milliseconds_sq_t gs_u_to_m_per_ms_sq_t(earthG_u earthG)
 metres_per_milliseconds_sq_u gs_u_to_m_per_ms_sq_u(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 18446744073709551615U;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000))), (((double) (1000))))));
@@ -55094,7 +55094,7 @@ metres_per_milliseconds_sq_u gs_u_to_m_per_ms_sq_u(earthG_u earthG)
 metres_per_milliseconds_sq_f gs_u_to_m_per_ms_sq_f(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return FLT_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000))), (((double) (1000))))));
@@ -55112,7 +55112,7 @@ metres_per_milliseconds_sq_f gs_u_to_m_per_ms_sq_f(earthG_u earthG)
 metres_per_milliseconds_sq_d gs_u_to_m_per_ms_sq_d(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return DBL_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000))), (((double) (1000))))));
@@ -55132,7 +55132,7 @@ metres_per_milliseconds_sq_t gs_f_to_m_per_ms_sq_t(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000))), (((double) (1000))))));
@@ -55154,7 +55154,7 @@ metres_per_milliseconds_sq_u gs_f_to_m_per_ms_sq_u(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000))), (((double) (1000))))));
@@ -55176,7 +55176,7 @@ metres_per_milliseconds_sq_f gs_f_to_m_per_ms_sq_f(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000))), (((double) (1000))))));
@@ -55198,7 +55198,7 @@ metres_per_milliseconds_sq_d gs_f_to_m_per_ms_sq_d(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000))), (((double) (1000))))));
@@ -55220,7 +55220,7 @@ metres_per_milliseconds_sq_t gs_d_to_m_per_ms_sq_t(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000))), (((double) (1000))))));
@@ -55242,7 +55242,7 @@ metres_per_milliseconds_sq_u gs_d_to_m_per_ms_sq_u(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return 0;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000))), (((double) (1000))))));
@@ -55264,7 +55264,7 @@ metres_per_milliseconds_sq_f gs_d_to_m_per_ms_sq_f(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000))), (((double) (1000))))));
@@ -55286,7 +55286,7 @@ metres_per_milliseconds_sq_d gs_d_to_m_per_ms_sq_d(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = divide_d((multiply_d((((double) (9.80665))), (((double) (earthG))))), (multiply_d((((double) (1000))), (((double) (1000))))));
@@ -55308,7 +55308,7 @@ metres_per_seconds_sq_t gs_t_to_m_per_s_sq_t(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = multiply_d((((double) (9.80665))), (((double) (earthG))));
@@ -55330,7 +55330,7 @@ metres_per_seconds_sq_u gs_t_to_m_per_s_sq_u(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return 0;
     } else {
         const double result = multiply_d((((double) (9.80665))), (((double) (earthG))));
@@ -55352,7 +55352,7 @@ metres_per_seconds_sq_f gs_t_to_m_per_s_sq_f(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = multiply_d((((double) (9.80665))), (((double) (earthG))));
@@ -55374,7 +55374,7 @@ metres_per_seconds_sq_d gs_t_to_m_per_s_sq_d(earthG_t earthG)
     const int64_t unit0 = ((int64_t) (earthG));
     if (__builtin_expect(overflow_upper_t(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_t(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_t(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = multiply_d((((double) (9.80665))), (((double) (earthG))));
@@ -55394,7 +55394,7 @@ metres_per_seconds_sq_d gs_t_to_m_per_s_sq_d(earthG_t earthG)
 metres_per_seconds_sq_t gs_u_to_m_per_s_sq_t(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 9223372036854775807;
     } else {
         const double result = multiply_d((((double) (9.80665))), (((double) (earthG))));
@@ -55412,7 +55412,7 @@ metres_per_seconds_sq_t gs_u_to_m_per_s_sq_t(earthG_u earthG)
 metres_per_seconds_sq_u gs_u_to_m_per_s_sq_u(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return 18446744073709551615U;
     } else {
         const double result = multiply_d((((double) (9.80665))), (((double) (earthG))));
@@ -55430,7 +55430,7 @@ metres_per_seconds_sq_u gs_u_to_m_per_s_sq_u(earthG_u earthG)
 metres_per_seconds_sq_f gs_u_to_m_per_s_sq_f(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return FLT_MAX;
     } else {
         const double result = multiply_d((((double) (9.80665))), (((double) (earthG))));
@@ -55448,7 +55448,7 @@ metres_per_seconds_sq_f gs_u_to_m_per_s_sq_f(earthG_u earthG)
 metres_per_seconds_sq_d gs_u_to_m_per_s_sq_d(earthG_u earthG)
 {
     const uint64_t unit0 = ((uint64_t) (earthG));
-    if (__builtin_expect((overflow_upper_u(unit0)), 0)) {
+    if (__builtin_expect(overflow_upper_u(unit0), 0)) {
         return DBL_MAX;
     } else {
         const double result = multiply_d((((double) (9.80665))), (((double) (earthG))));
@@ -55468,7 +55468,7 @@ metres_per_seconds_sq_t gs_f_to_m_per_s_sq_t(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = multiply_d((((double) (9.80665))), (((double) (earthG))));
@@ -55490,7 +55490,7 @@ metres_per_seconds_sq_u gs_f_to_m_per_s_sq_u(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return 0;
     } else {
         const double result = multiply_d((((double) (9.80665))), (((double) (earthG))));
@@ -55512,7 +55512,7 @@ metres_per_seconds_sq_f gs_f_to_m_per_s_sq_f(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = multiply_d((((double) (9.80665))), (((double) (earthG))));
@@ -55534,7 +55534,7 @@ metres_per_seconds_sq_d gs_f_to_m_per_s_sq_d(earthG_f earthG)
     const float unit0 = ((float) (earthG));
     if (__builtin_expect(overflow_upper_f(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_f(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_f(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = multiply_d((((double) (9.80665))), (((double) (earthG))));
@@ -55556,7 +55556,7 @@ metres_per_seconds_sq_t gs_d_to_m_per_s_sq_t(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 9223372036854775807;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -9223372036854775807 - 1;
     } else {
         const double result = multiply_d((((double) (9.80665))), (((double) (earthG))));
@@ -55578,7 +55578,7 @@ metres_per_seconds_sq_u gs_d_to_m_per_s_sq_u(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return 18446744073709551615U;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return 0;
     } else {
         const double result = multiply_d((((double) (9.80665))), (((double) (earthG))));
@@ -55600,7 +55600,7 @@ metres_per_seconds_sq_f gs_d_to_m_per_s_sq_f(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return FLT_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -FLT_MAX;
     } else {
         const double result = multiply_d((((double) (9.80665))), (((double) (earthG))));
@@ -55622,7 +55622,7 @@ metres_per_seconds_sq_d gs_d_to_m_per_s_sq_d(earthG_d earthG)
     const double unit0 = ((double) (earthG));
     if (__builtin_expect(overflow_upper_d(unit0), 0)) {
         return DBL_MAX;
-    } else if (__builtin_expect((overflow_lower_d(unit0)), 0)) {
+    } else if (__builtin_expect(overflow_lower_d(unit0), 0)) {
         return -DBL_MAX;
     } else {
         const double result = multiply_d((((double) (9.80665))), (((double) (earthG))));

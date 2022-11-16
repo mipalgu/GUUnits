@@ -4,229 +4,95 @@ import XCTest
 
 final class AngularVelocity_Degrees_Per_Microseconds_tTests1: XCTestCase {
 
-    func testdegrees_per_microseconds_tTodegrees_per_milliseconds_uUsing0Expectingdegrees_per_milliseconds_uUInt64clampingInt640Int641000() {
-        XCTAssertEqual(deg_per_us_t_to_deg_per_ms_u(0), degrees_per_milliseconds_u(UInt64(clamping: (Int64(0)) * (Int64(1000)))))
+    func testdegrees_per_microseconds_t_to_uint32_t() {
+        XCTAssertEqual(deg_per_us_t_to_u32(0), 0)
+        XCTAssertEqual(deg_per_us_t_to_u32(5), 5)
+        XCTAssertEqual(deg_per_us_t_to_u32(degrees_per_microseconds_t(Int64.min)), UInt32(UInt32.min))
+        XCTAssertEqual(deg_per_us_t_to_u32(degrees_per_microseconds_t(Int64.max)), UInt32(UInt32.max))
     }
 
-    func testdegrees_per_microseconds_tTodegrees_per_milliseconds_uUsing5000000Expectingdegrees_per_milliseconds_uUInt64clampingInt645000000Int641000() {
-        XCTAssertEqual(deg_per_us_t_to_deg_per_ms_u(5000000), degrees_per_milliseconds_u(UInt64(clamping: (Int64(5000000)) * (Int64(1000)))))
+    func testdegrees_per_microseconds_t_to_uint64_t() {
+        XCTAssertEqual(deg_per_us_t_to_u64(0), 0)
+        XCTAssertEqual(deg_per_us_t_to_u64(5), 5)
+        XCTAssertEqual(deg_per_us_t_to_u64(degrees_per_microseconds_t(Int64.min)), UInt64(UInt64.min))
+        XCTAssertEqual(deg_per_us_t_to_u64(degrees_per_microseconds_t(Int64.max)), UInt64(Int64.max))
     }
 
-    func testdegrees_per_microseconds_tTodegrees_per_milliseconds_uUsingInt64_maxExpectingdegrees_per_milliseconds_uUInt64_max() {
-        XCTAssertEqual(deg_per_us_t_to_deg_per_ms_u(Int64.max), degrees_per_milliseconds_u(UInt64.max))
+    func testdegrees_per_microseconds_t_to_uint8_t() {
+        XCTAssertEqual(deg_per_us_t_to_u8(0), 0)
+        XCTAssertEqual(deg_per_us_t_to_u8(5), 5)
+        XCTAssertEqual(deg_per_us_t_to_u8(degrees_per_microseconds_t(Int64.min)), UInt8(UInt8.min))
+        XCTAssertEqual(deg_per_us_t_to_u8(degrees_per_microseconds_t(Int64.max)), UInt8(UInt8.max))
     }
 
-    func testdegrees_per_microseconds_tTodegrees_per_milliseconds_uUsingInt64_minExpectingdegrees_per_milliseconds_uUInt64_min() {
-        XCTAssertEqual(deg_per_us_t_to_deg_per_ms_u(Int64.min), degrees_per_milliseconds_u(UInt64.min))
+    func testdouble_to_degrees_per_microseconds_t() {
+        XCTAssertEqual(d_to_deg_per_us_t(0.0), 0)
+        XCTAssertEqual(d_to_deg_per_us_t(5.0), 5)
+        XCTAssertEqual(d_to_deg_per_us_t(Double(-Double.greatestFiniteMagnitude)), degrees_per_microseconds_t(Int64.min))
+        XCTAssertEqual(d_to_deg_per_us_t(Double(Double.greatestFiniteMagnitude)), degrees_per_microseconds_t(Int64.max))
     }
 
-    func testdegrees_per_microseconds_tTodegrees_per_milliseconds_uUsingNeg5000000Expectingdegrees_per_milliseconds_uUInt64clampingInt64Neg5000000Int641000() {
-        XCTAssertEqual(deg_per_us_t_to_deg_per_ms_u(-5000000), degrees_per_milliseconds_u(UInt64(clamping: (Int64(-5000000)) * (Int64(1000)))))
+    func testfloat_to_degrees_per_microseconds_t() {
+        XCTAssertEqual(f_to_deg_per_us_t(0.0), 0)
+        XCTAssertEqual(f_to_deg_per_us_t(5.0), 5)
+        XCTAssertEqual(f_to_deg_per_us_t(Float(-Float.greatestFiniteMagnitude)), degrees_per_microseconds_t(Int64.min))
+        XCTAssertEqual(f_to_deg_per_us_t(Float(Float.greatestFiniteMagnitude)), degrees_per_microseconds_t(Int64.max))
     }
 
-    func testdegrees_per_microseconds_tTodegrees_per_seconds_dUsing0Expectingdegrees_per_seconds_dDouble0Double1000000() {
-        let result = deg_per_us_t_to_deg_per_s_d(0)
-        let expected: degrees_per_seconds_d = degrees_per_seconds_d((Double(0)) * (Double(1000000)))
-        let tolerance: degrees_per_seconds_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
+    func testint16_t_to_degrees_per_microseconds_t() {
+        XCTAssertEqual(i16_to_deg_per_us_t(0), 0)
+        XCTAssertEqual(i16_to_deg_per_us_t(5), 5)
+        XCTAssertEqual(i16_to_deg_per_us_t(Int16(Int16.min)), degrees_per_microseconds_t(Int16.min))
+        XCTAssertEqual(i16_to_deg_per_us_t(Int16(Int16.max)), degrees_per_microseconds_t(Int16.max))
     }
 
-    func testdegrees_per_microseconds_tTodegrees_per_seconds_dUsing5000000Expectingdegrees_per_seconds_dDouble5000000Double1000000() {
-        let result = deg_per_us_t_to_deg_per_s_d(5000000)
-        let expected: degrees_per_seconds_d = degrees_per_seconds_d((Double(5000000)) * (Double(1000000)))
-        let tolerance: degrees_per_seconds_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
+    func testint32_t_to_degrees_per_microseconds_t() {
+        XCTAssertEqual(i32_to_deg_per_us_t(0), 0)
+        XCTAssertEqual(i32_to_deg_per_us_t(5), 5)
+        XCTAssertEqual(i32_to_deg_per_us_t(Int32(Int32.min)), degrees_per_microseconds_t(Int32.min))
+        XCTAssertEqual(i32_to_deg_per_us_t(Int32(Int32.max)), degrees_per_microseconds_t(Int32.max))
     }
 
-    func testdegrees_per_microseconds_tTodegrees_per_seconds_dUsingInt64_maxExpectingdegrees_per_seconds_dDouble_greatestFiniteMagnitude() {
-        let result = deg_per_us_t_to_deg_per_s_d(Int64.max)
-        let expected: degrees_per_seconds_d = degrees_per_seconds_d(Double.greatestFiniteMagnitude)
-        let tolerance: degrees_per_seconds_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
+    func testint64_t_to_degrees_per_microseconds_t() {
+        XCTAssertEqual(i64_to_deg_per_us_t(0), 0)
+        XCTAssertEqual(i64_to_deg_per_us_t(5), 5)
+        XCTAssertEqual(i64_to_deg_per_us_t(Int64(Int64.min)), degrees_per_microseconds_t(Int64.min))
+        XCTAssertEqual(i64_to_deg_per_us_t(Int64(Int64.max)), degrees_per_microseconds_t(Int64.max))
     }
 
-    func testdegrees_per_microseconds_tTodegrees_per_seconds_dUsingInt64_minExpectingdegrees_per_seconds_dNegDouble_greatestFiniteMagnitude() {
-        let result = deg_per_us_t_to_deg_per_s_d(Int64.min)
-        let expected: degrees_per_seconds_d = degrees_per_seconds_d(-Double.greatestFiniteMagnitude)
-        let tolerance: degrees_per_seconds_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
+    func testint8_t_to_degrees_per_microseconds_t() {
+        XCTAssertEqual(i8_to_deg_per_us_t(0), 0)
+        XCTAssertEqual(i8_to_deg_per_us_t(5), 5)
+        XCTAssertEqual(i8_to_deg_per_us_t(Int8(Int8.min)), degrees_per_microseconds_t(Int8.min))
+        XCTAssertEqual(i8_to_deg_per_us_t(Int8(Int8.max)), degrees_per_microseconds_t(Int8.max))
     }
 
-    func testdegrees_per_microseconds_tTodegrees_per_seconds_dUsingNeg5000000Expectingdegrees_per_seconds_dDoubleNeg5000000Double1000000() {
-        let result = deg_per_us_t_to_deg_per_s_d(-5000000)
-        let expected: degrees_per_seconds_d = degrees_per_seconds_d((Double(-5000000)) * (Double(1000000)))
-        let tolerance: degrees_per_seconds_d = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
+    func testuint16_t_to_degrees_per_microseconds_t() {
+        XCTAssertEqual(u16_to_deg_per_us_t(0), 0)
+        XCTAssertEqual(u16_to_deg_per_us_t(5), 5)
+        XCTAssertEqual(u16_to_deg_per_us_t(UInt16(UInt16.min)), degrees_per_microseconds_t(UInt16.min))
+        XCTAssertEqual(u16_to_deg_per_us_t(UInt16(UInt16.max)), degrees_per_microseconds_t(UInt16.max))
     }
 
-    func testdegrees_per_microseconds_tTodegrees_per_seconds_fUsing0Expectingdegrees_per_seconds_fDouble0Double1000000() {
-        let result = deg_per_us_t_to_deg_per_s_f(0)
-        let expected: degrees_per_seconds_f = degrees_per_seconds_f((Double(0)) * (Double(1000000)))
-        let tolerance: degrees_per_seconds_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
+    func testuint32_t_to_degrees_per_microseconds_t() {
+        XCTAssertEqual(u32_to_deg_per_us_t(0), 0)
+        XCTAssertEqual(u32_to_deg_per_us_t(5), 5)
+        XCTAssertEqual(u32_to_deg_per_us_t(UInt32(UInt32.min)), degrees_per_microseconds_t(UInt32.min))
+        XCTAssertEqual(u32_to_deg_per_us_t(UInt32(UInt32.max)), degrees_per_microseconds_t(UInt32.max))
     }
 
-    func testdegrees_per_microseconds_tTodegrees_per_seconds_fUsing5000000Expectingdegrees_per_seconds_fDouble5000000Double1000000() {
-        let result = deg_per_us_t_to_deg_per_s_f(5000000)
-        let expected: degrees_per_seconds_f = degrees_per_seconds_f((Double(5000000)) * (Double(1000000)))
-        let tolerance: degrees_per_seconds_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
+    func testuint64_t_to_degrees_per_microseconds_t() {
+        XCTAssertEqual(u64_to_deg_per_us_t(0), 0)
+        XCTAssertEqual(u64_to_deg_per_us_t(5), 5)
+        XCTAssertEqual(u64_to_deg_per_us_t(UInt64(UInt64.min)), degrees_per_microseconds_t(UInt64.min))
+        XCTAssertEqual(u64_to_deg_per_us_t(UInt64(UInt64.max)), degrees_per_microseconds_t(Int64.max))
     }
 
-    func testdegrees_per_microseconds_tTodegrees_per_seconds_fUsingInt64_maxExpectingdegrees_per_seconds_fFloat_greatestFiniteMagnitude() {
-        let result = deg_per_us_t_to_deg_per_s_f(Int64.max)
-        let expected: degrees_per_seconds_f = degrees_per_seconds_f(Float.greatestFiniteMagnitude)
-        let tolerance: degrees_per_seconds_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testdegrees_per_microseconds_tTodegrees_per_seconds_fUsingInt64_minExpectingdegrees_per_seconds_fNegFloat_greatestFiniteMagnitude() {
-        let result = deg_per_us_t_to_deg_per_s_f(Int64.min)
-        let expected: degrees_per_seconds_f = degrees_per_seconds_f(-Float.greatestFiniteMagnitude)
-        let tolerance: degrees_per_seconds_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testdegrees_per_microseconds_tTodegrees_per_seconds_fUsingNeg5000000Expectingdegrees_per_seconds_fDoubleNeg5000000Double1000000() {
-        let result = deg_per_us_t_to_deg_per_s_f(-5000000)
-        let expected: degrees_per_seconds_f = degrees_per_seconds_f((Double(-5000000)) * (Double(1000000)))
-        let tolerance: degrees_per_seconds_f = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testdegrees_per_microseconds_tTodegrees_per_seconds_tUsing0Expectingdegrees_per_seconds_tInt64clampingInt640Int641000000() {
-        XCTAssertEqual(deg_per_us_t_to_deg_per_s_t(0), degrees_per_seconds_t(Int64(clamping: (Int64(0)) * (Int64(1000000)))))
-    }
-
-    func testdegrees_per_microseconds_tTodegrees_per_seconds_tUsing5000000Expectingdegrees_per_seconds_tInt64clampingInt645000000Int641000000() {
-        XCTAssertEqual(deg_per_us_t_to_deg_per_s_t(5000000), degrees_per_seconds_t(Int64(clamping: (Int64(5000000)) * (Int64(1000000)))))
-    }
-
-    func testdegrees_per_microseconds_tTodegrees_per_seconds_tUsingInt64_maxExpectingdegrees_per_seconds_tInt64_max() {
-        XCTAssertEqual(deg_per_us_t_to_deg_per_s_t(Int64.max), degrees_per_seconds_t(Int64.max))
-    }
-
-    func testdegrees_per_microseconds_tTodegrees_per_seconds_tUsingInt64_minExpectingdegrees_per_seconds_tInt64_min() {
-        XCTAssertEqual(deg_per_us_t_to_deg_per_s_t(Int64.min), degrees_per_seconds_t(Int64.min))
-    }
-
-    func testdegrees_per_microseconds_tTodegrees_per_seconds_tUsingNeg5000000Expectingdegrees_per_seconds_tInt64clampingInt64Neg5000000Int641000000() {
-        XCTAssertEqual(deg_per_us_t_to_deg_per_s_t(-5000000), degrees_per_seconds_t(Int64(clamping: (Int64(-5000000)) * (Int64(1000000)))))
-    }
-
-    func testdegrees_per_microseconds_tTodegrees_per_seconds_uUsing0Expectingdegrees_per_seconds_uUInt64clampingInt640Int641000000() {
-        XCTAssertEqual(deg_per_us_t_to_deg_per_s_u(0), degrees_per_seconds_u(UInt64(clamping: (Int64(0)) * (Int64(1000000)))))
-    }
-
-    func testdegrees_per_microseconds_tTodegrees_per_seconds_uUsing5000000Expectingdegrees_per_seconds_uUInt64clampingInt645000000Int641000000() {
-        XCTAssertEqual(deg_per_us_t_to_deg_per_s_u(5000000), degrees_per_seconds_u(UInt64(clamping: (Int64(5000000)) * (Int64(1000000)))))
-    }
-
-    func testdegrees_per_microseconds_tTodegrees_per_seconds_uUsingInt64_maxExpectingdegrees_per_seconds_uUInt64_max() {
-        XCTAssertEqual(deg_per_us_t_to_deg_per_s_u(Int64.max), degrees_per_seconds_u(UInt64.max))
-    }
-
-    func testdegrees_per_microseconds_tTodegrees_per_seconds_uUsingInt64_minExpectingdegrees_per_seconds_uUInt64_min() {
-        XCTAssertEqual(deg_per_us_t_to_deg_per_s_u(Int64.min), degrees_per_seconds_u(UInt64.min))
-    }
-
-    func testdegrees_per_microseconds_tTodegrees_per_seconds_uUsingNeg5000000Expectingdegrees_per_seconds_uUInt64clampingInt64Neg5000000Int641000000() {
-        XCTAssertEqual(deg_per_us_t_to_deg_per_s_u(-5000000), degrees_per_seconds_u(UInt64(clamping: (Int64(-5000000)) * (Int64(1000000)))))
-    }
-
-    func testdegrees_per_microseconds_tTodoubleUsing0Expecting0_0() {
-        let result = deg_per_us_t_to_d(0)
-        let expected: Double = 0.0
-        let tolerance: Double = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testdegrees_per_microseconds_tTodoubleUsing5Expecting5_0() {
-        let result = deg_per_us_t_to_d(5)
-        let expected: Double = 5.0
-        let tolerance: Double = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testdegrees_per_microseconds_tTodoubleUsingdegrees_per_microseconds_tInt64_maxExpectingDoubleInt64_max() {
-        let result = deg_per_us_t_to_d(degrees_per_microseconds_t(Int64.max))
-        let expected: Double = Double(Int64.max)
-        let tolerance: Double = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testdegrees_per_microseconds_tTodoubleUsingdegrees_per_microseconds_tInt64_minExpectingDoubleInt64_min() {
-        let result = deg_per_us_t_to_d(degrees_per_microseconds_t(Int64.min))
-        let expected: Double = Double(Int64.min)
-        let tolerance: Double = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testdegrees_per_microseconds_tTofloatUsing0Expecting0_0() {
-        let result = deg_per_us_t_to_f(0)
-        let expected: Float = 0.0
-        let tolerance: Float = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
+    func testuint8_t_to_degrees_per_microseconds_t() {
+        XCTAssertEqual(u8_to_deg_per_us_t(0), 0)
+        XCTAssertEqual(u8_to_deg_per_us_t(5), 5)
+        XCTAssertEqual(u8_to_deg_per_us_t(UInt8(UInt8.min)), degrees_per_microseconds_t(UInt8.min))
+        XCTAssertEqual(u8_to_deg_per_us_t(UInt8(UInt8.max)), degrees_per_microseconds_t(UInt8.max))
     }
 
 }

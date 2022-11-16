@@ -4,103 +4,49 @@ import XCTest
 
 final class Pixels_Pixels_uTests0: XCTestCase {
 
-    func testdoubleTopixels_uUsing0_0Expecting0() {
+    func testdouble_to_pixels_u() {
         XCTAssertEqual(d_to_px_u(0.0), 0)
-    }
-
-    func testdoubleTopixels_uUsing5_0Expecting5() {
         XCTAssertEqual(d_to_px_u(5.0), 5)
-    }
-
-    func testdoubleTopixels_uUsingDoubleDouble_greatestFiniteMagnitudeExpectingpixels_uUInt64_max() {
+        XCTAssertEqual(d_to_px_u(Double(-Double.greatestFiniteMagnitude)), pixels_u(UInt64.min))
         XCTAssertEqual(d_to_px_u(Double(Double.greatestFiniteMagnitude)), pixels_u(UInt64.max))
     }
 
-    func testdoubleTopixels_uUsingDoubleNegDouble_greatestFiniteMagnitudeExpectingpixels_uUInt64_min() {
-        XCTAssertEqual(d_to_px_u(Double(-Double.greatestFiniteMagnitude)), pixels_u(UInt64.min))
-    }
-
-    func testfloatTopixels_uUsing0_0Expecting0() {
+    func testfloat_to_pixels_u() {
         XCTAssertEqual(f_to_px_u(0.0), 0)
-    }
-
-    func testfloatTopixels_uUsing5_0Expecting5() {
         XCTAssertEqual(f_to_px_u(5.0), 5)
-    }
-
-    func testfloatTopixels_uUsingFloatFloat_greatestFiniteMagnitudeExpectingpixels_uUInt64_max() {
+        XCTAssertEqual(f_to_px_u(Float(-Float.greatestFiniteMagnitude)), pixels_u(UInt64.min))
         XCTAssertEqual(f_to_px_u(Float(Float.greatestFiniteMagnitude)), pixels_u(UInt64.max))
     }
 
-    func testfloatTopixels_uUsingFloatNegFloat_greatestFiniteMagnitudeExpectingpixels_uUInt64_min() {
-        XCTAssertEqual(f_to_px_u(Float(-Float.greatestFiniteMagnitude)), pixels_u(UInt64.min))
-    }
-
-    func testint16_tTopixels_uUsing0Expecting0() {
+    func testint16_t_to_pixels_u() {
         XCTAssertEqual(i16_to_px_u(0), 0)
-    }
-
-    func testint16_tTopixels_uUsing5Expecting5() {
         XCTAssertEqual(i16_to_px_u(5), 5)
-    }
-
-    func testint16_tTopixels_uUsingInt16Int16_maxExpectingpixels_uInt16_max() {
+        XCTAssertEqual(i16_to_px_u(Int16(Int16.min)), pixels_u(UInt64.min))
         XCTAssertEqual(i16_to_px_u(Int16(Int16.max)), pixels_u(Int16.max))
     }
 
-    func testint16_tTopixels_uUsingInt16Int16_minExpectingpixels_uUInt64_min() {
-        XCTAssertEqual(i16_to_px_u(Int16(Int16.min)), pixels_u(UInt64.min))
-    }
-
-    func testint32_tTopixels_uUsing0Expecting0() {
+    func testint32_t_to_pixels_u() {
         XCTAssertEqual(i32_to_px_u(0), 0)
-    }
-
-    func testint32_tTopixels_uUsing5Expecting5() {
         XCTAssertEqual(i32_to_px_u(5), 5)
-    }
-
-    func testint32_tTopixels_uUsingInt32Int32_maxExpectingpixels_uInt32_max() {
+        XCTAssertEqual(i32_to_px_u(Int32(Int32.min)), pixels_u(UInt64.min))
         XCTAssertEqual(i32_to_px_u(Int32(Int32.max)), pixels_u(Int32.max))
     }
 
-    func testint32_tTopixels_uUsingInt32Int32_minExpectingpixels_uUInt64_min() {
-        XCTAssertEqual(i32_to_px_u(Int32(Int32.min)), pixels_u(UInt64.min))
-    }
-
-    func testint64_tTopixels_uUsing0Expecting0() {
+    func testint64_t_to_pixels_u() {
         XCTAssertEqual(i64_to_px_u(0), 0)
-    }
-
-    func testint64_tTopixels_uUsing5Expecting5() {
         XCTAssertEqual(i64_to_px_u(5), 5)
-    }
-
-    func testint64_tTopixels_uUsingInt64Int64_maxExpectingpixels_uInt64_max() {
+        XCTAssertEqual(i64_to_px_u(Int64(Int64.min)), pixels_u(UInt64.min))
         XCTAssertEqual(i64_to_px_u(Int64(Int64.max)), pixels_u(Int64.max))
     }
 
-    func testint64_tTopixels_uUsingInt64Int64_minExpectingpixels_uUInt64_min() {
-        XCTAssertEqual(i64_to_px_u(Int64(Int64.min)), pixels_u(UInt64.min))
-    }
-
-    func testint8_tTopixels_uUsing0Expecting0() {
+    func testint8_t_to_pixels_u() {
         XCTAssertEqual(i8_to_px_u(0), 0)
-    }
-
-    func testint8_tTopixels_uUsing5Expecting5() {
         XCTAssertEqual(i8_to_px_u(5), 5)
-    }
-
-    func testint8_tTopixels_uUsingInt8Int8_maxExpectingpixels_uInt8_max() {
+        XCTAssertEqual(i8_to_px_u(Int8(Int8.min)), pixels_u(UInt64.min))
         XCTAssertEqual(i8_to_px_u(Int8(Int8.max)), pixels_u(Int8.max))
     }
 
-    func testint8_tTopixels_uUsingInt8Int8_minExpectingpixels_uUInt64_min() {
-        XCTAssertEqual(i8_to_px_u(Int8(Int8.min)), pixels_u(UInt64.min))
-    }
-
-    func testpixels_uTodoubleUsing0Expecting0_0() {
+    func testpixels_u_to_double() {
         let result = px_u_to_d(0)
         let expected: Double = 0.0
         let tolerance: Double = 0.99
@@ -109,42 +55,33 @@ final class Pixels_Pixels_uTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
-    }
-
-    func testpixels_uTodoubleUsing5Expecting5_0() {
-        let result = px_u_to_d(5)
-        let expected: Double = 5.0
-        let tolerance: Double = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        let result1 = px_u_to_d(5)
+        let expected1: Double = 5.0
+        let tolerance1: Double = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = px_u_to_d(pixels_u(UInt64.min))
+        let expected2: Double = Double(UInt64.min)
+        let tolerance2: Double = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = px_u_to_d(pixels_u(UInt64.max))
+        let expected3: Double = Double(UInt64.max)
+        let tolerance3: Double = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
         }
     }
 
-    func testpixels_uTodoubleUsingpixels_uUInt64_maxExpectingDoubleUInt64_max() {
-        let result = px_u_to_d(pixels_u(UInt64.max))
-        let expected: Double = Double(UInt64.max)
-        let tolerance: Double = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testpixels_uTodoubleUsingpixels_uUInt64_minExpectingDoubleUInt64_min() {
-        let result = px_u_to_d(pixels_u(UInt64.min))
-        let expected: Double = Double(UInt64.min)
-        let tolerance: Double = 0.99
-        if result > expected {
-            XCTAssertLessThanOrEqual(result - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - result, tolerance)
-        }
-    }
-
-    func testpixels_uTofloatUsing0Expecting0_0() {
+    func testpixels_u_to_float() {
         let result = px_u_to_f(0)
         let expected: Float = 0.0
         let tolerance: Float = 0.99
@@ -153,17 +90,174 @@ final class Pixels_Pixels_uTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
+        let result1 = px_u_to_f(5)
+        let expected1: Float = 5.0
+        let tolerance1: Float = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = px_u_to_f(pixels_u(UInt64.min))
+        let expected2: Float = Float(UInt64.min)
+        let tolerance2: Float = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = px_u_to_f(pixels_u(UInt64.max))
+        let expected3: Float = Float(UInt64.max)
+        let tolerance3: Float = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
     }
 
-    func testpixels_uTofloatUsing5Expecting5_0() {
-        let result = px_u_to_f(5)
-        let expected: Float = 5.0
-        let tolerance: Float = 0.99
+    func testpixels_u_to_int16_t() {
+        XCTAssertEqual(px_u_to_i16(0), 0)
+        XCTAssertEqual(px_u_to_i16(5), 5)
+        XCTAssertEqual(px_u_to_i16(pixels_u(UInt64.min)), Int16(UInt64.min))
+        XCTAssertEqual(px_u_to_i16(pixels_u(UInt64.max)), Int16(Int16.max))
+    }
+
+    func testpixels_u_to_int32_t() {
+        XCTAssertEqual(px_u_to_i32(0), 0)
+        XCTAssertEqual(px_u_to_i32(5), 5)
+        XCTAssertEqual(px_u_to_i32(pixels_u(UInt64.min)), Int32(UInt64.min))
+        XCTAssertEqual(px_u_to_i32(pixels_u(UInt64.max)), Int32(Int32.max))
+    }
+
+    func testpixels_u_to_int64_t() {
+        XCTAssertEqual(px_u_to_i64(0), 0)
+        XCTAssertEqual(px_u_to_i64(5), 5)
+        XCTAssertEqual(px_u_to_i64(pixels_u(UInt64.min)), Int64(UInt64.min))
+        XCTAssertEqual(px_u_to_i64(pixels_u(UInt64.max)), Int64(Int64.max))
+    }
+
+    func testpixels_u_to_int8_t() {
+        XCTAssertEqual(px_u_to_i8(0), 0)
+        XCTAssertEqual(px_u_to_i8(5), 5)
+        XCTAssertEqual(px_u_to_i8(pixels_u(UInt64.min)), Int8(UInt64.min))
+        XCTAssertEqual(px_u_to_i8(pixels_u(UInt64.max)), Int8(Int8.max))
+    }
+
+    func testpixels_u_to_pixels_d() {
+        let result = px_u_to_px_d(0)
+        let expected: pixels_d = 0.0
+        let tolerance: pixels_d = 0.99
         if result > expected {
             XCTAssertLessThanOrEqual(result - expected, tolerance)
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
+        let result1 = px_u_to_px_d(pixels_u(UInt64.min))
+        let expected1: pixels_d = pixels_d(UInt64.min)
+        let tolerance1: pixels_d = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = px_u_to_px_d(pixels_u(UInt64.max))
+        let expected2: pixels_d = pixels_d(UInt64.max)
+        let tolerance2: pixels_d = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+    }
+
+    func testpixels_u_to_pixels_f() {
+        let result = px_u_to_px_f(0)
+        let expected: pixels_f = 0.0
+        let tolerance: pixels_f = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = px_u_to_px_f(pixels_u(UInt64.min))
+        let expected1: pixels_f = pixels_f(UInt64.min)
+        let tolerance1: pixels_f = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = px_u_to_px_f(pixels_u(UInt64.max))
+        let expected2: pixels_f = pixels_f(UInt64.max)
+        let tolerance2: pixels_f = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+    }
+
+    func testpixels_u_to_pixels_t() {
+        XCTAssertEqual(px_u_to_px_t(0), 0)
+        XCTAssertEqual(px_u_to_px_t(pixels_u(UInt64.min)), pixels_t(UInt64.min))
+        XCTAssertEqual(px_u_to_px_t(pixels_u(UInt64.max)), pixels_t(Int64.max))
+    }
+
+    func testpixels_u_to_uint16_t() {
+        XCTAssertEqual(px_u_to_u16(0), 0)
+        XCTAssertEqual(px_u_to_u16(5), 5)
+        XCTAssertEqual(px_u_to_u16(pixels_u(UInt64.min)), UInt16(UInt64.min))
+        XCTAssertEqual(px_u_to_u16(pixels_u(UInt64.max)), UInt16(UInt16.max))
+    }
+
+    func testpixels_u_to_uint32_t() {
+        XCTAssertEqual(px_u_to_u32(0), 0)
+        XCTAssertEqual(px_u_to_u32(5), 5)
+        XCTAssertEqual(px_u_to_u32(pixels_u(UInt64.min)), UInt32(UInt64.min))
+        XCTAssertEqual(px_u_to_u32(pixels_u(UInt64.max)), UInt32(UInt32.max))
+    }
+
+    func testpixels_u_to_uint64_t() {
+        XCTAssertEqual(px_u_to_u64(0), 0)
+        XCTAssertEqual(px_u_to_u64(5), 5)
+        XCTAssertEqual(px_u_to_u64(pixels_u(UInt64.min)), UInt64(UInt64.min))
+        XCTAssertEqual(px_u_to_u64(pixels_u(UInt64.max)), UInt64(UInt64.max))
+    }
+
+    func testpixels_u_to_uint8_t() {
+        XCTAssertEqual(px_u_to_u8(0), 0)
+        XCTAssertEqual(px_u_to_u8(5), 5)
+        XCTAssertEqual(px_u_to_u8(pixels_u(UInt64.min)), UInt8(UInt64.min))
+        XCTAssertEqual(px_u_to_u8(pixels_u(UInt64.max)), UInt8(UInt8.max))
+    }
+
+    func testuint16_t_to_pixels_u() {
+        XCTAssertEqual(u16_to_px_u(0), 0)
+        XCTAssertEqual(u16_to_px_u(5), 5)
+        XCTAssertEqual(u16_to_px_u(UInt16(UInt16.min)), pixels_u(UInt64.min))
+        XCTAssertEqual(u16_to_px_u(UInt16(UInt16.max)), pixels_u(UInt16.max))
+    }
+
+    func testuint32_t_to_pixels_u() {
+        XCTAssertEqual(u32_to_px_u(0), 0)
+        XCTAssertEqual(u32_to_px_u(5), 5)
+        XCTAssertEqual(u32_to_px_u(UInt32(UInt32.min)), pixels_u(UInt64.min))
+        XCTAssertEqual(u32_to_px_u(UInt32(UInt32.max)), pixels_u(UInt32.max))
+    }
+
+    func testuint64_t_to_pixels_u() {
+        XCTAssertEqual(u64_to_px_u(0), 0)
+        XCTAssertEqual(u64_to_px_u(5), 5)
+        XCTAssertEqual(u64_to_px_u(UInt64(UInt64.min)), pixels_u(UInt64.min))
+        XCTAssertEqual(u64_to_px_u(UInt64(UInt64.max)), pixels_u(UInt64.max))
+    }
+
+    func testuint8_t_to_pixels_u() {
+        XCTAssertEqual(u8_to_px_u(0), 0)
+        XCTAssertEqual(u8_to_px_u(5), 5)
+        XCTAssertEqual(u8_to_px_u(UInt8(UInt8.min)), pixels_u(UInt64.min))
+        XCTAssertEqual(u8_to_px_u(UInt8(UInt8.max)), pixels_u(UInt8.max))
     }
 
 }

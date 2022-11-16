@@ -63,7 +63,7 @@ import XCTest
 /// Provides percent_d unit tests.
 final class Percent_dTests0: XCTestCase {
 
-    func testpercent_dTopercent_tUsing0_0Expecting0() {
+    func testpercent_dTopercent_t() {
         let unit = Percent_d(0.0)
         let expected = pct_d_to_pct_t(0.0)
         let result = Percent_t(unit).rawValue
@@ -75,37 +75,31 @@ final class Percent_dTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
-    }
-
-    func testpercent_dTopercent_tUsingpercent_dNegDouble_greatestFiniteMagnitudeExpectingpercent_tInt64_min() {
-        let unit = Percent_d(percent_d(-Double.greatestFiniteMagnitude))
-        let expected = pct_d_to_pct_t(percent_d(-Double.greatestFiniteMagnitude))
-        let result = Percent_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: percent_t = 1
-        let categoryResult = Percent(unit).percent_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        let unit1 = Percent_d(percent_d(-Double.greatestFiniteMagnitude))
+        let expected1 = pct_d_to_pct_t(percent_d(-Double.greatestFiniteMagnitude))
+        let result1 = Percent_t(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: percent_t = 1
+        let categoryResult1 = Percent(unit1).percent_t.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Percent_d(percent_d(Double.greatestFiniteMagnitude))
+        let expected2 = pct_d_to_pct_t(percent_d(Double.greatestFiniteMagnitude))
+        let result2 = Percent_t(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: percent_t = 1
+        let categoryResult2 = Percent(unit2).percent_t.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
         }
     }
 
-    func testpercent_dTopercent_tUsingpercent_dDouble_greatestFiniteMagnitudeExpectingpercent_tInt64_max() {
-        let unit = Percent_d(percent_d(Double.greatestFiniteMagnitude))
-        let expected = pct_d_to_pct_t(percent_d(Double.greatestFiniteMagnitude))
-        let result = Percent_t(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: percent_t = 1
-        let categoryResult = Percent(unit).percent_t.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testpercent_dTopercent_uUsing0_0Expecting0() {
+    func testpercent_dTopercent_u() {
         let unit = Percent_d(0.0)
         let expected = pct_d_to_pct_u(0.0)
         let result = Percent_u(unit).rawValue
@@ -117,37 +111,31 @@ final class Percent_dTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
-    }
-
-    func testpercent_dTopercent_uUsingpercent_dNegDouble_greatestFiniteMagnitudeExpectingpercent_uUInt64_min() {
-        let unit = Percent_d(percent_d(-Double.greatestFiniteMagnitude))
-        let expected = pct_d_to_pct_u(percent_d(-Double.greatestFiniteMagnitude))
-        let result = Percent_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: percent_u = 1
-        let categoryResult = Percent(unit).percent_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        let unit1 = Percent_d(percent_d(-Double.greatestFiniteMagnitude))
+        let expected1 = pct_d_to_pct_u(percent_d(-Double.greatestFiniteMagnitude))
+        let result1 = Percent_u(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: percent_u = 1
+        let categoryResult1 = Percent(unit1).percent_u.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Percent_d(percent_d(Double.greatestFiniteMagnitude))
+        let expected2 = pct_d_to_pct_u(percent_d(Double.greatestFiniteMagnitude))
+        let result2 = Percent_u(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: percent_u = 1
+        let categoryResult2 = Percent(unit2).percent_u.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
         }
     }
 
-    func testpercent_dTopercent_uUsingpercent_dDouble_greatestFiniteMagnitudeExpectingpercent_uUInt64_max() {
-        let unit = Percent_d(percent_d(Double.greatestFiniteMagnitude))
-        let expected = pct_d_to_pct_u(percent_d(Double.greatestFiniteMagnitude))
-        let result = Percent_u(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: percent_u = 1
-        let categoryResult = Percent(unit).percent_u.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testpercent_dTopercent_fUsing0_0Expecting0_0() {
+    func testpercent_dTopercent_f() {
         let unit = Percent_d(0.0)
         let expected = pct_d_to_pct_f(0.0)
         let result = Percent_f(unit).rawValue
@@ -159,160 +147,328 @@ final class Percent_dTests0: XCTestCase {
         } else {
             XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
         }
-    }
-
-    func testpercent_dTopercent_fUsingpercent_dNegDouble_greatestFiniteMagnitudeExpectingpercent_fNegFloat_greatestFiniteMagnitude() {
-        let unit = Percent_d(percent_d(-Double.greatestFiniteMagnitude))
-        let expected = pct_d_to_pct_f(percent_d(-Double.greatestFiniteMagnitude))
-        let result = Percent_f(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: percent_f = 1.0
-        let categoryResult = Percent(unit).percent_f.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
+        let unit1 = Percent_d(percent_d(-Double.greatestFiniteMagnitude))
+        let expected1 = pct_d_to_pct_f(percent_d(-Double.greatestFiniteMagnitude))
+        let result1 = Percent_f(unit1).rawValue
+        XCTAssertEqual(expected1, result1)
+        let tolerance1: percent_f = 1.0
+        let categoryResult1 = Percent(unit1).percent_f.rawValue
+        if categoryResult1 > expected1 {
+            XCTAssertLessThanOrEqual(categoryResult1 - expected1, tolerance1)
         } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
+            XCTAssertLessThanOrEqual(expected1 - categoryResult1, tolerance1)
+        }
+        let unit2 = Percent_d(percent_d(Double.greatestFiniteMagnitude))
+        let expected2 = pct_d_to_pct_f(percent_d(Double.greatestFiniteMagnitude))
+        let result2 = Percent_f(unit2).rawValue
+        XCTAssertEqual(expected2, result2)
+        let tolerance2: percent_f = 1.0
+        let categoryResult2 = Percent(unit2).percent_f.rawValue
+        if categoryResult2 > expected2 {
+            XCTAssertLessThanOrEqual(categoryResult2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - categoryResult2, tolerance2)
         }
     }
 
-    func testpercent_dTopercent_fUsingpercent_dDouble_greatestFiniteMagnitudeExpectingpercent_fFloat_greatestFiniteMagnitude() {
-        let unit = Percent_d(percent_d(Double.greatestFiniteMagnitude))
-        let expected = pct_d_to_pct_f(percent_d(Double.greatestFiniteMagnitude))
-        let result = Percent_f(unit).rawValue
-        XCTAssertEqual(expected, result)
-        let tolerance: percent_f = 1.0
-        let categoryResult = Percent(unit).percent_f.rawValue
-        if categoryResult > expected {
-            XCTAssertLessThanOrEqual(categoryResult - expected, tolerance)
-        } else {
-            XCTAssertLessThanOrEqual(expected - categoryResult, tolerance)
-        }
-    }
-
-    func testpercent_dToint8_tUsing0_0Expecting0() {
+    func testpercent_dToInt8() {
         let expected = pct_d_to_i8(0.0)
         let result = Int8(Percent_d(0.0))
         XCTAssertEqual(expected, result)
+        let expected1 = pct_d_to_i8(5.0)
+        let result1 = Int8(Percent_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = pct_d_to_i8(percent_d(-Double.greatestFiniteMagnitude))
+        let result2 = Int8(Percent_d(percent_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = pct_d_to_i8(percent_d(Double.greatestFiniteMagnitude))
+        let result3 = Int8(Percent_d(percent_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testpercent_dToint8_tUsing5_0Expecting5() {
-        let expected = pct_d_to_i8(5.0)
-        let result = Int8(Percent_d(5.0))
-        XCTAssertEqual(expected, result)
-    }
-
-    func testpercent_dToint8_tUsingpercent_dNegDouble_greatestFiniteMagnitudeExpectingInt8Int8_min() {
-        let expected = pct_d_to_i8(percent_d(-Double.greatestFiniteMagnitude))
-        let result = Int8(Percent_d(percent_d(-Double.greatestFiniteMagnitude)))
-        XCTAssertEqual(expected, result)
-    }
-
-    func testpercent_dToint8_tUsingpercent_dDouble_greatestFiniteMagnitudeExpectingInt8Int8_max() {
-        let expected = pct_d_to_i8(percent_d(Double.greatestFiniteMagnitude))
-        let result = Int8(Percent_d(percent_d(Double.greatestFiniteMagnitude)))
-        XCTAssertEqual(expected, result)
-    }
-
-    func testint8_tTopercent_dUsing0Expecting0_0() {
+    func testInt8Topercent_d() {
         let expected = i8_to_pct_d(0)
         let result = Percent_d(Int8(0)).rawValue
         XCTAssertEqual(expected, result)
+        let expected1 = i8_to_pct_d(5)
+        let result1 = Percent_d(Int8(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = i8_to_pct_d(Int8(Int8.min))
+        let result2 = Percent_d(Int8(Int8(Int8.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = i8_to_pct_d(Int8(Int8.max))
+        let result3 = Percent_d(Int8(Int8(Int8.max))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testint8_tTopercent_dUsing5Expecting5_0() {
-        let expected = i8_to_pct_d(5)
-        let result = Percent_d(Int8(5)).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testint8_tTopercent_dUsingInt8Int8_minExpectingpercent_dInt8_min() {
-        let expected = i8_to_pct_d(Int8(Int8.min))
-        let result = Percent_d(Int8(Int8(Int8.min))).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testint8_tTopercent_dUsingInt8Int8_maxExpectingpercent_dInt8_max() {
-        let expected = i8_to_pct_d(Int8(Int8.max))
-        let result = Percent_d(Int8(Int8(Int8.max))).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testpercent_dToint16_tUsing0_0Expecting0() {
+    func testpercent_dToInt16() {
         let expected = pct_d_to_i16(0.0)
         let result = Int16(Percent_d(0.0))
         XCTAssertEqual(expected, result)
+        let expected1 = pct_d_to_i16(5.0)
+        let result1 = Int16(Percent_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = pct_d_to_i16(percent_d(-Double.greatestFiniteMagnitude))
+        let result2 = Int16(Percent_d(percent_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = pct_d_to_i16(percent_d(Double.greatestFiniteMagnitude))
+        let result3 = Int16(Percent_d(percent_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testpercent_dToint16_tUsing5_0Expecting5() {
-        let expected = pct_d_to_i16(5.0)
-        let result = Int16(Percent_d(5.0))
-        XCTAssertEqual(expected, result)
-    }
-
-    func testpercent_dToint16_tUsingpercent_dNegDouble_greatestFiniteMagnitudeExpectingInt16Int16_min() {
-        let expected = pct_d_to_i16(percent_d(-Double.greatestFiniteMagnitude))
-        let result = Int16(Percent_d(percent_d(-Double.greatestFiniteMagnitude)))
-        XCTAssertEqual(expected, result)
-    }
-
-    func testpercent_dToint16_tUsingpercent_dDouble_greatestFiniteMagnitudeExpectingInt16Int16_max() {
-        let expected = pct_d_to_i16(percent_d(Double.greatestFiniteMagnitude))
-        let result = Int16(Percent_d(percent_d(Double.greatestFiniteMagnitude)))
-        XCTAssertEqual(expected, result)
-    }
-
-    func testint16_tTopercent_dUsing0Expecting0_0() {
+    func testInt16Topercent_d() {
         let expected = i16_to_pct_d(0)
         let result = Percent_d(Int16(0)).rawValue
         XCTAssertEqual(expected, result)
+        let expected1 = i16_to_pct_d(5)
+        let result1 = Percent_d(Int16(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = i16_to_pct_d(Int16(Int16.min))
+        let result2 = Percent_d(Int16(Int16(Int16.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = i16_to_pct_d(Int16(Int16.max))
+        let result3 = Percent_d(Int16(Int16(Int16.max))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testint16_tTopercent_dUsing5Expecting5_0() {
-        let expected = i16_to_pct_d(5)
-        let result = Percent_d(Int16(5)).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testint16_tTopercent_dUsingInt16Int16_minExpectingpercent_dInt16_min() {
-        let expected = i16_to_pct_d(Int16(Int16.min))
-        let result = Percent_d(Int16(Int16(Int16.min))).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testint16_tTopercent_dUsingInt16Int16_maxExpectingpercent_dInt16_max() {
-        let expected = i16_to_pct_d(Int16(Int16.max))
-        let result = Percent_d(Int16(Int16(Int16.max))).rawValue
-        XCTAssertEqual(expected, result)
-    }
-
-    func testpercent_dToint32_tUsing0_0Expecting0() {
+    func testpercent_dToInt32() {
         let expected = pct_d_to_i32(0.0)
         let result = Int32(Percent_d(0.0))
         XCTAssertEqual(expected, result)
+        let expected1 = pct_d_to_i32(5.0)
+        let result1 = Int32(Percent_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = pct_d_to_i32(percent_d(-Double.greatestFiniteMagnitude))
+        let result2 = Int32(Percent_d(percent_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = pct_d_to_i32(percent_d(Double.greatestFiniteMagnitude))
+        let result3 = Int32(Percent_d(percent_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
     }
 
-    func testpercent_dToint32_tUsing5_0Expecting5() {
-        let expected = pct_d_to_i32(5.0)
-        let result = Int32(Percent_d(5.0))
-        XCTAssertEqual(expected, result)
-    }
-
-    func testpercent_dToint32_tUsingpercent_dNegDouble_greatestFiniteMagnitudeExpectingInt32Int32_min() {
-        let expected = pct_d_to_i32(percent_d(-Double.greatestFiniteMagnitude))
-        let result = Int32(Percent_d(percent_d(-Double.greatestFiniteMagnitude)))
-        XCTAssertEqual(expected, result)
-    }
-
-    func testpercent_dToint32_tUsingpercent_dDouble_greatestFiniteMagnitudeExpectingInt32Int32_max() {
-        let expected = pct_d_to_i32(percent_d(Double.greatestFiniteMagnitude))
-        let result = Int32(Percent_d(percent_d(Double.greatestFiniteMagnitude)))
-        XCTAssertEqual(expected, result)
-    }
-
-    func testint32_tTopercent_dUsing0Expecting0_0() {
+    func testInt32Topercent_d() {
         let expected = i32_to_pct_d(0)
         let result = Percent_d(Int32(0)).rawValue
         XCTAssertEqual(expected, result)
+        let expected1 = i32_to_pct_d(5)
+        let result1 = Percent_d(Int32(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = i32_to_pct_d(Int32(Int32.min))
+        let result2 = Percent_d(Int32(Int32(Int32.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = i32_to_pct_d(Int32(Int32.max))
+        let result3 = Percent_d(Int32(Int32(Int32.max))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testpercent_dToInt64() {
+        let expected = pct_d_to_i64(0.0)
+        let result = Int64(Percent_d(0.0))
+        XCTAssertEqual(expected, result)
+        let expected1 = pct_d_to_i64(5.0)
+        let result1 = Int64(Percent_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = pct_d_to_i64(percent_d(-Double.greatestFiniteMagnitude))
+        let result2 = Int64(Percent_d(percent_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = pct_d_to_i64(percent_d(Double.greatestFiniteMagnitude))
+        let result3 = Int64(Percent_d(percent_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testInt64Topercent_d() {
+        let expected = i64_to_pct_d(0)
+        let result = Percent_d(Int64(0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = i64_to_pct_d(5)
+        let result1 = Percent_d(Int64(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = i64_to_pct_d(Int64(Int64.min))
+        let result2 = Percent_d(Int64(Int64(Int64.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = i64_to_pct_d(Int64(Int64.max))
+        let result3 = Percent_d(Int64(Int64(Int64.max))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testpercent_dToUInt8() {
+        let expected = pct_d_to_u8(0.0)
+        let result = UInt8(Percent_d(0.0))
+        XCTAssertEqual(expected, result)
+        let expected1 = pct_d_to_u8(5.0)
+        let result1 = UInt8(Percent_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = pct_d_to_u8(percent_d(-Double.greatestFiniteMagnitude))
+        let result2 = UInt8(Percent_d(percent_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = pct_d_to_u8(percent_d(Double.greatestFiniteMagnitude))
+        let result3 = UInt8(Percent_d(percent_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testUInt8Topercent_d() {
+        let expected = u8_to_pct_d(0)
+        let result = Percent_d(UInt8(0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = u8_to_pct_d(5)
+        let result1 = Percent_d(UInt8(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u8_to_pct_d(UInt8(UInt8.min))
+        let result2 = Percent_d(UInt8(UInt8(UInt8.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u8_to_pct_d(UInt8(UInt8.max))
+        let result3 = Percent_d(UInt8(UInt8(UInt8.max))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testpercent_dToUInt16() {
+        let expected = pct_d_to_u16(0.0)
+        let result = UInt16(Percent_d(0.0))
+        XCTAssertEqual(expected, result)
+        let expected1 = pct_d_to_u16(5.0)
+        let result1 = UInt16(Percent_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = pct_d_to_u16(percent_d(-Double.greatestFiniteMagnitude))
+        let result2 = UInt16(Percent_d(percent_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = pct_d_to_u16(percent_d(Double.greatestFiniteMagnitude))
+        let result3 = UInt16(Percent_d(percent_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testUInt16Topercent_d() {
+        let expected = u16_to_pct_d(0)
+        let result = Percent_d(UInt16(0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = u16_to_pct_d(5)
+        let result1 = Percent_d(UInt16(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u16_to_pct_d(UInt16(UInt16.min))
+        let result2 = Percent_d(UInt16(UInt16(UInt16.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u16_to_pct_d(UInt16(UInt16.max))
+        let result3 = Percent_d(UInt16(UInt16(UInt16.max))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testpercent_dToUInt32() {
+        let expected = pct_d_to_u32(0.0)
+        let result = UInt32(Percent_d(0.0))
+        XCTAssertEqual(expected, result)
+        let expected1 = pct_d_to_u32(5.0)
+        let result1 = UInt32(Percent_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = pct_d_to_u32(percent_d(-Double.greatestFiniteMagnitude))
+        let result2 = UInt32(Percent_d(percent_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = pct_d_to_u32(percent_d(Double.greatestFiniteMagnitude))
+        let result3 = UInt32(Percent_d(percent_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testUInt32Topercent_d() {
+        let expected = u32_to_pct_d(0)
+        let result = Percent_d(UInt32(0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = u32_to_pct_d(5)
+        let result1 = Percent_d(UInt32(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u32_to_pct_d(UInt32(UInt32.min))
+        let result2 = Percent_d(UInt32(UInt32(UInt32.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u32_to_pct_d(UInt32(UInt32.max))
+        let result3 = Percent_d(UInt32(UInt32(UInt32.max))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testpercent_dToUInt64() {
+        let expected = pct_d_to_u64(0.0)
+        let result = UInt64(Percent_d(0.0))
+        XCTAssertEqual(expected, result)
+        let expected1 = pct_d_to_u64(5.0)
+        let result1 = UInt64(Percent_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = pct_d_to_u64(percent_d(-Double.greatestFiniteMagnitude))
+        let result2 = UInt64(Percent_d(percent_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = pct_d_to_u64(percent_d(Double.greatestFiniteMagnitude))
+        let result3 = UInt64(Percent_d(percent_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testUInt64Topercent_d() {
+        let expected = u64_to_pct_d(0)
+        let result = Percent_d(UInt64(0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = u64_to_pct_d(5)
+        let result1 = Percent_d(UInt64(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u64_to_pct_d(UInt64(UInt64.min))
+        let result2 = Percent_d(UInt64(UInt64(UInt64.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u64_to_pct_d(UInt64(UInt64.max))
+        let result3 = Percent_d(UInt64(UInt64(UInt64.max))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testpercent_dToFloat() {
+        let expected = pct_d_to_f(0.0)
+        let result = Float(Percent_d(0.0))
+        XCTAssertEqual(expected, result)
+        let expected1 = pct_d_to_f(5.0)
+        let result1 = Float(Percent_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = pct_d_to_f(percent_d(-Double.greatestFiniteMagnitude))
+        let result2 = Float(Percent_d(percent_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = pct_d_to_f(percent_d(Double.greatestFiniteMagnitude))
+        let result3 = Float(Percent_d(percent_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testFloatTopercent_d() {
+        let expected = f_to_pct_d(0.0)
+        let result = Percent_d(Float(0.0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = f_to_pct_d(5.0)
+        let result1 = Percent_d(Float(5.0)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = f_to_pct_d(Float(-Float.greatestFiniteMagnitude))
+        let result2 = Percent_d(Float(Float(-Float.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = f_to_pct_d(Float(Float.greatestFiniteMagnitude))
+        let result3 = Percent_d(Float(Float(Float.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testpercent_dToDouble() {
+        let expected = pct_d_to_d(0.0)
+        let result = Double(Percent_d(0.0))
+        XCTAssertEqual(expected, result)
+        let expected1 = pct_d_to_d(5.0)
+        let result1 = Double(Percent_d(5.0))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = pct_d_to_d(percent_d(-Double.greatestFiniteMagnitude))
+        let result2 = Double(Percent_d(percent_d(-Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = pct_d_to_d(percent_d(Double.greatestFiniteMagnitude))
+        let result3 = Double(Percent_d(percent_d(Double.greatestFiniteMagnitude)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testDoubleTopercent_d() {
+        let expected = d_to_pct_d(0.0)
+        let result = Percent_d(Double(0.0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = d_to_pct_d(5.0)
+        let result1 = Percent_d(Double(5.0)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = d_to_pct_d(Double(-Double.greatestFiniteMagnitude))
+        let result2 = Percent_d(Double(Double(-Double.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = d_to_pct_d(Double(Double.greatestFiniteMagnitude))
+        let result3 = Percent_d(Double(Double(Double.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected3, result3)
     }
 
 }
