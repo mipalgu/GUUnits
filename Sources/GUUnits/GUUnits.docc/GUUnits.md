@@ -46,6 +46,14 @@ let package = Package(name: "MyPackage",
 ### Acceleration
 
 - ``Acceleration``
+- ``Centimetres_Per_Picoseconds_Sq_t``
+- ``Centimetres_Per_Picoseconds_Sq_u``
+- ``Centimetres_Per_Picoseconds_Sq_f``
+- ``Centimetres_Per_Picoseconds_Sq_d``
+- ``Centimetres_Per_Nanoseconds_Sq_t``
+- ``Centimetres_Per_Nanoseconds_Sq_u``
+- ``Centimetres_Per_Nanoseconds_Sq_f``
+- ``Centimetres_Per_Nanoseconds_Sq_d``
 - ``Centimetres_Per_Microseconds_Sq_t``
 - ``Centimetres_Per_Microseconds_Sq_u``
 - ``Centimetres_Per_Microseconds_Sq_f``
@@ -58,6 +66,14 @@ let package = Package(name: "MyPackage",
 - ``Centimetres_Per_Seconds_Sq_u``
 - ``Centimetres_Per_Seconds_Sq_f``
 - ``Centimetres_Per_Seconds_Sq_d``
+- ``Millimetres_Per_Picoseconds_Sq_t``
+- ``Millimetres_Per_Picoseconds_Sq_u``
+- ``Millimetres_Per_Picoseconds_Sq_f``
+- ``Millimetres_Per_Picoseconds_Sq_d``
+- ``Millimetres_Per_Nanoseconds_Sq_t``
+- ``Millimetres_Per_Nanoseconds_Sq_u``
+- ``Millimetres_Per_Nanoseconds_Sq_f``
+- ``Millimetres_Per_Nanoseconds_Sq_d``
 - ``Millimetres_Per_Microseconds_Sq_t``
 - ``Millimetres_Per_Microseconds_Sq_u``
 - ``Millimetres_Per_Microseconds_Sq_f``
@@ -70,6 +86,14 @@ let package = Package(name: "MyPackage",
 - ``Millimetres_Per_Seconds_Sq_u``
 - ``Millimetres_Per_Seconds_Sq_f``
 - ``Millimetres_Per_Seconds_Sq_d``
+- ``Metres_Per_Picoseconds_Sq_t``
+- ``Metres_Per_Picoseconds_Sq_u``
+- ``Metres_Per_Picoseconds_Sq_f``
+- ``Metres_Per_Picoseconds_Sq_d``
+- ``Metres_Per_Nanoseconds_Sq_t``
+- ``Metres_Per_Nanoseconds_Sq_u``
+- ``Metres_Per_Nanoseconds_Sq_f``
+- ``Metres_Per_Nanoseconds_Sq_d``
 - ``Metres_Per_Microseconds_Sq_t``
 - ``Metres_Per_Microseconds_Sq_u``
 - ``Metres_Per_Microseconds_Sq_f``
@@ -98,6 +122,14 @@ let package = Package(name: "MyPackage",
 ### Angular Velocity
 
 - ``AngularVelocity``
+- ``Degrees_Per_Picoseconds_t``
+- ``Degrees_Per_Picoseconds_u``
+- ``Degrees_Per_Picoseconds_f``
+- ``Degrees_Per_Picoseconds_d``
+- ``Degrees_Per_Nanoseconds_t``
+- ``Degrees_Per_Nanoseconds_u``
+- ``Degrees_Per_Nanoseconds_f``
+- ``Degrees_Per_Nanoseconds_d``
 - ``Degrees_Per_Microseconds_t``
 - ``Degrees_Per_Microseconds_u``
 - ``Degrees_Per_Microseconds_f``
@@ -110,6 +142,14 @@ let package = Package(name: "MyPackage",
 - ``Degrees_Per_Seconds_u``
 - ``Degrees_Per_Seconds_f``
 - ``Degrees_Per_Seconds_d``
+- ``Radians_Per_Picoseconds_t``
+- ``Radians_Per_Picoseconds_u``
+- ``Radians_Per_Picoseconds_f``
+- ``Radians_Per_Picoseconds_d``
+- ``Radians_Per_Nanoseconds_t``
+- ``Radians_Per_Nanoseconds_u``
+- ``Radians_Per_Nanoseconds_f``
+- ``Radians_Per_Nanoseconds_d``
 - ``Radians_Per_Microseconds_t``
 - ``Radians_Per_Microseconds_u``
 - ``Radians_Per_Microseconds_f``
@@ -155,6 +195,30 @@ let package = Package(name: "MyPackage",
 - ``Metres_f``
 - ``Metres_d``
 
+### Mass
+
+- ``Mass``
+- ``Gram_t``
+- ``Gram_u``
+- ``Gram_f``
+- ``Gram_d``
+- ``Kilogram_t``
+- ``Kilogram_u``
+- ``Kilogram_f``
+- ``Kilogram_d``
+- ``Megagram_t``
+- ``Megagram_u``
+- ``Megagram_f``
+- ``Megagram_d``
+- ``Microgram_t``
+- ``Microgram_u``
+- ``Microgram_f``
+- ``Microgram_d``
+- ``Milligram_t``
+- ``Milligram_u``
+- ``Milligram_f``
+- ``Milligram_d``
+
 ### Percentages
 
 - ``Percent``
@@ -198,6 +262,14 @@ let package = Package(name: "MyPackage",
 ### Time
 
 - ``Time``
+- ``Picoseconds_t``
+- ``Picoseconds_u``
+- ``Picoseconds_f``
+- ``Picoseconds_d``
+- ``Nanoseconds_t``
+- ``Nanoseconds_u``
+- ``Nanoseconds_f``
+- ``Nanoseconds_d``
 - ``Microseconds_t``
 - ``Microseconds_u``
 - ``Microseconds_f``
@@ -211,33 +283,17 @@ let package = Package(name: "MyPackage",
 - ``Seconds_f``
 - ``Seconds_d``
 
-### Mass
-
-- ``Mass``
-- ``Gram_t``
-- ``Gram_u``
-- ``Gram_f``
-- ``Gram_d``
-- ``Kilogram_t``
-- ``Kilogram_u``
-- ``Kilogram_f``
-- ``Kilogram_d``
-- ``Megagram_t``
-- ``Megagram_u``
-- ``Megagram_f``
-- ``Megagram_d``
-- ``Microgram_t``
-- ``Microgram_u``
-- ``Microgram_f``
-- ``Microgram_d``
-- ``Milligram_t``
-- ``Milligram_u``
-- ``Milligram_f``
-- ``Milligram_d``
-
 ### Velocity
 
 - ``Velocity``
+- ``Centimetres_Per_Picoseconds_t``
+- ``Centimetres_Per_Picoseconds_u``
+- ``Centimetres_Per_Picoseconds_f``
+- ``Centimetres_Per_Picoseconds_d``
+- ``Centimetres_Per_Nanoseconds_t``
+- ``Centimetres_Per_Nanoseconds_u``
+- ``Centimetres_Per_Nanoseconds_f``
+- ``Centimetres_Per_Nanoseconds_d``
 - ``Centimetres_Per_Microseconds_t``
 - ``Centimetres_Per_Microseconds_u``
 - ``Centimetres_Per_Microseconds_f``
@@ -250,6 +306,14 @@ let package = Package(name: "MyPackage",
 - ``Centimetres_Per_Seconds_u``
 - ``Centimetres_Per_Seconds_f``
 - ``Centimetres_Per_Seconds_d``
+- ``Millimetres_Per_Picoseconds_t``
+- ``Millimetres_Per_Picoseconds_u``
+- ``Millimetres_Per_Picoseconds_f``
+- ``Millimetres_Per_Picoseconds_d``
+- ``Millimetres_Per_Nanoseconds_t``
+- ``Millimetres_Per_Nanoseconds_u``
+- ``Millimetres_Per_Nanoseconds_f``
+- ``Millimetres_Per_Nanoseconds_d``
 - ``Millimetres_Per_Microseconds_t``
 - ``Millimetres_Per_Microseconds_u``
 - ``Millimetres_Per_Microseconds_f``
@@ -262,6 +326,14 @@ let package = Package(name: "MyPackage",
 - ``Millimetres_Per_Seconds_u``
 - ``Millimetres_Per_Seconds_f``
 - ``Millimetres_Per_Seconds_d``
+- ``Metres_Per_Picoseconds_t``
+- ``Metres_Per_Picoseconds_u``
+- ``Metres_Per_Picoseconds_f``
+- ``Metres_Per_Picoseconds_d``
+- ``Metres_Per_Nanoseconds_t``
+- ``Metres_Per_Nanoseconds_u``
+- ``Metres_Per_Nanoseconds_f``
+- ``Metres_Per_Nanoseconds_d``
 - ``Metres_Per_Microseconds_t``
 - ``Metres_Per_Microseconds_u``
 - ``Metres_Per_Microseconds_f``
