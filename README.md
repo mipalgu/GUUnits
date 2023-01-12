@@ -63,12 +63,16 @@ let average: Fahrenheit_d = (category.fahrenheit_d + temperatureF) / 2.0 // Corr
 
 - Acceleration
 - Angle
+- Angular Velocity
 - Current
 - Distance
-- Percent
+- Mass
+- Percent Units
 - Pixels
+- Reference Acceleration (g)
 - Temperature
 - Time
+- Velocity
 
 ## Prerequisites
 
@@ -91,7 +95,7 @@ on macOS, or on Linux you should get something like:
 
 ### Embedding this Package
 
-Typically, you need to embed this package into your own project using the [Swift Package Manager](https://swift.org/package-manager/).
+Typically, you need to embed this package into your project using the [Swift Package Manager](https://swift.org/package-manager/).
 After installing the prerequisites, add this package as a dependency to your `Package.swift` file, e.g.:
 
 ```swift
@@ -101,22 +105,17 @@ import PackageDescription
 
 let package = Package(name: "MyPackage",
     dependencies: [
-        .package(url: "https://github.com/mipalgu/GUUnits.git", branch: "main"),
+        .package(url: "https://github.com/mipalgu/GUUnits.git", from: "2.1.0"),
     ],    
     targets: [
-        .target(name: "MyPackage",
-                dependencies: [
-                    "GUUnits" 
-                ]
-        )
+        .target(name: "MyPackage", dependencies: ["GUUnits"])
     ]
 )
 ```
 
 ### Using the C library
-
-If you would like to use the C library, then you can use it from a C target in a swift package, or install the dynamic library
-and headers onto your system. In either case, you will need to include the appropriate header in your C sources, eg:
+If you want to use the C library, you can use it from a C target in a swift package or install the dynamic library
+and headers onto your system. In either case, you will need to include the appropriate header in your C sources, e.g.:
 
 ```C
 #include <guunits.h>
@@ -157,7 +156,6 @@ in `GUUnits/Sources/CGUUnits/include`.
 
 ## Contributing
 
-This repository contains generated code, as such all pull requests in this repo will be closed without review. If you
-would like to contribute to `GUUnits`, then you can fork the [generator](https://github.com/mipalgu/guunits_generator)
-and do a pull request in that repository.
-
+This repository contains generated code; all pull requests in this repo will be closed without review. If you
+want to contribute to `GUUnits`, you can fork the [generator](https://github.com/mipalgu/guunits_generator)
+and make a pull request in that repository.
