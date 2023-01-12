@@ -63,6 +63,126 @@ import XCTest
 /// Provides microseconds_u unit tests.
 final class Microseconds_uTests1: XCTestCase {
 
+    func testUInt16Tomicroseconds_u() {
+        let expected = u16_to_us_u(0)
+        let result = Microseconds_u(UInt16(0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = u16_to_us_u(5)
+        let result1 = Microseconds_u(UInt16(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u16_to_us_u(UInt16(UInt16.min))
+        let result2 = Microseconds_u(UInt16(UInt16(UInt16.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u16_to_us_u(UInt16(UInt16.max))
+        let result3 = Microseconds_u(UInt16(UInt16(UInt16.max))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testmicroseconds_uToUInt32() {
+        let expected = us_u_to_u32(0)
+        let result = UInt32(Microseconds_u(0))
+        XCTAssertEqual(expected, result)
+        let expected1 = us_u_to_u32(5)
+        let result1 = UInt32(Microseconds_u(5))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = us_u_to_u32(microseconds_u(UInt64.min))
+        let result2 = UInt32(Microseconds_u(microseconds_u(UInt64.min)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = us_u_to_u32(microseconds_u(UInt64.max))
+        let result3 = UInt32(Microseconds_u(microseconds_u(UInt64.max)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testUInt32Tomicroseconds_u() {
+        let expected = u32_to_us_u(0)
+        let result = Microseconds_u(UInt32(0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = u32_to_us_u(5)
+        let result1 = Microseconds_u(UInt32(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u32_to_us_u(UInt32(UInt32.min))
+        let result2 = Microseconds_u(UInt32(UInt32(UInt32.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u32_to_us_u(UInt32(UInt32.max))
+        let result3 = Microseconds_u(UInt32(UInt32(UInt32.max))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testmicroseconds_uToUInt64() {
+        let expected = us_u_to_u64(0)
+        let result = UInt64(Microseconds_u(0))
+        XCTAssertEqual(expected, result)
+        let expected1 = us_u_to_u64(5)
+        let result1 = UInt64(Microseconds_u(5))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = us_u_to_u64(microseconds_u(UInt64.min))
+        let result2 = UInt64(Microseconds_u(microseconds_u(UInt64.min)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = us_u_to_u64(microseconds_u(UInt64.max))
+        let result3 = UInt64(Microseconds_u(microseconds_u(UInt64.max)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testUInt64Tomicroseconds_u() {
+        let expected = u64_to_us_u(0)
+        let result = Microseconds_u(UInt64(0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = u64_to_us_u(5)
+        let result1 = Microseconds_u(UInt64(5)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = u64_to_us_u(UInt64(UInt64.min))
+        let result2 = Microseconds_u(UInt64(UInt64(UInt64.min))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = u64_to_us_u(UInt64(UInt64.max))
+        let result3 = Microseconds_u(UInt64(UInt64(UInt64.max))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testmicroseconds_uToFloat() {
+        let expected = us_u_to_f(0)
+        let result = Float(Microseconds_u(0))
+        XCTAssertEqual(expected, result)
+        let expected1 = us_u_to_f(5)
+        let result1 = Float(Microseconds_u(5))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = us_u_to_f(microseconds_u(UInt64.min))
+        let result2 = Float(Microseconds_u(microseconds_u(UInt64.min)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = us_u_to_f(microseconds_u(UInt64.max))
+        let result3 = Float(Microseconds_u(microseconds_u(UInt64.max)))
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testFloatTomicroseconds_u() {
+        let expected = f_to_us_u(0.0)
+        let result = Microseconds_u(Float(0.0)).rawValue
+        XCTAssertEqual(expected, result)
+        let expected1 = f_to_us_u(5.0)
+        let result1 = Microseconds_u(Float(5.0)).rawValue
+        XCTAssertEqual(expected1, result1)
+        let expected2 = f_to_us_u(Float(-Float.greatestFiniteMagnitude))
+        let result2 = Microseconds_u(Float(Float(-Float.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected2, result2)
+        let expected3 = f_to_us_u(Float(Float.greatestFiniteMagnitude))
+        let result3 = Microseconds_u(Float(Float(Float.greatestFiniteMagnitude))).rawValue
+        XCTAssertEqual(expected3, result3)
+    }
+
+    func testmicroseconds_uToDouble() {
+        let expected = us_u_to_d(0)
+        let result = Double(Microseconds_u(0))
+        XCTAssertEqual(expected, result)
+        let expected1 = us_u_to_d(5)
+        let result1 = Double(Microseconds_u(5))
+        XCTAssertEqual(expected1, result1)
+        let expected2 = us_u_to_d(microseconds_u(UInt64.min))
+        let result2 = Double(Microseconds_u(microseconds_u(UInt64.min)))
+        XCTAssertEqual(expected2, result2)
+        let expected3 = us_u_to_d(microseconds_u(UInt64.max))
+        let result3 = Double(Microseconds_u(microseconds_u(UInt64.max)))
+        XCTAssertEqual(expected3, result3)
+    }
+
     func testDoubleTomicroseconds_u() {
         let expected = d_to_us_u(0.0)
         let result = Microseconds_u(Double(0.0)).rawValue

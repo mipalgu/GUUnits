@@ -62,287 +62,251 @@ import XCTest
 
 final class Degrees_Per_SecondsConversionTests2: XCTestCase {
 
-    func testDegrees_Per_Seconds_tInt64Inits() {
-        let raw = Int64(5)
-        let ctype = i64_to_deg_per_s_t(5)
-        let expected = Degrees_Per_Seconds_t(raw)
-        XCTAssertEqual(expected.rawValue, ctype)
-        XCTAssertEqual(
-            Int64(expected),
-            Int64(deg_per_s_t_to_i64(ctype))
-        )
+    func testDegrees_Per_Seconds_tToRadians_Per_Microseconds_dAngularVelocityConversions() {
+        let original = Degrees_Per_Seconds_t(5)
+        let category = AngularVelocity(original)
+        let other = category.radians_per_microseconds_d
+        XCTAssertEqual(other, Radians_Per_Microseconds_d(original))
     }
 
-    func testDegrees_Per_Seconds_tInt64RawValueInit() {
-        let raw = degrees_per_seconds_t(5)
-        let ctype = deg_per_s_t_to_i64(raw)
-        let expected = Degrees_Per_Seconds_t(Int64(ctype))
-        XCTAssertEqual(Degrees_Per_Seconds_t(rawValue: raw), expected)
+    func testRadians_Per_Microseconds_dToDegrees_Per_Seconds_tConversions() {
+        let ctype1 = degrees_per_seconds_t(5)
+        let swiftType1 = Degrees_Per_Seconds_t(rawValue: ctype1)
+        let ctype2 = deg_per_s_t_to_rad_per_us_d(ctype1)
+        let swiftType2 = Radians_Per_Microseconds_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Radians_Per_Microseconds_d(swiftType1))
     }
 
-    func testDegrees_Per_Seconds_tAngularVelocityInt64Init() {
-        let raw = Degrees_Per_Seconds_t(Int64(5))
-        let category = AngularVelocity(raw)
-        let expected = AngularVelocity(rawValue: .degrees_per_seconds_t(raw))
-        XCTAssertEqual(category, expected)
+    func testDegrees_Per_Seconds_tToRadians_Per_Milliseconds_tAngularVelocityConversions() {
+        let original = Degrees_Per_Seconds_t(5)
+        let category = AngularVelocity(original)
+        let other = category.radians_per_milliseconds_t
+        XCTAssertEqual(other, Radians_Per_Milliseconds_t(original))
     }
 
-    func testAngularVelocityDegrees_Per_Seconds_tIntInits() {
-        let raw = Int(5)
+    func testRadians_Per_Milliseconds_tToDegrees_Per_Seconds_tConversions() {
+        let ctype1 = degrees_per_seconds_t(5)
+        let swiftType1 = Degrees_Per_Seconds_t(rawValue: ctype1)
+        let ctype2 = deg_per_s_t_to_rad_per_ms_t(ctype1)
+        let swiftType2 = Radians_Per_Milliseconds_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Radians_Per_Milliseconds_t(swiftType1))
+    }
+
+    func testDegrees_Per_Seconds_tToRadians_Per_Milliseconds_uAngularVelocityConversions() {
+        let original = Degrees_Per_Seconds_t(5)
+        let category = AngularVelocity(original)
+        let other = category.radians_per_milliseconds_u
+        XCTAssertEqual(other, Radians_Per_Milliseconds_u(original))
+    }
+
+    func testRadians_Per_Milliseconds_uToDegrees_Per_Seconds_tConversions() {
+        let ctype1 = degrees_per_seconds_t(5)
+        let swiftType1 = Degrees_Per_Seconds_t(rawValue: ctype1)
+        let ctype2 = deg_per_s_t_to_rad_per_ms_u(ctype1)
+        let swiftType2 = Radians_Per_Milliseconds_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Radians_Per_Milliseconds_u(swiftType1))
+    }
+
+    func testDegrees_Per_Seconds_tToRadians_Per_Milliseconds_fAngularVelocityConversions() {
+        let original = Degrees_Per_Seconds_t(5)
+        let category = AngularVelocity(original)
+        let other = category.radians_per_milliseconds_f
+        XCTAssertEqual(other, Radians_Per_Milliseconds_f(original))
+    }
+
+    func testRadians_Per_Milliseconds_fToDegrees_Per_Seconds_tConversions() {
+        let ctype1 = degrees_per_seconds_t(5)
+        let swiftType1 = Degrees_Per_Seconds_t(rawValue: ctype1)
+        let ctype2 = deg_per_s_t_to_rad_per_ms_f(ctype1)
+        let swiftType2 = Radians_Per_Milliseconds_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Radians_Per_Milliseconds_f(swiftType1))
+    }
+
+    func testDegrees_Per_Seconds_tToRadians_Per_Milliseconds_dAngularVelocityConversions() {
+        let original = Degrees_Per_Seconds_t(5)
+        let category = AngularVelocity(original)
+        let other = category.radians_per_milliseconds_d
+        XCTAssertEqual(other, Radians_Per_Milliseconds_d(original))
+    }
+
+    func testRadians_Per_Milliseconds_dToDegrees_Per_Seconds_tConversions() {
+        let ctype1 = degrees_per_seconds_t(5)
+        let swiftType1 = Degrees_Per_Seconds_t(rawValue: ctype1)
+        let ctype2 = deg_per_s_t_to_rad_per_ms_d(ctype1)
+        let swiftType2 = Radians_Per_Milliseconds_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Radians_Per_Milliseconds_d(swiftType1))
+    }
+
+    func testDegrees_Per_Seconds_tToRadians_Per_Seconds_tAngularVelocityConversions() {
+        let original = Degrees_Per_Seconds_t(5)
+        let category = AngularVelocity(original)
+        let other = category.radians_per_seconds_t
+        XCTAssertEqual(other, Radians_Per_Seconds_t(original))
+    }
+
+    func testRadians_Per_Seconds_tToDegrees_Per_Seconds_tConversions() {
+        let ctype1 = degrees_per_seconds_t(5)
+        let swiftType1 = Degrees_Per_Seconds_t(rawValue: ctype1)
+        let ctype2 = deg_per_s_t_to_rad_per_s_t(ctype1)
+        let swiftType2 = Radians_Per_Seconds_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Radians_Per_Seconds_t(swiftType1))
+    }
+
+    func testDegrees_Per_Seconds_tToRadians_Per_Seconds_uAngularVelocityConversions() {
+        let original = Degrees_Per_Seconds_t(5)
+        let category = AngularVelocity(original)
+        let other = category.radians_per_seconds_u
+        XCTAssertEqual(other, Radians_Per_Seconds_u(original))
+    }
+
+    func testRadians_Per_Seconds_uToDegrees_Per_Seconds_tConversions() {
+        let ctype1 = degrees_per_seconds_t(5)
+        let swiftType1 = Degrees_Per_Seconds_t(rawValue: ctype1)
+        let ctype2 = deg_per_s_t_to_rad_per_s_u(ctype1)
+        let swiftType2 = Radians_Per_Seconds_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Radians_Per_Seconds_u(swiftType1))
+    }
+
+    func testDegrees_Per_Seconds_tToRadians_Per_Seconds_fAngularVelocityConversions() {
+        let original = Degrees_Per_Seconds_t(5)
+        let category = AngularVelocity(original)
+        let other = category.radians_per_seconds_f
+        XCTAssertEqual(other, Radians_Per_Seconds_f(original))
+    }
+
+    func testRadians_Per_Seconds_fToDegrees_Per_Seconds_tConversions() {
+        let ctype1 = degrees_per_seconds_t(5)
+        let swiftType1 = Degrees_Per_Seconds_t(rawValue: ctype1)
+        let ctype2 = deg_per_s_t_to_rad_per_s_f(ctype1)
+        let swiftType2 = Radians_Per_Seconds_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Radians_Per_Seconds_f(swiftType1))
+    }
+
+    func testDegrees_Per_Seconds_tToRadians_Per_Seconds_dAngularVelocityConversions() {
+        let original = Degrees_Per_Seconds_t(5)
+        let category = AngularVelocity(original)
+        let other = category.radians_per_seconds_d
+        XCTAssertEqual(other, Radians_Per_Seconds_d(original))
+    }
+
+    func testRadians_Per_Seconds_dToDegrees_Per_Seconds_tConversions() {
+        let ctype1 = degrees_per_seconds_t(5)
+        let swiftType1 = Degrees_Per_Seconds_t(rawValue: ctype1)
+        let ctype2 = deg_per_s_t_to_rad_per_s_d(ctype1)
+        let swiftType2 = Radians_Per_Seconds_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Radians_Per_Seconds_d(swiftType1))
+    }
+
+    func testDegrees_Per_Seconds_tInitFromTypeEnum() {
+        let underlyingType = AngularVelocity.AngularVelocityTypes.degrees_per_seconds_t(5)
+        let category = AngularVelocity(rawValue: underlyingType)
+        XCTAssertEqual(category.rawValue, underlyingType)
+    }
+
+    func testAngularVelocityDegrees_Per_Seconds_tInt8Inits() {
+        let raw = Int8(5)
         let expected = AngularVelocity(degrees_per_seconds: raw)
         let result = AngularVelocity.degrees_per_seconds(raw)
         XCTAssertEqual(expected, result)
-        let ctype = i64_to_deg_per_s_t(5)
-        let expected2 = Int(
-            deg_per_s_t_to_i64(ctype)
+        let ctype = i8_to_deg_per_s_t(5)
+        let expected2 = Int8(
+            deg_per_s_t_to_i8(ctype)
         )
-        let result2 = Int(expected)
+        let result2 = Int8(expected)
         XCTAssertEqual(result2, expected2)
     }
 
-    func testDegrees_Per_Seconds_tIntInits() {
-        let raw = Int(5)
-        let ctype = i64_to_deg_per_s_t(5)
+    func testDegrees_Per_Seconds_tInt8Inits() {
+        let raw = Int8(5)
+        let ctype = i8_to_deg_per_s_t(5)
         let expected = Degrees_Per_Seconds_t(raw)
         XCTAssertEqual(expected.rawValue, ctype)
         XCTAssertEqual(
-            Int(expected),
-            Int(deg_per_s_t_to_i64(ctype))
+            Int8(expected),
+            Int8(deg_per_s_t_to_i8(ctype))
         )
     }
 
-    func testDegrees_Per_Seconds_tIntRawValueInit() {
+    func testDegrees_Per_Seconds_tInt8RawValueInit() {
         let raw = degrees_per_seconds_t(5)
-        let ctype = deg_per_s_t_to_i64(raw)
-        let expected = Degrees_Per_Seconds_t(Int(ctype))
+        let ctype = deg_per_s_t_to_i8(raw)
+        let expected = Degrees_Per_Seconds_t(Int8(ctype))
         XCTAssertEqual(Degrees_Per_Seconds_t(rawValue: raw), expected)
     }
 
-    func testDegrees_Per_Seconds_tAngularVelocityIntInit() {
-        let raw = Degrees_Per_Seconds_t(Int(5))
+    func testDegrees_Per_Seconds_tAngularVelocityInt8Init() {
+        let raw = Degrees_Per_Seconds_t(Int8(5))
         let category = AngularVelocity(raw)
         let expected = AngularVelocity(rawValue: .degrees_per_seconds_t(raw))
         XCTAssertEqual(category, expected)
     }
 
-    func testAngularVelocityDegrees_Per_Seconds_tCIntInits() {
-        let raw = CInt(5)
+    func testAngularVelocityDegrees_Per_Seconds_tInt16Inits() {
+        let raw = Int16(5)
+        let expected = AngularVelocity(degrees_per_seconds: raw)
+        let result = AngularVelocity.degrees_per_seconds(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i16_to_deg_per_s_t(5)
+        let expected2 = Int16(
+            deg_per_s_t_to_i16(ctype)
+        )
+        let result2 = Int16(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testDegrees_Per_Seconds_tInt16Inits() {
+        let raw = Int16(5)
+        let ctype = i16_to_deg_per_s_t(5)
+        let expected = Degrees_Per_Seconds_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int16(expected),
+            Int16(deg_per_s_t_to_i16(ctype))
+        )
+    }
+
+    func testDegrees_Per_Seconds_tInt16RawValueInit() {
+        let raw = degrees_per_seconds_t(5)
+        let ctype = deg_per_s_t_to_i16(raw)
+        let expected = Degrees_Per_Seconds_t(Int16(ctype))
+        XCTAssertEqual(Degrees_Per_Seconds_t(rawValue: raw), expected)
+    }
+
+    func testDegrees_Per_Seconds_tAngularVelocityInt16Init() {
+        let raw = Degrees_Per_Seconds_t(Int16(5))
+        let category = AngularVelocity(raw)
+        let expected = AngularVelocity(rawValue: .degrees_per_seconds_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAngularVelocityDegrees_Per_Seconds_tInt32Inits() {
+        let raw = Int32(5)
         let expected = AngularVelocity(degrees_per_seconds: raw)
         let result = AngularVelocity.degrees_per_seconds(raw)
         XCTAssertEqual(expected, result)
         let ctype = i32_to_deg_per_s_t(5)
-        let expected2 = CInt(
+        let expected2 = Int32(
             deg_per_s_t_to_i32(ctype)
         )
-        let result2 = CInt(expected)
+        let result2 = Int32(expected)
         XCTAssertEqual(result2, expected2)
     }
 
-    func testDegrees_Per_Seconds_tCIntInits() {
-        let raw = CInt(5)
+    func testDegrees_Per_Seconds_tInt32Inits() {
+        let raw = Int32(5)
         let ctype = i32_to_deg_per_s_t(5)
         let expected = Degrees_Per_Seconds_t(raw)
         XCTAssertEqual(expected.rawValue, ctype)
         XCTAssertEqual(
-            CInt(expected),
-            CInt(deg_per_s_t_to_i32(ctype))
+            Int32(expected),
+            Int32(deg_per_s_t_to_i32(ctype))
         )
     }
 
-    func testDegrees_Per_Seconds_tCIntRawValueInit() {
+    func testDegrees_Per_Seconds_tInt32RawValueInit() {
         let raw = degrees_per_seconds_t(5)
         let ctype = deg_per_s_t_to_i32(raw)
-        let expected = Degrees_Per_Seconds_t(CInt(ctype))
-        XCTAssertEqual(Degrees_Per_Seconds_t(rawValue: raw), expected)
-    }
-
-    func testDegrees_Per_Seconds_tAngularVelocityCIntInit() {
-        let raw = Degrees_Per_Seconds_t(CInt(5))
-        let category = AngularVelocity(raw)
-        let expected = AngularVelocity(rawValue: .degrees_per_seconds_t(raw))
-        XCTAssertEqual(category, expected)
-    }
-
-    func testAngularVelocityDegrees_Per_Seconds_tUInt8Inits() {
-        let raw = UInt8(5)
-        let expected = AngularVelocity(degrees_per_seconds: raw)
-        let result = AngularVelocity.degrees_per_seconds(raw)
-        XCTAssertEqual(expected, result)
-        let ctype = u8_to_deg_per_s_t(5)
-        let expected2 = UInt8(
-            deg_per_s_t_to_u8(ctype)
-        )
-        let result2 = UInt8(expected)
-        XCTAssertEqual(result2, expected2)
-    }
-
-    func testDegrees_Per_Seconds_tUInt8Inits() {
-        let raw = UInt8(5)
-        let ctype = u8_to_deg_per_s_t(5)
-        let expected = Degrees_Per_Seconds_t(raw)
-        XCTAssertEqual(expected.rawValue, ctype)
-        XCTAssertEqual(
-            UInt8(expected),
-            UInt8(deg_per_s_t_to_u8(ctype))
-        )
-    }
-
-    func testDegrees_Per_Seconds_tUInt8RawValueInit() {
-        let raw = degrees_per_seconds_t(5)
-        let ctype = deg_per_s_t_to_u8(raw)
-        let expected = Degrees_Per_Seconds_t(UInt8(ctype))
-        XCTAssertEqual(Degrees_Per_Seconds_t(rawValue: raw), expected)
-    }
-
-    func testDegrees_Per_Seconds_tAngularVelocityUInt8Init() {
-        let raw = Degrees_Per_Seconds_t(UInt8(5))
-        let category = AngularVelocity(raw)
-        let expected = AngularVelocity(rawValue: .degrees_per_seconds_t(raw))
-        XCTAssertEqual(category, expected)
-    }
-
-    func testAngularVelocityDegrees_Per_Seconds_tUInt16Inits() {
-        let raw = UInt16(5)
-        let expected = AngularVelocity(degrees_per_seconds: raw)
-        let result = AngularVelocity.degrees_per_seconds(raw)
-        XCTAssertEqual(expected, result)
-        let ctype = u16_to_deg_per_s_t(5)
-        let expected2 = UInt16(
-            deg_per_s_t_to_u16(ctype)
-        )
-        let result2 = UInt16(expected)
-        XCTAssertEqual(result2, expected2)
-    }
-
-    func testDegrees_Per_Seconds_tUInt16Inits() {
-        let raw = UInt16(5)
-        let ctype = u16_to_deg_per_s_t(5)
-        let expected = Degrees_Per_Seconds_t(raw)
-        XCTAssertEqual(expected.rawValue, ctype)
-        XCTAssertEqual(
-            UInt16(expected),
-            UInt16(deg_per_s_t_to_u16(ctype))
-        )
-    }
-
-    func testDegrees_Per_Seconds_tUInt16RawValueInit() {
-        let raw = degrees_per_seconds_t(5)
-        let ctype = deg_per_s_t_to_u16(raw)
-        let expected = Degrees_Per_Seconds_t(UInt16(ctype))
-        XCTAssertEqual(Degrees_Per_Seconds_t(rawValue: raw), expected)
-    }
-
-    func testDegrees_Per_Seconds_tAngularVelocityUInt16Init() {
-        let raw = Degrees_Per_Seconds_t(UInt16(5))
-        let category = AngularVelocity(raw)
-        let expected = AngularVelocity(rawValue: .degrees_per_seconds_t(raw))
-        XCTAssertEqual(category, expected)
-    }
-
-    func testAngularVelocityDegrees_Per_Seconds_tUInt32Inits() {
-        let raw = UInt32(5)
-        let expected = AngularVelocity(degrees_per_seconds: raw)
-        let result = AngularVelocity.degrees_per_seconds(raw)
-        XCTAssertEqual(expected, result)
-        let ctype = u32_to_deg_per_s_t(5)
-        let expected2 = UInt32(
-            deg_per_s_t_to_u32(ctype)
-        )
-        let result2 = UInt32(expected)
-        XCTAssertEqual(result2, expected2)
-    }
-
-    func testDegrees_Per_Seconds_tUInt32Inits() {
-        let raw = UInt32(5)
-        let ctype = u32_to_deg_per_s_t(5)
-        let expected = Degrees_Per_Seconds_t(raw)
-        XCTAssertEqual(expected.rawValue, ctype)
-        XCTAssertEqual(
-            UInt32(expected),
-            UInt32(deg_per_s_t_to_u32(ctype))
-        )
-    }
-
-    func testDegrees_Per_Seconds_tUInt32RawValueInit() {
-        let raw = degrees_per_seconds_t(5)
-        let ctype = deg_per_s_t_to_u32(raw)
-        let expected = Degrees_Per_Seconds_t(UInt32(ctype))
-        XCTAssertEqual(Degrees_Per_Seconds_t(rawValue: raw), expected)
-    }
-
-    func testDegrees_Per_Seconds_tAngularVelocityUInt32Init() {
-        let raw = Degrees_Per_Seconds_t(UInt32(5))
-        let category = AngularVelocity(raw)
-        let expected = AngularVelocity(rawValue: .degrees_per_seconds_t(raw))
-        XCTAssertEqual(category, expected)
-    }
-
-    func testAngularVelocityDegrees_Per_Seconds_tUInt64Inits() {
-        let raw = UInt64(5)
-        let expected = AngularVelocity(degrees_per_seconds: raw)
-        let result = AngularVelocity.degrees_per_seconds(raw)
-        XCTAssertEqual(expected, result)
-        let ctype = u64_to_deg_per_s_t(5)
-        let expected2 = UInt64(
-            deg_per_s_t_to_u64(ctype)
-        )
-        let result2 = UInt64(expected)
-        XCTAssertEqual(result2, expected2)
-    }
-
-    func testDegrees_Per_Seconds_tUInt64Inits() {
-        let raw = UInt64(5)
-        let ctype = u64_to_deg_per_s_t(5)
-        let expected = Degrees_Per_Seconds_t(raw)
-        XCTAssertEqual(expected.rawValue, ctype)
-        XCTAssertEqual(
-            UInt64(expected),
-            UInt64(deg_per_s_t_to_u64(ctype))
-        )
-    }
-
-    func testDegrees_Per_Seconds_tUInt64RawValueInit() {
-        let raw = degrees_per_seconds_t(5)
-        let ctype = deg_per_s_t_to_u64(raw)
-        let expected = Degrees_Per_Seconds_t(UInt64(ctype))
-        XCTAssertEqual(Degrees_Per_Seconds_t(rawValue: raw), expected)
-    }
-
-    func testDegrees_Per_Seconds_tAngularVelocityUInt64Init() {
-        let raw = Degrees_Per_Seconds_t(UInt64(5))
-        let category = AngularVelocity(raw)
-        let expected = AngularVelocity(rawValue: .degrees_per_seconds_t(raw))
-        XCTAssertEqual(category, expected)
-    }
-
-    func testAngularVelocityDegrees_Per_Seconds_tUIntInits() {
-        let raw = UInt(5)
-        let expected = AngularVelocity(degrees_per_seconds: raw)
-        let result = AngularVelocity.degrees_per_seconds(raw)
-        XCTAssertEqual(expected, result)
-        let ctype = u64_to_deg_per_s_t(5)
-        let expected2 = UInt(
-            deg_per_s_t_to_u64(ctype)
-        )
-        let result2 = UInt(expected)
-        XCTAssertEqual(result2, expected2)
-    }
-
-    func testDegrees_Per_Seconds_tUIntInits() {
-        let raw = UInt(5)
-        let ctype = u64_to_deg_per_s_t(5)
-        let expected = Degrees_Per_Seconds_t(raw)
-        XCTAssertEqual(expected.rawValue, ctype)
-        XCTAssertEqual(
-            UInt(expected),
-            UInt(deg_per_s_t_to_u64(ctype))
-        )
-    }
-
-    func testDegrees_Per_Seconds_tUIntRawValueInit() {
-        let raw = degrees_per_seconds_t(5)
-        let ctype = deg_per_s_t_to_u64(raw)
-        let expected = Degrees_Per_Seconds_t(UInt(ctype))
+        let expected = Degrees_Per_Seconds_t(Int32(ctype))
         XCTAssertEqual(Degrees_Per_Seconds_t(rawValue: raw), expected)
     }
 

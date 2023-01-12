@@ -62,270 +62,290 @@ import XCTest
 
 final class Metres_Per_Milliseconds_SqConversionTests16: XCTestCase {
 
-    func testAccelerationMetres_Per_Milliseconds_Sq_dUInt16Inits() {
+    func testMetres_Per_Milliseconds_Sq_fAccelerationInt32Init() {
+        let raw = Metres_Per_Milliseconds_Sq_f(Int32(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metres_per_milliseconds_sq_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetres_Per_Milliseconds_Sq_fInt64Inits() {
+        let raw = Int64(5)
+        let expected = Acceleration(metres_per_milliseconds_sq: raw)
+        let result = Acceleration.metres_per_milliseconds_sq(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_m_per_ms_sq_f(5)
+        let expected2 = Int64(
+            m_per_ms_sq_f_to_i64(ctype)
+        )
+        let result2 = Int64(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_Per_Milliseconds_Sq_fInt64Inits() {
+        let raw = Int64(5)
+        let ctype = i64_to_m_per_ms_sq_f(5)
+        let expected = Metres_Per_Milliseconds_Sq_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int64(expected),
+            Int64(m_per_ms_sq_f_to_i64(ctype))
+        )
+    }
+
+    func testMetres_Per_Milliseconds_Sq_fInt64RawValueInit() {
+        let raw = metres_per_milliseconds_sq_f(5)
+        let ctype = m_per_ms_sq_f_to_i64(raw)
+        let expected = Metres_Per_Milliseconds_Sq_f(Int64(ctype))
+        XCTAssertEqual(Metres_Per_Milliseconds_Sq_f(rawValue: raw), expected)
+    }
+
+    func testMetres_Per_Milliseconds_Sq_fAccelerationInt64Init() {
+        let raw = Metres_Per_Milliseconds_Sq_f(Int64(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metres_per_milliseconds_sq_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetres_Per_Milliseconds_Sq_fIntInits() {
+        let raw = Int(5)
+        let expected = Acceleration(metres_per_milliseconds_sq: raw)
+        let result = Acceleration.metres_per_milliseconds_sq(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i64_to_m_per_ms_sq_f(5)
+        let expected2 = Int(
+            m_per_ms_sq_f_to_i64(ctype)
+        )
+        let result2 = Int(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_Per_Milliseconds_Sq_fIntInits() {
+        let raw = Int(5)
+        let ctype = i64_to_m_per_ms_sq_f(5)
+        let expected = Metres_Per_Milliseconds_Sq_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Int(expected),
+            Int(m_per_ms_sq_f_to_i64(ctype))
+        )
+    }
+
+    func testMetres_Per_Milliseconds_Sq_fIntRawValueInit() {
+        let raw = metres_per_milliseconds_sq_f(5)
+        let ctype = m_per_ms_sq_f_to_i64(raw)
+        let expected = Metres_Per_Milliseconds_Sq_f(Int(ctype))
+        XCTAssertEqual(Metres_Per_Milliseconds_Sq_f(rawValue: raw), expected)
+    }
+
+    func testMetres_Per_Milliseconds_Sq_fAccelerationIntInit() {
+        let raw = Metres_Per_Milliseconds_Sq_f(Int(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metres_per_milliseconds_sq_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetres_Per_Milliseconds_Sq_fCIntInits() {
+        let raw = CInt(5)
+        let expected = Acceleration(metres_per_milliseconds_sq: raw)
+        let result = Acceleration.metres_per_milliseconds_sq(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = i32_to_m_per_ms_sq_f(5)
+        let expected2 = CInt(
+            m_per_ms_sq_f_to_i32(ctype)
+        )
+        let result2 = CInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_Per_Milliseconds_Sq_fCIntInits() {
+        let raw = CInt(5)
+        let ctype = i32_to_m_per_ms_sq_f(5)
+        let expected = Metres_Per_Milliseconds_Sq_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CInt(expected),
+            CInt(m_per_ms_sq_f_to_i32(ctype))
+        )
+    }
+
+    func testMetres_Per_Milliseconds_Sq_fCIntRawValueInit() {
+        let raw = metres_per_milliseconds_sq_f(5)
+        let ctype = m_per_ms_sq_f_to_i32(raw)
+        let expected = Metres_Per_Milliseconds_Sq_f(CInt(ctype))
+        XCTAssertEqual(Metres_Per_Milliseconds_Sq_f(rawValue: raw), expected)
+    }
+
+    func testMetres_Per_Milliseconds_Sq_fAccelerationCIntInit() {
+        let raw = Metres_Per_Milliseconds_Sq_f(CInt(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metres_per_milliseconds_sq_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetres_Per_Milliseconds_Sq_fUInt8Inits() {
+        let raw = UInt8(5)
+        let expected = Acceleration(metres_per_milliseconds_sq: raw)
+        let result = Acceleration.metres_per_milliseconds_sq(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u8_to_m_per_ms_sq_f(5)
+        let expected2 = UInt8(
+            m_per_ms_sq_f_to_u8(ctype)
+        )
+        let result2 = UInt8(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testMetres_Per_Milliseconds_Sq_fUInt8Inits() {
+        let raw = UInt8(5)
+        let ctype = u8_to_m_per_ms_sq_f(5)
+        let expected = Metres_Per_Milliseconds_Sq_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt8(expected),
+            UInt8(m_per_ms_sq_f_to_u8(ctype))
+        )
+    }
+
+    func testMetres_Per_Milliseconds_Sq_fUInt8RawValueInit() {
+        let raw = metres_per_milliseconds_sq_f(5)
+        let ctype = m_per_ms_sq_f_to_u8(raw)
+        let expected = Metres_Per_Milliseconds_Sq_f(UInt8(ctype))
+        XCTAssertEqual(Metres_Per_Milliseconds_Sq_f(rawValue: raw), expected)
+    }
+
+    func testMetres_Per_Milliseconds_Sq_fAccelerationUInt8Init() {
+        let raw = Metres_Per_Milliseconds_Sq_f(UInt8(5))
+        let category = Acceleration(raw)
+        let expected = Acceleration(rawValue: .metres_per_milliseconds_sq_f(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAccelerationMetres_Per_Milliseconds_Sq_fUInt16Inits() {
         let raw = UInt16(5)
         let expected = Acceleration(metres_per_milliseconds_sq: raw)
         let result = Acceleration.metres_per_milliseconds_sq(raw)
         XCTAssertEqual(expected, result)
-        let ctype = u16_to_m_per_ms_sq_d(5)
+        let ctype = u16_to_m_per_ms_sq_f(5)
         let expected2 = UInt16(
-            m_per_ms_sq_d_to_u16(ctype)
+            m_per_ms_sq_f_to_u16(ctype)
         )
         let result2 = UInt16(expected)
         XCTAssertEqual(result2, expected2)
     }
 
-    func testMetres_Per_Milliseconds_Sq_dUInt16Inits() {
+    func testMetres_Per_Milliseconds_Sq_fUInt16Inits() {
         let raw = UInt16(5)
-        let ctype = u16_to_m_per_ms_sq_d(5)
-        let expected = Metres_Per_Milliseconds_Sq_d(raw)
+        let ctype = u16_to_m_per_ms_sq_f(5)
+        let expected = Metres_Per_Milliseconds_Sq_f(raw)
         XCTAssertEqual(expected.rawValue, ctype)
         XCTAssertEqual(
             UInt16(expected),
-            UInt16(m_per_ms_sq_d_to_u16(ctype))
+            UInt16(m_per_ms_sq_f_to_u16(ctype))
         )
     }
 
-    func testMetres_Per_Milliseconds_Sq_dUInt16RawValueInit() {
-        let raw = metres_per_milliseconds_sq_d(5)
-        let ctype = m_per_ms_sq_d_to_u16(raw)
-        let expected = Metres_Per_Milliseconds_Sq_d(UInt16(ctype))
-        XCTAssertEqual(Metres_Per_Milliseconds_Sq_d(rawValue: raw), expected)
+    func testMetres_Per_Milliseconds_Sq_fUInt16RawValueInit() {
+        let raw = metres_per_milliseconds_sq_f(5)
+        let ctype = m_per_ms_sq_f_to_u16(raw)
+        let expected = Metres_Per_Milliseconds_Sq_f(UInt16(ctype))
+        XCTAssertEqual(Metres_Per_Milliseconds_Sq_f(rawValue: raw), expected)
     }
 
-    func testMetres_Per_Milliseconds_Sq_dAccelerationUInt16Init() {
-        let raw = Metres_Per_Milliseconds_Sq_d(UInt16(5))
+    func testMetres_Per_Milliseconds_Sq_fAccelerationUInt16Init() {
+        let raw = Metres_Per_Milliseconds_Sq_f(UInt16(5))
         let category = Acceleration(raw)
-        let expected = Acceleration(rawValue: .metres_per_milliseconds_sq_d(raw))
+        let expected = Acceleration(rawValue: .metres_per_milliseconds_sq_f(raw))
         XCTAssertEqual(category, expected)
     }
 
-    func testAccelerationMetres_Per_Milliseconds_Sq_dUInt32Inits() {
+    func testAccelerationMetres_Per_Milliseconds_Sq_fUInt32Inits() {
         let raw = UInt32(5)
         let expected = Acceleration(metres_per_milliseconds_sq: raw)
         let result = Acceleration.metres_per_milliseconds_sq(raw)
         XCTAssertEqual(expected, result)
-        let ctype = u32_to_m_per_ms_sq_d(5)
+        let ctype = u32_to_m_per_ms_sq_f(5)
         let expected2 = UInt32(
-            m_per_ms_sq_d_to_u32(ctype)
+            m_per_ms_sq_f_to_u32(ctype)
         )
         let result2 = UInt32(expected)
         XCTAssertEqual(result2, expected2)
     }
 
-    func testMetres_Per_Milliseconds_Sq_dUInt32Inits() {
+    func testMetres_Per_Milliseconds_Sq_fUInt32Inits() {
         let raw = UInt32(5)
-        let ctype = u32_to_m_per_ms_sq_d(5)
-        let expected = Metres_Per_Milliseconds_Sq_d(raw)
+        let ctype = u32_to_m_per_ms_sq_f(5)
+        let expected = Metres_Per_Milliseconds_Sq_f(raw)
         XCTAssertEqual(expected.rawValue, ctype)
         XCTAssertEqual(
             UInt32(expected),
-            UInt32(m_per_ms_sq_d_to_u32(ctype))
+            UInt32(m_per_ms_sq_f_to_u32(ctype))
         )
     }
 
-    func testMetres_Per_Milliseconds_Sq_dUInt32RawValueInit() {
-        let raw = metres_per_milliseconds_sq_d(5)
-        let ctype = m_per_ms_sq_d_to_u32(raw)
-        let expected = Metres_Per_Milliseconds_Sq_d(UInt32(ctype))
-        XCTAssertEqual(Metres_Per_Milliseconds_Sq_d(rawValue: raw), expected)
+    func testMetres_Per_Milliseconds_Sq_fUInt32RawValueInit() {
+        let raw = metres_per_milliseconds_sq_f(5)
+        let ctype = m_per_ms_sq_f_to_u32(raw)
+        let expected = Metres_Per_Milliseconds_Sq_f(UInt32(ctype))
+        XCTAssertEqual(Metres_Per_Milliseconds_Sq_f(rawValue: raw), expected)
     }
 
-    func testMetres_Per_Milliseconds_Sq_dAccelerationUInt32Init() {
-        let raw = Metres_Per_Milliseconds_Sq_d(UInt32(5))
+    func testMetres_Per_Milliseconds_Sq_fAccelerationUInt32Init() {
+        let raw = Metres_Per_Milliseconds_Sq_f(UInt32(5))
         let category = Acceleration(raw)
-        let expected = Acceleration(rawValue: .metres_per_milliseconds_sq_d(raw))
+        let expected = Acceleration(rawValue: .metres_per_milliseconds_sq_f(raw))
         XCTAssertEqual(category, expected)
     }
 
-    func testAccelerationMetres_Per_Milliseconds_Sq_dUInt64Inits() {
+    func testAccelerationMetres_Per_Milliseconds_Sq_fUInt64Inits() {
         let raw = UInt64(5)
         let expected = Acceleration(metres_per_milliseconds_sq: raw)
         let result = Acceleration.metres_per_milliseconds_sq(raw)
         XCTAssertEqual(expected, result)
-        let ctype = u64_to_m_per_ms_sq_d(5)
+        let ctype = u64_to_m_per_ms_sq_f(5)
         let expected2 = UInt64(
-            m_per_ms_sq_d_to_u64(ctype)
+            m_per_ms_sq_f_to_u64(ctype)
         )
         let result2 = UInt64(expected)
         XCTAssertEqual(result2, expected2)
     }
 
-    func testMetres_Per_Milliseconds_Sq_dUInt64Inits() {
+    func testMetres_Per_Milliseconds_Sq_fUInt64Inits() {
         let raw = UInt64(5)
-        let ctype = u64_to_m_per_ms_sq_d(5)
-        let expected = Metres_Per_Milliseconds_Sq_d(raw)
+        let ctype = u64_to_m_per_ms_sq_f(5)
+        let expected = Metres_Per_Milliseconds_Sq_f(raw)
         XCTAssertEqual(expected.rawValue, ctype)
         XCTAssertEqual(
             UInt64(expected),
-            UInt64(m_per_ms_sq_d_to_u64(ctype))
+            UInt64(m_per_ms_sq_f_to_u64(ctype))
         )
     }
 
-    func testMetres_Per_Milliseconds_Sq_dUInt64RawValueInit() {
-        let raw = metres_per_milliseconds_sq_d(5)
-        let ctype = m_per_ms_sq_d_to_u64(raw)
-        let expected = Metres_Per_Milliseconds_Sq_d(UInt64(ctype))
-        XCTAssertEqual(Metres_Per_Milliseconds_Sq_d(rawValue: raw), expected)
+    func testMetres_Per_Milliseconds_Sq_fUInt64RawValueInit() {
+        let raw = metres_per_milliseconds_sq_f(5)
+        let ctype = m_per_ms_sq_f_to_u64(raw)
+        let expected = Metres_Per_Milliseconds_Sq_f(UInt64(ctype))
+        XCTAssertEqual(Metres_Per_Milliseconds_Sq_f(rawValue: raw), expected)
     }
 
-    func testMetres_Per_Milliseconds_Sq_dAccelerationUInt64Init() {
-        let raw = Metres_Per_Milliseconds_Sq_d(UInt64(5))
+    func testMetres_Per_Milliseconds_Sq_fAccelerationUInt64Init() {
+        let raw = Metres_Per_Milliseconds_Sq_f(UInt64(5))
         let category = Acceleration(raw)
-        let expected = Acceleration(rawValue: .metres_per_milliseconds_sq_d(raw))
+        let expected = Acceleration(rawValue: .metres_per_milliseconds_sq_f(raw))
         XCTAssertEqual(category, expected)
     }
 
-    func testAccelerationMetres_Per_Milliseconds_Sq_dUIntInits() {
+    func testAccelerationMetres_Per_Milliseconds_Sq_fUIntInits() {
         let raw = UInt(5)
         let expected = Acceleration(metres_per_milliseconds_sq: raw)
         let result = Acceleration.metres_per_milliseconds_sq(raw)
         XCTAssertEqual(expected, result)
-        let ctype = u64_to_m_per_ms_sq_d(5)
+        let ctype = u64_to_m_per_ms_sq_f(5)
         let expected2 = UInt(
-            m_per_ms_sq_d_to_u64(ctype)
+            m_per_ms_sq_f_to_u64(ctype)
         )
         let result2 = UInt(expected)
         XCTAssertEqual(result2, expected2)
-    }
-
-    func testMetres_Per_Milliseconds_Sq_dUIntInits() {
-        let raw = UInt(5)
-        let ctype = u64_to_m_per_ms_sq_d(5)
-        let expected = Metres_Per_Milliseconds_Sq_d(raw)
-        XCTAssertEqual(expected.rawValue, ctype)
-        XCTAssertEqual(
-            UInt(expected),
-            UInt(m_per_ms_sq_d_to_u64(ctype))
-        )
-    }
-
-    func testMetres_Per_Milliseconds_Sq_dUIntRawValueInit() {
-        let raw = metres_per_milliseconds_sq_d(5)
-        let ctype = m_per_ms_sq_d_to_u64(raw)
-        let expected = Metres_Per_Milliseconds_Sq_d(UInt(ctype))
-        XCTAssertEqual(Metres_Per_Milliseconds_Sq_d(rawValue: raw), expected)
-    }
-
-    func testMetres_Per_Milliseconds_Sq_dAccelerationUIntInit() {
-        let raw = Metres_Per_Milliseconds_Sq_d(UInt(5))
-        let category = Acceleration(raw)
-        let expected = Acceleration(rawValue: .metres_per_milliseconds_sq_d(raw))
-        XCTAssertEqual(category, expected)
-    }
-
-    func testAccelerationMetres_Per_Milliseconds_Sq_dCUnsignedIntInits() {
-        let raw = CUnsignedInt(5)
-        let expected = Acceleration(metres_per_milliseconds_sq: raw)
-        let result = Acceleration.metres_per_milliseconds_sq(raw)
-        XCTAssertEqual(expected, result)
-        let ctype = u32_to_m_per_ms_sq_d(5)
-        let expected2 = CUnsignedInt(
-            m_per_ms_sq_d_to_u32(ctype)
-        )
-        let result2 = CUnsignedInt(expected)
-        XCTAssertEqual(result2, expected2)
-    }
-
-    func testMetres_Per_Milliseconds_Sq_dCUnsignedIntInits() {
-        let raw = CUnsignedInt(5)
-        let ctype = u32_to_m_per_ms_sq_d(5)
-        let expected = Metres_Per_Milliseconds_Sq_d(raw)
-        XCTAssertEqual(expected.rawValue, ctype)
-        XCTAssertEqual(
-            CUnsignedInt(expected),
-            CUnsignedInt(m_per_ms_sq_d_to_u32(ctype))
-        )
-    }
-
-    func testMetres_Per_Milliseconds_Sq_dCUnsignedIntRawValueInit() {
-        let raw = metres_per_milliseconds_sq_d(5)
-        let ctype = m_per_ms_sq_d_to_u32(raw)
-        let expected = Metres_Per_Milliseconds_Sq_d(CUnsignedInt(ctype))
-        XCTAssertEqual(Metres_Per_Milliseconds_Sq_d(rawValue: raw), expected)
-    }
-
-    func testMetres_Per_Milliseconds_Sq_dAccelerationCUnsignedIntInit() {
-        let raw = Metres_Per_Milliseconds_Sq_d(CUnsignedInt(5))
-        let category = Acceleration(raw)
-        let expected = Acceleration(rawValue: .metres_per_milliseconds_sq_d(raw))
-        XCTAssertEqual(category, expected)
-    }
-
-    func testAccelerationMetres_Per_Milliseconds_Sq_dFloatInits() {
-        let raw = Float(5)
-        let expected = Acceleration(metres_per_milliseconds_sq: raw)
-        let result = Acceleration.metres_per_milliseconds_sq(raw)
-        XCTAssertEqual(expected, result)
-        let ctype = f_to_m_per_ms_sq_d(5)
-        let expected2 = Float(
-            m_per_ms_sq_d_to_f(ctype)
-        )
-        let result2 = Float(expected)
-        XCTAssertEqual(result2, expected2)
-    }
-
-    func testMetres_Per_Milliseconds_Sq_dFloatInits() {
-        let raw = Float(5)
-        let ctype = f_to_m_per_ms_sq_d(5)
-        let expected = Metres_Per_Milliseconds_Sq_d(raw)
-        XCTAssertEqual(expected.rawValue, ctype)
-        XCTAssertEqual(
-            Float(expected),
-            Float(m_per_ms_sq_d_to_f(ctype))
-        )
-    }
-
-    func testMetres_Per_Milliseconds_Sq_dFloatRawValueInit() {
-        let raw = metres_per_milliseconds_sq_d(5)
-        let ctype = m_per_ms_sq_d_to_f(raw)
-        let expected = Metres_Per_Milliseconds_Sq_d(Float(ctype))
-        XCTAssertEqual(Metres_Per_Milliseconds_Sq_d(rawValue: raw), expected)
-    }
-
-    func testMetres_Per_Milliseconds_Sq_dAccelerationFloatInit() {
-        let raw = Metres_Per_Milliseconds_Sq_d(Float(5))
-        let category = Acceleration(raw)
-        let expected = Acceleration(rawValue: .metres_per_milliseconds_sq_d(raw))
-        XCTAssertEqual(category, expected)
-    }
-
-    func testAccelerationMetres_Per_Milliseconds_Sq_dDoubleInits() {
-        let raw = Double(5)
-        let expected = Acceleration(metres_per_milliseconds_sq: raw)
-        let result = Acceleration.metres_per_milliseconds_sq(raw)
-        XCTAssertEqual(expected, result)
-        let ctype = d_to_m_per_ms_sq_d(5)
-        let expected2 = Double(
-            m_per_ms_sq_d_to_d(ctype)
-        )
-        let result2 = Double(expected)
-        XCTAssertEqual(result2, expected2)
-    }
-
-    func testMetres_Per_Milliseconds_Sq_dDoubleInits() {
-        let raw = Double(5)
-        let ctype = d_to_m_per_ms_sq_d(5)
-        let expected = Metres_Per_Milliseconds_Sq_d(raw)
-        XCTAssertEqual(expected.rawValue, ctype)
-        XCTAssertEqual(
-            Double(expected),
-            Double(m_per_ms_sq_d_to_d(ctype))
-        )
-    }
-
-    func testMetres_Per_Milliseconds_Sq_dDoubleRawValueInit() {
-        let raw = metres_per_milliseconds_sq_d(5)
-        let ctype = m_per_ms_sq_d_to_d(raw)
-        let expected = Metres_Per_Milliseconds_Sq_d(Double(ctype))
-        XCTAssertEqual(Metres_Per_Milliseconds_Sq_d(rawValue: raw), expected)
-    }
-
-    func testMetres_Per_Milliseconds_Sq_dAccelerationDoubleInit() {
-        let raw = Metres_Per_Milliseconds_Sq_d(Double(5))
-        let category = Acceleration(raw)
-        let expected = Acceleration(rawValue: .metres_per_milliseconds_sq_d(raw))
-        XCTAssertEqual(category, expected)
     }
 
 }

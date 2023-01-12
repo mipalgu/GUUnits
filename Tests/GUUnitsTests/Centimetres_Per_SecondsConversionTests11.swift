@@ -62,288 +62,269 @@ import XCTest
 
 final class Centimetres_Per_SecondsConversionTests11: XCTestCase {
 
-    func testCentimetres_Per_Seconds_fInt16Inits() {
-        let raw = Int16(5)
-        let ctype = i16_to_cm_per_s_f(5)
-        let expected = Centimetres_Per_Seconds_f(raw)
-        XCTAssertEqual(expected.rawValue, ctype)
-        XCTAssertEqual(
-            Int16(expected),
-            Int16(cm_per_s_f_to_i16(ctype))
-        )
-    }
-
-    func testCentimetres_Per_Seconds_fInt16RawValueInit() {
-        let raw = centimetres_per_seconds_f(5)
-        let ctype = cm_per_s_f_to_i16(raw)
-        let expected = Centimetres_Per_Seconds_f(Int16(ctype))
-        XCTAssertEqual(Centimetres_Per_Seconds_f(rawValue: raw), expected)
-    }
-
-    func testCentimetres_Per_Seconds_fVelocityInt16Init() {
-        let raw = Centimetres_Per_Seconds_f(Int16(5))
-        let category = Velocity(raw)
-        let expected = Velocity(rawValue: .centimetres_per_seconds_f(raw))
-        XCTAssertEqual(category, expected)
-    }
-
-    func testVelocityCentimetres_Per_Seconds_fInt32Inits() {
-        let raw = Int32(5)
+    func testVelocityCentimetres_Per_Seconds_uUInt64Inits() {
+        let raw = UInt64(5)
         let expected = Velocity(centimetres_per_seconds: raw)
         let result = Velocity.centimetres_per_seconds(raw)
         XCTAssertEqual(expected, result)
-        let ctype = i32_to_cm_per_s_f(5)
-        let expected2 = Int32(
-            cm_per_s_f_to_i32(ctype)
+        let ctype = u64_to_cm_per_s_u(5)
+        let expected2 = UInt64(
+            cm_per_s_u_to_u64(ctype)
         )
-        let result2 = Int32(expected)
+        let result2 = UInt64(expected)
         XCTAssertEqual(result2, expected2)
     }
 
-    func testCentimetres_Per_Seconds_fInt32Inits() {
-        let raw = Int32(5)
-        let ctype = i32_to_cm_per_s_f(5)
-        let expected = Centimetres_Per_Seconds_f(raw)
+    func testCentimetres_Per_Seconds_uUInt64Inits() {
+        let raw = UInt64(5)
+        let ctype = u64_to_cm_per_s_u(5)
+        let expected = Centimetres_Per_Seconds_u(raw)
         XCTAssertEqual(expected.rawValue, ctype)
         XCTAssertEqual(
-            Int32(expected),
-            Int32(cm_per_s_f_to_i32(ctype))
+            UInt64(expected),
+            UInt64(cm_per_s_u_to_u64(ctype))
         )
     }
 
-    func testCentimetres_Per_Seconds_fInt32RawValueInit() {
-        let raw = centimetres_per_seconds_f(5)
-        let ctype = cm_per_s_f_to_i32(raw)
-        let expected = Centimetres_Per_Seconds_f(Int32(ctype))
-        XCTAssertEqual(Centimetres_Per_Seconds_f(rawValue: raw), expected)
+    func testCentimetres_Per_Seconds_uUInt64RawValueInit() {
+        let raw = centimetres_per_seconds_u(5)
+        let ctype = cm_per_s_u_to_u64(raw)
+        let expected = Centimetres_Per_Seconds_u(UInt64(ctype))
+        XCTAssertEqual(Centimetres_Per_Seconds_u(rawValue: raw), expected)
     }
 
-    func testCentimetres_Per_Seconds_fVelocityInt32Init() {
-        let raw = Centimetres_Per_Seconds_f(Int32(5))
+    func testCentimetres_Per_Seconds_uVelocityUInt64Init() {
+        let raw = Centimetres_Per_Seconds_u(UInt64(5))
         let category = Velocity(raw)
-        let expected = Velocity(rawValue: .centimetres_per_seconds_f(raw))
+        let expected = Velocity(rawValue: .centimetres_per_seconds_u(raw))
         XCTAssertEqual(category, expected)
     }
 
-    func testVelocityCentimetres_Per_Seconds_fInt64Inits() {
-        let raw = Int64(5)
+    func testVelocityCentimetres_Per_Seconds_uUIntInits() {
+        let raw = UInt(5)
         let expected = Velocity(centimetres_per_seconds: raw)
         let result = Velocity.centimetres_per_seconds(raw)
         XCTAssertEqual(expected, result)
-        let ctype = i64_to_cm_per_s_f(5)
-        let expected2 = Int64(
-            cm_per_s_f_to_i64(ctype)
+        let ctype = u64_to_cm_per_s_u(5)
+        let expected2 = UInt(
+            cm_per_s_u_to_u64(ctype)
         )
-        let result2 = Int64(expected)
+        let result2 = UInt(expected)
         XCTAssertEqual(result2, expected2)
     }
 
-    func testCentimetres_Per_Seconds_fInt64Inits() {
-        let raw = Int64(5)
-        let ctype = i64_to_cm_per_s_f(5)
-        let expected = Centimetres_Per_Seconds_f(raw)
+    func testCentimetres_Per_Seconds_uUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_cm_per_s_u(5)
+        let expected = Centimetres_Per_Seconds_u(raw)
         XCTAssertEqual(expected.rawValue, ctype)
         XCTAssertEqual(
-            Int64(expected),
-            Int64(cm_per_s_f_to_i64(ctype))
+            UInt(expected),
+            UInt(cm_per_s_u_to_u64(ctype))
         )
     }
 
-    func testCentimetres_Per_Seconds_fInt64RawValueInit() {
-        let raw = centimetres_per_seconds_f(5)
-        let ctype = cm_per_s_f_to_i64(raw)
-        let expected = Centimetres_Per_Seconds_f(Int64(ctype))
-        XCTAssertEqual(Centimetres_Per_Seconds_f(rawValue: raw), expected)
+    func testCentimetres_Per_Seconds_uUIntRawValueInit() {
+        let raw = centimetres_per_seconds_u(5)
+        let ctype = cm_per_s_u_to_u64(raw)
+        let expected = Centimetres_Per_Seconds_u(UInt(ctype))
+        XCTAssertEqual(Centimetres_Per_Seconds_u(rawValue: raw), expected)
     }
 
-    func testCentimetres_Per_Seconds_fVelocityInt64Init() {
-        let raw = Centimetres_Per_Seconds_f(Int64(5))
+    func testCentimetres_Per_Seconds_uVelocityUIntInit() {
+        let raw = Centimetres_Per_Seconds_u(UInt(5))
         let category = Velocity(raw)
-        let expected = Velocity(rawValue: .centimetres_per_seconds_f(raw))
+        let expected = Velocity(rawValue: .centimetres_per_seconds_u(raw))
         XCTAssertEqual(category, expected)
     }
 
-    func testVelocityCentimetres_Per_Seconds_fIntInits() {
-        let raw = Int(5)
+    func testVelocityCentimetres_Per_Seconds_uCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
         let expected = Velocity(centimetres_per_seconds: raw)
         let result = Velocity.centimetres_per_seconds(raw)
         XCTAssertEqual(expected, result)
-        let ctype = i64_to_cm_per_s_f(5)
-        let expected2 = Int(
-            cm_per_s_f_to_i64(ctype)
+        let ctype = u32_to_cm_per_s_u(5)
+        let expected2 = CUnsignedInt(
+            cm_per_s_u_to_u32(ctype)
         )
-        let result2 = Int(expected)
+        let result2 = CUnsignedInt(expected)
         XCTAssertEqual(result2, expected2)
     }
 
-    func testCentimetres_Per_Seconds_fIntInits() {
-        let raw = Int(5)
-        let ctype = i64_to_cm_per_s_f(5)
-        let expected = Centimetres_Per_Seconds_f(raw)
+    func testCentimetres_Per_Seconds_uCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_cm_per_s_u(5)
+        let expected = Centimetres_Per_Seconds_u(raw)
         XCTAssertEqual(expected.rawValue, ctype)
         XCTAssertEqual(
-            Int(expected),
-            Int(cm_per_s_f_to_i64(ctype))
+            CUnsignedInt(expected),
+            CUnsignedInt(cm_per_s_u_to_u32(ctype))
         )
     }
 
-    func testCentimetres_Per_Seconds_fIntRawValueInit() {
-        let raw = centimetres_per_seconds_f(5)
-        let ctype = cm_per_s_f_to_i64(raw)
-        let expected = Centimetres_Per_Seconds_f(Int(ctype))
-        XCTAssertEqual(Centimetres_Per_Seconds_f(rawValue: raw), expected)
+    func testCentimetres_Per_Seconds_uCUnsignedIntRawValueInit() {
+        let raw = centimetres_per_seconds_u(5)
+        let ctype = cm_per_s_u_to_u32(raw)
+        let expected = Centimetres_Per_Seconds_u(CUnsignedInt(ctype))
+        XCTAssertEqual(Centimetres_Per_Seconds_u(rawValue: raw), expected)
     }
 
-    func testCentimetres_Per_Seconds_fVelocityIntInit() {
-        let raw = Centimetres_Per_Seconds_f(Int(5))
+    func testCentimetres_Per_Seconds_uVelocityCUnsignedIntInit() {
+        let raw = Centimetres_Per_Seconds_u(CUnsignedInt(5))
         let category = Velocity(raw)
-        let expected = Velocity(rawValue: .centimetres_per_seconds_f(raw))
+        let expected = Velocity(rawValue: .centimetres_per_seconds_u(raw))
         XCTAssertEqual(category, expected)
     }
 
-    func testVelocityCentimetres_Per_Seconds_fCIntInits() {
-        let raw = CInt(5)
+    func testVelocityCentimetres_Per_Seconds_uFloatInits() {
+        let raw = Float(5)
         let expected = Velocity(centimetres_per_seconds: raw)
         let result = Velocity.centimetres_per_seconds(raw)
         XCTAssertEqual(expected, result)
-        let ctype = i32_to_cm_per_s_f(5)
-        let expected2 = CInt(
-            cm_per_s_f_to_i32(ctype)
+        let ctype = f_to_cm_per_s_u(5)
+        let expected2 = Float(
+            cm_per_s_u_to_f(ctype)
         )
-        let result2 = CInt(expected)
+        let result2 = Float(expected)
         XCTAssertEqual(result2, expected2)
     }
 
-    func testCentimetres_Per_Seconds_fCIntInits() {
-        let raw = CInt(5)
-        let ctype = i32_to_cm_per_s_f(5)
-        let expected = Centimetres_Per_Seconds_f(raw)
+    func testCentimetres_Per_Seconds_uFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_cm_per_s_u(5)
+        let expected = Centimetres_Per_Seconds_u(raw)
         XCTAssertEqual(expected.rawValue, ctype)
         XCTAssertEqual(
-            CInt(expected),
-            CInt(cm_per_s_f_to_i32(ctype))
+            Float(expected),
+            Float(cm_per_s_u_to_f(ctype))
         )
     }
 
-    func testCentimetres_Per_Seconds_fCIntRawValueInit() {
-        let raw = centimetres_per_seconds_f(5)
-        let ctype = cm_per_s_f_to_i32(raw)
-        let expected = Centimetres_Per_Seconds_f(CInt(ctype))
-        XCTAssertEqual(Centimetres_Per_Seconds_f(rawValue: raw), expected)
+    func testCentimetres_Per_Seconds_uFloatRawValueInit() {
+        let raw = centimetres_per_seconds_u(5)
+        let ctype = cm_per_s_u_to_f(raw)
+        let expected = Centimetres_Per_Seconds_u(Float(ctype))
+        XCTAssertEqual(Centimetres_Per_Seconds_u(rawValue: raw), expected)
     }
 
-    func testCentimetres_Per_Seconds_fVelocityCIntInit() {
-        let raw = Centimetres_Per_Seconds_f(CInt(5))
+    func testCentimetres_Per_Seconds_uVelocityFloatInit() {
+        let raw = Centimetres_Per_Seconds_u(Float(5))
         let category = Velocity(raw)
-        let expected = Velocity(rawValue: .centimetres_per_seconds_f(raw))
+        let expected = Velocity(rawValue: .centimetres_per_seconds_u(raw))
         XCTAssertEqual(category, expected)
     }
 
-    func testVelocityCentimetres_Per_Seconds_fUInt8Inits() {
-        let raw = UInt8(5)
+    func testVelocityCentimetres_Per_Seconds_uDoubleInits() {
+        let raw = Double(5)
         let expected = Velocity(centimetres_per_seconds: raw)
         let result = Velocity.centimetres_per_seconds(raw)
         XCTAssertEqual(expected, result)
-        let ctype = u8_to_cm_per_s_f(5)
-        let expected2 = UInt8(
-            cm_per_s_f_to_u8(ctype)
+        let ctype = d_to_cm_per_s_u(5)
+        let expected2 = Double(
+            cm_per_s_u_to_d(ctype)
         )
-        let result2 = UInt8(expected)
+        let result2 = Double(expected)
         XCTAssertEqual(result2, expected2)
     }
 
-    func testCentimetres_Per_Seconds_fUInt8Inits() {
-        let raw = UInt8(5)
-        let ctype = u8_to_cm_per_s_f(5)
-        let expected = Centimetres_Per_Seconds_f(raw)
+    func testCentimetres_Per_Seconds_uDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_cm_per_s_u(5)
+        let expected = Centimetres_Per_Seconds_u(raw)
         XCTAssertEqual(expected.rawValue, ctype)
         XCTAssertEqual(
-            UInt8(expected),
-            UInt8(cm_per_s_f_to_u8(ctype))
+            Double(expected),
+            Double(cm_per_s_u_to_d(ctype))
         )
     }
 
-    func testCentimetres_Per_Seconds_fUInt8RawValueInit() {
-        let raw = centimetres_per_seconds_f(5)
-        let ctype = cm_per_s_f_to_u8(raw)
-        let expected = Centimetres_Per_Seconds_f(UInt8(ctype))
-        XCTAssertEqual(Centimetres_Per_Seconds_f(rawValue: raw), expected)
+    func testCentimetres_Per_Seconds_uDoubleRawValueInit() {
+        let raw = centimetres_per_seconds_u(5)
+        let ctype = cm_per_s_u_to_d(raw)
+        let expected = Centimetres_Per_Seconds_u(Double(ctype))
+        XCTAssertEqual(Centimetres_Per_Seconds_u(rawValue: raw), expected)
     }
 
-    func testCentimetres_Per_Seconds_fVelocityUInt8Init() {
-        let raw = Centimetres_Per_Seconds_f(UInt8(5))
+    func testCentimetres_Per_Seconds_uVelocityDoubleInit() {
+        let raw = Centimetres_Per_Seconds_u(Double(5))
         let category = Velocity(raw)
-        let expected = Velocity(rawValue: .centimetres_per_seconds_f(raw))
+        let expected = Velocity(rawValue: .centimetres_per_seconds_u(raw))
         XCTAssertEqual(category, expected)
     }
 
-    func testVelocityCentimetres_Per_Seconds_fUInt16Inits() {
-        let raw = UInt16(5)
-        let expected = Velocity(centimetres_per_seconds: raw)
-        let result = Velocity.centimetres_per_seconds(raw)
-        XCTAssertEqual(expected, result)
-        let ctype = u16_to_cm_per_s_f(5)
-        let expected2 = UInt16(
-            cm_per_s_f_to_u16(ctype)
-        )
-        let result2 = UInt16(expected)
-        XCTAssertEqual(result2, expected2)
+    func testCentimetres_Per_Seconds_fToMillimetres_Per_Picoseconds_tVelocityConversions() {
+        let original = Centimetres_Per_Seconds_f(5)
+        let category = Velocity(original)
+        let other = category.millimetres_per_picoseconds_t
+        XCTAssertEqual(other, Millimetres_Per_Picoseconds_t(original))
     }
 
-    func testCentimetres_Per_Seconds_fUInt16Inits() {
-        let raw = UInt16(5)
-        let ctype = u16_to_cm_per_s_f(5)
-        let expected = Centimetres_Per_Seconds_f(raw)
-        XCTAssertEqual(expected.rawValue, ctype)
-        XCTAssertEqual(
-            UInt16(expected),
-            UInt16(cm_per_s_f_to_u16(ctype))
-        )
+    func testMillimetres_Per_Picoseconds_tToCentimetres_Per_Seconds_fConversions() {
+        let ctype1 = centimetres_per_seconds_f(5)
+        let swiftType1 = Centimetres_Per_Seconds_f(rawValue: ctype1)
+        let ctype2 = cm_per_s_f_to_mm_per_ps_t(ctype1)
+        let swiftType2 = Millimetres_Per_Picoseconds_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_Per_Picoseconds_t(swiftType1))
     }
 
-    func testCentimetres_Per_Seconds_fUInt16RawValueInit() {
-        let raw = centimetres_per_seconds_f(5)
-        let ctype = cm_per_s_f_to_u16(raw)
-        let expected = Centimetres_Per_Seconds_f(UInt16(ctype))
-        XCTAssertEqual(Centimetres_Per_Seconds_f(rawValue: raw), expected)
+    func testCentimetres_Per_Seconds_fToMillimetres_Per_Picoseconds_uVelocityConversions() {
+        let original = Centimetres_Per_Seconds_f(5)
+        let category = Velocity(original)
+        let other = category.millimetres_per_picoseconds_u
+        XCTAssertEqual(other, Millimetres_Per_Picoseconds_u(original))
     }
 
-    func testCentimetres_Per_Seconds_fVelocityUInt16Init() {
-        let raw = Centimetres_Per_Seconds_f(UInt16(5))
-        let category = Velocity(raw)
-        let expected = Velocity(rawValue: .centimetres_per_seconds_f(raw))
-        XCTAssertEqual(category, expected)
+    func testMillimetres_Per_Picoseconds_uToCentimetres_Per_Seconds_fConversions() {
+        let ctype1 = centimetres_per_seconds_f(5)
+        let swiftType1 = Centimetres_Per_Seconds_f(rawValue: ctype1)
+        let ctype2 = cm_per_s_f_to_mm_per_ps_u(ctype1)
+        let swiftType2 = Millimetres_Per_Picoseconds_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_Per_Picoseconds_u(swiftType1))
     }
 
-    func testVelocityCentimetres_Per_Seconds_fUInt32Inits() {
-        let raw = UInt32(5)
-        let expected = Velocity(centimetres_per_seconds: raw)
-        let result = Velocity.centimetres_per_seconds(raw)
-        XCTAssertEqual(expected, result)
-        let ctype = u32_to_cm_per_s_f(5)
-        let expected2 = UInt32(
-            cm_per_s_f_to_u32(ctype)
-        )
-        let result2 = UInt32(expected)
-        XCTAssertEqual(result2, expected2)
+    func testCentimetres_Per_Seconds_fToMillimetres_Per_Picoseconds_fVelocityConversions() {
+        let original = Centimetres_Per_Seconds_f(5)
+        let category = Velocity(original)
+        let other = category.millimetres_per_picoseconds_f
+        XCTAssertEqual(other, Millimetres_Per_Picoseconds_f(original))
     }
 
-    func testCentimetres_Per_Seconds_fUInt32Inits() {
-        let raw = UInt32(5)
-        let ctype = u32_to_cm_per_s_f(5)
-        let expected = Centimetres_Per_Seconds_f(raw)
-        XCTAssertEqual(expected.rawValue, ctype)
-        XCTAssertEqual(
-            UInt32(expected),
-            UInt32(cm_per_s_f_to_u32(ctype))
-        )
+    func testMillimetres_Per_Picoseconds_fToCentimetres_Per_Seconds_fConversions() {
+        let ctype1 = centimetres_per_seconds_f(5)
+        let swiftType1 = Centimetres_Per_Seconds_f(rawValue: ctype1)
+        let ctype2 = cm_per_s_f_to_mm_per_ps_f(ctype1)
+        let swiftType2 = Millimetres_Per_Picoseconds_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_Per_Picoseconds_f(swiftType1))
     }
 
-    func testCentimetres_Per_Seconds_fUInt32RawValueInit() {
-        let raw = centimetres_per_seconds_f(5)
-        let ctype = cm_per_s_f_to_u32(raw)
-        let expected = Centimetres_Per_Seconds_f(UInt32(ctype))
-        XCTAssertEqual(Centimetres_Per_Seconds_f(rawValue: raw), expected)
+    func testCentimetres_Per_Seconds_fToMillimetres_Per_Picoseconds_dVelocityConversions() {
+        let original = Centimetres_Per_Seconds_f(5)
+        let category = Velocity(original)
+        let other = category.millimetres_per_picoseconds_d
+        XCTAssertEqual(other, Millimetres_Per_Picoseconds_d(original))
+    }
+
+    func testMillimetres_Per_Picoseconds_dToCentimetres_Per_Seconds_fConversions() {
+        let ctype1 = centimetres_per_seconds_f(5)
+        let swiftType1 = Centimetres_Per_Seconds_f(rawValue: ctype1)
+        let ctype2 = cm_per_s_f_to_mm_per_ps_d(ctype1)
+        let swiftType2 = Millimetres_Per_Picoseconds_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_Per_Picoseconds_d(swiftType1))
+    }
+
+    func testCentimetres_Per_Seconds_fToMillimetres_Per_Nanoseconds_tVelocityConversions() {
+        let original = Centimetres_Per_Seconds_f(5)
+        let category = Velocity(original)
+        let other = category.millimetres_per_nanoseconds_t
+        XCTAssertEqual(other, Millimetres_Per_Nanoseconds_t(original))
+    }
+
+    func testMillimetres_Per_Nanoseconds_tToCentimetres_Per_Seconds_fConversions() {
+        let ctype1 = centimetres_per_seconds_f(5)
+        let swiftType1 = Centimetres_Per_Seconds_f(rawValue: ctype1)
+        let ctype2 = cm_per_s_f_to_mm_per_ns_t(ctype1)
+        let swiftType2 = Millimetres_Per_Nanoseconds_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Millimetres_Per_Nanoseconds_t(swiftType1))
     }
 
 }

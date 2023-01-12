@@ -864,46 +864,122 @@ final class Time_Seconds_fTests0: XCTestCase {
         XCTAssertEqual(s_f_to_ms_u(Float.greatestFiniteMagnitude), milliseconds_u(UInt64.max))
     }
 
-    func testseconds_f_to_seconds_d() {
-        let result = s_f_to_s_d(0.0)
-        let expected: seconds_d = 0.0
-        let tolerance: seconds_d = 0.99
+    func testseconds_f_to_nanoseconds_d() {
+        let result = s_f_to_ns_d(15.0)
+        let expected: nanoseconds_d = nanoseconds_d(15.0) * 1000000000.0
+        let tolerance: nanoseconds_d = 0.99
         if result > expected {
             XCTAssertLessThanOrEqual(result - expected, tolerance)
         } else {
             XCTAssertLessThanOrEqual(expected - result, tolerance)
         }
-        let result1 = s_f_to_s_d(seconds_f(-Float.greatestFiniteMagnitude))
-        let expected1: seconds_d = seconds_d(-Float.greatestFiniteMagnitude)
-        let tolerance1: seconds_d = 0.99
+        let result1 = s_f_to_ns_d(25.0)
+        let expected1: nanoseconds_d = nanoseconds_d(25.0) * 1000000000.0
+        let tolerance1: nanoseconds_d = 0.99
         if result1 > expected1 {
             XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
         } else {
             XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
         }
-        let result2 = s_f_to_s_d(seconds_f(Float.greatestFiniteMagnitude))
-        let expected2: seconds_d = seconds_d(Float.greatestFiniteMagnitude)
-        let tolerance2: seconds_d = 0.99
+        let result2 = s_f_to_ns_d(250.0)
+        let expected2: nanoseconds_d = nanoseconds_d(250.0) * 1000000000.0
+        let tolerance2: nanoseconds_d = 0.99
         if result2 > expected2 {
             XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
         } else {
             XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
         }
-        let result3 = s_f_to_s_d(5.0)
-        let expected3: seconds_d = 5.0
-        let tolerance3: seconds_d = 0.99
+        let result3 = s_f_to_ns_d(0.0)
+        let expected3: nanoseconds_d = nanoseconds_d(0.0) * 1000000000.0
+        let tolerance3: nanoseconds_d = 0.99
         if result3 > expected3 {
             XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
         } else {
             XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
         }
+        let result4 = s_f_to_ns_d(2500.0)
+        let expected4: nanoseconds_d = nanoseconds_d(2500.0) * 1000000000.0
+        let tolerance4: nanoseconds_d = 0.99
+        if result4 > expected4 {
+            XCTAssertLessThanOrEqual(result4 - expected4, tolerance4)
+        } else {
+            XCTAssertLessThanOrEqual(expected4 - result4, tolerance4)
+        }
+        let result5 = s_f_to_ns_d(25000.0)
+        let expected5: nanoseconds_d = nanoseconds_d(25000.0) * 1000000000.0
+        let tolerance5: nanoseconds_d = 0.99
+        if result5 > expected5 {
+            XCTAssertLessThanOrEqual(result5 - expected5, tolerance5)
+        } else {
+            XCTAssertLessThanOrEqual(expected5 - result5, tolerance5)
+        }
+        let result6 = s_f_to_ns_d(250000.0)
+        let expected6: nanoseconds_d = nanoseconds_d(250000.0) * 1000000000.0
+        let tolerance6: nanoseconds_d = 0.99
+        if result6 > expected6 {
+            XCTAssertLessThanOrEqual(result6 - expected6, tolerance6)
+        } else {
+            XCTAssertLessThanOrEqual(expected6 - result6, tolerance6)
+        }
+        let result7 = s_f_to_ns_d(2500000.0)
+        let expected7: nanoseconds_d = nanoseconds_d(2500000.0) * 1000000000.0
+        let tolerance7: nanoseconds_d = 0.99
+        if result7 > expected7 {
+            XCTAssertLessThanOrEqual(result7 - expected7, tolerance7)
+        } else {
+            XCTAssertLessThanOrEqual(expected7 - result7, tolerance7)
+        }
+        let result8 = s_f_to_ns_d(-323.0)
+        let expected8: nanoseconds_d = nanoseconds_d(-323.0) * 1000000000.0
+        let tolerance8: nanoseconds_d = 0.99
+        if result8 > expected8 {
+            XCTAssertLessThanOrEqual(result8 - expected8, tolerance8)
+        } else {
+            XCTAssertLessThanOrEqual(expected8 - result8, tolerance8)
+        }
+        let result9 = s_f_to_ns_d(-10.0)
+        let expected9: nanoseconds_d = nanoseconds_d(-10.0) * 1000000000.0
+        let tolerance9: nanoseconds_d = 0.99
+        if result9 > expected9 {
+            XCTAssertLessThanOrEqual(result9 - expected9, tolerance9)
+        } else {
+            XCTAssertLessThanOrEqual(expected9 - result9, tolerance9)
+        }
     }
 
-    func testseconds_f_to_seconds_t() {
-        XCTAssertEqual(s_f_to_s_t(0.0), 0)
-        XCTAssertEqual(s_f_to_s_t(seconds_f(-Float.greatestFiniteMagnitude)), seconds_t(Int64.min))
-        XCTAssertEqual(s_f_to_s_t(seconds_f(Float.greatestFiniteMagnitude)), seconds_t(Int64.max))
-        XCTAssertEqual(s_f_to_s_t(5.0), 5)
+    func testseconds_f_to_nanoseconds_d1() {
+        let result = s_f_to_ns_d(-1000.0)
+        let expected: nanoseconds_d = nanoseconds_d(-1000.0) * 1000000000.0
+        let tolerance: nanoseconds_d = 0.99
+        if result > expected {
+            XCTAssertLessThanOrEqual(result - expected, tolerance)
+        } else {
+            XCTAssertLessThanOrEqual(expected - result, tolerance)
+        }
+        let result1 = s_f_to_ns_d(-5.0)
+        let expected1: nanoseconds_d = nanoseconds_d(-5.0) * 1000000000.0
+        let tolerance1: nanoseconds_d = 0.99
+        if result1 > expected1 {
+            XCTAssertLessThanOrEqual(result1 - expected1, tolerance1)
+        } else {
+            XCTAssertLessThanOrEqual(expected1 - result1, tolerance1)
+        }
+        let result2 = s_f_to_ns_d(-Float.greatestFiniteMagnitude)
+        let expected2: nanoseconds_d = nanoseconds_d(-Float.greatestFiniteMagnitude) * 1000000000.0
+        let tolerance2: nanoseconds_d = 0.99
+        if result2 > expected2 {
+            XCTAssertLessThanOrEqual(result2 - expected2, tolerance2)
+        } else {
+            XCTAssertLessThanOrEqual(expected2 - result2, tolerance2)
+        }
+        let result3 = s_f_to_ns_d(Float.greatestFiniteMagnitude)
+        let expected3: nanoseconds_d = nanoseconds_d(Float.greatestFiniteMagnitude) * 1000000000.0
+        let tolerance3: nanoseconds_d = 0.99
+        if result3 > expected3 {
+            XCTAssertLessThanOrEqual(result3 - expected3, tolerance3)
+        } else {
+            XCTAssertLessThanOrEqual(expected3 - result3, tolerance3)
+        }
     }
 
 }

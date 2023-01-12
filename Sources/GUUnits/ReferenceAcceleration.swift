@@ -1501,6 +1501,198 @@ public extension UInt8 {
 
 }
 
+public extension Millimetres_Per_Picoseconds_Sq_t {
+
+    /// Create a `Millimetres_Per_Picoseconds_Sq_t` from a `Earthg_t`.
+    init(_ value: Earthg_t) {
+        self.init(rawValue: gs_t_to_mm_per_ps_sq_t(value.rawValue))
+    }
+
+    /// Create a `Millimetres_Per_Picoseconds_Sq_t` from a `Earthg_u`.
+    init(_ value: Earthg_u) {
+        self.init(rawValue: gs_u_to_mm_per_ps_sq_t(value.rawValue))
+    }
+
+    /// Create a `Millimetres_Per_Picoseconds_Sq_t` from a `Earthg_f`.
+    init(_ value: Earthg_f) {
+        self.init(rawValue: gs_f_to_mm_per_ps_sq_t(value.rawValue))
+    }
+
+    /// Create a `Millimetres_Per_Picoseconds_Sq_t` from a `Earthg_d`.
+    init(_ value: Earthg_d) {
+        self.init(rawValue: gs_d_to_mm_per_ps_sq_t(value.rawValue))
+    }
+
+}
+
+public extension Millimetres_Per_Picoseconds_Sq_u {
+
+    /// Create a `Millimetres_Per_Picoseconds_Sq_u` from a `Earthg_t`.
+    init(_ value: Earthg_t) {
+        self.init(rawValue: gs_t_to_mm_per_ps_sq_u(value.rawValue))
+    }
+
+    /// Create a `Millimetres_Per_Picoseconds_Sq_u` from a `Earthg_u`.
+    init(_ value: Earthg_u) {
+        self.init(rawValue: gs_u_to_mm_per_ps_sq_u(value.rawValue))
+    }
+
+    /// Create a `Millimetres_Per_Picoseconds_Sq_u` from a `Earthg_f`.
+    init(_ value: Earthg_f) {
+        self.init(rawValue: gs_f_to_mm_per_ps_sq_u(value.rawValue))
+    }
+
+    /// Create a `Millimetres_Per_Picoseconds_Sq_u` from a `Earthg_d`.
+    init(_ value: Earthg_d) {
+        self.init(rawValue: gs_d_to_mm_per_ps_sq_u(value.rawValue))
+    }
+
+}
+
+public extension Millimetres_Per_Picoseconds_Sq_f {
+
+    /// Create a `Millimetres_Per_Picoseconds_Sq_f` from a `Earthg_t`.
+    init(_ value: Earthg_t) {
+        self.init(rawValue: gs_t_to_mm_per_ps_sq_f(value.rawValue))
+    }
+
+    /// Create a `Millimetres_Per_Picoseconds_Sq_f` from a `Earthg_u`.
+    init(_ value: Earthg_u) {
+        self.init(rawValue: gs_u_to_mm_per_ps_sq_f(value.rawValue))
+    }
+
+    /// Create a `Millimetres_Per_Picoseconds_Sq_f` from a `Earthg_f`.
+    init(_ value: Earthg_f) {
+        self.init(rawValue: gs_f_to_mm_per_ps_sq_f(value.rawValue))
+    }
+
+    /// Create a `Millimetres_Per_Picoseconds_Sq_f` from a `Earthg_d`.
+    init(_ value: Earthg_d) {
+        self.init(rawValue: gs_d_to_mm_per_ps_sq_f(value.rawValue))
+    }
+
+}
+
+public extension Millimetres_Per_Picoseconds_Sq_d {
+
+    /// Create a `Millimetres_Per_Picoseconds_Sq_d` from a `Earthg_t`.
+    init(_ value: Earthg_t) {
+        self.init(rawValue: gs_t_to_mm_per_ps_sq_d(value.rawValue))
+    }
+
+    /// Create a `Millimetres_Per_Picoseconds_Sq_d` from a `Earthg_u`.
+    init(_ value: Earthg_u) {
+        self.init(rawValue: gs_u_to_mm_per_ps_sq_d(value.rawValue))
+    }
+
+    /// Create a `Millimetres_Per_Picoseconds_Sq_d` from a `Earthg_f`.
+    init(_ value: Earthg_f) {
+        self.init(rawValue: gs_f_to_mm_per_ps_sq_d(value.rawValue))
+    }
+
+    /// Create a `Millimetres_Per_Picoseconds_Sq_d` from a `Earthg_d`.
+    init(_ value: Earthg_d) {
+        self.init(rawValue: gs_d_to_mm_per_ps_sq_d(value.rawValue))
+    }
+
+}
+
+public extension Millimetres_Per_Nanoseconds_Sq_t {
+
+    /// Create a `Millimetres_Per_Nanoseconds_Sq_t` from a `Earthg_t`.
+    init(_ value: Earthg_t) {
+        self.init(rawValue: gs_t_to_mm_per_ns_sq_t(value.rawValue))
+    }
+
+    /// Create a `Millimetres_Per_Nanoseconds_Sq_t` from a `Earthg_u`.
+    init(_ value: Earthg_u) {
+        self.init(rawValue: gs_u_to_mm_per_ns_sq_t(value.rawValue))
+    }
+
+    /// Create a `Millimetres_Per_Nanoseconds_Sq_t` from a `Earthg_f`.
+    init(_ value: Earthg_f) {
+        self.init(rawValue: gs_f_to_mm_per_ns_sq_t(value.rawValue))
+    }
+
+    /// Create a `Millimetres_Per_Nanoseconds_Sq_t` from a `Earthg_d`.
+    init(_ value: Earthg_d) {
+        self.init(rawValue: gs_d_to_mm_per_ns_sq_t(value.rawValue))
+    }
+
+}
+
+public extension Millimetres_Per_Nanoseconds_Sq_u {
+
+    /// Create a `Millimetres_Per_Nanoseconds_Sq_u` from a `Earthg_t`.
+    init(_ value: Earthg_t) {
+        self.init(rawValue: gs_t_to_mm_per_ns_sq_u(value.rawValue))
+    }
+
+    /// Create a `Millimetres_Per_Nanoseconds_Sq_u` from a `Earthg_u`.
+    init(_ value: Earthg_u) {
+        self.init(rawValue: gs_u_to_mm_per_ns_sq_u(value.rawValue))
+    }
+
+    /// Create a `Millimetres_Per_Nanoseconds_Sq_u` from a `Earthg_f`.
+    init(_ value: Earthg_f) {
+        self.init(rawValue: gs_f_to_mm_per_ns_sq_u(value.rawValue))
+    }
+
+    /// Create a `Millimetres_Per_Nanoseconds_Sq_u` from a `Earthg_d`.
+    init(_ value: Earthg_d) {
+        self.init(rawValue: gs_d_to_mm_per_ns_sq_u(value.rawValue))
+    }
+
+}
+
+public extension Millimetres_Per_Nanoseconds_Sq_f {
+
+    /// Create a `Millimetres_Per_Nanoseconds_Sq_f` from a `Earthg_t`.
+    init(_ value: Earthg_t) {
+        self.init(rawValue: gs_t_to_mm_per_ns_sq_f(value.rawValue))
+    }
+
+    /// Create a `Millimetres_Per_Nanoseconds_Sq_f` from a `Earthg_u`.
+    init(_ value: Earthg_u) {
+        self.init(rawValue: gs_u_to_mm_per_ns_sq_f(value.rawValue))
+    }
+
+    /// Create a `Millimetres_Per_Nanoseconds_Sq_f` from a `Earthg_f`.
+    init(_ value: Earthg_f) {
+        self.init(rawValue: gs_f_to_mm_per_ns_sq_f(value.rawValue))
+    }
+
+    /// Create a `Millimetres_Per_Nanoseconds_Sq_f` from a `Earthg_d`.
+    init(_ value: Earthg_d) {
+        self.init(rawValue: gs_d_to_mm_per_ns_sq_f(value.rawValue))
+    }
+
+}
+
+public extension Millimetres_Per_Nanoseconds_Sq_d {
+
+    /// Create a `Millimetres_Per_Nanoseconds_Sq_d` from a `Earthg_t`.
+    init(_ value: Earthg_t) {
+        self.init(rawValue: gs_t_to_mm_per_ns_sq_d(value.rawValue))
+    }
+
+    /// Create a `Millimetres_Per_Nanoseconds_Sq_d` from a `Earthg_u`.
+    init(_ value: Earthg_u) {
+        self.init(rawValue: gs_u_to_mm_per_ns_sq_d(value.rawValue))
+    }
+
+    /// Create a `Millimetres_Per_Nanoseconds_Sq_d` from a `Earthg_f`.
+    init(_ value: Earthg_f) {
+        self.init(rawValue: gs_f_to_mm_per_ns_sq_d(value.rawValue))
+    }
+
+    /// Create a `Millimetres_Per_Nanoseconds_Sq_d` from a `Earthg_d`.
+    init(_ value: Earthg_d) {
+        self.init(rawValue: gs_d_to_mm_per_ns_sq_d(value.rawValue))
+    }
+
+}
+
 public extension Millimetres_Per_Microseconds_Sq_t {
 
     /// Create a `Millimetres_Per_Microseconds_Sq_t` from a `Earthg_t`.
@@ -1789,6 +1981,198 @@ public extension Millimetres_Per_Seconds_Sq_d {
 
 }
 
+public extension Centimetres_Per_Picoseconds_Sq_t {
+
+    /// Create a `Centimetres_Per_Picoseconds_Sq_t` from a `Earthg_t`.
+    init(_ value: Earthg_t) {
+        self.init(rawValue: gs_t_to_cm_per_ps_sq_t(value.rawValue))
+    }
+
+    /// Create a `Centimetres_Per_Picoseconds_Sq_t` from a `Earthg_u`.
+    init(_ value: Earthg_u) {
+        self.init(rawValue: gs_u_to_cm_per_ps_sq_t(value.rawValue))
+    }
+
+    /// Create a `Centimetres_Per_Picoseconds_Sq_t` from a `Earthg_f`.
+    init(_ value: Earthg_f) {
+        self.init(rawValue: gs_f_to_cm_per_ps_sq_t(value.rawValue))
+    }
+
+    /// Create a `Centimetres_Per_Picoseconds_Sq_t` from a `Earthg_d`.
+    init(_ value: Earthg_d) {
+        self.init(rawValue: gs_d_to_cm_per_ps_sq_t(value.rawValue))
+    }
+
+}
+
+public extension Centimetres_Per_Picoseconds_Sq_u {
+
+    /// Create a `Centimetres_Per_Picoseconds_Sq_u` from a `Earthg_t`.
+    init(_ value: Earthg_t) {
+        self.init(rawValue: gs_t_to_cm_per_ps_sq_u(value.rawValue))
+    }
+
+    /// Create a `Centimetres_Per_Picoseconds_Sq_u` from a `Earthg_u`.
+    init(_ value: Earthg_u) {
+        self.init(rawValue: gs_u_to_cm_per_ps_sq_u(value.rawValue))
+    }
+
+    /// Create a `Centimetres_Per_Picoseconds_Sq_u` from a `Earthg_f`.
+    init(_ value: Earthg_f) {
+        self.init(rawValue: gs_f_to_cm_per_ps_sq_u(value.rawValue))
+    }
+
+    /// Create a `Centimetres_Per_Picoseconds_Sq_u` from a `Earthg_d`.
+    init(_ value: Earthg_d) {
+        self.init(rawValue: gs_d_to_cm_per_ps_sq_u(value.rawValue))
+    }
+
+}
+
+public extension Centimetres_Per_Picoseconds_Sq_f {
+
+    /// Create a `Centimetres_Per_Picoseconds_Sq_f` from a `Earthg_t`.
+    init(_ value: Earthg_t) {
+        self.init(rawValue: gs_t_to_cm_per_ps_sq_f(value.rawValue))
+    }
+
+    /// Create a `Centimetres_Per_Picoseconds_Sq_f` from a `Earthg_u`.
+    init(_ value: Earthg_u) {
+        self.init(rawValue: gs_u_to_cm_per_ps_sq_f(value.rawValue))
+    }
+
+    /// Create a `Centimetres_Per_Picoseconds_Sq_f` from a `Earthg_f`.
+    init(_ value: Earthg_f) {
+        self.init(rawValue: gs_f_to_cm_per_ps_sq_f(value.rawValue))
+    }
+
+    /// Create a `Centimetres_Per_Picoseconds_Sq_f` from a `Earthg_d`.
+    init(_ value: Earthg_d) {
+        self.init(rawValue: gs_d_to_cm_per_ps_sq_f(value.rawValue))
+    }
+
+}
+
+public extension Centimetres_Per_Picoseconds_Sq_d {
+
+    /// Create a `Centimetres_Per_Picoseconds_Sq_d` from a `Earthg_t`.
+    init(_ value: Earthg_t) {
+        self.init(rawValue: gs_t_to_cm_per_ps_sq_d(value.rawValue))
+    }
+
+    /// Create a `Centimetres_Per_Picoseconds_Sq_d` from a `Earthg_u`.
+    init(_ value: Earthg_u) {
+        self.init(rawValue: gs_u_to_cm_per_ps_sq_d(value.rawValue))
+    }
+
+    /// Create a `Centimetres_Per_Picoseconds_Sq_d` from a `Earthg_f`.
+    init(_ value: Earthg_f) {
+        self.init(rawValue: gs_f_to_cm_per_ps_sq_d(value.rawValue))
+    }
+
+    /// Create a `Centimetres_Per_Picoseconds_Sq_d` from a `Earthg_d`.
+    init(_ value: Earthg_d) {
+        self.init(rawValue: gs_d_to_cm_per_ps_sq_d(value.rawValue))
+    }
+
+}
+
+public extension Centimetres_Per_Nanoseconds_Sq_t {
+
+    /// Create a `Centimetres_Per_Nanoseconds_Sq_t` from a `Earthg_t`.
+    init(_ value: Earthg_t) {
+        self.init(rawValue: gs_t_to_cm_per_ns_sq_t(value.rawValue))
+    }
+
+    /// Create a `Centimetres_Per_Nanoseconds_Sq_t` from a `Earthg_u`.
+    init(_ value: Earthg_u) {
+        self.init(rawValue: gs_u_to_cm_per_ns_sq_t(value.rawValue))
+    }
+
+    /// Create a `Centimetres_Per_Nanoseconds_Sq_t` from a `Earthg_f`.
+    init(_ value: Earthg_f) {
+        self.init(rawValue: gs_f_to_cm_per_ns_sq_t(value.rawValue))
+    }
+
+    /// Create a `Centimetres_Per_Nanoseconds_Sq_t` from a `Earthg_d`.
+    init(_ value: Earthg_d) {
+        self.init(rawValue: gs_d_to_cm_per_ns_sq_t(value.rawValue))
+    }
+
+}
+
+public extension Centimetres_Per_Nanoseconds_Sq_u {
+
+    /// Create a `Centimetres_Per_Nanoseconds_Sq_u` from a `Earthg_t`.
+    init(_ value: Earthg_t) {
+        self.init(rawValue: gs_t_to_cm_per_ns_sq_u(value.rawValue))
+    }
+
+    /// Create a `Centimetres_Per_Nanoseconds_Sq_u` from a `Earthg_u`.
+    init(_ value: Earthg_u) {
+        self.init(rawValue: gs_u_to_cm_per_ns_sq_u(value.rawValue))
+    }
+
+    /// Create a `Centimetres_Per_Nanoseconds_Sq_u` from a `Earthg_f`.
+    init(_ value: Earthg_f) {
+        self.init(rawValue: gs_f_to_cm_per_ns_sq_u(value.rawValue))
+    }
+
+    /// Create a `Centimetres_Per_Nanoseconds_Sq_u` from a `Earthg_d`.
+    init(_ value: Earthg_d) {
+        self.init(rawValue: gs_d_to_cm_per_ns_sq_u(value.rawValue))
+    }
+
+}
+
+public extension Centimetres_Per_Nanoseconds_Sq_f {
+
+    /// Create a `Centimetres_Per_Nanoseconds_Sq_f` from a `Earthg_t`.
+    init(_ value: Earthg_t) {
+        self.init(rawValue: gs_t_to_cm_per_ns_sq_f(value.rawValue))
+    }
+
+    /// Create a `Centimetres_Per_Nanoseconds_Sq_f` from a `Earthg_u`.
+    init(_ value: Earthg_u) {
+        self.init(rawValue: gs_u_to_cm_per_ns_sq_f(value.rawValue))
+    }
+
+    /// Create a `Centimetres_Per_Nanoseconds_Sq_f` from a `Earthg_f`.
+    init(_ value: Earthg_f) {
+        self.init(rawValue: gs_f_to_cm_per_ns_sq_f(value.rawValue))
+    }
+
+    /// Create a `Centimetres_Per_Nanoseconds_Sq_f` from a `Earthg_d`.
+    init(_ value: Earthg_d) {
+        self.init(rawValue: gs_d_to_cm_per_ns_sq_f(value.rawValue))
+    }
+
+}
+
+public extension Centimetres_Per_Nanoseconds_Sq_d {
+
+    /// Create a `Centimetres_Per_Nanoseconds_Sq_d` from a `Earthg_t`.
+    init(_ value: Earthg_t) {
+        self.init(rawValue: gs_t_to_cm_per_ns_sq_d(value.rawValue))
+    }
+
+    /// Create a `Centimetres_Per_Nanoseconds_Sq_d` from a `Earthg_u`.
+    init(_ value: Earthg_u) {
+        self.init(rawValue: gs_u_to_cm_per_ns_sq_d(value.rawValue))
+    }
+
+    /// Create a `Centimetres_Per_Nanoseconds_Sq_d` from a `Earthg_f`.
+    init(_ value: Earthg_f) {
+        self.init(rawValue: gs_f_to_cm_per_ns_sq_d(value.rawValue))
+    }
+
+    /// Create a `Centimetres_Per_Nanoseconds_Sq_d` from a `Earthg_d`.
+    init(_ value: Earthg_d) {
+        self.init(rawValue: gs_d_to_cm_per_ns_sq_d(value.rawValue))
+    }
+
+}
+
 public extension Centimetres_Per_Microseconds_Sq_t {
 
     /// Create a `Centimetres_Per_Microseconds_Sq_t` from a `Earthg_t`.
@@ -2073,6 +2457,198 @@ public extension Centimetres_Per_Seconds_Sq_d {
     /// Create a `Centimetres_Per_Seconds_Sq_d` from a `Earthg_d`.
     init(_ value: Earthg_d) {
         self.init(rawValue: gs_d_to_cm_per_s_sq_d(value.rawValue))
+    }
+
+}
+
+public extension Metres_Per_Picoseconds_Sq_t {
+
+    /// Create a `Metres_Per_Picoseconds_Sq_t` from a `Earthg_t`.
+    init(_ value: Earthg_t) {
+        self.init(rawValue: gs_t_to_m_per_ps_sq_t(value.rawValue))
+    }
+
+    /// Create a `Metres_Per_Picoseconds_Sq_t` from a `Earthg_u`.
+    init(_ value: Earthg_u) {
+        self.init(rawValue: gs_u_to_m_per_ps_sq_t(value.rawValue))
+    }
+
+    /// Create a `Metres_Per_Picoseconds_Sq_t` from a `Earthg_f`.
+    init(_ value: Earthg_f) {
+        self.init(rawValue: gs_f_to_m_per_ps_sq_t(value.rawValue))
+    }
+
+    /// Create a `Metres_Per_Picoseconds_Sq_t` from a `Earthg_d`.
+    init(_ value: Earthg_d) {
+        self.init(rawValue: gs_d_to_m_per_ps_sq_t(value.rawValue))
+    }
+
+}
+
+public extension Metres_Per_Picoseconds_Sq_u {
+
+    /// Create a `Metres_Per_Picoseconds_Sq_u` from a `Earthg_t`.
+    init(_ value: Earthg_t) {
+        self.init(rawValue: gs_t_to_m_per_ps_sq_u(value.rawValue))
+    }
+
+    /// Create a `Metres_Per_Picoseconds_Sq_u` from a `Earthg_u`.
+    init(_ value: Earthg_u) {
+        self.init(rawValue: gs_u_to_m_per_ps_sq_u(value.rawValue))
+    }
+
+    /// Create a `Metres_Per_Picoseconds_Sq_u` from a `Earthg_f`.
+    init(_ value: Earthg_f) {
+        self.init(rawValue: gs_f_to_m_per_ps_sq_u(value.rawValue))
+    }
+
+    /// Create a `Metres_Per_Picoseconds_Sq_u` from a `Earthg_d`.
+    init(_ value: Earthg_d) {
+        self.init(rawValue: gs_d_to_m_per_ps_sq_u(value.rawValue))
+    }
+
+}
+
+public extension Metres_Per_Picoseconds_Sq_f {
+
+    /// Create a `Metres_Per_Picoseconds_Sq_f` from a `Earthg_t`.
+    init(_ value: Earthg_t) {
+        self.init(rawValue: gs_t_to_m_per_ps_sq_f(value.rawValue))
+    }
+
+    /// Create a `Metres_Per_Picoseconds_Sq_f` from a `Earthg_u`.
+    init(_ value: Earthg_u) {
+        self.init(rawValue: gs_u_to_m_per_ps_sq_f(value.rawValue))
+    }
+
+    /// Create a `Metres_Per_Picoseconds_Sq_f` from a `Earthg_f`.
+    init(_ value: Earthg_f) {
+        self.init(rawValue: gs_f_to_m_per_ps_sq_f(value.rawValue))
+    }
+
+    /// Create a `Metres_Per_Picoseconds_Sq_f` from a `Earthg_d`.
+    init(_ value: Earthg_d) {
+        self.init(rawValue: gs_d_to_m_per_ps_sq_f(value.rawValue))
+    }
+
+}
+
+public extension Metres_Per_Picoseconds_Sq_d {
+
+    /// Create a `Metres_Per_Picoseconds_Sq_d` from a `Earthg_t`.
+    init(_ value: Earthg_t) {
+        self.init(rawValue: gs_t_to_m_per_ps_sq_d(value.rawValue))
+    }
+
+    /// Create a `Metres_Per_Picoseconds_Sq_d` from a `Earthg_u`.
+    init(_ value: Earthg_u) {
+        self.init(rawValue: gs_u_to_m_per_ps_sq_d(value.rawValue))
+    }
+
+    /// Create a `Metres_Per_Picoseconds_Sq_d` from a `Earthg_f`.
+    init(_ value: Earthg_f) {
+        self.init(rawValue: gs_f_to_m_per_ps_sq_d(value.rawValue))
+    }
+
+    /// Create a `Metres_Per_Picoseconds_Sq_d` from a `Earthg_d`.
+    init(_ value: Earthg_d) {
+        self.init(rawValue: gs_d_to_m_per_ps_sq_d(value.rawValue))
+    }
+
+}
+
+public extension Metres_Per_Nanoseconds_Sq_t {
+
+    /// Create a `Metres_Per_Nanoseconds_Sq_t` from a `Earthg_t`.
+    init(_ value: Earthg_t) {
+        self.init(rawValue: gs_t_to_m_per_ns_sq_t(value.rawValue))
+    }
+
+    /// Create a `Metres_Per_Nanoseconds_Sq_t` from a `Earthg_u`.
+    init(_ value: Earthg_u) {
+        self.init(rawValue: gs_u_to_m_per_ns_sq_t(value.rawValue))
+    }
+
+    /// Create a `Metres_Per_Nanoseconds_Sq_t` from a `Earthg_f`.
+    init(_ value: Earthg_f) {
+        self.init(rawValue: gs_f_to_m_per_ns_sq_t(value.rawValue))
+    }
+
+    /// Create a `Metres_Per_Nanoseconds_Sq_t` from a `Earthg_d`.
+    init(_ value: Earthg_d) {
+        self.init(rawValue: gs_d_to_m_per_ns_sq_t(value.rawValue))
+    }
+
+}
+
+public extension Metres_Per_Nanoseconds_Sq_u {
+
+    /// Create a `Metres_Per_Nanoseconds_Sq_u` from a `Earthg_t`.
+    init(_ value: Earthg_t) {
+        self.init(rawValue: gs_t_to_m_per_ns_sq_u(value.rawValue))
+    }
+
+    /// Create a `Metres_Per_Nanoseconds_Sq_u` from a `Earthg_u`.
+    init(_ value: Earthg_u) {
+        self.init(rawValue: gs_u_to_m_per_ns_sq_u(value.rawValue))
+    }
+
+    /// Create a `Metres_Per_Nanoseconds_Sq_u` from a `Earthg_f`.
+    init(_ value: Earthg_f) {
+        self.init(rawValue: gs_f_to_m_per_ns_sq_u(value.rawValue))
+    }
+
+    /// Create a `Metres_Per_Nanoseconds_Sq_u` from a `Earthg_d`.
+    init(_ value: Earthg_d) {
+        self.init(rawValue: gs_d_to_m_per_ns_sq_u(value.rawValue))
+    }
+
+}
+
+public extension Metres_Per_Nanoseconds_Sq_f {
+
+    /// Create a `Metres_Per_Nanoseconds_Sq_f` from a `Earthg_t`.
+    init(_ value: Earthg_t) {
+        self.init(rawValue: gs_t_to_m_per_ns_sq_f(value.rawValue))
+    }
+
+    /// Create a `Metres_Per_Nanoseconds_Sq_f` from a `Earthg_u`.
+    init(_ value: Earthg_u) {
+        self.init(rawValue: gs_u_to_m_per_ns_sq_f(value.rawValue))
+    }
+
+    /// Create a `Metres_Per_Nanoseconds_Sq_f` from a `Earthg_f`.
+    init(_ value: Earthg_f) {
+        self.init(rawValue: gs_f_to_m_per_ns_sq_f(value.rawValue))
+    }
+
+    /// Create a `Metres_Per_Nanoseconds_Sq_f` from a `Earthg_d`.
+    init(_ value: Earthg_d) {
+        self.init(rawValue: gs_d_to_m_per_ns_sq_f(value.rawValue))
+    }
+
+}
+
+public extension Metres_Per_Nanoseconds_Sq_d {
+
+    /// Create a `Metres_Per_Nanoseconds_Sq_d` from a `Earthg_t`.
+    init(_ value: Earthg_t) {
+        self.init(rawValue: gs_t_to_m_per_ns_sq_d(value.rawValue))
+    }
+
+    /// Create a `Metres_Per_Nanoseconds_Sq_d` from a `Earthg_u`.
+    init(_ value: Earthg_u) {
+        self.init(rawValue: gs_u_to_m_per_ns_sq_d(value.rawValue))
+    }
+
+    /// Create a `Metres_Per_Nanoseconds_Sq_d` from a `Earthg_f`.
+    init(_ value: Earthg_f) {
+        self.init(rawValue: gs_f_to_m_per_ns_sq_d(value.rawValue))
+    }
+
+    /// Create a `Metres_Per_Nanoseconds_Sq_d` from a `Earthg_d`.
+    init(_ value: Earthg_d) {
+        self.init(rawValue: gs_d_to_m_per_ns_sq_d(value.rawValue))
     }
 
 }

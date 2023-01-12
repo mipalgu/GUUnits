@@ -62,228 +62,255 @@ import XCTest
 
 final class Radians_Per_MillisecondsConversionTests4: XCTestCase {
 
-    func testDegrees_Per_Seconds_tToRadians_Per_Milliseconds_uConversions() {
-        let ctype1 = radians_per_milliseconds_u(5)
-        let swiftType1 = Radians_Per_Milliseconds_u(rawValue: ctype1)
-        let ctype2 = rad_per_ms_u_to_deg_per_s_t(ctype1)
-        let swiftType2 = Degrees_Per_Seconds_t(rawValue: ctype2)
-        XCTAssertEqual(swiftType2, Degrees_Per_Seconds_t(swiftType1))
+    func testRadians_Per_Milliseconds_tUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_rad_per_ms_t(5)
+        let expected = Radians_Per_Milliseconds_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(rad_per_ms_t_to_u64(ctype))
+        )
     }
 
-    func testRadians_Per_Milliseconds_uToDegrees_Per_Seconds_uAngularVelocityConversions() {
+    func testRadians_Per_Milliseconds_tUIntRawValueInit() {
+        let raw = radians_per_milliseconds_t(5)
+        let ctype = rad_per_ms_t_to_u64(raw)
+        let expected = Radians_Per_Milliseconds_t(UInt(ctype))
+        XCTAssertEqual(Radians_Per_Milliseconds_t(rawValue: raw), expected)
+    }
+
+    func testRadians_Per_Milliseconds_tAngularVelocityUIntInit() {
+        let raw = Radians_Per_Milliseconds_t(UInt(5))
+        let category = AngularVelocity(raw)
+        let expected = AngularVelocity(rawValue: .radians_per_milliseconds_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAngularVelocityRadians_Per_Milliseconds_tCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let expected = AngularVelocity(radians_per_milliseconds: raw)
+        let result = AngularVelocity.radians_per_milliseconds(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = u32_to_rad_per_ms_t(5)
+        let expected2 = CUnsignedInt(
+            rad_per_ms_t_to_u32(ctype)
+        )
+        let result2 = CUnsignedInt(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testRadians_Per_Milliseconds_tCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_rad_per_ms_t(5)
+        let expected = Radians_Per_Milliseconds_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            CUnsignedInt(expected),
+            CUnsignedInt(rad_per_ms_t_to_u32(ctype))
+        )
+    }
+
+    func testRadians_Per_Milliseconds_tCUnsignedIntRawValueInit() {
+        let raw = radians_per_milliseconds_t(5)
+        let ctype = rad_per_ms_t_to_u32(raw)
+        let expected = Radians_Per_Milliseconds_t(CUnsignedInt(ctype))
+        XCTAssertEqual(Radians_Per_Milliseconds_t(rawValue: raw), expected)
+    }
+
+    func testRadians_Per_Milliseconds_tAngularVelocityCUnsignedIntInit() {
+        let raw = Radians_Per_Milliseconds_t(CUnsignedInt(5))
+        let category = AngularVelocity(raw)
+        let expected = AngularVelocity(rawValue: .radians_per_milliseconds_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAngularVelocityRadians_Per_Milliseconds_tFloatInits() {
+        let raw = Float(5)
+        let expected = AngularVelocity(radians_per_milliseconds: raw)
+        let result = AngularVelocity.radians_per_milliseconds(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = f_to_rad_per_ms_t(5)
+        let expected2 = Float(
+            rad_per_ms_t_to_f(ctype)
+        )
+        let result2 = Float(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testRadians_Per_Milliseconds_tFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_rad_per_ms_t(5)
+        let expected = Radians_Per_Milliseconds_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Float(expected),
+            Float(rad_per_ms_t_to_f(ctype))
+        )
+    }
+
+    func testRadians_Per_Milliseconds_tFloatRawValueInit() {
+        let raw = radians_per_milliseconds_t(5)
+        let ctype = rad_per_ms_t_to_f(raw)
+        let expected = Radians_Per_Milliseconds_t(Float(ctype))
+        XCTAssertEqual(Radians_Per_Milliseconds_t(rawValue: raw), expected)
+    }
+
+    func testRadians_Per_Milliseconds_tAngularVelocityFloatInit() {
+        let raw = Radians_Per_Milliseconds_t(Float(5))
+        let category = AngularVelocity(raw)
+        let expected = AngularVelocity(rawValue: .radians_per_milliseconds_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testAngularVelocityRadians_Per_Milliseconds_tDoubleInits() {
+        let raw = Double(5)
+        let expected = AngularVelocity(radians_per_milliseconds: raw)
+        let result = AngularVelocity.radians_per_milliseconds(raw)
+        XCTAssertEqual(expected, result)
+        let ctype = d_to_rad_per_ms_t(5)
+        let expected2 = Double(
+            rad_per_ms_t_to_d(ctype)
+        )
+        let result2 = Double(expected)
+        XCTAssertEqual(result2, expected2)
+    }
+
+    func testRadians_Per_Milliseconds_tDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_rad_per_ms_t(5)
+        let expected = Radians_Per_Milliseconds_t(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            Double(expected),
+            Double(rad_per_ms_t_to_d(ctype))
+        )
+    }
+
+    func testRadians_Per_Milliseconds_tDoubleRawValueInit() {
+        let raw = radians_per_milliseconds_t(5)
+        let ctype = rad_per_ms_t_to_d(raw)
+        let expected = Radians_Per_Milliseconds_t(Double(ctype))
+        XCTAssertEqual(Radians_Per_Milliseconds_t(rawValue: raw), expected)
+    }
+
+    func testRadians_Per_Milliseconds_tAngularVelocityDoubleInit() {
+        let raw = Radians_Per_Milliseconds_t(Double(5))
+        let category = AngularVelocity(raw)
+        let expected = AngularVelocity(rawValue: .radians_per_milliseconds_t(raw))
+        XCTAssertEqual(category, expected)
+    }
+
+    func testRadians_Per_Milliseconds_uToDegrees_Per_Picoseconds_tAngularVelocityConversions() {
         let original = Radians_Per_Milliseconds_u(5)
         let category = AngularVelocity(original)
-        let other = category.degrees_per_seconds_u
-        XCTAssertEqual(other, Degrees_Per_Seconds_u(original))
+        let other = category.degrees_per_picoseconds_t
+        XCTAssertEqual(other, Degrees_Per_Picoseconds_t(original))
     }
 
-    func testDegrees_Per_Seconds_uToRadians_Per_Milliseconds_uConversions() {
+    func testDegrees_Per_Picoseconds_tToRadians_Per_Milliseconds_uConversions() {
         let ctype1 = radians_per_milliseconds_u(5)
         let swiftType1 = Radians_Per_Milliseconds_u(rawValue: ctype1)
-        let ctype2 = rad_per_ms_u_to_deg_per_s_u(ctype1)
-        let swiftType2 = Degrees_Per_Seconds_u(rawValue: ctype2)
-        XCTAssertEqual(swiftType2, Degrees_Per_Seconds_u(swiftType1))
+        let ctype2 = rad_per_ms_u_to_deg_per_ps_t(ctype1)
+        let swiftType2 = Degrees_Per_Picoseconds_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Degrees_Per_Picoseconds_t(swiftType1))
     }
 
-    func testRadians_Per_Milliseconds_uToDegrees_Per_Seconds_fAngularVelocityConversions() {
+    func testRadians_Per_Milliseconds_uToDegrees_Per_Picoseconds_uAngularVelocityConversions() {
         let original = Radians_Per_Milliseconds_u(5)
         let category = AngularVelocity(original)
-        let other = category.degrees_per_seconds_f
-        XCTAssertEqual(other, Degrees_Per_Seconds_f(original))
+        let other = category.degrees_per_picoseconds_u
+        XCTAssertEqual(other, Degrees_Per_Picoseconds_u(original))
     }
 
-    func testDegrees_Per_Seconds_fToRadians_Per_Milliseconds_uConversions() {
+    func testDegrees_Per_Picoseconds_uToRadians_Per_Milliseconds_uConversions() {
         let ctype1 = radians_per_milliseconds_u(5)
         let swiftType1 = Radians_Per_Milliseconds_u(rawValue: ctype1)
-        let ctype2 = rad_per_ms_u_to_deg_per_s_f(ctype1)
-        let swiftType2 = Degrees_Per_Seconds_f(rawValue: ctype2)
-        XCTAssertEqual(swiftType2, Degrees_Per_Seconds_f(swiftType1))
+        let ctype2 = rad_per_ms_u_to_deg_per_ps_u(ctype1)
+        let swiftType2 = Degrees_Per_Picoseconds_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Degrees_Per_Picoseconds_u(swiftType1))
     }
 
-    func testRadians_Per_Milliseconds_uToDegrees_Per_Seconds_dAngularVelocityConversions() {
+    func testRadians_Per_Milliseconds_uToDegrees_Per_Picoseconds_fAngularVelocityConversions() {
         let original = Radians_Per_Milliseconds_u(5)
         let category = AngularVelocity(original)
-        let other = category.degrees_per_seconds_d
-        XCTAssertEqual(other, Degrees_Per_Seconds_d(original))
+        let other = category.degrees_per_picoseconds_f
+        XCTAssertEqual(other, Degrees_Per_Picoseconds_f(original))
     }
 
-    func testDegrees_Per_Seconds_dToRadians_Per_Milliseconds_uConversions() {
+    func testDegrees_Per_Picoseconds_fToRadians_Per_Milliseconds_uConversions() {
         let ctype1 = radians_per_milliseconds_u(5)
         let swiftType1 = Radians_Per_Milliseconds_u(rawValue: ctype1)
-        let ctype2 = rad_per_ms_u_to_deg_per_s_d(ctype1)
-        let swiftType2 = Degrees_Per_Seconds_d(rawValue: ctype2)
-        XCTAssertEqual(swiftType2, Degrees_Per_Seconds_d(swiftType1))
+        let ctype2 = rad_per_ms_u_to_deg_per_ps_f(ctype1)
+        let swiftType2 = Degrees_Per_Picoseconds_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Degrees_Per_Picoseconds_f(swiftType1))
     }
 
-    func testRadians_Per_Milliseconds_uToRadians_Per_Microseconds_tAngularVelocityConversions() {
+    func testRadians_Per_Milliseconds_uToDegrees_Per_Picoseconds_dAngularVelocityConversions() {
         let original = Radians_Per_Milliseconds_u(5)
         let category = AngularVelocity(original)
-        let other = category.radians_per_microseconds_t
-        XCTAssertEqual(other, Radians_Per_Microseconds_t(original))
+        let other = category.degrees_per_picoseconds_d
+        XCTAssertEqual(other, Degrees_Per_Picoseconds_d(original))
     }
 
-    func testRadians_Per_Microseconds_tToRadians_Per_Milliseconds_uConversions() {
+    func testDegrees_Per_Picoseconds_dToRadians_Per_Milliseconds_uConversions() {
         let ctype1 = radians_per_milliseconds_u(5)
         let swiftType1 = Radians_Per_Milliseconds_u(rawValue: ctype1)
-        let ctype2 = rad_per_ms_u_to_rad_per_us_t(ctype1)
-        let swiftType2 = Radians_Per_Microseconds_t(rawValue: ctype2)
-        XCTAssertEqual(swiftType2, Radians_Per_Microseconds_t(swiftType1))
+        let ctype2 = rad_per_ms_u_to_deg_per_ps_d(ctype1)
+        let swiftType2 = Degrees_Per_Picoseconds_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Degrees_Per_Picoseconds_d(swiftType1))
     }
 
-    func testRadians_Per_Milliseconds_uToRadians_Per_Microseconds_uAngularVelocityConversions() {
+    func testRadians_Per_Milliseconds_uToDegrees_Per_Nanoseconds_tAngularVelocityConversions() {
         let original = Radians_Per_Milliseconds_u(5)
         let category = AngularVelocity(original)
-        let other = category.radians_per_microseconds_u
-        XCTAssertEqual(other, Radians_Per_Microseconds_u(original))
+        let other = category.degrees_per_nanoseconds_t
+        XCTAssertEqual(other, Degrees_Per_Nanoseconds_t(original))
     }
 
-    func testRadians_Per_Microseconds_uToRadians_Per_Milliseconds_uConversions() {
+    func testDegrees_Per_Nanoseconds_tToRadians_Per_Milliseconds_uConversions() {
         let ctype1 = radians_per_milliseconds_u(5)
         let swiftType1 = Radians_Per_Milliseconds_u(rawValue: ctype1)
-        let ctype2 = rad_per_ms_u_to_rad_per_us_u(ctype1)
-        let swiftType2 = Radians_Per_Microseconds_u(rawValue: ctype2)
-        XCTAssertEqual(swiftType2, Radians_Per_Microseconds_u(swiftType1))
+        let ctype2 = rad_per_ms_u_to_deg_per_ns_t(ctype1)
+        let swiftType2 = Degrees_Per_Nanoseconds_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Degrees_Per_Nanoseconds_t(swiftType1))
     }
 
-    func testRadians_Per_Milliseconds_uToRadians_Per_Microseconds_fAngularVelocityConversions() {
+    func testRadians_Per_Milliseconds_uToDegrees_Per_Nanoseconds_uAngularVelocityConversions() {
         let original = Radians_Per_Milliseconds_u(5)
         let category = AngularVelocity(original)
-        let other = category.radians_per_microseconds_f
-        XCTAssertEqual(other, Radians_Per_Microseconds_f(original))
+        let other = category.degrees_per_nanoseconds_u
+        XCTAssertEqual(other, Degrees_Per_Nanoseconds_u(original))
     }
 
-    func testRadians_Per_Microseconds_fToRadians_Per_Milliseconds_uConversions() {
+    func testDegrees_Per_Nanoseconds_uToRadians_Per_Milliseconds_uConversions() {
         let ctype1 = radians_per_milliseconds_u(5)
         let swiftType1 = Radians_Per_Milliseconds_u(rawValue: ctype1)
-        let ctype2 = rad_per_ms_u_to_rad_per_us_f(ctype1)
-        let swiftType2 = Radians_Per_Microseconds_f(rawValue: ctype2)
-        XCTAssertEqual(swiftType2, Radians_Per_Microseconds_f(swiftType1))
+        let ctype2 = rad_per_ms_u_to_deg_per_ns_u(ctype1)
+        let swiftType2 = Degrees_Per_Nanoseconds_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Degrees_Per_Nanoseconds_u(swiftType1))
     }
 
-    func testRadians_Per_Milliseconds_uToRadians_Per_Microseconds_dAngularVelocityConversions() {
+    func testRadians_Per_Milliseconds_uToDegrees_Per_Nanoseconds_fAngularVelocityConversions() {
         let original = Radians_Per_Milliseconds_u(5)
         let category = AngularVelocity(original)
-        let other = category.radians_per_microseconds_d
-        XCTAssertEqual(other, Radians_Per_Microseconds_d(original))
+        let other = category.degrees_per_nanoseconds_f
+        XCTAssertEqual(other, Degrees_Per_Nanoseconds_f(original))
     }
 
-    func testRadians_Per_Microseconds_dToRadians_Per_Milliseconds_uConversions() {
+    func testDegrees_Per_Nanoseconds_fToRadians_Per_Milliseconds_uConversions() {
         let ctype1 = radians_per_milliseconds_u(5)
         let swiftType1 = Radians_Per_Milliseconds_u(rawValue: ctype1)
-        let ctype2 = rad_per_ms_u_to_rad_per_us_d(ctype1)
-        let swiftType2 = Radians_Per_Microseconds_d(rawValue: ctype2)
-        XCTAssertEqual(swiftType2, Radians_Per_Microseconds_d(swiftType1))
+        let ctype2 = rad_per_ms_u_to_deg_per_ns_f(ctype1)
+        let swiftType2 = Degrees_Per_Nanoseconds_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Degrees_Per_Nanoseconds_f(swiftType1))
     }
 
-    func testRadians_Per_Milliseconds_uToRadians_Per_Milliseconds_tAngularVelocityConversions() {
+    func testRadians_Per_Milliseconds_uToDegrees_Per_Nanoseconds_dAngularVelocityConversions() {
         let original = Radians_Per_Milliseconds_u(5)
         let category = AngularVelocity(original)
-        let other = category.radians_per_milliseconds_t
-        XCTAssertEqual(other, Radians_Per_Milliseconds_t(original))
-    }
-
-    func testRadians_Per_Milliseconds_tToRadians_Per_Milliseconds_uConversions() {
-        let ctype1 = radians_per_milliseconds_u(5)
-        let swiftType1 = Radians_Per_Milliseconds_u(rawValue: ctype1)
-        let ctype2 = rad_per_ms_u_to_rad_per_ms_t(ctype1)
-        let swiftType2 = Radians_Per_Milliseconds_t(rawValue: ctype2)
-        XCTAssertEqual(swiftType2, Radians_Per_Milliseconds_t(swiftType1))
-    }
-
-    func testRadians_Per_Milliseconds_uToRadians_Per_Milliseconds_fAngularVelocityConversions() {
-        let original = Radians_Per_Milliseconds_u(5)
-        let category = AngularVelocity(original)
-        let other = category.radians_per_milliseconds_f
-        XCTAssertEqual(other, Radians_Per_Milliseconds_f(original))
-    }
-
-    func testRadians_Per_Milliseconds_fToRadians_Per_Milliseconds_uConversions() {
-        let ctype1 = radians_per_milliseconds_u(5)
-        let swiftType1 = Radians_Per_Milliseconds_u(rawValue: ctype1)
-        let ctype2 = rad_per_ms_u_to_rad_per_ms_f(ctype1)
-        let swiftType2 = Radians_Per_Milliseconds_f(rawValue: ctype2)
-        XCTAssertEqual(swiftType2, Radians_Per_Milliseconds_f(swiftType1))
-    }
-
-    func testRadians_Per_Milliseconds_uToRadians_Per_Milliseconds_dAngularVelocityConversions() {
-        let original = Radians_Per_Milliseconds_u(5)
-        let category = AngularVelocity(original)
-        let other = category.radians_per_milliseconds_d
-        XCTAssertEqual(other, Radians_Per_Milliseconds_d(original))
-    }
-
-    func testRadians_Per_Milliseconds_dToRadians_Per_Milliseconds_uConversions() {
-        let ctype1 = radians_per_milliseconds_u(5)
-        let swiftType1 = Radians_Per_Milliseconds_u(rawValue: ctype1)
-        let ctype2 = rad_per_ms_u_to_rad_per_ms_d(ctype1)
-        let swiftType2 = Radians_Per_Milliseconds_d(rawValue: ctype2)
-        XCTAssertEqual(swiftType2, Radians_Per_Milliseconds_d(swiftType1))
-    }
-
-    func testRadians_Per_Milliseconds_uToRadians_Per_Seconds_tAngularVelocityConversions() {
-        let original = Radians_Per_Milliseconds_u(5)
-        let category = AngularVelocity(original)
-        let other = category.radians_per_seconds_t
-        XCTAssertEqual(other, Radians_Per_Seconds_t(original))
-    }
-
-    func testRadians_Per_Seconds_tToRadians_Per_Milliseconds_uConversions() {
-        let ctype1 = radians_per_milliseconds_u(5)
-        let swiftType1 = Radians_Per_Milliseconds_u(rawValue: ctype1)
-        let ctype2 = rad_per_ms_u_to_rad_per_s_t(ctype1)
-        let swiftType2 = Radians_Per_Seconds_t(rawValue: ctype2)
-        XCTAssertEqual(swiftType2, Radians_Per_Seconds_t(swiftType1))
-    }
-
-    func testRadians_Per_Milliseconds_uToRadians_Per_Seconds_uAngularVelocityConversions() {
-        let original = Radians_Per_Milliseconds_u(5)
-        let category = AngularVelocity(original)
-        let other = category.radians_per_seconds_u
-        XCTAssertEqual(other, Radians_Per_Seconds_u(original))
-    }
-
-    func testRadians_Per_Seconds_uToRadians_Per_Milliseconds_uConversions() {
-        let ctype1 = radians_per_milliseconds_u(5)
-        let swiftType1 = Radians_Per_Milliseconds_u(rawValue: ctype1)
-        let ctype2 = rad_per_ms_u_to_rad_per_s_u(ctype1)
-        let swiftType2 = Radians_Per_Seconds_u(rawValue: ctype2)
-        XCTAssertEqual(swiftType2, Radians_Per_Seconds_u(swiftType1))
-    }
-
-    func testRadians_Per_Milliseconds_uToRadians_Per_Seconds_fAngularVelocityConversions() {
-        let original = Radians_Per_Milliseconds_u(5)
-        let category = AngularVelocity(original)
-        let other = category.radians_per_seconds_f
-        XCTAssertEqual(other, Radians_Per_Seconds_f(original))
-    }
-
-    func testRadians_Per_Seconds_fToRadians_Per_Milliseconds_uConversions() {
-        let ctype1 = radians_per_milliseconds_u(5)
-        let swiftType1 = Radians_Per_Milliseconds_u(rawValue: ctype1)
-        let ctype2 = rad_per_ms_u_to_rad_per_s_f(ctype1)
-        let swiftType2 = Radians_Per_Seconds_f(rawValue: ctype2)
-        XCTAssertEqual(swiftType2, Radians_Per_Seconds_f(swiftType1))
-    }
-
-    func testRadians_Per_Milliseconds_uToRadians_Per_Seconds_dAngularVelocityConversions() {
-        let original = Radians_Per_Milliseconds_u(5)
-        let category = AngularVelocity(original)
-        let other = category.radians_per_seconds_d
-        XCTAssertEqual(other, Radians_Per_Seconds_d(original))
-    }
-
-    func testRadians_Per_Seconds_dToRadians_Per_Milliseconds_uConversions() {
-        let ctype1 = radians_per_milliseconds_u(5)
-        let swiftType1 = Radians_Per_Milliseconds_u(rawValue: ctype1)
-        let ctype2 = rad_per_ms_u_to_rad_per_s_d(ctype1)
-        let swiftType2 = Radians_Per_Seconds_d(rawValue: ctype2)
-        XCTAssertEqual(swiftType2, Radians_Per_Seconds_d(swiftType1))
-    }
-
-    func testRadians_Per_Milliseconds_uInitFromTypeEnum() {
-        let underlyingType = AngularVelocity.AngularVelocityTypes.radians_per_milliseconds_u(5)
-        let category = AngularVelocity(rawValue: underlyingType)
-        XCTAssertEqual(category.rawValue, underlyingType)
+        let other = category.degrees_per_nanoseconds_d
+        XCTAssertEqual(other, Degrees_Per_Nanoseconds_d(original))
     }
 
 }

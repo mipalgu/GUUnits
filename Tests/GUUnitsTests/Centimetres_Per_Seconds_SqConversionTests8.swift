@@ -62,252 +62,229 @@ import XCTest
 
 final class Centimetres_Per_Seconds_SqConversionTests8: XCTestCase {
 
-    func testCentimetres_Per_Seconds_Sq_uUIntRawValueInit() {
-        let raw = centimetres_per_seconds_sq_u(5)
-        let ctype = cm_per_s_sq_u_to_u64(raw)
-        let expected = Centimetres_Per_Seconds_Sq_u(UInt(ctype))
-        XCTAssertEqual(Centimetres_Per_Seconds_Sq_u(rawValue: raw), expected)
+    func testCentimetres_Per_Milliseconds_Sq_tToCentimetres_Per_Seconds_Sq_uConversions() {
+        let ctype1 = centimetres_per_seconds_sq_u(5)
+        let swiftType1 = Centimetres_Per_Seconds_Sq_u(rawValue: ctype1)
+        let ctype2 = cm_per_s_sq_u_to_cm_per_ms_sq_t(ctype1)
+        let swiftType2 = Centimetres_Per_Milliseconds_Sq_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_Per_Milliseconds_Sq_t(swiftType1))
     }
 
-    func testCentimetres_Per_Seconds_Sq_uAccelerationUIntInit() {
-        let raw = Centimetres_Per_Seconds_Sq_u(UInt(5))
-        let category = Acceleration(raw)
-        let expected = Acceleration(rawValue: .centimetres_per_seconds_sq_u(raw))
-        XCTAssertEqual(category, expected)
-    }
-
-    func testAccelerationCentimetres_Per_Seconds_Sq_uCUnsignedIntInits() {
-        let raw = CUnsignedInt(5)
-        let expected = Acceleration(centimetres_per_seconds_sq: raw)
-        let result = Acceleration.centimetres_per_seconds_sq(raw)
-        XCTAssertEqual(expected, result)
-        let ctype = u32_to_cm_per_s_sq_u(5)
-        let expected2 = CUnsignedInt(
-            cm_per_s_sq_u_to_u32(ctype)
-        )
-        let result2 = CUnsignedInt(expected)
-        XCTAssertEqual(result2, expected2)
-    }
-
-    func testCentimetres_Per_Seconds_Sq_uCUnsignedIntInits() {
-        let raw = CUnsignedInt(5)
-        let ctype = u32_to_cm_per_s_sq_u(5)
-        let expected = Centimetres_Per_Seconds_Sq_u(raw)
-        XCTAssertEqual(expected.rawValue, ctype)
-        XCTAssertEqual(
-            CUnsignedInt(expected),
-            CUnsignedInt(cm_per_s_sq_u_to_u32(ctype))
-        )
-    }
-
-    func testCentimetres_Per_Seconds_Sq_uCUnsignedIntRawValueInit() {
-        let raw = centimetres_per_seconds_sq_u(5)
-        let ctype = cm_per_s_sq_u_to_u32(raw)
-        let expected = Centimetres_Per_Seconds_Sq_u(CUnsignedInt(ctype))
-        XCTAssertEqual(Centimetres_Per_Seconds_Sq_u(rawValue: raw), expected)
-    }
-
-    func testCentimetres_Per_Seconds_Sq_uAccelerationCUnsignedIntInit() {
-        let raw = Centimetres_Per_Seconds_Sq_u(CUnsignedInt(5))
-        let category = Acceleration(raw)
-        let expected = Acceleration(rawValue: .centimetres_per_seconds_sq_u(raw))
-        XCTAssertEqual(category, expected)
-    }
-
-    func testAccelerationCentimetres_Per_Seconds_Sq_uFloatInits() {
-        let raw = Float(5)
-        let expected = Acceleration(centimetres_per_seconds_sq: raw)
-        let result = Acceleration.centimetres_per_seconds_sq(raw)
-        XCTAssertEqual(expected, result)
-        let ctype = f_to_cm_per_s_sq_u(5)
-        let expected2 = Float(
-            cm_per_s_sq_u_to_f(ctype)
-        )
-        let result2 = Float(expected)
-        XCTAssertEqual(result2, expected2)
-    }
-
-    func testCentimetres_Per_Seconds_Sq_uFloatInits() {
-        let raw = Float(5)
-        let ctype = f_to_cm_per_s_sq_u(5)
-        let expected = Centimetres_Per_Seconds_Sq_u(raw)
-        XCTAssertEqual(expected.rawValue, ctype)
-        XCTAssertEqual(
-            Float(expected),
-            Float(cm_per_s_sq_u_to_f(ctype))
-        )
-    }
-
-    func testCentimetres_Per_Seconds_Sq_uFloatRawValueInit() {
-        let raw = centimetres_per_seconds_sq_u(5)
-        let ctype = cm_per_s_sq_u_to_f(raw)
-        let expected = Centimetres_Per_Seconds_Sq_u(Float(ctype))
-        XCTAssertEqual(Centimetres_Per_Seconds_Sq_u(rawValue: raw), expected)
-    }
-
-    func testCentimetres_Per_Seconds_Sq_uAccelerationFloatInit() {
-        let raw = Centimetres_Per_Seconds_Sq_u(Float(5))
-        let category = Acceleration(raw)
-        let expected = Acceleration(rawValue: .centimetres_per_seconds_sq_u(raw))
-        XCTAssertEqual(category, expected)
-    }
-
-    func testAccelerationCentimetres_Per_Seconds_Sq_uDoubleInits() {
-        let raw = Double(5)
-        let expected = Acceleration(centimetres_per_seconds_sq: raw)
-        let result = Acceleration.centimetres_per_seconds_sq(raw)
-        XCTAssertEqual(expected, result)
-        let ctype = d_to_cm_per_s_sq_u(5)
-        let expected2 = Double(
-            cm_per_s_sq_u_to_d(ctype)
-        )
-        let result2 = Double(expected)
-        XCTAssertEqual(result2, expected2)
-    }
-
-    func testCentimetres_Per_Seconds_Sq_uDoubleInits() {
-        let raw = Double(5)
-        let ctype = d_to_cm_per_s_sq_u(5)
-        let expected = Centimetres_Per_Seconds_Sq_u(raw)
-        XCTAssertEqual(expected.rawValue, ctype)
-        XCTAssertEqual(
-            Double(expected),
-            Double(cm_per_s_sq_u_to_d(ctype))
-        )
-    }
-
-    func testCentimetres_Per_Seconds_Sq_uDoubleRawValueInit() {
-        let raw = centimetres_per_seconds_sq_u(5)
-        let ctype = cm_per_s_sq_u_to_d(raw)
-        let expected = Centimetres_Per_Seconds_Sq_u(Double(ctype))
-        XCTAssertEqual(Centimetres_Per_Seconds_Sq_u(rawValue: raw), expected)
-    }
-
-    func testCentimetres_Per_Seconds_Sq_uAccelerationDoubleInit() {
-        let raw = Centimetres_Per_Seconds_Sq_u(Double(5))
-        let category = Acceleration(raw)
-        let expected = Acceleration(rawValue: .centimetres_per_seconds_sq_u(raw))
-        XCTAssertEqual(category, expected)
-    }
-
-    func testCentimetres_Per_Seconds_Sq_fToMillimetres_Per_Microseconds_Sq_tAccelerationConversions() {
-        let original = Centimetres_Per_Seconds_Sq_f(5)
+    func testCentimetres_Per_Seconds_Sq_uToCentimetres_Per_Milliseconds_Sq_uAccelerationConversions() {
+        let original = Centimetres_Per_Seconds_Sq_u(5)
         let category = Acceleration(original)
-        let other = category.millimetres_per_microseconds_sq_t
-        XCTAssertEqual(other, Millimetres_Per_Microseconds_Sq_t(original))
+        let other = category.centimetres_per_milliseconds_sq_u
+        XCTAssertEqual(other, Centimetres_Per_Milliseconds_Sq_u(original))
     }
 
-    func testMillimetres_Per_Microseconds_Sq_tToCentimetres_Per_Seconds_Sq_fConversions() {
-        let ctype1 = centimetres_per_seconds_sq_f(5)
-        let swiftType1 = Centimetres_Per_Seconds_Sq_f(rawValue: ctype1)
-        let ctype2 = cm_per_s_sq_f_to_mm_per_us_sq_t(ctype1)
-        let swiftType2 = Millimetres_Per_Microseconds_Sq_t(rawValue: ctype2)
-        XCTAssertEqual(swiftType2, Millimetres_Per_Microseconds_Sq_t(swiftType1))
+    func testCentimetres_Per_Milliseconds_Sq_uToCentimetres_Per_Seconds_Sq_uConversions() {
+        let ctype1 = centimetres_per_seconds_sq_u(5)
+        let swiftType1 = Centimetres_Per_Seconds_Sq_u(rawValue: ctype1)
+        let ctype2 = cm_per_s_sq_u_to_cm_per_ms_sq_u(ctype1)
+        let swiftType2 = Centimetres_Per_Milliseconds_Sq_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_Per_Milliseconds_Sq_u(swiftType1))
     }
 
-    func testCentimetres_Per_Seconds_Sq_fToMillimetres_Per_Microseconds_Sq_uAccelerationConversions() {
-        let original = Centimetres_Per_Seconds_Sq_f(5)
+    func testCentimetres_Per_Seconds_Sq_uToCentimetres_Per_Milliseconds_Sq_fAccelerationConversions() {
+        let original = Centimetres_Per_Seconds_Sq_u(5)
         let category = Acceleration(original)
-        let other = category.millimetres_per_microseconds_sq_u
-        XCTAssertEqual(other, Millimetres_Per_Microseconds_Sq_u(original))
+        let other = category.centimetres_per_milliseconds_sq_f
+        XCTAssertEqual(other, Centimetres_Per_Milliseconds_Sq_f(original))
     }
 
-    func testMillimetres_Per_Microseconds_Sq_uToCentimetres_Per_Seconds_Sq_fConversions() {
-        let ctype1 = centimetres_per_seconds_sq_f(5)
-        let swiftType1 = Centimetres_Per_Seconds_Sq_f(rawValue: ctype1)
-        let ctype2 = cm_per_s_sq_f_to_mm_per_us_sq_u(ctype1)
-        let swiftType2 = Millimetres_Per_Microseconds_Sq_u(rawValue: ctype2)
-        XCTAssertEqual(swiftType2, Millimetres_Per_Microseconds_Sq_u(swiftType1))
+    func testCentimetres_Per_Milliseconds_Sq_fToCentimetres_Per_Seconds_Sq_uConversions() {
+        let ctype1 = centimetres_per_seconds_sq_u(5)
+        let swiftType1 = Centimetres_Per_Seconds_Sq_u(rawValue: ctype1)
+        let ctype2 = cm_per_s_sq_u_to_cm_per_ms_sq_f(ctype1)
+        let swiftType2 = Centimetres_Per_Milliseconds_Sq_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_Per_Milliseconds_Sq_f(swiftType1))
     }
 
-    func testCentimetres_Per_Seconds_Sq_fToMillimetres_Per_Microseconds_Sq_fAccelerationConversions() {
-        let original = Centimetres_Per_Seconds_Sq_f(5)
+    func testCentimetres_Per_Seconds_Sq_uToCentimetres_Per_Milliseconds_Sq_dAccelerationConversions() {
+        let original = Centimetres_Per_Seconds_Sq_u(5)
         let category = Acceleration(original)
-        let other = category.millimetres_per_microseconds_sq_f
-        XCTAssertEqual(other, Millimetres_Per_Microseconds_Sq_f(original))
+        let other = category.centimetres_per_milliseconds_sq_d
+        XCTAssertEqual(other, Centimetres_Per_Milliseconds_Sq_d(original))
     }
 
-    func testMillimetres_Per_Microseconds_Sq_fToCentimetres_Per_Seconds_Sq_fConversions() {
-        let ctype1 = centimetres_per_seconds_sq_f(5)
-        let swiftType1 = Centimetres_Per_Seconds_Sq_f(rawValue: ctype1)
-        let ctype2 = cm_per_s_sq_f_to_mm_per_us_sq_f(ctype1)
-        let swiftType2 = Millimetres_Per_Microseconds_Sq_f(rawValue: ctype2)
-        XCTAssertEqual(swiftType2, Millimetres_Per_Microseconds_Sq_f(swiftType1))
+    func testCentimetres_Per_Milliseconds_Sq_dToCentimetres_Per_Seconds_Sq_uConversions() {
+        let ctype1 = centimetres_per_seconds_sq_u(5)
+        let swiftType1 = Centimetres_Per_Seconds_Sq_u(rawValue: ctype1)
+        let ctype2 = cm_per_s_sq_u_to_cm_per_ms_sq_d(ctype1)
+        let swiftType2 = Centimetres_Per_Milliseconds_Sq_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_Per_Milliseconds_Sq_d(swiftType1))
     }
 
-    func testCentimetres_Per_Seconds_Sq_fToMillimetres_Per_Microseconds_Sq_dAccelerationConversions() {
-        let original = Centimetres_Per_Seconds_Sq_f(5)
+    func testCentimetres_Per_Seconds_Sq_uToCentimetres_Per_Seconds_Sq_tAccelerationConversions() {
+        let original = Centimetres_Per_Seconds_Sq_u(5)
         let category = Acceleration(original)
-        let other = category.millimetres_per_microseconds_sq_d
-        XCTAssertEqual(other, Millimetres_Per_Microseconds_Sq_d(original))
+        let other = category.centimetres_per_seconds_sq_t
+        XCTAssertEqual(other, Centimetres_Per_Seconds_Sq_t(original))
     }
 
-    func testMillimetres_Per_Microseconds_Sq_dToCentimetres_Per_Seconds_Sq_fConversions() {
-        let ctype1 = centimetres_per_seconds_sq_f(5)
-        let swiftType1 = Centimetres_Per_Seconds_Sq_f(rawValue: ctype1)
-        let ctype2 = cm_per_s_sq_f_to_mm_per_us_sq_d(ctype1)
-        let swiftType2 = Millimetres_Per_Microseconds_Sq_d(rawValue: ctype2)
-        XCTAssertEqual(swiftType2, Millimetres_Per_Microseconds_Sq_d(swiftType1))
+    func testCentimetres_Per_Seconds_Sq_tToCentimetres_Per_Seconds_Sq_uConversions() {
+        let ctype1 = centimetres_per_seconds_sq_u(5)
+        let swiftType1 = Centimetres_Per_Seconds_Sq_u(rawValue: ctype1)
+        let ctype2 = cm_per_s_sq_u_to_cm_per_s_sq_t(ctype1)
+        let swiftType2 = Centimetres_Per_Seconds_Sq_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_Per_Seconds_Sq_t(swiftType1))
     }
 
-    func testCentimetres_Per_Seconds_Sq_fToMillimetres_Per_Milliseconds_Sq_tAccelerationConversions() {
-        let original = Centimetres_Per_Seconds_Sq_f(5)
+    func testCentimetres_Per_Seconds_Sq_uToCentimetres_Per_Seconds_Sq_fAccelerationConversions() {
+        let original = Centimetres_Per_Seconds_Sq_u(5)
         let category = Acceleration(original)
-        let other = category.millimetres_per_milliseconds_sq_t
-        XCTAssertEqual(other, Millimetres_Per_Milliseconds_Sq_t(original))
+        let other = category.centimetres_per_seconds_sq_f
+        XCTAssertEqual(other, Centimetres_Per_Seconds_Sq_f(original))
     }
 
-    func testMillimetres_Per_Milliseconds_Sq_tToCentimetres_Per_Seconds_Sq_fConversions() {
-        let ctype1 = centimetres_per_seconds_sq_f(5)
-        let swiftType1 = Centimetres_Per_Seconds_Sq_f(rawValue: ctype1)
-        let ctype2 = cm_per_s_sq_f_to_mm_per_ms_sq_t(ctype1)
-        let swiftType2 = Millimetres_Per_Milliseconds_Sq_t(rawValue: ctype2)
-        XCTAssertEqual(swiftType2, Millimetres_Per_Milliseconds_Sq_t(swiftType1))
+    func testCentimetres_Per_Seconds_Sq_fToCentimetres_Per_Seconds_Sq_uConversions() {
+        let ctype1 = centimetres_per_seconds_sq_u(5)
+        let swiftType1 = Centimetres_Per_Seconds_Sq_u(rawValue: ctype1)
+        let ctype2 = cm_per_s_sq_u_to_cm_per_s_sq_f(ctype1)
+        let swiftType2 = Centimetres_Per_Seconds_Sq_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_Per_Seconds_Sq_f(swiftType1))
     }
 
-    func testCentimetres_Per_Seconds_Sq_fToMillimetres_Per_Milliseconds_Sq_uAccelerationConversions() {
-        let original = Centimetres_Per_Seconds_Sq_f(5)
+    func testCentimetres_Per_Seconds_Sq_uToCentimetres_Per_Seconds_Sq_dAccelerationConversions() {
+        let original = Centimetres_Per_Seconds_Sq_u(5)
         let category = Acceleration(original)
-        let other = category.millimetres_per_milliseconds_sq_u
-        XCTAssertEqual(other, Millimetres_Per_Milliseconds_Sq_u(original))
+        let other = category.centimetres_per_seconds_sq_d
+        XCTAssertEqual(other, Centimetres_Per_Seconds_Sq_d(original))
     }
 
-    func testMillimetres_Per_Milliseconds_Sq_uToCentimetres_Per_Seconds_Sq_fConversions() {
-        let ctype1 = centimetres_per_seconds_sq_f(5)
-        let swiftType1 = Centimetres_Per_Seconds_Sq_f(rawValue: ctype1)
-        let ctype2 = cm_per_s_sq_f_to_mm_per_ms_sq_u(ctype1)
-        let swiftType2 = Millimetres_Per_Milliseconds_Sq_u(rawValue: ctype2)
-        XCTAssertEqual(swiftType2, Millimetres_Per_Milliseconds_Sq_u(swiftType1))
+    func testCentimetres_Per_Seconds_Sq_dToCentimetres_Per_Seconds_Sq_uConversions() {
+        let ctype1 = centimetres_per_seconds_sq_u(5)
+        let swiftType1 = Centimetres_Per_Seconds_Sq_u(rawValue: ctype1)
+        let ctype2 = cm_per_s_sq_u_to_cm_per_s_sq_d(ctype1)
+        let swiftType2 = Centimetres_Per_Seconds_Sq_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Centimetres_Per_Seconds_Sq_d(swiftType1))
     }
 
-    func testCentimetres_Per_Seconds_Sq_fToMillimetres_Per_Milliseconds_Sq_fAccelerationConversions() {
-        let original = Centimetres_Per_Seconds_Sq_f(5)
+    func testCentimetres_Per_Seconds_Sq_uToMetres_Per_Picoseconds_Sq_tAccelerationConversions() {
+        let original = Centimetres_Per_Seconds_Sq_u(5)
         let category = Acceleration(original)
-        let other = category.millimetres_per_milliseconds_sq_f
-        XCTAssertEqual(other, Millimetres_Per_Milliseconds_Sq_f(original))
+        let other = category.metres_per_picoseconds_sq_t
+        XCTAssertEqual(other, Metres_Per_Picoseconds_Sq_t(original))
     }
 
-    func testMillimetres_Per_Milliseconds_Sq_fToCentimetres_Per_Seconds_Sq_fConversions() {
-        let ctype1 = centimetres_per_seconds_sq_f(5)
-        let swiftType1 = Centimetres_Per_Seconds_Sq_f(rawValue: ctype1)
-        let ctype2 = cm_per_s_sq_f_to_mm_per_ms_sq_f(ctype1)
-        let swiftType2 = Millimetres_Per_Milliseconds_Sq_f(rawValue: ctype2)
-        XCTAssertEqual(swiftType2, Millimetres_Per_Milliseconds_Sq_f(swiftType1))
+    func testMetres_Per_Picoseconds_Sq_tToCentimetres_Per_Seconds_Sq_uConversions() {
+        let ctype1 = centimetres_per_seconds_sq_u(5)
+        let swiftType1 = Centimetres_Per_Seconds_Sq_u(rawValue: ctype1)
+        let ctype2 = cm_per_s_sq_u_to_m_per_ps_sq_t(ctype1)
+        let swiftType2 = Metres_Per_Picoseconds_Sq_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_Per_Picoseconds_Sq_t(swiftType1))
     }
 
-    func testCentimetres_Per_Seconds_Sq_fToMillimetres_Per_Milliseconds_Sq_dAccelerationConversions() {
-        let original = Centimetres_Per_Seconds_Sq_f(5)
+    func testCentimetres_Per_Seconds_Sq_uToMetres_Per_Picoseconds_Sq_uAccelerationConversions() {
+        let original = Centimetres_Per_Seconds_Sq_u(5)
         let category = Acceleration(original)
-        let other = category.millimetres_per_milliseconds_sq_d
-        XCTAssertEqual(other, Millimetres_Per_Milliseconds_Sq_d(original))
+        let other = category.metres_per_picoseconds_sq_u
+        XCTAssertEqual(other, Metres_Per_Picoseconds_Sq_u(original))
     }
 
-    func testMillimetres_Per_Milliseconds_Sq_dToCentimetres_Per_Seconds_Sq_fConversions() {
-        let ctype1 = centimetres_per_seconds_sq_f(5)
-        let swiftType1 = Centimetres_Per_Seconds_Sq_f(rawValue: ctype1)
-        let ctype2 = cm_per_s_sq_f_to_mm_per_ms_sq_d(ctype1)
-        let swiftType2 = Millimetres_Per_Milliseconds_Sq_d(rawValue: ctype2)
-        XCTAssertEqual(swiftType2, Millimetres_Per_Milliseconds_Sq_d(swiftType1))
+    func testMetres_Per_Picoseconds_Sq_uToCentimetres_Per_Seconds_Sq_uConversions() {
+        let ctype1 = centimetres_per_seconds_sq_u(5)
+        let swiftType1 = Centimetres_Per_Seconds_Sq_u(rawValue: ctype1)
+        let ctype2 = cm_per_s_sq_u_to_m_per_ps_sq_u(ctype1)
+        let swiftType2 = Metres_Per_Picoseconds_Sq_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_Per_Picoseconds_Sq_u(swiftType1))
+    }
+
+    func testCentimetres_Per_Seconds_Sq_uToMetres_Per_Picoseconds_Sq_fAccelerationConversions() {
+        let original = Centimetres_Per_Seconds_Sq_u(5)
+        let category = Acceleration(original)
+        let other = category.metres_per_picoseconds_sq_f
+        XCTAssertEqual(other, Metres_Per_Picoseconds_Sq_f(original))
+    }
+
+    func testMetres_Per_Picoseconds_Sq_fToCentimetres_Per_Seconds_Sq_uConversions() {
+        let ctype1 = centimetres_per_seconds_sq_u(5)
+        let swiftType1 = Centimetres_Per_Seconds_Sq_u(rawValue: ctype1)
+        let ctype2 = cm_per_s_sq_u_to_m_per_ps_sq_f(ctype1)
+        let swiftType2 = Metres_Per_Picoseconds_Sq_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_Per_Picoseconds_Sq_f(swiftType1))
+    }
+
+    func testCentimetres_Per_Seconds_Sq_uToMetres_Per_Picoseconds_Sq_dAccelerationConversions() {
+        let original = Centimetres_Per_Seconds_Sq_u(5)
+        let category = Acceleration(original)
+        let other = category.metres_per_picoseconds_sq_d
+        XCTAssertEqual(other, Metres_Per_Picoseconds_Sq_d(original))
+    }
+
+    func testMetres_Per_Picoseconds_Sq_dToCentimetres_Per_Seconds_Sq_uConversions() {
+        let ctype1 = centimetres_per_seconds_sq_u(5)
+        let swiftType1 = Centimetres_Per_Seconds_Sq_u(rawValue: ctype1)
+        let ctype2 = cm_per_s_sq_u_to_m_per_ps_sq_d(ctype1)
+        let swiftType2 = Metres_Per_Picoseconds_Sq_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_Per_Picoseconds_Sq_d(swiftType1))
+    }
+
+    func testCentimetres_Per_Seconds_Sq_uToMetres_Per_Nanoseconds_Sq_tAccelerationConversions() {
+        let original = Centimetres_Per_Seconds_Sq_u(5)
+        let category = Acceleration(original)
+        let other = category.metres_per_nanoseconds_sq_t
+        XCTAssertEqual(other, Metres_Per_Nanoseconds_Sq_t(original))
+    }
+
+    func testMetres_Per_Nanoseconds_Sq_tToCentimetres_Per_Seconds_Sq_uConversions() {
+        let ctype1 = centimetres_per_seconds_sq_u(5)
+        let swiftType1 = Centimetres_Per_Seconds_Sq_u(rawValue: ctype1)
+        let ctype2 = cm_per_s_sq_u_to_m_per_ns_sq_t(ctype1)
+        let swiftType2 = Metres_Per_Nanoseconds_Sq_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_Per_Nanoseconds_Sq_t(swiftType1))
+    }
+
+    func testCentimetres_Per_Seconds_Sq_uToMetres_Per_Nanoseconds_Sq_uAccelerationConversions() {
+        let original = Centimetres_Per_Seconds_Sq_u(5)
+        let category = Acceleration(original)
+        let other = category.metres_per_nanoseconds_sq_u
+        XCTAssertEqual(other, Metres_Per_Nanoseconds_Sq_u(original))
+    }
+
+    func testMetres_Per_Nanoseconds_Sq_uToCentimetres_Per_Seconds_Sq_uConversions() {
+        let ctype1 = centimetres_per_seconds_sq_u(5)
+        let swiftType1 = Centimetres_Per_Seconds_Sq_u(rawValue: ctype1)
+        let ctype2 = cm_per_s_sq_u_to_m_per_ns_sq_u(ctype1)
+        let swiftType2 = Metres_Per_Nanoseconds_Sq_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_Per_Nanoseconds_Sq_u(swiftType1))
+    }
+
+    func testCentimetres_Per_Seconds_Sq_uToMetres_Per_Nanoseconds_Sq_fAccelerationConversions() {
+        let original = Centimetres_Per_Seconds_Sq_u(5)
+        let category = Acceleration(original)
+        let other = category.metres_per_nanoseconds_sq_f
+        XCTAssertEqual(other, Metres_Per_Nanoseconds_Sq_f(original))
+    }
+
+    func testMetres_Per_Nanoseconds_Sq_fToCentimetres_Per_Seconds_Sq_uConversions() {
+        let ctype1 = centimetres_per_seconds_sq_u(5)
+        let swiftType1 = Centimetres_Per_Seconds_Sq_u(rawValue: ctype1)
+        let ctype2 = cm_per_s_sq_u_to_m_per_ns_sq_f(ctype1)
+        let swiftType2 = Metres_Per_Nanoseconds_Sq_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_Per_Nanoseconds_Sq_f(swiftType1))
+    }
+
+    func testCentimetres_Per_Seconds_Sq_uToMetres_Per_Nanoseconds_Sq_dAccelerationConversions() {
+        let original = Centimetres_Per_Seconds_Sq_u(5)
+        let category = Acceleration(original)
+        let other = category.metres_per_nanoseconds_sq_d
+        XCTAssertEqual(other, Metres_Per_Nanoseconds_Sq_d(original))
+    }
+
+    func testMetres_Per_Nanoseconds_Sq_dToCentimetres_Per_Seconds_Sq_uConversions() {
+        let ctype1 = centimetres_per_seconds_sq_u(5)
+        let swiftType1 = Centimetres_Per_Seconds_Sq_u(rawValue: ctype1)
+        let ctype2 = cm_per_s_sq_u_to_m_per_ns_sq_d(ctype1)
+        let swiftType2 = Metres_Per_Nanoseconds_Sq_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Metres_Per_Nanoseconds_Sq_d(swiftType1))
+    }
+
+    func testCentimetres_Per_Seconds_Sq_uToMetres_Per_Microseconds_Sq_tAccelerationConversions() {
+        let original = Centimetres_Per_Seconds_Sq_u(5)
+        let category = Acceleration(original)
+        let other = category.metres_per_microseconds_sq_t
+        XCTAssertEqual(other, Metres_Per_Microseconds_Sq_t(original))
     }
 
 }

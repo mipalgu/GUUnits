@@ -84,6 +84,22 @@ public struct Time: Sendable, Hashable, Codable {
 
     enum TimeTypes: Sendable, Hashable, Codable {
 
+        case picoseconds_t(_ picoseconds_t: Picoseconds_t)
+
+        case picoseconds_u(_ picoseconds_u: Picoseconds_u)
+
+        case picoseconds_f(_ picoseconds_f: Picoseconds_f)
+
+        case picoseconds_d(_ picoseconds_d: Picoseconds_d)
+
+        case nanoseconds_t(_ nanoseconds_t: Nanoseconds_t)
+
+        case nanoseconds_u(_ nanoseconds_u: Nanoseconds_u)
+
+        case nanoseconds_f(_ nanoseconds_f: Nanoseconds_f)
+
+        case nanoseconds_d(_ nanoseconds_d: Nanoseconds_d)
+
         case microseconds_t(_ microseconds_t: Microseconds_t)
 
         case microseconds_u(_ microseconds_u: Microseconds_u)
@@ -122,9 +138,393 @@ public struct Time: Sendable, Hashable, Codable {
 
 // MARK: - Converting To The Underlying Unit Types
 
+    /// Create a `Picoseconds_t`.
+    public var picoseconds_t: Picoseconds_t {
+        switch rawValue {
+        case .picoseconds_t(let value):
+            return Picoseconds_t(value)
+        case .picoseconds_u(let value):
+            return Picoseconds_t(value)
+        case .picoseconds_f(let value):
+            return Picoseconds_t(value)
+        case .picoseconds_d(let value):
+            return Picoseconds_t(value)
+        case .nanoseconds_t(let value):
+            return Picoseconds_t(value)
+        case .nanoseconds_u(let value):
+            return Picoseconds_t(value)
+        case .nanoseconds_f(let value):
+            return Picoseconds_t(value)
+        case .nanoseconds_d(let value):
+            return Picoseconds_t(value)
+        case .microseconds_t(let value):
+            return Picoseconds_t(value)
+        case .microseconds_u(let value):
+            return Picoseconds_t(value)
+        case .microseconds_f(let value):
+            return Picoseconds_t(value)
+        case .microseconds_d(let value):
+            return Picoseconds_t(value)
+        case .milliseconds_t(let value):
+            return Picoseconds_t(value)
+        case .milliseconds_u(let value):
+            return Picoseconds_t(value)
+        case .milliseconds_f(let value):
+            return Picoseconds_t(value)
+        case .milliseconds_d(let value):
+            return Picoseconds_t(value)
+        case .seconds_t(let value):
+            return Picoseconds_t(value)
+        case .seconds_u(let value):
+            return Picoseconds_t(value)
+        case .seconds_f(let value):
+            return Picoseconds_t(value)
+        case .seconds_d(let value):
+            return Picoseconds_t(value)
+        }
+    }
+
+    /// Create a `Picoseconds_u`.
+    public var picoseconds_u: Picoseconds_u {
+        switch rawValue {
+        case .picoseconds_t(let value):
+            return Picoseconds_u(value)
+        case .picoseconds_u(let value):
+            return Picoseconds_u(value)
+        case .picoseconds_f(let value):
+            return Picoseconds_u(value)
+        case .picoseconds_d(let value):
+            return Picoseconds_u(value)
+        case .nanoseconds_t(let value):
+            return Picoseconds_u(value)
+        case .nanoseconds_u(let value):
+            return Picoseconds_u(value)
+        case .nanoseconds_f(let value):
+            return Picoseconds_u(value)
+        case .nanoseconds_d(let value):
+            return Picoseconds_u(value)
+        case .microseconds_t(let value):
+            return Picoseconds_u(value)
+        case .microseconds_u(let value):
+            return Picoseconds_u(value)
+        case .microseconds_f(let value):
+            return Picoseconds_u(value)
+        case .microseconds_d(let value):
+            return Picoseconds_u(value)
+        case .milliseconds_t(let value):
+            return Picoseconds_u(value)
+        case .milliseconds_u(let value):
+            return Picoseconds_u(value)
+        case .milliseconds_f(let value):
+            return Picoseconds_u(value)
+        case .milliseconds_d(let value):
+            return Picoseconds_u(value)
+        case .seconds_t(let value):
+            return Picoseconds_u(value)
+        case .seconds_u(let value):
+            return Picoseconds_u(value)
+        case .seconds_f(let value):
+            return Picoseconds_u(value)
+        case .seconds_d(let value):
+            return Picoseconds_u(value)
+        }
+    }
+
+    /// Create a `Picoseconds_f`.
+    public var picoseconds_f: Picoseconds_f {
+        switch rawValue {
+        case .picoseconds_t(let value):
+            return Picoseconds_f(value)
+        case .picoseconds_u(let value):
+            return Picoseconds_f(value)
+        case .picoseconds_f(let value):
+            return Picoseconds_f(value)
+        case .picoseconds_d(let value):
+            return Picoseconds_f(value)
+        case .nanoseconds_t(let value):
+            return Picoseconds_f(value)
+        case .nanoseconds_u(let value):
+            return Picoseconds_f(value)
+        case .nanoseconds_f(let value):
+            return Picoseconds_f(value)
+        case .nanoseconds_d(let value):
+            return Picoseconds_f(value)
+        case .microseconds_t(let value):
+            return Picoseconds_f(value)
+        case .microseconds_u(let value):
+            return Picoseconds_f(value)
+        case .microseconds_f(let value):
+            return Picoseconds_f(value)
+        case .microseconds_d(let value):
+            return Picoseconds_f(value)
+        case .milliseconds_t(let value):
+            return Picoseconds_f(value)
+        case .milliseconds_u(let value):
+            return Picoseconds_f(value)
+        case .milliseconds_f(let value):
+            return Picoseconds_f(value)
+        case .milliseconds_d(let value):
+            return Picoseconds_f(value)
+        case .seconds_t(let value):
+            return Picoseconds_f(value)
+        case .seconds_u(let value):
+            return Picoseconds_f(value)
+        case .seconds_f(let value):
+            return Picoseconds_f(value)
+        case .seconds_d(let value):
+            return Picoseconds_f(value)
+        }
+    }
+
+    /// Create a `Picoseconds_d`.
+    public var picoseconds_d: Picoseconds_d {
+        switch rawValue {
+        case .picoseconds_t(let value):
+            return Picoseconds_d(value)
+        case .picoseconds_u(let value):
+            return Picoseconds_d(value)
+        case .picoseconds_f(let value):
+            return Picoseconds_d(value)
+        case .picoseconds_d(let value):
+            return Picoseconds_d(value)
+        case .nanoseconds_t(let value):
+            return Picoseconds_d(value)
+        case .nanoseconds_u(let value):
+            return Picoseconds_d(value)
+        case .nanoseconds_f(let value):
+            return Picoseconds_d(value)
+        case .nanoseconds_d(let value):
+            return Picoseconds_d(value)
+        case .microseconds_t(let value):
+            return Picoseconds_d(value)
+        case .microseconds_u(let value):
+            return Picoseconds_d(value)
+        case .microseconds_f(let value):
+            return Picoseconds_d(value)
+        case .microseconds_d(let value):
+            return Picoseconds_d(value)
+        case .milliseconds_t(let value):
+            return Picoseconds_d(value)
+        case .milliseconds_u(let value):
+            return Picoseconds_d(value)
+        case .milliseconds_f(let value):
+            return Picoseconds_d(value)
+        case .milliseconds_d(let value):
+            return Picoseconds_d(value)
+        case .seconds_t(let value):
+            return Picoseconds_d(value)
+        case .seconds_u(let value):
+            return Picoseconds_d(value)
+        case .seconds_f(let value):
+            return Picoseconds_d(value)
+        case .seconds_d(let value):
+            return Picoseconds_d(value)
+        }
+    }
+
+    /// Create a `Nanoseconds_t`.
+    public var nanoseconds_t: Nanoseconds_t {
+        switch rawValue {
+        case .picoseconds_t(let value):
+            return Nanoseconds_t(value)
+        case .picoseconds_u(let value):
+            return Nanoseconds_t(value)
+        case .picoseconds_f(let value):
+            return Nanoseconds_t(value)
+        case .picoseconds_d(let value):
+            return Nanoseconds_t(value)
+        case .nanoseconds_t(let value):
+            return Nanoseconds_t(value)
+        case .nanoseconds_u(let value):
+            return Nanoseconds_t(value)
+        case .nanoseconds_f(let value):
+            return Nanoseconds_t(value)
+        case .nanoseconds_d(let value):
+            return Nanoseconds_t(value)
+        case .microseconds_t(let value):
+            return Nanoseconds_t(value)
+        case .microseconds_u(let value):
+            return Nanoseconds_t(value)
+        case .microseconds_f(let value):
+            return Nanoseconds_t(value)
+        case .microseconds_d(let value):
+            return Nanoseconds_t(value)
+        case .milliseconds_t(let value):
+            return Nanoseconds_t(value)
+        case .milliseconds_u(let value):
+            return Nanoseconds_t(value)
+        case .milliseconds_f(let value):
+            return Nanoseconds_t(value)
+        case .milliseconds_d(let value):
+            return Nanoseconds_t(value)
+        case .seconds_t(let value):
+            return Nanoseconds_t(value)
+        case .seconds_u(let value):
+            return Nanoseconds_t(value)
+        case .seconds_f(let value):
+            return Nanoseconds_t(value)
+        case .seconds_d(let value):
+            return Nanoseconds_t(value)
+        }
+    }
+
+    /// Create a `Nanoseconds_u`.
+    public var nanoseconds_u: Nanoseconds_u {
+        switch rawValue {
+        case .picoseconds_t(let value):
+            return Nanoseconds_u(value)
+        case .picoseconds_u(let value):
+            return Nanoseconds_u(value)
+        case .picoseconds_f(let value):
+            return Nanoseconds_u(value)
+        case .picoseconds_d(let value):
+            return Nanoseconds_u(value)
+        case .nanoseconds_t(let value):
+            return Nanoseconds_u(value)
+        case .nanoseconds_u(let value):
+            return Nanoseconds_u(value)
+        case .nanoseconds_f(let value):
+            return Nanoseconds_u(value)
+        case .nanoseconds_d(let value):
+            return Nanoseconds_u(value)
+        case .microseconds_t(let value):
+            return Nanoseconds_u(value)
+        case .microseconds_u(let value):
+            return Nanoseconds_u(value)
+        case .microseconds_f(let value):
+            return Nanoseconds_u(value)
+        case .microseconds_d(let value):
+            return Nanoseconds_u(value)
+        case .milliseconds_t(let value):
+            return Nanoseconds_u(value)
+        case .milliseconds_u(let value):
+            return Nanoseconds_u(value)
+        case .milliseconds_f(let value):
+            return Nanoseconds_u(value)
+        case .milliseconds_d(let value):
+            return Nanoseconds_u(value)
+        case .seconds_t(let value):
+            return Nanoseconds_u(value)
+        case .seconds_u(let value):
+            return Nanoseconds_u(value)
+        case .seconds_f(let value):
+            return Nanoseconds_u(value)
+        case .seconds_d(let value):
+            return Nanoseconds_u(value)
+        }
+    }
+
+    /// Create a `Nanoseconds_f`.
+    public var nanoseconds_f: Nanoseconds_f {
+        switch rawValue {
+        case .picoseconds_t(let value):
+            return Nanoseconds_f(value)
+        case .picoseconds_u(let value):
+            return Nanoseconds_f(value)
+        case .picoseconds_f(let value):
+            return Nanoseconds_f(value)
+        case .picoseconds_d(let value):
+            return Nanoseconds_f(value)
+        case .nanoseconds_t(let value):
+            return Nanoseconds_f(value)
+        case .nanoseconds_u(let value):
+            return Nanoseconds_f(value)
+        case .nanoseconds_f(let value):
+            return Nanoseconds_f(value)
+        case .nanoseconds_d(let value):
+            return Nanoseconds_f(value)
+        case .microseconds_t(let value):
+            return Nanoseconds_f(value)
+        case .microseconds_u(let value):
+            return Nanoseconds_f(value)
+        case .microseconds_f(let value):
+            return Nanoseconds_f(value)
+        case .microseconds_d(let value):
+            return Nanoseconds_f(value)
+        case .milliseconds_t(let value):
+            return Nanoseconds_f(value)
+        case .milliseconds_u(let value):
+            return Nanoseconds_f(value)
+        case .milliseconds_f(let value):
+            return Nanoseconds_f(value)
+        case .milliseconds_d(let value):
+            return Nanoseconds_f(value)
+        case .seconds_t(let value):
+            return Nanoseconds_f(value)
+        case .seconds_u(let value):
+            return Nanoseconds_f(value)
+        case .seconds_f(let value):
+            return Nanoseconds_f(value)
+        case .seconds_d(let value):
+            return Nanoseconds_f(value)
+        }
+    }
+
+    /// Create a `Nanoseconds_d`.
+    public var nanoseconds_d: Nanoseconds_d {
+        switch rawValue {
+        case .picoseconds_t(let value):
+            return Nanoseconds_d(value)
+        case .picoseconds_u(let value):
+            return Nanoseconds_d(value)
+        case .picoseconds_f(let value):
+            return Nanoseconds_d(value)
+        case .picoseconds_d(let value):
+            return Nanoseconds_d(value)
+        case .nanoseconds_t(let value):
+            return Nanoseconds_d(value)
+        case .nanoseconds_u(let value):
+            return Nanoseconds_d(value)
+        case .nanoseconds_f(let value):
+            return Nanoseconds_d(value)
+        case .nanoseconds_d(let value):
+            return Nanoseconds_d(value)
+        case .microseconds_t(let value):
+            return Nanoseconds_d(value)
+        case .microseconds_u(let value):
+            return Nanoseconds_d(value)
+        case .microseconds_f(let value):
+            return Nanoseconds_d(value)
+        case .microseconds_d(let value):
+            return Nanoseconds_d(value)
+        case .milliseconds_t(let value):
+            return Nanoseconds_d(value)
+        case .milliseconds_u(let value):
+            return Nanoseconds_d(value)
+        case .milliseconds_f(let value):
+            return Nanoseconds_d(value)
+        case .milliseconds_d(let value):
+            return Nanoseconds_d(value)
+        case .seconds_t(let value):
+            return Nanoseconds_d(value)
+        case .seconds_u(let value):
+            return Nanoseconds_d(value)
+        case .seconds_f(let value):
+            return Nanoseconds_d(value)
+        case .seconds_d(let value):
+            return Nanoseconds_d(value)
+        }
+    }
+
     /// Create a `Microseconds_t`.
     public var microseconds_t: Microseconds_t {
         switch rawValue {
+        case .picoseconds_t(let value):
+            return Microseconds_t(value)
+        case .picoseconds_u(let value):
+            return Microseconds_t(value)
+        case .picoseconds_f(let value):
+            return Microseconds_t(value)
+        case .picoseconds_d(let value):
+            return Microseconds_t(value)
+        case .nanoseconds_t(let value):
+            return Microseconds_t(value)
+        case .nanoseconds_u(let value):
+            return Microseconds_t(value)
+        case .nanoseconds_f(let value):
+            return Microseconds_t(value)
+        case .nanoseconds_d(let value):
+            return Microseconds_t(value)
         case .microseconds_t(let value):
             return Microseconds_t(value)
         case .microseconds_u(let value):
@@ -155,6 +555,22 @@ public struct Time: Sendable, Hashable, Codable {
     /// Create a `Microseconds_u`.
     public var microseconds_u: Microseconds_u {
         switch rawValue {
+        case .picoseconds_t(let value):
+            return Microseconds_u(value)
+        case .picoseconds_u(let value):
+            return Microseconds_u(value)
+        case .picoseconds_f(let value):
+            return Microseconds_u(value)
+        case .picoseconds_d(let value):
+            return Microseconds_u(value)
+        case .nanoseconds_t(let value):
+            return Microseconds_u(value)
+        case .nanoseconds_u(let value):
+            return Microseconds_u(value)
+        case .nanoseconds_f(let value):
+            return Microseconds_u(value)
+        case .nanoseconds_d(let value):
+            return Microseconds_u(value)
         case .microseconds_t(let value):
             return Microseconds_u(value)
         case .microseconds_u(let value):
@@ -185,6 +601,22 @@ public struct Time: Sendable, Hashable, Codable {
     /// Create a `Microseconds_f`.
     public var microseconds_f: Microseconds_f {
         switch rawValue {
+        case .picoseconds_t(let value):
+            return Microseconds_f(value)
+        case .picoseconds_u(let value):
+            return Microseconds_f(value)
+        case .picoseconds_f(let value):
+            return Microseconds_f(value)
+        case .picoseconds_d(let value):
+            return Microseconds_f(value)
+        case .nanoseconds_t(let value):
+            return Microseconds_f(value)
+        case .nanoseconds_u(let value):
+            return Microseconds_f(value)
+        case .nanoseconds_f(let value):
+            return Microseconds_f(value)
+        case .nanoseconds_d(let value):
+            return Microseconds_f(value)
         case .microseconds_t(let value):
             return Microseconds_f(value)
         case .microseconds_u(let value):
@@ -215,6 +647,22 @@ public struct Time: Sendable, Hashable, Codable {
     /// Create a `Microseconds_d`.
     public var microseconds_d: Microseconds_d {
         switch rawValue {
+        case .picoseconds_t(let value):
+            return Microseconds_d(value)
+        case .picoseconds_u(let value):
+            return Microseconds_d(value)
+        case .picoseconds_f(let value):
+            return Microseconds_d(value)
+        case .picoseconds_d(let value):
+            return Microseconds_d(value)
+        case .nanoseconds_t(let value):
+            return Microseconds_d(value)
+        case .nanoseconds_u(let value):
+            return Microseconds_d(value)
+        case .nanoseconds_f(let value):
+            return Microseconds_d(value)
+        case .nanoseconds_d(let value):
+            return Microseconds_d(value)
         case .microseconds_t(let value):
             return Microseconds_d(value)
         case .microseconds_u(let value):
@@ -245,6 +693,22 @@ public struct Time: Sendable, Hashable, Codable {
     /// Create a `Milliseconds_t`.
     public var milliseconds_t: Milliseconds_t {
         switch rawValue {
+        case .picoseconds_t(let value):
+            return Milliseconds_t(value)
+        case .picoseconds_u(let value):
+            return Milliseconds_t(value)
+        case .picoseconds_f(let value):
+            return Milliseconds_t(value)
+        case .picoseconds_d(let value):
+            return Milliseconds_t(value)
+        case .nanoseconds_t(let value):
+            return Milliseconds_t(value)
+        case .nanoseconds_u(let value):
+            return Milliseconds_t(value)
+        case .nanoseconds_f(let value):
+            return Milliseconds_t(value)
+        case .nanoseconds_d(let value):
+            return Milliseconds_t(value)
         case .microseconds_t(let value):
             return Milliseconds_t(value)
         case .microseconds_u(let value):
@@ -275,6 +739,22 @@ public struct Time: Sendable, Hashable, Codable {
     /// Create a `Milliseconds_u`.
     public var milliseconds_u: Milliseconds_u {
         switch rawValue {
+        case .picoseconds_t(let value):
+            return Milliseconds_u(value)
+        case .picoseconds_u(let value):
+            return Milliseconds_u(value)
+        case .picoseconds_f(let value):
+            return Milliseconds_u(value)
+        case .picoseconds_d(let value):
+            return Milliseconds_u(value)
+        case .nanoseconds_t(let value):
+            return Milliseconds_u(value)
+        case .nanoseconds_u(let value):
+            return Milliseconds_u(value)
+        case .nanoseconds_f(let value):
+            return Milliseconds_u(value)
+        case .nanoseconds_d(let value):
+            return Milliseconds_u(value)
         case .microseconds_t(let value):
             return Milliseconds_u(value)
         case .microseconds_u(let value):
@@ -305,6 +785,22 @@ public struct Time: Sendable, Hashable, Codable {
     /// Create a `Milliseconds_f`.
     public var milliseconds_f: Milliseconds_f {
         switch rawValue {
+        case .picoseconds_t(let value):
+            return Milliseconds_f(value)
+        case .picoseconds_u(let value):
+            return Milliseconds_f(value)
+        case .picoseconds_f(let value):
+            return Milliseconds_f(value)
+        case .picoseconds_d(let value):
+            return Milliseconds_f(value)
+        case .nanoseconds_t(let value):
+            return Milliseconds_f(value)
+        case .nanoseconds_u(let value):
+            return Milliseconds_f(value)
+        case .nanoseconds_f(let value):
+            return Milliseconds_f(value)
+        case .nanoseconds_d(let value):
+            return Milliseconds_f(value)
         case .microseconds_t(let value):
             return Milliseconds_f(value)
         case .microseconds_u(let value):
@@ -335,6 +831,22 @@ public struct Time: Sendable, Hashable, Codable {
     /// Create a `Milliseconds_d`.
     public var milliseconds_d: Milliseconds_d {
         switch rawValue {
+        case .picoseconds_t(let value):
+            return Milliseconds_d(value)
+        case .picoseconds_u(let value):
+            return Milliseconds_d(value)
+        case .picoseconds_f(let value):
+            return Milliseconds_d(value)
+        case .picoseconds_d(let value):
+            return Milliseconds_d(value)
+        case .nanoseconds_t(let value):
+            return Milliseconds_d(value)
+        case .nanoseconds_u(let value):
+            return Milliseconds_d(value)
+        case .nanoseconds_f(let value):
+            return Milliseconds_d(value)
+        case .nanoseconds_d(let value):
+            return Milliseconds_d(value)
         case .microseconds_t(let value):
             return Milliseconds_d(value)
         case .microseconds_u(let value):
@@ -365,6 +877,22 @@ public struct Time: Sendable, Hashable, Codable {
     /// Create a `Seconds_t`.
     public var seconds_t: Seconds_t {
         switch rawValue {
+        case .picoseconds_t(let value):
+            return Seconds_t(value)
+        case .picoseconds_u(let value):
+            return Seconds_t(value)
+        case .picoseconds_f(let value):
+            return Seconds_t(value)
+        case .picoseconds_d(let value):
+            return Seconds_t(value)
+        case .nanoseconds_t(let value):
+            return Seconds_t(value)
+        case .nanoseconds_u(let value):
+            return Seconds_t(value)
+        case .nanoseconds_f(let value):
+            return Seconds_t(value)
+        case .nanoseconds_d(let value):
+            return Seconds_t(value)
         case .microseconds_t(let value):
             return Seconds_t(value)
         case .microseconds_u(let value):
@@ -395,6 +923,22 @@ public struct Time: Sendable, Hashable, Codable {
     /// Create a `Seconds_u`.
     public var seconds_u: Seconds_u {
         switch rawValue {
+        case .picoseconds_t(let value):
+            return Seconds_u(value)
+        case .picoseconds_u(let value):
+            return Seconds_u(value)
+        case .picoseconds_f(let value):
+            return Seconds_u(value)
+        case .picoseconds_d(let value):
+            return Seconds_u(value)
+        case .nanoseconds_t(let value):
+            return Seconds_u(value)
+        case .nanoseconds_u(let value):
+            return Seconds_u(value)
+        case .nanoseconds_f(let value):
+            return Seconds_u(value)
+        case .nanoseconds_d(let value):
+            return Seconds_u(value)
         case .microseconds_t(let value):
             return Seconds_u(value)
         case .microseconds_u(let value):
@@ -425,6 +969,22 @@ public struct Time: Sendable, Hashable, Codable {
     /// Create a `Seconds_f`.
     public var seconds_f: Seconds_f {
         switch rawValue {
+        case .picoseconds_t(let value):
+            return Seconds_f(value)
+        case .picoseconds_u(let value):
+            return Seconds_f(value)
+        case .picoseconds_f(let value):
+            return Seconds_f(value)
+        case .picoseconds_d(let value):
+            return Seconds_f(value)
+        case .nanoseconds_t(let value):
+            return Seconds_f(value)
+        case .nanoseconds_u(let value):
+            return Seconds_f(value)
+        case .nanoseconds_f(let value):
+            return Seconds_f(value)
+        case .nanoseconds_d(let value):
+            return Seconds_f(value)
         case .microseconds_t(let value):
             return Seconds_f(value)
         case .microseconds_u(let value):
@@ -455,6 +1015,22 @@ public struct Time: Sendable, Hashable, Codable {
     /// Create a `Seconds_d`.
     public var seconds_d: Seconds_d {
         switch rawValue {
+        case .picoseconds_t(let value):
+            return Seconds_d(value)
+        case .picoseconds_u(let value):
+            return Seconds_d(value)
+        case .picoseconds_f(let value):
+            return Seconds_d(value)
+        case .picoseconds_d(let value):
+            return Seconds_d(value)
+        case .nanoseconds_t(let value):
+            return Seconds_d(value)
+        case .nanoseconds_u(let value):
+            return Seconds_d(value)
+        case .nanoseconds_f(let value):
+            return Seconds_d(value)
+        case .nanoseconds_d(let value):
+            return Seconds_d(value)
         case .microseconds_t(let value):
             return Seconds_d(value)
         case .microseconds_u(let value):
@@ -483,6 +1059,62 @@ public struct Time: Sendable, Hashable, Codable {
     }
 
 // MARK: - Converting From The Underlying Unit Types
+
+    /// Create a `Time` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Time`.
+    public init(_ value: Picoseconds_t) {
+        self.rawValue = TimeTypes.picoseconds_t(value)
+    }
+
+    /// Create a `Time` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Time`.
+    public init(_ value: Picoseconds_u) {
+        self.rawValue = TimeTypes.picoseconds_u(value)
+    }
+
+    /// Create a `Time` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Time`.
+    public init(_ value: Picoseconds_f) {
+        self.rawValue = TimeTypes.picoseconds_f(value)
+    }
+
+    /// Create a `Time` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Time`.
+    public init(_ value: Picoseconds_d) {
+        self.rawValue = TimeTypes.picoseconds_d(value)
+    }
+
+    /// Create a `Time` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Time`.
+    public init(_ value: Nanoseconds_t) {
+        self.rawValue = TimeTypes.nanoseconds_t(value)
+    }
+
+    /// Create a `Time` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Time`.
+    public init(_ value: Nanoseconds_u) {
+        self.rawValue = TimeTypes.nanoseconds_u(value)
+    }
+
+    /// Create a `Time` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Time`.
+    public init(_ value: Nanoseconds_f) {
+        self.rawValue = TimeTypes.nanoseconds_f(value)
+    }
+
+    /// Create a `Time` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Time`.
+    public init(_ value: Nanoseconds_d) {
+        self.rawValue = TimeTypes.nanoseconds_d(value)
+    }
 
     /// Create a `Time` by converting a `Microseconds_t`.
     ///
@@ -572,7 +1204,21 @@ public struct Time: Sendable, Hashable, Codable {
 
     /// Create a `Time` equal to zero.
     public static var zero: Time {
-        return Time(microseconds: 0)
+        return Time(picoseconds: 0)
+    }
+
+    /// Create a `Time` by converting a `Double` picoseconds value.
+    ///
+    /// - Parameter value: A `Double` picoseconds value to convert to a `Time`.
+    public static func picoseconds(_ value: Double) -> Time {
+        return Time(picoseconds: value)
+    }
+
+    /// Create a `Time` by converting a `Double` nanoseconds value.
+    ///
+    /// - Parameter value: A `Double` nanoseconds value to convert to a `Time`.
+    public static func nanoseconds(_ value: Double) -> Time {
+        return Time(nanoseconds: value)
     }
 
     /// Create a `Time` by converting a `Double` microseconds value.
@@ -596,6 +1242,20 @@ public struct Time: Sendable, Hashable, Codable {
         return Time(seconds: value)
     }
 
+    /// Create a `Time` by converting a `Float` picoseconds value.
+    ///
+    /// - Parameter value: A `Float` picoseconds value to convert to a `Time`.
+    public static func picoseconds(_ value: Float) -> Time {
+        return Time(picoseconds: value)
+    }
+
+    /// Create a `Time` by converting a `Float` nanoseconds value.
+    ///
+    /// - Parameter value: A `Float` nanoseconds value to convert to a `Time`.
+    public static func nanoseconds(_ value: Float) -> Time {
+        return Time(nanoseconds: value)
+    }
+
     /// Create a `Time` by converting a `Float` microseconds value.
     ///
     /// - Parameter value: A `Float` microseconds value to convert to a `Time`.
@@ -615,6 +1275,20 @@ public struct Time: Sendable, Hashable, Codable {
     /// - Parameter value: A `Float` seconds value to convert to a `Time`.
     public static func seconds(_ value: Float) -> Time {
         return Time(seconds: value)
+    }
+
+    /// Create a `Time` by converting a `Int` picoseconds value.
+    ///
+    /// - Parameter value: A `Int` picoseconds value to convert to a `Time`.
+    public static func picoseconds(_ value: Int) -> Time {
+        return Time(picoseconds: value)
+    }
+
+    /// Create a `Time` by converting a `Int` nanoseconds value.
+    ///
+    /// - Parameter value: A `Int` nanoseconds value to convert to a `Time`.
+    public static func nanoseconds(_ value: Int) -> Time {
+        return Time(nanoseconds: value)
     }
 
     /// Create a `Time` by converting a `Int` microseconds value.
@@ -638,6 +1312,20 @@ public struct Time: Sendable, Hashable, Codable {
         return Time(seconds: value)
     }
 
+    /// Create a `Time` by converting a `Int16` picoseconds value.
+    ///
+    /// - Parameter value: A `Int16` picoseconds value to convert to a `Time`.
+    public static func picoseconds(_ value: Int16) -> Time {
+        return Time(picoseconds: value)
+    }
+
+    /// Create a `Time` by converting a `Int16` nanoseconds value.
+    ///
+    /// - Parameter value: A `Int16` nanoseconds value to convert to a `Time`.
+    public static func nanoseconds(_ value: Int16) -> Time {
+        return Time(nanoseconds: value)
+    }
+
     /// Create a `Time` by converting a `Int16` microseconds value.
     ///
     /// - Parameter value: A `Int16` microseconds value to convert to a `Time`.
@@ -657,6 +1345,20 @@ public struct Time: Sendable, Hashable, Codable {
     /// - Parameter value: A `Int16` seconds value to convert to a `Time`.
     public static func seconds(_ value: Int16) -> Time {
         return Time(seconds: value)
+    }
+
+    /// Create a `Time` by converting a `Int32` picoseconds value.
+    ///
+    /// - Parameter value: A `Int32` picoseconds value to convert to a `Time`.
+    public static func picoseconds(_ value: Int32) -> Time {
+        return Time(picoseconds: value)
+    }
+
+    /// Create a `Time` by converting a `Int32` nanoseconds value.
+    ///
+    /// - Parameter value: A `Int32` nanoseconds value to convert to a `Time`.
+    public static func nanoseconds(_ value: Int32) -> Time {
+        return Time(nanoseconds: value)
     }
 
     /// Create a `Time` by converting a `Int32` microseconds value.
@@ -680,6 +1382,20 @@ public struct Time: Sendable, Hashable, Codable {
         return Time(seconds: value)
     }
 
+    /// Create a `Time` by converting a `Int64` picoseconds value.
+    ///
+    /// - Parameter value: A `Int64` picoseconds value to convert to a `Time`.
+    public static func picoseconds(_ value: Int64) -> Time {
+        return Time(picoseconds: value)
+    }
+
+    /// Create a `Time` by converting a `Int64` nanoseconds value.
+    ///
+    /// - Parameter value: A `Int64` nanoseconds value to convert to a `Time`.
+    public static func nanoseconds(_ value: Int64) -> Time {
+        return Time(nanoseconds: value)
+    }
+
     /// Create a `Time` by converting a `Int64` microseconds value.
     ///
     /// - Parameter value: A `Int64` microseconds value to convert to a `Time`.
@@ -699,6 +1415,20 @@ public struct Time: Sendable, Hashable, Codable {
     /// - Parameter value: A `Int64` seconds value to convert to a `Time`.
     public static func seconds(_ value: Int64) -> Time {
         return Time(seconds: value)
+    }
+
+    /// Create a `Time` by converting a `Int8` picoseconds value.
+    ///
+    /// - Parameter value: A `Int8` picoseconds value to convert to a `Time`.
+    public static func picoseconds(_ value: Int8) -> Time {
+        return Time(picoseconds: value)
+    }
+
+    /// Create a `Time` by converting a `Int8` nanoseconds value.
+    ///
+    /// - Parameter value: A `Int8` nanoseconds value to convert to a `Time`.
+    public static func nanoseconds(_ value: Int8) -> Time {
+        return Time(nanoseconds: value)
     }
 
     /// Create a `Time` by converting a `Int8` microseconds value.
@@ -722,6 +1452,20 @@ public struct Time: Sendable, Hashable, Codable {
         return Time(seconds: value)
     }
 
+    /// Create a `Time` by converting a `UInt` picoseconds value.
+    ///
+    /// - Parameter value: A `UInt` picoseconds value to convert to a `Time`.
+    public static func picoseconds(_ value: UInt) -> Time {
+        return Time(picoseconds: value)
+    }
+
+    /// Create a `Time` by converting a `UInt` nanoseconds value.
+    ///
+    /// - Parameter value: A `UInt` nanoseconds value to convert to a `Time`.
+    public static func nanoseconds(_ value: UInt) -> Time {
+        return Time(nanoseconds: value)
+    }
+
     /// Create a `Time` by converting a `UInt` microseconds value.
     ///
     /// - Parameter value: A `UInt` microseconds value to convert to a `Time`.
@@ -741,6 +1485,20 @@ public struct Time: Sendable, Hashable, Codable {
     /// - Parameter value: A `UInt` seconds value to convert to a `Time`.
     public static func seconds(_ value: UInt) -> Time {
         return Time(seconds: value)
+    }
+
+    /// Create a `Time` by converting a `UInt16` picoseconds value.
+    ///
+    /// - Parameter value: A `UInt16` picoseconds value to convert to a `Time`.
+    public static func picoseconds(_ value: UInt16) -> Time {
+        return Time(picoseconds: value)
+    }
+
+    /// Create a `Time` by converting a `UInt16` nanoseconds value.
+    ///
+    /// - Parameter value: A `UInt16` nanoseconds value to convert to a `Time`.
+    public static func nanoseconds(_ value: UInt16) -> Time {
+        return Time(nanoseconds: value)
     }
 
     /// Create a `Time` by converting a `UInt16` microseconds value.
@@ -764,6 +1522,20 @@ public struct Time: Sendable, Hashable, Codable {
         return Time(seconds: value)
     }
 
+    /// Create a `Time` by converting a `UInt32` picoseconds value.
+    ///
+    /// - Parameter value: A `UInt32` picoseconds value to convert to a `Time`.
+    public static func picoseconds(_ value: UInt32) -> Time {
+        return Time(picoseconds: value)
+    }
+
+    /// Create a `Time` by converting a `UInt32` nanoseconds value.
+    ///
+    /// - Parameter value: A `UInt32` nanoseconds value to convert to a `Time`.
+    public static func nanoseconds(_ value: UInt32) -> Time {
+        return Time(nanoseconds: value)
+    }
+
     /// Create a `Time` by converting a `UInt32` microseconds value.
     ///
     /// - Parameter value: A `UInt32` microseconds value to convert to a `Time`.
@@ -783,6 +1555,20 @@ public struct Time: Sendable, Hashable, Codable {
     /// - Parameter value: A `UInt32` seconds value to convert to a `Time`.
     public static func seconds(_ value: UInt32) -> Time {
         return Time(seconds: value)
+    }
+
+    /// Create a `Time` by converting a `UInt64` picoseconds value.
+    ///
+    /// - Parameter value: A `UInt64` picoseconds value to convert to a `Time`.
+    public static func picoseconds(_ value: UInt64) -> Time {
+        return Time(picoseconds: value)
+    }
+
+    /// Create a `Time` by converting a `UInt64` nanoseconds value.
+    ///
+    /// - Parameter value: A `UInt64` nanoseconds value to convert to a `Time`.
+    public static func nanoseconds(_ value: UInt64) -> Time {
+        return Time(nanoseconds: value)
     }
 
     /// Create a `Time` by converting a `UInt64` microseconds value.
@@ -806,6 +1592,20 @@ public struct Time: Sendable, Hashable, Codable {
         return Time(seconds: value)
     }
 
+    /// Create a `Time` by converting a `UInt8` picoseconds value.
+    ///
+    /// - Parameter value: A `UInt8` picoseconds value to convert to a `Time`.
+    public static func picoseconds(_ value: UInt8) -> Time {
+        return Time(picoseconds: value)
+    }
+
+    /// Create a `Time` by converting a `UInt8` nanoseconds value.
+    ///
+    /// - Parameter value: A `UInt8` nanoseconds value to convert to a `Time`.
+    public static func nanoseconds(_ value: UInt8) -> Time {
+        return Time(nanoseconds: value)
+    }
+
     /// Create a `Time` by converting a `UInt8` microseconds value.
     ///
     /// - Parameter value: A `UInt8` microseconds value to convert to a `Time`.
@@ -825,6 +1625,20 @@ public struct Time: Sendable, Hashable, Codable {
     /// - Parameter value: A `UInt8` seconds value to convert to a `Time`.
     public static func seconds(_ value: UInt8) -> Time {
         return Time(seconds: value)
+    }
+
+    /// Create a `Time` by converting a `Double` picoseconds value.
+    ///
+    /// - Parameter value: A `Double` picoseconds value to convert to a `Time`.
+    public init(picoseconds value: Double) {
+        self.rawValue = TimeTypes.picoseconds_d(Picoseconds_d(value))
+    }
+
+    /// Create a `Time` by converting a `Double` nanoseconds value.
+    ///
+    /// - Parameter value: A `Double` nanoseconds value to convert to a `Time`.
+    public init(nanoseconds value: Double) {
+        self.rawValue = TimeTypes.nanoseconds_d(Nanoseconds_d(value))
     }
 
     /// Create a `Time` by converting a `Double` microseconds value.
@@ -848,6 +1662,20 @@ public struct Time: Sendable, Hashable, Codable {
         self.rawValue = TimeTypes.seconds_d(Seconds_d(value))
     }
 
+    /// Create a `Time` by converting a `Float` picoseconds value.
+    ///
+    /// - Parameter value: A `Float` picoseconds value to convert to a `Time`.
+    public init(picoseconds value: Float) {
+        self.rawValue = TimeTypes.picoseconds_f(Picoseconds_f(value))
+    }
+
+    /// Create a `Time` by converting a `Float` nanoseconds value.
+    ///
+    /// - Parameter value: A `Float` nanoseconds value to convert to a `Time`.
+    public init(nanoseconds value: Float) {
+        self.rawValue = TimeTypes.nanoseconds_f(Nanoseconds_f(value))
+    }
+
     /// Create a `Time` by converting a `Float` microseconds value.
     ///
     /// - Parameter value: A `Float` microseconds value to convert to a `Time`.
@@ -867,6 +1695,20 @@ public struct Time: Sendable, Hashable, Codable {
     /// - Parameter value: A `Float` seconds value to convert to a `Time`.
     public init(seconds value: Float) {
         self.rawValue = TimeTypes.seconds_f(Seconds_f(value))
+    }
+
+    /// Create a `Time` by converting a `Int` picoseconds value.
+    ///
+    /// - Parameter value: A `Int` picoseconds value to convert to a `Time`.
+    public init(picoseconds value: Int) {
+        self.rawValue = TimeTypes.picoseconds_t(Picoseconds_t(value))
+    }
+
+    /// Create a `Time` by converting a `Int` nanoseconds value.
+    ///
+    /// - Parameter value: A `Int` nanoseconds value to convert to a `Time`.
+    public init(nanoseconds value: Int) {
+        self.rawValue = TimeTypes.nanoseconds_t(Nanoseconds_t(value))
     }
 
     /// Create a `Time` by converting a `Int` microseconds value.
@@ -890,6 +1732,20 @@ public struct Time: Sendable, Hashable, Codable {
         self.rawValue = TimeTypes.seconds_t(Seconds_t(value))
     }
 
+    /// Create a `Time` by converting a `Int16` picoseconds value.
+    ///
+    /// - Parameter value: A `Int16` picoseconds value to convert to a `Time`.
+    public init(picoseconds value: Int16) {
+        self.rawValue = TimeTypes.picoseconds_t(Picoseconds_t(value))
+    }
+
+    /// Create a `Time` by converting a `Int16` nanoseconds value.
+    ///
+    /// - Parameter value: A `Int16` nanoseconds value to convert to a `Time`.
+    public init(nanoseconds value: Int16) {
+        self.rawValue = TimeTypes.nanoseconds_t(Nanoseconds_t(value))
+    }
+
     /// Create a `Time` by converting a `Int16` microseconds value.
     ///
     /// - Parameter value: A `Int16` microseconds value to convert to a `Time`.
@@ -909,6 +1765,20 @@ public struct Time: Sendable, Hashable, Codable {
     /// - Parameter value: A `Int16` seconds value to convert to a `Time`.
     public init(seconds value: Int16) {
         self.rawValue = TimeTypes.seconds_t(Seconds_t(value))
+    }
+
+    /// Create a `Time` by converting a `Int32` picoseconds value.
+    ///
+    /// - Parameter value: A `Int32` picoseconds value to convert to a `Time`.
+    public init(picoseconds value: Int32) {
+        self.rawValue = TimeTypes.picoseconds_t(Picoseconds_t(value))
+    }
+
+    /// Create a `Time` by converting a `Int32` nanoseconds value.
+    ///
+    /// - Parameter value: A `Int32` nanoseconds value to convert to a `Time`.
+    public init(nanoseconds value: Int32) {
+        self.rawValue = TimeTypes.nanoseconds_t(Nanoseconds_t(value))
     }
 
     /// Create a `Time` by converting a `Int32` microseconds value.
@@ -932,6 +1802,20 @@ public struct Time: Sendable, Hashable, Codable {
         self.rawValue = TimeTypes.seconds_t(Seconds_t(value))
     }
 
+    /// Create a `Time` by converting a `Int64` picoseconds value.
+    ///
+    /// - Parameter value: A `Int64` picoseconds value to convert to a `Time`.
+    public init(picoseconds value: Int64) {
+        self.rawValue = TimeTypes.picoseconds_d(Picoseconds_d(value))
+    }
+
+    /// Create a `Time` by converting a `Int64` nanoseconds value.
+    ///
+    /// - Parameter value: A `Int64` nanoseconds value to convert to a `Time`.
+    public init(nanoseconds value: Int64) {
+        self.rawValue = TimeTypes.nanoseconds_d(Nanoseconds_d(value))
+    }
+
     /// Create a `Time` by converting a `Int64` microseconds value.
     ///
     /// - Parameter value: A `Int64` microseconds value to convert to a `Time`.
@@ -951,6 +1835,20 @@ public struct Time: Sendable, Hashable, Codable {
     /// - Parameter value: A `Int64` seconds value to convert to a `Time`.
     public init(seconds value: Int64) {
         self.rawValue = TimeTypes.seconds_d(Seconds_d(value))
+    }
+
+    /// Create a `Time` by converting a `Int8` picoseconds value.
+    ///
+    /// - Parameter value: A `Int8` picoseconds value to convert to a `Time`.
+    public init(picoseconds value: Int8) {
+        self.rawValue = TimeTypes.picoseconds_t(Picoseconds_t(value))
+    }
+
+    /// Create a `Time` by converting a `Int8` nanoseconds value.
+    ///
+    /// - Parameter value: A `Int8` nanoseconds value to convert to a `Time`.
+    public init(nanoseconds value: Int8) {
+        self.rawValue = TimeTypes.nanoseconds_t(Nanoseconds_t(value))
     }
 
     /// Create a `Time` by converting a `Int8` microseconds value.
@@ -974,6 +1872,20 @@ public struct Time: Sendable, Hashable, Codable {
         self.rawValue = TimeTypes.seconds_t(Seconds_t(value))
     }
 
+    /// Create a `Time` by converting a `UInt` picoseconds value.
+    ///
+    /// - Parameter value: A `UInt` picoseconds value to convert to a `Time`.
+    public init(picoseconds value: UInt) {
+        self.rawValue = TimeTypes.picoseconds_u(Picoseconds_u(value))
+    }
+
+    /// Create a `Time` by converting a `UInt` nanoseconds value.
+    ///
+    /// - Parameter value: A `UInt` nanoseconds value to convert to a `Time`.
+    public init(nanoseconds value: UInt) {
+        self.rawValue = TimeTypes.nanoseconds_u(Nanoseconds_u(value))
+    }
+
     /// Create a `Time` by converting a `UInt` microseconds value.
     ///
     /// - Parameter value: A `UInt` microseconds value to convert to a `Time`.
@@ -993,6 +1905,20 @@ public struct Time: Sendable, Hashable, Codable {
     /// - Parameter value: A `UInt` seconds value to convert to a `Time`.
     public init(seconds value: UInt) {
         self.rawValue = TimeTypes.seconds_u(Seconds_u(value))
+    }
+
+    /// Create a `Time` by converting a `UInt16` picoseconds value.
+    ///
+    /// - Parameter value: A `UInt16` picoseconds value to convert to a `Time`.
+    public init(picoseconds value: UInt16) {
+        self.rawValue = TimeTypes.picoseconds_u(Picoseconds_u(value))
+    }
+
+    /// Create a `Time` by converting a `UInt16` nanoseconds value.
+    ///
+    /// - Parameter value: A `UInt16` nanoseconds value to convert to a `Time`.
+    public init(nanoseconds value: UInt16) {
+        self.rawValue = TimeTypes.nanoseconds_u(Nanoseconds_u(value))
     }
 
     /// Create a `Time` by converting a `UInt16` microseconds value.
@@ -1016,6 +1942,20 @@ public struct Time: Sendable, Hashable, Codable {
         self.rawValue = TimeTypes.seconds_u(Seconds_u(value))
     }
 
+    /// Create a `Time` by converting a `UInt32` picoseconds value.
+    ///
+    /// - Parameter value: A `UInt32` picoseconds value to convert to a `Time`.
+    public init(picoseconds value: UInt32) {
+        self.rawValue = TimeTypes.picoseconds_u(Picoseconds_u(value))
+    }
+
+    /// Create a `Time` by converting a `UInt32` nanoseconds value.
+    ///
+    /// - Parameter value: A `UInt32` nanoseconds value to convert to a `Time`.
+    public init(nanoseconds value: UInt32) {
+        self.rawValue = TimeTypes.nanoseconds_u(Nanoseconds_u(value))
+    }
+
     /// Create a `Time` by converting a `UInt32` microseconds value.
     ///
     /// - Parameter value: A `UInt32` microseconds value to convert to a `Time`.
@@ -1037,6 +1977,20 @@ public struct Time: Sendable, Hashable, Codable {
         self.rawValue = TimeTypes.seconds_u(Seconds_u(value))
     }
 
+    /// Create a `Time` by converting a `UInt64` picoseconds value.
+    ///
+    /// - Parameter value: A `UInt64` picoseconds value to convert to a `Time`.
+    public init(picoseconds value: UInt64) {
+        self.rawValue = TimeTypes.picoseconds_d(Picoseconds_d(value))
+    }
+
+    /// Create a `Time` by converting a `UInt64` nanoseconds value.
+    ///
+    /// - Parameter value: A `UInt64` nanoseconds value to convert to a `Time`.
+    public init(nanoseconds value: UInt64) {
+        self.rawValue = TimeTypes.nanoseconds_d(Nanoseconds_d(value))
+    }
+
     /// Create a `Time` by converting a `UInt64` microseconds value.
     ///
     /// - Parameter value: A `UInt64` microseconds value to convert to a `Time`.
@@ -1056,6 +2010,20 @@ public struct Time: Sendable, Hashable, Codable {
     /// - Parameter value: A `UInt64` seconds value to convert to a `Time`.
     public init(seconds value: UInt64) {
         self.rawValue = TimeTypes.seconds_d(Seconds_d(value))
+    }
+
+    /// Create a `Time` by converting a `UInt8` picoseconds value.
+    ///
+    /// - Parameter value: A `UInt8` picoseconds value to convert to a `Time`.
+    public init(picoseconds value: UInt8) {
+        self.rawValue = TimeTypes.picoseconds_u(Picoseconds_u(value))
+    }
+
+    /// Create a `Time` by converting a `UInt8` nanoseconds value.
+    ///
+    /// - Parameter value: A `UInt8` nanoseconds value to convert to a `Time`.
+    public init(nanoseconds value: UInt8) {
+        self.rawValue = TimeTypes.nanoseconds_u(Nanoseconds_u(value))
     }
 
     /// Create a `Time` by converting a `UInt8` microseconds value.
@@ -1087,6 +2055,22 @@ public extension Double {
 
     init(_ value: Time) {
         switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
         case .microseconds_t(let value):
             self.init(value)
         case .microseconds_u(let value):
@@ -1122,6 +2106,22 @@ public extension Float {
 
     init(_ value: Time) {
         switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
         case .microseconds_t(let value):
             self.init(value)
         case .microseconds_u(let value):
@@ -1157,6 +2157,22 @@ public extension Int {
 
     init(_ value: Time) {
         switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
         case .microseconds_t(let value):
             self.init(value)
         case .microseconds_u(let value):
@@ -1192,6 +2208,22 @@ public extension Int16 {
 
     init(_ value: Time) {
         switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
         case .microseconds_t(let value):
             self.init(value)
         case .microseconds_u(let value):
@@ -1227,6 +2259,22 @@ public extension Int32 {
 
     init(_ value: Time) {
         switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
         case .microseconds_t(let value):
             self.init(value)
         case .microseconds_u(let value):
@@ -1262,6 +2310,22 @@ public extension Int64 {
 
     init(_ value: Time) {
         switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
         case .microseconds_t(let value):
             self.init(value)
         case .microseconds_u(let value):
@@ -1297,6 +2361,22 @@ public extension Int8 {
 
     init(_ value: Time) {
         switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
         case .microseconds_t(let value):
             self.init(value)
         case .microseconds_u(let value):
@@ -1332,6 +2412,22 @@ public extension UInt {
 
     init(_ value: Time) {
         switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
         case .microseconds_t(let value):
             self.init(value)
         case .microseconds_u(let value):
@@ -1367,6 +2463,22 @@ public extension UInt16 {
 
     init(_ value: Time) {
         switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
         case .microseconds_t(let value):
             self.init(value)
         case .microseconds_u(let value):
@@ -1402,6 +2514,22 @@ public extension UInt32 {
 
     init(_ value: Time) {
         switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
         case .microseconds_t(let value):
             self.init(value)
         case .microseconds_u(let value):
@@ -1437,6 +2565,22 @@ public extension UInt64 {
 
     init(_ value: Time) {
         switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
         case .microseconds_t(let value):
             self.init(value)
         case .microseconds_u(let value):
@@ -1472,6 +2616,22 @@ public extension UInt8 {
 
     init(_ value: Time) {
         switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
         case .microseconds_t(let value):
             self.init(value)
         case .microseconds_u(let value):
@@ -1500,6 +2660,3116 @@ public extension UInt8 {
     }
 
 }
+
+/// A signed integer type for the picoseconds unit.
+public struct Picoseconds_t: GUUnitsTType, Hashable, Codable {
+
+// MARK: - Converting Between The Underlying guunits C Type
+
+    /// Convert to the guunits underlying C type `picoseconds_t`
+    public let rawValue: picoseconds_t
+
+    /// Create a `Picoseconds_t` from the underlying guunits C type `picoseconds_t`.
+    public init(rawValue: picoseconds_t) {
+        self.rawValue = rawValue
+    }
+
+// MARK: - Converting From Swift Numeric Types
+
+    /// Create a `Picoseconds_t` by converting a `Double`.
+    ///
+    /// - Parameter value: A `Double` value to convert to a `Picoseconds_t`.
+    public init(_ value: Double) {
+        self.rawValue = d_to_ps_t(value)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `Float`.
+    ///
+    /// - Parameter value: A `Float` value to convert to a `Picoseconds_t`.
+    public init(_ value: Float) {
+        self.rawValue = f_to_ps_t(value)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `Int`.
+    ///
+    /// - Parameter value: A `Int` value to convert to a `Picoseconds_t`.
+    public init(_ value: Int) {
+        self.rawValue = i64_to_ps_t(Int64(value))
+    }
+
+    /// Create a `Picoseconds_t` by converting a `Int16`.
+    ///
+    /// - Parameter value: A `Int16` value to convert to a `Picoseconds_t`.
+    public init(_ value: Int16) {
+        self.rawValue = i16_to_ps_t(value)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `Int32`.
+    ///
+    /// - Parameter value: A `Int32` value to convert to a `Picoseconds_t`.
+    public init(_ value: Int32) {
+        self.rawValue = i32_to_ps_t(value)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `Int64`.
+    ///
+    /// - Parameter value: A `Int64` value to convert to a `Picoseconds_t`.
+    public init(_ value: Int64) {
+        self.rawValue = i64_to_ps_t(value)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `Int8`.
+    ///
+    /// - Parameter value: A `Int8` value to convert to a `Picoseconds_t`.
+    public init(_ value: Int8) {
+        self.rawValue = i8_to_ps_t(value)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `UInt`.
+    ///
+    /// - Parameter value: A `UInt` value to convert to a `Picoseconds_t`.
+    public init(_ value: UInt) {
+        self.rawValue = u64_to_ps_t(UInt64(value))
+    }
+
+    /// Create a `Picoseconds_t` by converting a `UInt16`.
+    ///
+    /// - Parameter value: A `UInt16` value to convert to a `Picoseconds_t`.
+    public init(_ value: UInt16) {
+        self.rawValue = u16_to_ps_t(value)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `UInt32`.
+    ///
+    /// - Parameter value: A `UInt32` value to convert to a `Picoseconds_t`.
+    public init(_ value: UInt32) {
+        self.rawValue = u32_to_ps_t(value)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `UInt64`.
+    ///
+    /// - Parameter value: A `UInt64` value to convert to a `Picoseconds_t`.
+    public init(_ value: UInt64) {
+        self.rawValue = u64_to_ps_t(value)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `UInt8`.
+    ///
+    /// - Parameter value: A `UInt8` value to convert to a `Picoseconds_t`.
+    public init(_ value: UInt8) {
+        self.rawValue = u8_to_ps_t(value)
+    }
+
+// MARK: - Converting From Other Units
+
+    /// Create a `Picoseconds_t` by converting a `Time`.
+    ///
+    /// - Parameter value: A `Time` value to convert to a `Picoseconds_t`.
+    public init(_ value: Time) {
+        switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
+        case .microseconds_t(let value):
+            self.init(value)
+        case .microseconds_u(let value):
+            self.init(value)
+        case .microseconds_f(let value):
+            self.init(value)
+        case .microseconds_d(let value):
+            self.init(value)
+        case .milliseconds_t(let value):
+            self.init(value)
+        case .milliseconds_u(let value):
+            self.init(value)
+        case .milliseconds_f(let value):
+            self.init(value)
+        case .milliseconds_d(let value):
+            self.init(value)
+        case .seconds_t(let value):
+            self.init(value)
+        case .seconds_u(let value):
+            self.init(value)
+        case .seconds_f(let value):
+            self.init(value)
+        case .seconds_d(let value):
+            self.init(value)
+        }
+    }
+
+    /// Create a `Picoseconds_t` by converting a `Microseconds_t`.
+    ///
+    /// - Parameter value: A `Microseconds_t` value to convert to a `Picoseconds_t`.
+    public init(_ value: Microseconds_t) {
+        self.rawValue = us_t_to_ps_t(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `Microseconds_u`.
+    ///
+    /// - Parameter value: A `Microseconds_u` value to convert to a `Picoseconds_t`.
+    public init(_ value: Microseconds_u) {
+        self.rawValue = us_u_to_ps_t(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `Microseconds_f`.
+    ///
+    /// - Parameter value: A `Microseconds_f` value to convert to a `Picoseconds_t`.
+    public init(_ value: Microseconds_f) {
+        self.rawValue = us_f_to_ps_t(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `Microseconds_d`.
+    ///
+    /// - Parameter value: A `Microseconds_d` value to convert to a `Picoseconds_t`.
+    public init(_ value: Microseconds_d) {
+        self.rawValue = us_d_to_ps_t(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `Milliseconds_t`.
+    ///
+    /// - Parameter value: A `Milliseconds_t` value to convert to a `Picoseconds_t`.
+    public init(_ value: Milliseconds_t) {
+        self.rawValue = ms_t_to_ps_t(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `Milliseconds_u`.
+    ///
+    /// - Parameter value: A `Milliseconds_u` value to convert to a `Picoseconds_t`.
+    public init(_ value: Milliseconds_u) {
+        self.rawValue = ms_u_to_ps_t(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `Milliseconds_f`.
+    ///
+    /// - Parameter value: A `Milliseconds_f` value to convert to a `Picoseconds_t`.
+    public init(_ value: Milliseconds_f) {
+        self.rawValue = ms_f_to_ps_t(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `Milliseconds_d`.
+    ///
+    /// - Parameter value: A `Milliseconds_d` value to convert to a `Picoseconds_t`.
+    public init(_ value: Milliseconds_d) {
+        self.rawValue = ms_d_to_ps_t(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Picoseconds_t`.
+    public init(_ value: Nanoseconds_t) {
+        self.rawValue = ns_t_to_ps_t(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Picoseconds_t`.
+    public init(_ value: Nanoseconds_u) {
+        self.rawValue = ns_u_to_ps_t(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Picoseconds_t`.
+    public init(_ value: Nanoseconds_f) {
+        self.rawValue = ns_f_to_ps_t(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Picoseconds_t`.
+    public init(_ value: Nanoseconds_d) {
+        self.rawValue = ns_d_to_ps_t(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `Seconds_t`.
+    ///
+    /// - Parameter value: A `Seconds_t` value to convert to a `Picoseconds_t`.
+    public init(_ value: Seconds_t) {
+        self.rawValue = s_t_to_ps_t(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `Seconds_u`.
+    ///
+    /// - Parameter value: A `Seconds_u` value to convert to a `Picoseconds_t`.
+    public init(_ value: Seconds_u) {
+        self.rawValue = s_u_to_ps_t(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `Seconds_f`.
+    ///
+    /// - Parameter value: A `Seconds_f` value to convert to a `Picoseconds_t`.
+    public init(_ value: Seconds_f) {
+        self.rawValue = s_f_to_ps_t(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `Seconds_d`.
+    ///
+    /// - Parameter value: A `Seconds_d` value to convert to a `Picoseconds_t`.
+    public init(_ value: Seconds_d) {
+        self.rawValue = s_d_to_ps_t(value.rawValue)
+    }
+
+// MARK: - Converting From Other Precisions
+
+    /// Create a `Picoseconds_t` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Picoseconds_t`.
+    public init(_ value: Picoseconds_d) {
+        self.rawValue = ps_d_to_ps_t(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Picoseconds_t`.
+    public init(_ value: Picoseconds_f) {
+        self.rawValue = ps_f_to_ps_t(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_t` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Picoseconds_t`.
+    public init(_ value: Picoseconds_u) {
+        self.rawValue = ps_u_to_ps_t(value.rawValue)
+    }
+
+}
+
+/// An unsigned integer type for the picoseconds unit.
+public struct Picoseconds_u: GUUnitsUType, Hashable, Codable {
+
+// MARK: - Converting Between The Underlying guunits C Type
+
+    /// Convert to the guunits underlying C type `picoseconds_u`
+    public let rawValue: picoseconds_u
+
+    /// Create a `Picoseconds_u` from the underlying guunits C type `picoseconds_u`.
+    public init(rawValue: picoseconds_u) {
+        self.rawValue = rawValue
+    }
+
+// MARK: - Converting From Swift Numeric Types
+
+    /// Create a `Picoseconds_u` by converting a `Double`.
+    ///
+    /// - Parameter value: A `Double` value to convert to a `Picoseconds_u`.
+    public init(_ value: Double) {
+        self.rawValue = d_to_ps_u(value)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `Float`.
+    ///
+    /// - Parameter value: A `Float` value to convert to a `Picoseconds_u`.
+    public init(_ value: Float) {
+        self.rawValue = f_to_ps_u(value)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `Int`.
+    ///
+    /// - Parameter value: A `Int` value to convert to a `Picoseconds_u`.
+    public init(_ value: Int) {
+        self.rawValue = i64_to_ps_u(Int64(value))
+    }
+
+    /// Create a `Picoseconds_u` by converting a `Int16`.
+    ///
+    /// - Parameter value: A `Int16` value to convert to a `Picoseconds_u`.
+    public init(_ value: Int16) {
+        self.rawValue = i16_to_ps_u(value)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `Int32`.
+    ///
+    /// - Parameter value: A `Int32` value to convert to a `Picoseconds_u`.
+    public init(_ value: Int32) {
+        self.rawValue = i32_to_ps_u(value)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `Int64`.
+    ///
+    /// - Parameter value: A `Int64` value to convert to a `Picoseconds_u`.
+    public init(_ value: Int64) {
+        self.rawValue = i64_to_ps_u(value)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `Int8`.
+    ///
+    /// - Parameter value: A `Int8` value to convert to a `Picoseconds_u`.
+    public init(_ value: Int8) {
+        self.rawValue = i8_to_ps_u(value)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `UInt`.
+    ///
+    /// - Parameter value: A `UInt` value to convert to a `Picoseconds_u`.
+    public init(_ value: UInt) {
+        self.rawValue = u64_to_ps_u(UInt64(value))
+    }
+
+    /// Create a `Picoseconds_u` by converting a `UInt16`.
+    ///
+    /// - Parameter value: A `UInt16` value to convert to a `Picoseconds_u`.
+    public init(_ value: UInt16) {
+        self.rawValue = u16_to_ps_u(value)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `UInt32`.
+    ///
+    /// - Parameter value: A `UInt32` value to convert to a `Picoseconds_u`.
+    public init(_ value: UInt32) {
+        self.rawValue = u32_to_ps_u(value)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `UInt64`.
+    ///
+    /// - Parameter value: A `UInt64` value to convert to a `Picoseconds_u`.
+    public init(_ value: UInt64) {
+        self.rawValue = u64_to_ps_u(value)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `UInt8`.
+    ///
+    /// - Parameter value: A `UInt8` value to convert to a `Picoseconds_u`.
+    public init(_ value: UInt8) {
+        self.rawValue = u8_to_ps_u(value)
+    }
+
+// MARK: - Converting From Other Units
+
+    /// Create a `Picoseconds_u` by converting a `Time`.
+    ///
+    /// - Parameter value: A `Time` value to convert to a `Picoseconds_u`.
+    public init(_ value: Time) {
+        switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
+        case .microseconds_t(let value):
+            self.init(value)
+        case .microseconds_u(let value):
+            self.init(value)
+        case .microseconds_f(let value):
+            self.init(value)
+        case .microseconds_d(let value):
+            self.init(value)
+        case .milliseconds_t(let value):
+            self.init(value)
+        case .milliseconds_u(let value):
+            self.init(value)
+        case .milliseconds_f(let value):
+            self.init(value)
+        case .milliseconds_d(let value):
+            self.init(value)
+        case .seconds_t(let value):
+            self.init(value)
+        case .seconds_u(let value):
+            self.init(value)
+        case .seconds_f(let value):
+            self.init(value)
+        case .seconds_d(let value):
+            self.init(value)
+        }
+    }
+
+    /// Create a `Picoseconds_u` by converting a `Microseconds_t`.
+    ///
+    /// - Parameter value: A `Microseconds_t` value to convert to a `Picoseconds_u`.
+    public init(_ value: Microseconds_t) {
+        self.rawValue = us_t_to_ps_u(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `Microseconds_u`.
+    ///
+    /// - Parameter value: A `Microseconds_u` value to convert to a `Picoseconds_u`.
+    public init(_ value: Microseconds_u) {
+        self.rawValue = us_u_to_ps_u(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `Microseconds_f`.
+    ///
+    /// - Parameter value: A `Microseconds_f` value to convert to a `Picoseconds_u`.
+    public init(_ value: Microseconds_f) {
+        self.rawValue = us_f_to_ps_u(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `Microseconds_d`.
+    ///
+    /// - Parameter value: A `Microseconds_d` value to convert to a `Picoseconds_u`.
+    public init(_ value: Microseconds_d) {
+        self.rawValue = us_d_to_ps_u(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `Milliseconds_t`.
+    ///
+    /// - Parameter value: A `Milliseconds_t` value to convert to a `Picoseconds_u`.
+    public init(_ value: Milliseconds_t) {
+        self.rawValue = ms_t_to_ps_u(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `Milliseconds_u`.
+    ///
+    /// - Parameter value: A `Milliseconds_u` value to convert to a `Picoseconds_u`.
+    public init(_ value: Milliseconds_u) {
+        self.rawValue = ms_u_to_ps_u(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `Milliseconds_f`.
+    ///
+    /// - Parameter value: A `Milliseconds_f` value to convert to a `Picoseconds_u`.
+    public init(_ value: Milliseconds_f) {
+        self.rawValue = ms_f_to_ps_u(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `Milliseconds_d`.
+    ///
+    /// - Parameter value: A `Milliseconds_d` value to convert to a `Picoseconds_u`.
+    public init(_ value: Milliseconds_d) {
+        self.rawValue = ms_d_to_ps_u(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Picoseconds_u`.
+    public init(_ value: Nanoseconds_t) {
+        self.rawValue = ns_t_to_ps_u(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Picoseconds_u`.
+    public init(_ value: Nanoseconds_u) {
+        self.rawValue = ns_u_to_ps_u(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Picoseconds_u`.
+    public init(_ value: Nanoseconds_f) {
+        self.rawValue = ns_f_to_ps_u(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Picoseconds_u`.
+    public init(_ value: Nanoseconds_d) {
+        self.rawValue = ns_d_to_ps_u(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `Seconds_t`.
+    ///
+    /// - Parameter value: A `Seconds_t` value to convert to a `Picoseconds_u`.
+    public init(_ value: Seconds_t) {
+        self.rawValue = s_t_to_ps_u(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `Seconds_u`.
+    ///
+    /// - Parameter value: A `Seconds_u` value to convert to a `Picoseconds_u`.
+    public init(_ value: Seconds_u) {
+        self.rawValue = s_u_to_ps_u(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `Seconds_f`.
+    ///
+    /// - Parameter value: A `Seconds_f` value to convert to a `Picoseconds_u`.
+    public init(_ value: Seconds_f) {
+        self.rawValue = s_f_to_ps_u(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `Seconds_d`.
+    ///
+    /// - Parameter value: A `Seconds_d` value to convert to a `Picoseconds_u`.
+    public init(_ value: Seconds_d) {
+        self.rawValue = s_d_to_ps_u(value.rawValue)
+    }
+
+// MARK: - Converting From Other Precisions
+
+    /// Create a `Picoseconds_u` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Picoseconds_u`.
+    public init(_ value: Picoseconds_d) {
+        self.rawValue = ps_d_to_ps_u(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Picoseconds_u`.
+    public init(_ value: Picoseconds_f) {
+        self.rawValue = ps_f_to_ps_u(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_u` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Picoseconds_u`.
+    public init(_ value: Picoseconds_t) {
+        self.rawValue = ps_t_to_ps_u(value.rawValue)
+    }
+
+}
+
+/// A floating point type for the picoseconds unit.
+public struct Picoseconds_f: GUUnitsFType, Hashable, Codable {
+
+// MARK: - Converting Between The Underlying guunits C Type
+
+    /// Convert to the guunits underlying C type `picoseconds_f`
+    public let rawValue: picoseconds_f
+
+    /// Create a `Picoseconds_f` from the underlying guunits C type `picoseconds_f`.
+    public init(rawValue: picoseconds_f) {
+        self.rawValue = rawValue
+    }
+
+// MARK: - Converting From Swift Numeric Types
+
+    /// Create a `Picoseconds_f` by converting a `Double`.
+    ///
+    /// - Parameter value: A `Double` value to convert to a `Picoseconds_f`.
+    public init(_ value: Double) {
+        self.rawValue = d_to_ps_f(value)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `Float`.
+    ///
+    /// - Parameter value: A `Float` value to convert to a `Picoseconds_f`.
+    public init(_ value: Float) {
+        self.rawValue = f_to_ps_f(value)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `Int`.
+    ///
+    /// - Parameter value: A `Int` value to convert to a `Picoseconds_f`.
+    public init(_ value: Int) {
+        self.rawValue = i64_to_ps_f(Int64(value))
+    }
+
+    /// Create a `Picoseconds_f` by converting a `Int16`.
+    ///
+    /// - Parameter value: A `Int16` value to convert to a `Picoseconds_f`.
+    public init(_ value: Int16) {
+        self.rawValue = i16_to_ps_f(value)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `Int32`.
+    ///
+    /// - Parameter value: A `Int32` value to convert to a `Picoseconds_f`.
+    public init(_ value: Int32) {
+        self.rawValue = i32_to_ps_f(value)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `Int64`.
+    ///
+    /// - Parameter value: A `Int64` value to convert to a `Picoseconds_f`.
+    public init(_ value: Int64) {
+        self.rawValue = i64_to_ps_f(value)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `Int8`.
+    ///
+    /// - Parameter value: A `Int8` value to convert to a `Picoseconds_f`.
+    public init(_ value: Int8) {
+        self.rawValue = i8_to_ps_f(value)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `UInt`.
+    ///
+    /// - Parameter value: A `UInt` value to convert to a `Picoseconds_f`.
+    public init(_ value: UInt) {
+        self.rawValue = u64_to_ps_f(UInt64(value))
+    }
+
+    /// Create a `Picoseconds_f` by converting a `UInt16`.
+    ///
+    /// - Parameter value: A `UInt16` value to convert to a `Picoseconds_f`.
+    public init(_ value: UInt16) {
+        self.rawValue = u16_to_ps_f(value)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `UInt32`.
+    ///
+    /// - Parameter value: A `UInt32` value to convert to a `Picoseconds_f`.
+    public init(_ value: UInt32) {
+        self.rawValue = u32_to_ps_f(value)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `UInt64`.
+    ///
+    /// - Parameter value: A `UInt64` value to convert to a `Picoseconds_f`.
+    public init(_ value: UInt64) {
+        self.rawValue = u64_to_ps_f(value)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `UInt8`.
+    ///
+    /// - Parameter value: A `UInt8` value to convert to a `Picoseconds_f`.
+    public init(_ value: UInt8) {
+        self.rawValue = u8_to_ps_f(value)
+    }
+
+// MARK: - Converting From Other Units
+
+    /// Create a `Picoseconds_f` by converting a `Time`.
+    ///
+    /// - Parameter value: A `Time` value to convert to a `Picoseconds_f`.
+    public init(_ value: Time) {
+        switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
+        case .microseconds_t(let value):
+            self.init(value)
+        case .microseconds_u(let value):
+            self.init(value)
+        case .microseconds_f(let value):
+            self.init(value)
+        case .microseconds_d(let value):
+            self.init(value)
+        case .milliseconds_t(let value):
+            self.init(value)
+        case .milliseconds_u(let value):
+            self.init(value)
+        case .milliseconds_f(let value):
+            self.init(value)
+        case .milliseconds_d(let value):
+            self.init(value)
+        case .seconds_t(let value):
+            self.init(value)
+        case .seconds_u(let value):
+            self.init(value)
+        case .seconds_f(let value):
+            self.init(value)
+        case .seconds_d(let value):
+            self.init(value)
+        }
+    }
+
+    /// Create a `Picoseconds_f` by converting a `Microseconds_t`.
+    ///
+    /// - Parameter value: A `Microseconds_t` value to convert to a `Picoseconds_f`.
+    public init(_ value: Microseconds_t) {
+        self.rawValue = us_t_to_ps_f(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `Microseconds_u`.
+    ///
+    /// - Parameter value: A `Microseconds_u` value to convert to a `Picoseconds_f`.
+    public init(_ value: Microseconds_u) {
+        self.rawValue = us_u_to_ps_f(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `Microseconds_f`.
+    ///
+    /// - Parameter value: A `Microseconds_f` value to convert to a `Picoseconds_f`.
+    public init(_ value: Microseconds_f) {
+        self.rawValue = us_f_to_ps_f(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `Microseconds_d`.
+    ///
+    /// - Parameter value: A `Microseconds_d` value to convert to a `Picoseconds_f`.
+    public init(_ value: Microseconds_d) {
+        self.rawValue = us_d_to_ps_f(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `Milliseconds_t`.
+    ///
+    /// - Parameter value: A `Milliseconds_t` value to convert to a `Picoseconds_f`.
+    public init(_ value: Milliseconds_t) {
+        self.rawValue = ms_t_to_ps_f(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `Milliseconds_u`.
+    ///
+    /// - Parameter value: A `Milliseconds_u` value to convert to a `Picoseconds_f`.
+    public init(_ value: Milliseconds_u) {
+        self.rawValue = ms_u_to_ps_f(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `Milliseconds_f`.
+    ///
+    /// - Parameter value: A `Milliseconds_f` value to convert to a `Picoseconds_f`.
+    public init(_ value: Milliseconds_f) {
+        self.rawValue = ms_f_to_ps_f(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `Milliseconds_d`.
+    ///
+    /// - Parameter value: A `Milliseconds_d` value to convert to a `Picoseconds_f`.
+    public init(_ value: Milliseconds_d) {
+        self.rawValue = ms_d_to_ps_f(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Picoseconds_f`.
+    public init(_ value: Nanoseconds_t) {
+        self.rawValue = ns_t_to_ps_f(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Picoseconds_f`.
+    public init(_ value: Nanoseconds_u) {
+        self.rawValue = ns_u_to_ps_f(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Picoseconds_f`.
+    public init(_ value: Nanoseconds_f) {
+        self.rawValue = ns_f_to_ps_f(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Picoseconds_f`.
+    public init(_ value: Nanoseconds_d) {
+        self.rawValue = ns_d_to_ps_f(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `Seconds_t`.
+    ///
+    /// - Parameter value: A `Seconds_t` value to convert to a `Picoseconds_f`.
+    public init(_ value: Seconds_t) {
+        self.rawValue = s_t_to_ps_f(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `Seconds_u`.
+    ///
+    /// - Parameter value: A `Seconds_u` value to convert to a `Picoseconds_f`.
+    public init(_ value: Seconds_u) {
+        self.rawValue = s_u_to_ps_f(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `Seconds_f`.
+    ///
+    /// - Parameter value: A `Seconds_f` value to convert to a `Picoseconds_f`.
+    public init(_ value: Seconds_f) {
+        self.rawValue = s_f_to_ps_f(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `Seconds_d`.
+    ///
+    /// - Parameter value: A `Seconds_d` value to convert to a `Picoseconds_f`.
+    public init(_ value: Seconds_d) {
+        self.rawValue = s_d_to_ps_f(value.rawValue)
+    }
+
+// MARK: - Converting From Other Precisions
+
+    /// Create a `Picoseconds_f` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Picoseconds_f`.
+    public init(_ value: Picoseconds_d) {
+        self.rawValue = ps_d_to_ps_f(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Picoseconds_f`.
+    public init(_ value: Picoseconds_t) {
+        self.rawValue = ps_t_to_ps_f(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_f` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Picoseconds_f`.
+    public init(_ value: Picoseconds_u) {
+        self.rawValue = ps_u_to_ps_f(value.rawValue)
+    }
+
+}
+
+/// A double type for the picoseconds unit.
+public struct Picoseconds_d: GUUnitsDType, Hashable, Codable {
+
+// MARK: - Converting Between The Underlying guunits C Type
+
+    /// Convert to the guunits underlying C type `picoseconds_d`
+    public let rawValue: picoseconds_d
+
+    /// Create a `Picoseconds_d` from the underlying guunits C type `picoseconds_d`.
+    public init(rawValue: picoseconds_d) {
+        self.rawValue = rawValue
+    }
+
+// MARK: - Converting From Swift Numeric Types
+
+    /// Create a `Picoseconds_d` by converting a `Double`.
+    ///
+    /// - Parameter value: A `Double` value to convert to a `Picoseconds_d`.
+    public init(_ value: Double) {
+        self.rawValue = d_to_ps_d(value)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `Float`.
+    ///
+    /// - Parameter value: A `Float` value to convert to a `Picoseconds_d`.
+    public init(_ value: Float) {
+        self.rawValue = f_to_ps_d(value)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `Int`.
+    ///
+    /// - Parameter value: A `Int` value to convert to a `Picoseconds_d`.
+    public init(_ value: Int) {
+        self.rawValue = i64_to_ps_d(Int64(value))
+    }
+
+    /// Create a `Picoseconds_d` by converting a `Int16`.
+    ///
+    /// - Parameter value: A `Int16` value to convert to a `Picoseconds_d`.
+    public init(_ value: Int16) {
+        self.rawValue = i16_to_ps_d(value)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `Int32`.
+    ///
+    /// - Parameter value: A `Int32` value to convert to a `Picoseconds_d`.
+    public init(_ value: Int32) {
+        self.rawValue = i32_to_ps_d(value)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `Int64`.
+    ///
+    /// - Parameter value: A `Int64` value to convert to a `Picoseconds_d`.
+    public init(_ value: Int64) {
+        self.rawValue = i64_to_ps_d(value)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `Int8`.
+    ///
+    /// - Parameter value: A `Int8` value to convert to a `Picoseconds_d`.
+    public init(_ value: Int8) {
+        self.rawValue = i8_to_ps_d(value)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `UInt`.
+    ///
+    /// - Parameter value: A `UInt` value to convert to a `Picoseconds_d`.
+    public init(_ value: UInt) {
+        self.rawValue = u64_to_ps_d(UInt64(value))
+    }
+
+    /// Create a `Picoseconds_d` by converting a `UInt16`.
+    ///
+    /// - Parameter value: A `UInt16` value to convert to a `Picoseconds_d`.
+    public init(_ value: UInt16) {
+        self.rawValue = u16_to_ps_d(value)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `UInt32`.
+    ///
+    /// - Parameter value: A `UInt32` value to convert to a `Picoseconds_d`.
+    public init(_ value: UInt32) {
+        self.rawValue = u32_to_ps_d(value)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `UInt64`.
+    ///
+    /// - Parameter value: A `UInt64` value to convert to a `Picoseconds_d`.
+    public init(_ value: UInt64) {
+        self.rawValue = u64_to_ps_d(value)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `UInt8`.
+    ///
+    /// - Parameter value: A `UInt8` value to convert to a `Picoseconds_d`.
+    public init(_ value: UInt8) {
+        self.rawValue = u8_to_ps_d(value)
+    }
+
+// MARK: - Converting From Other Units
+
+    /// Create a `Picoseconds_d` by converting a `Time`.
+    ///
+    /// - Parameter value: A `Time` value to convert to a `Picoseconds_d`.
+    public init(_ value: Time) {
+        switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
+        case .microseconds_t(let value):
+            self.init(value)
+        case .microseconds_u(let value):
+            self.init(value)
+        case .microseconds_f(let value):
+            self.init(value)
+        case .microseconds_d(let value):
+            self.init(value)
+        case .milliseconds_t(let value):
+            self.init(value)
+        case .milliseconds_u(let value):
+            self.init(value)
+        case .milliseconds_f(let value):
+            self.init(value)
+        case .milliseconds_d(let value):
+            self.init(value)
+        case .seconds_t(let value):
+            self.init(value)
+        case .seconds_u(let value):
+            self.init(value)
+        case .seconds_f(let value):
+            self.init(value)
+        case .seconds_d(let value):
+            self.init(value)
+        }
+    }
+
+    /// Create a `Picoseconds_d` by converting a `Microseconds_t`.
+    ///
+    /// - Parameter value: A `Microseconds_t` value to convert to a `Picoseconds_d`.
+    public init(_ value: Microseconds_t) {
+        self.rawValue = us_t_to_ps_d(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `Microseconds_u`.
+    ///
+    /// - Parameter value: A `Microseconds_u` value to convert to a `Picoseconds_d`.
+    public init(_ value: Microseconds_u) {
+        self.rawValue = us_u_to_ps_d(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `Microseconds_f`.
+    ///
+    /// - Parameter value: A `Microseconds_f` value to convert to a `Picoseconds_d`.
+    public init(_ value: Microseconds_f) {
+        self.rawValue = us_f_to_ps_d(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `Microseconds_d`.
+    ///
+    /// - Parameter value: A `Microseconds_d` value to convert to a `Picoseconds_d`.
+    public init(_ value: Microseconds_d) {
+        self.rawValue = us_d_to_ps_d(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `Milliseconds_t`.
+    ///
+    /// - Parameter value: A `Milliseconds_t` value to convert to a `Picoseconds_d`.
+    public init(_ value: Milliseconds_t) {
+        self.rawValue = ms_t_to_ps_d(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `Milliseconds_u`.
+    ///
+    /// - Parameter value: A `Milliseconds_u` value to convert to a `Picoseconds_d`.
+    public init(_ value: Milliseconds_u) {
+        self.rawValue = ms_u_to_ps_d(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `Milliseconds_f`.
+    ///
+    /// - Parameter value: A `Milliseconds_f` value to convert to a `Picoseconds_d`.
+    public init(_ value: Milliseconds_f) {
+        self.rawValue = ms_f_to_ps_d(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `Milliseconds_d`.
+    ///
+    /// - Parameter value: A `Milliseconds_d` value to convert to a `Picoseconds_d`.
+    public init(_ value: Milliseconds_d) {
+        self.rawValue = ms_d_to_ps_d(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Picoseconds_d`.
+    public init(_ value: Nanoseconds_t) {
+        self.rawValue = ns_t_to_ps_d(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Picoseconds_d`.
+    public init(_ value: Nanoseconds_u) {
+        self.rawValue = ns_u_to_ps_d(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Picoseconds_d`.
+    public init(_ value: Nanoseconds_f) {
+        self.rawValue = ns_f_to_ps_d(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Picoseconds_d`.
+    public init(_ value: Nanoseconds_d) {
+        self.rawValue = ns_d_to_ps_d(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `Seconds_t`.
+    ///
+    /// - Parameter value: A `Seconds_t` value to convert to a `Picoseconds_d`.
+    public init(_ value: Seconds_t) {
+        self.rawValue = s_t_to_ps_d(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `Seconds_u`.
+    ///
+    /// - Parameter value: A `Seconds_u` value to convert to a `Picoseconds_d`.
+    public init(_ value: Seconds_u) {
+        self.rawValue = s_u_to_ps_d(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `Seconds_f`.
+    ///
+    /// - Parameter value: A `Seconds_f` value to convert to a `Picoseconds_d`.
+    public init(_ value: Seconds_f) {
+        self.rawValue = s_f_to_ps_d(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `Seconds_d`.
+    ///
+    /// - Parameter value: A `Seconds_d` value to convert to a `Picoseconds_d`.
+    public init(_ value: Seconds_d) {
+        self.rawValue = s_d_to_ps_d(value.rawValue)
+    }
+
+// MARK: - Converting From Other Precisions
+
+    /// Create a `Picoseconds_d` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Picoseconds_d`.
+    public init(_ value: Picoseconds_f) {
+        self.rawValue = ps_f_to_ps_d(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Picoseconds_d`.
+    public init(_ value: Picoseconds_t) {
+        self.rawValue = ps_t_to_ps_d(value.rawValue)
+    }
+
+    /// Create a `Picoseconds_d` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Picoseconds_d`.
+    public init(_ value: Picoseconds_u) {
+        self.rawValue = ps_u_to_ps_d(value.rawValue)
+    }
+
+}
+
+public extension Double {
+
+// MARK: Creating a Double From The Picoseconds Units
+
+    /// Create a `Double` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Double`.
+    init(_ value: Picoseconds_t) {
+        self = ps_t_to_d(value.rawValue)
+    }
+
+    /// Create a `Double` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Double`.
+    init(_ value: Picoseconds_u) {
+        self = ps_u_to_d(value.rawValue)
+    }
+
+    /// Create a `Double` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Double`.
+    init(_ value: Picoseconds_f) {
+        self = ps_f_to_d(value.rawValue)
+    }
+
+    /// Create a `Double` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Double`.
+    init(_ value: Picoseconds_d) {
+        self = ps_d_to_d(value.rawValue)
+    }
+
+}
+
+public extension Float {
+
+// MARK: Creating a Float From The Picoseconds Units
+
+    /// Create a `Float` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Float`.
+    init(_ value: Picoseconds_t) {
+        self = ps_t_to_f(value.rawValue)
+    }
+
+    /// Create a `Float` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Float`.
+    init(_ value: Picoseconds_u) {
+        self = ps_u_to_f(value.rawValue)
+    }
+
+    /// Create a `Float` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Float`.
+    init(_ value: Picoseconds_f) {
+        self = ps_f_to_f(value.rawValue)
+    }
+
+    /// Create a `Float` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Float`.
+    init(_ value: Picoseconds_d) {
+        self = ps_d_to_f(value.rawValue)
+    }
+
+}
+
+public extension Int {
+
+// MARK: Creating a Int From The Picoseconds Units
+
+    /// Create a `Int` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Int`.
+    init(_ value: Picoseconds_t) {
+        self = Int(ps_t_to_i64(value.rawValue))
+    }
+
+    /// Create a `Int` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Int`.
+    init(_ value: Picoseconds_u) {
+        self = Int(ps_u_to_i64(value.rawValue))
+    }
+
+    /// Create a `Int` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Int`.
+    init(_ value: Picoseconds_f) {
+        self = Int(ps_f_to_i64(value.rawValue))
+    }
+
+    /// Create a `Int` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Int`.
+    init(_ value: Picoseconds_d) {
+        self = Int(ps_d_to_i64(value.rawValue))
+    }
+
+}
+
+public extension Int16 {
+
+// MARK: Creating a Int16 From The Picoseconds Units
+
+    /// Create a `Int16` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Int16`.
+    init(_ value: Picoseconds_t) {
+        self = ps_t_to_i16(value.rawValue)
+    }
+
+    /// Create a `Int16` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Int16`.
+    init(_ value: Picoseconds_u) {
+        self = ps_u_to_i16(value.rawValue)
+    }
+
+    /// Create a `Int16` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Int16`.
+    init(_ value: Picoseconds_f) {
+        self = ps_f_to_i16(value.rawValue)
+    }
+
+    /// Create a `Int16` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Int16`.
+    init(_ value: Picoseconds_d) {
+        self = ps_d_to_i16(value.rawValue)
+    }
+
+}
+
+public extension Int32 {
+
+// MARK: Creating a Int32 From The Picoseconds Units
+
+    /// Create a `Int32` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Int32`.
+    init(_ value: Picoseconds_t) {
+        self = ps_t_to_i32(value.rawValue)
+    }
+
+    /// Create a `Int32` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Int32`.
+    init(_ value: Picoseconds_u) {
+        self = ps_u_to_i32(value.rawValue)
+    }
+
+    /// Create a `Int32` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Int32`.
+    init(_ value: Picoseconds_f) {
+        self = ps_f_to_i32(value.rawValue)
+    }
+
+    /// Create a `Int32` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Int32`.
+    init(_ value: Picoseconds_d) {
+        self = ps_d_to_i32(value.rawValue)
+    }
+
+}
+
+public extension Int64 {
+
+// MARK: Creating a Int64 From The Picoseconds Units
+
+    /// Create a `Int64` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Int64`.
+    init(_ value: Picoseconds_t) {
+        self = ps_t_to_i64(value.rawValue)
+    }
+
+    /// Create a `Int64` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Int64`.
+    init(_ value: Picoseconds_u) {
+        self = ps_u_to_i64(value.rawValue)
+    }
+
+    /// Create a `Int64` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Int64`.
+    init(_ value: Picoseconds_f) {
+        self = ps_f_to_i64(value.rawValue)
+    }
+
+    /// Create a `Int64` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Int64`.
+    init(_ value: Picoseconds_d) {
+        self = ps_d_to_i64(value.rawValue)
+    }
+
+}
+
+public extension Int8 {
+
+// MARK: Creating a Int8 From The Picoseconds Units
+
+    /// Create a `Int8` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Int8`.
+    init(_ value: Picoseconds_t) {
+        self = ps_t_to_i8(value.rawValue)
+    }
+
+    /// Create a `Int8` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Int8`.
+    init(_ value: Picoseconds_u) {
+        self = ps_u_to_i8(value.rawValue)
+    }
+
+    /// Create a `Int8` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Int8`.
+    init(_ value: Picoseconds_f) {
+        self = ps_f_to_i8(value.rawValue)
+    }
+
+    /// Create a `Int8` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Int8`.
+    init(_ value: Picoseconds_d) {
+        self = ps_d_to_i8(value.rawValue)
+    }
+
+}
+
+public extension UInt {
+
+// MARK: Creating a UInt From The Picoseconds Units
+
+    /// Create a `UInt` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `UInt`.
+    init(_ value: Picoseconds_t) {
+        self = UInt(ps_t_to_u64(value.rawValue))
+    }
+
+    /// Create a `UInt` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `UInt`.
+    init(_ value: Picoseconds_u) {
+        self = UInt(ps_u_to_u64(value.rawValue))
+    }
+
+    /// Create a `UInt` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `UInt`.
+    init(_ value: Picoseconds_f) {
+        self = UInt(ps_f_to_u64(value.rawValue))
+    }
+
+    /// Create a `UInt` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `UInt`.
+    init(_ value: Picoseconds_d) {
+        self = UInt(ps_d_to_u64(value.rawValue))
+    }
+
+}
+
+public extension UInt16 {
+
+// MARK: Creating a UInt16 From The Picoseconds Units
+
+    /// Create a `UInt16` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `UInt16`.
+    init(_ value: Picoseconds_t) {
+        self = ps_t_to_u16(value.rawValue)
+    }
+
+    /// Create a `UInt16` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `UInt16`.
+    init(_ value: Picoseconds_u) {
+        self = ps_u_to_u16(value.rawValue)
+    }
+
+    /// Create a `UInt16` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `UInt16`.
+    init(_ value: Picoseconds_f) {
+        self = ps_f_to_u16(value.rawValue)
+    }
+
+    /// Create a `UInt16` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `UInt16`.
+    init(_ value: Picoseconds_d) {
+        self = ps_d_to_u16(value.rawValue)
+    }
+
+}
+
+public extension UInt32 {
+
+// MARK: Creating a UInt32 From The Picoseconds Units
+
+    /// Create a `UInt32` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `UInt32`.
+    init(_ value: Picoseconds_t) {
+        self = ps_t_to_u32(value.rawValue)
+    }
+
+    /// Create a `UInt32` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `UInt32`.
+    init(_ value: Picoseconds_u) {
+        self = ps_u_to_u32(value.rawValue)
+    }
+
+    /// Create a `UInt32` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `UInt32`.
+    init(_ value: Picoseconds_f) {
+        self = ps_f_to_u32(value.rawValue)
+    }
+
+    /// Create a `UInt32` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `UInt32`.
+    init(_ value: Picoseconds_d) {
+        self = ps_d_to_u32(value.rawValue)
+    }
+
+}
+
+public extension UInt64 {
+
+// MARK: Creating a UInt64 From The Picoseconds Units
+
+    /// Create a `UInt64` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `UInt64`.
+    init(_ value: Picoseconds_t) {
+        self = ps_t_to_u64(value.rawValue)
+    }
+
+    /// Create a `UInt64` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `UInt64`.
+    init(_ value: Picoseconds_u) {
+        self = ps_u_to_u64(value.rawValue)
+    }
+
+    /// Create a `UInt64` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `UInt64`.
+    init(_ value: Picoseconds_f) {
+        self = ps_f_to_u64(value.rawValue)
+    }
+
+    /// Create a `UInt64` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `UInt64`.
+    init(_ value: Picoseconds_d) {
+        self = ps_d_to_u64(value.rawValue)
+    }
+
+}
+
+public extension UInt8 {
+
+// MARK: Creating a UInt8 From The Picoseconds Units
+
+    /// Create a `UInt8` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `UInt8`.
+    init(_ value: Picoseconds_t) {
+        self = ps_t_to_u8(value.rawValue)
+    }
+
+    /// Create a `UInt8` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `UInt8`.
+    init(_ value: Picoseconds_u) {
+        self = ps_u_to_u8(value.rawValue)
+    }
+
+    /// Create a `UInt8` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `UInt8`.
+    init(_ value: Picoseconds_f) {
+        self = ps_f_to_u8(value.rawValue)
+    }
+
+    /// Create a `UInt8` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `UInt8`.
+    init(_ value: Picoseconds_d) {
+        self = ps_d_to_u8(value.rawValue)
+    }
+
+}
+
+
+
+
+/// A signed integer type for the nanoseconds unit.
+public struct Nanoseconds_t: GUUnitsTType, Hashable, Codable {
+
+// MARK: - Converting Between The Underlying guunits C Type
+
+    /// Convert to the guunits underlying C type `nanoseconds_t`
+    public let rawValue: nanoseconds_t
+
+    /// Create a `Nanoseconds_t` from the underlying guunits C type `nanoseconds_t`.
+    public init(rawValue: nanoseconds_t) {
+        self.rawValue = rawValue
+    }
+
+// MARK: - Converting From Swift Numeric Types
+
+    /// Create a `Nanoseconds_t` by converting a `Double`.
+    ///
+    /// - Parameter value: A `Double` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Double) {
+        self.rawValue = d_to_ns_t(value)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `Float`.
+    ///
+    /// - Parameter value: A `Float` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Float) {
+        self.rawValue = f_to_ns_t(value)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `Int`.
+    ///
+    /// - Parameter value: A `Int` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Int) {
+        self.rawValue = i64_to_ns_t(Int64(value))
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `Int16`.
+    ///
+    /// - Parameter value: A `Int16` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Int16) {
+        self.rawValue = i16_to_ns_t(value)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `Int32`.
+    ///
+    /// - Parameter value: A `Int32` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Int32) {
+        self.rawValue = i32_to_ns_t(value)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `Int64`.
+    ///
+    /// - Parameter value: A `Int64` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Int64) {
+        self.rawValue = i64_to_ns_t(value)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `Int8`.
+    ///
+    /// - Parameter value: A `Int8` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Int8) {
+        self.rawValue = i8_to_ns_t(value)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `UInt`.
+    ///
+    /// - Parameter value: A `UInt` value to convert to a `Nanoseconds_t`.
+    public init(_ value: UInt) {
+        self.rawValue = u64_to_ns_t(UInt64(value))
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `UInt16`.
+    ///
+    /// - Parameter value: A `UInt16` value to convert to a `Nanoseconds_t`.
+    public init(_ value: UInt16) {
+        self.rawValue = u16_to_ns_t(value)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `UInt32`.
+    ///
+    /// - Parameter value: A `UInt32` value to convert to a `Nanoseconds_t`.
+    public init(_ value: UInt32) {
+        self.rawValue = u32_to_ns_t(value)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `UInt64`.
+    ///
+    /// - Parameter value: A `UInt64` value to convert to a `Nanoseconds_t`.
+    public init(_ value: UInt64) {
+        self.rawValue = u64_to_ns_t(value)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `UInt8`.
+    ///
+    /// - Parameter value: A `UInt8` value to convert to a `Nanoseconds_t`.
+    public init(_ value: UInt8) {
+        self.rawValue = u8_to_ns_t(value)
+    }
+
+// MARK: - Converting From Other Units
+
+    /// Create a `Nanoseconds_t` by converting a `Time`.
+    ///
+    /// - Parameter value: A `Time` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Time) {
+        switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
+        case .microseconds_t(let value):
+            self.init(value)
+        case .microseconds_u(let value):
+            self.init(value)
+        case .microseconds_f(let value):
+            self.init(value)
+        case .microseconds_d(let value):
+            self.init(value)
+        case .milliseconds_t(let value):
+            self.init(value)
+        case .milliseconds_u(let value):
+            self.init(value)
+        case .milliseconds_f(let value):
+            self.init(value)
+        case .milliseconds_d(let value):
+            self.init(value)
+        case .seconds_t(let value):
+            self.init(value)
+        case .seconds_u(let value):
+            self.init(value)
+        case .seconds_f(let value):
+            self.init(value)
+        case .seconds_d(let value):
+            self.init(value)
+        }
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `Microseconds_t`.
+    ///
+    /// - Parameter value: A `Microseconds_t` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Microseconds_t) {
+        self.rawValue = us_t_to_ns_t(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `Microseconds_u`.
+    ///
+    /// - Parameter value: A `Microseconds_u` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Microseconds_u) {
+        self.rawValue = us_u_to_ns_t(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `Microseconds_f`.
+    ///
+    /// - Parameter value: A `Microseconds_f` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Microseconds_f) {
+        self.rawValue = us_f_to_ns_t(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `Microseconds_d`.
+    ///
+    /// - Parameter value: A `Microseconds_d` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Microseconds_d) {
+        self.rawValue = us_d_to_ns_t(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `Milliseconds_t`.
+    ///
+    /// - Parameter value: A `Milliseconds_t` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Milliseconds_t) {
+        self.rawValue = ms_t_to_ns_t(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `Milliseconds_u`.
+    ///
+    /// - Parameter value: A `Milliseconds_u` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Milliseconds_u) {
+        self.rawValue = ms_u_to_ns_t(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `Milliseconds_f`.
+    ///
+    /// - Parameter value: A `Milliseconds_f` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Milliseconds_f) {
+        self.rawValue = ms_f_to_ns_t(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `Milliseconds_d`.
+    ///
+    /// - Parameter value: A `Milliseconds_d` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Milliseconds_d) {
+        self.rawValue = ms_d_to_ns_t(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Picoseconds_t) {
+        self.rawValue = ps_t_to_ns_t(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Picoseconds_u) {
+        self.rawValue = ps_u_to_ns_t(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Picoseconds_f) {
+        self.rawValue = ps_f_to_ns_t(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Picoseconds_d) {
+        self.rawValue = ps_d_to_ns_t(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `Seconds_t`.
+    ///
+    /// - Parameter value: A `Seconds_t` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Seconds_t) {
+        self.rawValue = s_t_to_ns_t(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `Seconds_u`.
+    ///
+    /// - Parameter value: A `Seconds_u` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Seconds_u) {
+        self.rawValue = s_u_to_ns_t(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `Seconds_f`.
+    ///
+    /// - Parameter value: A `Seconds_f` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Seconds_f) {
+        self.rawValue = s_f_to_ns_t(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `Seconds_d`.
+    ///
+    /// - Parameter value: A `Seconds_d` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Seconds_d) {
+        self.rawValue = s_d_to_ns_t(value.rawValue)
+    }
+
+// MARK: - Converting From Other Precisions
+
+    /// Create a `Nanoseconds_t` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Nanoseconds_d) {
+        self.rawValue = ns_d_to_ns_t(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Nanoseconds_f) {
+        self.rawValue = ns_f_to_ns_t(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_t` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Nanoseconds_t`.
+    public init(_ value: Nanoseconds_u) {
+        self.rawValue = ns_u_to_ns_t(value.rawValue)
+    }
+
+}
+
+/// An unsigned integer type for the nanoseconds unit.
+public struct Nanoseconds_u: GUUnitsUType, Hashable, Codable {
+
+// MARK: - Converting Between The Underlying guunits C Type
+
+    /// Convert to the guunits underlying C type `nanoseconds_u`
+    public let rawValue: nanoseconds_u
+
+    /// Create a `Nanoseconds_u` from the underlying guunits C type `nanoseconds_u`.
+    public init(rawValue: nanoseconds_u) {
+        self.rawValue = rawValue
+    }
+
+// MARK: - Converting From Swift Numeric Types
+
+    /// Create a `Nanoseconds_u` by converting a `Double`.
+    ///
+    /// - Parameter value: A `Double` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Double) {
+        self.rawValue = d_to_ns_u(value)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `Float`.
+    ///
+    /// - Parameter value: A `Float` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Float) {
+        self.rawValue = f_to_ns_u(value)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `Int`.
+    ///
+    /// - Parameter value: A `Int` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Int) {
+        self.rawValue = i64_to_ns_u(Int64(value))
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `Int16`.
+    ///
+    /// - Parameter value: A `Int16` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Int16) {
+        self.rawValue = i16_to_ns_u(value)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `Int32`.
+    ///
+    /// - Parameter value: A `Int32` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Int32) {
+        self.rawValue = i32_to_ns_u(value)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `Int64`.
+    ///
+    /// - Parameter value: A `Int64` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Int64) {
+        self.rawValue = i64_to_ns_u(value)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `Int8`.
+    ///
+    /// - Parameter value: A `Int8` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Int8) {
+        self.rawValue = i8_to_ns_u(value)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `UInt`.
+    ///
+    /// - Parameter value: A `UInt` value to convert to a `Nanoseconds_u`.
+    public init(_ value: UInt) {
+        self.rawValue = u64_to_ns_u(UInt64(value))
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `UInt16`.
+    ///
+    /// - Parameter value: A `UInt16` value to convert to a `Nanoseconds_u`.
+    public init(_ value: UInt16) {
+        self.rawValue = u16_to_ns_u(value)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `UInt32`.
+    ///
+    /// - Parameter value: A `UInt32` value to convert to a `Nanoseconds_u`.
+    public init(_ value: UInt32) {
+        self.rawValue = u32_to_ns_u(value)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `UInt64`.
+    ///
+    /// - Parameter value: A `UInt64` value to convert to a `Nanoseconds_u`.
+    public init(_ value: UInt64) {
+        self.rawValue = u64_to_ns_u(value)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `UInt8`.
+    ///
+    /// - Parameter value: A `UInt8` value to convert to a `Nanoseconds_u`.
+    public init(_ value: UInt8) {
+        self.rawValue = u8_to_ns_u(value)
+    }
+
+// MARK: - Converting From Other Units
+
+    /// Create a `Nanoseconds_u` by converting a `Time`.
+    ///
+    /// - Parameter value: A `Time` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Time) {
+        switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
+        case .microseconds_t(let value):
+            self.init(value)
+        case .microseconds_u(let value):
+            self.init(value)
+        case .microseconds_f(let value):
+            self.init(value)
+        case .microseconds_d(let value):
+            self.init(value)
+        case .milliseconds_t(let value):
+            self.init(value)
+        case .milliseconds_u(let value):
+            self.init(value)
+        case .milliseconds_f(let value):
+            self.init(value)
+        case .milliseconds_d(let value):
+            self.init(value)
+        case .seconds_t(let value):
+            self.init(value)
+        case .seconds_u(let value):
+            self.init(value)
+        case .seconds_f(let value):
+            self.init(value)
+        case .seconds_d(let value):
+            self.init(value)
+        }
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `Microseconds_t`.
+    ///
+    /// - Parameter value: A `Microseconds_t` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Microseconds_t) {
+        self.rawValue = us_t_to_ns_u(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `Microseconds_u`.
+    ///
+    /// - Parameter value: A `Microseconds_u` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Microseconds_u) {
+        self.rawValue = us_u_to_ns_u(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `Microseconds_f`.
+    ///
+    /// - Parameter value: A `Microseconds_f` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Microseconds_f) {
+        self.rawValue = us_f_to_ns_u(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `Microseconds_d`.
+    ///
+    /// - Parameter value: A `Microseconds_d` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Microseconds_d) {
+        self.rawValue = us_d_to_ns_u(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `Milliseconds_t`.
+    ///
+    /// - Parameter value: A `Milliseconds_t` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Milliseconds_t) {
+        self.rawValue = ms_t_to_ns_u(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `Milliseconds_u`.
+    ///
+    /// - Parameter value: A `Milliseconds_u` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Milliseconds_u) {
+        self.rawValue = ms_u_to_ns_u(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `Milliseconds_f`.
+    ///
+    /// - Parameter value: A `Milliseconds_f` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Milliseconds_f) {
+        self.rawValue = ms_f_to_ns_u(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `Milliseconds_d`.
+    ///
+    /// - Parameter value: A `Milliseconds_d` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Milliseconds_d) {
+        self.rawValue = ms_d_to_ns_u(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Picoseconds_t) {
+        self.rawValue = ps_t_to_ns_u(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Picoseconds_u) {
+        self.rawValue = ps_u_to_ns_u(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Picoseconds_f) {
+        self.rawValue = ps_f_to_ns_u(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Picoseconds_d) {
+        self.rawValue = ps_d_to_ns_u(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `Seconds_t`.
+    ///
+    /// - Parameter value: A `Seconds_t` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Seconds_t) {
+        self.rawValue = s_t_to_ns_u(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `Seconds_u`.
+    ///
+    /// - Parameter value: A `Seconds_u` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Seconds_u) {
+        self.rawValue = s_u_to_ns_u(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `Seconds_f`.
+    ///
+    /// - Parameter value: A `Seconds_f` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Seconds_f) {
+        self.rawValue = s_f_to_ns_u(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `Seconds_d`.
+    ///
+    /// - Parameter value: A `Seconds_d` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Seconds_d) {
+        self.rawValue = s_d_to_ns_u(value.rawValue)
+    }
+
+// MARK: - Converting From Other Precisions
+
+    /// Create a `Nanoseconds_u` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Nanoseconds_d) {
+        self.rawValue = ns_d_to_ns_u(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Nanoseconds_f) {
+        self.rawValue = ns_f_to_ns_u(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_u` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Nanoseconds_u`.
+    public init(_ value: Nanoseconds_t) {
+        self.rawValue = ns_t_to_ns_u(value.rawValue)
+    }
+
+}
+
+/// A floating point type for the nanoseconds unit.
+public struct Nanoseconds_f: GUUnitsFType, Hashable, Codable {
+
+// MARK: - Converting Between The Underlying guunits C Type
+
+    /// Convert to the guunits underlying C type `nanoseconds_f`
+    public let rawValue: nanoseconds_f
+
+    /// Create a `Nanoseconds_f` from the underlying guunits C type `nanoseconds_f`.
+    public init(rawValue: nanoseconds_f) {
+        self.rawValue = rawValue
+    }
+
+// MARK: - Converting From Swift Numeric Types
+
+    /// Create a `Nanoseconds_f` by converting a `Double`.
+    ///
+    /// - Parameter value: A `Double` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Double) {
+        self.rawValue = d_to_ns_f(value)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `Float`.
+    ///
+    /// - Parameter value: A `Float` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Float) {
+        self.rawValue = f_to_ns_f(value)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `Int`.
+    ///
+    /// - Parameter value: A `Int` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Int) {
+        self.rawValue = i64_to_ns_f(Int64(value))
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `Int16`.
+    ///
+    /// - Parameter value: A `Int16` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Int16) {
+        self.rawValue = i16_to_ns_f(value)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `Int32`.
+    ///
+    /// - Parameter value: A `Int32` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Int32) {
+        self.rawValue = i32_to_ns_f(value)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `Int64`.
+    ///
+    /// - Parameter value: A `Int64` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Int64) {
+        self.rawValue = i64_to_ns_f(value)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `Int8`.
+    ///
+    /// - Parameter value: A `Int8` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Int8) {
+        self.rawValue = i8_to_ns_f(value)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `UInt`.
+    ///
+    /// - Parameter value: A `UInt` value to convert to a `Nanoseconds_f`.
+    public init(_ value: UInt) {
+        self.rawValue = u64_to_ns_f(UInt64(value))
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `UInt16`.
+    ///
+    /// - Parameter value: A `UInt16` value to convert to a `Nanoseconds_f`.
+    public init(_ value: UInt16) {
+        self.rawValue = u16_to_ns_f(value)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `UInt32`.
+    ///
+    /// - Parameter value: A `UInt32` value to convert to a `Nanoseconds_f`.
+    public init(_ value: UInt32) {
+        self.rawValue = u32_to_ns_f(value)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `UInt64`.
+    ///
+    /// - Parameter value: A `UInt64` value to convert to a `Nanoseconds_f`.
+    public init(_ value: UInt64) {
+        self.rawValue = u64_to_ns_f(value)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `UInt8`.
+    ///
+    /// - Parameter value: A `UInt8` value to convert to a `Nanoseconds_f`.
+    public init(_ value: UInt8) {
+        self.rawValue = u8_to_ns_f(value)
+    }
+
+// MARK: - Converting From Other Units
+
+    /// Create a `Nanoseconds_f` by converting a `Time`.
+    ///
+    /// - Parameter value: A `Time` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Time) {
+        switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
+        case .microseconds_t(let value):
+            self.init(value)
+        case .microseconds_u(let value):
+            self.init(value)
+        case .microseconds_f(let value):
+            self.init(value)
+        case .microseconds_d(let value):
+            self.init(value)
+        case .milliseconds_t(let value):
+            self.init(value)
+        case .milliseconds_u(let value):
+            self.init(value)
+        case .milliseconds_f(let value):
+            self.init(value)
+        case .milliseconds_d(let value):
+            self.init(value)
+        case .seconds_t(let value):
+            self.init(value)
+        case .seconds_u(let value):
+            self.init(value)
+        case .seconds_f(let value):
+            self.init(value)
+        case .seconds_d(let value):
+            self.init(value)
+        }
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `Microseconds_t`.
+    ///
+    /// - Parameter value: A `Microseconds_t` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Microseconds_t) {
+        self.rawValue = us_t_to_ns_f(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `Microseconds_u`.
+    ///
+    /// - Parameter value: A `Microseconds_u` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Microseconds_u) {
+        self.rawValue = us_u_to_ns_f(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `Microseconds_f`.
+    ///
+    /// - Parameter value: A `Microseconds_f` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Microseconds_f) {
+        self.rawValue = us_f_to_ns_f(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `Microseconds_d`.
+    ///
+    /// - Parameter value: A `Microseconds_d` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Microseconds_d) {
+        self.rawValue = us_d_to_ns_f(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `Milliseconds_t`.
+    ///
+    /// - Parameter value: A `Milliseconds_t` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Milliseconds_t) {
+        self.rawValue = ms_t_to_ns_f(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `Milliseconds_u`.
+    ///
+    /// - Parameter value: A `Milliseconds_u` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Milliseconds_u) {
+        self.rawValue = ms_u_to_ns_f(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `Milliseconds_f`.
+    ///
+    /// - Parameter value: A `Milliseconds_f` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Milliseconds_f) {
+        self.rawValue = ms_f_to_ns_f(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `Milliseconds_d`.
+    ///
+    /// - Parameter value: A `Milliseconds_d` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Milliseconds_d) {
+        self.rawValue = ms_d_to_ns_f(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Picoseconds_t) {
+        self.rawValue = ps_t_to_ns_f(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Picoseconds_u) {
+        self.rawValue = ps_u_to_ns_f(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Picoseconds_f) {
+        self.rawValue = ps_f_to_ns_f(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Picoseconds_d) {
+        self.rawValue = ps_d_to_ns_f(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `Seconds_t`.
+    ///
+    /// - Parameter value: A `Seconds_t` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Seconds_t) {
+        self.rawValue = s_t_to_ns_f(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `Seconds_u`.
+    ///
+    /// - Parameter value: A `Seconds_u` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Seconds_u) {
+        self.rawValue = s_u_to_ns_f(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `Seconds_f`.
+    ///
+    /// - Parameter value: A `Seconds_f` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Seconds_f) {
+        self.rawValue = s_f_to_ns_f(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `Seconds_d`.
+    ///
+    /// - Parameter value: A `Seconds_d` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Seconds_d) {
+        self.rawValue = s_d_to_ns_f(value.rawValue)
+    }
+
+// MARK: - Converting From Other Precisions
+
+    /// Create a `Nanoseconds_f` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Nanoseconds_d) {
+        self.rawValue = ns_d_to_ns_f(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Nanoseconds_t) {
+        self.rawValue = ns_t_to_ns_f(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_f` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Nanoseconds_f`.
+    public init(_ value: Nanoseconds_u) {
+        self.rawValue = ns_u_to_ns_f(value.rawValue)
+    }
+
+}
+
+/// A double type for the nanoseconds unit.
+public struct Nanoseconds_d: GUUnitsDType, Hashable, Codable {
+
+// MARK: - Converting Between The Underlying guunits C Type
+
+    /// Convert to the guunits underlying C type `nanoseconds_d`
+    public let rawValue: nanoseconds_d
+
+    /// Create a `Nanoseconds_d` from the underlying guunits C type `nanoseconds_d`.
+    public init(rawValue: nanoseconds_d) {
+        self.rawValue = rawValue
+    }
+
+// MARK: - Converting From Swift Numeric Types
+
+    /// Create a `Nanoseconds_d` by converting a `Double`.
+    ///
+    /// - Parameter value: A `Double` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Double) {
+        self.rawValue = d_to_ns_d(value)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `Float`.
+    ///
+    /// - Parameter value: A `Float` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Float) {
+        self.rawValue = f_to_ns_d(value)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `Int`.
+    ///
+    /// - Parameter value: A `Int` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Int) {
+        self.rawValue = i64_to_ns_d(Int64(value))
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `Int16`.
+    ///
+    /// - Parameter value: A `Int16` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Int16) {
+        self.rawValue = i16_to_ns_d(value)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `Int32`.
+    ///
+    /// - Parameter value: A `Int32` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Int32) {
+        self.rawValue = i32_to_ns_d(value)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `Int64`.
+    ///
+    /// - Parameter value: A `Int64` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Int64) {
+        self.rawValue = i64_to_ns_d(value)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `Int8`.
+    ///
+    /// - Parameter value: A `Int8` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Int8) {
+        self.rawValue = i8_to_ns_d(value)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `UInt`.
+    ///
+    /// - Parameter value: A `UInt` value to convert to a `Nanoseconds_d`.
+    public init(_ value: UInt) {
+        self.rawValue = u64_to_ns_d(UInt64(value))
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `UInt16`.
+    ///
+    /// - Parameter value: A `UInt16` value to convert to a `Nanoseconds_d`.
+    public init(_ value: UInt16) {
+        self.rawValue = u16_to_ns_d(value)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `UInt32`.
+    ///
+    /// - Parameter value: A `UInt32` value to convert to a `Nanoseconds_d`.
+    public init(_ value: UInt32) {
+        self.rawValue = u32_to_ns_d(value)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `UInt64`.
+    ///
+    /// - Parameter value: A `UInt64` value to convert to a `Nanoseconds_d`.
+    public init(_ value: UInt64) {
+        self.rawValue = u64_to_ns_d(value)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `UInt8`.
+    ///
+    /// - Parameter value: A `UInt8` value to convert to a `Nanoseconds_d`.
+    public init(_ value: UInt8) {
+        self.rawValue = u8_to_ns_d(value)
+    }
+
+// MARK: - Converting From Other Units
+
+    /// Create a `Nanoseconds_d` by converting a `Time`.
+    ///
+    /// - Parameter value: A `Time` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Time) {
+        switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
+        case .microseconds_t(let value):
+            self.init(value)
+        case .microseconds_u(let value):
+            self.init(value)
+        case .microseconds_f(let value):
+            self.init(value)
+        case .microseconds_d(let value):
+            self.init(value)
+        case .milliseconds_t(let value):
+            self.init(value)
+        case .milliseconds_u(let value):
+            self.init(value)
+        case .milliseconds_f(let value):
+            self.init(value)
+        case .milliseconds_d(let value):
+            self.init(value)
+        case .seconds_t(let value):
+            self.init(value)
+        case .seconds_u(let value):
+            self.init(value)
+        case .seconds_f(let value):
+            self.init(value)
+        case .seconds_d(let value):
+            self.init(value)
+        }
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `Microseconds_t`.
+    ///
+    /// - Parameter value: A `Microseconds_t` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Microseconds_t) {
+        self.rawValue = us_t_to_ns_d(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `Microseconds_u`.
+    ///
+    /// - Parameter value: A `Microseconds_u` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Microseconds_u) {
+        self.rawValue = us_u_to_ns_d(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `Microseconds_f`.
+    ///
+    /// - Parameter value: A `Microseconds_f` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Microseconds_f) {
+        self.rawValue = us_f_to_ns_d(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `Microseconds_d`.
+    ///
+    /// - Parameter value: A `Microseconds_d` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Microseconds_d) {
+        self.rawValue = us_d_to_ns_d(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `Milliseconds_t`.
+    ///
+    /// - Parameter value: A `Milliseconds_t` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Milliseconds_t) {
+        self.rawValue = ms_t_to_ns_d(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `Milliseconds_u`.
+    ///
+    /// - Parameter value: A `Milliseconds_u` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Milliseconds_u) {
+        self.rawValue = ms_u_to_ns_d(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `Milliseconds_f`.
+    ///
+    /// - Parameter value: A `Milliseconds_f` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Milliseconds_f) {
+        self.rawValue = ms_f_to_ns_d(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `Milliseconds_d`.
+    ///
+    /// - Parameter value: A `Milliseconds_d` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Milliseconds_d) {
+        self.rawValue = ms_d_to_ns_d(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Picoseconds_t) {
+        self.rawValue = ps_t_to_ns_d(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Picoseconds_u) {
+        self.rawValue = ps_u_to_ns_d(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Picoseconds_f) {
+        self.rawValue = ps_f_to_ns_d(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Picoseconds_d) {
+        self.rawValue = ps_d_to_ns_d(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `Seconds_t`.
+    ///
+    /// - Parameter value: A `Seconds_t` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Seconds_t) {
+        self.rawValue = s_t_to_ns_d(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `Seconds_u`.
+    ///
+    /// - Parameter value: A `Seconds_u` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Seconds_u) {
+        self.rawValue = s_u_to_ns_d(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `Seconds_f`.
+    ///
+    /// - Parameter value: A `Seconds_f` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Seconds_f) {
+        self.rawValue = s_f_to_ns_d(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `Seconds_d`.
+    ///
+    /// - Parameter value: A `Seconds_d` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Seconds_d) {
+        self.rawValue = s_d_to_ns_d(value.rawValue)
+    }
+
+// MARK: - Converting From Other Precisions
+
+    /// Create a `Nanoseconds_d` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Nanoseconds_f) {
+        self.rawValue = ns_f_to_ns_d(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Nanoseconds_t) {
+        self.rawValue = ns_t_to_ns_d(value.rawValue)
+    }
+
+    /// Create a `Nanoseconds_d` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Nanoseconds_d`.
+    public init(_ value: Nanoseconds_u) {
+        self.rawValue = ns_u_to_ns_d(value.rawValue)
+    }
+
+}
+
+public extension Double {
+
+// MARK: Creating a Double From The Nanoseconds Units
+
+    /// Create a `Double` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Double`.
+    init(_ value: Nanoseconds_t) {
+        self = ns_t_to_d(value.rawValue)
+    }
+
+    /// Create a `Double` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Double`.
+    init(_ value: Nanoseconds_u) {
+        self = ns_u_to_d(value.rawValue)
+    }
+
+    /// Create a `Double` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Double`.
+    init(_ value: Nanoseconds_f) {
+        self = ns_f_to_d(value.rawValue)
+    }
+
+    /// Create a `Double` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Double`.
+    init(_ value: Nanoseconds_d) {
+        self = ns_d_to_d(value.rawValue)
+    }
+
+}
+
+public extension Float {
+
+// MARK: Creating a Float From The Nanoseconds Units
+
+    /// Create a `Float` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Float`.
+    init(_ value: Nanoseconds_t) {
+        self = ns_t_to_f(value.rawValue)
+    }
+
+    /// Create a `Float` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Float`.
+    init(_ value: Nanoseconds_u) {
+        self = ns_u_to_f(value.rawValue)
+    }
+
+    /// Create a `Float` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Float`.
+    init(_ value: Nanoseconds_f) {
+        self = ns_f_to_f(value.rawValue)
+    }
+
+    /// Create a `Float` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Float`.
+    init(_ value: Nanoseconds_d) {
+        self = ns_d_to_f(value.rawValue)
+    }
+
+}
+
+public extension Int {
+
+// MARK: Creating a Int From The Nanoseconds Units
+
+    /// Create a `Int` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Int`.
+    init(_ value: Nanoseconds_t) {
+        self = Int(ns_t_to_i64(value.rawValue))
+    }
+
+    /// Create a `Int` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Int`.
+    init(_ value: Nanoseconds_u) {
+        self = Int(ns_u_to_i64(value.rawValue))
+    }
+
+    /// Create a `Int` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Int`.
+    init(_ value: Nanoseconds_f) {
+        self = Int(ns_f_to_i64(value.rawValue))
+    }
+
+    /// Create a `Int` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Int`.
+    init(_ value: Nanoseconds_d) {
+        self = Int(ns_d_to_i64(value.rawValue))
+    }
+
+}
+
+public extension Int16 {
+
+// MARK: Creating a Int16 From The Nanoseconds Units
+
+    /// Create a `Int16` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Int16`.
+    init(_ value: Nanoseconds_t) {
+        self = ns_t_to_i16(value.rawValue)
+    }
+
+    /// Create a `Int16` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Int16`.
+    init(_ value: Nanoseconds_u) {
+        self = ns_u_to_i16(value.rawValue)
+    }
+
+    /// Create a `Int16` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Int16`.
+    init(_ value: Nanoseconds_f) {
+        self = ns_f_to_i16(value.rawValue)
+    }
+
+    /// Create a `Int16` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Int16`.
+    init(_ value: Nanoseconds_d) {
+        self = ns_d_to_i16(value.rawValue)
+    }
+
+}
+
+public extension Int32 {
+
+// MARK: Creating a Int32 From The Nanoseconds Units
+
+    /// Create a `Int32` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Int32`.
+    init(_ value: Nanoseconds_t) {
+        self = ns_t_to_i32(value.rawValue)
+    }
+
+    /// Create a `Int32` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Int32`.
+    init(_ value: Nanoseconds_u) {
+        self = ns_u_to_i32(value.rawValue)
+    }
+
+    /// Create a `Int32` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Int32`.
+    init(_ value: Nanoseconds_f) {
+        self = ns_f_to_i32(value.rawValue)
+    }
+
+    /// Create a `Int32` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Int32`.
+    init(_ value: Nanoseconds_d) {
+        self = ns_d_to_i32(value.rawValue)
+    }
+
+}
+
+public extension Int64 {
+
+// MARK: Creating a Int64 From The Nanoseconds Units
+
+    /// Create a `Int64` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Int64`.
+    init(_ value: Nanoseconds_t) {
+        self = ns_t_to_i64(value.rawValue)
+    }
+
+    /// Create a `Int64` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Int64`.
+    init(_ value: Nanoseconds_u) {
+        self = ns_u_to_i64(value.rawValue)
+    }
+
+    /// Create a `Int64` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Int64`.
+    init(_ value: Nanoseconds_f) {
+        self = ns_f_to_i64(value.rawValue)
+    }
+
+    /// Create a `Int64` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Int64`.
+    init(_ value: Nanoseconds_d) {
+        self = ns_d_to_i64(value.rawValue)
+    }
+
+}
+
+public extension Int8 {
+
+// MARK: Creating a Int8 From The Nanoseconds Units
+
+    /// Create a `Int8` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Int8`.
+    init(_ value: Nanoseconds_t) {
+        self = ns_t_to_i8(value.rawValue)
+    }
+
+    /// Create a `Int8` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Int8`.
+    init(_ value: Nanoseconds_u) {
+        self = ns_u_to_i8(value.rawValue)
+    }
+
+    /// Create a `Int8` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Int8`.
+    init(_ value: Nanoseconds_f) {
+        self = ns_f_to_i8(value.rawValue)
+    }
+
+    /// Create a `Int8` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Int8`.
+    init(_ value: Nanoseconds_d) {
+        self = ns_d_to_i8(value.rawValue)
+    }
+
+}
+
+public extension UInt {
+
+// MARK: Creating a UInt From The Nanoseconds Units
+
+    /// Create a `UInt` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `UInt`.
+    init(_ value: Nanoseconds_t) {
+        self = UInt(ns_t_to_u64(value.rawValue))
+    }
+
+    /// Create a `UInt` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `UInt`.
+    init(_ value: Nanoseconds_u) {
+        self = UInt(ns_u_to_u64(value.rawValue))
+    }
+
+    /// Create a `UInt` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `UInt`.
+    init(_ value: Nanoseconds_f) {
+        self = UInt(ns_f_to_u64(value.rawValue))
+    }
+
+    /// Create a `UInt` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `UInt`.
+    init(_ value: Nanoseconds_d) {
+        self = UInt(ns_d_to_u64(value.rawValue))
+    }
+
+}
+
+public extension UInt16 {
+
+// MARK: Creating a UInt16 From The Nanoseconds Units
+
+    /// Create a `UInt16` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `UInt16`.
+    init(_ value: Nanoseconds_t) {
+        self = ns_t_to_u16(value.rawValue)
+    }
+
+    /// Create a `UInt16` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `UInt16`.
+    init(_ value: Nanoseconds_u) {
+        self = ns_u_to_u16(value.rawValue)
+    }
+
+    /// Create a `UInt16` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `UInt16`.
+    init(_ value: Nanoseconds_f) {
+        self = ns_f_to_u16(value.rawValue)
+    }
+
+    /// Create a `UInt16` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `UInt16`.
+    init(_ value: Nanoseconds_d) {
+        self = ns_d_to_u16(value.rawValue)
+    }
+
+}
+
+public extension UInt32 {
+
+// MARK: Creating a UInt32 From The Nanoseconds Units
+
+    /// Create a `UInt32` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `UInt32`.
+    init(_ value: Nanoseconds_t) {
+        self = ns_t_to_u32(value.rawValue)
+    }
+
+    /// Create a `UInt32` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `UInt32`.
+    init(_ value: Nanoseconds_u) {
+        self = ns_u_to_u32(value.rawValue)
+    }
+
+    /// Create a `UInt32` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `UInt32`.
+    init(_ value: Nanoseconds_f) {
+        self = ns_f_to_u32(value.rawValue)
+    }
+
+    /// Create a `UInt32` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `UInt32`.
+    init(_ value: Nanoseconds_d) {
+        self = ns_d_to_u32(value.rawValue)
+    }
+
+}
+
+public extension UInt64 {
+
+// MARK: Creating a UInt64 From The Nanoseconds Units
+
+    /// Create a `UInt64` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `UInt64`.
+    init(_ value: Nanoseconds_t) {
+        self = ns_t_to_u64(value.rawValue)
+    }
+
+    /// Create a `UInt64` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `UInt64`.
+    init(_ value: Nanoseconds_u) {
+        self = ns_u_to_u64(value.rawValue)
+    }
+
+    /// Create a `UInt64` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `UInt64`.
+    init(_ value: Nanoseconds_f) {
+        self = ns_f_to_u64(value.rawValue)
+    }
+
+    /// Create a `UInt64` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `UInt64`.
+    init(_ value: Nanoseconds_d) {
+        self = ns_d_to_u64(value.rawValue)
+    }
+
+}
+
+public extension UInt8 {
+
+// MARK: Creating a UInt8 From The Nanoseconds Units
+
+    /// Create a `UInt8` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `UInt8`.
+    init(_ value: Nanoseconds_t) {
+        self = ns_t_to_u8(value.rawValue)
+    }
+
+    /// Create a `UInt8` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `UInt8`.
+    init(_ value: Nanoseconds_u) {
+        self = ns_u_to_u8(value.rawValue)
+    }
+
+    /// Create a `UInt8` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `UInt8`.
+    init(_ value: Nanoseconds_f) {
+        self = ns_f_to_u8(value.rawValue)
+    }
+
+    /// Create a `UInt8` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `UInt8`.
+    init(_ value: Nanoseconds_d) {
+        self = ns_d_to_u8(value.rawValue)
+    }
+
+}
+
+
+
 
 /// A signed integer type for the microseconds unit.
 public struct Microseconds_t: GUUnitsTType, Hashable, Codable {
@@ -1607,6 +5877,22 @@ public struct Microseconds_t: GUUnitsTType, Hashable, Codable {
     /// - Parameter value: A `Time` value to convert to a `Microseconds_t`.
     public init(_ value: Time) {
         switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
         case .microseconds_t(let value):
             self.init(value)
         case .microseconds_u(let value):
@@ -1660,6 +5946,62 @@ public struct Microseconds_t: GUUnitsTType, Hashable, Codable {
     /// - Parameter value: A `Milliseconds_d` value to convert to a `Microseconds_t`.
     public init(_ value: Milliseconds_d) {
         self.rawValue = ms_d_to_us_t(value.rawValue)
+    }
+
+    /// Create a `Microseconds_t` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Microseconds_t`.
+    public init(_ value: Nanoseconds_t) {
+        self.rawValue = ns_t_to_us_t(value.rawValue)
+    }
+
+    /// Create a `Microseconds_t` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Microseconds_t`.
+    public init(_ value: Nanoseconds_u) {
+        self.rawValue = ns_u_to_us_t(value.rawValue)
+    }
+
+    /// Create a `Microseconds_t` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Microseconds_t`.
+    public init(_ value: Nanoseconds_f) {
+        self.rawValue = ns_f_to_us_t(value.rawValue)
+    }
+
+    /// Create a `Microseconds_t` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Microseconds_t`.
+    public init(_ value: Nanoseconds_d) {
+        self.rawValue = ns_d_to_us_t(value.rawValue)
+    }
+
+    /// Create a `Microseconds_t` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Microseconds_t`.
+    public init(_ value: Picoseconds_t) {
+        self.rawValue = ps_t_to_us_t(value.rawValue)
+    }
+
+    /// Create a `Microseconds_t` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Microseconds_t`.
+    public init(_ value: Picoseconds_u) {
+        self.rawValue = ps_u_to_us_t(value.rawValue)
+    }
+
+    /// Create a `Microseconds_t` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Microseconds_t`.
+    public init(_ value: Picoseconds_f) {
+        self.rawValue = ps_f_to_us_t(value.rawValue)
+    }
+
+    /// Create a `Microseconds_t` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Microseconds_t`.
+    public init(_ value: Picoseconds_d) {
+        self.rawValue = ps_d_to_us_t(value.rawValue)
     }
 
     /// Create a `Microseconds_t` by converting a `Seconds_t`.
@@ -1821,6 +6163,22 @@ public struct Microseconds_u: GUUnitsUType, Hashable, Codable {
     /// - Parameter value: A `Time` value to convert to a `Microseconds_u`.
     public init(_ value: Time) {
         switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
         case .microseconds_t(let value):
             self.init(value)
         case .microseconds_u(let value):
@@ -1874,6 +6232,62 @@ public struct Microseconds_u: GUUnitsUType, Hashable, Codable {
     /// - Parameter value: A `Milliseconds_d` value to convert to a `Microseconds_u`.
     public init(_ value: Milliseconds_d) {
         self.rawValue = ms_d_to_us_u(value.rawValue)
+    }
+
+    /// Create a `Microseconds_u` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Microseconds_u`.
+    public init(_ value: Nanoseconds_t) {
+        self.rawValue = ns_t_to_us_u(value.rawValue)
+    }
+
+    /// Create a `Microseconds_u` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Microseconds_u`.
+    public init(_ value: Nanoseconds_u) {
+        self.rawValue = ns_u_to_us_u(value.rawValue)
+    }
+
+    /// Create a `Microseconds_u` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Microseconds_u`.
+    public init(_ value: Nanoseconds_f) {
+        self.rawValue = ns_f_to_us_u(value.rawValue)
+    }
+
+    /// Create a `Microseconds_u` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Microseconds_u`.
+    public init(_ value: Nanoseconds_d) {
+        self.rawValue = ns_d_to_us_u(value.rawValue)
+    }
+
+    /// Create a `Microseconds_u` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Microseconds_u`.
+    public init(_ value: Picoseconds_t) {
+        self.rawValue = ps_t_to_us_u(value.rawValue)
+    }
+
+    /// Create a `Microseconds_u` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Microseconds_u`.
+    public init(_ value: Picoseconds_u) {
+        self.rawValue = ps_u_to_us_u(value.rawValue)
+    }
+
+    /// Create a `Microseconds_u` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Microseconds_u`.
+    public init(_ value: Picoseconds_f) {
+        self.rawValue = ps_f_to_us_u(value.rawValue)
+    }
+
+    /// Create a `Microseconds_u` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Microseconds_u`.
+    public init(_ value: Picoseconds_d) {
+        self.rawValue = ps_d_to_us_u(value.rawValue)
     }
 
     /// Create a `Microseconds_u` by converting a `Seconds_t`.
@@ -2035,6 +6449,22 @@ public struct Microseconds_f: GUUnitsFType, Hashable, Codable {
     /// - Parameter value: A `Time` value to convert to a `Microseconds_f`.
     public init(_ value: Time) {
         switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
         case .microseconds_t(let value):
             self.init(value)
         case .microseconds_u(let value):
@@ -2088,6 +6518,62 @@ public struct Microseconds_f: GUUnitsFType, Hashable, Codable {
     /// - Parameter value: A `Milliseconds_d` value to convert to a `Microseconds_f`.
     public init(_ value: Milliseconds_d) {
         self.rawValue = ms_d_to_us_f(value.rawValue)
+    }
+
+    /// Create a `Microseconds_f` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Microseconds_f`.
+    public init(_ value: Nanoseconds_t) {
+        self.rawValue = ns_t_to_us_f(value.rawValue)
+    }
+
+    /// Create a `Microseconds_f` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Microseconds_f`.
+    public init(_ value: Nanoseconds_u) {
+        self.rawValue = ns_u_to_us_f(value.rawValue)
+    }
+
+    /// Create a `Microseconds_f` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Microseconds_f`.
+    public init(_ value: Nanoseconds_f) {
+        self.rawValue = ns_f_to_us_f(value.rawValue)
+    }
+
+    /// Create a `Microseconds_f` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Microseconds_f`.
+    public init(_ value: Nanoseconds_d) {
+        self.rawValue = ns_d_to_us_f(value.rawValue)
+    }
+
+    /// Create a `Microseconds_f` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Microseconds_f`.
+    public init(_ value: Picoseconds_t) {
+        self.rawValue = ps_t_to_us_f(value.rawValue)
+    }
+
+    /// Create a `Microseconds_f` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Microseconds_f`.
+    public init(_ value: Picoseconds_u) {
+        self.rawValue = ps_u_to_us_f(value.rawValue)
+    }
+
+    /// Create a `Microseconds_f` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Microseconds_f`.
+    public init(_ value: Picoseconds_f) {
+        self.rawValue = ps_f_to_us_f(value.rawValue)
+    }
+
+    /// Create a `Microseconds_f` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Microseconds_f`.
+    public init(_ value: Picoseconds_d) {
+        self.rawValue = ps_d_to_us_f(value.rawValue)
     }
 
     /// Create a `Microseconds_f` by converting a `Seconds_t`.
@@ -2249,6 +6735,22 @@ public struct Microseconds_d: GUUnitsDType, Hashable, Codable {
     /// - Parameter value: A `Time` value to convert to a `Microseconds_d`.
     public init(_ value: Time) {
         switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
         case .microseconds_t(let value):
             self.init(value)
         case .microseconds_u(let value):
@@ -2302,6 +6804,62 @@ public struct Microseconds_d: GUUnitsDType, Hashable, Codable {
     /// - Parameter value: A `Milliseconds_d` value to convert to a `Microseconds_d`.
     public init(_ value: Milliseconds_d) {
         self.rawValue = ms_d_to_us_d(value.rawValue)
+    }
+
+    /// Create a `Microseconds_d` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Microseconds_d`.
+    public init(_ value: Nanoseconds_t) {
+        self.rawValue = ns_t_to_us_d(value.rawValue)
+    }
+
+    /// Create a `Microseconds_d` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Microseconds_d`.
+    public init(_ value: Nanoseconds_u) {
+        self.rawValue = ns_u_to_us_d(value.rawValue)
+    }
+
+    /// Create a `Microseconds_d` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Microseconds_d`.
+    public init(_ value: Nanoseconds_f) {
+        self.rawValue = ns_f_to_us_d(value.rawValue)
+    }
+
+    /// Create a `Microseconds_d` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Microseconds_d`.
+    public init(_ value: Nanoseconds_d) {
+        self.rawValue = ns_d_to_us_d(value.rawValue)
+    }
+
+    /// Create a `Microseconds_d` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Microseconds_d`.
+    public init(_ value: Picoseconds_t) {
+        self.rawValue = ps_t_to_us_d(value.rawValue)
+    }
+
+    /// Create a `Microseconds_d` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Microseconds_d`.
+    public init(_ value: Picoseconds_u) {
+        self.rawValue = ps_u_to_us_d(value.rawValue)
+    }
+
+    /// Create a `Microseconds_d` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Microseconds_d`.
+    public init(_ value: Picoseconds_f) {
+        self.rawValue = ps_f_to_us_d(value.rawValue)
+    }
+
+    /// Create a `Microseconds_d` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Microseconds_d`.
+    public init(_ value: Picoseconds_d) {
+        self.rawValue = ps_d_to_us_d(value.rawValue)
     }
 
     /// Create a `Microseconds_d` by converting a `Seconds_t`.
@@ -2874,6 +7432,22 @@ public struct Milliseconds_t: GUUnitsTType, Hashable, Codable {
     /// - Parameter value: A `Time` value to convert to a `Milliseconds_t`.
     public init(_ value: Time) {
         switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
         case .microseconds_t(let value):
             self.init(value)
         case .microseconds_u(let value):
@@ -2927,6 +7501,62 @@ public struct Milliseconds_t: GUUnitsTType, Hashable, Codable {
     /// - Parameter value: A `Microseconds_d` value to convert to a `Milliseconds_t`.
     public init(_ value: Microseconds_d) {
         self.rawValue = us_d_to_ms_t(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_t` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Milliseconds_t`.
+    public init(_ value: Nanoseconds_t) {
+        self.rawValue = ns_t_to_ms_t(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_t` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Milliseconds_t`.
+    public init(_ value: Nanoseconds_u) {
+        self.rawValue = ns_u_to_ms_t(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_t` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Milliseconds_t`.
+    public init(_ value: Nanoseconds_f) {
+        self.rawValue = ns_f_to_ms_t(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_t` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Milliseconds_t`.
+    public init(_ value: Nanoseconds_d) {
+        self.rawValue = ns_d_to_ms_t(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_t` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Milliseconds_t`.
+    public init(_ value: Picoseconds_t) {
+        self.rawValue = ps_t_to_ms_t(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_t` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Milliseconds_t`.
+    public init(_ value: Picoseconds_u) {
+        self.rawValue = ps_u_to_ms_t(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_t` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Milliseconds_t`.
+    public init(_ value: Picoseconds_f) {
+        self.rawValue = ps_f_to_ms_t(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_t` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Milliseconds_t`.
+    public init(_ value: Picoseconds_d) {
+        self.rawValue = ps_d_to_ms_t(value.rawValue)
     }
 
     /// Create a `Milliseconds_t` by converting a `Seconds_t`.
@@ -3088,6 +7718,22 @@ public struct Milliseconds_u: GUUnitsUType, Hashable, Codable {
     /// - Parameter value: A `Time` value to convert to a `Milliseconds_u`.
     public init(_ value: Time) {
         switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
         case .microseconds_t(let value):
             self.init(value)
         case .microseconds_u(let value):
@@ -3141,6 +7787,62 @@ public struct Milliseconds_u: GUUnitsUType, Hashable, Codable {
     /// - Parameter value: A `Microseconds_d` value to convert to a `Milliseconds_u`.
     public init(_ value: Microseconds_d) {
         self.rawValue = us_d_to_ms_u(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_u` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Milliseconds_u`.
+    public init(_ value: Nanoseconds_t) {
+        self.rawValue = ns_t_to_ms_u(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_u` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Milliseconds_u`.
+    public init(_ value: Nanoseconds_u) {
+        self.rawValue = ns_u_to_ms_u(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_u` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Milliseconds_u`.
+    public init(_ value: Nanoseconds_f) {
+        self.rawValue = ns_f_to_ms_u(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_u` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Milliseconds_u`.
+    public init(_ value: Nanoseconds_d) {
+        self.rawValue = ns_d_to_ms_u(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_u` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Milliseconds_u`.
+    public init(_ value: Picoseconds_t) {
+        self.rawValue = ps_t_to_ms_u(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_u` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Milliseconds_u`.
+    public init(_ value: Picoseconds_u) {
+        self.rawValue = ps_u_to_ms_u(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_u` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Milliseconds_u`.
+    public init(_ value: Picoseconds_f) {
+        self.rawValue = ps_f_to_ms_u(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_u` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Milliseconds_u`.
+    public init(_ value: Picoseconds_d) {
+        self.rawValue = ps_d_to_ms_u(value.rawValue)
     }
 
     /// Create a `Milliseconds_u` by converting a `Seconds_t`.
@@ -3302,6 +8004,22 @@ public struct Milliseconds_f: GUUnitsFType, Hashable, Codable {
     /// - Parameter value: A `Time` value to convert to a `Milliseconds_f`.
     public init(_ value: Time) {
         switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
         case .microseconds_t(let value):
             self.init(value)
         case .microseconds_u(let value):
@@ -3355,6 +8073,62 @@ public struct Milliseconds_f: GUUnitsFType, Hashable, Codable {
     /// - Parameter value: A `Microseconds_d` value to convert to a `Milliseconds_f`.
     public init(_ value: Microseconds_d) {
         self.rawValue = us_d_to_ms_f(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_f` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Milliseconds_f`.
+    public init(_ value: Nanoseconds_t) {
+        self.rawValue = ns_t_to_ms_f(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_f` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Milliseconds_f`.
+    public init(_ value: Nanoseconds_u) {
+        self.rawValue = ns_u_to_ms_f(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_f` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Milliseconds_f`.
+    public init(_ value: Nanoseconds_f) {
+        self.rawValue = ns_f_to_ms_f(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_f` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Milliseconds_f`.
+    public init(_ value: Nanoseconds_d) {
+        self.rawValue = ns_d_to_ms_f(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_f` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Milliseconds_f`.
+    public init(_ value: Picoseconds_t) {
+        self.rawValue = ps_t_to_ms_f(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_f` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Milliseconds_f`.
+    public init(_ value: Picoseconds_u) {
+        self.rawValue = ps_u_to_ms_f(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_f` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Milliseconds_f`.
+    public init(_ value: Picoseconds_f) {
+        self.rawValue = ps_f_to_ms_f(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_f` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Milliseconds_f`.
+    public init(_ value: Picoseconds_d) {
+        self.rawValue = ps_d_to_ms_f(value.rawValue)
     }
 
     /// Create a `Milliseconds_f` by converting a `Seconds_t`.
@@ -3516,6 +8290,22 @@ public struct Milliseconds_d: GUUnitsDType, Hashable, Codable {
     /// - Parameter value: A `Time` value to convert to a `Milliseconds_d`.
     public init(_ value: Time) {
         switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
         case .microseconds_t(let value):
             self.init(value)
         case .microseconds_u(let value):
@@ -3569,6 +8359,62 @@ public struct Milliseconds_d: GUUnitsDType, Hashable, Codable {
     /// - Parameter value: A `Microseconds_d` value to convert to a `Milliseconds_d`.
     public init(_ value: Microseconds_d) {
         self.rawValue = us_d_to_ms_d(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_d` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Milliseconds_d`.
+    public init(_ value: Nanoseconds_t) {
+        self.rawValue = ns_t_to_ms_d(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_d` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Milliseconds_d`.
+    public init(_ value: Nanoseconds_u) {
+        self.rawValue = ns_u_to_ms_d(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_d` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Milliseconds_d`.
+    public init(_ value: Nanoseconds_f) {
+        self.rawValue = ns_f_to_ms_d(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_d` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Milliseconds_d`.
+    public init(_ value: Nanoseconds_d) {
+        self.rawValue = ns_d_to_ms_d(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_d` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Milliseconds_d`.
+    public init(_ value: Picoseconds_t) {
+        self.rawValue = ps_t_to_ms_d(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_d` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Milliseconds_d`.
+    public init(_ value: Picoseconds_u) {
+        self.rawValue = ps_u_to_ms_d(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_d` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Milliseconds_d`.
+    public init(_ value: Picoseconds_f) {
+        self.rawValue = ps_f_to_ms_d(value.rawValue)
+    }
+
+    /// Create a `Milliseconds_d` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Milliseconds_d`.
+    public init(_ value: Picoseconds_d) {
+        self.rawValue = ps_d_to_ms_d(value.rawValue)
     }
 
     /// Create a `Milliseconds_d` by converting a `Seconds_t`.
@@ -4141,6 +8987,22 @@ public struct Seconds_t: GUUnitsTType, Hashable, Codable {
     /// - Parameter value: A `Time` value to convert to a `Seconds_t`.
     public init(_ value: Time) {
         switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
         case .microseconds_t(let value):
             self.init(value)
         case .microseconds_u(let value):
@@ -4222,6 +9084,62 @@ public struct Seconds_t: GUUnitsTType, Hashable, Codable {
     /// - Parameter value: A `Milliseconds_d` value to convert to a `Seconds_t`.
     public init(_ value: Milliseconds_d) {
         self.rawValue = ms_d_to_s_t(value.rawValue)
+    }
+
+    /// Create a `Seconds_t` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Seconds_t`.
+    public init(_ value: Nanoseconds_t) {
+        self.rawValue = ns_t_to_s_t(value.rawValue)
+    }
+
+    /// Create a `Seconds_t` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Seconds_t`.
+    public init(_ value: Nanoseconds_u) {
+        self.rawValue = ns_u_to_s_t(value.rawValue)
+    }
+
+    /// Create a `Seconds_t` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Seconds_t`.
+    public init(_ value: Nanoseconds_f) {
+        self.rawValue = ns_f_to_s_t(value.rawValue)
+    }
+
+    /// Create a `Seconds_t` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Seconds_t`.
+    public init(_ value: Nanoseconds_d) {
+        self.rawValue = ns_d_to_s_t(value.rawValue)
+    }
+
+    /// Create a `Seconds_t` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Seconds_t`.
+    public init(_ value: Picoseconds_t) {
+        self.rawValue = ps_t_to_s_t(value.rawValue)
+    }
+
+    /// Create a `Seconds_t` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Seconds_t`.
+    public init(_ value: Picoseconds_u) {
+        self.rawValue = ps_u_to_s_t(value.rawValue)
+    }
+
+    /// Create a `Seconds_t` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Seconds_t`.
+    public init(_ value: Picoseconds_f) {
+        self.rawValue = ps_f_to_s_t(value.rawValue)
+    }
+
+    /// Create a `Seconds_t` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Seconds_t`.
+    public init(_ value: Picoseconds_d) {
+        self.rawValue = ps_d_to_s_t(value.rawValue)
     }
 
 // MARK: - Converting From Other Precisions
@@ -4355,6 +9273,22 @@ public struct Seconds_u: GUUnitsUType, Hashable, Codable {
     /// - Parameter value: A `Time` value to convert to a `Seconds_u`.
     public init(_ value: Time) {
         switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
         case .microseconds_t(let value):
             self.init(value)
         case .microseconds_u(let value):
@@ -4436,6 +9370,62 @@ public struct Seconds_u: GUUnitsUType, Hashable, Codable {
     /// - Parameter value: A `Milliseconds_d` value to convert to a `Seconds_u`.
     public init(_ value: Milliseconds_d) {
         self.rawValue = ms_d_to_s_u(value.rawValue)
+    }
+
+    /// Create a `Seconds_u` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Seconds_u`.
+    public init(_ value: Nanoseconds_t) {
+        self.rawValue = ns_t_to_s_u(value.rawValue)
+    }
+
+    /// Create a `Seconds_u` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Seconds_u`.
+    public init(_ value: Nanoseconds_u) {
+        self.rawValue = ns_u_to_s_u(value.rawValue)
+    }
+
+    /// Create a `Seconds_u` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Seconds_u`.
+    public init(_ value: Nanoseconds_f) {
+        self.rawValue = ns_f_to_s_u(value.rawValue)
+    }
+
+    /// Create a `Seconds_u` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Seconds_u`.
+    public init(_ value: Nanoseconds_d) {
+        self.rawValue = ns_d_to_s_u(value.rawValue)
+    }
+
+    /// Create a `Seconds_u` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Seconds_u`.
+    public init(_ value: Picoseconds_t) {
+        self.rawValue = ps_t_to_s_u(value.rawValue)
+    }
+
+    /// Create a `Seconds_u` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Seconds_u`.
+    public init(_ value: Picoseconds_u) {
+        self.rawValue = ps_u_to_s_u(value.rawValue)
+    }
+
+    /// Create a `Seconds_u` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Seconds_u`.
+    public init(_ value: Picoseconds_f) {
+        self.rawValue = ps_f_to_s_u(value.rawValue)
+    }
+
+    /// Create a `Seconds_u` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Seconds_u`.
+    public init(_ value: Picoseconds_d) {
+        self.rawValue = ps_d_to_s_u(value.rawValue)
     }
 
 // MARK: - Converting From Other Precisions
@@ -4569,6 +9559,22 @@ public struct Seconds_f: GUUnitsFType, Hashable, Codable {
     /// - Parameter value: A `Time` value to convert to a `Seconds_f`.
     public init(_ value: Time) {
         switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
         case .microseconds_t(let value):
             self.init(value)
         case .microseconds_u(let value):
@@ -4650,6 +9656,62 @@ public struct Seconds_f: GUUnitsFType, Hashable, Codable {
     /// - Parameter value: A `Milliseconds_d` value to convert to a `Seconds_f`.
     public init(_ value: Milliseconds_d) {
         self.rawValue = ms_d_to_s_f(value.rawValue)
+    }
+
+    /// Create a `Seconds_f` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Seconds_f`.
+    public init(_ value: Nanoseconds_t) {
+        self.rawValue = ns_t_to_s_f(value.rawValue)
+    }
+
+    /// Create a `Seconds_f` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Seconds_f`.
+    public init(_ value: Nanoseconds_u) {
+        self.rawValue = ns_u_to_s_f(value.rawValue)
+    }
+
+    /// Create a `Seconds_f` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Seconds_f`.
+    public init(_ value: Nanoseconds_f) {
+        self.rawValue = ns_f_to_s_f(value.rawValue)
+    }
+
+    /// Create a `Seconds_f` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Seconds_f`.
+    public init(_ value: Nanoseconds_d) {
+        self.rawValue = ns_d_to_s_f(value.rawValue)
+    }
+
+    /// Create a `Seconds_f` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Seconds_f`.
+    public init(_ value: Picoseconds_t) {
+        self.rawValue = ps_t_to_s_f(value.rawValue)
+    }
+
+    /// Create a `Seconds_f` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Seconds_f`.
+    public init(_ value: Picoseconds_u) {
+        self.rawValue = ps_u_to_s_f(value.rawValue)
+    }
+
+    /// Create a `Seconds_f` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Seconds_f`.
+    public init(_ value: Picoseconds_f) {
+        self.rawValue = ps_f_to_s_f(value.rawValue)
+    }
+
+    /// Create a `Seconds_f` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Seconds_f`.
+    public init(_ value: Picoseconds_d) {
+        self.rawValue = ps_d_to_s_f(value.rawValue)
     }
 
 // MARK: - Converting From Other Precisions
@@ -4783,6 +9845,22 @@ public struct Seconds_d: GUUnitsDType, Hashable, Codable {
     /// - Parameter value: A `Time` value to convert to a `Seconds_d`.
     public init(_ value: Time) {
         switch value.rawValue {
+        case .picoseconds_t(let value):
+            self.init(value)
+        case .picoseconds_u(let value):
+            self.init(value)
+        case .picoseconds_f(let value):
+            self.init(value)
+        case .picoseconds_d(let value):
+            self.init(value)
+        case .nanoseconds_t(let value):
+            self.init(value)
+        case .nanoseconds_u(let value):
+            self.init(value)
+        case .nanoseconds_f(let value):
+            self.init(value)
+        case .nanoseconds_d(let value):
+            self.init(value)
         case .microseconds_t(let value):
             self.init(value)
         case .microseconds_u(let value):
@@ -4864,6 +9942,62 @@ public struct Seconds_d: GUUnitsDType, Hashable, Codable {
     /// - Parameter value: A `Milliseconds_d` value to convert to a `Seconds_d`.
     public init(_ value: Milliseconds_d) {
         self.rawValue = ms_d_to_s_d(value.rawValue)
+    }
+
+    /// Create a `Seconds_d` by converting a `Nanoseconds_t`.
+    ///
+    /// - Parameter value: A `Nanoseconds_t` value to convert to a `Seconds_d`.
+    public init(_ value: Nanoseconds_t) {
+        self.rawValue = ns_t_to_s_d(value.rawValue)
+    }
+
+    /// Create a `Seconds_d` by converting a `Nanoseconds_u`.
+    ///
+    /// - Parameter value: A `Nanoseconds_u` value to convert to a `Seconds_d`.
+    public init(_ value: Nanoseconds_u) {
+        self.rawValue = ns_u_to_s_d(value.rawValue)
+    }
+
+    /// Create a `Seconds_d` by converting a `Nanoseconds_f`.
+    ///
+    /// - Parameter value: A `Nanoseconds_f` value to convert to a `Seconds_d`.
+    public init(_ value: Nanoseconds_f) {
+        self.rawValue = ns_f_to_s_d(value.rawValue)
+    }
+
+    /// Create a `Seconds_d` by converting a `Nanoseconds_d`.
+    ///
+    /// - Parameter value: A `Nanoseconds_d` value to convert to a `Seconds_d`.
+    public init(_ value: Nanoseconds_d) {
+        self.rawValue = ns_d_to_s_d(value.rawValue)
+    }
+
+    /// Create a `Seconds_d` by converting a `Picoseconds_t`.
+    ///
+    /// - Parameter value: A `Picoseconds_t` value to convert to a `Seconds_d`.
+    public init(_ value: Picoseconds_t) {
+        self.rawValue = ps_t_to_s_d(value.rawValue)
+    }
+
+    /// Create a `Seconds_d` by converting a `Picoseconds_u`.
+    ///
+    /// - Parameter value: A `Picoseconds_u` value to convert to a `Seconds_d`.
+    public init(_ value: Picoseconds_u) {
+        self.rawValue = ps_u_to_s_d(value.rawValue)
+    }
+
+    /// Create a `Seconds_d` by converting a `Picoseconds_f`.
+    ///
+    /// - Parameter value: A `Picoseconds_f` value to convert to a `Seconds_d`.
+    public init(_ value: Picoseconds_f) {
+        self.rawValue = ps_f_to_s_d(value.rawValue)
+    }
+
+    /// Create a `Seconds_d` by converting a `Picoseconds_d`.
+    ///
+    /// - Parameter value: A `Picoseconds_d` value to convert to a `Seconds_d`.
+    public init(_ value: Picoseconds_d) {
+        self.rawValue = ps_d_to_s_d(value.rawValue)
     }
 
 // MARK: - Converting From Other Precisions

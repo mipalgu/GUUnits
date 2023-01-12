@@ -62,284 +62,255 @@ import XCTest
 
 final class MillisecondsConversionTests9: XCTestCase {
 
-    func testMilliseconds_dInt32RawValueInit() {
-        let raw = milliseconds_d(5)
-        let ctype = ms_d_to_i32(raw)
-        let expected = Milliseconds_d(Int32(ctype))
-        XCTAssertEqual(Milliseconds_d(rawValue: raw), expected)
+    func testMilliseconds_fUIntInits() {
+        let raw = UInt(5)
+        let ctype = u64_to_ms_f(5)
+        let expected = Milliseconds_f(raw)
+        XCTAssertEqual(expected.rawValue, ctype)
+        XCTAssertEqual(
+            UInt(expected),
+            UInt(ms_f_to_u64(ctype))
+        )
     }
 
-    func testMilliseconds_dTimeInt32Init() {
-        let raw = Milliseconds_d(Int32(5))
+    func testMilliseconds_fUIntRawValueInit() {
+        let raw = milliseconds_f(5)
+        let ctype = ms_f_to_u64(raw)
+        let expected = Milliseconds_f(UInt(ctype))
+        XCTAssertEqual(Milliseconds_f(rawValue: raw), expected)
+    }
+
+    func testMilliseconds_fTimeUIntInit() {
+        let raw = Milliseconds_f(UInt(5))
         let category = Time(raw)
-        let expected = Time(rawValue: .milliseconds_d(raw))
+        let expected = Time(rawValue: .milliseconds_f(raw))
         XCTAssertEqual(category, expected)
     }
 
-    func testTimeMilliseconds_dInt64Inits() {
-        let raw = Int64(5)
+    func testTimeMilliseconds_fCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
         let expected = Time(milliseconds: raw)
         let result = Time.milliseconds(raw)
         XCTAssertEqual(expected, result)
-        let ctype = i64_to_ms_d(5)
-        let expected2 = Int64(
-            ms_d_to_i64(ctype)
+        let ctype = u32_to_ms_f(5)
+        let expected2 = CUnsignedInt(
+            ms_f_to_u32(ctype)
         )
-        let result2 = Int64(expected)
+        let result2 = CUnsignedInt(expected)
         XCTAssertEqual(result2, expected2)
     }
 
-    func testMilliseconds_dInt64Inits() {
-        let raw = Int64(5)
-        let ctype = i64_to_ms_d(5)
-        let expected = Milliseconds_d(raw)
+    func testMilliseconds_fCUnsignedIntInits() {
+        let raw = CUnsignedInt(5)
+        let ctype = u32_to_ms_f(5)
+        let expected = Milliseconds_f(raw)
         XCTAssertEqual(expected.rawValue, ctype)
         XCTAssertEqual(
-            Int64(expected),
-            Int64(ms_d_to_i64(ctype))
+            CUnsignedInt(expected),
+            CUnsignedInt(ms_f_to_u32(ctype))
         )
     }
 
-    func testMilliseconds_dInt64RawValueInit() {
-        let raw = milliseconds_d(5)
-        let ctype = ms_d_to_i64(raw)
-        let expected = Milliseconds_d(Int64(ctype))
-        XCTAssertEqual(Milliseconds_d(rawValue: raw), expected)
+    func testMilliseconds_fCUnsignedIntRawValueInit() {
+        let raw = milliseconds_f(5)
+        let ctype = ms_f_to_u32(raw)
+        let expected = Milliseconds_f(CUnsignedInt(ctype))
+        XCTAssertEqual(Milliseconds_f(rawValue: raw), expected)
     }
 
-    func testMilliseconds_dTimeInt64Init() {
-        let raw = Milliseconds_d(Int64(5))
+    func testMilliseconds_fTimeCUnsignedIntInit() {
+        let raw = Milliseconds_f(CUnsignedInt(5))
         let category = Time(raw)
-        let expected = Time(rawValue: .milliseconds_d(raw))
+        let expected = Time(rawValue: .milliseconds_f(raw))
         XCTAssertEqual(category, expected)
     }
 
-    func testTimeMilliseconds_dIntInits() {
-        let raw = Int(5)
+    func testTimeMilliseconds_fFloatInits() {
+        let raw = Float(5)
         let expected = Time(milliseconds: raw)
         let result = Time.milliseconds(raw)
         XCTAssertEqual(expected, result)
-        let ctype = i64_to_ms_d(5)
-        let expected2 = Int(
-            ms_d_to_i64(ctype)
+        let ctype = f_to_ms_f(5)
+        let expected2 = Float(
+            ms_f_to_f(ctype)
         )
-        let result2 = Int(expected)
+        let result2 = Float(expected)
         XCTAssertEqual(result2, expected2)
     }
 
-    func testMilliseconds_dIntInits() {
-        let raw = Int(5)
-        let ctype = i64_to_ms_d(5)
-        let expected = Milliseconds_d(raw)
+    func testMilliseconds_fFloatInits() {
+        let raw = Float(5)
+        let ctype = f_to_ms_f(5)
+        let expected = Milliseconds_f(raw)
         XCTAssertEqual(expected.rawValue, ctype)
         XCTAssertEqual(
-            Int(expected),
-            Int(ms_d_to_i64(ctype))
+            Float(expected),
+            Float(ms_f_to_f(ctype))
         )
     }
 
-    func testMilliseconds_dIntRawValueInit() {
-        let raw = milliseconds_d(5)
-        let ctype = ms_d_to_i64(raw)
-        let expected = Milliseconds_d(Int(ctype))
-        XCTAssertEqual(Milliseconds_d(rawValue: raw), expected)
+    func testMilliseconds_fFloatRawValueInit() {
+        let raw = milliseconds_f(5)
+        let ctype = ms_f_to_f(raw)
+        let expected = Milliseconds_f(Float(ctype))
+        XCTAssertEqual(Milliseconds_f(rawValue: raw), expected)
     }
 
-    func testMilliseconds_dTimeIntInit() {
-        let raw = Milliseconds_d(Int(5))
+    func testMilliseconds_fTimeFloatInit() {
+        let raw = Milliseconds_f(Float(5))
         let category = Time(raw)
-        let expected = Time(rawValue: .milliseconds_d(raw))
+        let expected = Time(rawValue: .milliseconds_f(raw))
         XCTAssertEqual(category, expected)
     }
 
-    func testTimeMilliseconds_dCIntInits() {
-        let raw = CInt(5)
+    func testTimeMilliseconds_fDoubleInits() {
+        let raw = Double(5)
         let expected = Time(milliseconds: raw)
         let result = Time.milliseconds(raw)
         XCTAssertEqual(expected, result)
-        let ctype = i32_to_ms_d(5)
-        let expected2 = CInt(
-            ms_d_to_i32(ctype)
+        let ctype = d_to_ms_f(5)
+        let expected2 = Double(
+            ms_f_to_d(ctype)
         )
-        let result2 = CInt(expected)
+        let result2 = Double(expected)
         XCTAssertEqual(result2, expected2)
     }
 
-    func testMilliseconds_dCIntInits() {
-        let raw = CInt(5)
-        let ctype = i32_to_ms_d(5)
-        let expected = Milliseconds_d(raw)
+    func testMilliseconds_fDoubleInits() {
+        let raw = Double(5)
+        let ctype = d_to_ms_f(5)
+        let expected = Milliseconds_f(raw)
         XCTAssertEqual(expected.rawValue, ctype)
         XCTAssertEqual(
-            CInt(expected),
-            CInt(ms_d_to_i32(ctype))
+            Double(expected),
+            Double(ms_f_to_d(ctype))
         )
     }
 
-    func testMilliseconds_dCIntRawValueInit() {
-        let raw = milliseconds_d(5)
-        let ctype = ms_d_to_i32(raw)
-        let expected = Milliseconds_d(CInt(ctype))
-        XCTAssertEqual(Milliseconds_d(rawValue: raw), expected)
+    func testMilliseconds_fDoubleRawValueInit() {
+        let raw = milliseconds_f(5)
+        let ctype = ms_f_to_d(raw)
+        let expected = Milliseconds_f(Double(ctype))
+        XCTAssertEqual(Milliseconds_f(rawValue: raw), expected)
     }
 
-    func testMilliseconds_dTimeCIntInit() {
-        let raw = Milliseconds_d(CInt(5))
+    func testMilliseconds_fTimeDoubleInit() {
+        let raw = Milliseconds_f(Double(5))
         let category = Time(raw)
-        let expected = Time(rawValue: .milliseconds_d(raw))
+        let expected = Time(rawValue: .milliseconds_f(raw))
         XCTAssertEqual(category, expected)
     }
 
-    func testTimeMilliseconds_dUInt8Inits() {
-        let raw = UInt8(5)
-        let expected = Time(milliseconds: raw)
-        let result = Time.milliseconds(raw)
-        XCTAssertEqual(expected, result)
-        let ctype = u8_to_ms_d(5)
-        let expected2 = UInt8(
-            ms_d_to_u8(ctype)
-        )
-        let result2 = UInt8(expected)
-        XCTAssertEqual(result2, expected2)
+    func testMilliseconds_dToPicoseconds_tTimeConversions() {
+        let original = Milliseconds_d(5)
+        let category = Time(original)
+        let other = category.picoseconds_t
+        XCTAssertEqual(other, Picoseconds_t(original))
     }
 
-    func testMilliseconds_dUInt8Inits() {
-        let raw = UInt8(5)
-        let ctype = u8_to_ms_d(5)
-        let expected = Milliseconds_d(raw)
-        XCTAssertEqual(expected.rawValue, ctype)
-        XCTAssertEqual(
-            UInt8(expected),
-            UInt8(ms_d_to_u8(ctype))
-        )
+    func testPicoseconds_tToMilliseconds_dConversions() {
+        let ctype1 = milliseconds_d(5)
+        let swiftType1 = Milliseconds_d(rawValue: ctype1)
+        let ctype2 = ms_d_to_ps_t(ctype1)
+        let swiftType2 = Picoseconds_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Picoseconds_t(swiftType1))
     }
 
-    func testMilliseconds_dUInt8RawValueInit() {
-        let raw = milliseconds_d(5)
-        let ctype = ms_d_to_u8(raw)
-        let expected = Milliseconds_d(UInt8(ctype))
-        XCTAssertEqual(Milliseconds_d(rawValue: raw), expected)
+    func testMilliseconds_dToPicoseconds_uTimeConversions() {
+        let original = Milliseconds_d(5)
+        let category = Time(original)
+        let other = category.picoseconds_u
+        XCTAssertEqual(other, Picoseconds_u(original))
     }
 
-    func testMilliseconds_dTimeUInt8Init() {
-        let raw = Milliseconds_d(UInt8(5))
-        let category = Time(raw)
-        let expected = Time(rawValue: .milliseconds_d(raw))
-        XCTAssertEqual(category, expected)
+    func testPicoseconds_uToMilliseconds_dConversions() {
+        let ctype1 = milliseconds_d(5)
+        let swiftType1 = Milliseconds_d(rawValue: ctype1)
+        let ctype2 = ms_d_to_ps_u(ctype1)
+        let swiftType2 = Picoseconds_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Picoseconds_u(swiftType1))
     }
 
-    func testTimeMilliseconds_dUInt16Inits() {
-        let raw = UInt16(5)
-        let expected = Time(milliseconds: raw)
-        let result = Time.milliseconds(raw)
-        XCTAssertEqual(expected, result)
-        let ctype = u16_to_ms_d(5)
-        let expected2 = UInt16(
-            ms_d_to_u16(ctype)
-        )
-        let result2 = UInt16(expected)
-        XCTAssertEqual(result2, expected2)
+    func testMilliseconds_dToPicoseconds_fTimeConversions() {
+        let original = Milliseconds_d(5)
+        let category = Time(original)
+        let other = category.picoseconds_f
+        XCTAssertEqual(other, Picoseconds_f(original))
     }
 
-    func testMilliseconds_dUInt16Inits() {
-        let raw = UInt16(5)
-        let ctype = u16_to_ms_d(5)
-        let expected = Milliseconds_d(raw)
-        XCTAssertEqual(expected.rawValue, ctype)
-        XCTAssertEqual(
-            UInt16(expected),
-            UInt16(ms_d_to_u16(ctype))
-        )
+    func testPicoseconds_fToMilliseconds_dConversions() {
+        let ctype1 = milliseconds_d(5)
+        let swiftType1 = Milliseconds_d(rawValue: ctype1)
+        let ctype2 = ms_d_to_ps_f(ctype1)
+        let swiftType2 = Picoseconds_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Picoseconds_f(swiftType1))
     }
 
-    func testMilliseconds_dUInt16RawValueInit() {
-        let raw = milliseconds_d(5)
-        let ctype = ms_d_to_u16(raw)
-        let expected = Milliseconds_d(UInt16(ctype))
-        XCTAssertEqual(Milliseconds_d(rawValue: raw), expected)
+    func testMilliseconds_dToPicoseconds_dTimeConversions() {
+        let original = Milliseconds_d(5)
+        let category = Time(original)
+        let other = category.picoseconds_d
+        XCTAssertEqual(other, Picoseconds_d(original))
     }
 
-    func testMilliseconds_dTimeUInt16Init() {
-        let raw = Milliseconds_d(UInt16(5))
-        let category = Time(raw)
-        let expected = Time(rawValue: .milliseconds_d(raw))
-        XCTAssertEqual(category, expected)
+    func testPicoseconds_dToMilliseconds_dConversions() {
+        let ctype1 = milliseconds_d(5)
+        let swiftType1 = Milliseconds_d(rawValue: ctype1)
+        let ctype2 = ms_d_to_ps_d(ctype1)
+        let swiftType2 = Picoseconds_d(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Picoseconds_d(swiftType1))
     }
 
-    func testTimeMilliseconds_dUInt32Inits() {
-        let raw = UInt32(5)
-        let expected = Time(milliseconds: raw)
-        let result = Time.milliseconds(raw)
-        XCTAssertEqual(expected, result)
-        let ctype = u32_to_ms_d(5)
-        let expected2 = UInt32(
-            ms_d_to_u32(ctype)
-        )
-        let result2 = UInt32(expected)
-        XCTAssertEqual(result2, expected2)
+    func testMilliseconds_dToNanoseconds_tTimeConversions() {
+        let original = Milliseconds_d(5)
+        let category = Time(original)
+        let other = category.nanoseconds_t
+        XCTAssertEqual(other, Nanoseconds_t(original))
     }
 
-    func testMilliseconds_dUInt32Inits() {
-        let raw = UInt32(5)
-        let ctype = u32_to_ms_d(5)
-        let expected = Milliseconds_d(raw)
-        XCTAssertEqual(expected.rawValue, ctype)
-        XCTAssertEqual(
-            UInt32(expected),
-            UInt32(ms_d_to_u32(ctype))
-        )
+    func testNanoseconds_tToMilliseconds_dConversions() {
+        let ctype1 = milliseconds_d(5)
+        let swiftType1 = Milliseconds_d(rawValue: ctype1)
+        let ctype2 = ms_d_to_ns_t(ctype1)
+        let swiftType2 = Nanoseconds_t(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Nanoseconds_t(swiftType1))
     }
 
-    func testMilliseconds_dUInt32RawValueInit() {
-        let raw = milliseconds_d(5)
-        let ctype = ms_d_to_u32(raw)
-        let expected = Milliseconds_d(UInt32(ctype))
-        XCTAssertEqual(Milliseconds_d(rawValue: raw), expected)
+    func testMilliseconds_dToNanoseconds_uTimeConversions() {
+        let original = Milliseconds_d(5)
+        let category = Time(original)
+        let other = category.nanoseconds_u
+        XCTAssertEqual(other, Nanoseconds_u(original))
     }
 
-    func testMilliseconds_dTimeUInt32Init() {
-        let raw = Milliseconds_d(UInt32(5))
-        let category = Time(raw)
-        let expected = Time(rawValue: .milliseconds_d(raw))
-        XCTAssertEqual(category, expected)
+    func testNanoseconds_uToMilliseconds_dConversions() {
+        let ctype1 = milliseconds_d(5)
+        let swiftType1 = Milliseconds_d(rawValue: ctype1)
+        let ctype2 = ms_d_to_ns_u(ctype1)
+        let swiftType2 = Nanoseconds_u(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Nanoseconds_u(swiftType1))
     }
 
-    func testTimeMilliseconds_dUInt64Inits() {
-        let raw = UInt64(5)
-        let expected = Time(milliseconds: raw)
-        let result = Time.milliseconds(raw)
-        XCTAssertEqual(expected, result)
-        let ctype = u64_to_ms_d(5)
-        let expected2 = UInt64(
-            ms_d_to_u64(ctype)
-        )
-        let result2 = UInt64(expected)
-        XCTAssertEqual(result2, expected2)
+    func testMilliseconds_dToNanoseconds_fTimeConversions() {
+        let original = Milliseconds_d(5)
+        let category = Time(original)
+        let other = category.nanoseconds_f
+        XCTAssertEqual(other, Nanoseconds_f(original))
     }
 
-    func testMilliseconds_dUInt64Inits() {
-        let raw = UInt64(5)
-        let ctype = u64_to_ms_d(5)
-        let expected = Milliseconds_d(raw)
-        XCTAssertEqual(expected.rawValue, ctype)
-        XCTAssertEqual(
-            UInt64(expected),
-            UInt64(ms_d_to_u64(ctype))
-        )
+    func testNanoseconds_fToMilliseconds_dConversions() {
+        let ctype1 = milliseconds_d(5)
+        let swiftType1 = Milliseconds_d(rawValue: ctype1)
+        let ctype2 = ms_d_to_ns_f(ctype1)
+        let swiftType2 = Nanoseconds_f(rawValue: ctype2)
+        XCTAssertEqual(swiftType2, Nanoseconds_f(swiftType1))
     }
 
-    func testMilliseconds_dUInt64RawValueInit() {
-        let raw = milliseconds_d(5)
-        let ctype = ms_d_to_u64(raw)
-        let expected = Milliseconds_d(UInt64(ctype))
-        XCTAssertEqual(Milliseconds_d(rawValue: raw), expected)
-    }
-
-    func testMilliseconds_dTimeUInt64Init() {
-        let raw = Milliseconds_d(UInt64(5))
-        let category = Time(raw)
-        let expected = Time(rawValue: .milliseconds_d(raw))
-        XCTAssertEqual(category, expected)
+    func testMilliseconds_dToNanoseconds_dTimeConversions() {
+        let original = Milliseconds_d(5)
+        let category = Time(original)
+        let other = category.nanoseconds_d
+        XCTAssertEqual(other, Nanoseconds_d(original))
     }
 
 }
