@@ -3,6 +3,43 @@
 
 import PackageDescription
 
+#if os(Windows)
+import CRT
+let cTarget: Target
+if let sdkRoot = getenv("SDKROOT").flatMap({ String(cString: $0) }) {
+    cTarget = Target.target(
+        name: "CGUUnits",
+        dependencies: [],
+        cSettings: [.unsafeFlags([
+            "-Xswiftc",
+            "-lswiftCore",
+            "-Xlinker",
+            "\(sdkRoot)\\usr\\lib\\swift\\windows\\x86_64\\swiftCore.lib"
+        ])],
+        swiftSettings: [.unsafeFlags([
+            "-Xswiftc",
+            "-lswiftCore",
+            "-Xlinker",
+            "\(sdkRoot)\\usr\\lib\\swift\\windows\\x86_64\\swiftCore.lib"
+        ])],
+        linkerSettings: [.unsafeFlags([
+            "-Xlinker",
+            "\(sdkRoot)\\usr\\lib\\swift\\windows\\x86_64\\swiftCore.lib"
+        ])]
+    )
+} else {
+    cTarget = Target.target(
+        name: "CGUUnits",
+        dependencies: []
+    )
+}
+#else
+let cTarget = Target.target(
+    name: "CGUUnits",
+    dependencies: []
+)
+#endif
+
 /// Package description.
 let package = Package(
     name: "GUUnits",
@@ -19,17 +56,14 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-        .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0")
+        .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.3.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package.
         // A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages
         // this package depends on.
-        .target(
-            name: "CGUUnits",
-            dependencies: []
-        ),
+        cTarget,
         .target(
             name: "GUUnits",
             dependencies: ["CGUUnits"]
