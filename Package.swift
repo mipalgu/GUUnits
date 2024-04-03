@@ -5,27 +5,13 @@ import PackageDescription
 
 #if os(Windows)
 import CRT
+/// The CGUUnits target.
 let cTarget: Target
 if let sdkRoot = getenv("SDKROOT").flatMap({ String(cString: $0) }) {
     cTarget = Target.target(
         name: "CGUUnits",
         dependencies: [],
-        cSettings: [.unsafeFlags([
-            "-Xswiftc",
-            "-lswiftCore",
-            "-Xlinker",
-            "\(sdkRoot)\\usr\\lib\\swift\\windows\\x86_64\\swiftCore.lib"
-        ])],
-        swiftSettings: [.unsafeFlags([
-            "-Xswiftc",
-            "-lswiftCore",
-            "-Xlinker",
-            "\(sdkRoot)\\usr\\lib\\swift\\windows\\x86_64\\swiftCore.lib"
-        ])],
-        linkerSettings: [.unsafeFlags([
-            "-Xlinker",
-            "\(sdkRoot)\\usr\\lib\\swift\\windows\\x86_64\\swiftCore.lib"
-        ])]
+        linkerSettings: [.unsafeFlags(["\(sdkRoot)\\usr\\lib\\swift\\windows\\x86_64\\swiftCore.lib"])]
     )
 } else {
     cTarget = Target.target(
@@ -34,6 +20,7 @@ if let sdkRoot = getenv("SDKROOT").flatMap({ String(cString: $0) }) {
     )
 }
 #else
+/// The CGUUnits target.
 let cTarget = Target.target(
     name: "CGUUnits",
     dependencies: []
